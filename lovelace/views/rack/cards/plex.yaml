@@ -4,6 +4,5 @@ entities:
   - entity: sensor.tautulli
   - entity: sensor.sonarr_disk_space
   - entity: sensor.radarr_disk_space
-  - entity: sensor.vesync_rack_watts
     name: Rack Power
     icon: 'mdi:flash'

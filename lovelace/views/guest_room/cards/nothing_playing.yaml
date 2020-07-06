@@ -4,7 +4,7 @@ card:
   name: Nothing Playing in Guest Room
   style: |
     ha-card {
-      border-radius: 15px;
+      border-radius: 10px;
     }
   type: 'custom:button-card'
 conditions:

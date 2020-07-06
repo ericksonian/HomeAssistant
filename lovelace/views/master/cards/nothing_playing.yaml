@@ -12,4 +12,8 @@ card:
   color: 'rgb(50, 50, 50)'
   color_type: label-card
   name: Nothing Playing in Master
+  style: |
+    ha-card {
+      border-radius: 10px;
+    }
   type: 'custom:button-card'

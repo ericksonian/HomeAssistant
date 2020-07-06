@@ -4,7 +4,7 @@ card:
   name: Plug In Your Chromecast, Upgrade Your Life
   style: |
     ha-card {
-      border-radius: 15px;
+      border-radius: 10px;
     }
   type: 'custom:button-card'
 conditions:
