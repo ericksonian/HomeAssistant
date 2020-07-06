@@ -1,0 +1,95 @@
+cards:
+  - entity: input_boolean.pancake_auto_heat
+    hold_action:
+      action: more-info
+    icon: 'mdi:theme-light-dark'
+    lock:
+      enabled: true
+    name: Pancakes Heat Off During The Day
+    show_icon: true
+    show_name: true
+    state:
+      - color: 'rgb(253, 180, 30)'
+        icon: 'mdi:weather-sunny-alert'
+        name: Pancakes Heat On All Day
+        value: 'on'
+    styles:
+      card:
+        - height: 125px
+    tap_action:
+      action: toggle
+    type: 'custom:button-card'
+  - card:
+      cards:
+        - color: 'rgb(60,60,60)'
+          color_type: label-card
+          name: Heat/Sun Overlap
+          type: 'custom:button-card'
+        - cards:
+            - entity: input_boolean.pancake_pad_heat_1
+              hold_action:
+                action: none
+              icon: 'mdi:lightbulb-outline'
+              name: 1 Hour
+              show_icon: true
+              show_name: true
+              state:
+                - color: 'rgb(30, 180, 30)'
+                  icon: 'mdi:lightbulb'
+                  value: 'on'
+              styles:
+                card:
+                  - height: 125px
+              tap_action:
+                action: call-service
+                service: script.turn_on
+                service_data:
+                  entity_id: script.pancake_pad_heat_select_1
+              type: 'custom:button-card'
+            - entity: input_boolean.pancake_pad_heat_2
+              hold_action:
+                action: none
+              icon: 'mdi:lightbulb-multiple-outline'
+              name: 2 Hours
+              show_icon: true
+              show_name: true
+              state:
+                - color: 'rgb(30, 180, 30)'
+                  icon: 'mdi:lightbulb-multiple'
+                  value: 'on'
+              styles:
+                card:
+                  - height: 125px
+              tap_action:
+                action: call-service
+                service: script.turn_on
+                service_data:
+                  entity_id: script.pancake_pad_heat_select_2
+              type: 'custom:button-card'
+            - entity: input_boolean.pancake_pad_heat_3
+              hold_action:
+                action: none
+              icon: 'mdi:lightbulb-group-outline'
+              name: 3 Hours
+              show_icon: true
+              show_name: true
+              state:
+                - color: 'rgb(30, 180, 30)'
+                  icon: 'mdi:lightbulb-group'
+                  value: 'on'
+              styles:
+                card:
+                  - height: 125px
+              tap_action:
+                action: call-service
+                service: script.turn_on
+                service_data:
+                  entity_id: script.pancake_pad_heat_select_3
+              type: 'custom:button-card'
+          type: horizontal-stack
+      type: vertical-stack
+    conditions:
+      - entity: input_boolean.pancake_auto_heat
+        state: 'off'
+    type: conditional
+type: vertical-stack

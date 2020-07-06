@@ -1,0 +1,86 @@
+cards:
+  - cards:
+      - entity: switch.vesync_white
+        hold_action:
+          action: more-info
+        icon: 'mdi:weather-night'
+        lock:
+          enabled: true
+        name: Daylight
+        show_icon: true
+        show_name: true
+        state:
+          - color: 'rgb(253, 220, 10)'
+            icon: 'mdi:weather-sunny'
+            value: 'on'
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 125px
+        tap_action:
+          action: toggle
+        type: 'custom:button-card'
+      - entity: sensor.vesync_white_watts
+        hold_action:
+          action: none
+        show_icon: false
+        show_name: false
+        show_state: true
+        state:
+          - color: 'rgb(30, 180, 30)'
+            value: 'on'
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 25px
+        tap_action:
+          action: more-info
+        type: 'custom:button-card'
+    type: vertical-stack
+  - cards:
+      - entity: switch.vesync_blue
+        hold_action:
+          action: more-info
+        icon: 'mdi:radiator-off'
+        lock:
+          enabled: true
+        name: Heat Lamp
+        show_icon: true
+        show_name: true
+        state:
+          - color: 'rgb(70, 30, 250)'
+            icon: 'mdi:radiator'
+            value: 'on'
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 125px
+        tap_action:
+          action: toggle
+        type: 'custom:button-card'
+      - entity: sensor.vesync_blue_watts
+        hold_action:
+          action: none
+        show_icon: false
+        show_name: false
+        show_state: true
+        state:
+          - color: 'rgb(30, 180, 30)'
+            value: 'on'
+        styles:
+           card:
+             - height: 25px
+        tap_action:
+           action: more-info
+        type: 'custom:button-card'
+    type: vertical-stack
+type: horizontal-stack

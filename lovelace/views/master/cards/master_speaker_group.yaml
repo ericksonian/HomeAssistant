@@ -1,0 +1,34 @@
+type: conditional
+conditions:
+  - entity: media_player.master
+    state_not: 'off'
+card:
+  entities:
+    - artwork: cover
+      entity: media_player.master
+      group: false
+      icon: 'mdi:cast-audio'
+      type: 'custom:mini-media-player'
+    - entity: media_player.bedroom_speaker
+      group: true
+      hide:
+        controls: true
+        icon: true
+        info: true
+        power: true
+        progress: true
+        source: true
+      icon: 'mdi:cast-audio'
+      type: 'custom:mini-media-player'
+    - entity: media_player.bathroom_speaker
+      group: true
+      hide:
+        controls: true
+        icon: true
+        info: true
+        power: true
+        progress: true
+        source: true
+      icon: 'mdi:google-home'
+      type: 'custom:mini-media-player'
+  type: entities

@@ -1,0 +1,15 @@
+type: conditional
+conditions:
+  - entity: media_player.master
+    state: 'off'
+  - entity: media_player.bedroom_speaker
+    state: 'off'
+  - entity: media_player.bathroom_speaker
+    state: 'off'
+  - entity: media_player.bedroom_tv
+    state: 'off'
+card:
+  color: 'rgb(50, 50, 50)'
+  color_type: label-card
+  name: Nothing Playing in Master
+  type: 'custom:button-card'

@@ -1,0 +1,11 @@
+color: 'rgb(200,200,200)'
+color_type: label-card
+name: Pancake!
+style: |
+  ha-card {
+    border-radius: 15px;
+  }
+styles:
+  card:
+    - height: 24px
+type: 'custom:button-card'

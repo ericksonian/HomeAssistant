@@ -1,0 +1,25 @@
+### Lighting Actions
+
+#   
+- alias: Action Lights Driveway On
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: LIGHT_DRIVEWAY_ON
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.exterior_driveway_on
+   
+- alias: Action Lights Downstairs Off
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: LIGHT_DOWNSTAIRS_OFF
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.downstairs_all_off
+

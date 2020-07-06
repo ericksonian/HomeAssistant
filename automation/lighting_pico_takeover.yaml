@@ -1,0 +1,70 @@
+
+##  Pico Takeover
+
+#- alias: Kitchen Pico Button 1
+#  trigger:
+#  - entity_id: sensor.kitchen_pico
+#    platform: state
+#    to: "1"
+#  condition: []
+#  action:
+#  - service: light.turn_on
+#    data:
+#      entity_id: light.kitchen_dining_pendant
+#      brightness: 126
+
+#- alias: Kitchen Pico Button 2
+#  trigger:
+#  - entity_id: sensor.kitchen_pico
+#    platform: state
+#    to: "8"
+#  condition: []
+#  action:
+#  - service: light.turn_on
+#    data:
+#      entity_id: light.kitchen_dining_pendant
+#      brightness: 126
+
+- alias: Kitchen Pico Button 3
+  trigger:
+  - entity_id: sensor.kitchen_pico
+    platform: state
+    to: "2"
+  condition: []
+  action:
+  - service: scene.create
+    data:
+      scene_id: kitchen_pico_favorite_ignore
+      snapshot_entities:
+      - light.kitchen_ceiling
+      - light.kitchen_sink
+  - service: switch.toggle
+    data:
+      entity_id: switch.kitchen_cabinets
+  - service: scene.turn_on
+    data:
+      entity_id: scene.kitchen_pico_favorite_ignore
+
+#- alias: Kitchen Pico Button 4
+#  trigger:
+#  - entity_id: sensor.kitchen_pico
+#    platform: state
+#    to: "16"
+#  condition: []
+#  action:
+#  - service: light.turn_off
+#    data:
+#      entity_id: light.kitchen_dining_pendant
+
+- alias: Kitchen Pico Button 5
+  trigger:
+  - entity_id: sensor.kitchen_pico
+    platform: state
+    to: "4"
+  condition: []
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.kitchen_cabinets
+
+

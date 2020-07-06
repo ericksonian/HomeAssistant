@@ -1,0 +1,21 @@
+##  Broadlink IR Commands
+
+#Samsung TV
+master_tv_power_on:
+  sequence:
+    - service: broadlink.send
+      data:
+        host: !secret broadlink_master_ip
+        packet:
+            - "JgCMAJSVFTUUNRU0ExMQExISEhMVDxE4EjgSNxIUEhMTERMSEhITNBISExIVNBU1ERMVERM1FBITNRQ1EhMUEBE4EjcVEBEABaeVlBI4EjcSOBETFBASExETExEVNBM3FTUUEBUQERISExEUEDgUEBITEjcSOBURExISNRISFTQVNRIUEBMROBI4ERUSAA0FAAAAAAAAAAAAAAAA"
+    - delay:
+        milliseconds: 200
+master_tv_power_off:
+  sequence:
+    - service: broadlink.send
+      data:
+        host: !secret broadlink_master_ip
+        packet:
+            - "JgCMAJWUEjgSNxI3EhITEhQQFBATEhE4EjgUNRUQEhISFBATEhQQEhIUERITNhI3EhMRExM3ETgSOBE4EhISExQ1EjcTEhEABaeWkxQ2FDUUNhQQEhISExETEhISNxM3EjgUDxMSFBAUEBUQFBAUEBITETgSOBISEhIUNRQ2FDUTNxQQEhMUNRI3FBESAA0FAAAAAAAAAAAAAAAA"
+    - delay:
+        milliseconds: 200

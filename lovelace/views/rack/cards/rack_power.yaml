@@ -1,0 +1,6 @@
+type: history-graph
+#title: Rack Power
+entities:
+  - sensor.vesync_rack_watts
+hours_to_show: 72
+refresh_interval: 30

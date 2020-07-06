@@ -1,0 +1,13 @@
+title: Falcon (SpaceX)
+type: entities
+entities:
+  - entity: sensor.next_rocket_falcon
+    icon: 'mdi:clock'
+    name: Next Launch
+  - entity: sensor.next_rocket_falcon_comment
+    icon: 'mdi:rocket'
+    name: Vehicle / Payload
+  - entity: sensor.next_rocket_falcon_location
+    icon: 'mdi:crosshairs-gps'
+  - entity: sensor.next_rocket_falcon_date
+    icon: 'mdi:calendar'

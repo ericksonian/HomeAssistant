@@ -1,0 +1,20 @@
+title: Utopia
+resources:
+  - url: /local/custom-card/button-card.js
+    type: module
+  - url: /local/custom-card/card-mod.js
+    type: module
+  - url: /local/custom-card/mini-media-player-bundle.js?v=1.9.1
+    type: module
+  - url: /local/custom-card/slider-entity-row.js
+    type: module
+views:
+  - !include /config/lovelace/views/security/security.yaml
+  - !include /config/lovelace/views/house/house.yaml
+  - !include /config/lovelace/views/living_room/living_room.yaml
+  - !include /config/lovelace/views/theater/theater.yaml
+  - !include /config/lovelace/views/master/master.yaml
+  - !include /config/lovelace/views/guest_room/guest_room.yaml
+  - !include /config/lovelace/views/pancake/pancake.yaml
+  - !include /config/lovelace/views/rockets/rockets.yaml
+  - !include /config/lovelace/views/rack/rack.yaml

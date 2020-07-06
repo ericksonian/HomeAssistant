@@ -1,0 +1,34 @@
+### iOS Actions
+
+##  Categories
+- name: Garage Open
+  identifier: 'garage_open'
+  actions:
+    - identifier: 'CLOSE_GARAGE'
+      title: 'Close Garage'
+      activationMode: 'background'
+      authenticationRequired: true
+      destructive: true
+      behavior: 'default'
+    - identifier: 'STOP_NOTIFY'
+      title: 'Stop Notifications'
+      activationMode: 'background'
+      authenticationRequired: true
+      destructive: false
+      behavior: 'default'
+- name: Garage Closed
+  identifier: 'garage_closed'
+  actions:
+    - identifier: 'OPEN_GARAGE'
+      title: 'Open Garage'
+      activationMode: 'background'
+      authenticationRequired: true
+      destructive: true
+      behavior: 'default'
+#   - identifier: 'GET_REPORT'
+#     title: 'Get Report'
+#     activationMode: 'background'
+#     authenticationRequired: true
+#     destructive: false
+#     behavior: 'default'
+

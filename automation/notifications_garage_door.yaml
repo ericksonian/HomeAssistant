@@ -1,0 +1,354 @@
+## Garage Door
+
+# Garage Closed
+- alias: Garage Closed
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: closed
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.notify_garage
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_closed.jpg'
+  - service: !secret notify_ian
+    data:
+      message: Garage Door Closed at {{ now().strftime('%H:%M') }}
+      data:
+        push:
+          category: garage_closed
+        attachment:
+          url: !secret snapshot_garage_closed
+
+# Garage Open
+- alias: Garage Open
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+  condition: []
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_ian
+    data:
+      message: Garage Door Opened at {{ now().strftime('%H:%M') }}
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Nobody Home - Garage Open for 10 Minutes
+- alias: Garage Open Vacant 10
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:10:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: group.all_persons
+    state: 'not_home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_ian
+    data:
+      title: Garage Door Open for 10 Minutes
+      message: Nobody is Home
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+  - service: !secret notify_sean
+    data:
+      title: Garage Door Open for 10 Minutes
+      message: Nobody is Home
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Nobody Home - Garage Open for 20 Minutes
+- alias: Garage Open Vacant 20
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:20:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: group.all_persons
+    state: 'not_home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_ian
+    data:
+      title: Garage Door Open for 20 Minutes
+      message: Nobody is Home
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+  - service: !secret notify_sean
+    data:
+      title: Garage Door Open for 20 Minutes
+      message: Nobody is Home
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Nobody Home - Garage Open for 30 Minutes
+- alias: Garage Open Vacant 30
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:30:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: group.all_persons
+    state: 'not_home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: cover.close_cover
+    entity_id: cover.garage_door
+  - service: !secret notify_ian
+    data:
+      title: Garage Door
+      message: Door has been open for 30 minutes and nobody is home
+      data:
+        subtitle: Closing Now  at {{ now().strftime('%H:%M') }}
+        attachment:
+          url: !secret snapshot_garage_open
+  - service: !secret notify_sean
+    data:
+      title: Garage Door
+      message: Door has been open for 30 minutes and nobody is home
+      data:
+        subtitle: Closing Now at {{ now().strftime('%H:%M') }}
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Ian Home - Garage Open for 10 Minutes
+- alias: Garage Open Ian 10
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:10:05"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: person.ian
+    state: 'home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_ian
+    data:
+      title: Garage Door
+      message: Open for 10 Minutes
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Ian Home - Garage Open for 20 Minutes
+- alias: Garage Open Ian 20
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:20:05"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: person.ian
+    state: 'home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_ian
+    data:
+      title: Garage Door
+      message: Open for 20 Minutes
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Ian Home - Garage Open for 30 Minutes
+- alias: Garage Open Ian 30
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:30:05"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: person.ian
+    state: 'home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_ian
+    data:
+      title: Garage Door
+      message: Open for 30 Minutes
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+  - service: !secret notify_sean
+    data:
+      title: Garage Door
+      message: Ian is Home
+      data:
+        subtitle: Open for 30 Minutes
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Sean Home - Garage Open for 10 Minutes
+- alias: Garage Open Sean 10
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:10:10"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: person.sean
+    state: 'home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_sean
+    data:
+      title: Garage Door
+      message: Open for 10 Minutes
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Sean Home - Garage Open for 20 Minutes
+- alias: Garage Open Sean 20
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:20:10"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: person.sean
+    state: 'home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_sean
+    data:
+      title: Garage Door
+      message: Open for 20 Minutes
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+
+# Sean Home - Garage Open for 30 Minutes
+- alias: Garage Open Sean 30
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+    for: "00:30:10"
+  condition:
+  - condition: state
+    entity_id: input_boolean.notify_garage
+    state: 'on'
+  - condition: state
+    entity_id: person.sean
+    state: 'home'
+  action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.garage
+      filename: '/config/www/garage_open.jpg'
+  - service: !secret notify_sean
+    data:
+      title: Garage Door
+      message: Open for 30 Minutes
+      data:
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open
+  - service: !secret notify_ian
+    data:
+      title: Garage Door
+      message: Sean is Home
+      data:
+        subtitle: Open for 30 Minutes
+        push:
+          category: garage_open
+        attachment:
+          url: !secret snapshot_garage_open

@@ -1,0 +1,25 @@
+### Lighting Actions
+
+#   
+- alias: Action Garage Close
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: GARAGE_CLOSE
+  action:
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+
+- alias: Action Garage Open
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: GARAGE_OPEN
+  action:
+  - service: cover.open_cover
+    data:
+      entity_id: cover.garage_door
+

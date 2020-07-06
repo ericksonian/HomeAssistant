@@ -1,0 +1,71 @@
+### Lighting Scenes
+
+##  Kitchen
+#   Kitchen Regular On
+- name: Downstairs Kitchen On
+  entities:
+    light.kitchen_ceiling:
+      state: on
+      brightness: 143
+    light.kitchen_sink:
+      state: on
+      brightness: 64
+
+#   Dining Regular On
+- name: Downstairs Dining On
+  entities:
+    light.kitchen_dining_pendant:
+      state: on
+      brightness: 127
+
+#   Kitchen Off
+- name: Downstairs Kitchen Off
+  entities:
+    light.kitchen_ceiling:
+      state: off
+    light.kitchen_sink:
+      state: off
+    switch.kitchen_cabinets:
+      state: off
+
+#   Kitchen Dining Off
+- name: Downstairs Kitchen Dining Off
+  entities:
+    light.kitchen_ceiling:
+      state: off
+    light.kitchen_sink:
+      state: off
+    light.kitchen_dining_pendant:
+      state: off
+
+#   Downstairs All On
+- name: Downstairs All On
+  entities:
+    light.kitchen_ceiling:
+      state: on
+      brightness: 143
+    light.kitchen_sink:
+      state: on
+      brightness: 64
+    light.kitchen_dining_pendant:
+      state: on
+      brightness: 127
+    light.living_room_main:
+      state: on
+      brightness: 127
+    switch.plug_in_switch_switch:
+      state: on
+
+#   Downstairs All Off
+- name: Downstairs All Off
+  entities:
+    light.kitchen_ceiling:
+      state: off
+    light.kitchen_sink:
+      state: off
+    light.kitchen_dining_pendant:
+      state: off
+    light.living_room_main:
+      state: off
+    switch.plug_in_switch_switch:
+      state: off

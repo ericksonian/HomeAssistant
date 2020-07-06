@@ -1,0 +1,55 @@
+###### INPUT SELECT ------------------------------------------
+  
+input_select:
+  alarm_wakeup_sounds:
+    name: 'Select Sounds:'
+    options:
+      - None
+      - Babbling Brook
+      - Oscillating Fan
+      - Fireplace
+      - Forest
+      - Country Night
+      - Ocean
+      - Rain
+      - River
+      - Thunderstorm
+      - White Noise
+    initial: Forest
+
+###### SCRIPT ------------------------------------------
+    
+script:
+  alarm_wakeup_trigger:
+    alias: Alarm Sounds
+    sequence:
+      - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.bedroom_speaker
+          volume_level: 0.2
+      - delay:
+          milliseconds: 200
+      - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.bathroom_speaker
+          volume_level: 0.2
+      - delay:
+          milliseconds: 200
+      - service: media_player.play_media
+        data_template:
+          entity_id: media_player.master
+          media_content_id: >
+            {% if is_state("input_select.alarm_wakeup_sounds", "None") %} https://www.gstatic.com/voice_delight/sounds/long/brook
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Babbling Brook") %} https://www.gstatic.com/voice_delight/sounds/long/brook.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Oscillating Fan") %} https://www.gstatic.com/voice_delight/sounds/long/oscillating_fan.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Fireplace") %} https://www.gstatic.com/voice_delight/sounds/long/fireplace.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Forest") %} https://www.gstatic.com/voice_delight/sounds/long/forest.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Country Night") %} https://www.gstatic.com/voice_delight/sounds/long/country_night.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Ocean") %} https://www.gstatic.com/voice_delight/sounds/long/ocean.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Rain") %} https://www.gstatic.com/voice_delight/sounds/long/rain.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "River") %} https://www.gstatic.com/voice_delight/sounds/long/river.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "Thunderstorm") %} https://www.gstatic.com/voice_delight/sounds/long/thunder.mp3
+            {% elif is_state("input_select.alarm_wakeup_sounds", "White Noise") %} https://www.gstatic.com/voice_delight/sounds/long/pink_noise.mp3
+            {% endif %}
+          media_content_type: 'audio/mp4'
+

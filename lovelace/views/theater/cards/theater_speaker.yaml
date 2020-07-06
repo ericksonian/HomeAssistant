@@ -1,0 +1,12 @@
+card:
+  artwork: cover
+  entity: media_player.theater_speaker
+  group: false
+  icon: 'mdi:google-home'
+  type: 'custom:mini-media-player'
+conditions:
+  - entity: media_player.theater_speaker
+    state_not: 'off'
+  - entity: media_player.everywhere
+    state: 'off'
+type: conditional

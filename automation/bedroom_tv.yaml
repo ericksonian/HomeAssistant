@@ -1,0 +1,14 @@
+## Master TV
+
+# Chromecast
+- alias: Master Bed Cast Started
+  trigger:
+  - platform: state
+    entity_id: media_player.bedroom_tv
+    from: "off"
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.bedroom_tv
+      volume_level: 0.7

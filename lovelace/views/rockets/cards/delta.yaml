@@ -1,0 +1,13 @@
+title: Delta (ULA)
+type: entities
+entities:
+  - entity: sensor.next_rocket_delta
+    icon: 'mdi:clock'
+    name: Next Launch
+  - entity: sensor.next_rocket_delta_comment
+    icon: 'mdi:rocket'
+    name: Vehicle / Payload
+  - entity: sensor.next_rocket_delta_location
+    icon: 'mdi:crosshairs-gps'
+  - entity: sensor.next_rocket_delta_date
+    icon: 'mdi:calendar'

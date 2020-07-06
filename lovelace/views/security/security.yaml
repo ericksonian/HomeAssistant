@@ -1,0 +1,12 @@
+title: Security
+icon: 'mdi:security'
+badges: []
+panel: false
+path: default_view
+theme: Backend-selected
+cards:
+  - !include /config/lovelace/views/security/cards/persons.yaml
+  - !include /config/lovelace/views/security/cards/garage_door.yaml
+  - !include /config/lovelace/views/security/cards/front_door.yaml
+  - !include /config/lovelace/views/security/cards/front_gate.yaml
+  - !include /config/lovelace/cards_shared/footer.yaml

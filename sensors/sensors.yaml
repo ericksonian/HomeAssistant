@@ -1,0 +1,42 @@
+
+### Plex Sensors
+# Plex
+#- platform: plex
+#  host: !secret server_host
+#  port: !secret plex_port
+#  token: !secret plex_token
+#  username: !secret plex_username
+#  password: !secret plex_password
+# Tautulli
+#- platform: tautulli
+#  api_key: !secret tautulli_api_key
+#  host: !secret server_host
+
+# Sonarr
+#- platform: sonarr
+#  api_key: !secret sonarr_api_key
+#  host: !secret server_host
+#  monitored_conditions:
+#    - series
+#    - upcoming
+#    - wanted
+#    - queue
+#    - diskspace
+#  include_paths:
+#    - /tv
+#  unit: TB
+#  days: 7
+
+# Radarr
+#- platform: radarr
+#  api_key: !secret radarr_api_key
+#  host: !secret server_host
+#  monitored_conditions:
+#    - movies
+#    - upcoming
+#    - diskspace
+#  include_paths:
+#    - /downloads
+#  unit: GB
+#  days: 7
+

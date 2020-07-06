@@ -1,0 +1,195 @@
+###### AUTOMATIONS --------------------------------------
+
+automation:
+# Daylight
+- alias: Pancake Daylight On Sunrise
+  trigger:
+  - platform: sun
+    event: sunrise
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.vesync_white
+
+- alias: Pancake Daylight Off Sunset
+  trigger:
+  - platform: sun
+    event: sunset
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.vesync_white
+
+# Heat Lamp
+- alias: Pancake Heat Off Sunrise Plus 1
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: "+01:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.pancake_auto_heat
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.pancake_pad_heat_1
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.vesync_blue
+
+- alias: Pancake Heat On Sunset Minus 1
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.pancake_auto_heat
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.pancake_pad_heat_1
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.vesync_blue
+
+- alias: Pancake Heat Off Sunrise Plus 2
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: "+02:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.pancake_auto_heat
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.pancake_pad_heat_2
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.vesync_blue
+
+- alias: Pancake Heat On Sunset Minus 2
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: "-02:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.pancake_auto_heat
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.pancake_pad_heat_2
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.vesync_blue
+
+- alias: Pancake Heat Off Sunrise Plus 3
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: "+03:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.pancake_auto_heat
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.pancake_pad_heat_3
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.vesync_blue
+
+- alias: Pancake Heat On Sunset Minus 3
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: "-03:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.pancake_auto_heat
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.pancake_pad_heat_3
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.vesync_blue
+
+###### NOTIFICATIONS ------------------------------------
+
+- alias: Pancake Heat Lamp Out
+  trigger:
+  - entity_id: switch.vesync_blue
+    platform: state
+    to: "on"
+    for: "00:01:00"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('switch.vesync_blue', 'current_power_w') < 5.0 }}"
+  action:
+  - service: !secret notify_ian
+    data:
+      title: Pancake's Gonna Get Cold
+      message: Heat Lamp is reporting 0 power
+- alias: Pancake Daylight Out
+  trigger:
+  - entity_id: switch.vesync_white
+    platform: state
+    to: "on"
+    for: "00:01:00"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('switch.vesync_white', 'current_power_w') < 5.0 }}"
+  action:
+  - service: !secret notify_ian
+    data:
+      title: Pancake's Gonna Be Confused
+      message: Daylight is reporting 0 power
+
+###### SCRIPTS ------------------------------------------
+    
+script:
+  pancake_pad_heat_select_1:
+    sequence:
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.pancake_pad_heat_1
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.pancake_pad_heat_2
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.pancake_pad_heat_3
+
+  pancake_pad_heat_select_2:
+    sequence:
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.pancake_pad_heat_2
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.pancake_pad_heat_1
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.pancake_pad_heat_3
+
+  pancake_pad_heat_select_3:
+    sequence:
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.pancake_pad_heat_3
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.pancake_pad_heat_1
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.pancake_pad_heat_2
+

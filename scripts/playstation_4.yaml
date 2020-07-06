@@ -1,0 +1,59 @@
+# PlayStation
+ps4_up:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: up
+ps4_down:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: down
+ps4_left:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: left
+ps4_right:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: right
+ps4_enter:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: enter
+ps4_back:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: back
+ps4_option:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: option
+ps4_ps:
+  sequence:
+    - service: ps4.send_command
+      data:
+        entity_id: media_player.playstation_4
+        command: ps
+ps4_on:
+  sequence:
+    - service: media_player.turn_on
+      data:
+        entity_id: media_player.playstation_4
+ps4_off:
+  sequence:
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.playstation_4

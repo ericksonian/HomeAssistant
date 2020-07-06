@@ -1,0 +1,29 @@
+##  Lighting
+
+#   Garage Opening Lights On
+- alias: Garage Opening Lights On
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    from: closed
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.exterior_garage_driveway_on
+
+#   Garage Closed Lights Off
+- alias: Garage Closed Lights Off
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: closed
+    for: "00:00:30"
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.exterior_garage_driveway_off
+

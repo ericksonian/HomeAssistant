@@ -1,0 +1,11 @@
+title: Rockets
+icon: 'mdi:rocket'
+path: rockets
+badges: []
+cards:
+  - !include /config/lovelace/views/rockets/cards/falcon.yaml
+  - !include /config/lovelace/views/rockets/cards/atlas.yaml
+  - !include /config/lovelace/views/rockets/cards/vega.yaml
+  - !include /config/lovelace/views/rockets/cards/soyuz.yaml
+  - !include /config/lovelace/views/rockets/cards/delta.yaml
+  - !include /config/lovelace/cards_shared/footer.yaml

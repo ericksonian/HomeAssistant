@@ -1,0 +1,110 @@
+### Configuration
+homeassistant:
+  name: !secret location
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # In Meters
+  elevation: !secret elevation
+  # metric, imperial
+  unit_system: imperial
+  # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+default_config:
+cloud:
+mobile_app:
+discovery:
+http:
+   base_url: !secret base_url
+frontend:
+  themes: !include_dir_merge_named themes/
+lovelace:
+  mode: yaml
+sensor: !include_dir_merge_list sensors/
+group: !include groups.yaml
+automation: !include_dir_merge_list automation/
+script: !include_dir_merge_named scripts/
+scene: !include_dir_merge_list scenes/
+input_boolean: !include_dir_merge_named input_booleans/
+
+# Garage Door
+cover:
+  - platform: myq
+    username: !secret myq_username
+    password: !secret myq_password
+    type: !secret myq_type
+
+# Cameras
+camera:
+  - platform: ffmpeg
+    name: FrontDoor
+    input: !secret camera_RTSP_FrontDoor
+  - platform: ffmpeg
+    name: Garage
+    input: !secret camera_RTSP_Garage
+  - platform: ffmpeg
+    name: Pancake
+    input: !secret camera_RTSP_Pancake
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+# iOS
+ios:
+  push:
+    categories: !include_dir_merge_list ios/
+
+# Media Players
+media_player:
+  - platform: songpal
+    name: Living Sony
+    endpoint: !secret sony_receiver_ip
+#apple_tv:
+
+# Spotify
+#spotify:
+#  client_id: !secret spotify_client_id
+#  client_secret: !secret spotify_client_secret
+
+# Broadlink
+remote:
+  - platform: broadlink
+    host: !secret broadlink_living_ip
+    mac: !secret broadlink_living_mac
+    name: Living Remote
+  - platform: broadlink
+    host: !secret broadlink_master_ip
+    mac: !secret broadlink_master_mac
+    name: Master Remote
+
+#Switches
+lutron_caseta_pro:
+    bridges:
+      - host: !secret caseta_bridge_ip
+        mac: !secret caseta_bridge_mac
+        switch: [ 9 ]
+        fan: [ 11 ]
+switch:
+  - platform: broadlink
+    host: !secret broadlink_living_ip
+    mac: !secret broadlink_living_mac
+    type: rm2_pro_plus
+    friendly_name: Living Room IR
+  - platform: broadlink
+    host: !secret broadlink_master_ip
+    mac: !secret broadlink_master_mac
+#    type: rm_mini
+    friendly_name: Master IR
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+vesync:
+  username: !secret vesync_username
+  password: !secret vesync_password
+
+#zwave:
+#  usb_path: !secret zwave_usb_path
+#  network_key: !secret zwave_network_key
+

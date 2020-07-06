@@ -1,0 +1,90 @@
+## Living TV
+
+# Chromecast
+- alias: Living Cast Started
+  trigger:
+  - platform: state
+    entity_id: media_player.living_room_tv
+    from: "off"
+  condition:
+  - condition: state
+    entity_id: sensor.living_room_tv_cast_unavailable
+    state: "false"
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.living_top_chromecast
+
+- alias: Living Cast Ended
+  trigger:
+  - platform: state
+    entity_id: media_player.living_room_tv
+    to: "off"
+    for: "00:30:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_top_current_chromecast
+    state: "on"
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.living_top_off
+
+# AppleTV
+- alias: Living AirPlay Started
+  trigger:
+  - platform: state
+    entity_id: media_player.living_room_appletv
+    from: "idle"
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_top_current_appletv
+    state: "off"
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.living_top_appletv
+
+- alias: Living AirPlay Ended
+  trigger:
+  - platform: state
+    entity_id: media_player.living_room_appletv
+    to: "idle"
+    for: "00:60:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_top_current_appletv
+    state: "on"
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.living_top_off
+
+# PlayStation 4
+- alias: Living PlayStation On
+  trigger:
+  - platform: state
+    entity_id: media_player.playstation_4
+    from: "standby"
+  condition:
+  - condition: state
+    entity_id: sensor.ps4_unavailable
+    state: "false"
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.living_top_playstation
+
+- alias: Living PlayStation Off
+  trigger:
+  - platform: state
+    entity_id: media_player.playstation_4
+    to: "standby"
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_top_current_playstation
+    state: "on"
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.living_top_off

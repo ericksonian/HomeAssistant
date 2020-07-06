@@ -1,0 +1,6 @@
+type: glance
+entities:
+  - entity: person.ian
+    image: /local/ian.png
+  - entity: person.sean
+    image: /local/sean.png

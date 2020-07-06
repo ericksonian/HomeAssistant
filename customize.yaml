@@ -1,0 +1,4 @@
+sensor.radarr_disk_space:
+      friendly_name: Internal SSD
+sensor.sonarr_disk_space:
+      friendly_name: Media Storage

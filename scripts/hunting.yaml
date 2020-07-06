@@ -1,0 +1,51 @@
+
+# Hunt Mode
+mode_hunt_start:
+  sequence:
+  - service: scene.create
+    data:
+      scene_id: before_hunt
+      snapshot_entities:
+      - switch.kitchen_cabinets
+      - light.kitchen_ceiling
+      - light.kitchen_sink
+      - light.kitchen_dining_pendant
+      - light.exterior_back_door
+      - light.living_room_main
+      - switch.plug_in_switch_switch
+      - light.exterior_front_door
+  - service: switch.turn_on
+    data:
+      entity_id: switch.kitchen_cabinets
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_ceiling
+      brightness: 249
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_sink
+      brightness: 249
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_dining_pendant
+      brightness: 249
+  - service: light.turn_on
+    data:
+      entity_id: light.exterior_back_door
+      brightness: 249
+  - service: light.turn_on
+    data:
+      entity_id: light.living_room_main
+      brightness: 249
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug_in_switch_switch
+  - service: light.turn_on
+    data:
+      entity_id: light.exterior_front_door
+      brightness: 249
+mode_hunt_end:
+  sequence:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.before_hunt

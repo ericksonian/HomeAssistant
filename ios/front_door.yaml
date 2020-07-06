@@ -1,0 +1,21 @@
+### iOS Actions
+
+##  Categories
+- name: Front Door Unlocked
+  identifier: 'front_door_unlocked'
+  actions:
+    - identifier: 'LOCK_FRONT_DOOR'
+      title: 'Lock Door'
+      activationMode: 'background'
+      authenticationRequired: true
+      destructive: true
+      behavior: 'default'
+- name: Front Door Locked
+  identifier: 'front_door_locked'
+  actions:
+    - identifier: 'UNLOCK_FRONT_DOOR'
+      title: 'Unlock Door'
+      activationMode: 'background'
+      authenticationRequired: true
+      destructive: true
+      behavior: 'default'

@@ -1,0 +1,13 @@
+title: Soyuz (OKB)
+type: entities
+entities:
+  - entity: sensor.next_rocket_soyuz
+    icon: 'mdi:clock'
+    name: Next Launch
+  - entity: sensor.next_rocket_soyuz_comment
+    icon: 'mdi:rocket'
+    name: Vehicle / Payload
+  - entity: sensor.next_rocket_soyuz_location
+    icon: 'mdi:crosshairs-gps'
+  - entity: sensor.next_rocket_soyuz_date
+    icon: 'mdi:calendar'

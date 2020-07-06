@@ -1,0 +1,53 @@
+### Front Door
+
+## Lock Up
+# 11pm
+- alias: Lock Up 11pm
+  trigger:
+  - platform: time
+    at: "22:59:55"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+# Midnight
+- alias: Lock Up 12am
+  trigger:
+  - platform: time
+    at: "23:59:55"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+# 1am
+- alias: Lock Up 1am
+  trigger:
+  - platform: time
+    at: "00:59:55"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+## Nobody Home - Lock Up
+- alias: Nobody Home - Lock Up
+  trigger:
+  - platform: state
+    entity_id: group.all_devices
+    to: not_home
+    for: "01:00:00"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door

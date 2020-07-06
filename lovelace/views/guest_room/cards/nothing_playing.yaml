@@ -1,0 +1,17 @@
+card:
+  color: 'rgb(50, 50, 50)'
+  color_type: label-card
+  name: Nothing Playing in Guest Room
+  style: |
+    ha-card {
+      border-radius: 15px;
+    }
+  type: 'custom:button-card'
+conditions:
+  - entity: media_player.guest_room_speaker
+    state: 'off'
+  - entity: media_player.guest_bathroom_speaker
+    state: 'off'
+  - entity: media_player.guest_room_tv
+    state: 'off'
+type: conditional

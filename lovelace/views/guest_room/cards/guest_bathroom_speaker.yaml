@@ -1,0 +1,16 @@
+card:
+  artwork: cover
+  entity: media_player.guest_bathroom_speaker
+  group: false
+  icon: 'mdi:google-home'
+  style: |
+    ha-card {
+      border-radius: 15px;
+    }
+  type: 'custom:mini-media-player'
+conditions:
+  - entity: media_player.guest_bathroom_speaker
+    state_not: 'off'
+  - entity: media_player.everywhere
+    state: 'off'
+type: conditional

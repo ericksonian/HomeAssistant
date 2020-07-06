@@ -1,0 +1,45 @@
+##  Lighting
+
+#   Kitchen Lights On with Switch
+- alias: Kitchen Light Auto Dim Ceiling
+  trigger:
+  - entity_id: light.kitchen_ceiling
+    platform: state
+    to: "on"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('light.kitchen_ceiling', 'brightness') > 250 }}"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_ceiling
+      brightness: 143
+
+- alias: Kitchen Light Auto Dim Sink
+  trigger:
+  - entity_id: light.kitchen_sink
+    platform: state
+    to: "on"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('light.kitchen_sink', 'brightness') > 250 }}"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_sink
+      brightness: 64
+
+- alias: Kitchen Light Auto Dim Dining
+  trigger:
+  - entity_id: light.kitchen_dining_pendant
+    platform: state
+    to: "on"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('light.kitchen_dining_pendant', 'brightness') > 250 }}"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_dining_pendant
+      brightness: 126
+

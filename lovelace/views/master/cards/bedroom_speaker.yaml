@@ -1,0 +1,14 @@
+type: conditional
+conditions:
+  - entity: media_player.bedroom_speaker
+    state_not: 'off'
+  - entity: media_player.master
+    state: 'off'
+  - entity: media_player.everywhere
+    state: 'off'
+card:
+  artwork: cover
+  entity: media_player.bedroom_speaker
+  group: false
+  icon: 'mdi:cast'
+  type: 'custom:mini-media-player'

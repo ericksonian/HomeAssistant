@@ -1,0 +1,33 @@
+### Broadlink IR Commands
+
+## Master Fan
+# Fan Power Off
+remote_master_fan_power_off_learn:
+  sequence:
+    - service: remote.learn_command
+      data:
+        entity_id: remote.master
+        device: fan
+        command: power_off
+remote_master_fan_power_off:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.master
+        device: fan
+        command: power_off
+# Fan Power 1
+remote_master_fan_power_1_learn:
+  sequence:
+    - service: remote.learn_command
+      data:
+        entity_id: remote.master
+        device: fan
+        command: power_1
+remote_master_fan_power_1:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.master
+        device: fan
+        command: power_1

@@ -1,0 +1,4 @@
+title: Morning Music
+type: entities
+entities:
+  - entity: input_select.alarm_wakeup_sounds

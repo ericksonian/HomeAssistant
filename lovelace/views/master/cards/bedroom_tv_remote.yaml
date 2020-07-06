@@ -1,0 +1,105 @@
+type: conditional
+conditions:
+  - entity: media_player.bedroom_tv
+    state_not: 'off'
+card:
+  cards:
+    - cards:
+        - color: 'rgb(50, 50, 50)'
+          color_type: label-card
+          name: Woofer
+          type: 'custom:button-card'
+        - entity: script.remote_master_soundbar_samsung_woofer_up
+          hold_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.remote_master_soundbar_samsung_woofer_up_learn
+          icon: 'mdi:arrow-up'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.remote_master_soundbar_samsung_woofer_up
+          type: entity-button
+        - entity: script.remote_master_soundbar_samsung_woofer_down
+          hold_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.remote_master_soundbar_samsung_woofer_down_learn
+          icon: 'mdi:arrow-down'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.remote_master_soundbar_samsung_woofer_down
+          type: entity-button
+      type: vertical-stack
+    - cards:
+        - entity: script.appletv_left
+          icon: 'mdi:television'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.appletv_up
+          type: entity-button
+        - entity: script.appletv_up
+          icon: 'mdi:volume-mute'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.appletv_up
+          type: entity-button
+        - entity: script.appletv_up
+          hold_action:
+            action: none
+          icon: 'mdi:sleep'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.appletv_right
+          type: entity-button
+        - entity: media_player.bedroom_tv
+          icon: 'mdi:power'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: media_player.turn_off
+            service_data:
+              entity_id: media_player.bedroom_tv
+          type: entity-button
+      type: vertical-stack
+    - cards:
+        - color: 'rgb(50, 50, 50)'
+          color_type: label-card
+          name: Volume
+          type: 'custom:button-card'
+        - entity: script.appletv_up
+          icon: 'mdi:volume-plus'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.appletv_up
+          type: entity-button
+        - entity: script.appletv_up
+          icon: 'mdi:volume-minus'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.appletv_right
+          type: entity-button
+      type: vertical-stack
+  type: horizontal-stack

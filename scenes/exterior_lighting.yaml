@@ -1,0 +1,63 @@
+##  Exterior Scenes
+
+#   Exterior Driveway On
+- name: Exterior Driveway On
+  entities:
+    light.exterior_driveway:
+      state: on
+      brightness: 200
+
+#   Exterior Garage Driveway On
+- name: Exterior Garage Driveway On
+  entities:
+    light.exterior_driveway:
+      state: on
+      brightness: 180
+    switch.garage_ceiling:
+      state: on
+
+#   Exterior Garage Driveway Off
+- name: Exterior Garage Driveway Off
+  entities:
+    light.exterior_driveway:
+      state: off
+    switch.garage_ceiling:
+      state: off
+
+#   Exterior Front On
+- name: Exterior Front On
+  entities:
+    light.exterior_front_door:
+      state: on
+      brightness: 200
+    light.exterior_driveway:
+      state: on
+      brightness: 155
+
+#   Exterior Yard On
+- name: Exterior Yard On
+  entities:
+    light.exterior_front_door:
+      state: on
+      brightness: 200
+    light.exterior_back_door:
+      state: on
+      brightness: 150
+
+#   Exterior Yard Off
+- name: Exterior Yard Off
+  entities:
+    light.exterior_front_door:
+      state: off
+    light.exterior_back_door:
+      state: off
+
+#   Exterior All Off
+- name: Exterior All Off
+  entities:
+    light.exterior_front_door:
+      state: off
+    light.exterior_back_door:
+      state: off
+    light.exterior_driveway:
+      state: off

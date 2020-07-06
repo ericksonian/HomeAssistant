@@ -1,0 +1,14 @@
+card:
+  artwork: cover
+  entity: media_player.theater_tv
+  group: false
+  icon: 'mdi:cast'
+  type: 'custom:mini-media-player'
+conditions:
+  - entity: media_player.theater_tv
+    state_not: 'off'
+  - entity: media_player.everywhere
+    state: 'off'
+  - entity: media_player.woofers
+    state: 'off'
+type: conditional

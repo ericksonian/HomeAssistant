@@ -1,0 +1,8 @@
+title: Downloads
+type: entities
+show_header_toggle: false
+entities:
+  - entity: sensor.radarr_upcoming
+  - entity: sensor.sonarr_queue
+  - entity: sensor.sonarr_upcoming
+  - entity: sensor.sonarr_wanted
