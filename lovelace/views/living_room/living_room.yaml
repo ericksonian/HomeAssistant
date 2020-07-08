@@ -762,7 +762,8 @@ cards:
           hide:
             power: true
             source: true
-            volume: true
+            volume: false
+            play_pause: false
           icon: 'mdi:cast'
           style: |
             ha-card {

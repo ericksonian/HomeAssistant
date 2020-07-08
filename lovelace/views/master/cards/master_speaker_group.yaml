@@ -4,9 +4,11 @@ conditions:
     state_not: 'off'
 card:
   entities:
-    - artwork: cover
-      entity: media_player.master
+    - entity: media_player.master
+      artwork: cover
       group: false
+      hide:
+        controls: false
       icon: 'mdi:cast-audio'
       type: 'custom:mini-media-player'
     - entity: media_player.bedroom_speaker
