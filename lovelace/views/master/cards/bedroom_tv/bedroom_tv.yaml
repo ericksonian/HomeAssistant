@@ -1,0 +1,4 @@
+type: vertical-stack
+cards:
+  - !include /config/lovelace/views/master/cards/bedroom_tv/bedroom_tv_media_player.yaml
+  - !include /config/lovelace/views/master/cards/bedroom_tv/bedroom_tv_remote.yaml

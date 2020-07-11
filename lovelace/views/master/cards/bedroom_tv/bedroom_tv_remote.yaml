@@ -1,0 +1,86 @@
+type: conditional
+conditions:
+  - entity: media_player.bedroom_tv
+    state_not: 'off'
+card:
+  cards:
+    - cards:
+        - color: 'rgb(50, 50, 50)'
+          color_type: label-card
+          name: Woofer
+          type: 'custom:button-card'
+        - entity: script.master_soundbar_woofer_up
+          icon: 'mdi:arrow-up'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_soundbar_woofer_up
+          type: entity-button
+        - entity: script.master_soundbar_woofer_down
+          icon: 'mdi:arrow-down'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_soundbar_woofer_down
+          type: entity-button
+      type: vertical-stack
+    - cards:
+        - entity: script.master_tv_picture
+          icon: 'mdi:television'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_tv_picture
+          type: entity-button
+        - entity: script.master_soundbar_volume_mute
+          icon: 'mdi:volume-mute'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_soundbar_volume_mute
+          type: entity-button
+        - entity: script.master_tv_sleep
+          hold_action:
+            action: none
+          icon: 'mdi:sleep'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_tv_sleep
+          type: entity-button
+      type: vertical-stack
+    - cards:
+        - color: 'rgb(50, 50, 50)'
+          color_type: label-card
+          name: Volume
+          type: 'custom:button-card'
+        - entity: script.master_soundbar_volume_up
+          icon: 'mdi:volume-plus'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_soundbar_volume_up
+          type: entity-button
+        - entity: script.master_soundbar_volume_down
+          icon: 'mdi:volume-minus'
+          show_name: false
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_soundbar_volume_down
+          type: entity-button
+      type: vertical-stack
+  type: horizontal-stack

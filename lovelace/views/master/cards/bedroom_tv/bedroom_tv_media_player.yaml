@@ -1,0 +1,40 @@
+type: conditional
+conditions:
+  - entity: media_player.bedroom_tv
+    state_not: 'off'
+  - entity: media_player.woofers
+    state: 'off'
+card:
+  type: vertical-stack
+  cards:
+    - type: 'custom:button-card'
+      color: 'rgb(200,200,200)'
+      color_type: label-card
+      name: Bedroom TV
+      styles:
+        card:
+          - height: 24px
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: media_player.bedroom_tv
+          icon: 'mdi:power'
+          show_name: false
+          styles:
+            card:
+              - height: 112px
+                width: 60px
+            icon:
+              - color: 'rgb(255,0,0)'
+          tap_action:
+            action: call-service
+            service: media_player.turn_off
+            service_data:
+              entity_id: media_player.bedroom_tv
+        - type: 'custom:mini-media-player'
+          artwork: cover
+          entity: media_player.bedroom_tv
+          group: false
+          icon: 'mdi:cast'
+          hide:
+            power: true

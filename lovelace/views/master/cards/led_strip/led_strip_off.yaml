@@ -1,0 +1,36 @@
+type: conditional
+conditions:
+  - entity: input_boolean.master_ledstrip_power
+    state: 'off'
+card:
+  type: horizontal-stack
+  cards:
+    - type: 'custom:button-card'
+      color: 'rgb(50, 50, 50)'
+      color_type: label-card
+      name: Bed Lights
+      hold_action:
+        action: call-service
+        service: input_boolean.turn_on
+        service_data:
+          entity_id: input_boolean.master_ledstrip_power
+      styles:
+        card:
+          - height: 70px
+      style: |
+        ha-card {
+          border-radius: 10px;
+        }
+    - type: 'custom:button-card'
+      entity: script.master_ledstrip_power_on
+      icon: 'mdi:power'
+      show_name: false
+      tap_action:
+        action: call-service
+        service: script.turn_on
+        service_data:
+          entity_id: script.master_ledstrip_power_on
+      styles:
+        card:
+          - height: 70px
+            width: 70px

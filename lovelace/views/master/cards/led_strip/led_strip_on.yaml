@@ -1,0 +1,150 @@
+type: conditional
+conditions:
+  - entity: input_boolean.master_ledstrip_power
+    state: 'on'
+card:
+  type: vertical-stack
+  cards:
+    - type: 'custom:button-card'
+      color: 'rgb(200,200,200)'
+      color_type: label-card
+      name: Bed Lights
+      styles:
+        card:
+          - height: 24px
+### Control
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: input_boolean.master_ledstrip_more
+          show_name: false
+          icon: 'mdi:dots-horizontal-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 75px
+            icon:
+              - color: 'rgb(200,200,200)'
+          state:
+            - value: 'on'
+              icon: 'mdi:dots-horizontal-circle'
+          tap_action:
+            action: call-service
+            service: input_boolean.toggle
+            service_data:
+              entity_id: input_boolean.master_ledstrip_more
+        - type: 'custom:button-card'
+          entity: script.master_ledstrip_dim_up
+          icon: 'mdi:arrow-up-drop-circle-outline'
+          show_name: false
+          styles:
+            card:
+              - height: 75px
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_dim_up
+        - type: 'custom:button-card'
+          entity: script.master_ledstrip_dim_down
+          icon: 'mdi:arrow-down-drop-circle-outline'
+          show_name: false
+          styles:
+            card:
+              - height: 75px
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_dim_down
+        - type: 'custom:button-card'
+          entity: script.master_ledstrip_power_off
+          icon: 'mdi:power'
+          show_name: false
+          styles:
+            card:
+              - height: 75px
+            icon:
+              - color: 'rgb(255,0,0)'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_power_off
+### Main RGBW
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:alpha-r-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(255,0,0)'
+          state:
+            - value: 'red'
+              icon: 'mdi:alpha-r-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_red
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:alpha-g-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(0,255,0)'
+          state:
+            - value: 'green'
+              icon: 'mdi:alpha-g-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_green
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:alpha-b-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(0,0,255)'
+          state:
+            - value: 'blue'
+              icon: 'mdi:alpha-b-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_blue
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:alpha-w-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(255,255,255)'
+          state:
+            - value: 'white'
+              icon: 'mdi:alpha-w-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_white
+
+
