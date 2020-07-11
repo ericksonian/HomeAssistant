@@ -1,3 +1,10 @@
+
+###### INPUT BOOLEANS ------------------------------------------
+
+input_boolean:
+  master_ledstrip_alarm:
+    name: Master LED Strip Alarm
+
 ###### INPUT SELECT ------------------------------------------
   
 input_select:
@@ -15,12 +22,34 @@ input_select:
       - River
       - Thunderstorm
       - White Noise
-#    initial: None
 
-###### SCRIPT ------------------------------------------
-    
+###### SCRIPT ------------------------------------------    
 script:
+# Alarm Wakeup Trigger
   alarm_wakeup_trigger:
+    alias: Alarm Trigger
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: alarm_wakeup_sounds_trigger
+#      - service: script.turn_on
+#        data:
+#          entity_id: alarm_wakeup_lights_trigger
+
+# Alarm Macros
+#  alarm_wakeup_lights_trigger:
+#    alias: Alarm Lights
+#    sequence:
+#      - service: script.turn_on
+#        data_template:
+#          entity_id: >
+#            {% if is_state("input_boolean.master_ledstrip_alarm", "off") %} ''
+#            {% elif is_state("input_boolean.master_ledstrip_alarm", "on") %} 'script.alarm_wakeup_lights'
+#            {% endif %}
+#  alarm_wakeup_lights:
+#      - service: script.turn_on
+#        entity_id: script.master_ledstrip_power_on
+  alarm_wakeup_sounds_trigger:
     alias: Alarm Sounds
     sequence:
       - service: media_player.volume_set
@@ -39,7 +68,7 @@ script:
         data_template:
           entity_id: media_player.master
           media_content_id: >
-            {% if is_state("input_select.alarm_wakeup_sounds", "None") %} https://www.gstatic.com/voice_delight/sounds/long/brook
+            {% if is_state("input_select.alarm_wakeup_sounds", "None") %} https://www.nothing
             {% elif is_state("input_select.alarm_wakeup_sounds", "Babbling Brook") %} https://www.gstatic.com/voice_delight/sounds/long/brook.mp3
             {% elif is_state("input_select.alarm_wakeup_sounds", "Oscillating Fan") %} https://www.gstatic.com/voice_delight/sounds/long/oscillating_fan.mp3
             {% elif is_state("input_select.alarm_wakeup_sounds", "Fireplace") %} https://www.gstatic.com/voice_delight/sounds/long/fireplace.mp3

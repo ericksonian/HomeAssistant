@@ -22,9 +22,22 @@ input_boolean:
     name: Master LED Strip More
     initial: off
 
+###### INPUT SELECT ------------------------------------------
+input_select:
+  master_ledstrip_mode:
+    name: 'Master LED Strip Mode'
+    options:
+      - red
+      - green
+      - blue
+      - white
+      - jump3
+      - jump7
+      - fade3
+      - fade7
+
 ###### SCRIPTS ------------------------------------------
 script:
-
 #### Under Bed LED Strip 
 ### Control
 
@@ -80,6 +93,10 @@ script:
 #  Jump 3
   master_ledstrip_jump_3:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: jump3
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -90,6 +107,10 @@ script:
 #  Jump 7
   master_ledstrip_jump_7:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: jump7
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -100,6 +121,10 @@ script:
 #  Fade 3
   master_ledstrip_fade_3:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: fade3
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -110,6 +135,10 @@ script:
 #  Fade 7
   master_ledstrip_fade_7:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: fade7
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -143,6 +172,10 @@ script:
 #  Red
   master_ledstrip_red:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: red
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -153,6 +186,10 @@ script:
 #  Green
   master_ledstrip_green:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: green
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -163,6 +200,10 @@ script:
 #  Blue
   master_ledstrip_blue:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: blue
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -173,6 +214,10 @@ script:
 #  White
   master_ledstrip_white:
     sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: white
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
