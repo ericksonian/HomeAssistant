@@ -1,0 +1,159 @@
+###### AUTOMATIONS --------------------------------------
+#automation:
+# Cast Monitored TV Control
+#- alias: Master Bed Cast Started
+#  trigger:
+#  - platform: state
+#    entity_id: media_player.bedroom_tv
+#    from: "off"
+#  condition: []
+#  action:
+#  - service: media_player.volume_set
+#    data:
+#      entity_id: media_player.bedroom_tv
+#      volume_level: 0.7
+
+
+###### SCRIPTS ------------------------------------------
+script:
+
+#### Under Bed LED Strip 
+### Control
+
+#  Power Toggle
+  master_ledstrip_power:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMSExISERQRFBETERMSExISETgSOBE3EzYSOBE4EjYTNxITERMRFBEUERISExI3EhMROBI3EjcSNxI3EjcSExE4EQAFNgABJEkTAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Dim Up
+  master_ledstrip_dim_up:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMTEhITERMSExEUERMRExITEjcROBI3EjcSNxE4EjcSNxITERQRNxI3EjgRExE5EBMTNhM3ERQRExEUETcSExI3EQAFNwABIksSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Dim Down
+  master_ledstrip_dim_down:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MRExETEhITEhEUERMSExEUETcTNhM3ETgRNxM3ETgROBI3EhISOBE4EjcTERI3EhMSExE3EhMSExISEjcSExE3EwAFNgABJEkRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+
+### Effects
+
+#  Jump 3
+  master_ledstrip_jump_3:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMSEhEUERQRExITERMSEhITEjcRORE4ETcROBI4ETcSNxMSEhMROBISEhMSEhMSEhMROBE3ExIROBI3EjcSNxI3EgAFNgABJEkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Jump 7
+  master_ledstrip_jump_7:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMSExISERQRExITERMSExISEjcSOBE3EzYSOBE4EjYTNxE4EhMRNxITEhISExITERMSExI2ExIROBI3EjcSNxI4EQAFNgABJEkTAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Fade 3
+  master_ledstrip_fade_3:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MSEhITEhIRFBISEhMRFBETEjcSNxI4ETcSNxE4EjgRNxMSEjcSNxITEhISExISERQROBEUERMSNxI3ETgSNxI3EQAFOAABI0kSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Fade 7
+  master_ledstrip_fade_7:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJETEhITERMSExEUERQRExETEjcSNxI3EjcSNxI4ETcTNhM3ETgROBISEhMSExETERQRFBETEhISNxI3EjcSNxI3EgAFNgABJEoRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Quick
+  master_ledstrip_quick:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpISExITERQRExETEhMSEhEUETgROBI3EjcSNxI3EjcROBI4ETcTNhITEjcSExISEhMSEhITEhMROBETEjcSNxI3EgAFNQABJUkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Slow
+  master_ledstrip_slow:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMRFBETERQQFRAUERQQFBISEjgQORA4EjgROBA5ETgROBE4ETgSExETEDkRFBAVERMRFBAUETgROBEUEDgSOBI3EQAFNwABI0oRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+
+### Colors
+
+#  Red
+  master_ledstrip_red:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJISExETEhISExITEhISExAVEDgSNxI4ETgRNxM2EzcROBISERQSEhE5ETgRFBE3EhMSNxE4EjcSEhMSEjcSExE4EgAFNQABJEoSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Green
+  master_ledstrip_green:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJISExETEhITEhITERMSExEUETcSNxI3EjgROBI2EzcSNxE4EhISExI3ETgSExI2ExIRFBE4EjcSEhITEjcRFBE4EgAFNQABI0oSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Blue
+  master_ledstrip_blue:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MSEhITEhISExEUERMSEhITEjcROBI3EzYROBM3ETcSNxQ2ERQRNxISExIRFBE4ERQRExM2EhMSNxE4ETgSEhI3EgAFNgABJUgSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  White
+  master_ledstrip_white:
+    sequence:
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MRFBETEhISExISERQSExAUEjcSNxI3ETgSNxI3EjcSOBETEhISNxMSERQRFBE3EhMROBE4ERQRNxM3EjcRFBE3EgAFNQABJUkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+

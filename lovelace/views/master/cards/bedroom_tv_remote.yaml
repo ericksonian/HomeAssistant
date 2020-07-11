@@ -9,33 +9,23 @@ card:
           color_type: label-card
           name: Woofer
           type: 'custom:button-card'
-        - entity: script.remote_master_soundbar_samsung_woofer_up
-          hold_action:
-            action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.remote_master_soundbar_samsung_woofer_up_learn
+        - entity: script.master_soundbar_woofer_up
           icon: 'mdi:arrow-up'
           show_name: false
           tap_action:
             action: call-service
             service: script.turn_on
             service_data:
-              entity_id: script.remote_master_soundbar_samsung_woofer_up
+              entity_id: script.master_soundbar_woofer_up
           type: entity-button
-        - entity: script.remote_master_soundbar_samsung_woofer_down
-          hold_action:
-            action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.remote_master_soundbar_samsung_woofer_down_learn
+        - entity: script.master_soundbar_woofer_down
           icon: 'mdi:arrow-down'
           show_name: false
           tap_action:
             action: call-service
             service: script.turn_on
             service_data:
-              entity_id: script.remote_master_soundbar_samsung_woofer_down
+              entity_id: script.master_soundbar_woofer_down
           type: entity-button
       type: vertical-stack
     - cards:
@@ -48,14 +38,14 @@ card:
             service_data:
               entity_id: script.master_tv_picture
           type: entity-button
-        - entity: script.appletv_up
+        - entity: script.master_soundbar_volume_mute
           icon: 'mdi:volume-mute'
           show_name: false
           tap_action:
             action: call-service
             service: script.turn_on
             service_data:
-              entity_id: script.appletv_up
+              entity_id: script.master_soundbar_volume_mute
           type: entity-button
         - entity: script.master_tv_sleep
           hold_action:
@@ -83,23 +73,23 @@ card:
           color_type: label-card
           name: Volume
           type: 'custom:button-card'
-        - entity: script.appletv_up
+        - entity: script.master_soundbar_volume_up
           icon: 'mdi:volume-plus'
           show_name: false
           tap_action:
             action: call-service
             service: script.turn_on
             service_data:
-              entity_id: script.appletv_up
+              entity_id: script.master_soundbar_volume_up
           type: entity-button
-        - entity: script.appletv_up
+        - entity: script.master_soundbar_volume_down
           icon: 'mdi:volume-minus'
           show_name: false
           tap_action:
             action: call-service
             service: script.turn_on
             service_data:
-              entity_id: script.appletv_right
+              entity_id: script.master_soundbar_volume_down
           type: entity-button
       type: vertical-stack
   type: horizontal-stack

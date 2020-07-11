@@ -55,10 +55,6 @@ ios:
     categories: !include_dir_merge_list ios/
 
 # Media Players
-media_player:
-  - platform: songpal
-    name: Living Sony
-    endpoint: !secret sony_receiver_ip
 #apple_tv:
 
 # Spotify
@@ -67,15 +63,15 @@ media_player:
 #  client_secret: !secret spotify_client_secret
 
 # Broadlink
-remote:
-  - platform: broadlink
-    host: !secret broadlink_living_ip
-    mac: !secret broadlink_living_mac
-    name: Living Remote
-  - platform: broadlink
-    host: !secret broadlink_master_ip
-    mac: !secret broadlink_master_mac
-    name: Master Remote
+#remote:
+#  - platform: broadlink
+#    host: !secret broadlink_living_ip
+#    mac: !secret broadlink_living_mac
+#    name: Living Remote
+#  - platform: broadlink
+#    host: !secret broadlink_master_ip
+#    mac: !secret broadlink_master_mac
+#    name: Master Remote
 
 #Switches
 lutron_caseta_pro:
