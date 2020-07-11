@@ -1,6 +1,8 @@
 type: history-graph
 entities:
-  - sensor.vesync_white_watts
-  - sensor.vesync_blue_watts
+  - entity: sensor.vesync_white_watts
+    name: Daylight
+  - entity: sensor.vesync_blue_watts
+    name: Heat Lamp
 hours_to_show: 72
 refresh_interval: 30
