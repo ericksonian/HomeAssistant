@@ -93,7 +93,7 @@ switch:
   - platform: broadlink
     host: !secret broadlink_master_ip
     mac: !secret broadlink_master_mac
-#    type: rm_mini
+    type: rm4c_mini
     friendly_name: Master IR
 
 # Text to speech

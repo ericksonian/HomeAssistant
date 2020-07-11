@@ -1,6 +1,14 @@
-type: history-graph
-#title: Rack Power
-entities:
-  - sensor.vesync_rack_watts
-hours_to_show: 72
-refresh_interval: 30
+type: vertical-stack
+cards:
+  - type: history-graph
+#    title: Rack Power
+    entities:
+      - entity: sensor.vesync_rack_watts
+        name: Rack Power Usage
+    hours_to_show: 72
+    refresh_interval: 30
+  - type: entities
+    entities:
+      - entity: sensor.vesync_rack_watts
+        name: Current Usage
+        icon: mdi:power-plug
