@@ -31,6 +31,22 @@ input_select:
       - green
       - blue
       - white
+      - red1
+      - green1
+      - blue1
+      - white1
+      - red2
+      - green2
+      - blue2
+      - white2
+      - red3
+      - green3
+      - blue3
+      - white3
+      - red4
+      - green4
+      - blue4
+      - white4
       - jump3
       - jump7
       - fade3
@@ -226,3 +242,230 @@ script:
       - delay:
           milliseconds: 200
 
+#  Red 1
+  master_ledstrip_red_1:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: red1
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJESExITERQSEhETEhMSEhEUETgROBI3EjcSNxM2EjcSNxITERQRNxITEjcSExE4EhITNhI3EhMROBISEjcTEhE4EgAFOAABI0gSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Green 1
+  master_ledstrip_green_1:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: green1
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMSExETEhMRFBETEhISExISEjcSOBE3EzcROBE4EjcSNxI3ERQRNxITEjcSExE4EhISExI3EhMROBETEjcSEhI4EQAFOgABIEkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Blue 1
+  master_ledstrip_blue_1:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: blue1
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5ITEhITERMRFBEUERMSEhISEzcROBI3EjcSNxI4ETcROBI4ERMSExA4ExISExA5ERQRExI3EjcSExE4ETcTEhI3EQAFNwABI0oSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  White 1
+  master_ledstrip_white_1:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: white1
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJISEhITEhITEhITERQRExETEjcROBI4ETcTNhM3ETgSNhMSERQRExI3EhMSEhI4ERMROBI3EjcSExI3EjcSEhI3EgAFNgABI0sRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+
+#  Red 2
+  master_ledstrip_red_2:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: red2
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJESExISERQRFBETEhISExISEjcSOBE4EjYTNxE4EjcSNxITERMSExEUETcSExI3ERQRNxI3EjcSOBETEjcSExI3EQAFNgABJEoRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Green 2
+  master_ledstrip_green_2:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: green2
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5ISExITERMSEhITEhMSEhITETgSNhM3ETgSNxI3EjcROBI3EhMSEhEUETgSExE3ExISExE4ETgSNxISEjcSExI3EgAFNQABJUkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Blue 2
+  master_ledstrip_blue_2:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: blue2
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MRFBETEhMRExISEhMSExETEjcSNxI3ETgSNxI3EjcSOBE3ExISNxI4ERMSExE3EhMSExI3ERQRExI3EjcRFBE3EgAFNwABI0kSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  White 2
+  master_ledstrip_white_2:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: white2
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MRExITEhISExEUERMSExETEjcSNxI3EjcSNxI3EjgRNxMSEhMSNxE4EhISExI3EhMROBE3ExISExI4ETcSExE3EwAFNwABIkkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+
+#  Red 3
+  master_ledstrip_red_3:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: red3
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5ISExITERMSExISEhMSEhITETgSNxI3EjcSOBE3EjcSNxITEhMRNxM2EzcRFBETERMSNxI3EhMSExETEjcSNxI3EgAFNgABJEkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Green 3
+  master_ledstrip_green_3:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: green3
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMSEhQREhMRFBETERQRExMRETgSOBE3EjcTNxE4ETgSNxI3EhMRNxM2EzcRFBETEhMRExI3EhISExITETgSNhM3EQAFNgABJEoSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Blue 3
+  master_ledstrip_blue_3:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: blue3
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMSExITEhISExEUEBQRExITEjcROBE5ETcSNxI4ETcSNxEUETgSNxI3EjcSExAVEBQROBISEhMRFBETETgSNxI3EgAFNgABI0sRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  White 3
+  master_ledstrip_white_3:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: white3
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5ISExISEhMSEhEUERQRExEUETcTNxE4ETgSNxI3EjcSNxI3EjcSOBE3EjcSExITERMSExETEhITEhITETgROBI3EgAFNQABJUkRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+
+#  Red 4
+  master_ledstrip_red_4:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: red4
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpQRFBETEBQSExISEhMRFBETETgSNxI3ETkRNxI3ETkROBEUERMRExE4ETkRExETEhMSNxE4EjgRExETETgRORE3EgAFNgABJEkRAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Green 4
+  master_ledstrip_green_4:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: green4
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABIJIRExITEhISExEUERMRFBEUETcSNxE5ETcSNxI4ETgROBE4EhISExE4EjcSEhMSEhMRExE5ETcSExISEjgQORE3EwAFNQABJEkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  Blue 4
+  master_ledstrip_blue_4:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: blue4
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABHpMRExEUERQREhMSERQRExITETgSNxI3EjcROBI3EjcRORETETgSEhI4ETgRFBESExISNxITEjcRExITETgSNxI4EQAFNgABJEkSAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200
+#  White 4
+  master_ledstrip_white_4:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: white4
+      - service: broadlink.send
+        data:
+          host: !secret broadlink_master_ip
+          packet:
+              - "JgBQAAABH5MRExITERQRExISExISEhITEjcSNxI3EjcSOBE3EzYTNxE4ETcTEhE4EjgRExISExISExETETgSExETEjcSNxI4EQAFOAABIkkTAA0FAAAAAAAA"
+      - delay:
+          milliseconds: 200

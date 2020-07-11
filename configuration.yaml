@@ -100,7 +100,3 @@ vesync:
   username: !secret vesync_username
   password: !secret vesync_password
 
-#zwave:
-#  usb_path: !secret zwave_usb_path
-#  network_key: !secret zwave_network_key
-

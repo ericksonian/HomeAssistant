@@ -1,0 +1,308 @@
+type: conditional
+conditions:
+  - entity: input_boolean.master_ledstrip_power
+    state: 'on'
+  - entity: input_boolean.master_ledstrip_more
+    state: 'on'
+card:
+  type: vertical-stack
+  cards:
+### Colors
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(189,77,76)'
+          state:
+            - value: 'red1'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_red_1
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(84,146,86)'
+          state:
+            - value: 'green1'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_green_1
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(66,83,143)'
+          state:
+            - value: 'blue1'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_blue_1
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(212,130,131)'
+          state:
+            - value: 'white1'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_white_1
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(212,148,26)'
+          state:
+            - value: 'red2'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_red_2
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(90,150,160)'
+          state:
+            - value: 'green2'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_green_2
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(83,70,102)'
+          state:
+            - value: 'blue2'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_blue_2
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(214,143,127)'
+          state:
+            - value: 'white2'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_white_2
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(237,212,94)'
+          state:
+            - value: 'red3'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_red_3
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(30,86,124)'
+          state:
+            - value: 'green3'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_green_3
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(116,72,188)'
+          state:
+            - value: 'blue3'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_blue_3
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(141,179,192)'
+          state:
+            - value: 'white3'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_white_3
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(243,211,42)'
+          state:
+            - value: 'red4'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_red_4
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(29,88,144)'
+          state:
+            - value: 'green4'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_green_4
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(129,66,76)'
+          state:
+            - value: 'blue4'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_blue_4
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          show_name: false
+          icon: 'mdi:checkbox-blank-circle-outline'
+          color_type: icon
+          styles:
+            card:
+              - height: 60px
+            icon:
+              - color: 'rgb(140,188,195)'
+          state:
+            - value: 'white4'
+              icon: 'mdi:checkbox-blank-circle'
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.master_ledstrip_white_4
+
+

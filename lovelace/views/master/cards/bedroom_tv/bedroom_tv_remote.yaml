@@ -5,7 +5,7 @@ conditions:
 card:
   cards:
     - cards:
-        - color: 'rgb(50, 50, 50)'
+        - color: 'rgb(175,175,175)'
           color_type: label-card
           name: Woofer
           type: 'custom:button-card'
@@ -60,7 +60,7 @@ card:
           type: entity-button
       type: vertical-stack
     - cards:
-        - color: 'rgb(50, 50, 50)'
+        - color: 'rgb(175,175,175)'
           color_type: label-card
           name: Volume
           type: 'custom:button-card'
