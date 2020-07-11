@@ -1,12 +1,6 @@
 type: conditional
 conditions:
-  - entity: media_player.master
-    state: 'off'
-  - entity: media_player.bedroom_speaker
-    state: 'off'
-  - entity: media_player.bathroom_speaker
-    state: 'off'
-  - entity: media_player.bedroom_tv
+  - entity: input_boolean.master_ledstrip_power
     state: 'off'
 card:
   type: horizontal-stack
@@ -14,7 +8,12 @@ card:
     - type: 'custom:button-card'
       color: 'rgb(50, 50, 50)'
       color_type: label-card
-      name: Nothing Playing in Master
+      name: Bed Lights
+      hold_action:
+        action: call-service
+        service: input_boolean.turn_on
+        service_data:
+          entity_id: input_boolean.master_ledstrip_power
       styles:
         card:
           - height: 70px
@@ -23,14 +22,14 @@ card:
           border-radius: 10px;
         }
     - type: 'custom:button-card'
-      entity: media_player.bedroom_tv
+      entity: script.master_ledstrip_power_on
       icon: 'mdi:power'
       show_name: false
       tap_action:
         action: call-service
-        service: media_player.turn_on
+        service: script.turn_on
         service_data:
-          entity_id: media_player.bedroom_tv
+          entity_id: script.master_ledstrip_power_on
       styles:
         card:
           - height: 70px

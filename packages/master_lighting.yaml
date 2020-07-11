@@ -13,6 +13,14 @@
 #      entity_id: media_player.bedroom_tv
 #      volume_level: 0.7
 
+###### INPUT BOOLEANS ------------------------------------------
+input_boolean:
+  master_ledstrip_power:
+    name: Master LED Strip Power
+    initial: off
+  master_ledstrip_more:
+    name: Master LED Strip More
+    initial: off
 
 ###### SCRIPTS ------------------------------------------
 script:
@@ -20,8 +28,24 @@ script:
 #### Under Bed LED Strip 
 ### Control
 
+#  Power Macros
+  master_ledstrip_power_on:
+    sequence:
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.master_ledstrip_power
+      - service: script.turn_on
+        entity_id: script.master_ledstrip_power_toggle
+  master_ledstrip_power_off:
+    sequence:
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.master_ledstrip_power
+      - service: script.turn_on
+        entity_id: script.master_ledstrip_power_toggle
+
 #  Power Toggle
-  master_ledstrip_power:
+  master_ledstrip_power_toggle:
     sequence:
       - service: broadlink.send
         data:

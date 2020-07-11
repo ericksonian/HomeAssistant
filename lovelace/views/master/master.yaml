@@ -3,11 +3,13 @@ icon: 'mdi:bed-king'
 panel: false
 badges: []
 cards:
-  - !include /config/lovelace/views/master/cards/morning_music.yaml
   - !include /config/lovelace/views/master/cards/nothing_playing.yaml
   - !include /config/lovelace/views/master/cards/master_speaker_group.yaml
   - !include /config/lovelace/views/master/cards/bedroom_tv.yaml
   - !include /config/lovelace/views/master/cards/bedroom_tv_remote.yaml
   - !include /config/lovelace/views/master/cards/bedroom_speaker.yaml
   - !include /config/lovelace/views/master/cards/bathroom_speaker.yaml
+  - !include /config/lovelace/views/master/cards/led_strip_off.yaml
+  - !include /config/lovelace/views/master/cards/led_strip_on.yaml
+  - !include /config/lovelace/views/master/cards/morning_alarm.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

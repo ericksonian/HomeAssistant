@@ -1,0 +1,13 @@
+#title: Morning Sounds
+type: vertical-stack
+cards:
+  - type: 'custom:button-card'
+    color: 'rgb(50, 50, 50)'
+    color_type: label-card
+    name: Morning Alarm
+    styles:
+      card:
+        - height: 24px
+  - type: entities
+    entities:
+      - entity: input_select.alarm_wakeup_sounds
