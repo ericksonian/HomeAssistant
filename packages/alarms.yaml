@@ -29,12 +29,8 @@ script:
   alarm_wakeup_trigger:
     alias: Alarm Trigger
     sequence:
-      - service: script.turn_on
-        data:
-          entity_id: alarm_wakeup_sounds_trigger
-#      - service: script.turn_on
-#        data:
-#          entity_id: alarm_wakeup_lights_trigger
+      - service: script.alarm_wakeup_sounds_trigger
+#      - service: alarm_wakeup_lights_trigger
 
 # Alarm Macros
 #  alarm_wakeup_lights_trigger:

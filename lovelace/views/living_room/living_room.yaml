@@ -228,9 +228,7 @@ cards:
                 - height: 65px
             tap_action:
               action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.living_top_appletv
+              service: script.living_top_appletv
             type: 'custom:button-card'
           - color: 'rgb(72,178,230)'
             entity: input_boolean.living_top_current_chromecast
@@ -245,9 +243,7 @@ cards:
                 - height: 65px
             tap_action:
               action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.living_top_chromecast
+              service: script.living_top_chromecast
             type: 'custom:button-card'
           - color: 'rgb(255,255,255)'
             entity: input_boolean.living_top_current_front
@@ -262,9 +258,7 @@ cards:
                 - height: 65px
             tap_action:
               action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.living_top_front
+              service: script.living_top_front
             type: 'custom:button-card'
           - color: 'rgb(0,128,255)'
             entity: input_boolean.living_top_current_playstation
@@ -279,9 +273,7 @@ cards:
                 - height: 65px
             tap_action:
               action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.living_top_playstation
+              service: script.living_top_playstation
             type: 'custom:button-card'
           - color: 'rgb(221,72,20)'
             entity: input_boolean.living_top_current_ubuntu
@@ -296,9 +288,7 @@ cards:
                 - height: 65px
             tap_action:
               action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.living_top_ubuntu
+              service: script.living_top_ubuntu
             type: 'custom:button-card'
         type: horizontal-stack
       - card:
@@ -315,9 +305,7 @@ cards:
                   - color: 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.turn_on
-                service_data:
-                  entity_id: script.living_top_off
+                service: script.living_top_off
               type: 'custom:button-card'
             - entity: sensor.sony_receiver_muting
               icon: 'mdi:volume-mute'
@@ -332,9 +320,7 @@ cards:
                   - width: 72px
               tap_action:
                 action: call-service
-                service: script.turn_on
-                service_data:
-                  entity_id: script.living_top_mute
+                service: script.living_top_mute
               type: 'custom:button-card'
             - card:
                 entity: media_player.sony_receiver
@@ -360,9 +346,7 @@ cards:
                     - color: 'rgb(255,255,255)'
                 tap_action:
                   action: call-service
-                  service: script.turn_on
-                  service_data:
-                    entity_id: script.sony_volume_down
+                  service: script.sony_volume_down
                 type: 'custom:button-card'
               conditions:
                 - entity: media_player.living_room_receiver
@@ -383,9 +367,7 @@ cards:
                     - color: 'rgb(255,255,255)'
                 tap_action:
                   action: call-service
-                  service: script.turn_on
-                  service_data:
-                    entity_id: script.sony_volume_up
+                  service: script.sony_volume_up
                 type: 'custom:button-card'
               conditions:
                 - entity: media_player.living_room_receiver
@@ -423,9 +405,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_left
+                    service: script.appletv_left
                   type: 'custom:button-card'
                 - entity: script.appletv_up
                   icon: 'mdi:arrow-up'
@@ -441,9 +421,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_up
+                    service: script.appletv_up
                   type: 'custom:button-card'
                 - entity: script.appletv_right
                   icon: 'mdi:fast-forward'
@@ -455,9 +433,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_right
+                    service: script.appletv_right
                   type: 'custom:button-card'
               type: horizontal-stack
             - cards:
@@ -475,9 +451,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_left
+                    service: script.appletv_left
                   type: 'custom:button-card'
                 - entity: script.appletv_select
                   icon: 'mdi:select'
@@ -493,9 +467,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_select
+                    service: script.appletv_select
                   type: 'custom:button-card'
                 - entity: script.appletv_right
                   icon: 'mdi:arrow-right'
@@ -511,9 +483,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_right
+                    service: script.appletv_right
                   type: 'custom:button-card'
               type: horizontal-stack
             - cards:
@@ -527,9 +497,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_play_pause
+                    service: script.appletv_play_pause
                   type: 'custom:button-card'
                 - entity: script.appletv_down
                   icon: 'mdi:arrow-down'
@@ -545,9 +513,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_down
+                    service: script.appletv_down
                   type: 'custom:button-card'
                 - entity: script.appletv_menu
                   icon: 'mdi:menu'
@@ -559,9 +525,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.appletv_menu
+                    service: script.appletv_menu
                   type: 'custom:button-card'
               type: horizontal-stack
           type: vertical-stack
@@ -628,9 +592,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_up
+                    service: script.ps4_up
                   type: 'custom:button-card'
                 - entity: media_player.playstation_4
                   icon: 'mdi:playstation'
@@ -645,9 +607,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_ps
+                    service: script.ps4_ps
                   type: 'custom:button-card'
               type: horizontal-stack
             - cards:
@@ -663,9 +623,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_left
+                    service: script.ps4_left
                   type: 'custom:button-card'
                 - entity: script.ps4_enter
                   icon: 'mdi:select'
@@ -679,9 +637,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_enter
+                    service: script.ps4_enter
                   type: 'custom:button-card'
                 - entity: script.ps4_right
                   icon: 'mdi:arrow-right'
@@ -695,9 +651,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_right
+                    service: script.ps4_right
                   type: 'custom:button-card'
               type: horizontal-stack
             - cards:
@@ -713,9 +667,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_back
+                    service: script.ps4_back
                   type: 'custom:button-card'
                 - entity: script.ps4_down
                   icon: 'mdi:arrow-down'
@@ -729,9 +681,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_down
+                    service: script.ps4_down
                   type: 'custom:button-card'
                 - entity: script.ps4_option
                   icon: 'mdi:menu'
@@ -745,9 +695,7 @@ cards:
                       - color: 'rgb(155,155,155)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.ps4_option
+                    service: script.ps4_option
                   type: 'custom:button-card'
               type: horizontal-stack
           type: vertical-stack
@@ -813,9 +761,7 @@ cards:
                   - color: 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.turn_on
-                service_data:
-                  entity_id: script.living_bottom_on
+                service: script.living_bottom_on
               type: 'custom:button-card'
             conditions:
               - entity: input_boolean.living_bottom_current_off
@@ -857,9 +803,7 @@ cards:
                       - color: 'rgb(255,255,255)'
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.living_bottom_off
+                    service: script.living_bottom_off
                   type: 'custom:button-card'
                 - entity: input_boolean.living_bottom_mute
                   icon: 'mdi:volume-medium'
@@ -877,9 +821,7 @@ cards:
                       - height: 65px
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.living_bottom_volume_down
+                    service: script.living_bottom_volume_down
                   type: 'custom:button-card'
                 - entity: input_boolean.living_bottom_mute
                   icon: 'mdi:volume-high'
@@ -897,16 +839,12 @@ cards:
                       - height: 65px
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.living_bottom_volume_up
+                    service: script.living_bottom_volume_up
                   type: 'custom:button-card'
                 - entity: input_boolean.living_bottom_mute
                   hold_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.living_bottom_mute_off
+                    service: script.living_bottom_mute_off
                   icon: 'mdi:volume-mute'
                   name: Mute
                   show_name: false
@@ -922,9 +860,7 @@ cards:
                       - height: 65px
                   tap_action:
                     action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.living_bottom_mute_on
+                    service: script.living_bottom_mute_on
                   type: 'custom:button-card'
               type: horizontal-stack
             conditions:

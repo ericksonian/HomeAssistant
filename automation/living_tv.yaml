@@ -11,9 +11,7 @@
     entity_id: sensor.living_room_tv_cast_unavailable
     state: "false"
   action:
-  - service: script.turn_on
-    data:
-      entity_id: script.living_top_chromecast
+  - service: script.living_top_chromecast
 
 - alias: Living Cast Ended
   trigger:
@@ -26,9 +24,7 @@
     entity_id: input_boolean.living_top_current_chromecast
     state: "on"
   action:
-  - service: script.turn_on
-    data:
-      entity_id: script.living_top_off
+  - service: script.living_top_off
 
 # AppleTV
 - alias: Living AirPlay Started
@@ -41,9 +37,7 @@
     entity_id: input_boolean.living_top_current_appletv
     state: "off"
   action:
-  - service: script.turn_on
-    data:
-      entity_id: script.living_top_appletv
+  - service: script.living_top_appletv
 
 - alias: Living AirPlay Ended
   trigger:
@@ -56,9 +50,7 @@
     entity_id: input_boolean.living_top_current_appletv
     state: "on"
   action:
-  - service: script.turn_on
-    data:
-      entity_id: script.living_top_off
+  - service: script.living_top_off
 
 # PlayStation 4
 - alias: Living PlayStation On
@@ -71,9 +63,7 @@
     entity_id: sensor.ps4_unavailable
     state: "false"
   action:
-  - service: script.turn_on
-    data:
-      entity_id: script.living_top_playstation
+  - service: script.living_top_playstation
 
 - alias: Living PlayStation Off
   trigger:
@@ -85,6 +75,4 @@
     entity_id: input_boolean.living_top_current_playstation
     state: "on"
   action:
-  - service: script.turn_on
-    data:
-      entity_id: script.living_top_off
+  - service: script.living_top_off

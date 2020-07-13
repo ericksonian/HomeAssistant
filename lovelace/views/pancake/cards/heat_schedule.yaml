@@ -26,7 +26,7 @@ cards:
           name: Heat/Sun Overlap
           type: 'custom:button-card'
         - cards:
-            - entity: input_boolean.pancake_pad_heat_1
+            - entity: input_select.pancake_auto_heat_hours
               hold_action:
                 action: none
               icon: 'mdi:lightbulb-outline'
@@ -36,17 +36,18 @@ cards:
               state:
                 - color: 'rgb(30, 180, 30)'
                   icon: 'mdi:lightbulb'
-                  value: 'on'
+                  value: '1hour'
               styles:
                 card:
                   - height: 125px
               tap_action:
                 action: call-service
-                service: script.turn_on
+                service: input_select.select_option
                 service_data:
-                  entity_id: script.pancake_pad_heat_select_1
+                  entity_id: input_select.pancake_auto_heat_hours
+                  option: 1hour
               type: 'custom:button-card'
-            - entity: input_boolean.pancake_pad_heat_2
+            - entity: input_select.pancake_auto_heat_hours
               hold_action:
                 action: none
               icon: 'mdi:lightbulb-multiple-outline'
@@ -56,17 +57,18 @@ cards:
               state:
                 - color: 'rgb(30, 180, 30)'
                   icon: 'mdi:lightbulb-multiple'
-                  value: 'on'
+                  value: '2hour'
               styles:
                 card:
                   - height: 125px
               tap_action:
                 action: call-service
-                service: script.turn_on
+                service: input_select.select_option
                 service_data:
-                  entity_id: script.pancake_pad_heat_select_2
+                  entity_id: input_select.pancake_auto_heat_hours
+                  option: 2hour
               type: 'custom:button-card'
-            - entity: input_boolean.pancake_pad_heat_3
+            - entity: input_select.pancake_auto_heat_hours
               hold_action:
                 action: none
               icon: 'mdi:lightbulb-group-outline'
@@ -76,15 +78,16 @@ cards:
               state:
                 - color: 'rgb(30, 180, 30)'
                   icon: 'mdi:lightbulb-group'
-                  value: 'on'
+                  value: '3hour'
               styles:
                 card:
                   - height: 125px
               tap_action:
                 action: call-service
-                service: script.turn_on
+                service: input_select.select_option
                 service_data:
-                  entity_id: script.pancake_pad_heat_select_3
+                  entity_id: input_select.pancake_auto_heat_hours
+                  option: 3hour
               type: 'custom:button-card'
           type: horizontal-stack
       type: vertical-stack

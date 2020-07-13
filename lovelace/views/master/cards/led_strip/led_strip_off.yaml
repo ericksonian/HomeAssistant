@@ -27,9 +27,7 @@ card:
       show_name: false
       tap_action:
         action: call-service
-        service: script.turn_on
-        service_data:
-          entity_id: script.master_ledstrip_power_on
+        service: script.master_ledstrip_power_on
       styles:
         card:
           - height: 70px

@@ -32,9 +32,7 @@ card:
               icon: 'mdi:numeric-3-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_jump_3
+            service: script.master_ledstrip_jump_3
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -50,9 +48,7 @@ card:
               icon: 'mdi:numeric-7-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_jump_7
+            service: script.master_ledstrip_jump_7
     - type: vertical-stack
       cards:
         - type: 'custom:button-card'
@@ -71,9 +67,7 @@ card:
               - height: 60px
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_quick
+            service: script.master_ledstrip_quick
         - type: 'custom:button-card'
           entity: script.master_ledstrip_slow
           icon: 'mdi:arrow-down-drop-circle-outline'
@@ -83,9 +77,7 @@ card:
               - height: 60px
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_slow
+            service: script.master_ledstrip_slow
     - type: vertical-stack
       cards:
         - type: 'custom:button-card'
@@ -110,9 +102,7 @@ card:
               icon: 'mdi:numeric-3-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_fade_3
+            service: script.master_ledstrip_fade_3
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -128,8 +118,6 @@ card:
               icon: 'mdi:numeric-7-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_fade_7
+            service: script.master_ledstrip_fade_7
 
 

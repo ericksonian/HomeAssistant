@@ -1,3 +1,13 @@
+
+###### INPUT SELECT -------------------------------------
+
+input_select:
+  pancake_auto_heat_hours:
+    options:
+      - 1hour
+      - 2hour
+      - 3hour
+
 ###### AUTOMATIONS --------------------------------------
 
 automation:
@@ -31,8 +41,8 @@ automation:
     entity_id: input_boolean.pancake_auto_heat
     state: 'off'
   - condition: state
-    entity_id: input_boolean.pancake_pad_heat_1
-    state: 'on'
+    entity_id: input_select.pancake_auto_heat_hours
+    state: '1hour'
   action:
   - service: switch.turn_off
     data:
@@ -48,8 +58,8 @@ automation:
     entity_id: input_boolean.pancake_auto_heat
     state: 'off'
   - condition: state
-    entity_id: input_boolean.pancake_pad_heat_1
-    state: 'on'
+    entity_id: input_select.pancake_auto_heat_hours
+    state: '1hour'
   action:
   - service: switch.turn_on
     data:
@@ -65,8 +75,8 @@ automation:
     entity_id: input_boolean.pancake_auto_heat
     state: 'off'
   - condition: state
-    entity_id: input_boolean.pancake_pad_heat_2
-    state: 'on'
+    entity_id: input_select.pancake_auto_heat_hours
+    state: '2hour'
   action:
   - service: switch.turn_off
     data:
@@ -82,8 +92,8 @@ automation:
     entity_id: input_boolean.pancake_auto_heat
     state: 'off'
   - condition: state
-    entity_id: input_boolean.pancake_pad_heat_2
-    state: 'on'
+    entity_id: input_select.pancake_auto_heat_hours
+    state: '2hour'
   action:
   - service: switch.turn_on
     data:
@@ -99,8 +109,8 @@ automation:
     entity_id: input_boolean.pancake_auto_heat
     state: 'off'
   - condition: state
-    entity_id: input_boolean.pancake_pad_heat_3
-    state: 'on'
+    entity_id: input_select.pancake_auto_heat_hours
+    state: '3hour'
   action:
   - service: switch.turn_off
     data:
@@ -116,8 +126,8 @@ automation:
     entity_id: input_boolean.pancake_auto_heat
     state: 'off'
   - condition: state
-    entity_id: input_boolean.pancake_pad_heat_3
-    state: 'on'
+    entity_id: input_select.pancake_auto_heat_hours
+    state: '3hour'
   action:
   - service: switch.turn_on
     data:
@@ -154,42 +164,4 @@ automation:
       title: Pancake's Gonna Be Confused
       message: Daylight is reporting 0 power
 
-###### SCRIPTS ------------------------------------------
-    
-script:
-  pancake_pad_heat_select_1:
-    sequence:
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.pancake_pad_heat_1
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.pancake_pad_heat_2
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.pancake_pad_heat_3
-
-  pancake_pad_heat_select_2:
-    sequence:
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.pancake_pad_heat_2
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.pancake_pad_heat_1
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.pancake_pad_heat_3
-
-  pancake_pad_heat_select_3:
-    sequence:
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.pancake_pad_heat_3
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.pancake_pad_heat_1
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.pancake_pad_heat_2
 

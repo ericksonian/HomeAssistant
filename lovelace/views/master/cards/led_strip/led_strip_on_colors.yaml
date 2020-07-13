@@ -25,9 +25,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_red_1
+            service: script.master_ledstrip_red_1
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -43,9 +41,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_green_1
+            service: script.master_ledstrip_green_1
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -61,9 +57,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_blue_1
+            service: script.master_ledstrip_blue_1
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -79,9 +73,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_white_1
+            service: script.master_ledstrip_white_1
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
@@ -99,9 +91,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_red_2
+            service: script.master_ledstrip_red_2
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -117,9 +107,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_green_2
+            service: script.master_ledstrip_green_2
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -135,9 +123,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_blue_2
+            service: script.master_ledstrip_blue_2
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -153,9 +139,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_white_2
+            service: script.master_ledstrip_white_2
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
@@ -173,9 +157,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_red_3
+            service: script.master_ledstrip_red_3
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -191,9 +173,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_green_3
+            service: script.master_ledstrip_green_3
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -209,9 +189,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_blue_3
+            service: script.master_ledstrip_blue_3
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -227,9 +205,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_white_3
+            service: script.master_ledstrip_white_3
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
@@ -247,9 +223,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_red_4
+            service: script.master_ledstrip_red_4
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -265,9 +239,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_green_4
+            service: script.master_ledstrip_green_4
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -283,9 +255,7 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_blue_4
+            service: script.master_ledstrip_blue_4
         - type: 'custom:button-card'
           entity: input_select.master_ledstrip_mode
           show_name: false
@@ -301,8 +271,6 @@ card:
               icon: 'mdi:checkbox-blank-circle'
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_ledstrip_white_4
+            service: script.master_ledstrip_white_4
 
 

@@ -17,10 +17,11 @@ automation:
   - platform: state
     entity_id: media_player.bedroom_tv
     to: "off"
-  condition: []
+  condition:
+  - condition: template
+    value_template: "{{ trigger.from_state.state != 'unavailable' }}"
   action:
-  - service: script.turn_on
-    entity_id: script.master_tv_power
+  - service: script.master_tv_power
 
 
 ###### SCRIPTS ------------------------------------------

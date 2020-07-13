@@ -14,18 +14,14 @@ card:
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_soundbar_woofer_up
+            service: script.master_soundbar_woofer_up
           type: entity-button
         - entity: script.master_soundbar_woofer_down
           icon: 'mdi:arrow-down'
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_soundbar_woofer_down
+            service: script.master_soundbar_woofer_down
           type: entity-button
       type: vertical-stack
     - cards:
@@ -34,18 +30,14 @@ card:
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_tv_picture
+            service: script.master_tv_picture
           type: entity-button
         - entity: script.master_soundbar_volume_mute
           icon: 'mdi:volume-mute'
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_soundbar_volume_mute
+            service: script.master_soundbar_volume_mute
           type: entity-button
         - entity: script.master_tv_sleep
           hold_action:
@@ -54,9 +46,7 @@ card:
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_tv_sleep
+            service: script.master_tv_sleep
           type: entity-button
       type: vertical-stack
     - cards:
@@ -69,18 +59,14 @@ card:
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_soundbar_volume_up
+            service: script.master_soundbar_volume_up
           type: entity-button
         - entity: script.master_soundbar_volume_down
           icon: 'mdi:volume-minus'
           show_name: false
           tap_action:
             action: call-service
-            service: script.turn_on
-            service_data:
-              entity_id: script.master_soundbar_volume_down
+            service: script.master_soundbar_volume_down
           type: entity-button
       type: vertical-stack
   type: horizontal-stack
