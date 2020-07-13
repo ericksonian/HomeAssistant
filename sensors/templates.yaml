@@ -12,6 +12,9 @@
           Unlocked
         {% endif %}
 
+    front_door_battery:
+      value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}%"
+
     sony_receiver_muting:
       friendly_name: Sony Receiver Muting
       value_template: "{{ state_attr('media_player.sony_receiver', 'is_volume_muted') }}"

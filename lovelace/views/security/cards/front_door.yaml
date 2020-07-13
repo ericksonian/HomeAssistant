@@ -1,7 +1,12 @@
 cards:
   - color: 'rgb(200,200,200)'
-    color_type: label-card
+    entity: sensor.front_door_battery
+    color_type: card
+    show_state: true
+    show_icon: false
+    show_name: true
     name: Front Door
+    layout: name_state
     style: |
       ha-card {
         border-radius: 15px;

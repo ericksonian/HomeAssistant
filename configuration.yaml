@@ -54,9 +54,6 @@ ios:
   push:
     categories: !include_dir_merge_list ios/
 
-# Media Players
-#apple_tv:
-
 # Spotify
 #spotify:
 #  client_id: !secret spotify_client_id
@@ -99,4 +96,8 @@ tts:
 vesync:
   username: !secret vesync_username
   password: !secret vesync_password
+
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_network_key
 
