@@ -1,0 +1,77 @@
+type: horizontal-stack
+cards:
+  - color: 'rgb(255,255,255)'
+    entity: input_boolean.living_top_current_appletv
+    icon: 'mdi:apple'
+    name: AppleTV
+    show_name: false
+    state:
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_appletv
+    type: 'custom:button-card'
+  - color: 'rgb(72,178,230)'
+    entity: input_boolean.living_top_current_chromecast
+    icon: 'mdi:cast'
+    name: Cast
+    show_name: false
+    state:
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_chromecast
+    type: 'custom:button-card'
+  - color: 'rgb(255,255,255)'
+    entity: input_boolean.living_top_current_front
+    icon: 'mdi:video-input-hdmi'
+    name: HDMI
+    show_name: false
+    state:
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_front
+    type: 'custom:button-card'
+  - color: 'rgb(0,128,255)'
+    entity: input_boolean.living_top_current_playstation
+    icon: 'mdi:playstation'
+    name: PS4
+    show_name: false
+    state:
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_playstation
+    type: 'custom:button-card'
+  - color: 'rgb(221,72,20)'
+    entity: input_boolean.living_top_current_ubuntu
+    icon: 'mdi:ubuntu'
+    name: PC
+    show_name: false
+    state:
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_ubuntu
+    type: 'custom:button-card'

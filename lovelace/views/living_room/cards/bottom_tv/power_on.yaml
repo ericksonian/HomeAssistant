@@ -1,0 +1,19 @@
+type: conditional
+conditions:
+  - entity: input_boolean.living_bottom_current_off
+    state: 'on'
+card:
+  entity: input_boolean.living_bottom_current_on
+  icon: 'mdi:power'
+  name: Power On
+  show_name: false
+  styles:
+    card:
+      - height: 65px
+    icon:
+      - color: 'rgb(255,255,255)'
+  tap_action:
+    action: call-service
+    service: script.living_bottom_on
+  type: 'custom:button-card'
+

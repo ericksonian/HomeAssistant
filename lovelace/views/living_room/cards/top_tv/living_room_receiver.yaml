@@ -1,0 +1,16 @@
+type: conditional
+conditions:
+  - entity: media_player.living_room_receiver
+    state_not: 'off'
+  - entity: media_player.everywhere
+    state: 'off'
+  - entity: media_player.woofers
+    state: 'off'
+  - entity: media_player.living_room_receiver
+    state_not: unavailable
+card:
+  artwork: cover
+  entity: media_player.living_room_receiver
+  icon: 'mdi:audio-video'
+  type: 'custom:mini-media-player'
+

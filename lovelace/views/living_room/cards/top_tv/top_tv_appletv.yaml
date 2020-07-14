@@ -1,0 +1,135 @@
+type: conditional
+conditions:
+  - entity: input_boolean.living_top_current_appletv
+    state: 'on'
+card:
+  type: vertical-stack
+  cards:
+    - type: 'custom:mini-media-player'
+      artwork: cover
+      entity: media_player.living_room_appletv
+      group: false
+      hide:
+        power: true
+        source: true
+        volume: true
+      icon: 'mdi:apple'
+      style: |
+        ha-card {
+          border-radius: 15px;
+        }
+    - type: horizontal-stack
+      cards:
+        - entity: script.appletv_left
+          icon: 'mdi:rewind'
+          show_name: false
+          size: 100%
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.appletv_left
+          type: 'custom:button-card'
+        - entity: script.appletv_up
+          icon: 'mdi:arrow-up'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.appletv_up
+          type: 'custom:button-card'
+        - entity: script.appletv_right
+          icon: 'mdi:fast-forward'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.appletv_right
+          type: 'custom:button-card'
+    - type: horizontal-stack
+      cards:
+        - entity: script.appletv_left
+          icon: 'mdi:arrow-left'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.appletv_left
+          type: 'custom:button-card'
+        - entity: script.appletv_select
+          icon: 'mdi:select'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.appletv_select
+          type: 'custom:button-card'
+        - entity: script.appletv_right
+          icon: 'mdi:arrow-right'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.appletv_right
+          type: 'custom:button-card'
+    - type: horizontal-stack
+      cards:
+        - entity: script.appletv_play_pause
+          icon: 'mdi:play-pause'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.appletv_play_pause
+          type: 'custom:button-card'
+        - entity: script.appletv_down
+          icon: 'mdi:arrow-down'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.appletv_down
+          type: 'custom:button-card'
+        - entity: script.appletv_menu
+          icon: 'mdi:menu'
+          show_name: false
+          styles:
+            card:
+              - height: 65px
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.appletv_menu
+          type: 'custom:button-card'

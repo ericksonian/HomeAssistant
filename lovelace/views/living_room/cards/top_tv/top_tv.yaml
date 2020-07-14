@@ -1,0 +1,11 @@
+type: vertical-stack
+cards:
+  - !include /config/lovelace/views/living_room/cards/top_tv/living_room_receiver.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/title_card.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/select_source.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/top_tv_volume.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/top_tv_appletv.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/top_tv_chromecast.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/top_tv_fronthdmi.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/top_tv_playstation.yaml
+  - !include /config/lovelace/views/living_room/cards/top_tv/top_tv_ubuntu.yaml

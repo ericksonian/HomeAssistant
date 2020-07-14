@@ -1,0 +1,18 @@
+type: conditional
+conditions:
+  - entity: input_boolean.living_bottom_current_on
+    state: 'off'
+  - entity: input_boolean.living_bottom_current_off
+    state: 'off'
+card:
+  color: 'rgb(55,55,55)'
+  color_type: label-card
+  name: Powering On and Muting...
+  style: |
+    ha-card {
+      border-radius: 15px;
+    }
+  styles:
+    card:
+      - height: 65px
+  type: 'custom:button-card'

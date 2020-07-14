@@ -1,0 +1,7 @@
+type: conditional
+conditions:
+  - entity: input_boolean.living_top_current_ubuntu
+    state: 'on'
+card:
+  type: 'custom:button-card'
+  name: Use Wireless Mouse and Keyboard

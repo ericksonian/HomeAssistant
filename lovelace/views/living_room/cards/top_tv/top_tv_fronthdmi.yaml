@@ -1,0 +1,7 @@
+type: conditional
+conditions:
+  - entity: input_boolean.living_top_current_front
+    state: 'on'
+card:
+  type: 'custom:button-card'
+  name: Plug Device into front HDMI on Sony Receiver

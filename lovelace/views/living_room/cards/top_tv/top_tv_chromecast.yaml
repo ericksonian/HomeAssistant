@@ -1,0 +1,15 @@
+type: conditional
+conditions:
+  - entity: input_boolean.living_top_current_chromecast
+    state: 'on'
+card:
+  artwork: cover
+  entity: media_player.living_room_tv
+  group: false
+  hide:
+    power: true
+    source: true
+    volume: false
+    play_pause: false
+  icon: 'mdi:cast'
+  type: 'custom:mini-media-player'
