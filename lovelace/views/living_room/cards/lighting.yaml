@@ -1,0 +1,181 @@
+cards:
+  - cards:
+      - entity: switch.plug_in_switch_switch
+        hold_action:
+          action: more-info
+        icon: 'mdi:flash'
+        name: Lamp
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(253, 180, 30)'
+            value: onn
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+              width: 90px
+        tap_action:
+          action: toggle
+        type: 'custom:button-card'
+      - entity: light.living_room_main
+        hold_action:
+          action: more-info
+        icon: 'mdi:lightbulb'
+        name: Ceiling
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(253, 180, 30)'
+            value: 'on'
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+              width: 90px
+        tap_action:
+          action: toggle
+        type: 'custom:button-card'
+      - entity: light.living_room_main
+        full_row: true
+        hide_state: true
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        type: 'custom:slider-entity-row'
+    type: horizontal-stack
+  - cards:
+      - color: 'rgb(97,100,107)'
+        entity: sensor.living_fan_speed
+        hold_action:
+          action: more-info
+        icon: 'mdi:fan-off'
+        name: 'Off'
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(99,137,248)'
+            value: 'off'
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+        tap_action:
+          action: call-service
+          service: fan.set_speed
+          service_data:
+            entity_id: fan.living_room_ceiling_fan
+            speed: 'off'
+        type: 'custom:button-card'
+      - color: 'rgb(97,100,107)'
+        entity: sensor.living_fan_speed
+        hold_action:
+          action: more-info
+        icon: 'mdi:speedometer-slow'
+        name: Low
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(0,204,52)'
+            value: low
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+        tap_action:
+          action: call-service
+          service: fan.set_speed
+          service_data:
+            entity_id: fan.living_room_ceiling_fan
+            speed: low
+        type: 'custom:button-card'
+      - color: 'rgb(97,100,107)'
+        entity: sensor.living_fan_speed
+        hold_action:
+          action: more-info
+        icon: 'mdi:speedometer-medium'
+        name: Medium
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(255,255,1)'
+            value: medium
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+        tap_action:
+          action: call-service
+          service: fan.set_speed
+          service_data:
+            entity_id: fan.living_room_ceiling_fan
+            speed: medium
+        type: 'custom:button-card'
+      - color: 'rgb(97,100,107)'
+        entity: sensor.living_fan_speed
+        hold_action:
+          action: more-info
+        icon: 'mdi:speedometer-medium'
+        name: Med Hi
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(255,142,2)'
+            value: medium_high
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+        tap_action:
+          action: call-service
+          service: fan.set_speed
+          service_data:
+            entity_id: fan.living_room_ceiling_fan
+            speed: medium_high
+        type: 'custom:button-card'
+      - color: 'rgb(97,100,107)'
+        entity: sensor.living_fan_speed
+        hold_action:
+          action: more-info
+        icon: 'mdi:speedometer'
+        name: High
+        show_icon: true
+        show_name: false
+        state:
+          - color: 'rgb(255,28,1)'
+            value: high
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+        styles:
+          card:
+            - height: 60px
+        tap_action:
+          action: call-service
+          service: fan.set_speed
+          service_data:
+            entity_id: fan.living_room_ceiling_fan
+            speed: high
+        type: 'custom:button-card'
+    type: horizontal-stack
+type: vertical-stack

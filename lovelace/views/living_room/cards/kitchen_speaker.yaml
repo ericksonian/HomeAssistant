@@ -1,0 +1,9 @@
+type: conditional
+conditions:
+  - entity: media_player.kitchen_speaker
+    state_not: 'off'
+card:
+  artwork: cover
+  entity: media_player.kitchen_speaker
+  icon: 'mdi:google-home'
+  type: 'custom:mini-media-player'
