@@ -1,0 +1,47 @@
+cards:
+  - cards:
+      - card:
+          entity: media_player.everywhere
+          type: media-control
+        conditions:
+          - entity: input_select.ambient_speaker
+            state: Everywhere
+        type: conditional
+    type: horizontal-stack
+  - cards:
+      - card:
+          entity: media_player.woofers
+          type: media-control
+        conditions:
+          - entity: input_select.ambient_speaker
+            state: Woofer Zones
+        type: conditional
+    type: horizontal-stack
+  - cards:
+      - card:
+          entity: media_player.master
+          type: media-control
+        conditions:
+          - entity: input_select.ambient_speaker
+            state: Master Suite
+        type: conditional
+    type: horizontal-stack
+  - cards:
+      - card:
+          entity: media_player.living_room_tv
+          type: media-control
+        conditions:
+          - entity: input_select.ambient_speaker
+            state: Living Room TV
+        type: conditional
+    type: horizontal-stack
+  - cards:
+      - card:
+          entity: media_player.theater_tv
+          type: media-control
+        conditions:
+          - entity: input_select.ambient_speaker
+            state: Theater TV
+        type: conditional
+    type: horizontal-stack
+type: vertical-stack

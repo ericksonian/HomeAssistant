@@ -1,0 +1,5 @@
+type: vertical-stack
+cards:
+  - !include /config/lovelace/views/house/cards/ambient_sounds/title_card.yaml
+  - !include /config/lovelace/views/house/cards/ambient_sounds/select_sounds.yaml
+  - !include /config/lovelace/views/house/cards/ambient_sounds/speaker_groups.yaml
