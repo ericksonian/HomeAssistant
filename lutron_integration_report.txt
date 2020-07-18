@@ -458,9 +458,9 @@
       {
         "ID" : 13,
         "Area" : {
-          "Name" : "Living Room"
+          "Name" : "Exterior"
         },
-        "Name" : "Pico",
+        "Name" : "Front Door Pico",
         "Buttons" : [
           {
             "Number" : 2

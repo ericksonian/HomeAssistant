@@ -1,0 +1,27 @@
+
+###### GROUPS ----------------------------------------
+
+group:
+ all_persons:
+  name: All Persons
+  entities:
+  - person.ian
+  - person.sean
+
+###### AUTOMATIONS --------------------------------------
+
+automation:
+## Nobody Home - Lock Up
+- alias: Nobody Home - Lock Up
+  trigger:
+  - platform: state
+    entity_id: group.all_persons
+    to: not_home
+    for: "00:30:00"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door

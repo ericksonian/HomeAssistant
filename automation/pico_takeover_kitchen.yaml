@@ -1,7 +1,7 @@
 
 ##  Pico Takeover Kitchen
 
-#- alias: Kitchen Pico Button 1
+#- alias: Pico Kitchen Button 1
 #  trigger:
 #  - entity_id: sensor.kitchen_pico
 #    platform: state
@@ -13,7 +13,7 @@
 #      entity_id: light.kitchen_dining_pendant
 #      brightness: 126
 
-#- alias: Kitchen Pico Button 2
+#- alias: Pico Kitchen Button 2
 #  trigger:
 #  - entity_id: sensor.kitchen_pico
 #    platform: state
@@ -25,7 +25,7 @@
 #      entity_id: light.kitchen_dining_pendant
 #      brightness: 126
 
-- alias: Kitchen Pico Button 3
+- alias: Pico Kitchen Button 3
   trigger:
   - entity_id: sensor.kitchen_pico
     platform: state
@@ -45,7 +45,7 @@
     data:
       entity_id: scene.kitchen_pico_favorite_ignore
 
-#- alias: Kitchen Pico Button 4
+#- alias: Pico Kitchen Button 4
 #  trigger:
 #  - entity_id: sensor.kitchen_pico
 #    platform: state
@@ -56,7 +56,7 @@
 #    data:
 #      entity_id: light.kitchen_dining_pendant
 
-- alias: Kitchen Pico Button 5
+- alias: Pico Kitchen Button 5
   trigger:
   - entity_id: sensor.kitchen_pico
     platform: state

@@ -37,17 +37,4 @@
   - service: cover.close_cover
     data:
       entity_id: cover.garage_door
-## Nobody Home - Lock Up
-- alias: Nobody Home - Lock Up
-  trigger:
-  - platform: state
-    entity_id: group.all_devices
-    to: not_home
-    for: "01:00:00"
-  action:
-  - service: lock.lock
-    data:
-      entity_id: lock.front_door
-  - service: cover.close_cover
-    data:
-      entity_id: cover.garage_door
+
