@@ -1,0 +1,56 @@
+
+##  Pico Takeover Garage
+
+#- alias: Garage Pico Button 1
+#  trigger:
+#  - entity_id: sensor.garage_pico
+#    platform: state
+#    to: "1"
+#  condition: []
+#  action:
+#  - service: 
+#    data:
+
+- alias: Garage Pico Button 2
+  trigger:
+  - entity_id: sensor.garage_pico
+    platform: state
+    to: "8"
+  condition: []
+  action:
+  - service: cover.open_cover
+    data:
+      entity_id: cover.garage_door
+
+#- alias: Garage Pico Button 3
+#  trigger:
+#  - entity_id: sensor.garage_pico
+#    platform: state
+#    to: "2"
+#  condition: []
+#  action:
+#  - service:
+#    data:
+
+- alias: Garage Pico Button 4
+  trigger:
+  - entity_id: sensor.garage_pico
+    platform: state
+    to: "16"
+  condition: []
+  action:
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+
+#- alias: Garage Pico Button 5
+#  trigger:
+#  - entity_id: sensor.garage_pico
+#    platform: state
+#    to: "4"
+#  condition: []
+#  action:
+#  - service: 
+#    data:
+
+
