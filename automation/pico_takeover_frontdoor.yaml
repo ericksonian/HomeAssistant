@@ -30,10 +30,17 @@
     to: "2"
   condition: []
   action:
+  - service: scene.create
+    data:
+      scene_id: pico_favorite_ignore_frontdoor
+      snapshot_entities:
+      -  light.exterior_front_door
   - service: switch.toggle
     data:
       entity_id: switch.patio_string
-
+  - service: scene.turn_on
+    data:
+      entity_id: scene.pico_favorite_ignore_frontdoor
 #- alias: Pico Front Door Button 4
 #  trigger:
 #  - entity_id: sensor.front_door_pico

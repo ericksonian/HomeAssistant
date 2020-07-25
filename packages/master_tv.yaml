@@ -11,7 +11,7 @@ automation:
   - service: media_player.volume_set
     data:
       entity_id: media_player.bedroom_tv
-      volume_level: 0.7
+      volume_level: 0.6
 - alias: Master Bed Cast Ended
   trigger:
   - platform: state

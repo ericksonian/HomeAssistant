@@ -34,7 +34,7 @@
   action:
   - service: scene.create
     data:
-      scene_id: kitchen_pico_favorite_ignore
+      scene_id: pico_favorite_ignore_kitchen
       snapshot_entities:
       - light.kitchen_ceiling
       - light.kitchen_sink
@@ -43,7 +43,7 @@
       entity_id: switch.kitchen_cabinets
   - service: scene.turn_on
     data:
-      entity_id: scene.kitchen_pico_favorite_ignore
+      entity_id: scene.pico_favorite_ignore_kitchen
 
 #- alias: Pico Kitchen Button 4
 #  trigger:
