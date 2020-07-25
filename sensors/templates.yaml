@@ -57,7 +57,17 @@
 
     vesync_rack_watts:
       friendly_name: VeSync Rack Watts
-      value_template: "{{ state_attr('switch.rack_power', 'current_power_w') }}"
+      value_template: "{{ (state_attr('switch.rack_power', 'current_power_w')) | round(2) }}"
+      unit_of_measurement: 'W'
+
+    vesync_projector_watts:
+      friendly_name: VeSync Projector Watts
+      value_template: "{{ (state_attr('switch.projector_power', 'current_power_w')) | round(2) }}"
+      unit_of_measurement: 'W'
+
+    vesync_theater_watts:
+      friendly_name: VeSync Theater Watts
+      value_template: "{{ (state_attr('switch.rack_power', 'current_power_w')+state_attr('switch.projector_power', 'current_power_w')) | round(2) }}"
       unit_of_measurement: 'W'
 
 #    vesync_white_voltage:
