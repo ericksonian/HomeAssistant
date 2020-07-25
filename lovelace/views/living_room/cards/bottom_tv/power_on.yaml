@@ -1,9 +1,9 @@
 type: conditional
 conditions:
-  - entity: input_boolean.living_bottom_current_off
-    state: 'on'
+  - entity: input_select.tv_living_bottom_source
+    state: 'none'
 card:
-  entity: input_boolean.living_bottom_current_on
+  entity: input_select.tv_living_bottom_source
   icon: 'mdi:power'
   name: Power On
   show_name: false

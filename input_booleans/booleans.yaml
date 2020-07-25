@@ -7,26 +7,6 @@ ambient_sounds:
 ambient_spotify:
   name: Ambient Spotify
   initial: off
-# Living TV Source Tracking
-living_top_current_appletv:
-  name: LR Apple TV
-living_top_current_chromecast:
-  name: LR Top Chromecast
-living_top_current_front:
-  name: LR Top Front
-living_top_current_playstation:
-  name: LR Top Playstation
-living_top_current_ubuntu:
-  name: LR Top Ubuntu
-living_top_current_off:
-  name: LR Top Off
-  initial: on
-living_bottom_current_on:
-  name: LR Bottom On
-living_bottom_current_off:
-  name: LR Bottom Off
-living_bottom_mute:
-  name: LR Bottom Mute
 # Pancake
 pancake_auto_heat:
   name: Pancake Heat Toggle

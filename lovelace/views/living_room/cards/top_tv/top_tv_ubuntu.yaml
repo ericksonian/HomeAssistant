@@ -1,7 +1,7 @@
 type: conditional
 conditions:
-  - entity: input_boolean.living_top_current_ubuntu
-    state: 'on'
+  - entity: input_select.tv_living_top_source
+    state: 'ubuntu'
 card:
   type: 'custom:button-card'
   name: Use Wireless Mouse and Keyboard

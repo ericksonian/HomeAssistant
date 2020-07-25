@@ -1,7 +1,7 @@
 type: conditional
 conditions:
-  - entity: input_boolean.living_top_current_chromecast
-    state: 'on'
+  - entity: input_select.tv_living_top_source
+    state: 'chromecast'
 card:
   artwork: cover
   entity: media_player.living_room_tv

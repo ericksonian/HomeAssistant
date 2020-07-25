@@ -1,13 +1,17 @@
 type: horizontal-stack
 cards:
-  - color: 'rgb(255,255,255)'
-    entity: input_boolean.living_top_current_appletv
+  - color: 'rgb(97,100,107)'
+    entity: input_select.tv_living_top_source
     icon: 'mdi:apple'
     name: AppleTV
     show_name: false
     state:
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(255,255,255)'
+        value: 'appletv'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
     styles:
       card:
         - height: 65px
@@ -15,14 +19,18 @@ cards:
       action: call-service
       service: script.living_top_appletv
     type: 'custom:button-card'
-  - color: 'rgb(72,178,230)'
-    entity: input_boolean.living_top_current_chromecast
+  - color: 'rgb(97,100,107)'
+    entity: input_select.tv_living_top_source
     icon: 'mdi:cast'
     name: Cast
     show_name: false
     state:
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(72,178,230)'
+        value: 'chromecast'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
     styles:
       card:
         - height: 65px
@@ -30,14 +38,18 @@ cards:
       action: call-service
       service: script.living_top_chromecast
     type: 'custom:button-card'
-  - color: 'rgb(255,255,255)'
-    entity: input_boolean.living_top_current_front
+  - color: 'rgb(97,100,107)'
+    entity: input_select.tv_living_top_source
     icon: 'mdi:video-input-hdmi'
     name: HDMI
     show_name: false
     state:
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(255,255,255)'
+        value: 'front'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
     styles:
       card:
         - height: 65px
@@ -45,14 +57,18 @@ cards:
       action: call-service
       service: script.living_top_front
     type: 'custom:button-card'
-  - color: 'rgb(0,128,255)'
-    entity: input_boolean.living_top_current_playstation
+  - color: 'rgb(97,100,107)'
+    entity: input_select.tv_living_top_source
     icon: 'mdi:playstation'
     name: PS4
     show_name: false
     state:
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(0,128,255)'
+        value: 'playstation'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
     styles:
       card:
         - height: 65px
@@ -60,14 +76,18 @@ cards:
       action: call-service
       service: script.living_top_playstation
     type: 'custom:button-card'
-  - color: 'rgb(221,72,20)'
-    entity: input_boolean.living_top_current_ubuntu
+  - color: 'rgb(97,100,107)'
+    entity: input_select.tv_living_top_source
     icon: 'mdi:ubuntu'
     name: PC
     show_name: false
     state:
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(221,72,20)'
+        value: 'ubuntu'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
     styles:
       card:
         - height: 65px

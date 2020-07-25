@@ -1,7 +1,9 @@
 type: conditional
 conditions:
-  - entity: input_boolean.living_top_current_off
-    state: 'off'
+  - entity: input_select.tv_living_top_source
+    state_not: 'none'
+  - entity: input_select.tv_living_top_source
+    state_not: 'loading'
 card:
   type: horizontal-stack
   cards:

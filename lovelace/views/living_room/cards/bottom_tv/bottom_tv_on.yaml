@@ -1,11 +1,13 @@
 type: conditional
 conditions:
-  - entity: input_boolean.living_bottom_current_on
-    state: 'on'
+  - entity: input_select.tv_living_bottom_source
+    state_not: 'none'
+  - entity: input_select.tv_living_bottom_source
+    state_not: 'loading'
 card:
   cards:
     - color: 'rgb(255,255,255)'
-      entity: input_boolean.living_bottom_current_on
+      entity: input_select.tv_living_bottom_source
       icon: 'mdi:power'
       name: Bottom Off
       show_name: false

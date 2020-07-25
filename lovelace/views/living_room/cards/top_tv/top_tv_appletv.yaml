@@ -1,7 +1,7 @@
 type: conditional
 conditions:
-  - entity: input_boolean.living_top_current_appletv
-    state: 'on'
+  - entity: input_select.tv_living_top_source
+    state: 'appletv'
 card:
   type: vertical-stack
   cards:
