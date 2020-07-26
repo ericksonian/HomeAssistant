@@ -16,7 +16,7 @@ card:
           - height: 50px
           - width: 100px
         icon:
-          - color: 'rgb(255,255,255)'
+          - color: 'rgb(255,0,0)'
       tap_action:
         action: call-service
         service: script.living_top_off

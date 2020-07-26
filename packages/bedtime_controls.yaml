@@ -25,10 +25,64 @@ input_select:
 
 ###### SCRIPT ------------------------------------------    
 script:
+# Bedtime Begins Trigger
+  bedtime_begins_trigger:
+    alias: Bedtime Begins Trigger
+    sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_boolean.master_ledstrip_alarm", "on") %}
+              script.bedtime_begins_lights
+            {% else %}
+              none
+            {% endif %}
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.alarm_wakeup_sounds", "None") %}
+              none
+            {% else %}
+              script.bedtime_begins_sounds
+            {% endif %}
+
+  bedtime_begins_lights:
+    alias: Bedtime Begins Lights
+    sequence:
+      - service: script.master_ledstrip_power_on
+      - delay:
+          milliseconds: 200
+      - service: script.master_ledstrip_red
+      - delay:
+          milliseconds: 200
+      - service: script.master_ledstrip_power_off
+
+  bedtime_begins_sounds:
+    alias: Bedtime Begins Sounds
+    sequence:
+      - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.bedroom_speaker
+          volume_level: 0.2
+      - delay:
+          milliseconds: 200
+      - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.bathroom_speaker
+          volume_level: 0.2
+
 # Alarm Wakeup Trigger
   alarm_wakeup_trigger:
-    alias: Alarm Trigger
+    alias: Alarm Wakeup Trigger
     sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_boolean.master_ledstrip_alarm", "on") %}
+              script.alarm_wakeup_lights
+            {% else %}
+              none
+            {% endif %}
       - service: script.turn_on
         data_template:
           entity_id: >
@@ -37,22 +91,15 @@ script:
             {% else %}
               script.alarm_wakeup_sounds
             {% endif %}
-      - service: script.turn_on
-        data_template:
-          entity_id: >
-            {% if is_state("input_boolean.master_ledstrip_alarm", "on") %}
-              script.master_ledstrip_power_on
-            {% else %}
-              none
-            {% endif %}
 
-### Alarm Macros
-#  alarm_wakeup_lights:
-#    alias: Alarm Lights
-#    sequence:
-#      - service: script.master_ledstrip_power_on
+  alarm_wakeup_lights:
+    alias: Alarm Lights
+    sequence:
+      - service: script.master_ledstrip_power_on
+      - delay:
+          milliseconds: 200
+      - service: script.master_ledstrip_white
 
-# Alarm Wakeup Sounds
   alarm_wakeup_sounds:
     alias: Alarm Sounds
     sequence:
