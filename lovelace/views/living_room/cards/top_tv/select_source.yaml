@@ -1,7 +1,8 @@
 type: horizontal-stack
 cards:
-  - color: 'rgb(97,100,107)'
+  - type: 'custom:button-card'
     entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
     icon: 'mdi:apple'
     name: AppleTV
     show_name: false
@@ -18,9 +19,15 @@ cards:
     tap_action:
       action: call-service
       service: script.living_top_appletv
-    type: 'custom:button-card'
-  - color: 'rgb(97,100,107)'
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: appletv
+  - type: 'custom:button-card'
     entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
     icon: 'mdi:cast'
     name: Cast
     show_name: false
@@ -37,9 +44,15 @@ cards:
     tap_action:
       action: call-service
       service: script.living_top_chromecast
-    type: 'custom:button-card'
-  - color: 'rgb(97,100,107)'
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: chromecast
+  - type: 'custom:button-card'
     entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
     icon: 'mdi:video-input-hdmi'
     name: HDMI
     show_name: false
@@ -56,9 +69,15 @@ cards:
     tap_action:
       action: call-service
       service: script.living_top_front
-    type: 'custom:button-card'
-  - color: 'rgb(97,100,107)'
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: front
+  - type: 'custom:button-card'
     entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
     icon: 'mdi:playstation'
     name: PS4
     show_name: false
@@ -75,9 +94,15 @@ cards:
     tap_action:
       action: call-service
       service: script.living_top_playstation
-    type: 'custom:button-card'
-  - color: 'rgb(97,100,107)'
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: playstation
+  - type: 'custom:button-card'
     entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
     icon: 'mdi:ubuntu'
     name: PC
     show_name: false
@@ -94,4 +119,9 @@ cards:
     tap_action:
       action: call-service
       service: script.living_top_ubuntu
-    type: 'custom:button-card'
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: ubuntu

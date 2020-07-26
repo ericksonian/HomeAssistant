@@ -1,11 +1,11 @@
-color: 'rgb(200,200,200)'
+type: 'custom:button-card'
 color_type: label-card
+color: 'rgb(200,200,200)'
 name: Living Room Top TV
+styles:
+  card:
+    - height: 24px
 style: |
   ha-card {
     border-radius: 1px;
   }
-styles:
-  card:
-    - height: 24px
-type: 'custom:button-card'
