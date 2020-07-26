@@ -1,25 +1,5 @@
 ##  Booleans
 
-# Ambient Sounds
-ambient_sounds:
-  name: Ambient Sounds
-  initial: off
-ambient_spotify:
-  name: Ambient Spotify
-  initial: off
-# Pancake
-pancake_auto_heat:
-  name: Pancake Heat Toggle
-pancake_pad_heat_1:
-  name: Pancake Pad Heat 1
-pancake_pad_heat_2:
-  name: Pancake Pad Heat 2
-pancake_pad_heat_3:
-  name: Pancake Pad Heat 3
-# Security
-notify_garage:
-  name: Garage Notifications
-  initial: on
-show_garage_activity:
-  name: Show Garage Activity
-  initial: off
+#boolean_id:
+#  name: Name
+#  initial: off

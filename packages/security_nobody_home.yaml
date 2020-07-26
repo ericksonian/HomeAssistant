@@ -1,4 +1,11 @@
 
+###### INPUT BOOLEANS ------------------------------------------
+
+input_boolean:
+  notify_garage:
+    name: Garage Notifications
+    initial: on
+
 ###### GROUPS ----------------------------------------
 
 group:
@@ -9,8 +16,8 @@ group:
   - person.sean
 
 ###### AUTOMATIONS --------------------------------------
-
 automation:
+
 ## Nobody Home - Lock Up
 - alias: Nobody Home - Lock Up
   trigger:

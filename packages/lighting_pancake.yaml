@@ -1,6 +1,5 @@
 
 ###### INPUT SELECT -------------------------------------
-
 input_select:
   pancake_auto_heat_hours:
     options:
@@ -8,8 +7,12 @@ input_select:
       - 2hour
       - 3hour
 
-###### AUTOMATIONS --------------------------------------
+###### INPUT BOOLEANS ------------------------------------------
+input_boolean:
+  pancake_auto_heat:
+    name: Pancake Heat Toggle
 
+###### AUTOMATIONS --------------------------------------
 automation:
 # Daylight
 - alias: Pancake Daylight On Sunrise

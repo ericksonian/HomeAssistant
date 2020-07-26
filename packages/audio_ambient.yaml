@@ -23,7 +23,6 @@ group:
   - input_number.volume_ambientsounds
 
 ###### INPUT SELECT ------------------------------------------
-  
 input_select:
   ambient_sound:
     name: 'Select Radio Station:'
@@ -49,8 +48,13 @@ input_select:
     initial: Everywhere
     icon: mdi:speaker-wireless
 
-###### INPUT NUMBER ------------------------------------------
+###### INPUT BOOLEANS ------------------------------------------
+input_boolean:
+  ambient_sounds:
+    name: Ambient Sounds
+    initial: off
 
+###### INPUT NUMBER ------------------------------------------
 input_number: 
   volume_ambientsounds:
     name: Volume

@@ -12,7 +12,6 @@ homeassistant:
       friendly_name: Start Playing
 
 ###### INPUT SELECT ------------------------------------------
-  
 input_select:
   spotify_playlist:
     name: 'Select Playlist:'
@@ -38,9 +37,14 @@ input_select:
     initial: Everywhere
     icon: mdi:speaker-wireless
 
-###### INPUT NUMBER -------------------------------------
+###### INPUT BOOLEANS ------------------------------------------
+input_boolean:
+  ambient_spotify:
+    name: Ambient Spotify
+    initial: off
 
-input_number: 
+###### INPUT NUMBER -------------------------------------
+input_number:
   volume_play_spotify:
     name: Volume
     icon: mdi:volume-high
