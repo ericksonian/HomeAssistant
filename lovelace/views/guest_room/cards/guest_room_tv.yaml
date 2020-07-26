@@ -1,14 +1,16 @@
-card:
-  artwork: cover
-  entity: media_player.guest_room_tv
-  group: false
-  icon: 'mdi:cast'
-  style: |
-    ha-card {
-    border-radius: 15px;
-    }
-  type: 'custom:mini-media-player'
+type: conditional
 conditions:
   - entity: media_player.guest_room_tv
     state_not: 'off'
-type: conditional
+  - entity: media_player.guest_room_tv
+    state_not: 'unavailable'
+card:
+  type: 'custom:mini-media-player'
+  entity: media_player.guest_room_tv
+  icon: 'mdi:cast'
+  artwork: cover
+  group: false
+  style: |
+    ha-card {
+      border-radius: 15px;
+    }

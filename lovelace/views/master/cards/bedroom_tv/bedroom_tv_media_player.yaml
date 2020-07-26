@@ -22,7 +22,7 @@ card:
           show_name: false
           styles:
             card:
-              - height: 112px
+              - height: 72px
                 width: 60px
             icon:
               - color: 'rgb(255,0,0)'
@@ -38,3 +38,32 @@ card:
           icon: 'mdi:cast'
           hide:
             power: true
+            controls: true
+            source: true
+            volume: true
+            play_pause: true
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: media_player.bedroom_tv
+          icon: 'mdi:play'
+          show_name: false
+          state:
+            - icon: 'mdi:pause'
+              value: 'playing'
+          styles:
+            card:
+              - height: 60px
+                width: 60px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: media_player.media_play_pause
+            service_data:
+              entity_id: media_player.bedroom_tv
+        - type: 'custom:slider-entity-row'
+          entity: media_player.bedroom_tv
+          full_row: true
+          hide_state: true
+

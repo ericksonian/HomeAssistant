@@ -1,0 +1,13 @@
+type: conditional
+conditions:
+  - entity: sensor.vesync_projector_power_high
+    state: 'on'
+card:
+  type: 'custom:button-card'
+  color_type: label-card
+  name: Something Playing in Theater
+  color: 'rgb(50, 50, 50)'
+  style: |
+    ha-card {
+      border-radius: 15px;
+    }

@@ -1,16 +1,16 @@
-card:
-  artwork: cover
-  entity: media_player.guest_room_speaker
-  group: false
-  icon: 'mdi:google-home'
-  style: |
-    ha-card {
-      border-radius: 15px;
-    }
-  type: 'custom:mini-media-player'
+type: conditional
 conditions:
   - entity: media_player.guest_room_speaker
     state_not: 'off'
   - entity: media_player.everywhere
     state: 'off'
-type: conditional
+card:
+  type: 'custom:mini-media-player'
+  entity: media_player.guest_room_speaker
+  icon: 'mdi:google-home'
+  artwork: cover
+  group: false
+  style: |
+    ha-card {
+      border-radius: 15px;
+    }
