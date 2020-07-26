@@ -3,15 +3,37 @@ conditions:
   - entity: media_player.master
     state_not: 'off'
 card:
-  entities:
-    - entity: media_player.master
-      artwork: cover
-      group: false
-      hide:
-        controls: false
+  type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: media_player.master
+          icon: 'mdi:power'
+          show_name: false
+          styles:
+            card:
+              - height: 72px
+                width: 60px
+            icon:
+              - color: 'rgb(255,0,0)'
+          tap_action:
+            action: call-service
+            service: media_player.turn_off
+            service_data:
+              entity_id: media_player.master
+        - type: 'custom:mini-media-player'
+          entity: media_player.master
+          icon: 'mdi:cast-audio'
+          artwork: cover
+          group: false
+          hide:
+            controls: true
+            power: true
+            volume: true
+    - type: 'custom:mini-media-player'
+      entity: media_player.master
       icon: 'mdi:cast-audio'
-      type: 'custom:mini-media-player'
-    - entity: media_player.bedroom_speaker
       group: true
       hide:
         controls: true
@@ -20,9 +42,9 @@ card:
         power: true
         progress: true
         source: true
+    - type: 'custom:mini-media-player'
+      entity: media_player.bedroom_speaker
       icon: 'mdi:cast-audio'
-      type: 'custom:mini-media-player'
-    - entity: media_player.bathroom_speaker
       group: true
       hide:
         controls: true
@@ -31,6 +53,14 @@ card:
         power: true
         progress: true
         source: true
+    - type: 'custom:mini-media-player'
+      entity: media_player.bathroom_speaker
       icon: 'mdi:google-home'
-      type: 'custom:mini-media-player'
-  type: entities
+      group: true
+      hide:
+        controls: true
+        icon: true
+        info: true
+        power: true
+        progress: true
+        source: true
