@@ -2,9 +2,8 @@ title: Guest Room
 icon: 'mdi:bed-single'
 badges: []
 cards:
-  - !include /config/lovelace/views/guest_room/cards/nothing_playing_tv_unavailable.yaml
   - !include /config/lovelace/views/guest_room/cards/nothing_playing.yaml
+  - !include /config/lovelace/views/guest_room/cards/guest_room_tv.yaml
   - !include /config/lovelace/views/guest_room/cards/guest_room_speaker.yaml
   - !include /config/lovelace/views/guest_room/cards/guest_bathroom_speaker.yaml
-  - !include /config/lovelace/views/guest_room/cards/guest_room_tv.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

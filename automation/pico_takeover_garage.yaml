@@ -21,6 +21,9 @@
   - service: cover.open_cover
     data:
       entity_id: cover.garage_door
+  - service: switch.turn_on
+    data:
+      entity_id: switch.garage_ceiling
 
 #- alias: Pico Garage Button 3
 #  trigger:

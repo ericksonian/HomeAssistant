@@ -29,14 +29,7 @@ script:
   bedtime_begins_trigger:
     alias: Bedtime Begins Trigger
     sequence:
-      - service: script.turn_on
-        data_template:
-          entity_id: >
-            {% if is_state("input_boolean.master_ledstrip_alarm", "on") %}
-              script.bedtime_begins_lights
-            {% else %}
-              none
-            {% endif %}
+      - service: script.bedtime_begins_lights
       - service: script.turn_on
         data_template:
           entity_id: >
@@ -98,7 +91,7 @@ script:
       - service: script.master_ledstrip_power_on
       - delay:
           milliseconds: 200
-      - service: script.master_ledstrip_white
+      - service: script.master_ledstrip_red_3
 
   alarm_wakeup_sounds:
     alias: Alarm Sounds

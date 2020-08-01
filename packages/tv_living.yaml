@@ -23,8 +23,8 @@ automation:
     for: "00:30:00"
   condition:
   - condition: state
-    entity_id: input_boolean.living_top_current_chromecast
-    state: "on"
+    entity_id: input_select.tv_living_top_source
+    state: "chromecast"
   action:
   - service: script.living_top_off
 
@@ -49,8 +49,8 @@ automation:
     for: "00:60:00"
   condition:
   - condition: state
-    entity_id: input_boolean.living_top_current_appletv
-    state: "on"
+    entity_id: input_select.tv_living_top_source
+    state: "appletv"
   action:
   - service: script.living_top_off
 
@@ -74,8 +74,8 @@ automation:
     to: "standby"
   condition:
   - condition: state
-    entity_id: input_boolean.living_top_current_playstation
-    state: "on"
+    entity_id: input_select.tv_living_top_source
+    state: "playstation"
   action:
   - service: script.living_top_off
 
@@ -112,8 +112,22 @@ script:
 ### Living All Off Macro
   living_all_off:
     sequence:
-      - service: script.living_bottom_off
-      - service: script.living_top_off
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.tv_living_bottom_source", "none") %}
+              none
+            {% else %}
+              script.living_bottom_off
+            {% endif %}
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.tv_living_top_source", "none") %}
+              none
+            {% else %}
+              script.living_top_off
+            {% endif %}
 
 ### Living Top TV Macros
   living_top_mute:
@@ -121,19 +135,12 @@ script:
       - service: script.sony_volume_mute_toggle
   living_top_off:
     sequence:
-      - service: script.turn_on
-        data_template:
-          entity_id: >
-            {% if is_state("input_select.tv_living_top_source", "off") %}
-              none
-            {% else %}
-              script.sony_power_toggle
-            {% endif %}
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_top_source
           option: loading
       - service: script.samsung_power_off
+      - service: script.sony_power_toggle
       - service: media_player.turn_off
         entity_id: media_player.living_room_tv
       - service: media_player.turn_off

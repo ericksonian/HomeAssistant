@@ -3,9 +3,11 @@ conditions:
   - entity: media_player.bedroom_tv
     state_not: 'off'
 card:
+  type: horizontal-stack
   cards:
-    - cards:
-        - color: 'rgb(175,175,175)'
+    - type: vertical-stack
+      cards:
+        - color: 'rgb(20,20,20)'
           color_type: label-card
           name: Woofer
           type: 'custom:button-card'
@@ -23,8 +25,8 @@ card:
             action: call-service
             service: script.master_soundbar_woofer_down
           type: entity-button
-      type: vertical-stack
-    - cards:
+    - type: vertical-stack
+      cards:
         - entity: script.master_tv_picture
           icon: 'mdi:television'
           show_name: false
@@ -48,9 +50,10 @@ card:
             action: call-service
             service: script.master_tv_sleep
           type: entity-button
-      type: vertical-stack
-    - cards:
-        - color: 'rgb(175,175,175)'
+        - !include /config/lovelace/cards_shared/spacer.yaml
+    - type: vertical-stack
+      cards:
+        - color: 'rgb(20,20,20)'
           color_type: label-card
           name: Volume
           type: 'custom:button-card'
@@ -68,5 +71,3 @@ card:
             action: call-service
             service: script.master_soundbar_volume_down
           type: entity-button
-      type: vertical-stack
-  type: horizontal-stack

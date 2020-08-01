@@ -7,8 +7,66 @@ conditions:
   - entity: media_player.everywhere
     state: 'off'
 card:
-  artwork: cover
-  entity: media_player.bathroom_speaker
-  group: false
-  icon: 'mdi:cast'
-  type: 'custom:mini-media-player'
+  type: vertical-stack
+  cards:
+    - type: 'custom:button-card'
+      color: 'rgb(200,200,200)'
+      color_type: label-card
+      name: Master Bath Speaker
+      styles:
+        card:
+          - height: 24px
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: media_player.bathroom_speaker
+          icon: 'mdi:power'
+          show_name: false
+          styles:
+            card:
+              - height: 60px
+                width: 60px
+            icon:
+              - color: 'rgb(255,0,0)'
+          tap_action:
+            action: call-service
+            service: media_player.turn_off
+            service_data:
+              entity_id: media_player.bathroom_speaker
+        - type: 'custom:slider-entity-row'
+          entity: media_player.bathroom_speaker
+          full_row: true
+          hide_state: true
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:mini-media-player'
+          artwork: cover
+          entity: media_player.bathroom_speaker
+          group: false
+          icon: 'mdi:cast'
+          hide:
+            name: true
+            power: true
+            controls: true
+            source: true
+            volume: true
+            play_pause: true
+        - type: 'custom:button-card'
+          entity: media_player.bathroom_speaker
+          icon: 'mdi:play'
+          show_name: false
+          state:
+            - icon: 'mdi:pause'
+              value: 'playing'
+          styles:
+            card:
+              - height: 72px
+                width: 60px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: media_player.media_play_pause
+            service_data:
+              entity_id: media_player.bathroom_speaker
+    - !include /config/lovelace/cards_shared/spacer.yaml

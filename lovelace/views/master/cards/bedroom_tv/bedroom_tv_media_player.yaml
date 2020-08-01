@@ -43,6 +43,7 @@ card:
           group: false
           icon: 'mdi:cast'
           hide:
+            name: true
             power: true
             controls: true
             source: true
