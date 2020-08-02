@@ -3,7 +3,7 @@ icon: 'mdi:theater'
 badges: []
 cards:
   - !include /config/lovelace/views/theater/cards/nothing_playing.yaml
-#  - !include /config/lovelace/views/theater/cards/projector_on.yaml
+  - !include /config/lovelace/views/theater/cards/projector_on.yaml
   - !include /config/lovelace/views/theater/cards/theater_speaker.yaml
   - !include /config/lovelace/views/theater/cards/theater_tv.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
