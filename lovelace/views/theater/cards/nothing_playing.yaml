@@ -4,14 +4,19 @@ conditions:
     state: 'off'
   - entity: media_player.theater_tv
     state: 'off'
-#  - entity: sensor.vesync_projector_power_high
-#    state: 'off'
+  - entity: sensor.theater_projector_on
+    state: 'False'
 card:
-  type: 'custom:button-card'
-  color_type: label-card
-  name: Nothing Playing in Theater. Maybe.
-  color: 'rgb(50, 50, 50)'
-  style: |
-    ha-card {
-      border-radius: 15px;
-    }
+  type: horizontal-stack
+  cards:
+    - type: 'custom:button-card'
+      color_type: label-card
+      name: Nothing Playing in Theater
+      color: 'rgb(50, 50, 50)'
+      styles:
+        card:
+          - height: 70px
+      style: |
+        ha-card {
+          border-radius: 10px;
+        }

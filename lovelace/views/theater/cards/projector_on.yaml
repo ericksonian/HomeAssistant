@@ -1,0 +1,16 @@
+type: conditional
+conditions:
+  - entity: sensor.theater_projector_on
+    state: 'True'
+card:
+  type: 'custom:button-card'
+  color_type: label-card
+  name: Projector On
+  color: 'rgb(200,200,200)'
+  styles:
+    card:
+      - height: 48px
+  style: |
+    ha-card {
+      border-radius: 10px;
+    }
