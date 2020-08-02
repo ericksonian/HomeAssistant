@@ -1,0 +1,81 @@
+input_number:
+  master_tv_sleep:
+    name: Master TV Sleep Timer
+    unit_of_measurement: min
+    min: 1
+    max: 60
+    step: 1
+    mode: slider
+
+input_boolean:
+  master_tv_sleep_show:
+    name: Master TV Sleep Timer Show
+    initial: off
+  master_tv_sleep_run:
+    name: Master TV Sleep Timer Run
+    initial: off
+
+timer:
+  master_tv_sleep:
+    name: Master TV Sleep Timer
+
+automation:
+  - alias: Master TV Sleep Timer Start
+    trigger:
+      platform: state
+      entity_id: input_boolean.master_tv_sleep_run
+      to: 'on'
+    action:
+      service: timer.start
+      entity_id: timer.master_tv_sleep
+      data_template:
+        duration: "{{ states('input_number.master_tv_sleep') | int * 60 }}"
+
+  - alias: Master TV Sleep Timer Cancel
+    trigger:
+      platform: state
+      entity_id: input_boolean.master_tv_sleep_run
+      to: 'off'
+    action:
+      service: timer.cancel
+      entity_id: timer.master_tv_sleep
+
+  - alias: Master TV Sleep Timer End
+    trigger:
+      platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.master_tv_sleep
+    action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.master_tv_sleep_run
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.bedroom_tv
+
+  - alias: Master TV Sleep Timer Tracking
+    trigger:
+      platform: state
+      entity_id: timer.master_tv_sleep
+      to: active
+      for: "00:01:00"
+    action:
+    - service: timer.pause
+      entity_id: timer.master_tv_sleep
+    - service: timer.start
+      entity_id: timer.master_tv_sleep
+
+sensor:
+  - platform: template
+    sensors:
+      master_tv_sleep_time_set:
+        value_template: "{{ states.input_number.master_tv_sleep.state.split('.')[0] }}"
+      master_tv_sleep_time:
+        value_template: "{{ (state_attr('timer.master_tv_sleep', 'remaining')) }}"
+      master_tv_sleep_time_min:
+        value_template: "{{ states.sensor.master_tv_sleep_time.state.split(':')[1] }}"
+#      master_tv_sleep_time_sec:
+#        value_template: "{{ states.sensor.master_tv_sleep_time.state.split(':')[2] }}"
+#      master_tv_sleep_time_remaining:
+#        value_template: "{{ states.sensor.master_tv_sleep_time_min.state }}:{{ states.sensor.master_tv_sleep_time_sec.state }}"

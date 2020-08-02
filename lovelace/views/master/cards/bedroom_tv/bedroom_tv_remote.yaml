@@ -41,16 +41,20 @@ card:
             action: call-service
             service: script.master_soundbar_volume_mute
           type: entity-button
-        - entity: script.master_tv_sleep
-          hold_action:
-            action: none
+        - type: 'custom:button-card'
+          entity: timer.master_tv_sleep
           icon: 'mdi:sleep'
           show_name: false
           tap_action:
             action: call-service
-            service: script.master_tv_sleep
-          type: entity-button
-        - !include /config/lovelace/cards_shared/spacer.yaml
+            service: input_boolean.toggle
+            service_data:
+              entity_id: input_boolean.master_tv_sleep_show
+          hold_action:
+            action: none
+          state:
+            - color: 'rgb(72,178,230)'
+              value: 'active'
     - type: vertical-stack
       cards:
         - color: 'rgb(20,20,20)'
