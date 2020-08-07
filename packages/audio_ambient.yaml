@@ -27,6 +27,7 @@ input_select:
   ambient_sound:
     name: 'Select Radio Station:'
     options:
+      - None
       - Babbling Brook
       - Oscillating Fan
       - Fireplace

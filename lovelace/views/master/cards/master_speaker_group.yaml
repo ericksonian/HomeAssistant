@@ -14,6 +14,38 @@ card:
           - height: 24px
     - type: horizontal-stack
       cards:
+        - type: 'custom:mini-media-player'
+          artwork: cover
+          entity: media_player.master
+          group: false
+          icon: 'mdi:cast-audio'
+          hide:
+            name: true
+            power: true
+            controls: true
+            source: true
+            volume: true
+            play_pause: true
+        - type: 'custom:button-card'
+          entity: media_player.master
+          icon: 'mdi:play'
+          show_name: false
+          state:
+            - icon: 'mdi:pause'
+              value: 'playing'
+          styles:
+            card:
+              - height: 72px
+                width: 60px
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: media_player.media_play_pause
+            service_data:
+              entity_id: media_player.master
+    - type: horizontal-stack
+      cards:
         - type: 'custom:button-card'
           entity: media_player.master
           icon: 'mdi:power'
@@ -61,36 +93,4 @@ card:
               entity: media_player.bathroom_speaker
               full_row: true
               hide_state: true
-    - type: horizontal-stack
-      cards:
-        - type: 'custom:mini-media-player'
-          artwork: cover
-          entity: media_player.master
-          group: false
-          icon: 'mdi:cast'
-          hide:
-            name: true
-            power: true
-            controls: true
-            source: true
-            volume: true
-            play_pause: true
-        - type: 'custom:button-card'
-          entity: media_player.master
-          icon: 'mdi:play'
-          show_name: false
-          state:
-            - icon: 'mdi:pause'
-              value: 'playing'
-          styles:
-            card:
-              - height: 72px
-                width: 60px
-            icon:
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: media_player.media_play_pause
-            service_data:
-              entity_id: media_player.master
     - !include /config/lovelace/cards_shared/spacer.yaml

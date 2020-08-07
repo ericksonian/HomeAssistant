@@ -6,6 +6,8 @@ cards:
         conditions:
           - entity: input_select.ambient_speaker
             state: Everywhere
+          - entity: input_select.ambient_sound
+            state_not: None
         type: conditional
     type: horizontal-stack
   - cards:
@@ -15,6 +17,8 @@ cards:
         conditions:
           - entity: input_select.ambient_speaker
             state: Woofer Zones
+          - entity: input_select.ambient_sound
+            state_not: None
         type: conditional
     type: horizontal-stack
   - cards:
@@ -24,6 +28,8 @@ cards:
         conditions:
           - entity: input_select.ambient_speaker
             state: Master Suite
+          - entity: input_select.ambient_sound
+            state_not: None
         type: conditional
     type: horizontal-stack
   - cards:
@@ -33,6 +39,8 @@ cards:
         conditions:
           - entity: input_select.ambient_speaker
             state: Living Room TV
+          - entity: input_select.ambient_sound
+            state_not: None
         type: conditional
     type: horizontal-stack
   - cards:
@@ -42,6 +50,8 @@ cards:
         conditions:
           - entity: input_select.ambient_speaker
             state: Theater TV
+          - entity: input_select.ambient_sound
+            state_not: None
         type: conditional
     type: horizontal-stack
 type: vertical-stack

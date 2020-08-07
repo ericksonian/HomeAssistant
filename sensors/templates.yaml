@@ -20,8 +20,8 @@
       value_template: "{{ state_attr('fan.living_room_ceiling_fan', 'speed') }}"
 
     theater_projector_on:
-      friendly_name: Living Room Fan Speed
-      value_template: "{{ states.sensor.vesync_projector_watts.state | float > 150.0 }}"
+      friendly_name: Theater Projector On
+      value_template: "{{ states.sensor.vesync_projector_watts.state | float > 50.0 }}"
 
     vesync_white_watts:
       friendly_name: VeSync White Watts

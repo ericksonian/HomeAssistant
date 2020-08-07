@@ -3,10 +3,13 @@ cards:
     entity: sensor.front_door_battery
     color_type: card
     show_state: true
-    show_icon: false
     show_name: true
     name: Front Door
     layout: name_state
+    show_icon: false
+#    layout: icon_name_state
+#    show_icon: true
+#    icon: 'mdi:battery'
     style: |
       ha-card {
         border-radius: 15px;
@@ -153,6 +156,8 @@ cards:
     conditions:
       - entity: media_player.front_patio_speaker
         state_not: 'off'
+      - entity: media_player.everywhere
+        state: 'off'
     card:
       type: 'custom:mini-media-player'
       artwork: cover
