@@ -1,6 +1,7 @@
-### Lighting Actions
 
-#   
+#### Lighting Actions
+
+#
 - alias: Action Garage Close
   trigger:
     platform: event
@@ -22,4 +23,3 @@
   - service: cover.open_cover
     data:
       entity_id: cover.garage_door
-
