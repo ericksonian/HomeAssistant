@@ -7,3 +7,4 @@ cards:
   - !include /config/lovelace/views/theater/cards/theater_speaker.yaml
   - !include /config/lovelace/views/theater/cards/theater_tv.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
+  - !include /config/lovelace/cards_shared/footer.yaml
