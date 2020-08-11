@@ -17,14 +17,38 @@ group:
 
 ###### AUTOMATIONS --------------------------------------
 automation:
-
-## Nobody Home - Lock Up
+### Front Door
+## Lock Up
+# Nobody Home
 - alias: Nobody Home - Lock Up
   trigger:
   - platform: state
     entity_id: group.all_persons
     to: not_home
     for: "00:30:00"
+  action:
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+
+# Midnight
+- alias: Lock Up 12am
+  trigger:
+  - platform: time
+    at: "23:59:55"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+
+# 3am
+- alias: Lock Up 3am
+  trigger:
+  - platform: time
+    at: "02:59:55"
   action:
   - service: lock.lock
     data:

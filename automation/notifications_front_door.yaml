@@ -2,14 +2,14 @@
 # Nobody Home - Front Unlocked for 10 Minutes
 - alias: Front Door Unlocked Vacant 10
   trigger:
-  - entity_id: lock.front_door
+  - entity_id: group.all_persons
     platform: state
-    to: unlocked
+    to: not_home
     for: "00:10:00"
   condition:
   - condition: state
-    entity_id: group.all_persons
-    state: 'not_home'
+    entity_id: lock.front_door
+    state: 'unlocked'
   action:
   - service: camera.snapshot
     data:
@@ -17,8 +17,8 @@
       filename: '/config/www/front_door.jpg'
   - service: !secret notify_ian
     data:
-      title: Front Door Unlocked for 10 Minutes
-      message: Nobody is Home
+      title: Front Door Unlocked
+      message: Nobody has been home for 10 minutes
       data:
         push:
           category: front_door_unlocked
@@ -26,43 +26,8 @@
           url: !secret snapshot_frontdoor
   - service: !secret notify_sean
     data:
-      title: Front Door Unlocked for 10 Minutes
-      message: Nobody is Home
-      data:
-        push:
-          category: front_door_unlocked
-        attachment:
-          url: !secret snapshot_frontdoor
-
-# Nobody Home - Front Unlocked for 20 Minutes
-- alias: Front Door Unlocked Vacant 20
-  trigger:
-  - entity_id: lock.front_door
-    platform: state
-    to: unlocked
-    for: "00:20:00"
-  condition:
-  - condition: state
-    entity_id: group.all_persons
-    state: 'not_home'
-  action:
-  - service: camera.snapshot
-    data:
-      entity_id: camera.frontdoor
-      filename: '/config/www/front_door.jpg'
-  - service: !secret notify_ian
-    data:
-      title: Front Door Unlocked for 20 Minutes
-      message: Nobody is Home
-      data:
-        push:
-          category: front_door_unlocked
-        attachment:
-          url: !secret snapshot_frontdoor
-  - service: !secret notify_sean
-    data:
-      title: Front Door Unlocked for 20 Minutes
-      message: Nobody is Home
+      title: Front Door Unlocked
+      message: Nobody has been home for 10 minutes
       data:
         push:
           category: front_door_unlocked
@@ -72,23 +37,26 @@
 # Nobody Home - Front Unlocked for 30 Minutes
 - alias: Front Door Unlocked Vacant 30
   trigger:
-  - entity_id: lock.front_door
+  - entity_id: group.all_persons
     platform: state
-    to: unlocked
+    to: not_home
     for: "00:30:00"
   condition:
   - condition: state
-    entity_id: group.all_persons
-    state: 'not_home'
+    entity_id: lock.front_door
+    state: 'unlocked'
   action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
   - service: camera.snapshot
     data:
       entity_id: camera.frontdoor
       filename: '/config/www/front_door.jpg'
   - service: !secret notify_ian
     data:
-      title: Front Door Unlocked for 30 Minutes
-      message: Nobody is Home
+      title: Front Door Automatically Locked
+      message: Nobody has been home for 30 minutes
       data:
         push:
           category: front_door_unlocked
@@ -96,8 +64,8 @@
           url: !secret snapshot_frontdoor
   - service: !secret notify_sean
     data:
-      title: Front Door Unlocked for 30 Minutes
-      message: Nobody is Home
+      title: Front Door Automatically Locked
+      message: Nobody has been home for 30 minutes
       data:
         push:
           category: front_door_unlocked
