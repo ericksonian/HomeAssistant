@@ -5,6 +5,6 @@ visible:
   - user: !secret user_ian
 cards:
   - !include /config/lovelace/views/rack/cards/rack_power.yaml
-#  - !include /config/lovelace/views/rack/cards/plex.yaml
+  - !include /config/lovelace/views/rack/cards/pihole.yaml
 #  - !include /config/lovelace/views/rack/cards/downloads.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
