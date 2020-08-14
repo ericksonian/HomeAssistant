@@ -6,11 +6,7 @@ card:
   type: 'custom:button-card'
   color_type: label-card
   name: Projector On
-  color: 'rgb(200,200,200)'
+  color: 'rgb(220,20,60)'
   styles:
     card:
       - height: 48px
-  style: |
-    ha-card {
-      border-radius: 10px;
-    }
