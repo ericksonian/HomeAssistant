@@ -1,6 +1,6 @@
 type: vertical-stack
 cards:
-   type: 'custom:button-card'
+  - type: 'custom:button-card'
     entity: input_boolean.pancake_auto_heat
     hold_action:
       action: more-info
