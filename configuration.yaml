@@ -28,6 +28,14 @@ script: !include_dir_merge_named scripts/
 scene: !include_dir_merge_list scenes/
 input_boolean: !include_dir_merge_named input_booleans/
 
+# Wyze Sense
+binary_sensor:
+  - platform: wyzesense
+    device: auto
+#    initial_state:
+#      77777777: "on"
+#      77777777: "off"
+
 # Garage Door
 cover:
   - platform: myq

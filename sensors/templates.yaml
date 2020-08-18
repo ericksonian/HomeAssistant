@@ -15,6 +15,24 @@
     front_door_battery:
       value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}%"
 
+    front_door_contact:
+      friendly_name: "Front Door Contact"
+      value_template: >-
+        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
+          Closed
+        {% else %}
+          Open
+        {% endif %}
+
+    garage_door_contact:
+      friendly_name: "Front Door Contact"
+      value_template: >-
+        {% if is_state('binary_sensor.wyzesense_garagedoor', 'off') %}
+          Open
+        {% else %}
+          Closed
+        {% endif %}
+
     living_fan_speed:
       friendly_name: Living Room Fan Speed
       value_template: "{{ state_attr('fan.living_room_ceiling_fan', 'speed') }}"
