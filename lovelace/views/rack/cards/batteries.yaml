@@ -1,5 +1,5 @@
-title: Device Battery Levels
 type: entities
+title: Device Battery Levels
 entities:
   - entity: sensor.battery_frontdoor_lock
     name: Front Door Lock

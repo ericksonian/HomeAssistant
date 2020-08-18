@@ -1,5 +1,7 @@
+type: vertical-stack
 cards:
-  - entity: input_boolean.pancake_auto_heat
+   type: 'custom:button-card'
+    entity: input_boolean.pancake_auto_heat
     hold_action:
       action: more-info
     icon: 'mdi:theme-light-dark'
@@ -18,15 +20,21 @@ cards:
         - height: 125px
     tap_action:
       action: toggle
-    type: 'custom:button-card'
-  - card:
+  - type: conditional
+    conditions:
+      - entity: input_boolean.pancake_auto_heat
+        state: 'off'
+    card:
+      type: vertical-stack
       cards:
-        - color: 'rgb(60,60,60)'
+        - type: 'custom:button-card'
+          color: 'rgb(60,60,60)'
           color_type: label-card
           name: Heat/Sun Overlap
-          type: 'custom:button-card'
-        - cards:
-            - entity: input_select.pancake_auto_heat_hours
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              entity: input_select.pancake_auto_heat_hours
               hold_action:
                 action: none
               icon: 'mdi:lightbulb-outline'
@@ -46,8 +54,8 @@ cards:
                 service_data:
                   entity_id: input_select.pancake_auto_heat_hours
                   option: 1hour
-              type: 'custom:button-card'
-            - entity: input_select.pancake_auto_heat_hours
+            - type: 'custom:button-card'
+              entity: input_select.pancake_auto_heat_hours
               hold_action:
                 action: none
               icon: 'mdi:lightbulb-multiple-outline'
@@ -67,8 +75,8 @@ cards:
                 service_data:
                   entity_id: input_select.pancake_auto_heat_hours
                   option: 2hour
-              type: 'custom:button-card'
-            - entity: input_select.pancake_auto_heat_hours
+            - type: 'custom:button-card'
+              entity: input_select.pancake_auto_heat_hours
               hold_action:
                 action: none
               icon: 'mdi:lightbulb-group-outline'
@@ -88,11 +96,3 @@ cards:
                 service_data:
                   entity_id: input_select.pancake_auto_heat_hours
                   option: 3hour
-              type: 'custom:button-card'
-          type: horizontal-stack
-      type: vertical-stack
-    conditions:
-      - entity: input_boolean.pancake_auto_heat
-        state: 'off'
-    type: conditional
-type: vertical-stack

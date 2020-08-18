@@ -7,7 +7,8 @@ conditions:
 card:
   type: horizontal-stack
   cards:
-    - entity: script.living_top_off
+    - type: 'custom:button-card'
+      entity: script.living_top_off
       icon: 'mdi:power'
       name: Top TV Off
       show_name: false
@@ -20,8 +21,8 @@ card:
       tap_action:
         action: call-service
         service: script.living_top_off
-      type: 'custom:button-card'
-    - entity: sensor.sony_receiver_muting
+    - type: 'custom:button-card'
+      entity: sensor.sony_receiver_muting
       icon: 'mdi:volume-mute'
       name: Mute
       show_name: false
@@ -35,17 +36,21 @@ card:
       tap_action:
         action: call-service
         service: script.living_top_mute
-      type: 'custom:button-card'
-    - card:
-        entity: media_player.sony_receiver
-        full_row: true
-        hide_state: true
-        type: 'custom:slider-entity-row'
+    - type: conditional
       conditions:
         - entity: media_player.living_room_receiver
           state_not: unavailable
-      type: conditional
-    - card:
+      card:
+        type: 'custom:slider-entity-row'
+        entity: media_player.sony_receiver
+        full_row: true
+        hide_state: true
+    - type: conditional
+      conditions:
+        - entity: media_player.living_room_receiver
+          state: unavailable
+      card:
+        type: 'custom:button-card'
         entity: script.sony_volume_down
         icon: 'mdi:volume-medium'
         name: +
@@ -61,12 +66,12 @@ card:
         tap_action:
           action: call-service
           service: script.sony_volume_down
-        type: 'custom:button-card'
+    - type: conditional
       conditions:
         - entity: media_player.living_room_receiver
           state: unavailable
-      type: conditional
-    - card:
+      card:
+        type: 'custom:button-card'
         entity: script.sony_volume_up
         icon: 'mdi:volume-high'
         name: +
@@ -82,8 +87,3 @@ card:
         tap_action:
           action: call-service
           service: script.sony_volume_up
-        type: 'custom:button-card'
-      conditions:
-        - entity: media_player.living_room_receiver
-          state: unavailable
-      type: conditional

@@ -1,3 +1,4 @@
+type: picture-entity
 aspect_ratio: 50%
 camera_view: live
 entity: camera.pancake
@@ -10,4 +11,3 @@ style: |
   ha-card {
     border-radius: 15px;
   }
-type: picture-entity

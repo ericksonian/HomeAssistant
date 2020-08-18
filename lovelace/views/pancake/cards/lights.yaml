@@ -1,6 +1,9 @@
+type: horizontal-stack
 cards:
-  - cards:
-      - entity: switch.vesync_white
+  - type: vertical-stack
+    cards:
+      - type: 'custom:button-card'
+        entity: switch.vesync_white
         hold_action:
           action: more-info
         icon: 'mdi:weather-night'
@@ -22,8 +25,8 @@ cards:
             - height: 125px
         tap_action:
           action: toggle
-        type: 'custom:button-card'
-      - entity: sensor.vesync_white_watts
+      - type: 'custom:button-card'
+        entity: sensor.vesync_white_watts
         hold_action:
           action: none
         show_icon: false
@@ -41,10 +44,10 @@ cards:
             - height: 25px
         tap_action:
           action: more-info
-        type: 'custom:button-card'
-    type: vertical-stack
-  - cards:
-      - entity: switch.vesync_blue
+  - type: vertical-stack
+    cards:
+      - type: 'custom:button-card'
+        entity: switch.vesync_blue
         hold_action:
           action: more-info
         icon: 'mdi:radiator-off'
@@ -66,8 +69,8 @@ cards:
             - height: 125px
         tap_action:
           action: toggle
-        type: 'custom:button-card'
-      - entity: sensor.vesync_blue_watts
+      - type: 'custom:button-card'
+        entity: sensor.vesync_blue_watts
         hold_action:
           action: none
         show_icon: false
@@ -81,6 +84,3 @@ cards:
              - height: 25px
         tap_action:
            action: more-info
-        type: 'custom:button-card'
-    type: vertical-stack
-type: horizontal-stack

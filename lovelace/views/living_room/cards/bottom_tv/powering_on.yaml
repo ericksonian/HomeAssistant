@@ -3,6 +3,7 @@ conditions:
   - entity: input_select.tv_living_bottom_source
     state: 'loading'
 card:
+  type: 'custom:button-card'
   color: 'rgb(55,55,55)'
   color_type: label-card
   name: Powering On and Muting...
@@ -13,4 +14,3 @@ card:
   styles:
     card:
       - height: 65px
-  type: 'custom:button-card'

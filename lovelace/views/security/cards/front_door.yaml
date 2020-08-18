@@ -1,5 +1,7 @@
+type: vertical-stack
 cards:
-  - color: 'rgb(200,200,200)'
+  - type: 'custom:button-card'
+    color: 'rgb(200,200,200)'
     color_type: label-card
     name: Front Door
     style: |
@@ -10,7 +12,6 @@ cards:
     styles:
       card:
         - height: 24px
-    type: 'custom:button-card'
   - type: horizontal-stack
     cards:
       - type: picture-entity
@@ -62,7 +63,8 @@ cards:
                 - height: 24px
           - type: horizontal-stack
             cards:
-              - color: 'rgb(150,150,150)'
+              - type: 'custom:button-card'
+                color: 'rgb(150,150,150)'
                 entity: lock.front_door
                 icon: 'mdi:lock-open-outline'
                 lock:
@@ -87,8 +89,8 @@ cards:
                   service: lock.unlock
                   service_data:
                     entity_id: lock.front_door
-                type: 'custom:button-card'
-              - color: 'rgb(150,150,150)'
+              - type: 'custom:button-card'
+                color: 'rgb(150,150,150)'
                 entity: lock.front_door
                 icon: 'mdi:lock-outline'
                 name: Lock
@@ -111,9 +113,10 @@ cards:
                   service: lock.lock
                   service_data:
                     entity_id: lock.front_door
-                type: 'custom:button-card'
-  - cards:
-      - entity: switch.patio_string
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        entity: switch.patio_string
         hold_action:
           action: more-info
         icon: 'mdi:string-lights'
@@ -129,8 +132,8 @@ cards:
               width: 90px
         tap_action:
           action: toggle
-        type: 'custom:button-card'
-      - entity: light.exterior_front_door
+      - type: 'custom:button-card'
+        entity: light.exterior_front_door
         hold_action:
           action: more-info
         icon: 'mdi:white-balance-incandescent'
@@ -146,12 +149,10 @@ cards:
               width: 90px
         tap_action:
           action: toggle
-        type: 'custom:button-card'
-      - entity: light.exterior_front_door
+      - type: 'custom:slider-entity-row'
+        entity: light.exterior_front_door
         full_row: true
         hide_state: true
-        type: 'custom:slider-entity-row'
-    type: horizontal-stack
   - type: conditional
     conditions:
       - entity: media_player.front_patio_speaker
@@ -168,4 +169,3 @@ cards:
         controls: true
         mute: true
         volume: true
-type: vertical-stack

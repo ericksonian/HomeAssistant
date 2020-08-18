@@ -3,9 +3,12 @@ conditions:
   - entity: input_select.tv_living_top_source
     state: 'playstation'
 card:
+  type: vertical-stack
   cards:
-    - artwork: cover
+    - type: 'custom:mini-media-player'
       entity: media_player.playstation_4
+      icon: 'mdi:playstation'
+      artwork: cover
       group: false
       hide:
         controls: true
@@ -14,14 +17,14 @@ card:
         power: true
         source: true
         volume: true
-      icon: 'mdi:playstation'
       style: |
         ha-card {
           border-radius: 15px;
         }
-      type: 'custom:mini-media-player'
-    - cards:
-        - color: 'rgb(0, 0, 0)'
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color: 'rgb(0, 0, 0)'
           entity: sensor.ps4_source
           hold_action:
             action: none
@@ -33,8 +36,8 @@ card:
                 - height: 48px
           tap_action:
             action: more-info
-          type: 'custom:button-card'
-        - entity: script.ps4_up
+        - type: 'custom:button-card'
+          entity: script.ps4_up
           icon: 'mdi:arrow-up'
           show_name: false
           styles:
@@ -43,8 +46,8 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_up
-          type: 'custom:button-card'
-        - entity: media_player.playstation_4
+        - type: 'custom:button-card'
+          entity: media_player.playstation_4
           icon: 'mdi:playstation'
           show_name: false
           show_state: false
@@ -54,10 +57,10 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_ps
-          type: 'custom:button-card'
-      type: horizontal-stack
-    - cards:
-        - entity: script.ps4_left
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: script.ps4_left
           icon: 'mdi:arrow-left'
           show_name: false
           styles:
@@ -66,8 +69,8 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_left
-          type: 'custom:button-card'
-        - entity: script.ps4_enter
+        - type: 'custom:button-card'
+          entity: script.ps4_enter
           icon: 'mdi:select'
           show_name: false
           styles:
@@ -76,8 +79,8 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_enter
-          type: 'custom:button-card'
-        - entity: script.ps4_right
+        - type: 'custom:button-card'
+          entity: script.ps4_right
           icon: 'mdi:arrow-right'
           show_name: false
           styles:
@@ -86,10 +89,10 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_right
-          type: 'custom:button-card'
-      type: horizontal-stack
-    - cards:
-        - entity: script.ps4_back
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: script.ps4_back
           icon: 'mdi:keyboard-return'
           show_name: false
           styles:
@@ -98,8 +101,8 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_back
-          type: 'custom:button-card'
-        - entity: script.ps4_down
+        - type: 'custom:button-card'
+          entity: script.ps4_down
           icon: 'mdi:arrow-down'
           show_name: false
           styles:
@@ -108,8 +111,8 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_down
-          type: 'custom:button-card'
-        - entity: script.ps4_option
+        - type: 'custom:button-card'
+          entity: script.ps4_option
           icon: 'mdi:menu'
           show_name: false
           styles:
@@ -118,6 +121,3 @@ card:
           tap_action:
             action: call-service
             service: script.ps4_option
-          type: 'custom:button-card'
-      type: horizontal-stack
-  type: vertical-stack

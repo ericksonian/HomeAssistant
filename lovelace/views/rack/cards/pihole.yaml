@@ -1,5 +1,5 @@
-title: Pi-Hole Ad Blocker
 type: entities
+title: Pi-Hole Ad Blocker
 entities:
   - entity: sensor.pi_hole_ads_blocked_today
     name: Ads Blocked Today

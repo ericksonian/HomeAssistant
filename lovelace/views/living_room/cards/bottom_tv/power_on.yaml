@@ -3,6 +3,7 @@ conditions:
   - entity: input_select.tv_living_bottom_source
     state: 'none'
 card:
+  type: 'custom:button-card'
   entity: input_select.tv_living_bottom_source
   icon: 'mdi:power'
   name: Power On
@@ -15,5 +16,4 @@ card:
   tap_action:
     action: call-service
     service: script.living_bottom_on
-  type: 'custom:button-card'
 

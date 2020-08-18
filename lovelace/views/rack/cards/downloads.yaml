@@ -1,5 +1,5 @@
-title: Downloads
 type: entities
+title: Downloads
 show_header_toggle: false
 entities:
   - entity: sensor.radarr_upcoming

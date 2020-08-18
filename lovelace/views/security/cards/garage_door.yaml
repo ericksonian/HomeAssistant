@@ -1,5 +1,7 @@
+type: vertical-stack
 cards:
-  - color: 'rgb(200, 200, 200)'
+  - type: 'custom:button-card'
+    color: 'rgb(200, 200, 200)'
     color_type: label-card
     name: Garage Door
     style: |
@@ -10,9 +12,10 @@ cards:
     styles:
       card:
         - height: 24px
-    type: 'custom:button-card'
-  - cards:
-      - aspect_ratio: 60%
+  - type: horizontal-stack
+    cards:
+      - type: picture-entity
+        aspect_ratio: 60%
         camera_view: auto
         entity: camera.garage
         hold_action:
@@ -25,9 +28,10 @@ cards:
           }
         tap_action:
           action: more-info
-        type: picture-entity
-      - cards:
-          - color: 'rgb(0, 0, 0)'
+      - type: vertical-stack
+        cards:
+          - type: 'custom:button-card'
+            color: 'rgb(0, 0, 0)'
             entity: sensor.garage_door_contact
             tap_action:
               action: none
@@ -52,9 +56,10 @@ cards:
             styles:
               card:
                 - height: 24px
-            type: 'custom:button-card'
-          - cards:
-              - color: 'rgb(150,150,150)'
+          - type: horizontal-stack
+            cards:
+              - type: 'custom:button-card'
+                color: 'rgb(150,150,150)'
                 entity: cover.garage_door
                 icon: 'mdi:garage-open'
                 lock:
@@ -80,8 +85,8 @@ cards:
                   service: cover.open_cover
                   service_data:
                     entity_id: cover.garage_door
-                type: 'custom:button-card'
-              - color: 'rgb(150,150,150)'
+              - type: 'custom:button-card'
+                color: 'rgb(150,150,150)'
                 entity: cover.garage_door
                 icon: 'mdi:garage'
                 name: Close
@@ -105,12 +110,10 @@ cards:
                   service: cover.close_cover
                   service_data:
                     entity_id: cover.garage_door
-                type: 'custom:button-card'
-            type: horizontal-stack
-        type: vertical-stack
-    type: horizontal-stack
-  - cards:
-      - entity: switch.garage_ceiling
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        entity: switch.garage_ceiling
         hold_action:
           action: more-info
         icon: 'mdi:white-balance-incandescent'
@@ -130,8 +133,8 @@ cards:
               width: 90px
         tap_action:
           action: toggle
-        type: 'custom:button-card'
-      - entity: light.exterior_driveway
+      - type: 'custom:button-card'
+        entity: light.exterior_driveway
         hold_action:
           action: more-info
         icon: 'mdi:spotlight-beam'
@@ -151,14 +154,11 @@ cards:
              width: 90px
         tap_action:
           action: toggle
-        type: 'custom:button-card'
-      - entity: light.exterior_driveway
+      - type: 'custom:slider-entity-row'
+        entity: light.exterior_driveway
         full_row: true
         hide_state: true
         style: |
           ha-card {
             border-radius: 15px;
           }
-        type: 'custom:slider-entity-row'
-    type: horizontal-stack
-type: vertical-stack
