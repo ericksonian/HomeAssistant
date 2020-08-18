@@ -15,13 +15,15 @@
     front_door_battery:
       value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}%"
 
-    front_door_contact:
-      friendly_name: "Front Door Contact"
+    front_door_status:
+      friendly_name: "Front Door Status"
       value_template: >-
-        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
-          Closed
-        {% else %}
+        {% if is_state('binary_sensor.wyzesense_frontdoor', 'on') %}
           Open
+        {% elif is_state('lock.frontdoor', 'locked') %}
+          Locked
+        {% else %}
+          Unlocked
         {% endif %}
 
     garage_door_contact:

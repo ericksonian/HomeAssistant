@@ -28,7 +28,9 @@ cards:
         type: picture-entity
       - cards:
           - color: 'rgb(0, 0, 0)'
-            entity: cover.garage_door
+            entity: sensor.garage_door_contact
+            tap_action:
+              action: none
             hold_action:
               action: none
             show_icon: false
@@ -38,19 +40,11 @@ cards:
               - styles:
                   state:
                     - color: green
-                value: closed
+                value: Closed
               - styles:
                   state:
                     - color: red
-                value: open
-              - styles:
-                  state:
-                    - color: yellow
-                value: opening
-              - styles:
-                  state:
-                    - color: yellow
-                value: closing
+                value: Open
             style: |
               ha-card {
                 font-variant: small-caps;
@@ -58,8 +52,6 @@ cards:
             styles:
               card:
                 - height: 24px
-            tap_action:
-              action: more-info
             type: 'custom:button-card'
           - cards:
               - color: 'rgb(150,150,150)'

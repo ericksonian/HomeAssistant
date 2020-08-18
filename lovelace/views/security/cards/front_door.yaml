@@ -1,5 +1,6 @@
 cards:
-  - color: 'rgb(200,200,200)'
+  - type: 'custom:button-card'
+    color: 'rgb(200,200,200)'
     entity: sensor.front_door_battery
     color_type: card
     show_state: true
@@ -18,9 +19,10 @@ cards:
     styles:
       card:
         - height: 24px
-    type: 'custom:button-card'
-  - cards:
-      - aspect_ratio: 60%
+  - type: horizontal-stack
+    cards:
+      - type: picture-entity
+        aspect_ratio: 60%
         camera_view: auto
         entity: camera.frontdoor
         hold_action:
@@ -31,23 +33,30 @@ cards:
           ha-card {
             border-radius: 15px;
           }
-        type: picture-entity
-      - cards:
-          - entity: lock.front_door
+      - type: vertical-stack
+        cards:
+          - type: 'custom:button-card'
+            entity: sensor.front_door_status
+            tap_action:
+              action: none
             hold_action:
               action: none
             show_icon: false
             show_name: false
             show_state: true
             state:
-              - styles:
+              - value: Locked
+                styles:
                   state:
                     - color: green
-                value: locked
-              - styles:
+              - value: Unlocked
+                styles:
+                  state:
+                    - color: yellow
+              - value: Open
+                styles:
                   state:
                     - color: red
-                value: unlocked
             style: |
               ha-card {
                 font-variant: small-caps;
@@ -55,10 +64,8 @@ cards:
             styles:
               card:
                 - height: 24px
-            tap_action:
-              action: more-info
-            type: 'custom:button-card'
-          - cards:
+          - type: horizontal-stack
+            cards:
               - color: 'rgb(150,150,150)'
                 entity: lock.front_door
                 icon: 'mdi:lock-open-outline'
@@ -109,9 +116,6 @@ cards:
                   service_data:
                     entity_id: lock.front_door
                 type: 'custom:button-card'
-            type: horizontal-stack
-        type: vertical-stack
-    type: horizontal-stack
   - cards:
       - entity: switch.patio_string
         hold_action:
