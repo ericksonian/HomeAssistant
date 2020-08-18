@@ -3,7 +3,7 @@
 # Garage Closed
 - alias: Garage Closed
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: closed
   condition: []
@@ -27,7 +27,7 @@
 # Garage Open
 - alias: Garage Open
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
   condition: []
@@ -48,7 +48,7 @@
 # Nobody Home - Garage Open for 10 Minutes
 - alias: Garage Open Vacant 10
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:10:00"
@@ -86,7 +86,7 @@
 # Nobody Home - Garage Open for 20 Minutes
 - alias: Garage Open Vacant 20
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:20:00"
@@ -124,7 +124,7 @@
 # Nobody Home - Garage Open for 30 Minutes
 - alias: Garage Open Vacant 30
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:30:00"
@@ -141,7 +141,7 @@
       entity_id: camera.garage
       filename: '/config/www/garage_open.jpg'
   - service: cover.close_cover
-    entity_id: cover.garage_door
+    entity_id: sensor.garage_door_contact
   - service: !secret notify_ian
     data:
       title: Garage Door
@@ -162,7 +162,7 @@
 # Ian Home - Garage Open for 10 Minutes
 - alias: Garage Open Ian 10
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:10:05"
@@ -191,7 +191,7 @@
 # Ian Home - Garage Open for 20 Minutes
 - alias: Garage Open Ian 20
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:20:05"
@@ -220,7 +220,7 @@
 # Ian Home - Garage Open for 30 Minutes
 - alias: Garage Open Ian 30
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:30:05"
@@ -259,7 +259,7 @@
 # Sean Home - Garage Open for 10 Minutes
 - alias: Garage Open Sean 10
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:10:10"
@@ -288,7 +288,7 @@
 # Sean Home - Garage Open for 20 Minutes
 - alias: Garage Open Sean 20
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:20:10"
@@ -317,7 +317,7 @@
 # Sean Home - Garage Open for 30 Minutes
 - alias: Garage Open Sean 30
   trigger:
-  - entity_id: cover.garage_door
+  - entity_id: sensor.garage_door_contact
     platform: state
     to: open
     for: "00:30:10"

@@ -1,16 +1,7 @@
 cards:
-  - type: 'custom:button-card'
-    color: 'rgb(200,200,200)'
-    entity: sensor.front_door_battery
-    color_type: card
-    show_state: true
-    show_name: true
+  - color: 'rgb(200,200,200)'
+    color_type: label-card
     name: Front Door
-    layout: name_state
-    show_icon: false
-#    layout: icon_name_state
-#    show_icon: true
-#    icon: 'mdi:battery'
     style: |
       ha-card {
         border-radius: 15px;
@@ -19,6 +10,7 @@ cards:
     styles:
       card:
         - height: 24px
+    type: 'custom:button-card'
   - type: horizontal-stack
     cards:
       - type: picture-entity
@@ -49,7 +41,7 @@ cards:
                 styles:
                   state:
                     - color: green
-              - value: Unlocked
+              - value: Closed, Unlocked
                 styles:
                   state:
                     - color: yellow
@@ -57,6 +49,10 @@ cards:
                 styles:
                   state:
                     - color: red
+              - value: Open, Locked
+                styles:
+                  state:
+                    - color: orange
             style: |
               ha-card {
                 font-variant: small-caps;

@@ -1,4 +1,50 @@
 
+###### SENSOR TEMPLATES ------------------------------------------
+
+sensor:
+  - platform: template
+    sensors:
+      front_gate_status:
+        friendly_name: "Front Gate Status"
+        value_template: >-
+          {% if is_state('switch.gate_relay_1', 'off') %}
+            Locked
+          {% else %}
+            Unlocked
+          {% endif %}
+
+      front_door_status:
+        friendly_name: "Front Door Status"
+        value_template: >-
+          {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') and is_state('lock.front_door', 'locked') %} 
+            Locked
+          {% elif is_state('binary_sensor.wyzesense_frontdoor', 'off') and is_state('lock.front_door', 'unlocked') %}
+            Closed, Unlocked
+          {% elif is_state('binary_sensor.wyzesense_frontdoor', 'on') and is_state('lock.front_door', 'unlocked') %}
+            Open
+          {% elif is_state('binary_sensor.wyzesense_frontdoor', 'on') and is_state('lock.front_door', 'locked') %}
+            Open, Locked
+          {% else %}
+            Unknown
+          {% endif %}
+
+      garage_door_contact:
+        friendly_name: "Front Door Contact"
+        value_template: >-
+          {% if is_state('binary_sensor.wyzesense_garagedoor', 'off') %}
+            Open
+          {% else %}
+            Closed
+          {% endif %}
+
+      battery_frontdoor_lock:
+        value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}%"
+      battery_frontdoor_contact:
+        value_template: "{{ state_attr('binary_sensor.wyzesense_frontdoor', 'battery_level') }}%"
+      battery_garagedoor_contact:
+        value_template: "{{ state_attr('binary_sensor.wyzesense_garagedoor', 'battery_level') }}%"
+
+
 ###### INPUT BOOLEANS ------------------------------------------
 
 input_boolean:
@@ -17,7 +63,6 @@ group:
 
 ###### AUTOMATIONS --------------------------------------
 automation:
-### Front Door
 ## Lock Up
 # Nobody Home
 - alias: Nobody Home - Lock Up
@@ -31,11 +76,38 @@ automation:
     data:
       entity_id: cover.garage_door
 
+### Front Door
 # Midnight
 - alias: Lock Up 12am
   trigger:
   - platform: time
     at: "23:59:55"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+
+# 1am
+- alias: Lock Up 1am
+  trigger:
+  - platform: time
+    at: "00:59:55"
+  action:
+  - service: lock.lock
+    data:
+      entity_id: lock.front_door
+  - service: cover.close_cover
+    data:
+      entity_id: cover.garage_door
+
+# 2am
+- alias: Lock Up 2am
+  trigger:
+  - platform: time
+    at: "01:59:55"
   action:
   - service: lock.lock
     data:

@@ -1,0 +1,12 @@
+title: Device Battery Levels
+type: entities
+entities:
+  - entity: sensor.battery_frontdoor_lock
+    name: Front Door Lock
+    icon: mdi:battery-50
+  - entity: sensor.battery_frontdoor_contact
+    name: Front Door Contact
+    icon: mdi:battery-50
+  - entity: sensor.battery_garagedoor_contact
+    name: Garage Door Contact
+    icon: mdi:battery-50
