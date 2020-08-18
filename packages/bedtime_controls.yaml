@@ -4,6 +4,8 @@
 input_boolean:
   master_ledstrip_alarm:
     name: Master LED Strip Alarm
+  master_bedtime_active:
+    name: Master Bedtime Active
 
 ###### INPUT SELECT ------------------------------------------
   
@@ -38,6 +40,9 @@ script:
             {% else %}
               script.bedtime_begins_sounds
             {% endif %}
+      - service: input_boolean.turn_on
+        data_template:
+          entity_id: input_boolean.master_bedtime_active
 
   bedtime_begins_lights:
     alias: Bedtime Begins Lights
@@ -64,10 +69,21 @@ script:
           entity_id: media_player.bathroom_speaker
           volume_level: 0.2
 
+# Bedtime Manually Cancelled
+  bedtime_cancelled:
+    alias: Bedtime Cancelled
+    sequence:
+      - service: input_boolean.turn_off
+        data_template:
+          entity_id: input_boolean.master_bedtime_active
+
 # Alarm Wakeup Trigger
   alarm_wakeup_trigger:
     alias: Alarm Wakeup Trigger
     sequence:
+      - service: input_boolean.turn_off
+        data_template:
+          entity_id: input_boolean.master_bedtime_active
       - service: script.turn_on
         data_template:
           entity_id: >
@@ -136,4 +152,36 @@ script:
               none
             {% endif %}
           media_content_type: 'audio/mp4'
+
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+# LED Control
+- alias: Master Motion LED On
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.wyzesense_motion_masterbed
+    to: "on"
+  condition:
+  - condition: state
+    entity_id: input_boolean.master_bedtime_active
+    state: "on"
+  action:
+  - service: script.master_ledstrip_power_on
+  - delay:
+      milliseconds: 200
+  - service: script.master_ledstrip_red
+
+- alias: Master Motion LED Off
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.wyzesense_motion_masterbed
+    to: "off"
+  condition:
+  - condition: state
+    entity_id: input_boolean.master_bedtime_active
+    state: "on"
+  action:
+  - service: script.master_ledstrip_power_off
 

@@ -1,0 +1,6 @@
+type: entities
+title: Bedtime
+show_header_toggle: false
+entities:
+  - entity: input_boolean.master_bedtime_active
+  - entity: automation.master_motion_led_on

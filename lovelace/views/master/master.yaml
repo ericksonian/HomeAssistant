@@ -10,4 +10,5 @@ cards:
   - !include /config/lovelace/views/master/cards/bathroom_speaker.yaml
   - !include /config/lovelace/views/master/cards/led_strip/led_strip.yaml
   - !include /config/lovelace/views/master/cards/morning_alarm.yaml
+  - !include /config/lovelace/views/master/cards/bedtime.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
