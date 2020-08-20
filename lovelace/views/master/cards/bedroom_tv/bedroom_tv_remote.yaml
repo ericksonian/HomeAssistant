@@ -62,16 +62,16 @@ card:
           color_type: label-card
           name: Volume
         - type: entity-button
-          entity: script.master_soundbar_volume_up
+          entity: script.master_soundbar_volume_up_3
           icon: 'mdi:volume-plus'
           show_name: false
           tap_action:
             action: call-service
-            service: script.master_soundbar_volume_up
+            service: script.master_soundbar_volume_up_3
         - type: entity-button
-          entity: script.master_soundbar_volume_down
+          entity: script.master_soundbar_volume_down_3
           icon: 'mdi:volume-minus'
           show_name: false
           tap_action:
             action: call-service
-            service: script.master_soundbar_volume_down
+            service: script.master_soundbar_volume_down_3

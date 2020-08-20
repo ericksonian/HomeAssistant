@@ -16,6 +16,7 @@ automation:
     data:
       entity_id: media_player.bedroom_speaker
       volume_level: 0.3
+
 - alias: Master TV Cast Ended
   trigger:
   - platform: state
@@ -79,6 +80,11 @@ script:
               - "JgBQAI6SERAREBEQERARMBExERARDxExETASMBExEQ8SDxEQERARkxEPEg8REBEQETARMRExEQ8SMBIvEjAREBEQEQ8REBExERARDxEQETERAA0FAAAAAAAA"
       - delay:
           milliseconds: 200
+  master_soundbar_volume_up_3:
+    sequence:
+      - service: script.master_soundbar_volume_up
+      - service: script.master_soundbar_volume_up
+      - service: script.master_soundbar_volume_up
 #  Volume Down
   master_soundbar_volume_down:
     sequence:
@@ -89,6 +95,11 @@ script:
               - "JgCgAI6SEg8REBEQERARMBExERARDxIwETERMBExERARDxEQERARkxEQERARDxEQERAREBEQETARMREwETEREBEwETERMBEQERAREBEQETARAAcUlJIREBEQEQ8REBExETAREBEQETARMRExETAREBEQEQ8SDxGTERAREBEQEQ8REBEQERARMBExETARMREQETARMRExEQ8REBEQERARMBEADQUAAAAAAAA="
       - delay:
           milliseconds: 200
+  master_soundbar_volume_down_3:
+    sequence:
+      - service: script.master_soundbar_volume_down
+      - service: script.master_soundbar_volume_down
+      - service: script.master_soundbar_volume_down
 #  Volume Mute
   master_soundbar_volume_mute:
     sequence:
