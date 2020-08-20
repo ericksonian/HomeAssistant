@@ -5,7 +5,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: closed
+    to: Closed
   condition: []
   action:
   - service: input_boolean.turn_on
@@ -29,7 +29,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
   condition: []
   action:
   - service: camera.snapshot
@@ -50,7 +50,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:10:00"
   condition:
   - condition: state
@@ -88,7 +88,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:20:00"
   condition:
   - condition: state
@@ -126,7 +126,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:30:00"
   condition:
   - condition: state
@@ -164,7 +164,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:10:05"
   condition:
   - condition: state
@@ -193,7 +193,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:20:05"
   condition:
   - condition: state
@@ -222,7 +222,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:30:05"
   condition:
   - condition: state
@@ -261,7 +261,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:10:10"
   condition:
   - condition: state
@@ -290,7 +290,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:20:10"
   condition:
   - condition: state
@@ -319,7 +319,7 @@
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
-    to: open
+    to: Open
     for: "00:30:10"
   condition:
   - condition: state

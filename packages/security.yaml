@@ -16,7 +16,7 @@ sensor:
       front_door_status:
         friendly_name: "Front Door Status"
         value_template: >-
-          {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') and is_state('lock.front_door', 'locked') %} 
+          {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') and is_state('lock.front_door', 'locked') %}
             Locked
           {% elif is_state('binary_sensor.wyzesense_frontdoor', 'off') and is_state('lock.front_door', 'unlocked') %}
             Closed, Unlocked
@@ -29,7 +29,7 @@ sensor:
           {% endif %}
 
       garage_door_contact:
-        friendly_name: "Front Door Contact"
+        friendly_name: "Garage Door Contact"
         value_template: >-
           {% if is_state('binary_sensor.wyzesense_garagedoor', 'off') %}
             Open
