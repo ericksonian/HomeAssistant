@@ -11,8 +11,7 @@
   - service: input_boolean.turn_on
     data:
       entity_id: input_boolean.notify_garage
-  - delay:
-      seconds: 3
+  - delay: '00:00:03'
   - service: camera.snapshot
     data:
       entity_id: camera.garage
@@ -34,8 +33,7 @@
     to: Open
   condition: []
   action:
-  - delay:
-    seconds: 10
+  - delay: '00:00:10'
   - service: camera.snapshot
     data:
       entity_id: camera.garage

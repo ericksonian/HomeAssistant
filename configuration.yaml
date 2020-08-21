@@ -16,17 +16,27 @@ cloud:
 mobile_app:
 discovery:
 http:
-   base_url: !secret base_url
-frontend:
-  themes: !include_dir_merge_named themes/
-lovelace:
-  mode: yaml
 sensor: !include_dir_merge_list sensors/
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/
 script: !include_dir_merge_named scripts/
 scene: !include_dir_merge_list scenes/
 input_boolean: !include_dir_merge_named input_booleans/
+
+# UI
+frontend:
+  themes: !include_dir_merge_named themes/
+lovelace:
+  mode: yaml
+  resources:
+    - url: /local/custom-card/button-card.js
+      type: module
+    - url: /local/custom-card/card-mod.js
+      type: module
+    - url: /local/custom-card/mini-media-player-bundle.js?v=1.9.1
+      type: module
+    - url: /local/custom-card/slider-entity-row.js
+      type: module
 
 # Wyze Sense
 binary_sensor:
