@@ -1,27 +1,21 @@
 ##  Exterior Scenes
 
 #   Exterior Driveway On
-- name: Exterior Driveway On
+- name: Exterior Driveway On Night
   entities:
     light.exterior_driveway:
       state: on
-      brightness: 200
-
-#   Exterior Garage Driveway On
-- name: Exterior Garage Driveway On
+      brightness: 80
+- name: Exterior Driveway On Full
   entities:
     light.exterior_driveway:
       state: on
-      brightness: 180
-    switch.garage_ceiling:
-      state: on
+      brightness: 255
 
 #   Exterior Garage Driveway Off
-- name: Exterior Garage Driveway Off
+- name: Exterior Driveway Off
   entities:
     light.exterior_driveway:
-      state: off
-    switch.garage_ceiling:
       state: off
 
 #   Exterior Front On

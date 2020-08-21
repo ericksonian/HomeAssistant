@@ -24,10 +24,18 @@
           category: garage_closed
         attachment:
           url: !secret snapshot_garage_closed
-  - delay: '00:00:30'
-  - service: light.turn_off
+  - delay: '00:00:10'
+  - service: switch.turn_off
     data:
-      entity_id: light.garage_ceiling
+      entity_id: switch.garage_ceiling
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("sun.sun", "below_horizon") %}
+          scene.exterior_driveway_on_night
+        {% else %}
+          scene.exterior_driveway_off
+        {% endif %}
 
 # Garage Open
 - alias: Garage Open
@@ -40,11 +48,11 @@
   - service: switch.turn_on
     data:
       entity_id: switch.garage_ceiling
-  - service: light.turn_on
+  - service: scene.turn_on
     data_template:
       entity_id: >
         {% if is_state("sun.sun", "below_horizon") %}
-          light.exterior_driveway
+          scene.exterior_driveway_on_full
         {% else %}
           none
         {% endif %}
