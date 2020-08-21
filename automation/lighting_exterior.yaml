@@ -30,15 +30,14 @@
     data:
       entity_id: light.exterior_front_door
       brightness: 125
-      transition: 3
+      transition: 2
   - service: light.turn_on
     data:
       entity_id: light.exterior_back_door
       brightness: 125
-      transition: 3
+      transition: 2
   - service: light.turn_on
     data:
       entity_id: light.exterior_driveway
       brightness: 80
-      transition: 3
-
+      transition: 2

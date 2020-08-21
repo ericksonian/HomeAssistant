@@ -8,7 +8,7 @@ input_boolean:
     name: Master Bedtime Active
 
 ###### INPUT SELECT ------------------------------------------
-  
+
 input_select:
   alarm_wakeup_sounds:
     name: 'Select Sounds:'
@@ -25,7 +25,7 @@ input_select:
       - Thunderstorm
       - White Noise
 
-###### SCRIPT ------------------------------------------    
+###### SCRIPT ------------------------------------------
 script:
 # Bedtime Begins Trigger
   bedtime_begins_trigger:
@@ -184,4 +184,3 @@ automation:
     state: "on"
   action:
   - service: script.master_ledstrip_power_off
-
