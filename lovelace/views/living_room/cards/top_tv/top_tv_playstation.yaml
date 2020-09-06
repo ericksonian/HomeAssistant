@@ -7,7 +7,7 @@ card:
   cards:
     - type: 'custom:mini-media-player'
       entity: media_player.playstation_4
-      icon: 'mdi:playstation'
+      icon: 'mdi:sony-playstation'
       artwork: cover
       group: false
       hide:
@@ -48,7 +48,7 @@ card:
             service: script.ps4_up
         - type: 'custom:button-card'
           entity: media_player.playstation_4
-          icon: 'mdi:playstation'
+          icon: 'mdi:sony-playstation'
           show_name: false
           show_state: false
           styles:

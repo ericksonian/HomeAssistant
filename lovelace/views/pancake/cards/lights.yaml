@@ -57,7 +57,7 @@ cards:
         show_icon: true
         show_name: true
         state:
-          - color: 'rgb(70, 30, 250)'
+          - color: 'rgb(0, 128, 255)'
             icon: 'mdi:radiator'
             value: 'on'
         style: |

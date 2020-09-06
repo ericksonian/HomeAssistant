@@ -12,16 +12,6 @@
       friendly_name: Theater Projector On
       value_template: "{{ states.sensor.vesync_projector_watts.state | float > 50.0 }}"
 
-    vesync_white_watts:
-      friendly_name: VeSync White Watts
-      value_template: "{{ state_attr('switch.vesync_white', 'current_power_w') }}"
-      unit_of_measurement: 'W'
-
-    vesync_blue_watts:
-      friendly_name: VeSync Blue Watts
-      value_template: "{{ state_attr('switch.vesync_blue', 'current_power_w') }}"
-      unit_of_measurement: 'W'
-
     vesync_rack_watts:
       friendly_name: VeSync Rack Watts
       value_template: "{{ (state_attr('switch.rack_power', 'current_power_w')) | round(2) }}"

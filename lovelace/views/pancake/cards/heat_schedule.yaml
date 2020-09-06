@@ -11,7 +11,7 @@ cards:
     show_icon: true
     show_name: true
     state:
-      - color: 'rgb(253, 180, 30)'
+      - color: 'rgb(221,72,20)'
         icon: 'mdi:weather-sunny-alert'
         name: Pancakes Heat On All Day
         value: 'on'
@@ -42,7 +42,7 @@ cards:
               show_icon: true
               show_name: true
               state:
-                - color: 'rgb(30, 180, 30)'
+                - color: 'rgb(0, 128, 255)'
                   icon: 'mdi:lightbulb'
                   value: '1hour'
               styles:
@@ -63,7 +63,7 @@ cards:
               show_icon: true
               show_name: true
               state:
-                - color: 'rgb(30, 180, 30)'
+                - color: 'rgb(0, 128, 255)'
                   icon: 'mdi:lightbulb-multiple'
                   value: '2hour'
               styles:
@@ -84,7 +84,7 @@ cards:
               show_icon: true
               show_name: true
               state:
-                - color: 'rgb(30, 180, 30)'
+                - color: 'rgb(0, 128, 255)'
                   icon: 'mdi:lightbulb-group'
                   value: '3hour'
               styles:

@@ -168,3 +168,25 @@ automation:
       message: Daylight is reporting 0 power
 
 
+###### TEMPLATES ------------------------------------
+
+sensor:
+  - platform: template
+    sensors:
+      vesync_white_watts:
+        friendly_name: VeSync White Watts
+        value_template: "{{ state_attr('switch.vesync_white', 'current_power_w') }}"
+        unit_of_measurement: 'W'
+
+      vesync_blue_watts:
+        friendly_name: VeSync Blue Watts
+        value_template: "{{ state_attr('switch.vesync_blue', 'current_power_w') }}"
+        unit_of_measurement: 'W'
+
+      vesync_pancake_watts:
+        friendly_name: VeSync Pancake Watts
+        value_template: "{{ (state_attr('switch.vesync_white', 'current_power_w')+state_attr('switch.vesync_blue', 'current_power_w')) | round(2) }}"
+        unit_of_measurement: 'W'
+
+
+

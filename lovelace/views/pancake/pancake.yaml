@@ -5,7 +5,8 @@ badges: []
 cards:
   - !include /config/lovelace/views/pancake/cards/title_card.yaml
   - !include /config/lovelace/views/pancake/cards/camera.yaml
+  - !include /config/lovelace/views/pancake/cards/light_power_graph_custom.yaml
   - !include /config/lovelace/views/pancake/cards/lights.yaml
-  - !include /config/lovelace/views/pancake/cards/light_power.yaml
+#  - !include /config/lovelace/views/pancake/cards/light_power_graph.yaml
   - !include /config/lovelace/views/pancake/cards/heat_schedule.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

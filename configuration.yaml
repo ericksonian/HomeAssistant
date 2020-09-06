@@ -33,6 +33,8 @@ lovelace:
       type: module
     - url: /local/custom-card/card-mod.js
       type: module
+    - url: /local/custom-card/mini-graph-card-bundle.js?v=0.9.4
+      type: module
     - url: /local/custom-card/mini-media-player-bundle.js?v=1.9.1
       type: module
     - url: /local/custom-card/slider-entity-row.js

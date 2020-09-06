@@ -36,8 +36,8 @@ automation:
     from: "idle"
   condition:
   - condition: state
-    entity_id: input_boolean.living_top_current_appletv
-    state: "off"
+    entity_id: input_select.tv_living_top_source
+    state: "none"
   action:
   - service: script.living_top_appletv
 
