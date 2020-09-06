@@ -1,10 +1,47 @@
-type: entities
-title: Pi-Hole Ad Blocker
-entities:
-  - entity: sensor.pi_hole_ads_blocked_today
-    name: Ads Blocked Today
-  - entity: sensor.pi_hole_ads_percentage_blocked_today
-    name: Percent of All Traffic
-    icon: mdi:percent
-  - entity: sensor.pi_hole_seen_clients
-    name: Clients Seen Today
+type: vertical-stack
+cards:
+  - type: 'custom:button-card'
+    color_type: label-card
+    color: 'rgb(200,200,200)'
+    name: Pi-Hole Ad Blocker
+    styles:
+      card:
+        - height: 24px
+    style: |
+      ha-card {
+        border-radius: 1px;
+      }
+  - type: custom:mini-graph-card
+    name: Traffic Blocked - Past 72 Hours
+    hours_to_show: 72
+    points_per_hour: 1
+    unit: '% - 24hrs'
+    show:
+      name: true
+      icon: false
+      state: true
+      fill: true
+      labels: true
+      points: false
+    entities:
+     - entity: sensor.pi_hole_ads_percentage_blocked_today
+       color: blue
+  - type: custom:mini-graph-card
+    name: Ads Blocked - Past 72 Hours
+    hours_to_show: 72
+    points_per_hour: 1
+    unit: ads - 24hrs
+    show:
+      name: true
+      icon: false
+      state: true
+      fill: true
+      labels: true
+      points: false
+    entities:
+     - entity: sensor.pi_hole_ads_blocked_today
+       color: blue
+  - type: entities
+    entities:
+      - entity: sensor.pi_hole_seen_clients
+        name: Clients Seen Today

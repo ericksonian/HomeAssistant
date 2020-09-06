@@ -38,11 +38,11 @@ sensor:
           {% endif %}
 
       battery_frontdoor_lock:
-        value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}%"
+        value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}"
       battery_frontdoor_contact:
-        value_template: "{{ state_attr('binary_sensor.wyzesense_frontdoor', 'battery_level') }}%"
+        value_template: "{{ state_attr('binary_sensor.wyzesense_frontdoor', 'battery_level') }}"
       battery_garagedoor_contact:
-        value_template: "{{ state_attr('binary_sensor.wyzesense_garagedoor', 'battery_level') }}%"
+        value_template: "{{ state_attr('binary_sensor.wyzesense_garagedoor', 'battery_level') }}"
 
 
 ###### INPUT BOOLEANS ------------------------------------------

@@ -1,16 +1,24 @@
 type: vertical-stack
 cards:
+  - type: 'custom:button-card'
+    color_type: label-card
+    color: 'rgb(200,200,200)'
+    name: Rack Power
+    styles:
+      card:
+        - height: 24px
+    style: |
+      ha-card {
+        border-radius: 1px;
+      }
   - type: history-graph
-#    title: Rack Power
+    hours_to_show: 72
+    refresh_interval: 30
     entities:
-#      - entity: sensor.vesync_theater_watts
-#        name: Theater Total
       - entity: sensor.vesync_rack_watts
         name: Rack
       - entity: sensor.vesync_projector_watts
         name: Projector
-    hours_to_show: 72
-    refresh_interval: 30
   - type: entities
     entities:
       - entity: sensor.vesync_theater_watts

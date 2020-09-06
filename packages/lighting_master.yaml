@@ -1,4 +1,12 @@
 
+###### SENSOR TEMPLATES ------------------------------------------
+
+sensor:
+  - platform: template
+    sensors:
+      battery_masterbed_motion:
+        value_template: "{{ state_attr('binary_sensor.wyzesense_motion_masterbed', 'battery_level') }}"
+
 ###### INPUT BOOLEANS ------------------------------------------
 input_boolean:
   master_ledstrip_power:
