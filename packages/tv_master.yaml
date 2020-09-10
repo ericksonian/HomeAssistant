@@ -22,6 +22,7 @@ automation:
   - platform: state
     entity_id: media_player.bedroom_tv
     to: "off"
+    for: "00:00:30"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'unavailable' }}"
@@ -41,6 +42,14 @@ script:
 #  Power Toggle
   master_tv_power:
     sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_boolean.master_ledstrip_power", "on") %}
+              script.master_ledstrip_power_toggle
+            {% else %}
+              none
+            {% endif %}
       - service: broadlink.send
         data:
           host: !secret broadlink_master_ip
@@ -48,6 +57,14 @@ script:
               - "JgBQAAABJ5MTEhM3EzgTEhMSExITEhM3EzgTEhM3ExITEhMSFBITEhM3EzcTNxQ3ExITEhMSExITEhQSExITEhM3EzcTOBM3EwAFowABK0kUAA0FAAAAAAAA"
       - delay:
           milliseconds: 200
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_boolean.master_ledstrip_power", "on") %}
+              script.master_ledstrip_power_toggle
+            {% else %}
+              none
+            {% endif %}
 #  Picture Mode
   master_tv_picture:
     sequence:

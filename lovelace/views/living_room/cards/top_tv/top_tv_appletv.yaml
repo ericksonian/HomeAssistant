@@ -11,8 +11,10 @@ card:
       group: false
       hide:
         power: true
+        controls: true
         source: true
         volume: true
+        play_pause: true
       icon: 'mdi:apple'
       style: |
         ha-card {
