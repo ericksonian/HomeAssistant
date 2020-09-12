@@ -1,0 +1,59 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:slider-entity-row'
+        entity: light.master_bedroom_entry
+        full_row: true
+        hide_state: true
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+      - type: 'custom:button-card'
+        entity: light.master_bedroom_entry
+        icon: 'mdi:wall-sconce-flat'
+        name: Entry
+        show_icon: true
+        show_name: true
+        state:
+          - color: 'rgb(253, 180, 30)'
+            value: 'on'
+        styles:
+          card:
+            - height: 60px
+              width: 90px
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:slider-entity-row'
+        entity: light.master_bedroom_ceiling_fan_light
+        full_row: true
+        hide_state: true
+        style: |
+          ha-card {
+            border-radius: 15px;
+          }
+      - type: 'custom:button-card'
+        entity: light.master_bedroom_ceiling_fan_light
+        icon: 'mdi:dome-light'
+        name: Ceiling
+        show_icon: true
+        show_name: true
+        state:
+          - color: 'rgb(253, 180, 30)'
+            value: 'on'
+        styles:
+          card:
+            - height: 60px
+              width: 90px
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+
+
+

@@ -15,10 +15,6 @@ cards:
           card:
             - height: 60px
               width: 90px
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: toggle
         hold_action:
@@ -36,10 +32,6 @@ cards:
           card:
             - height: 60px
               width: 90px
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: toggle
         hold_action:
@@ -67,10 +59,6 @@ cards:
         styles:
           card:
             - height: 60px
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: call-service
           service: fan.set_speed
@@ -93,9 +81,6 @@ cards:
           card:
             - height: 60px
         style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: call-service
           service: fan.set_speed
@@ -117,10 +102,6 @@ cards:
         styles:
           card:
             - height: 60px
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: call-service
           service: fan.set_speed
@@ -142,10 +123,6 @@ cards:
         styles:
           card:
             - height: 60px
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: call-service
           service: fan.set_speed
@@ -167,10 +144,6 @@ cards:
         styles:
           card:
             - height: 60px
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
         tap_action:
           action: call-service
           service: fan.set_speed

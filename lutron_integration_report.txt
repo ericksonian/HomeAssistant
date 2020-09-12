@@ -543,6 +543,27 @@
         "Area" : {
           "Name" : "Living Room"
         }
+      },
+      {
+        "ID" : 14,
+        "Name" : "Entry",
+        "Area" : {
+          "Name" : "Master Bedroom"
+        }
+      },
+      {
+        "ID" : 15,
+        "Name" : "Ceiling Fan Light",
+        "Area" : {
+          "Name" : "Master Bedroom"
+        }
+      },
+      {
+        "ID" : 16,
+        "Name" : "Ceiling Fan",
+        "Area" : {
+          "Name" : "Master Bedroom"
+        }
       }
     ]
   }

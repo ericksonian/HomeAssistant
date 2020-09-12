@@ -1,7 +1,7 @@
 ##  Lighting
 
 #   Kitchen Lights On with Switch
-- alias: Kitchen Light Auto Dim Ceiling
+- alias: Auto Dim Kitchen Ceiling
   trigger:
   - entity_id: light.kitchen_ceiling
     platform: state
@@ -15,7 +15,7 @@
       entity_id: light.kitchen_ceiling
       brightness: 143
 
-- alias: Kitchen Light Auto Dim Sink
+- alias: Auto Dim Kitchen Sink
   trigger:
   - entity_id: light.kitchen_sink
     platform: state
@@ -29,7 +29,7 @@
       entity_id: light.kitchen_sink
       brightness: 64
 
-- alias: Kitchen Light Auto Dim Dining
+- alias: Auto Dim Kitchen Dining
   trigger:
   - entity_id: light.kitchen_dining_pendant
     platform: state
@@ -43,3 +43,31 @@
       entity_id: light.kitchen_dining_pendant
       brightness: 126
 
+#   Master Bedroom Lights On
+- alias: Auto Dim Master Ceiling
+  trigger:
+  - entity_id: light.master_bedroom_ceiling_fan_light
+    platform: state
+    to: "on"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('light.master_bedroom_ceiling_fan_light', 'brightness') > 250 }}"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.master_bedroom_ceiling_fan_light
+      brightness: 64
+
+- alias: Auto Dim Master Entry
+  trigger:
+  - entity_id: light.master_bedroom_entry
+    platform: state
+    to: "on"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('light.master_bedroom_entry', 'brightness') > 250 }}"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.master_bedroom_entry
+      brightness: 64
