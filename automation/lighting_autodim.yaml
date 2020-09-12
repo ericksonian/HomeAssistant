@@ -43,6 +43,21 @@
       entity_id: light.kitchen_dining_pendant
       brightness: 126
 
+#   Living Room Lights On
+- alias: Auto Dim Living Ceiling
+  trigger:
+  - entity_id: light.living_room_main
+    platform: state
+    to: "on"
+  condition:
+  - condition: template
+    value_template: "{{ state_attr('light.living_room_main', 'brightness') > 250 }}"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.living_room_main
+      brightness: 120
+
 #   Master Bedroom Lights On
 - alias: Auto Dim Master Ceiling
   trigger:
