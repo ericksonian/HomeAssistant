@@ -81,10 +81,12 @@ card:
       tap_action:
         action: call-service
         service: script.master_ledstrip_power_on
+      hold_action:
+        action: call-service
+        service: input_boolean.turn_on
+        service_data:
+          entity_id: input_boolean.master_ledstrip_power
       styles:
         card:
           - height: 60px
             width: 90px
-
-
-

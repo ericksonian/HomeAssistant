@@ -169,6 +169,10 @@ script:
       - service: script.appletv_select
       - delay:
           milliseconds: 300
+      - service: media_player.turn_on
+        entity_id: media_player.living_room_appletv
+      - delay:
+          milliseconds: 300
       - service: script.sony_input_appletv
       - delay:
           milliseconds: 500
@@ -239,6 +243,10 @@ script:
       - delay:
           milliseconds: 500
       - service: script.sony_input_plystatn
+      - delay:
+          milliseconds: 300
+      - service: media_player.turn_on
+        entity_id: media_player.playstation_4
       - delay:
           milliseconds: 500
       - service: script.samsung_input_hdmi2
@@ -357,5 +365,3 @@ sensor:
           {% else %}
             false
           {% endif %}
-
-
