@@ -4,13 +4,6 @@ conditions:
     state: 'on'
   - entity: input_boolean.master_ledstrip_more
     state: 'on'
-style: |
-  ha-card {
-    box-shadow: none;
-    background: blue;
-    border-radius: 15px;
-    margin: 0px;
-  }
 card:
   type: vertical-stack
   cards:
@@ -30,6 +23,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(255,0,0)'
+              - width: 50%
           tap_action:
             action: call-service
             service: script.master_ledstrip_red
@@ -47,6 +41,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(0,255,0)'
+              - width: 50%
           tap_action:
             action: call-service
             service: script.master_ledstrip_green
@@ -64,6 +59,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(0,0,255)'
+              - width: 50%
           tap_action:
             action: call-service
             service: script.master_ledstrip_blue
@@ -81,6 +77,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(255,255,255)'
+              - width: 50%
           tap_action:
             action: call-service
             service: script.master_ledstrip_white
@@ -150,6 +147,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(189,77,76)'
+              - width: 50%
           state:
             - value: 'red1'
               icon: 'mdi:checkbox-blank-circle'
@@ -166,6 +164,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(84,146,86)'
+              - width: 50%
           state:
             - value: 'green1'
               icon: 'mdi:checkbox-blank-circle'
@@ -182,6 +181,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(66,83,143)'
+              - width: 50%
           state:
             - value: 'blue1'
               icon: 'mdi:checkbox-blank-circle'
@@ -198,6 +198,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(212,130,131)'
+              - width: 50%
           state:
             - value: 'white1'
               icon: 'mdi:checkbox-blank-circle'
@@ -215,7 +216,9 @@ card:
               - height: 60px
                 width: 90px
             icon:
-              - color: 'rgb(200,200,200)'
+              - color: 'rgb(150,150,150)'
+            name:
+              - color: 'rgb(175,175,175)'
           tap_action:
             action: call-service
             service: input_boolean.turn_off
@@ -233,6 +236,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(212,148,26)'
+              - width: 50%
           state:
             - value: 'red2'
               icon: 'mdi:checkbox-blank-circle'
@@ -249,6 +253,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(90,150,160)'
+              - width: 50%
           state:
             - value: 'green2'
               icon: 'mdi:checkbox-blank-circle'
@@ -265,6 +270,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(83,70,102)'
+              - width: 50%
           state:
             - value: 'blue2'
               icon: 'mdi:checkbox-blank-circle'
@@ -281,6 +287,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(214,143,127)'
+              - width: 50%
           state:
             - value: 'white2'
               icon: 'mdi:checkbox-blank-circle'
@@ -296,6 +303,10 @@ card:
             card:
               - height: 60px
                 width: 90px
+            icon:
+              - color: 'rgb(150,150,150)'
+            name:
+              - color: 'rgb(175,175,175)'
           tap_action:
             action: call-service
             service: script.master_ledstrip_dim_up
@@ -311,6 +322,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(237,212,94)'
+              - width: 50%
           state:
             - value: 'red3'
               icon: 'mdi:checkbox-blank-circle'
@@ -327,6 +339,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(30,86,124)'
+              - width: 50%
           state:
             - value: 'green3'
               icon: 'mdi:checkbox-blank-circle'
@@ -343,6 +356,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(116,72,188)'
+              - width: 50%
           state:
             - value: 'blue3'
               icon: 'mdi:checkbox-blank-circle'
@@ -359,6 +373,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(141,179,192)'
+              - width: 50%
           state:
             - value: 'white3'
               icon: 'mdi:checkbox-blank-circle'
@@ -374,6 +389,10 @@ card:
             card:
               - height: 60px
                 width: 90px
+            icon:
+              - color: 'rgb(150,150,150)'
+            name:
+              - color: 'rgb(175,175,175)'
           tap_action:
             action: call-service
             service: script.master_ledstrip_dim_down
@@ -389,6 +408,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(243,211,42)'
+              - width: 50%
           state:
             - value: 'red4'
               icon: 'mdi:checkbox-blank-circle'
@@ -405,6 +425,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(29,88,144)'
+              - width: 50%
           state:
             - value: 'green4'
               icon: 'mdi:checkbox-blank-circle'
@@ -421,6 +442,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(129,66,76)'
+              - width: 50%
           state:
             - value: 'blue4'
               icon: 'mdi:checkbox-blank-circle'
@@ -437,6 +459,7 @@ card:
               - height: 60px
             icon:
               - color: 'rgb(140,188,195)'
+              - width: 50%
           state:
             - value: 'white4'
               icon: 'mdi:checkbox-blank-circle'
@@ -452,6 +475,10 @@ card:
             card:
               - height: 60px
                 width: 90px
+            icon:
+              - color: 'rgb(150,150,150)'
+            name:
+              - color: 'rgb(175,175,175)'
           tap_action:
             action: call-service
             service: script.master_ledstrip_quick
@@ -466,7 +493,8 @@ card:
             card:
               - height: 60px
             icon:
-              - color: 'rgb(255,255,255)'
+              - color: 'rgb(200,200,200)'
+              - width: 50%
           state:
             - value: 'jump3'
               icon: 'mdi:numeric-3-circle'
@@ -482,7 +510,8 @@ card:
             card:
               - height: 60px
             icon:
-              - color: 'rgb(255,255,255)'
+              - color: 'rgb(200,200,200)'
+              - width: 50%
           state:
             - value: 'jump7'
               icon: 'mdi:numeric-7-circle'
@@ -498,7 +527,8 @@ card:
             card:
               - height: 60px
             icon:
-              - color: 'rgb(255,255,255)'
+              - color: 'rgb(200,200,200)'
+              - width: 50%
           state:
             - value: 'fade3'
               icon: 'mdi:numeric-3-circle'
@@ -514,7 +544,8 @@ card:
             card:
               - height: 60px
             icon:
-              - color: 'rgb(255,255,255)'
+              - color: 'rgb(200,200,200)'
+              - width: 50%
           state:
             - value: 'fade7'
               icon: 'mdi:numeric-7-circle'
@@ -530,6 +561,10 @@ card:
             card:
               - height: 60px
                 width: 90px
+            icon:
+              - color: 'rgb(150,150,150)'
+            name:
+              - color: 'rgb(175,175,175)'
           tap_action:
             action: call-service
             service: script.master_ledstrip_slow

@@ -21,6 +21,7 @@ card:
           - height: 60px
         icon:
           - color: 'rgb(255,0,0)'
+          - width: 50%
       tap_action:
         action: call-service
         service: script.master_ledstrip_red
@@ -43,6 +44,7 @@ card:
           - height: 60px
         icon:
           - color: 'rgb(0,255,0)'
+          - width: 50%
       tap_action:
         action: call-service
         service: script.master_ledstrip_green
@@ -65,6 +67,7 @@ card:
           - height: 60px
         icon:
           - color: 'rgb(0,0,255)'
+          - width: 50%
       tap_action:
         action: call-service
         service: script.master_ledstrip_blue
@@ -87,6 +90,7 @@ card:
           - height: 60px
         icon:
           - color: 'rgb(255,255,255)'
+          - width: 50%
       tap_action:
         action: call-service
         service: script.master_ledstrip_white
