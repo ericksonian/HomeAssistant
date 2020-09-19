@@ -3,64 +3,64 @@
 #Apple TV
 appletv_up:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBIAAABK5MTEhM2EzYTNhMSEzcSNxM2EzYTNhM2ExITEhMSExITNhM3EjcTEhM2FRATEhMSExITNhMSEzYTNhMSExITEhM3EwANBQ=="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABK5MTEhM2EzYTNhMSEzcSNxM2EzYTNhM2ExITEhMSExITNhM3EjcTEhM2FRATEhMSExITNhMSEzYTNhMSExITEhM3EwANBQ==
     - delay:
         milliseconds: 200
 appletv_down:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBIAAABK5MTEhM2EzYTNhMSEzcSNxM2EzYTNhM3EhITEhMSExITNhM3ExITNhM2ExITEhMSExITNhMSEzYTNhMSExITEhM3EwANBQ=="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABK5MTEhM2EzYTNhMSEzcSNxM2EzYTNhM3EhITEhMSExITNhM3ExITNhM2ExITEhMSExITNhMSEzYTNhMSExITEhM3EwANBQ==
     - delay:
         milliseconds: 200
 appletv_left:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBQAAABKpMTEhM2EzYTNxQREjcTNhM2EzYTNhM3ExITEhISExITNxMSEhITEhM3ExISEhMSExITNhMSEzcTNhMSExITEhM2EwAFNAABKUkTAA0FAAAAAAAAAAA="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBQAAABKpMTEhM2EzYTNxQREjcTNhM2EzYTNhM3ExITEhISExITNxMSEhITEhM3ExISEhMSExITNhMSEzcTNhMSExITEhM2EwAFNAABKUkTAA0FAAAAAAAAAAA=
     - delay:
         milliseconds: 200
 appletv_right:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBQAAABK5MSEhM3EzYTNhUQEzYTNhM2EzcSNxQ1ExITEhMSExITNhM2EzYTNhMSFRATEhMSExIVNBMSEzYTNxQQExITEhM3EwAE6QABKkkTAA0FAAAAAAAAAAA="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBQAAABK5MSEhM3EzYTNhUQEzYTNhM2EzcSNxQ1ExITEhMSExITNhM2EzYTNhMSFRATEhMSExIVNBMSEzYTNxQQExITEhM3EwAE6QABKkkTAA0FAAAAAAAAAAA=
     - delay:
         milliseconds: 200
 appletv_select:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgCQAAABKpMTEhM2EzYTNhMSEzYTNxI3EzYTNhM2ExITEhMSExITNhM2ExITNhM2EzcTEhM2ExITNhMSEzYTNhMSExITEhM3EwAEpQABKpITEhM2EzcTNhMSEzYTNhM2EzYTNxM2ExITEhMSEhMSNxMSFBETNhMSExIUERMSEhMSNxMSEzYTNhMSExITEhM3EgANBQAAAAAAAAAA"
+        entity_id: remote.living_room
+        command:
+            - b64:JgCQAAABKpMTEhM2EzYTNhMSEzYTNxI3EzYTNhM2ExITEhMSExITNhM2ExITNhM2EzcTEhM2ExITNhMSEzYTNhMSExITEhM3EwAEpQABKpITEhM2EzcTNhMSEzYTNhM2EzYTNxM2ExITEhMSEhMSNxMSFBETNhMSExIUERMSEhMSNxMSEzYTNhMSExITEhM3EgANBQAAAAAAAAAA
     - delay:
         milliseconds: 200
 appletv_menu:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBIAAABK5IVEBM2EzYTNxMSEjcUNRM2EzYTNhM3EhITEhMSExITNxISEzcTEhITEhITEhMSExITNhMSEzcSNxMSExITEhM2EwANBQ=="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABK5IVEBM2EzYTNxMSEjcUNRM2EzYTNhM3EhITEhMSExITNxISEzcTEhITEhITEhMSExITNhMSEzcSNxMSExITEhM2EwANBQ==
     - delay:
         milliseconds: 200
 appletv_play_pause:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgCQAAABKpIUEhM2EzYTNhMSEzYTNxM2EzYTNhM2ExITEhMSExITNhMSEzYTNhM3EjcTEhM2ExITNhMSEzYTNhMSExITEhM3EwAEpQABKpITEhM2EzcTNhMSEzYTNhM2EzYTNxI3ExITEhITEhITNxITEhITNxMSEhITEhMSExITNhUQEzcSNxQRExISExI3EwANBQAAAAAAAAAA"
+        entity_id: remote.living_room
+        command:
+            - b64:JgCQAAABKpIUEhM2EzYTNhMSEzYTNxM2EzYTNhM2ExITEhMSExITNhMSEzYTNhM3EjcTEhM2ExITNhMSEzYTNhMSExITEhM3EwAEpQABKpITEhM2EzcTNhMSEzYTNhM2EzYTNxI3ExITEhITEhITNxITEhITNxMSEhITEhMSExITNhUQEzcSNxQRExISExI3EwANBQAAAAAAAAAA
     - delay:
         milliseconds: 200

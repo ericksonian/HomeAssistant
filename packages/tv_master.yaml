@@ -50,11 +50,11 @@ script:
             {% else %}
               none
             {% endif %}
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgBQAAABJ5MTEhM3EzgTEhMSExITEhM3EzgTEhM3ExITEhMSFBITEhM3EzcTNxQ3ExITEhMSExITEhQSExITEhM3EzcTOBM3EwAFowABK0kUAA0FAAAAAAAA"
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAAABJ5MTEhM3EzgTEhMSExITEhM3EzgTEhM3ExITEhMSFBITEhM3EzcTNxQ3ExITEhMSExITEhQSExITEhM3EzcTOBM3EwAFowABK0kUAA0FAAAAAAAA
       - delay:
           milliseconds: 200
       - service: script.turn_on
@@ -68,21 +68,21 @@ script:
 #  Picture Mode
   master_tv_picture:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgBQAAABJpQTEhM3EzcUEhMSExITEhM3EzcTExM3ExITEhMSExITEhM4ExITEhM3ExITEhM3ExMTEhM3EzcTEhM4EzcTEhM3EwAFowABKkoTAA0FAAAAAAAA"
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAAABJpQTEhM3EzcUEhMSExITEhM3EzcTExM3ExITEhMSExITEhM4ExITEhM3ExITEhM3ExMTEhM3EzcTEhM4EzcTEhM3EwAFowABKkoTAA0FAAAAAAAA
       - delay:
           milliseconds: 200
 #  Sleep Timer
   master_tv_sleep:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgBQAAABJpQTEhM3EzgSExITEhMTEhM3EzgSExI4ExITExISExMSExI4EjgTEhMSEzgSExITEhMSExMSEzcTOBITEjgSOBM3EwAFowABK0oSAA0FAAAAAAAA"
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAAABJpQTEhM3EzgSExITEhMTEhM3EzgSExI4ExITExISExMSExI4EjgTEhMSEzgSExITEhMSExMSEzcTOBITEjgSOBM3EwAFowABK0oSAA0FAAAAAAAA
       - delay:
           milliseconds: 200
 
@@ -90,11 +90,11 @@ script:
 #  Volume Up
   master_soundbar_volume_up:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgBQAI6SERAREBEQERARMBExERARDxExETASMBExEQ8SDxEQERARkxEPEg8REBEQETARMRExEQ8SMBIvEjAREBEQEQ8REBExERARDxEQETERAA0FAAAAAAAA"
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAI6SERAREBEQERARMBExERARDxExETASMBExEQ8SDxEQERARkxEPEg8REBEQETARMRExEQ8SMBIvEjAREBEQEQ8REBExERARDxEQETERAA0FAAAAAAAA
       - delay:
           milliseconds: 200
   master_soundbar_volume_up_3:
@@ -105,11 +105,11 @@ script:
 #  Volume Down
   master_soundbar_volume_down:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgCgAI6SEg8REBEQERARMBExERARDxIwETERMBExERARDxEQERARkxEQERARDxEQERAREBEQETARMREwETEREBEwETERMBEQERAREBEQETARAAcUlJIREBEQEQ8REBExETAREBEQETARMRExETAREBEQEQ8SDxGTERAREBEQEQ8REBEQERARMBExETARMREQETARMRExEQ8REBEQERARMBEADQUAAAAAAAA="
+          entity_id: remote.master_bed
+          command:
+              - b64:JgCgAI6SEg8REBEQERARMBExERARDxIwETERMBExERARDxEQERARkxEQERARDxEQERAREBEQETARMREwETEREBEwETERMBEQERAREBEQETARAAcUlJIREBEQEQ8REBExETAREBEQETARMRExETAREBEQEQ8SDxGTERAREBEQEQ8REBEQERARMBExETARMREQETARMRExEQ8REBEQERARMBEADQUAAAAAAAA=
       - delay:
           milliseconds: 200
   master_soundbar_volume_down_3:
@@ -120,30 +120,30 @@ script:
 #  Volume Mute
   master_soundbar_volume_mute:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgBQAJCSERARDxEQERARMBIwERAREBEwETERMBExERAREBEPERARkxEQERARDxEQETEREBEPERARMREwETEREBEPETERMREwERAREBEQETARAA0FAAAAAAAA"
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAJCSERARDxEQERARMBIwERAREBEwETERMBExERAREBEPERARkxEQERARDxEQETEREBEPERARMREwETEREBEPETERMREwERAREBEQETARAA0FAAAAAAAA
       - delay:
           milliseconds: 200
 #  Woofer Up
   master_soundbar_woofer_up:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgBQAI+SERAREBAREQ8RMREwERAREBExEDERMREwERAREBEQERAQkxEQERAREBEQERAQMREQERARDxEQERARMREwERARMRAxETERMBExERARAA0FAAAAAAAA"
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAI+SERAREBAREQ8RMREwERAREBExEDERMREwERAREBEQERAQkxEQERAREBEQERAQMREQERARDxEQERARMREwERARMRAxETERMBExERARAA0FAAAAAAAA
       - delay:
           milliseconds: 200
 #  Woofer Down
   master_soundbar_woofer_down:
     sequence:
-      - service: broadlink.send
+      - service: remote.send_command
         data:
-          host: !secret broadlink_master_ip
-          packet:
-              - "JgCgAJCSERAREBEPERARMREwERAREBExETARMREwERAREBEQEQ8RkxEQERAREBEQEDERMREPERAREBEQERARMBEQERARMBExETEQMRExEQ8RAAcUlJIREBEQEBAREBExETAREBEQETARMREwETEREBEQERAQEBGTERAREBEQEBARMRExEBAREBEQERAREBAxERAREBAxETERMBExETEQEBEADQUAAAAAAAA="
+          entity_id: remote.master_bed
+          command:
+              - b64:JgCgAJCSERAREBEPERARMREwERAREBExETARMREwERAREBEQEQ8RkxEQERAREBEQEDERMREPERAREBEQERARMBEQERARMBExETEQMRExEQ8RAAcUlJIREBEQEBAREBExETAREBEQETARMREwETEREBEQERAQEBGTERAREBEQEBARMRExEBAREBEQERAREBAxERAREBAxETERMBExETEQEBEADQUAAAAAAAA=
       - delay:
           milliseconds: 200

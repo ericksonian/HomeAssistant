@@ -3,37 +3,37 @@
 #Samsung TV
 samsung_power_on:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgCMAJSVFTUUNRU0ExMQExISEhMVDxE4EjgSNxIUEhMTERMSEhITNBISExIVNBU1ERMVERM1FBITNRQ1EhMUEBE4EjcVEBEABaeVlBI4EjcSOBETFBASExETExEVNBM3FTUUEBUQERISExEUEDgUEBITEjcSOBURExISNRISFTQVNRIUEBMROBI4ERUSAA0FAAAAAAAAAAAAAAAA"
+        entity_id: remote.living_room
+        command:
+            - b64:JgCMAJSVFTUUNRU0ExMQExISEhMVDxE4EjgSNxIUEhMTERMSEhITNBISExIVNBU1ERMVERM1FBITNRQ1EhMUEBE4EjcVEBEABaeVlBI4EjcSOBETFBASExETExEVNBM3FTUUEBUQERISExEUEDgUEBITEjcSOBURExISNRISFTQVNRIUEBMROBI4ERUSAA0FAAAAAAAAAAAAAAAA
     - delay:
         milliseconds: 200
 samsung_power_off:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgCMAJWUEjgSNxI3EhITEhQQFBATEhE4EjgUNRUQEhISFBATEhQQEhIUERITNhI3EhMRExM3ETgSOBE4EhISExQ1EjcTEhEABaeWkxQ2FDUUNhQQEhISExETEhISNxM3EjgUDxMSFBAUEBUQFBAUEBITETgSOBISEhIUNRQ2FDUTNxQQEhMUNRI3FBESAA0FAAAAAAAAAAAAAAAA"
+        entity_id: remote.living_room
+        command:
+            - b64:JgCMAJWUEjgSNxI3EhITEhQQFBATEhE4EjgUNRUQEhISFBATEhQQEhIUERITNhI3EhMRExM3ETgSOBE4EhISExQ1EjcTEhEABaeWkxQ2FDUUNhQQEhISExETEhISNxM3EjgUDxMSFBAUEBUQFBAUEBITETgSOBISEhIUNRQ2FDUTNxQQEhMUNRI3FBESAA0FAAAAAAAAAAAAAAAA
     - delay:
         milliseconds: 200
 samsung_input_hdmi1:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgCMAJWVFDUUNhM2EhISEhITERMSEhI4ETgSOBIUEhITEBQSEhERNxUQEhIVNRISETgTNxQ1FBEROBI3ExISNxISEhMTEREABaiUlBM3FDYROBISEhMRExIUEhAUNhQ1EzcUEBQQExIRExISEjgREhMTETgTExI2FDUUNRMSEjcSOBETETgSExMRFBISAA0FAAAAAAAAAAAAAAAA"
+        entity_id: remote.living_room
+        command:
+            - b64:JgCMAJWVFDUUNhM2EhISEhITERMSEhI4ETgSOBIUEhITEBQSEhERNxUQEhIVNRISETgTNxQ1FBEROBI3ExISNxISEhMTEREABaiUlBM3FDYROBISEhMRExIUEhAUNhQ1EzcUEBQQExIRExISEjgREhMTETgTExI2FDUUNRMSEjcSOBETETgSExMRFBISAA0FAAAAAAAAAAAAAAAA
     - delay:
         milliseconds: 200
 samsung_input_hdmi2:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgCMAJSWFDUVNRQ1EhISEhMSERMVDxI4ETgSOBISEhQTEhISEhITDxM3EjcTNxE4EzcUEBI4FDUUERQSEhASEhMREjgRExIABaeUlBM3EjgSNxISEhMRExISEhIVNRI4FDUVEBQREhIREhISExIROBQ2ETgUNhQ1FBAVNRI3EhITExATERMSExE4EhISAA0FAAAAAAAAAAAAAAAA"
+        entity_id: remote.living_room
+        command:
+            - b64:JgCMAJSWFDUVNRQ1EhISEhMSERMVDxI4ETgSOBISEhQTEhISEhITDxM3EjcTNxE4EzcUEBI4FDUUERQSEhASEhMREjgRExIABaeUlBM3EjgSNxISEhMRExISEhIVNRI4FDUVEBQREhIREhISExIROBQ2ETgUNhQ1FBAVNRI3EhITExATERMSExE4EhISAA0FAAAAAAAAAAAAAAAA
     - delay:
         milliseconds: 200

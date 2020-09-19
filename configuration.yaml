@@ -80,15 +80,11 @@ lutron_caseta_pro:
         fan: [ 11, 16 ]
 switch:
   - platform: broadlink
-    host: !secret broadlink_living_ip
+#    host: !secret broadlink_living_ip
     mac: !secret broadlink_living_mac
-    type: rm2_pro_plus
-    friendly_name: Living Room IR
   - platform: broadlink
-    host: !secret broadlink_master_ip
+#    host: !secret broadlink_master_ip
     mac: !secret broadlink_master_mac
-    type: rm4c_mini
-    friendly_name: Master IR
 
 # Text to speech
 tts:

@@ -3,69 +3,69 @@
 #Vizio TV
 vizio_power_on:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABK5EXEBITFTUWDxITFg8SFBUQEjgSOREUEjgVNhU0FjUVNRITEjkUERQ2FRATOBUQEhMTNxITEzcSFBE5EhMSORU0EwAFpgABKkkSAAybAAEpShUADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABK5EXEBITFTUWDxITFg8SFBUQEjgSOREUEjgVNhU0FjUVNRITEjkUERQ2FRATOBUQEhMTNxITEzcSFBE5EhMSORU0EwAFpgABKkkSAAybAAEpShUADQU=
     - delay:
         milliseconds: 200
 vizio_power_off:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABKZUSExITFDYUEREUEhMSFBEUETkUNxEUEjgSORE4FjUUNhI4EhQRORITEhMSORITEhMSExI4FBEVNhE5ERQSORE5EgAFpgABK0gSAAybAAErSBIADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABKZUSExITFDYUEREUEhMSFBEUETkUNxEUEjgSORE4FjUUNhI4EhQRORITEhMSORITEhMSExI4FBEVNhE5ERQSORE5EgAFpgABK0gSAAybAAErSBIADQU=
     - delay:
         milliseconds: 200
 vizio_input_hdmi1:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABKZUSExITFDYUERITEhQRFBEUETkSORITEjgSORI3FTYUNhI4EhQRFBITEhMSExIUETkSExQ3EjcWNRE5EjgVNhQREgAFpgABK0gSAAybAAEqSRQADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABKZUSExITFDYUERITEhQRFBEUETkSORITEjgSORI3FTYUNhI4EhQRFBITEhMSExIUETkSExQ3EjcWNRE5EjgVNhQREgAFpgABK0gSAAybAAEqSRQADQU=
     - delay:
         milliseconds: 200
 vizio_input_hdmi2:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABK5MVEBITEjgSExITEhMSFBEUETkUNhQSETkUNxM2EjkSOBEUEjgSFBEUEhMTEhMTETkUNhQSETgSORI4ETkSORQREgAFpgABKkkSAAybAAEpShQADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABK5MVEBITEjgSExITEhMSFBEUETkUNhQSETkUNxM2EjkSOBEUEjgSFBEUEhMTEhMTETkUNhQSETgSORI4ETkSORQREgAFpgABKkkSAAybAAEpShQADQU=
     - delay:
         milliseconds: 200
 vizio_volume_up:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABK5MUERISEzgSExITEhMSFBEUETkUNxMSEjgUNhQ2EjkSOBEUEjgSFBITERQSExMTERQRORQREzgUNRM4ETkSOBQ3FAAFpAABKUoSAAyaAAEpSxQADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABK5MUERISEzgSExITEhMSFBEUETkUNxMSEjgUNhQ2EjkSOBEUEjgSFBITERQSExMTERQRORQREzgUNRM4ETkSOBQ3FAAFpAABKUoSAAyaAAEpSxQADQU=
 vizio_volume_down:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABK5MUExMRETgSExIUERQRFBEUEjgVNhQTEjYVNhQ2EjgSOBI5ETkUExMSExITExITEhMTEhMSEzYSOBI4EjkRORQ2FQAFowABKUoSAAybAAEoSxQADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABK5MUExMRETgSExIUERQRFBEUEjgVNhQTEjYVNhQ2EjgSOBI5ETkUExMSExITExITEhMTEhMSEzYSOBI4EjkRORQ2FQAFowABKUoSAAybAAEoSxQADQU=
 vizio_volume_mute_on:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABKZQUEhITEjcUEhITEhMSExITEjkRORQREzgUNhQ3FDUSORITERQSExITEhQRORQRFBETOBQ2FDYSOBI5ERQRORI5EwAFpQABKUoRAAybAAEpShQADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABKZQUEhITEjcUEhITEhMSExITEjkRORQREzgUNhQ3FDUSORITERQSExITEhQRORQRFBETOBQ2FDYSOBI5ERQRORI5EwAFpQABKUoRAAybAAEpShQADQU=
     - delay:
         milliseconds: 200
 vizio_volume_mute_off:
   sequence:
-    - service: broadlink.send
+    - service: remote.send_command
       data:
-        host: !secret broadlink_living_ip
-        packet:
-            - "JgBYAAABLJIVEBUPEzgSExEUEhMSFBEUETkVNhUQEjgVNhU0EjkSOBE5EhQRFBITEhMTOBUQFRAUERI5FTQTOBE5EhMSOBY1FQAFowABKkkSAAybAAErSBUADQU="
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABLJIVEBUPEzgSExEUEhMSFBEUETkVNhUQEjgVNhU0EjkSOBE5EhQRFBITEhMTOBUQFRAUERI5FTQTOBE5EhMSOBY1FQAFowABKkkSAAybAAErSBUADQU=
     - delay:
         milliseconds: 200
