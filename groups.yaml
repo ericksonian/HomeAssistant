@@ -1,0 +1,23 @@
+lights_kitchen:
+  name: Kitchen Lights
+  entities:
+    - light.kitchen_ceiling
+    - light.kitchen_dining_pendant
+    - light.kitchen_sink
+    - switch.kitchen_cabinets
+
+lights_downstairs:
+  name: Downstairs Lights
+  entities:
+    - light.kitchen_ceiling
+    - light.kitchen_dining_pendant
+    - light.kitchen_sink
+    - switch.kitchen_cabinets
+    - light.living_room_main
+    - switch.plug_in_switch_switch
+
+lights_master:
+  name: Master Lights
+  entities:
+    - light.master_bedroom_entry
+    - light.master_bedroom_ceiling_fan_light

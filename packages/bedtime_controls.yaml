@@ -153,34 +153,3 @@ script:
             {% endif %}
           media_content_type: 'audio/mp4'
 
-
-###### AUTOMATIONS --------------------------------------
-automation:
-
-# LED Control
-- alias: Master Motion LED On
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.wyzesense_motion_masterbed
-    to: "on"
-  condition:
-  - condition: state
-    entity_id: input_boolean.master_bedtime_active
-    state: "on"
-  action:
-  - service: script.master_ledstrip_power_on
-  - delay:
-      milliseconds: 200
-  - service: script.master_ledstrip_red
-
-- alias: Master Motion LED Off
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.wyzesense_motion_masterbed
-    to: "off"
-  condition:
-  - condition: state
-    entity_id: input_boolean.master_bedtime_active
-    state: "on"
-  action:
-  - service: script.master_ledstrip_power_off

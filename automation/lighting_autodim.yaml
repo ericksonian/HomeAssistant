@@ -59,30 +59,30 @@
       brightness: 120
 
 #   Master Bedroom Lights On
-- alias: Auto Dim Master Ceiling
-  trigger:
-  - entity_id: light.master_bedroom_ceiling_fan_light
-    platform: state
-    to: "on"
-  condition:
-  - condition: template
-    value_template: "{{ state_attr('light.master_bedroom_ceiling_fan_light', 'brightness') > 250 }}"
-  action:
-  - service: light.turn_on
-    data:
-      entity_id: light.master_bedroom_ceiling_fan_light
-      brightness: 64
+#- alias: Auto Dim Master Ceiling
+#  trigger:
+#  - entity_id: light.master_bedroom_ceiling_fan_light
+#    platform: state
+#    to: "on"
+#  condition:
+#  - condition: template
+#    value_template: "{{ state_attr('light.master_bedroom_ceiling_fan_light', 'brightness') > 250 }}"
+#  action:
+#  - service: light.turn_on
+#    data:
+#      entity_id: light.master_bedroom_ceiling_fan_light
+#      brightness: 64
 
-- alias: Auto Dim Master Entry
-  trigger:
-  - entity_id: light.master_bedroom_entry
-    platform: state
-    to: "on"
-  condition:
-  - condition: template
-    value_template: "{{ state_attr('light.master_bedroom_entry', 'brightness') > 250 }}"
-  action:
-  - service: light.turn_on
-    data:
-      entity_id: light.master_bedroom_entry
-      brightness: 64
+#- alias: Auto Dim Master Entry
+#  trigger:
+#  - entity_id: light.master_bedroom_entry
+#    platform: state
+#    to: "on"
+#  condition:
+#  - condition: template
+#    value_template: "{{ state_attr('light.master_bedroom_entry', 'brightness') > 250 }}"
+#  action:
+#  - service: light.turn_on
+#    data:
+#      entity_id: light.master_bedroom_entry
+#      brightness: 64

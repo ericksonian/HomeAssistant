@@ -25,15 +25,28 @@
     data:
       entity_id: switch.garage_ceiling
 
-#- alias: Pico Garage Button 3
-#  trigger:
-#  - entity_id: sensor.garage_pico
-#    platform: state
-#    to: "2"
-#  condition: []
-#  action:
-#  - service:
-#    data:
+- alias: Pico Garage Button 3
+  trigger:
+  - entity_id: sensor.garage_pico
+    platform: state
+    to: "2"
+  condition: []
+  action:
+  - service: homeassistant.toggle
+    data:
+      entity_id: group.lights_kitchen
+
+- alias: Pico Garage Button 3 Hold
+  trigger:
+  - entity_id: sensor.garage_pico
+    platform: state
+    to: "2"
+    for: "00:00:02"
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.lights_downstairs
 
 - alias: Pico Garage Button 4
   trigger:

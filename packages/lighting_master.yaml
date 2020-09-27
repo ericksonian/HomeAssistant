@@ -46,6 +46,41 @@ input_select:
       - fade3
       - fade7
 
+###### AUTOMATIONS --------------------------------------
+automation:
+
+# LED Control
+- alias: Master Motion LED On
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.wyzesense_motion_masterbed
+    to: "on"
+  condition:
+  - condition: state
+    entity_id: group.lights_master
+    state: "off"
+  action:
+  - service: script.master_ledstrip_power_on
+  - delay:
+      milliseconds: 200
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("sun.sun", "above_horizon") %}
+          script.master_ledstrip_white
+        {% else %}
+          script.master_ledstrip_red
+        {% endif %}
+
+- alias: Master Motion LED Off
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.wyzesense_motion_masterbed
+    to: "off"
+  condition: []
+  action:
+  - service: script.master_ledstrip_power_off
+
 ###### SCRIPTS ------------------------------------------
 script:
 #### Under Bed LED Strip 

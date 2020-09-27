@@ -11,6 +11,10 @@ homeassistant:
   time_zone: !secret time_zone
   customize: !include customize.yaml
   packages: !include_dir_named packages
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.3.0/24
 default_config:
 cloud:
 mobile_app:
