@@ -4,9 +4,9 @@
 - alias: Patio Lights Auto Off
   trigger:
   - platform: state
-    entity: lock.front_door
-    state: locked
-    for: 00:05:00
+    entity_id: lock.front_door
+    to: locked
+    for: "00:05:00"
   condition: []
   action:
   - service: switch.turn_off
