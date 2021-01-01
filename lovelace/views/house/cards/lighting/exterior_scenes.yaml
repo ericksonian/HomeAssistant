@@ -14,7 +14,7 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.exterior_driveway_on
+        entity_id: scene.driveway_on
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.exterior_yard_on

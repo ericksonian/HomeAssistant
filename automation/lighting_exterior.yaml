@@ -1,5 +1,18 @@
 ##  Lighting
 
+#   Patio Off when Front Door Locks
+- alias: Patio Lights Auto Off
+  trigger:
+  - platform: state
+    entity: lock.front_door
+    state: locked
+    for: 00:05:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.patio_string
+
 #   Exterior Lighting
 - alias: Exterior Lights Off Sunrise
   trigger:

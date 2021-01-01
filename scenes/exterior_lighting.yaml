@@ -55,3 +55,5 @@
       state: off
     light.exterior_driveway:
       state: off
+    switch.patio_string:
+      state: off
