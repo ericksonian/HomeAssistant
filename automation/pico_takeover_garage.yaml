@@ -8,7 +8,7 @@
 #    to: "1"
 #  condition: []
 #  action:
-#  - service: 
+#  - service:
 #    data:
 
 - alias: Pico Garage Button 2
@@ -32,9 +32,9 @@
     to: "2"
   condition: []
   action:
-  - service: homeassistant.toggle
+  - service: scene.turn_on
     data:
-      entity_id: group.lights_kitchen
+      entity_id: scene.downstairs_all_off
 
 - alias: Pico Garage Button 3 Hold
   trigger:
@@ -66,7 +66,5 @@
 #    to: "4"
 #  condition: []
 #  action:
-#  - service: 
+#  - service:
 #    data:
-
-
