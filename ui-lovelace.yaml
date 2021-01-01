@@ -15,6 +15,4 @@ views:
   - !include /config/lovelace/views/theater/theater.yaml
   - !include /config/lovelace/views/master/master.yaml
   - !include /config/lovelace/views/guest_room/guest_room.yaml
-  - !include /config/lovelace/views/pancake/pancake.yaml
-#  - !include /config/lovelace/views/rockets/rockets.yaml
   - !include /config/lovelace/views/rack/rack.yaml
