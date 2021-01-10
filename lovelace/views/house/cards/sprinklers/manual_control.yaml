@@ -2,11 +2,12 @@ type: horizontal-stack
 cards:
   - color: 'rgb(66,133,244)'
     entity: switch.sprinklers
-    icon: 'mdi:spotlight-beam'
+    icon: 'mdi:watering-can-outline'
     name: Sprinklers
     state:
       - color: 'rgb(255,255,255)'
         value: 'off'
+        icon: 'mdi:watering-can'
     styles:
       card:
         - height: 80px
