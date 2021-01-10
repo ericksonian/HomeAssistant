@@ -205,12 +205,12 @@ card:
             - type: 'custom:button-card'
               color: 'rgb(0,0,0)'
               color_type: label-card
-              name: Theater
+              name: Powder Bath
               styles:
                 card:
                   - height: 24px
             - type: 'custom:slider-entity-row'
-              entity: media_player.theater_speaker
+              entity: media_player.powder_bath_speaker
               full_row: true
               hide_state: true
         - type: vertical-stack
@@ -224,5 +224,33 @@ card:
                   - height: 24px
             - type: 'custom:slider-entity-row'
               entity: media_player.front_patio_speaker
+              full_row: true
+              hide_state: true
+    - type: horizontal-stack
+      cards:
+        - type: vertical-stack
+          cards:
+            - type: 'custom:button-card'
+              color: 'rgb(0,0,0)'
+              color_type: label-card
+              name: Theater
+              styles:
+                card:
+                  - height: 24px
+            - type: 'custom:slider-entity-row'
+              entity: media_player.theater_speaker
+              full_row: true
+              hide_state: true
+        - type: vertical-stack
+          cards:
+            - type: 'custom:button-card'
+              color: 'rgb(0,0,0)'
+              color_type: label-card
+              name: Garage
+              styles:
+                card:
+                  - height: 24px
+            - type: 'custom:slider-entity-row'
+              entity: media_player.garage_speaker
               full_row: true
               hide_state: true
