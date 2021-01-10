@@ -1,0 +1,18 @@
+type: horizontal-stack
+cards:
+  - color: 'rgb(66,133,244)'
+    entity: switch.sprinklers
+    icon: 'mdi:spotlight-beam'
+    name: Sprinklers
+    state:
+      - color: 'rgb(255,255,255)'
+        value: 'off'
+    styles:
+      card:
+        - height: 80px
+    tap_action:
+      action: call-service
+      service: switch.toggle
+      service_data:
+        entity_id: switch.sprinklers
+    type: 'custom:button-card'
