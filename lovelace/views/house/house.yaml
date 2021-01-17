@@ -6,6 +6,6 @@ badges: []
 cards:
   - !include /config/lovelace/views/house/cards/lighting/lighting.yaml
   - !include /config/lovelace/views/house/cards/speaker_groups/speaker_groups.yaml
-  - !include /config/lovelace/views/house/cards/sprinklers/sprinklers.yaml
 #  - !include /config/lovelace/views/house/cards/ambient_sounds/ambient_sounds.yaml
+  - !include /config/lovelace/views/house/cards/sprinklers/sprinklers.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

@@ -1,0 +1,20 @@
+
+###### SENSOR TEMPLATES ------------------------------------------
+#sensor:
+
+###### INPUT BOOLEANS ------------------------------------------
+input_boolean:
+  sprinkler_scheduler:
+    name: Sprinkler Scheduling UI
+    initial: off
+
+###### INPUT SELECT ------------------------------------------
+#input_select:
+
+
+###### AUTOMATIONS --------------------------------------
+#automation:
+
+
+###### SCRIPTS ------------------------------------------
+#script:

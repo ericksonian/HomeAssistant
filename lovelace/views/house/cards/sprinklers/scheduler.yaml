@@ -1,0 +1,23 @@
+type: conditional
+conditions:
+  - entity: input_boolean.sprinkler_scheduler
+    state: 'on'
+card:
+  type: horizontal-stack
+  cards:
+    - color: 'rgb(66,133,244)'
+      entity: input_boolean.sprinkler_scheduler
+      icon: 'mdi:clock-outline'
+      name: Schedule
+      state:
+        - color: 'rgb(255,255,255)'
+          value: 'off'
+      styles:
+        card:
+          - height: 80px
+      tap_action:
+        action: call-service
+        service: input_boolean.toggle
+        service_data:
+          entity_id: input_boolean.sprinkler_scheduler
+      type: 'custom:button-card'

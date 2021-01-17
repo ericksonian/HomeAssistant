@@ -2,3 +2,4 @@ type: vertical-stack
 cards:
   - !include /config/lovelace/views/house/cards/sprinklers/title_card.yaml
   - !include /config/lovelace/views/house/cards/sprinklers/manual_control.yaml
+  - !include /config/lovelace/views/house/cards/sprinklers/scheduler.yaml
