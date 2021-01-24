@@ -125,7 +125,11 @@ input_select:
     options:
       - none
       - loading
+      - appletv
       - chromecast
+      - front
+      - playstation
+      - ubuntu
       - receiver
 
 input_boolean:
@@ -327,43 +331,104 @@ script:
         data:
           entity_id: input_select.tv_living_bottom_source
           option: none
+      - service: script.tt_power_toggle
       - service: input_boolean.turn_off
         data:
           entity_id: input_boolean.living_bottom_mute
   living_bottom_chromecast:
     sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.tv_living_bottom_source", "none") %}
+              script.living_bottom_chromecast_from_off
+            {% else %}
+              script.living_bottom_chromecast_from_on
+            {% endif %}
+  living_bottom_receiver:
+    sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.tv_living_bottom_source", "none") %}
+              script.living_bottom_receiver_from_off
+            {% else %}
+              script.living_bottom_receiver_from_on
+            {% endif %}
+  living_bottom_chromecast_from_off:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_living_bottom_source
+          option: loading
+      - service: script.vizio_power_on
+      - delay:
+          seconds: 1
+      - service: script.tt_power_toggle
+      - delay:
+          seconds: 5
+      - service: script.tt_input_optical
+      - delay:
+          seconds: 1
+      - service: script.tt_volume_mute_toggle
+      - delay:
+          seconds: 5
+      - service: script.vizio_input_hdmi1
+      - delay:
+          seconds: 1
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.living_bottom_mute
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_living_bottom_source
+          option: chromecast
+  living_bottom_chromecast_from_on:
+    sequence:
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
           option: loading
       - service: script.vizio_input_hdmi1
-      - delay:
-          milliseconds: 300
-      - service: script.vizio_power_on
-      - delay:
-          seconds: 12
-      - service: script.vizio_input_hdmi1
-      - delay:
-          seconds: 1
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
           option: chromecast
-  living_bottom_receiver:
+  living_bottom_receiver_from_off:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_living_bottom_source
+          option: loading
+      - service: script.vizio_power_on
+      - delay:
+          seconds: 1
+      - service: script.tt_power_toggle
+      - delay:
+          seconds: 5
+      - service: script.tt_input_optical
+      - delay:
+          seconds: 1
+      - service: script.tt_volume_mute_toggle
+      - delay:
+          seconds: 5
+      - service: script.vizio_input_hdmi2
+      - delay:
+          seconds: 1
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.living_bottom_mute
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_living_bottom_source
+          option: receiver
+  living_bottom_receiver_from_on:
     sequence:
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
           option: loading
       - service: script.vizio_input_hdmi2
-      - delay:
-          milliseconds: 300
-      - service: script.vizio_power_on
-      - delay:
-          seconds: 12
-      - service: script.vizio_input_hdmi2
-      - delay:
-          seconds: 1
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
