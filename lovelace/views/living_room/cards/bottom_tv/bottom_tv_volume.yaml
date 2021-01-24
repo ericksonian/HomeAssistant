@@ -31,7 +31,7 @@ card:
           value: 'on'
       styles:
         card:
-          - height: 65px
+          - height: 50px
       tap_action:
         action: call-service
         service: script.living_bottom_mute_toggle
@@ -45,7 +45,7 @@ card:
           value: 'on'
       styles:
         card:
-          - height: 65px
+          - height: 50px
       tap_action:
         action: call-service
         service: script.living_bottom_volume_down
@@ -59,7 +59,7 @@ card:
           value: 'on'
       styles:
         card:
-          - height: 65px
+          - height: 50px
       tap_action:
         action: call-service
         service: script.living_bottom_volume_up
