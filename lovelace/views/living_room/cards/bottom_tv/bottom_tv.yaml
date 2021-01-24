@@ -3,4 +3,5 @@ cards:
   - !include /config/lovelace/views/living_room/cards/bottom_tv/title_card.yaml
   - !include /config/lovelace/views/living_room/cards/bottom_tv/select_source.yaml
   - !include /config/lovelace/views/living_room/cards/bottom_tv/powering_on.yaml
-  - !include /config/lovelace/views/living_room/cards/bottom_tv/bottom_tv_on.yaml
+  - !include /config/lovelace/views/living_room/cards/bottom_tv/bottom_tv_volume.yaml
+  - !include /config/lovelace/views/living_room/cards/bottom_tv/bottom_tv_chromecast.yaml

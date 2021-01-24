@@ -328,16 +328,9 @@ script:
       - service: script.vizio_power_on
       - delay:
           seconds: 12
-      - service: script.vizio_volume_mute_on
-      - delay:
-          seconds: 1
       - service: script.vizio_input_hdmi1
       - delay:
           seconds: 1
-      - service: script.vizio_volume_mute_on
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.living_bottom_mute
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
@@ -354,38 +347,34 @@ script:
       - service: script.vizio_power_on
       - delay:
           seconds: 12
-      - service: script.vizio_volume_mute_on
-      - delay:
-          seconds: 1
       - service: script.vizio_input_hdmi2
       - delay:
           seconds: 1
-      - service: script.vizio_volume_mute_on
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.living_bottom_mute
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
           option: receiver
   living_bottom_volume_up:
     sequence:
-      - service: script.vizio_volume_up
+      - service: script.tt_volume_up
       - service: input_boolean.turn_off
         data:
           entity_id: input_boolean.living_bottom_mute
   living_bottom_volume_down:
     sequence:
-      - service: script.vizio_volume_down
+      - service: script.tt_volume_down
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.living_bottom_mute
   living_bottom_mute_on:
     sequence:
-      - service: script.vizio_volume_mute_on
+      - service: script.tt_volume_mute_toggle
       - service: input_boolean.turn_on
         data:
           entity_id: input_boolean.living_bottom_mute
   living_bottom_mute_off:
     sequence:
-      - service: script.vizio_volume_mute_off
+      - service: script.tt_volume_mute_toggle
       - service: input_boolean.turn_off
         data:
           entity_id: input_boolean.living_bottom_mute
