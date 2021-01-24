@@ -8,16 +8,16 @@ card:
   type: horizontal-stack
   cards:
     - type: 'custom:button-card'
-      color: 'rgb(255,255,255)'
-      entity: input_select.tv_living_bottom_source
+      entity: script.living_bottom_off
       icon: 'mdi:power'
-      name: Bottom Off
+      name: Bottom TV Off
       show_name: false
       styles:
         card:
-          - height: 65px
+          - height: 50px
+          - width: 100px
         icon:
-          - color: 'rgb(255,255,255)'
+          - color: 'rgb(255,0,0)'
       tap_action:
         action: call-service
         service: script.living_bottom_off
@@ -34,7 +34,7 @@ card:
           - height: 65px
       tap_action:
         action: call-service
-        service: script.living_bottom_mute_on
+        service: script.living_bottom_mute_toggle
     - type: 'custom:button-card'
       entity: input_boolean.living_bottom_mute
       icon: 'mdi:volume-medium'

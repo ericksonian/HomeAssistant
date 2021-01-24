@@ -129,6 +129,8 @@ input_select:
       - receiver
 
 input_boolean:
+  living_top_mute:
+    name: LR Top Mute
   living_bottom_mute:
     name: LR Bottom Mute
 
@@ -156,9 +158,6 @@ script:
             {% endif %}
 
 ### Living Top TV Macros
-  living_top_mute:
-    sequence:
-      - service: script.sony_volume_mute_toggle
   living_top_off:
     sequence:
       - service: input_select.select_option
@@ -303,6 +302,21 @@ script:
         data:
           entity_id: input_select.tv_living_top_source
           option: ubuntu
+  living_top_volume_up:
+    sequence:
+      - service: script.sony_volume_up
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.living_top_mute
+  living_top_volume_down:
+    sequence:
+      - service: script.sony_volume_down
+  living_top_mute_toggle:
+    sequence:
+      - service: script.sony_volume_mute_toggle
+      - service: input_boolean.toggle
+        data:
+          entity_id: input_boolean.living_top_mute
 
 
 ### Living Bottom TV Macros
@@ -366,16 +380,10 @@ script:
       - service: input_boolean.turn_off
         data:
           entity_id: input_boolean.living_bottom_mute
-  living_bottom_mute_on:
+  living_bottom_mute_toggle:
     sequence:
       - service: script.tt_volume_mute_toggle
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.living_bottom_mute
-  living_bottom_mute_off:
-    sequence:
-      - service: script.tt_volume_mute_toggle
-      - service: input_boolean.turn_off
+      - service: input_boolean.toggle
         data:
           entity_id: input_boolean.living_bottom_mute
 
