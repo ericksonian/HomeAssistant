@@ -394,6 +394,9 @@ script:
           entity_id: input_select.tv_living_bottom_source
           option: loading
       - service: script.vizio_input_hdmi1
+      - delay:
+          milliseconds: 200
+      - service: script.vizio_power_on
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
@@ -410,13 +413,19 @@ script:
       - service: script.tt_power_toggle
       - delay:
           seconds: 6
-      - service: script.tt_input_optical
+      - service: script.vizio_input_hdmi2
       - delay:
           seconds: 1
       - service: script.vizio_input_hdmi2
       - delay:
           seconds: 1
+      - service: script.tt_input_optical
+      - delay:
+          milliseconds: 300
       - service: script.tt_volume_mute_toggle
+      - delay:
+          milliseconds: 300
+      - service: script.vizio_input_hdmi2
       - service: input_boolean.turn_on
         data:
           entity_id: input_boolean.living_bottom_mute
@@ -431,6 +440,9 @@ script:
           entity_id: input_select.tv_living_bottom_source
           option: loading
       - service: script.vizio_input_hdmi2
+      - delay:
+          milliseconds: 200
+      - service: script.vizio_power_on
       - service: input_select.select_option
         data:
           entity_id: input_select.tv_living_bottom_source
