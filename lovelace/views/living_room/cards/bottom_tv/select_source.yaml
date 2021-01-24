@@ -26,7 +26,7 @@ cards:
     name: Receiver
     show_name: false
     state:
-      - color: 'rgb(72,178,230)'
+      - color: 'rgb(255,255,255)'
         value: 'receiver'
       - color: 'rgb(255,255,255)'
         value: 'none'

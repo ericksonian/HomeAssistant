@@ -471,9 +471,6 @@ script:
 sensor:
   - platform: template
     sensors:
-      sony_receiver_muting:
-        friendly_name: Sony Receiver Muting
-        value_template: "{{ state_attr('media_player.sony_receiver', 'is_volume_muted') }}"
       ps4_source:
         friendly_name: PS4 Current Game
         value_template: "{{ state_attr('media_player.playstation_4', 'source') }}"
