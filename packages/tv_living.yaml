@@ -290,7 +290,7 @@ script:
       - service: input_boolean.turn_off
         data:
           entity_id: input_boolean.living_bottom_mute
-  living_bottom_on:
+  living_bottom_chromecast:
     sequence:
       - service: input_select.select_option
         data:
@@ -306,6 +306,32 @@ script:
       - delay:
           seconds: 1
       - service: script.vizio_input_hdmi1
+      - delay:
+          seconds: 1
+      - service: script.vizio_volume_mute_on
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.living_bottom_mute
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_living_bottom_source
+          option: chromecast
+  living_bottom_receiver:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_living_bottom_source
+          option: loading
+      - service: script.vizio_input_hdmi2
+      - delay:
+          milliseconds: 300
+      - service: script.vizio_power_on
+      - delay:
+          seconds: 12
+      - service: script.vizio_volume_mute_on
+      - delay:
+          seconds: 1
+      - service: script.vizio_input_hdmi2
       - delay:
           seconds: 1
       - service: script.vizio_volume_mute_on
