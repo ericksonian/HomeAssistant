@@ -1,0 +1,62 @@
+##  Broadlink IR Commands
+
+#Vizio TV
+tt_power_toggle:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBQAAABJ5UTOBITExITOBI4FRESOBM4EhMTEhM4ExITOBITExMSExI4FBISOBM4ExITOBI4FBISExI4ExMSExI5EhMSExM4EgAFPQABJ0gWAA0FAAAAAAAAAAA=
+    - delay:
+        milliseconds: 200
+tt_input_optical:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBQAAABKpIVNRYQFRAVNhU1Fg8WNRU2FRAVEBY1FRAVNhUQFRAWDxYQFRAVNhU1Fg8WNRU2FRAVNRY1FRAWEBU1FRAWEBU1FgAFOQABKEoVAA0FAAAAAAAAAAA=
+    - delay:
+        milliseconds: 200
+tt_input_analog:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABKpIVNhUQFRAWNRU1FhAVNRY1FRAVEBY1FRAWNRUQFg8WEBUQFTYVNRU2FTUWEBU1FhAVNRYPFhAUERUQFTYVEBY1FQANBQ==
+    - delay:
+        milliseconds: 200
+tt_input_bluetooth:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBYAAABKZMUNxQRFBEVNhQ2FREUNhU2FBEVERQ2FRAVNhQRFREUERQ2FTYVEBU2FBEVNhQ2FREUERQRFTYUERU2FBEVEBU2FAAFOwABKUkUAAxeAAEpSBQADQU=
+    - delay:
+        milliseconds: 200
+tt_volume_up:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABJ5UUNxITFRETNxU2FBETOBI4ExMTEhI4FRETNxURFBEUERU2EjgVNhQ3EhMTEhM4FBETEhURExITEhM4EjgVERM3FQANBQ==
+tt_volume_down:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABKZMWNRQRFRAVNhQ3FBEUNhU2FRAVERQ2FREUNhUQFREUERUQFREUERQRFTYUERU2FBEUNxQ2FTYUNhURFDYVEBU2FQANBQ==
+tt_volume_mute_toggle:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.living_room
+        command:
+            - b64:JgBIAAABJ5UTOBITEhMTOBI4ExMSOBM4EhMSExM4EhMTOBIVEBMTFBETEjgTOBI4ExMSOBM4EhUROBITEhMTExI4ExITExI4EwANBQ==
+    - delay:
+        milliseconds: 200
