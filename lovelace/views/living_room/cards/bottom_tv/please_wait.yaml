@@ -6,7 +6,7 @@ card:
   type: 'custom:button-card'
   color: 'rgb(55,55,55)'
   color_type: label-card
-  name: Powering On and Muting...
+  name: Please Wait...
   style: |
     ha-card {
       border-radius: 15px;

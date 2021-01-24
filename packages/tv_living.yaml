@@ -363,19 +363,17 @@ script:
           option: loading
       - service: script.vizio_power_on
       - delay:
-          seconds: 1
+          milliseconds: 200
       - service: script.tt_power_toggle
       - delay:
-          seconds: 5
+          seconds: 6
       - service: script.tt_input_optical
       - delay:
           seconds: 1
-      - service: script.tt_volume_mute_toggle
-      - delay:
-          seconds: 5
       - service: script.vizio_input_hdmi1
       - delay:
           seconds: 1
+      - service: script.tt_volume_mute_toggle
       - service: input_boolean.turn_on
         data:
           entity_id: input_boolean.living_bottom_mute
@@ -402,19 +400,17 @@ script:
           option: loading
       - service: script.vizio_power_on
       - delay:
-          seconds: 1
+          milliseconds: 200
       - service: script.tt_power_toggle
       - delay:
-          seconds: 5
+          seconds: 6
       - service: script.tt_input_optical
       - delay:
           seconds: 1
-      - service: script.tt_volume_mute_toggle
-      - delay:
-          seconds: 5
       - service: script.vizio_input_hdmi2
       - delay:
           seconds: 1
+      - service: script.tt_volume_mute_toggle
       - service: input_boolean.turn_on
         data:
           entity_id: input_boolean.living_bottom_mute
