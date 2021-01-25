@@ -1,0 +1,53 @@
+type: conditional
+conditions:
+  - entity: input_select.tv_living_top_source
+    state_not: 'none'
+  - entity: input_select.tv_living_top_source
+    state_not: 'loading'
+  - entity: input_select.tv_living_bottom_source
+    state_not: 'none'
+  - entity: input_select.tv_living_bottom_source
+    state_not: 'loading'
+card:
+  type: horizontal-stack
+  cards:
+    - type: 'custom:button-card'
+      entity: input_boolean.living_bottom_mute
+      icon: 'mdi:format-vertical-align-bottom'
+      color: 'rgb(255,255,255)'
+      name: Bottom TV
+      show_name: True
+      state:
+        - color: 'rgb(255, 0, 0)'
+          value: 'on'
+      styles:
+        card:
+          - height: 65px
+      tap_action:
+        action: call-service
+        service: script.living_bottom_mute_toggle
+    - type: 'custom:button-card'
+      entity: input_boolean.living_bottom_mute
+      icon: 'mdi:format-vertical-align-center'
+      name: Audio Switching
+      show_name: true
+      styles:
+        card:
+          - height: 65px
+      tap_action:
+        action: none
+    - type: 'custom:button-card'
+      entity: input_boolean.living_top_mute
+      icon: 'mdi:format-vertical-align-top'
+      color: 'rgb(255,255,255)'
+      name: Top TV
+      show_name: True
+      state:
+        - color: 'rgb(255, 0, 0)'
+          value: 'on'
+      styles:
+        card:
+          - height: 65px
+      tap_action:
+        action: call-service
+        service: script.living_top_mute_toggle
