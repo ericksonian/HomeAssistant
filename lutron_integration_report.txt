@@ -410,9 +410,9 @@
       {
         "ID" : 7,
         "Area" : {
-          "Name" : "Kitchen"
+          "Name" : "Living Room"
         },
-        "Name" : "Pico",
+        "Name" : "Pico 2",
         "Buttons" : [
           {
             "Number" : 2
@@ -476,6 +476,72 @@
           },
           {
             "Number" : 6
+          }
+        ]
+      },
+      {
+        "ID" : 18,
+        "Area" : {
+          "Name" : "Living Room"
+        },
+        "Name" : "Pico 1",
+        "Buttons" : [
+          {
+            "Number" : 2
+          },
+          {
+            "Number" : 3
+          },
+          {
+            "Number" : 4
+          },
+          {
+            "Number" : 5
+          },
+          {
+            "Number" : 6
+          }
+        ]
+      },
+      {
+        "ID" : 20,
+        "Area" : {
+          "Name" : "Kitchen"
+        },
+        "Name" : "Keypad",
+        "Buttons" : [
+          {
+            "Number" : 8
+          },
+          {
+            "Number" : 9
+          },
+          {
+            "Number" : 10
+          },
+          {
+            "Number" : 11
+          }
+        ]
+      },
+      {
+        "ID" : 23,
+        "Area" : {
+          "Name" : "Master Bedroom"
+        },
+        "Name" : "Keypad",
+        "Buttons" : [
+          {
+            "Number" : 8
+          },
+          {
+            "Number" : 9
+          },
+          {
+            "Number" : 10
+          },
+          {
+            "Number" : 11
           }
         ]
       }
@@ -561,6 +627,34 @@
       {
         "ID" : 16,
         "Name" : "Ceiling Fan",
+        "Area" : {
+          "Name" : "Master Bedroom"
+        }
+      },
+      {
+        "ID" : 17,
+        "Name" : "Stairs",
+        "Area" : {
+          "Name" : "Living Room"
+        }
+      },
+      {
+        "ID" : 19,
+        "Name" : "Cabinets",
+        "Area" : {
+          "Name" : "Kitchen"
+        }
+      },
+      {
+        "ID" : 21,
+        "Name" : "His Side",
+        "Area" : {
+          "Name" : "Master Bedroom"
+        }
+      },
+      {
+        "ID" : 22,
+        "Name" : "Her Side",
         "Area" : {
           "Name" : "Master Bedroom"
         }

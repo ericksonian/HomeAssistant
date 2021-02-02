@@ -1,33 +1,32 @@
 ##  Lighting
 
 #   Kitchen Lights On with Switch
-- alias: Auto Dim Kitchen Ceiling
-  trigger:
-  - entity_id: light.kitchen_ceiling
-    platform: state
-    to: "on"
-  condition:
-  - condition: template
-    value_template: "{{ state_attr('light.kitchen_ceiling', 'brightness') > 250 }}"
-  action:
-  - service: light.turn_on
-    data:
-      entity_id: light.kitchen_ceiling
-      brightness: 143
+#- alias: Auto Dim Kitchen Ceiling
+#  trigger:
+#  - entity_id: light.kitchen_ceiling
+#    platform: state
+#    to: "on"
+#  condition:
+#  - condition: template
+#    value_template: "{{ state_attr('light.kitchen_ceiling', 'brightness') > 250 }}"
+#  action:
+#  - service: light.turn_on
+#    data:
+#      entity_id: light.kitchen_ceiling
+#      brightness: 143
 
-- alias: Auto Dim Kitchen Sink
-  trigger:
-  - entity_id: light.kitchen_sink
-    platform: state
-    to: "on"
-  condition:
-  - condition: template
-    value_template: "{{ state_attr('light.kitchen_sink', 'brightness') > 250 }}"
-  action:
-  - service: light.turn_on
-    data:
-      entity_id: light.kitchen_sink
-      brightness: 64
+#- alias: Auto Dim Kitchen Sink
+#  trigger:
+#  - entity_id: light.kitchen_sink
+#    platform: state
+#  condition:
+#  - condition: template
+#    value_template: "{{ state_attr('light.kitchen_sink', 'brightness') > 250 }}"
+#  action:
+#  - service: light.turn_on
+#    data:
+#      entity_id: light.kitchen_sink
+#      brightness: 64
 
 - alias: Auto Dim Kitchen Dining
   trigger:
