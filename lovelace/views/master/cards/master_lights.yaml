@@ -65,7 +65,7 @@ cards:
         - entity: light.master_bedroom_her_side
           hold_action:
             action: more-info
-          icon: 'mdi:wall-sconce'
+          icon: 'mdi:outdoor-lamp'
           name: Her Side
           show_icon: true
           show_name: true
@@ -93,7 +93,7 @@ cards:
         - entity: light.master_bedroom_his_side
           hold_action:
             action: more-info
-          icon: 'mdi:wall-sconce'
+          icon: 'mdi:outdoor-lamp'
           name: His Side
           show_icon: true
           show_name: true

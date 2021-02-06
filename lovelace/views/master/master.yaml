@@ -4,8 +4,8 @@ panel: false
 badges: []
 cards:
   - !include /config/lovelace/views/master/cards/fan.yaml
-  - !include /config/lovelace/views/master/cards/master_lights.yaml
   - !include /config/lovelace/views/master/cards/master_scenes.yaml
+  - !include /config/lovelace/views/master/cards/master_lights.yaml
   - !include /config/lovelace/views/master/cards/led_strip/led_strip.yaml
   - !include /config/lovelace/views/master/cards/nothing_playing.yaml
   - !include /config/lovelace/views/master/cards/bedroom_tv/bedroom_tv.yaml

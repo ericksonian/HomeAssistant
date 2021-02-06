@@ -2,8 +2,8 @@ type: horizontal-stack
 cards:
   - color: 'rgb(255,255,255)'
     entity: scene.master_bright
-    icon: 'mdi:brightness-5'
-    name: Dining On
+    icon: 'mdi:brightness-7'
+    name: Bright
     styles:
       card:
         - height: 80px
@@ -15,8 +15,8 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.master_entertain
-    icon: 'mdi:brightness-4'
-    name: Kitchen On
+    icon: 'mdi:wall-sconce-round'
+    name: Entertain
     styles:
       card:
         - height: 80px
@@ -28,8 +28,8 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.master_relax
-    icon: 'mdi:wall-sconce'
-    name: Kitchen Off
+    icon: 'mdi:outdoor-lamp'
+    name: Relax
     styles:
       card:
         - height: 80px
@@ -41,8 +41,8 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.master_all_off
-    icon: 'mdi:brightness-3'
-    name: All Off
+    icon: 'mdi:lightbulb-group-off-outline'
+    name: Off
     styles:
       card:
         - height: 80px
