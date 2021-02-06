@@ -40,7 +40,7 @@
   - service: light.turn_on
     data:
       entity_id: light.kitchen_dining_pendant
-      brightness: 126
+      brightness: 185
 
 #   Living Room Lights On
 - alias: Auto Dim Living Ceiling

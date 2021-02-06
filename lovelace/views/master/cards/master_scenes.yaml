@@ -1,8 +1,8 @@
 type: horizontal-stack
 cards:
   - color: 'rgb(255,255,255)'
-    entity: scene.downstairs_dining_on
-    icon: 'mdi:ceiling-light'
+    entity: scene.master_bright
+    icon: 'mdi:brightness-5'
     name: Dining On
     styles:
       card:
@@ -11,11 +11,11 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.downstairs_dining_on
+        entity_id: scene.master_bright
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
-    entity: scene.downstairs_kitchen_on
-    icon: 'mdi:lightbulb-multiple-outline'
+    entity: scene.master_entertain
+    icon: 'mdi:brightness-4'
     name: Kitchen On
     styles:
       card:
@@ -24,25 +24,11 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.downstairs_kitchen_on
-    type: 'custom:button-card'
-  - color: 'rgb(188,160,40)'
-    entity: light.kitchen_cabinets
-    icon: 'mdi:wall-sconce-flat'
-    name: Cabinets Off
-    state:
-      - color: 'rgb(120,120,120)'
-        name: Cabinets On
-        value: 'off'
-    styles:
-      card:
-        - height: 80px
-    tap_action:
-      action: toggle
+        entity_id: scene.master_entertain
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
-    entity: scene.downstairs_kitchen_off
-    icon: 'mdi:lightbulb-multiple-off-outline'
+    entity: scene.master_relax
+    icon: 'mdi:wall-sconce'
     name: Kitchen Off
     styles:
       card:
@@ -51,11 +37,11 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.downstairs_kitchen_off
+        entity_id: scene.master_relax
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
-    entity: scene.downstairs_kitchen_dining_off
-    icon: 'mdi:lightbulb-group-off-outline'
+    entity: scene.master_all_off
+    icon: 'mdi:brightness-3'
     name: All Off
     styles:
       card:
@@ -64,5 +50,5 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.downstairs_kitchen_dining_off
+        entity_id: scene.master_all_off
     type: 'custom:button-card'

@@ -2,6 +2,36 @@ type: horizontal-stack
 cards:
   - type: 'custom:button-card'
     entity: sensor.master_bedroom_fan_speed
+    color: 'rgb(99,137,248)'
+    icon: 'mdi:fan-off'
+    name: Fan
+    show_icon: true
+    show_name: true
+    state:
+      - color: 'rgb(255,255,255)'
+        value: 'off'
+        icon: 'mdi:fan'
+      - color: 'rgb(255,28,1)'
+        value: 'high'
+      - color: 'rgb(255,142,2)'
+        value: 'medium_high'
+      - color: 'rgb(255,255,1)'
+        value: 'medium'
+      - color: 'rgb(0,204,52)'
+        value: 'low'
+    styles:
+      card:
+        - height: 60px
+          width: 90px
+    tap_action:
+      action: call-service
+      service: fan.toggle
+      service_data:
+        entity_id: fan.master_bedroom_ceiling_fan
+    hold_action:
+      action: more-info
+  - type: 'custom:button-card'
+    entity: sensor.master_bedroom_fan_speed
     color: 'rgb(97,100,107)'
     icon: 'mdi:speedometer-slow'
     name: Low
@@ -9,7 +39,7 @@ cards:
     show_name: false
     state:
       - color: 'rgb(0,204,52)'
-        value: low
+        value: 'low'
       - color: 'rgb(97,100,107)'
         value: 'off'
     styles:
@@ -32,7 +62,7 @@ cards:
     show_name: false
     state:
       - color: 'rgb(255,255,1)'
-        value: medium
+        value: 'medium'
       - color: 'rgb(97,100,107)'
         value: 'off'
     styles:
@@ -55,7 +85,7 @@ cards:
     show_name: false
     state:
       - color: 'rgb(255,142,2)'
-        value: medium_high
+        value: 'medium_high'
       - color: 'rgb(97,100,107)'
         value: 'off'
     styles:
@@ -78,7 +108,7 @@ cards:
     show_name: false
     state:
       - color: 'rgb(255,28,1)'
-        value: high
+        value: 'high'
       - color: 'rgb(97,100,107)'
         value: 'off'
     styles:
@@ -92,34 +122,3 @@ cards:
         speed: high
     hold_action:
       action: more-info
-  - type: 'custom:button-card'
-    entity: sensor.master_bedroom_fan_speed
-    color: 'rgb(99,137,248)'
-    icon: 'mdi:fan-off'
-    name: Fan
-    show_icon: true
-    show_name: true
-    state:
-      - color: 'rgb(255,255,255)'
-        value: 'off'
-        icon: 'mdi:fan'
-      - color: 'rgb(255,28,1)'
-        value: high
-      - color: 'rgb(255,142,2)'
-        value: medium_high
-      - color: 'rgb(255,255,1)'
-        value: medium
-      - color: 'rgb(0,204,52)'
-        value: low
-    styles:
-      card:
-        - height: 60px
-          width: 90px
-    tap_action:
-      action: call-service
-      service: fan.toggle
-      service_data:
-        entity_id: fan.master_bedroom_ceiling_fan
-    hold_action:
-      action: more-info
-

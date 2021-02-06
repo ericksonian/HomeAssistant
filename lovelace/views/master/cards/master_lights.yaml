@@ -1,0 +1,114 @@
+type: vertical-stack
+cards:
+  - type: conditional
+    conditions:
+      - entity: light.master_bedroom_entry
+        state_not: 'off'
+    card:
+      cards:
+        - entity: light.master_bedroom_entry
+          hold_action:
+            action: more-info
+          icon: 'mdi:wall-sconce-flat'
+          name: Entry
+          show_icon: true
+          show_name: true
+          state:
+            - color: 'rgb(188,160,40)'
+              value: 'on'
+          styles:
+            card:
+              - height: 60px
+                width: 90px
+          tap_action:
+            action: toggle
+          type: 'custom:button-card'
+        - entity: light.master_bedroom_entry
+          full_row: true
+          hide_state: true
+          type: 'custom:slider-entity-row'
+      type: horizontal-stack
+  - type: conditional
+    conditions:
+      - entity: light.master_bedroom_ceiling_fan_light
+        state_not: 'off'
+    card:
+      cards:
+        - entity: light.master_bedroom_ceiling_fan_light
+          hold_action:
+            action: more-info
+          icon: 'mdi:dome-light'
+          name: Entry
+          show_icon: true
+          show_name: true
+          state:
+            - color: 'rgb(188,160,40)'
+              value: 'on'
+          styles:
+            card:
+              - height: 60px
+                width: 90px
+          tap_action:
+            action: toggle
+          type: 'custom:button-card'
+        - entity: light.master_bedroom_ceiling_fan_light
+          full_row: true
+          hide_state: true
+          type: 'custom:slider-entity-row'
+      type: horizontal-stack
+  - type: conditional
+    conditions:
+      - entity: light.master_bedroom_her_side
+        state_not: 'off'
+    card:
+      cards:
+        - entity: light.master_bedroom_her_side
+          hold_action:
+            action: more-info
+          icon: 'mdi:wall-sconce'
+          name: Her Side
+          show_icon: true
+          show_name: true
+          state:
+            - color: 'rgb(188,160,40)'
+              value: 'on'
+          styles:
+            card:
+              - height: 60px
+                width: 90px
+          tap_action:
+            action: toggle
+          type: 'custom:button-card'
+        - entity: light.master_bedroom_her_side
+          full_row: true
+          hide_state: true
+          type: 'custom:slider-entity-row'
+      type: horizontal-stack
+  - type: conditional
+    conditions:
+      - entity: light.master_bedroom_his_side
+        state_not: 'off'
+    card:
+      cards:
+        - entity: light.master_bedroom_his_side
+          hold_action:
+            action: more-info
+          icon: 'mdi:wall-sconce'
+          name: His Side
+          show_icon: true
+          show_name: true
+          state:
+            - color: 'rgb(188,160,40)'
+              value: 'on'
+          styles:
+            card:
+              - height: 60px
+                width: 90px
+          tap_action:
+            action: toggle
+          type: 'custom:button-card'
+        - entity: light.master_bedroom_his_side
+          full_row: true
+          hide_state: true
+          type: 'custom:slider-entity-row'
+      type: horizontal-stack

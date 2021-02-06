@@ -25,7 +25,7 @@
       state: off
     light.kitchen_sink:
       state: off
-    switch.kitchen_cabinets:
+    light.kitchen_cabinets:
       state: off
 
 #   Kitchen Dining Off
@@ -37,7 +37,7 @@
       state: off
     light.kitchen_dining_pendant:
       state: off
-    switch.kitchen_cabinets:
+    light.kitchen_cabinets:
       state: off
 
 #   Downstairs All On
@@ -67,7 +67,7 @@
       state: off
     light.kitchen_dining_pendant:
       state: off
-    switch.kitchen_cabinets:
+    light.kitchen_cabinets:
       state: off
     light.living_room_main:
       state: off

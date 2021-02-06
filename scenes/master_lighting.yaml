@@ -1,0 +1,55 @@
+### Lighting Scenes
+
+##  Master
+
+#   Master Bright
+- name: Master Bright
+  entities:
+    light.master_bedroom_entry:
+      state: on
+    light.master_bedroom_ceiling_fan_light:
+      state: on
+    light.master_bedroom_her_side:
+      state: on
+    light.master_bedroom_his_side:
+      state: on
+
+#   Master Entertain
+- name: Master Entertain
+  entities:
+    light.master_bedroom_entry:
+      state: on
+      brightness: 102
+    light.master_bedroom_ceiling_fan_light:
+      state: on
+      brightness: 77
+    light.master_bedroom_her_side:
+      state: off
+    light.master_bedroom_his_side:
+      state: off
+
+#   Master Relax
+- name: Master Relax
+  entities:
+    light.master_bedroom_entry:
+      state: off
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_her_side:
+      state: on
+      brightness: 51
+    light.master_bedroom_his_side:
+      state: on
+      brightness: 51
+
+#   Master All Off
+- name: Master All Off
+  entities:
+    light.master_bedroom_entry:
+      state: off
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_her_side:
+      state: off
+    light.master_bedroom_his_side:
+      state: off
