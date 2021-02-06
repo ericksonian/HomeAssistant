@@ -7,7 +7,8 @@ cards:
         image: /local/ian.png
         show_name: false
         show_state: false
-      - entity: person.ian
+      - type: glance
+        entity: person.ian
         show_name: false
         show_icon: false
         show_state: true
