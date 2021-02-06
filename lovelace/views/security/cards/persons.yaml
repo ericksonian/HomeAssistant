@@ -4,14 +4,14 @@ cards:
     entity: person.ian
     image: /local/ian.png
     show_name: false
-    show_state: false
+    show_state: true
   - type: picture-entity
     entity: person.kalene
     image: /local/ian.png
     show_name: false
-    show_state: false
+    show_state: true
   - type: picture-entity
     entity: person.sean
     image: /local/sean.png
     show_name: false
-    show_state: false
+    show_state: true
