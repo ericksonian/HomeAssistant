@@ -1,7 +1,11 @@
-type: glance
-entities:
-  - entity: person.ian
+type: horizontal-stack
+cards:
+  - type: picture-entity
+    entity: person.ian
     image: /local/ian.png
-  - entity: person.kalene
-  - entity: person.sean
+  - type: picture-entity
+    entity: person.kalene
+    image: /local/ian.png
+  - type: picture-entity
+    entity: person.sean
     image: /local/sean.png
