@@ -78,8 +78,8 @@ cards:
           tap_action:
             action: toggle
           type: 'custom:button-card'
-        - entity: switch.plug_in_switch_switch
-          full_row: true
-          hide_state: true
-          type: 'custom:slider-entity-row'
+#        - entity: switch.plug_in_switch_switch
+#          full_row: true
+#          hide_state: true
+#          type: 'custom:slider-entity-row'
       type: horizontal-stack

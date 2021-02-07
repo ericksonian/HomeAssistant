@@ -15,7 +15,7 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.living_entertain
-    icon: 'mdi:brightness-4'
+    icon: 'mdi:wall-sconce-round'
     name: Entertain
     styles:
       card:
