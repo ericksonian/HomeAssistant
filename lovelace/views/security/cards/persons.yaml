@@ -3,19 +3,6 @@ cards:
   - type: vertical-stack
     cards:
       - type: picture-entity
-        entity: person.ian
-        image: /local/ian.jpg
-        show_name: false
-        show_state: false
-      - type: glance
-        show_name: false
-        show_icon: false
-        show_state: true
-        entities:
-          - entity: person.ian
-  - type: vertical-stack
-    cards:
-      - type: picture-entity
         entity: person.kalene
         image: /local/kalene.jpg
         show_name: false
@@ -26,6 +13,19 @@ cards:
         show_state: true
         entities:
           - entity: person.kalene
+  - type: vertical-stack
+    cards:
+      - type: picture-entity
+        entity: person.ian
+        image: /local/ian.jpg
+        show_name: false
+        show_state: false
+      - type: glance
+        show_name: false
+        show_icon: false
+        show_state: true
+        entities:
+          - entity: person.ian
   - type: vertical-stack
     cards:
       - type: picture-entity

@@ -1,0 +1,46 @@
+### Lighting Scenes
+
+##  Living
+
+#   Living Bright
+- name: Living Bright
+  entities:
+    light.living_room_main:
+      state: on
+    light.living_room_stairs:
+      state: on
+    switch.plug_in_switch_switch:
+      state: on
+
+#   Living Entertain
+- name: Living Entertain
+  entities:
+    light.living_room_main:
+      state: on
+      brightness: 120
+    light.living_room_stairs:
+      state: on
+      brightness: 175
+    switch.plug_in_switch_switch:
+      state: off
+
+
+#   Living Movie
+- name: Living Movie
+  entities:
+    light.living_room_main:
+      state: off
+    light.living_room_stairs:
+      state: off
+    switch.plug_in_switch_switch:
+      state: on
+
+#   Living All Off
+- name: Living All Off
+  entities:
+    light.living_room_main:
+      state: off
+    light.living_room_stairs:
+      state: off
+    switch.plug_in_switch_switch:
+      state: off

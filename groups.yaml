@@ -21,3 +21,5 @@ lights_master:
   entities:
     - light.master_bedroom_entry
     - light.master_bedroom_ceiling_fan_light
+    - light.master_bedroom_her_side
+    - light.master_bedroom_his_side

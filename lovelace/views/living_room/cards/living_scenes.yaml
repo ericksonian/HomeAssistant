@@ -1,8 +1,8 @@
 type: horizontal-stack
 cards:
   - color: 'rgb(255,255,255)'
-    entity: scene.master_bright
-    icon: 'mdi:brightness-7'
+    entity: scene.living_bright
+    icon: 'mdi:brightness-5'
     name: Bright
     styles:
       card:
@@ -11,11 +11,11 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.master_bright
+        entity_id: scene.living_bright
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
-    entity: scene.master_entertain
-    icon: 'mdi:wall-sconce-round'
+    entity: scene.living_entertain
+    icon: 'mdi:brightness-4'
     name: Entertain
     styles:
       card:
@@ -24,12 +24,12 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.master_entertain
+        entity_id: scene.living_entertain
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
-    entity: scene.master_relax
-    icon: 'mdi:outdoor-lamp'
-    name: Relax
+    entity: scene.living_movie
+    icon: 'mdi:floor-lamp'
+    name: Movie
     styles:
       card:
         - height: 80px
@@ -37,10 +37,10 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.master_relax
+        entity_id: scene.living_movie
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
-    entity: scene.master_all_off
+    entity: scene.living_all_off
     icon: 'mdi:lightbulb-group-off-outline'
     name: All Off
     styles:
@@ -50,5 +50,5 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.master_all_off
+        entity_id: scene.living_all_off
     type: 'custom:button-card'

@@ -3,7 +3,7 @@ icon: 'mdi:bed-king'
 panel: false
 badges: []
 cards:
-  - !include /config/lovelace/views/master/cards/fan.yaml
+  - !include /config/lovelace/views/master/cards/master_fan.yaml
   - !include /config/lovelace/views/master/cards/master_scenes.yaml
   - !include /config/lovelace/views/master/cards/master_lights.yaml
   - !include /config/lovelace/views/master/cards/led_strip/led_strip.yaml
