@@ -10,7 +10,7 @@ cards:
           hold_action:
             action: more-info
           icon: 'mdi:dome-light'
-          name: Entry
+          name: Ceiling
           show_icon: true
           show_name: true
           state:
@@ -38,7 +38,7 @@ cards:
           hold_action:
             action: more-info
           icon: 'mdi:globe-light'
-          name: Entry
+          name: Stairs
           show_icon: true
           show_name: true
           state:
