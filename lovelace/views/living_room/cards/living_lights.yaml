@@ -61,25 +61,19 @@ cards:
       - entity: switch.plug_in_switch_switch
         state_not: 'off'
     card:
-      cards:
-        - entity: switch.plug_in_switch_switch
-          hold_action:
-            action: more-info
-          icon: 'mdi:floor-lamp'
-          name: Lamp
-          show_icon: true
-          show_name: true
-          state:
-            - color: 'rgb(188,160,40)'
-              value: 'on'
-          styles:
-            card:
-              - height: 60px
-          tap_action:
-            action: toggle
-          type: 'custom:button-card'
-#        - entity: switch.plug_in_switch_switch
-#          full_row: true
-#          hide_state: true
-#          type: 'custom:slider-entity-row'
-      type: horizontal-stack
+      entity: switch.plug_in_switch_switch
+      hold_action:
+        action: more-info
+      icon: 'mdi:floor-lamp'
+      name: Lamp
+      show_icon: true
+      show_name: true
+      state:
+        - color: 'rgb(188,160,40)'
+          value: 'on'
+      styles:
+        card:
+          - height: 60px
+      tap_action:
+        action: toggle
+      type: 'custom:button-card'

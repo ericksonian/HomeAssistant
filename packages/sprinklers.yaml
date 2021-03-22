@@ -13,8 +13,18 @@ input_boolean:
 
 
 ###### AUTOMATIONS --------------------------------------
-#automation:
-
+automation:
+- alias: Sprinklers Auto Off
+  trigger:
+  - platform: state
+    entity_id: switch.sprinklers
+    to: "on"
+    for: "00:00:30"
+  condition: []
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.sprinklers
 
 ###### SCRIPTS ------------------------------------------
 #script:
