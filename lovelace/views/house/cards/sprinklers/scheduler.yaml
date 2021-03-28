@@ -6,9 +6,9 @@ card:
   type: horizontal-stack
   cards:
     - color: 'rgb(66,133,244)'
-      entity: input_boolean.sprinkler_scheduler
+      entity: input_boolean.sprinkler_auto_water_1
       icon: 'mdi:clock-outline'
-      name: Schedule
+      name: '5:00 AM'
       state:
         - color: 'rgb(255,255,255)'
           value: 'off'
@@ -19,5 +19,21 @@ card:
         action: call-service
         service: input_boolean.toggle
         service_data:
-          entity_id: input_boolean.sprinkler_scheduler
+          entity_id: input_boolean.sprinkler_auto_water_1
+      type: 'custom:button-card'
+    - color: 'rgb(66,133,244)'
+      entity: input_boolean.sprinkler_auto_water_2
+      icon: 'mdi:clock-outline'
+      name: '5:05 AM'
+      state:
+        - color: 'rgb(255,255,255)'
+          value: 'off'
+      styles:
+        card:
+          - height: 80px
+      tap_action:
+        action: call-service
+        service: input_boolean.toggle
+        service_data:
+          entity_id: input_boolean.sprinkler_auto_water_2
       type: 'custom:button-card'

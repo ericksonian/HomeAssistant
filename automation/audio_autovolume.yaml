@@ -1,0 +1,10 @@
+##  Volumes
+
+- alias: Everywhere Auto Set Volume Medium
+  trigger:
+  - entity_id: media_player.everywhere
+    platform: state
+    from: "off"
+  condition: []
+  action:
+  - service: script.volume_set_medium
