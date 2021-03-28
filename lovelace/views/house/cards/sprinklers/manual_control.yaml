@@ -32,4 +32,6 @@ cards:
       service: switch.toggle
       service_data:
         entity_id: switch.sprinklers
+    hold_action:
+      action: more-info
     type: 'custom:button-card'

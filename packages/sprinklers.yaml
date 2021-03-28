@@ -39,7 +39,7 @@ automation:
   condition:
   - condition: state
     entity_id: input_boolean.sprinkler_auto_water_1
-    state: 'on'
+    state: "on"
   action:
   - service: switch.turn_on
     data:
@@ -51,7 +51,7 @@ automation:
   condition:
   - condition: state
     entity_id: input_boolean.sprinkler_auto_water_2
-    state: 'on'
+    state: "on"
   action:
   - service: switch.turn_on
     data:
