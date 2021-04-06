@@ -6,7 +6,7 @@ cards:
     styles:
       card:
         - height: 18px
-        - width: 60px
+        - width: 36px
     type: 'custom:button-card'
   - color: 'rgb(180,180,180)'
     color_type: label-card
@@ -21,5 +21,5 @@ cards:
     styles:
       card:
         - height: 18px
-        - width: 60px
+        - width: 36px
     type: 'custom:button-card'
