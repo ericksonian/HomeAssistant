@@ -1,6 +1,6 @@
 color: 'rgb(200,200,200)'
 color_type: label-card
-name: Lighting
+name: Exterior
 styles:
   card:
     - height: 24px

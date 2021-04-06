@@ -1,7 +1,8 @@
 type: vertical-stack
 cards:
-  - !include /config/lovelace/views/house/cards/lighting/title_card.yaml
+  - !include /config/lovelace/views/house/cards/lighting/title_card_kitchen.yaml
   - !include /config/lovelace/views/house/cards/lighting/kitchen_scenes.yaml
   - !include /config/lovelace/views/house/cards/lighting/kitchen_lights.yaml
+  - !include /config/lovelace/views/house/cards/lighting/title_card_exterior.yaml
   - !include /config/lovelace/views/house/cards/lighting/exterior_scenes.yaml
   - !include /config/lovelace/views/house/cards/lighting/exterior_lights.yaml

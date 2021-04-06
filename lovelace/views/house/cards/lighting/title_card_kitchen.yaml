@@ -1,7 +1,7 @@
-color: 'rgb(155,155,155)'
+color: 'rgb(200,200,200)'
 color_type: label-card
-name: Plants
+name: Kitchen
 styles:
   card:
-    - height: 18px
+    - height: 24px
 type: 'custom:button-card'
