@@ -52,3 +52,5 @@
       state: off
     light.kitchen_cabinets:
       state: off
+    light.kitchen_dining_pendant:
+      state: off
