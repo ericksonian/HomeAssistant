@@ -1,9 +1,9 @@
 type: horizontal-stack
 cards:
   - color: 'rgb(255,255,255)'
-    entity: scene.downstairs_dining_on
-    icon: 'mdi:table-chair'
-    name: Dining On
+    entity: scene.kitchen_dining_on
+    icon: 'mdi:ceiling-light'
+    name: Dining
     styles:
       card:
         - height: 80px
@@ -11,7 +11,7 @@ cards:
       action: call-service
       service: scene.turn_on
       service_data:
-        entity_id: scene.downstairs_dining_on
+        entity_id: scene.kitchen_dining_on
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.kitchen_bright
