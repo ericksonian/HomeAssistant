@@ -25,7 +25,7 @@
   - platform: state
     entity_id: media_player.rock_speakers
     to: "off"
-    for: "00:05:00"
+    for: "00:01:00"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'unavailable' }}"
