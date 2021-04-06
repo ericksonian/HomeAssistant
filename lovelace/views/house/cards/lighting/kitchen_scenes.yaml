@@ -2,7 +2,7 @@ type: horizontal-stack
 cards:
   - color: 'rgb(255,255,255)'
     entity: scene.downstairs_dining_on
-    icon: 'mdi:ceiling-light'
+    icon: 'mdi:table-chair'
     name: Dining On
     styles:
       card:
@@ -15,7 +15,7 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.kitchen_bright
-    icon: 'mdi:brightness-5'
+    icon: 'mdi:stove'
     name: Cooking
     styles:
       card:
@@ -28,7 +28,7 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.kitchen_entertain
-    icon: 'mdi:wall-sconce-round'
+    icon: 'mdi:lightbulb-multiple-outline'
     name: Normal
     styles:
       card:
@@ -41,7 +41,7 @@ cards:
     type: 'custom:button-card'
   - color: 'rgb(255,255,255)'
     entity: scene.kitchen_relax
-    icon: 'mdi:floor-lamp'
+    icon: 'mdi:coffee-maker'
     name: Relax
     styles:
       card:
