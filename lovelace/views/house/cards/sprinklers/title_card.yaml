@@ -1,7 +1,23 @@
-color: 'rgb(155,155,155)'
-color_type: label-card
-name: Plants
-styles:
-  card:
-    - height: 18px
-type: 'custom:button-card'
+type: horizontal-stack
+cards:
+  - color: 'rgb(0,0,0)'
+    color_type: label-card
+    name: " "
+    styles:
+      card:
+        - height: 12px
+    type: 'custom:button-card'
+  - color: 'rgb(180,180,180)'
+    color_type: label-card
+    name: Plants
+    styles:
+      card:
+        - height: 12px
+    type: 'custom:button-card'
+  - color: 'rgb(0,0,0)'
+    color_type: label-card
+    name: " "
+    styles:
+      card:
+        - height: 12px
+    type: 'custom:button-card'
