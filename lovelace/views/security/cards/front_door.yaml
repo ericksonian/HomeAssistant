@@ -169,3 +169,17 @@ cards:
         controls: true
         mute: true
         volume: true
+  - type: conditional
+    conditions:
+      - entity: media_player.rock_speakers
+        state_not: 'off'
+    card:
+      type: 'custom:mini-media-player'
+      artwork: cover
+      entity: media_player.rock_speakers
+      icon: 'mdi:cast-audio'
+      hide:
+        power: true
+        controls: true
+        mute: true
+        volume: true

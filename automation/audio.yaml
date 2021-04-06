@@ -1,0 +1,35 @@
+##  Audio
+
+- alias: Everywhere Auto Set Volume Medium
+  trigger:
+  - entity_id: media_player.everywhere
+    platform: state
+    from: "off"
+  condition: []
+  action:
+  - service: script.volume_set_medium
+
+- alias: Rocks Amp On
+  trigger:
+  - entity_id: media_player.rock_speakers
+    platform: state
+    from: "off"
+  condition: []
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.rock_speakers
+
+- alias: Rocks Amp Off
+  trigger:
+  - platform: state
+    entity_id: media_player.rock_speakers
+    to: "off"
+    for: "00:05:00"
+  condition:
+  - condition: template
+    value_template: "{{ trigger.from_state.state != 'unavailable' }}"
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.rock_speakers
