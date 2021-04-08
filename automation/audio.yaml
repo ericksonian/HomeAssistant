@@ -14,7 +14,9 @@
   - entity_id: media_player.rock_speakers
     platform: state
     from: "off"
-  condition: []
+  condition:
+    condition: template
+    value_template: "{{ not is_state('media_player.rock_speakers', 'unavailable') }}"
   action:
   - service: switch.turn_on
     data:
@@ -26,9 +28,7 @@
     entity_id: media_player.rock_speakers
     to: "off"
     for: "00:01:00"
-  condition:
-  - condition: template
-    value_template: "{{ trigger.from_state.state != 'unavailable' }}"
+  condition: []
   action:
   - service: switch.turn_off
     data:
