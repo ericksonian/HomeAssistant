@@ -15,18 +15,10 @@ cards:
     hours_to_show: 72
     refresh_interval: 30
     entities:
-      - entity: sensor.vesync_rack_watts
-        name: Rack
       - entity: sensor.vesync_projector_watts
         name: Projector
   - type: entities
     entities:
-      - entity: sensor.vesync_theater_watts
-        name: Theater Total
-        icon: mdi:power-plug
-      - entity: sensor.vesync_rack_watts
-        name: Rack
-        icon: mdi:server
       - entity: sensor.vesync_projector_watts
         name: Projector
         icon: mdi:projector
