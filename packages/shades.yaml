@@ -1,17 +1,17 @@
 
-#cover:
-#  - platform: template
-#    covers:
-#      shades_master:
-#        device_class: shade
-#        friendly_name: "Master Bed Shades"
-#        optimistic: true
-#        open_cover:
-#          service: script.master_shades_open
-#        close_cover:
-#          service: script.master_shades_close
-#        stop_cover:
-#          service: script.master_shades_stop
+cover:
+  - platform: template
+    covers:
+      shades_master:
+        device_class: shade
+        friendly_name: "Master Shades"
+        value_template: "{{ states('input_select.master_shades')|float > 0 }}"
+        open_cover:
+          service: script.master_shades_open
+        close_cover:
+          service: script.master_shades_close
+        stop_cover:
+          service: script.master_shades_stop
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
