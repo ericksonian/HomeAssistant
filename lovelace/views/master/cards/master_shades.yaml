@@ -39,13 +39,19 @@ cards:
     entity: input_select.master_shades
     color: 'rgb(97,100,107)'
     icon: 'mdi:window-shutter-alert'
-    name: Stop
+    name: Favorite
     show_icon: true
     show_name: true
     state:
       - color: 'rgb(99,137,248)'
         value: 'favorite'
-        name: Favorite
+        name: Middle
+      - color: 'rgb(255,28,1)'
+        value: 'opening'
+        name: Stop
+      - color: 'rgb(255,28,1)'
+        value: 'closing'
+        name: Stop
     styles:
       card:
         - height: 60px
