@@ -21,12 +21,12 @@ cards:
     icon: 'mdi:window-shutter-open'
     name: Open
     show_icon: true
-    show_name: false
+    show_name: true
     state:
-      - color: 'rgb(0,204,52)'
+      - color: 'rgb(99,137,248)'
         value: 'open'
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(247,117,1)'
+        value: 'opening'
     styles:
       card:
         - height: 60px
@@ -41,12 +41,11 @@ cards:
     icon: 'mdi:window-shutter-alert'
     name: Stop
     show_icon: true
-    show_name: false
+    show_name: true
     state:
-      - color: 'rgb(0,204,52)'
+      - color: 'rgb(99,137,248)'
         value: 'favorite'
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+        name: Favorite
     styles:
       card:
         - height: 60px
@@ -61,12 +60,12 @@ cards:
     icon: 'mdi:window-shutter'
     name: Close
     show_icon: true
-    show_name: false
+    show_name: true
     state:
-      - color: 'rgb(0,204,52)'
+      - color: 'rgb(99,137,248)'
         value: 'closed'
-      - color: 'rgb(97,100,107)'
-        value: 'off'
+      - color: 'rgb(247,117,1)'
+        value: 'closing'
     styles:
       card:
         - height: 60px
