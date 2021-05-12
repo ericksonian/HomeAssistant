@@ -40,8 +40,10 @@ automation:
   - platform: state
     entity_id: input_select.master_shades
     to: "opening"
-    for: "00:00:18"
-  condition: []
+    for: "00:00:11"
+  condition:
+  - condition: template
+    value_template: "{{ trigger.from_state.state != 'closed' }}"
   action:
   - service: input_select.select_option
     data:
@@ -52,7 +54,33 @@ automation:
   - platform: state
     entity_id: input_select.master_shades
     to: "closing"
-    for: "00:00:18"
+    for: "00:00:11"
+  condition:
+  - condition: template
+    value_template: "{{ trigger.from_state.state != 'open' }}"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_shades
+      option: closed
+- alias: Master Shades Open Full Motion
+  trigger:
+  - platform: state
+    entity_id: input_select.master_shades
+    to: "opening"
+    for: "00:00:19"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_shades
+      option: open
+- alias: Master Shades Closed Full Motion
+  trigger:
+  - platform: state
+    entity_id: input_select.master_shades
+    to: "closing"
+    for: "00:00:19"
   condition: []
   action:
   - service: input_select.select_option
