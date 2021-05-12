@@ -34,7 +34,7 @@ views:
   - !include /config/lovelace/views/house/house.yaml
   - !include /config/lovelace/views/living_room/living_room.yaml
   - !include /config/lovelace/views/master/master.yaml
-  - !include /config/lovelace/views/master/bedroom.yaml
+  - !include /config/lovelace/views/bedroom/bedroom.yaml
   - !include /config/lovelace/views/guest_room/guest_room.yaml
   - !include /config/lovelace/views/theater/theater.yaml
   - !include /config/lovelace/views/rack/rack.yaml
