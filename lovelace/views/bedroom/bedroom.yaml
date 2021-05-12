@@ -3,6 +3,8 @@ icon: 'mdi:bed-king'
 panel: false
 badges: []
 cards:
-  - !include /config/lovelace/views/bedroom/cards/lighting.yaml
-  - !include /config/lovelace/views/bedroom/cards/lighting.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/bedroom/cards/lighting.yaml
+      - !include /config/lovelace/views/bedroom/cards/lighting.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
