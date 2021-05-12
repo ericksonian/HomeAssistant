@@ -1,0 +1,77 @@
+type: horizontal-stack
+cards:
+  - type: 'custom:button-card'
+    entity: input_select.master_shades
+    color: 'rgb(99,137,248)'
+    icon: 'mdi:window-closed-variant'
+    name: Shades
+    show_icon: true
+    show_name: true
+    styles:
+      card:
+        - height: 60px
+          width: 90px
+    tap_action:
+      action: none
+    hold_action:
+      action: more-info
+  - type: 'custom:button-card'
+    entity: input_select.master_shades
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:window-shutter-open'
+    name: Open
+    show_icon: true
+    show_name: false
+    state:
+      - color: 'rgb(0,204,52)'
+        value: 'open'
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 60px
+    tap_action:
+      action: call-service
+      service: script.master_shades_open
+    hold_action:
+      action: none
+  - type: 'custom:button-card'
+    entity: input_select.master_shades
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:window-shutter-alert'
+    name: Stop
+    show_icon: true
+    show_name: false
+    state:
+      - color: 'rgb(0,204,52)'
+        value: 'favorite'
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 60px
+    tap_action:
+      action: call-service
+      service: script.master_shades_stop
+    hold_action:
+      action: none
+  - type: 'custom:button-card'
+    entity: input_select.master_shades
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:window-shutter'
+    name: Close
+    show_icon: true
+    show_name: false
+    state:
+      - color: 'rgb(0,204,52)'
+        value: 'closed'
+      - color: 'rgb(97,100,107)'
+        value: 'off'
+    styles:
+      card:
+        - height: 60px
+    tap_action:
+      action: call-service
+      service: script.master_shades_close
+    hold_action:
+      action: none
