@@ -1,0 +1,29 @@
+type: 'custom:button-card'
+template: container
+color: '#EDE7B0'
+name: Eating & Patio
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: switch.ge_14291_in_wall_smart_switch_switch_2
+          name: Kitchen
+          template: standard
+          icon: 'mdi:wall-sconce-flat'
+          type: 'custom:button-card'
+        - entity: light.ge_14294_in_wall_smart_dimmer_level_10
+          name: Table
+          template: standard
+          icon: 'mdi:ceiling-light'
+          type: 'custom:button-card'
+        - entity: light.ge_14294_in_wall_smart_dimmer_level_7
+          name: Dining
+          template: standard
+          icon: 'mdi:ceiling-light'
+          type: 'custom:button-card'
+        - entity: switch.patio_light
+          template: standard
+          name: Patio
+          icon: 'mdi:outdoor-lamp'
+          type: 'custom:button-card'

@@ -8,11 +8,33 @@ resources:
     type: module
   - url: /local/custom-card/slider-entity-row.js
     type: module
+button_card_templates:
+  container:
+    color_type: label-card
+    color: dimgray
+    styles:
+      card:
+        - padding: 0
+      name:
+        - border-radius: 0.4em 0.4em 0 0
+        - padding: 0.1em
+        - width: 100%
+        - font-weight: bold
+      grid:
+        - grid-template-areas: '"i" "n" "buttons"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: 1fr min-content min-content
+      custom_fields:
+        buttons:
+          - background-color: 'rgba(0,0,0,0.3)'
+          - margin: 0
+          - padding: 0.3em
 views:
   - !include /config/lovelace/views/security/security.yaml
   - !include /config/lovelace/views/house/house.yaml
   - !include /config/lovelace/views/living_room/living_room.yaml
   - !include /config/lovelace/views/master/master.yaml
+  - !include /config/lovelace/views/master/bedroom.yaml
   - !include /config/lovelace/views/guest_room/guest_room.yaml
   - !include /config/lovelace/views/theater/theater.yaml
   - !include /config/lovelace/views/rack/rack.yaml
