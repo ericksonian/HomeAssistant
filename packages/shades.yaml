@@ -1,17 +1,17 @@
 
-cover:
-  - platform: template
-    covers:
-      shades_master:
-        device_class: shade
-        friendly_name: "Master Bed Shades"
-        optimistic: true
-        open_cover:
-          service: script.shade_master_up
-        close_cover:
-          service: script.shade_master_down
-        stop_cover:
-          service: script.shade_master_my
+#cover:
+#  - platform: template
+#    covers:
+#      shades_master:
+#        device_class: shade
+#        friendly_name: "Master Bed Shades"
+#        optimistic: true
+#        open_cover:
+#          service: script.master_shades_open
+#        close_cover:
+#          service: script.master_shades_close
+#        stop_cover:
+#          service: script.master_shades_stop
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -19,38 +19,79 @@ cover:
 ###### INPUT BOOLEANS ------------------------------------------
 #input_boolean:
 
-
 ###### INPUT SELECT ------------------------------------------
-#input_select:
+input_select:
+  master_shades:
+    name: 'Master Shades'
+    options:
+      - open
+      - opening
+#      - moving
+      - favorite
+#      - middle
+      - closing
+      - closed
 
 
 ###### AUTOMATIONS --------------------------------------
-#automation:
-
+automation:
+- alias: Master Shades Open
+  trigger:
+  - platform: state
+    entity_id: input_select.master_shades
+    to: "opening"
+    for: "00:00:18"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_shades
+      option: open
+- alias: Master Shades Closed
+  trigger:
+  - platform: state
+    entity_id: input_select.master_shades
+    to: "closing"
+    for: "00:00:18"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_shades
+      option: closed
 
 ###### SCRIPTS ------------------------------------------
 script:
-  shade_master_up:
+  master_shades_open:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_somfy_up
+          entity_id: switch.relay_somfy_open
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_somfy_up
-  shade_master_my:
+          entity_id: switch.relay_somfy_open
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_shades
+          option: opening
+  master_shades_stop:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_somfy_my
-      - service: switch.turn_off
+          entity_id: switch.relay_somfy_stop
+      - service: input_select.select_option
         data:
-          entity_id: switch.relay_somfy_my
-  shade_master_down:
+          entity_id: input_select.master_shades
+          option: favorite
+  master_shades_close:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_somfy_down
+          entity_id: switch.relay_somfy_close
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_somfy_down
+          entity_id: switch.relay_somfy_close
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_shades
+          option: closing
