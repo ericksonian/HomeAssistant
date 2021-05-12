@@ -9,7 +9,7 @@ cover:
         open_cover:
           service: script.shade_master_up
         close_cover:
-          service: script.shade_master_close
+          service: script.shade_master_down
         stop_cover:
           service: script.shade_master_my
 
