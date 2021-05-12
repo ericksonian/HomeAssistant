@@ -2,7 +2,7 @@ type: horizontal-stack
 cards:
   - type: 'custom:button-card'
     entity: input_select.master_shades
-    color: 'rgb(99,137,248)'
+    color: 'rgb(0,0,0)'
     icon: 'mdi:window-closed-variant'
     name: Shades
     show_icon: true
