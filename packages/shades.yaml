@@ -1,0 +1,56 @@
+
+cover:
+  - platform: template
+    covers:
+      garage_door:
+        device_class: shade
+        friendly_name: "Master Bed Shades"
+        optimistic: true
+        open_cover:
+          service: script.shade_master_up
+        close_cover:
+          service: script.shade_master_close
+        stop_cover:
+          service: script.shade_master_my
+
+###### SENSOR TEMPLATES ------------------------------------------
+#sensor:
+
+###### INPUT BOOLEANS ------------------------------------------
+#input_boolean:
+
+
+###### INPUT SELECT ------------------------------------------
+#input_select:
+
+
+###### AUTOMATIONS --------------------------------------
+#automation:
+
+
+###### SCRIPTS ------------------------------------------
+script:
+  shade_master_up:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_somfy_up
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_somfy_up
+  shade_master_my:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_somfy_my
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_somfy_my
+  shade_master_down:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_somfy_down
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_somfy_down
