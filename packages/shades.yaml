@@ -2,7 +2,7 @@
 cover:
   - platform: template
     covers:
-      garage_door:
+      shades_master:
         device_class: shade
         friendly_name: "Master Bed Shades"
         optimistic: true
