@@ -5,7 +5,7 @@ cover:
       shades_master:
         device_class: shade
         friendly_name: "Master Shades"
-        value_template: "{{ states('input_select.master_shades')|float > 0 }}"
+        value_template: "{{ states('input_select.master_shades') }}"
         open_cover:
           service: script.master_shades_open
         close_cover:
