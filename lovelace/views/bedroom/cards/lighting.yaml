@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-color: '#EDE7B0'
+color: '#5C5C5C'
 name: Lighting
 custom_fields:
   buttons:
@@ -24,10 +24,10 @@ custom_fields:
             - entity: light.master_bedroom_her_side
               name: Hers
               template: standard
-              icon: 'mdi:ceiling-light'
+              icon: 'mdi:wall-sconce'
               type: 'custom:button-card'
             - entity: light.master_bedroom_his_side
               template: standard
               name: His
-              icon: 'mdi:outdoor-lamp'
+              icon: 'mdi:wall-sconce'
               type: 'custom:button-card'
