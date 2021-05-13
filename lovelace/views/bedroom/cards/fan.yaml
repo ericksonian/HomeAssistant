@@ -37,6 +37,7 @@ custom_fields:
                 service_data:
                   entity_id: fan.master_bedroom_ceiling_fan
             - type: 'custom:button-card'
+              template: standard
               entity: sensor.master_bedroom_fan_speed
 #              color: 'rgb(97,100,107)'
               icon: 'mdi:speedometer-medium'
@@ -65,6 +66,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
+              template: standard
               entity: sensor.master_bedroom_fan_speed
 #              color: 'rgb(97,100,107)'
               icon: 'mdi:speedometer-medium'
@@ -91,6 +93,7 @@ custom_fields:
                 service_data:
                   entity_id: fan.master_bedroom_ceiling_fan
             - type: 'custom:button-card'
+              template: standard
               entity: sensor.master_bedroom_fan_speed
 #              color: 'rgb(97,100,107)'
               icon: 'mdi:speedometer'
