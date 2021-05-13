@@ -11,16 +11,16 @@ custom_fields:
           cards:
             - type: 'custom:button-card'
               entity: sensor.master_bedroom_fan_speed
-              color: 'rgb(97,100,107)'
+#              color: 'rgb(97,100,107)'
               icon: 'mdi:speedometer-slow'
               name: Low
-              show_icon: true
-              show_name: false
+#              show_icon: true
+#              show_name: false
               state:
                 - color: 'rgb(0,204,52)'
                   value: 'low'
-                - color: 'rgb(97,100,107)'
-                  value: 'off'
+#                - color: 'rgb(97,100,107)'
+#                  value: 'off'
 #              styles:
 #                card:
 #                  - height: 60px
@@ -31,7 +31,10 @@ custom_fields:
                   entity_id: fan.master_bedroom_ceiling_fan
                   speed: low
               hold_action:
-                action: more-info
+                action: call-service
+                service: fan.toggle
+                service_data:
+                  entity_id: fan.master_bedroom_ceiling_fan
             - type: 'custom:button-card'
               entity: sensor.master_bedroom_fan_speed
               color: 'rgb(97,100,107)'
