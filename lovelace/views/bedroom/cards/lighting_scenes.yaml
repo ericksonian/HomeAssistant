@@ -9,25 +9,25 @@ custom_fields:
       cards:
         - type: horizontal-stack
           cards:
-            - entity: scene.living_bright
+            - type: 'custom:button-card'
+              entity: scene.living_bright
+              template: standard
               name: Bright
-              template: standard
               icon: 'mdi:brightness-5'
-              type: 'custom:button-card'
-            - entity: scene.living_entertain
-              name: Entertain
+            - type: 'custom:button-card'
+              entity: scene.living_entertain
               template: standard
+              name: Entertain
               icon: 'mdi:wall-sconce-round'
-              type: 'custom:button-card'
         - type: horizontal-stack
           cards:
-            - entity: scene.living_movie
+            - type: 'custom:button-card'
+              entity: scene.living_movie
+              template: standard
               name: Movie
-              template: standard
               icon: 'mdi:floor-lamp'
-              type: 'custom:button-card'
-            - entity: scene.living_all_off
+            - type: 'custom:button-card'
+              entity: scene.living_all_off
               template: standard
-              name: 'All Off'
+              name: All Off
               icon: 'mdi:lightbulb-group-off-outline'
-              type: 'custom:button-card'
