@@ -32,8 +32,8 @@ button_card_templates:
   standard:
     color_type: card
     size: 80%
-    hold_action:
-      action: more-info
+#    hold_action:
+#      action: more-info
     styles:
       card:
         - padding: 0.2em
