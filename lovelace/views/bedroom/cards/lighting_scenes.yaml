@@ -28,6 +28,6 @@ custom_fields:
               type: 'custom:button-card'
             - entity: scene.living_all_off
               template: standard
-              name: Off
+              name: 'All Off'
               icon: 'mdi:lightbulb-group-off-outline'
               type: 'custom:button-card'
