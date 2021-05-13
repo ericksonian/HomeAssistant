@@ -14,7 +14,7 @@ custom_fields:
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer-slow'
               name: Low
-              color: 'rgb(0,0,0)'
+#              color: 'rgb(0,0,0)'
 #              show_icon: true
 #              show_name: false
               state:
@@ -39,7 +39,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: sensor.master_bedroom_fan_speed
-#              color: 'rgb(97,100,107)'
+              color: 'rgb(0,0,0)'
               icon: 'mdi:speedometer-medium'
               name: Medium
 #              show_icon: true
@@ -68,7 +68,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: sensor.master_bedroom_fan_speed
-#              color: 'rgb(97,100,107)'
+#              color: 'rgb(0,0,0)'
               icon: 'mdi:speedometer-medium'
               name: Med Hi
 #              show_icon: true
@@ -95,7 +95,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: sensor.master_bedroom_fan_speed
-#              color: 'rgb(97,100,107)'
+              color: 'rgb(0,0,0)'
               icon: 'mdi:speedometer'
               name: High
 #              show_icon: true
