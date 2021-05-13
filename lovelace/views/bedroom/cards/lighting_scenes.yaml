@@ -1,0 +1,33 @@
+type: 'custom:button-card'
+template: container
+color: '#5C5C5C'
+name: Lighting
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - entity: scene.living_bright
+              name: Bright
+              template: standard
+              icon: 'mdi:brightness-5'
+              type: 'custom:button-card'
+            - entity: scene.living_entertain
+              name: Entertain
+              template: standard
+              icon: 'mdi:wall-sconce-round'
+              type: 'custom:button-card'
+        - type: horizontal-stack
+          cards:
+            - entity: scene.living_movie
+              name: Movie
+              template: standard
+              icon: 'mdi:floor-lamp'
+              type: 'custom:button-card'
+            - entity: scene.living_all_off
+              template: standard
+              name: Off
+              icon: 'mdi:lightbulb-group-off-outline'
+              type: 'custom:button-card'
