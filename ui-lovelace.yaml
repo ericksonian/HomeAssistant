@@ -9,7 +9,7 @@ resources:
   - url: /local/custom-card/slider-entity-row.js
     type: module
 button_card_templates:
-  - !include /config/lovelace/button_card_templates.yaml
+  !include /config/lovelace/button_card_templates.yaml
 views:
   - !include /config/lovelace/views/security/security.yaml
   - !include /config/lovelace/views/house/house.yaml
