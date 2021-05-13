@@ -14,7 +14,7 @@ custom_fields:
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer-slow'
               name: Low
-#              color: 'rgb(97,100,107)'
+              color: 'rgb(0,0,0)'
 #              show_icon: true
 #              show_name: false
               state:
