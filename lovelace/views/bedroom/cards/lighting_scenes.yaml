@@ -10,7 +10,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
-              entity: scene.living_bright
+              entity: scene.master_bright
               template: standard
               name: Bright
               icon: 'mdi:brightness-5'
@@ -18,9 +18,9 @@ custom_fields:
                 action: call-service
                 service: scene.turn_on
                 service_data:
-                  entity_id: scene.living_bright
+                  entity_id: scene.master_bright
             - type: 'custom:button-card'
-              entity: scene.living_entertain
+              entity: scene.master_entertain
               template: standard
               name: Entertain
               icon: 'mdi:wall-sconce-round'
@@ -28,21 +28,21 @@ custom_fields:
                 action: call-service
                 service: scene.turn_on
                 service_data:
-                  entity_id: scene.living_entertain
+                  entity_id: scene.master_entertain
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
-              entity: scene.living_movie
+              entity: scene.master_relax
               template: standard
-              name: Movie
+              name: Relax
               icon: 'mdi:floor-lamp'
               tap_action:
                 action: call-service
                 service: scene.turn_on
                 service_data:
-                  entity_id: scene.living_movie
+                  entity_id: scene.master_relax
             - type: 'custom:button-card'
-              entity: scene.living_all_off
+              entity: scene.master_all_off
               template: standard
               name: All Off
               icon: 'mdi:lightbulb-group-off-outline'
@@ -50,4 +50,4 @@ custom_fields:
                 action: call-service
                 service: scene.turn_on
                 service_data:
-                  entity_id: scene.living_all_off
+                  entity_id: scene.master_all_off
