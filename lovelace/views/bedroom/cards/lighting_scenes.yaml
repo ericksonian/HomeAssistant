@@ -14,11 +14,21 @@ custom_fields:
               template: standard
               name: Bright
               icon: 'mdi:brightness-5'
+              tap_action:
+                action: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.living_bright
             - type: 'custom:button-card'
               entity: scene.living_entertain
               template: standard
               name: Entertain
               icon: 'mdi:wall-sconce-round'
+              tap_action:
+                action: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.living_entertain
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
@@ -26,8 +36,17 @@ custom_fields:
               template: standard
               name: Movie
               icon: 'mdi:floor-lamp'
+              tap_action:
+                action: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.living_movie
             - type: 'custom:button-card'
               entity: scene.living_all_off
               template: standard
               name: All Off
-              icon: 'mdi:lightbulb-group-off-outline'
+              icon: 'mdi:lightbulb-group-off-outline'tap_action:
+                action: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.living_all_off
