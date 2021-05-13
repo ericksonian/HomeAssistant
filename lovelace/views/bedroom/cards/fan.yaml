@@ -1,0 +1,105 @@
+type: 'custom:button-card'
+template: container
+color: '#5C5C5C'
+name: Fan
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              entity: sensor.master_bedroom_fan_speed
+              color: 'rgb(97,100,107)'
+              icon: 'mdi:speedometer-slow'
+              name: Low
+              show_icon: true
+              show_name: false
+              state:
+                - color: 'rgb(0,204,52)'
+                  value: 'low'
+                - color: 'rgb(97,100,107)'
+                  value: 'off'
+#              styles:
+#                card:
+#                  - height: 60px
+              tap_action:
+                action: call-service
+                service: fan.set_speed
+                service_data:
+                  entity_id: fan.master_bedroom_ceiling_fan
+                  speed: low
+              hold_action:
+                action: more-info
+            - type: 'custom:button-card'
+              entity: sensor.master_bedroom_fan_speed
+              color: 'rgb(97,100,107)'
+              icon: 'mdi:speedometer-medium'
+              name: Medium
+              show_icon: true
+              show_name: false
+              state:
+                - color: 'rgb(255,255,1)'
+                  value: 'medium'
+                - color: 'rgb(97,100,107)'
+                  value: 'off'
+#              styles:
+#                card:
+#                  - height: 60px
+              tap_action:
+                action: call-service
+                service: fan.set_speed
+                service_data:
+                  entity_id: fan.master_bedroom_ceiling_fan
+                  speed: medium
+              hold_action:
+                action: more-info
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              entity: sensor.master_bedroom_fan_speed
+              color: 'rgb(97,100,107)'
+              icon: 'mdi:speedometer-medium'
+              name: Med Hi
+              show_icon: true
+              show_name: false
+              state:
+                - color: 'rgb(255,142,2)'
+                  value: 'medium_high'
+                - color: 'rgb(97,100,107)'
+                  value: 'off'
+#              styles:
+#                card:
+#                  - height: 60px
+              tap_action:
+                action: call-service
+                service: fan.set_speed
+                service_data:
+                  entity_id: fan.master_bedroom_ceiling_fan
+                  speed: medium_high
+              hold_action:
+                action: more-info
+            - type: 'custom:button-card'
+              entity: sensor.master_bedroom_fan_speed
+              color: 'rgb(97,100,107)'
+              icon: 'mdi:speedometer'
+              name: High
+              show_icon: true
+              show_name: false
+              state:
+                - color: 'rgb(255,28,1)'
+                  value: 'high'
+                - color: 'rgb(97,100,107)'
+                  value: 'off'
+#              styles:
+#                card:
+#                  - height: 60px
+              tap_action:
+                action: call-service
+                service: fan.set_speed
+                service_data:
+                  entity_id: fan.master_bedroom_ceiling_fan
+                  speed: high
+              hold_action:
+                action: more-info
