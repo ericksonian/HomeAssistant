@@ -4,7 +4,7 @@ container:
   styles:
     card:
       - padding: 0
-      - border-radius: 1 1 1 1
+      - border-radius: 1em 1em 1em 1em
     name:
       - border-radius: 0.4em 0.4em 0 0
       - padding: 0.1em
@@ -28,7 +28,7 @@ standard:
   styles:
     card:
       - padding: 0.2em
-      - border-radius: 1 1 1 1
+      - border-radius: 1em 1em 1em 1em
       - '--mdc-ripple-color': yellow
       - '--mdc-ripple-press-opacity': 0.5
     icon:
