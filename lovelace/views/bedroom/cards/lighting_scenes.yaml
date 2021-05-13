@@ -45,7 +45,8 @@ custom_fields:
               entity: scene.living_all_off
               template: standard
               name: All Off
-              icon: 'mdi:lightbulb-group-off-outline'tap_action:
+              icon: 'mdi:lightbulb-group-off-outline'
+              tap_action:
                 action: call-service
                 service: scene.turn_on
                 service_data:
