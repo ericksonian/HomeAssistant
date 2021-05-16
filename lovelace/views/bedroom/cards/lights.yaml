@@ -14,11 +14,17 @@ custom_fields:
               template: standard
               icon: 'mdi:wall-sconce-flat'
               type: 'custom:button-card'
+              styles:
+                card:
+                  - height: 80px
             - entity: light.master_bedroom_ceiling_fan_light
               name: Ceiling
               template: standard
               icon: 'mdi:ceiling-light'
               type: 'custom:button-card'
+              styles:
+                card:
+                  - height: 80px
         - type: horizontal-stack
           cards:
             - entity: light.master_bedroom_her_side
@@ -26,8 +32,14 @@ custom_fields:
               template: standard
               icon: 'mdi:wall-sconce'
               type: 'custom:button-card'
+              styles:
+                card:
+                  - height: 80px
             - entity: light.master_bedroom_his_side
               template: standard
               name: His
               icon: 'mdi:wall-sconce'
               type: 'custom:button-card'
+              styles:
+                card:
+                  - height: 80px
