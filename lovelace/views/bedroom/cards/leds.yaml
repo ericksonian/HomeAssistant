@@ -27,6 +27,7 @@ custom_fields:
             action: call-service
             service: script.master_ledstrip_red
         - type: 'custom:button-card'
+          template: standard
           entity: input_select.master_ledstrip_mode
           icon: 'mdi:alpha-g-circle'
           name: Green
