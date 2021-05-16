@@ -49,6 +49,9 @@ custom_fields:
               template: standard
               icon: 'mdi:lightbulb-group-off-outline'
               name: All Off
+              state:
+                - color: 'rgb(10,10,10)'
+                  value: 'off'
               tap_action:
                 action: call-service
                 service: script.master_light_scene_off
