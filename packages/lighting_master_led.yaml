@@ -21,6 +21,7 @@ input_select:
   master_ledstrip_mode:
     name: 'Master LED Strip Mode'
     options:
+      - 'off'
       - red
       - green
       - blue
@@ -83,7 +84,7 @@ automation:
 
 ###### SCRIPTS ------------------------------------------
 script:
-#### Under Bed LED Strip 
+#### Under Bed LED Strip
 ### Control
 
 #  Power Macros
@@ -113,6 +114,10 @@ script:
       - service: input_boolean.turn_off
         data:
           entity_id: input_boolean.master_ledstrip_power
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_ledstrip_mode
+          option: 'off'
 
 ### IR Packets
 
