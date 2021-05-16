@@ -21,11 +21,30 @@ custom_fields:
                   - color: 'rgb(0,0,0)'
           styles:
             icon:
-              - opacity: 1
-            icon:
+              - opacity: 0
               - color: 'rgb(255,0,0)'
           tap_action:
             action: call-service
             service: script.master_ledstrip_red
+          hold_action:
+            action: none
+        - type: 'custom:button-card'
+          entity: input_select.master_ledstrip_mode
+          icon: 'mdi:alpha-g-circle'
+          name: Green
+          show_name: false
+          state:
+            - value: 'green'
+              color: 'rgb(0,255,0)'
+              styles:
+                icon:
+                  - color: 'rgb(0,0,0)'
+          styles:
+            icon:
+              - opacity: 0
+              - color: 'rgb(0,255,0)'
+          tap_action:
+            action: call-service
+            service: script.master_ledstrip_green
           hold_action:
             action: none
