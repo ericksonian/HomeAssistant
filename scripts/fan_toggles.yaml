@@ -1,11 +1,9 @@
 
 fan_master_off:
   sequence:
-  - service: fan.set_speed
+  - service: fan.turn_off
     target:
       entity_id: fan.master_bedroom_ceiling_fan
-    data:
-      speed: off
 fan_master_low:
   sequence:
   - service: fan.set_speed
