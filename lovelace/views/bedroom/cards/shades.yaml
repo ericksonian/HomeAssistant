@@ -22,9 +22,6 @@ custom_fields:
             - color: 'rgb(247,117,1)'
               value: 'opening'
               name: Opening
-          styles:
-            card:
-              - height: 60px
           tap_action:
             action: call-service
             service: script.master_shades_open
@@ -47,9 +44,6 @@ custom_fields:
             - color: 'rgb(255,28,1)'
               value: 'closing'
               name: Stop
-          styles:
-            card:
-              - height: 60px
           tap_action:
             action: call-service
             service: script.master_shades_stop
@@ -69,9 +63,6 @@ custom_fields:
             - color: 'rgb(247,117,1)'
               value: 'closing'
               name: Closing
-          styles:
-            card:
-              - height: 60px
           tap_action:
             action: call-service
             service: script.master_shades_close
