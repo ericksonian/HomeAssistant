@@ -14,6 +14,10 @@ custom_fields:
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer-slow'
               name: Low
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(0,204,52)'
+                  - '--mdc-ripple-press-opacity': 0.5
               state:
                 - color: 'rgb(0,204,52)'
                   value: 'low'
@@ -29,6 +33,10 @@ custom_fields:
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer-medium'
               name: Medium
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,255,1)'
+                  - '--mdc-ripple-press-opacity': 0.5
               state:
                 - color: 'rgb(255,255,1)'
                   value: 'medium'
@@ -46,6 +54,10 @@ custom_fields:
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer-medium'
               name: Med Hi
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,142,2)'
+                  - '--mdc-ripple-press-opacity': 0.5
               state:
                 - color: 'rgb(255,142,2)'
                   value: 'medium_high'
@@ -61,6 +73,10 @@ custom_fields:
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer'
               name: High
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,28,1)'
+                  - '--mdc-ripple-press-opacity': 0.5
               state:
                 - color: 'rgb(255,28,1)'
                   value: 'high'
