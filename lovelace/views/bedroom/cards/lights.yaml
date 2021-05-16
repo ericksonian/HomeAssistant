@@ -1,7 +1,7 @@
 type: 'custom:button-card'
 template: container
 color: '#5C5C5C'
-name: Lighting
+name: Lights
 custom_fields:
   buttons:
     card:

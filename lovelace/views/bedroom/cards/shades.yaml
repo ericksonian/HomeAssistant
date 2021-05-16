@@ -1,7 +1,7 @@
 type: 'custom:button-card'
 template: container
 color: '#5C5C5C'
-name: Fan
+name: Shades
 custom_fields:
   buttons:
     card:
@@ -10,7 +10,6 @@ custom_fields:
         - type: 'custom:button-card'
           template: wide
           entity: input_select.master_shades
-#          color: 'rgb(97,100,107)'
           icon: 'mdi:window-shutter-open'
           name: Open
           show_icon: true
