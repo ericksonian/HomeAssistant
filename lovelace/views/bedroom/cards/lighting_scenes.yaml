@@ -50,7 +50,7 @@ custom_fields:
               icon: 'mdi:lightbulb-group-off-outline'
               name: All Off
               state:
-                - color: 'rgb(10,10,10)'
+                - color: 'rgb(55,55,55)'
                   value: 'off'
               tap_action:
                 action: call-service
