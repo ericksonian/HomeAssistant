@@ -27,14 +27,17 @@ custom_fields:
                   value: 'on'
         - type: horizontal-stack
           cards:
-            - entity: group.lights_master_bedside
+            - type: 'custom:button-card'
+              entity: input_boolean.master_ledstrip_power
               template: standard
-              name: Bedside
-              icon: 'mdi:wall-sconce'
-              type: 'custom:button-card'
+              name: LED Strip
+              icon: 'mdi:led-strip-variant'
               state:
                 - color: 'rgb(255,255,1)'
                   value: 'on'
+              tap_action:
+                action: call-service
+                service: script.master_ledstrip_power_on
             - entity: group.lights_master_bedside
               template: standard
               name: Bedside
