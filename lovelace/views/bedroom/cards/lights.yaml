@@ -38,6 +38,11 @@ custom_fields:
               tap_action:
                 action: call-service
                 service: script.master_ledstrip_power_on
+              hold_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.master_ledstrip_power
             - entity: group.lights_master_bedside
               template: standard
               name: Bedside
