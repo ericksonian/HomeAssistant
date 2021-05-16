@@ -10,6 +10,54 @@ input_select:
       - relax
       - 'off'
 
+###### AUTOMATIONS --------------------------------------
+automation:
+
+- alias: Pico Keypad Master Button 1
+  trigger:
+  - entity_id: sensor.master_bedroom_keypad
+    platform: state
+    to: "1"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_light_scene
+      option: bright
+- alias: Pico Keypad Master Button 2
+  trigger:
+  - entity_id: sensor.master_bedroom_keypad
+    platform: state
+    to: "2"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_light_scene
+      option: entertain
+- alias: Pico Keypad Master Button 3
+  trigger:
+  - entity_id: sensor.master_bedroom_keypad
+    platform: state
+    to: "4"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_light_scene
+      option: relax
+- alias: Pico Keypad Master Button 4
+  trigger:
+  - entity_id: sensor.master_bedroom_keypad
+    platform: state
+    to: "8"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_light_scene
+      option: 'off'
+
 ###### SCRIPT ------------------------------------------
 script:
 
