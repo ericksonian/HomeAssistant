@@ -24,6 +24,8 @@ custom_fields:
           styles:
             card:
               - height: 52px
+            name:
+              - font-size: 1em
           tap_action:
             action: call-service
             service: script.master_shades_open
@@ -49,6 +51,8 @@ custom_fields:
           styles:
             card:
               - height: 52px
+            name:
+              - font-size: 1em
           tap_action:
             action: call-service
             service: script.master_shades_stop
@@ -71,6 +75,8 @@ custom_fields:
           styles:
             card:
               - height: 52px
+            name:
+              - font-size: 1em
           tap_action:
             action: call-service
             service: script.master_shades_close
