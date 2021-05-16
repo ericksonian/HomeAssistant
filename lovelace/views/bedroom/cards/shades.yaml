@@ -48,7 +48,7 @@ custom_fields:
               name: Stop
           styles:
             card:
-              - height: 54px
+              - height: 53px
           tap_action:
             action: call-service
             service: script.master_shades_stop
