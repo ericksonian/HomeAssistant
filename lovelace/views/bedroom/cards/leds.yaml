@@ -10,25 +10,25 @@
     custom_fields:
       buttons:
         card:
-          type: horizontal-stack
-          cards:
-            - type: 'custom:button-card'
-              template: standard
-              entity: input_select.master_ledstrip_mode
-              icon: 'mdi:alpha-r-circle-outline'
-              name: Red
-              show_name: false
-              state:
-                - value: 'red'
-                  icon: 'mdi:alpha-r-circle'
-              styles:
-                card:
-                  - height: 60px
-                icon:
-                  - color: 'rgb(255,0,0)'
-                  - width: 50%
-              tap_action:
-                action: call-service
-                service: script.master_ledstrip_red
-              hold_action:
-                action: none
+          - type: horizontal-stack
+            cards:
+              - type: 'custom:button-card'
+                template: standard
+                entity: input_select.master_ledstrip_mode
+                icon: 'mdi:alpha-r-circle-outline'
+                name: Red
+                show_name: false
+                state:
+                  - value: 'red'
+                    icon: 'mdi:alpha-r-circle'
+                styles:
+                  card:
+                    - height: 60px
+                  icon:
+                    - color: 'rgb(255,0,0)'
+                    - width: 50%
+                tap_action:
+                  action: call-service
+                  service: script.master_ledstrip_red
+                hold_action:
+                  action: none
