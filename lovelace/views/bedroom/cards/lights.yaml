@@ -21,13 +21,8 @@ custom_fields:
               type: 'custom:button-card'
         - type: horizontal-stack
           cards:
-            - entity: light.master_bedroom_her_side
-              name: Hers
+            - entity: group.lights_master_bedside
               template: standard
-              icon: 'mdi:wall-sconce'
-              type: 'custom:button-card'
-            - entity: light.master_bedroom_his_side
-              template: standard
-              name: His
+              name: Bedside
               icon: 'mdi:wall-sconce'
               type: 'custom:button-card'

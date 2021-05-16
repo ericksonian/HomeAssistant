@@ -23,3 +23,9 @@ lights_master:
     - light.master_bedroom_ceiling_fan_light
     - light.master_bedroom_her_side
     - light.master_bedroom_his_side
+
+lights_master_bedside:
+  name: Master Bedside Lights
+  entities:
+    - light.master_bedroom_her_side
+    - light.master_bedroom_his_side

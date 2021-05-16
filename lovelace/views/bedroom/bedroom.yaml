@@ -5,10 +5,10 @@ badges: []
 cards:
   - type: horizontal-stack
     cards:
+      - !include /config/lovelace/views/bedroom/cards/shades.yaml
       - !include /config/lovelace/views/bedroom/cards/fan.yaml
-      - !include /config/lovelace/views/bedroom/cards/lighting_scenes.yaml
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/bedroom/cards/shades.yaml
       - !include /config/lovelace/views/bedroom/cards/lights.yaml
+      - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
