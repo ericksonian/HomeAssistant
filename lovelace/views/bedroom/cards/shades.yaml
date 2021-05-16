@@ -24,6 +24,8 @@ custom_fields:
           styles:
             card:
               - height: 52px
+              - '--mdc-ripple-color': 'rgb(255,255,1)'
+              - '--mdc-ripple-press-opacity': 0.5
             name:
               - font-size: 0.75em
           tap_action:
@@ -51,6 +53,8 @@ custom_fields:
           styles:
             card:
               - height: 52px
+              - '--mdc-ripple-color': 'rgb(99,137,248)'
+              - '--mdc-ripple-press-opacity': 0.5
             name:
               - font-size: 0.75em
           tap_action:
@@ -75,6 +79,8 @@ custom_fields:
           styles:
             card:
               - height: 52px
+              - '--mdc-ripple-color': 'rgb(2,2,228)'
+              - '--mdc-ripple-press-opacity': 0.5
             name:
               - font-size: 0.75em
           tap_action:
