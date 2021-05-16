@@ -45,7 +45,7 @@ custom_fields:
                 action: call-service
                 service: script.master_light_scene_relax
             - type: 'custom:button-card'
-              entity: input_select.master_light_scene
+              entity: group.lights_master
               template: standard
               icon: 'mdi:lightbulb-group-off-outline'
               name: All Off
