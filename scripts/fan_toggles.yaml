@@ -40,7 +40,7 @@ fan_toggle_master_low:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("fan.master_bedroom_ceiling_fan", "low") %}
+        {% if is_state("sensor.master_bedroom_fan_speed", "low") %}
           script.fan_master_off
         {% else %}
           script.fan_master_low
@@ -50,7 +50,7 @@ fan_toggle_master_medium:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("fan.master_bedroom_ceiling_fan", "medium") %}
+        {% if is_state("sensor.master_bedroom_fan_speed", "medium") %}
           script.fan_master_off
         {% else %}
           script.fan_master_medium
@@ -60,7 +60,7 @@ fan_toggle_master_medium_high:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("fan.master_bedroom_ceiling_fan", "medium_high") %}
+        {% if is_state("sensor.master_bedroom_fan_speed", "medium_high") %}
           script.fan_master_off
         {% else %}
           script.fan_master_medium_high
@@ -70,7 +70,7 @@ fan_toggle_master_high:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("fan.master_bedroom_ceiling_fan", "high") %}
+        {% if is_state("sensor.master_bedroom_fan_speed", "high") %}
           script.fan_master_off
         {% else %}
           script.fan_master_high
