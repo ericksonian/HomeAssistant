@@ -22,7 +22,7 @@
       brightness: 102
     light.master_bedroom_ceiling_fan_light:
       state: on
-      brightness: 77
+      brightness: 76
     light.master_bedroom_her_side:
       state: off
     light.master_bedroom_his_side:
