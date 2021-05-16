@@ -53,7 +53,9 @@ custom_fields:
                   value: 'medium_high'
                   name: 'Off'
                   icon: 'mdi:power'
-                  font-size: 0.90em
+                  styles:
+                    name:
+                      - font-size: 0.90em
               tap_action:
                 action: call-service
                 service: script.fan_toggle_master_medium_high
