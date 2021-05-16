@@ -21,8 +21,7 @@ custom_fields:
                   - color: 'rgb(0,0,0)'
           styles:
             icon:
-              - opacity: 0
-            icon:
+              - opacity: 1
               - color: 'rgb(255,0,0)'
           tap_action:
             action: call-service
@@ -40,8 +39,7 @@ custom_fields:
                   - color: 'rgb(0,0,0)'
           styles:
             icon:
-              - opacity: 0
-            icon:
+              - opacity: 1
               - color: 'rgb(0,255,0)'
           tap_action:
             action: call-service
