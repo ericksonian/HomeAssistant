@@ -17,5 +17,5 @@ cards:
       - entity: input_boolean.master_ledstrip_power
         state: 'on'
     card:
-      - !include /config/lovelace/views/bedroom/cards/leds.yaml
+      !include /config/lovelace/views/bedroom/cards/leds.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
