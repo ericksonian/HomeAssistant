@@ -15,7 +15,7 @@ custom_fields:
           show_icon: true
           show_name: true
           state:
-            - color: 'rgb(99,137,248)'
+            - color: 'rgb(255,255,1)'
               value: 'open'
               name: Open
             - color: 'rgb(247,117,1)'
@@ -23,7 +23,7 @@ custom_fields:
               name: Opening
           styles:
             card:
-              - height: 53px
+              - height: 52px
           tap_action:
             action: call-service
             service: script.master_shades_open
@@ -48,7 +48,7 @@ custom_fields:
               name: Stop
           styles:
             card:
-              - height: 53px
+              - height: 52px
           tap_action:
             action: call-service
             service: script.master_shades_stop
@@ -62,7 +62,7 @@ custom_fields:
           show_icon: true
           show_name: true
           state:
-            - color: 'rgb(99,137,248)'
+            - color: 'rgb(2,2,228)'
               value: 'closed'
               name: Closed
             - color: 'rgb(247,117,1)'
@@ -70,7 +70,7 @@ custom_fields:
               name: Closing
           styles:
             card:
-              - height: 53px
+              - height: 52px
           tap_action:
             action: call-service
             service: script.master_shades_close
