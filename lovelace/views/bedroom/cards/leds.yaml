@@ -45,3 +45,41 @@ custom_fields:
           tap_action:
             action: call-service
             service: script.master_ledstrip_green
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_select.master_ledstrip_mode
+          icon: 'mdi:alpha-b-circle'
+          name: Blue
+          show_name: false
+          state:
+            - value: 'blue'
+              color: 'rgb(0,0,255)'
+              styles:
+                icon:
+                  - color: 'rgb(0,0,0)'
+          styles:
+            icon:
+              - opacity: 1
+              - color: 'rgb(0,0,255)'
+          tap_action:
+            action: call-service
+            service: script.master_ledstrip_blue
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_select.master_ledstrip_mode
+          icon: 'mdi:alpha-w-circle'
+          name: White
+          show_name: false
+          state:
+            - value: 'white'
+              color: 'rgb(255,255,255)'
+              styles:
+                icon:
+                  - color: 'rgb(0,0,0)'
+          styles:
+            icon:
+              - opacity: 1
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.master_ledstrip_white
