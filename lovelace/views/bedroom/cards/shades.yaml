@@ -23,7 +23,7 @@ custom_fields:
               name: Opening
           styles:
             card:
-              - height: 70px
+              - height: 50px
           tap_action:
             action: call-service
             service: script.master_shades_open
