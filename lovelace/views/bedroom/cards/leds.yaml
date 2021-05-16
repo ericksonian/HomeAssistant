@@ -1,89 +1,94 @@
-type: 'custom:button-card'
-template: container
-color: '#5C5C5C'
-name: Lights
-custom_fields:
-  buttons:
-    card:
-      type: horizontal-stack
-        cards:
-          - type: 'custom:button-card'
-            template: standard
-            entity: input_select.master_ledstrip_mode
-            icon: 'mdi:alpha-r-circle-outline'
-            name: Red
-            show_name: false
-            state:
-              - value: 'red'
-                icon: 'mdi:alpha-r-circle'
-            styles:
-              card:
-                - height: 60px
-              icon:
-                - color: 'rgb(255,0,0)'
-                - width: 50%
-            tap_action:
-              action: call-service
-              service: script.master_ledstrip_red
-            hold_action:
-              action: none
-          - type: 'custom:button-card'
-            template: standard
-            entity: input_select.master_ledstrip_mode
-            icon: 'mdi:alpha-r-circle-outline'
-            name: Red
-            show_name: false
-            state:
-              - value: 'red'
-                icon: 'mdi:alpha-r-circle'
-            styles:
-              card:
-                - height: 60px
-              icon:
-                - color: 'rgb(255,0,0)'
-                - width: 50%
-            tap_action:
-              action: call-service
-              service: script.master_ledstrip_red
-            hold_action:
-              action: none
-          - type: 'custom:button-card'
-            template: standard
-            entity: input_select.master_ledstrip_mode
-            icon: 'mdi:alpha-r-circle-outline'
-            name: Red
-            show_name: false
-            state:
-              - value: 'red'
-                icon: 'mdi:alpha-r-circle'
-            styles:
-              card:
-                - height: 60px
-              icon:
-                - color: 'rgb(255,0,0)'
-                - width: 50%
-            tap_action:
-              action: call-service
-              service: script.master_ledstrip_red
-            hold_action:
-              action: none
-          - type: 'custom:button-card'
-            template: standard
-            entity: input_select.master_ledstrip_mode
-            icon: 'mdi:alpha-r-circle-outline'
-            name: Red
-            show_name: false
-            state:
-              - value: 'red'
-                icon: 'mdi:alpha-r-circle'
-            styles:
-              card:
-                - height: 60px
-              icon:
-                - color: 'rgb(255,0,0)'
-                - width: 50%
-            tap_action:
-              action: call-service
-              service: script.master_ledstrip_red
-            hold_action:
-              action: none
+- type: conditional
+  conditions:
+    - entity: input_boolean.master_ledstrip_power
+      state: 'on'
+  card:
+    type: 'custom:button-card'
+    template: container
+    color: '#5C5C5C'
+    name: Lights
+    custom_fields:
+      buttons:
+        card:
+          type: horizontal-stack
+            cards:
+              - type: 'custom:button-card'
+                template: standard
+                entity: input_select.master_ledstrip_mode
+                icon: 'mdi:alpha-r-circle-outline'
+                name: Red
+                show_name: false
+                state:
+                  - value: 'red'
+                    icon: 'mdi:alpha-r-circle'
+                styles:
+                  card:
+                    - height: 60px
+                  icon:
+                    - color: 'rgb(255,0,0)'
+                    - width: 50%
+                tap_action:
+                  action: call-service
+                  service: script.master_ledstrip_red
+                hold_action:
+                  action: none
+              - type: 'custom:button-card'
+                template: standard
+                entity: input_select.master_ledstrip_mode
+                icon: 'mdi:alpha-r-circle-outline'
+                name: Red
+                show_name: false
+                state:
+                  - value: 'red'
+                    icon: 'mdi:alpha-r-circle'
+                styles:
+                  card:
+                    - height: 60px
+                  icon:
+                    - color: 'rgb(255,0,0)'
+                    - width: 50%
+                tap_action:
+                  action: call-service
+                  service: script.master_ledstrip_red
+                hold_action:
+                  action: none
+              - type: 'custom:button-card'
+                template: standard
+                entity: input_select.master_ledstrip_mode
+                icon: 'mdi:alpha-r-circle-outline'
+                name: Red
+                show_name: false
+                state:
+                  - value: 'red'
+                    icon: 'mdi:alpha-r-circle'
+                styles:
+                  card:
+                    - height: 60px
+                  icon:
+                    - color: 'rgb(255,0,0)'
+                    - width: 50%
+                tap_action:
+                  action: call-service
+                  service: script.master_ledstrip_red
+                hold_action:
+                  action: none
+              - type: 'custom:button-card'
+                template: standard
+                entity: input_select.master_ledstrip_mode
+                icon: 'mdi:alpha-r-circle-outline'
+                name: Red
+                show_name: false
+                state:
+                  - value: 'red'
+                    icon: 'mdi:alpha-r-circle'
+                styles:
+                  card:
+                    - height: 60px
+                  icon:
+                    - color: 'rgb(255,0,0)'
+                    - width: 50%
+                tap_action:
+                  action: call-service
+                  service: script.master_ledstrip_red
+                hold_action:
+                  action: none
