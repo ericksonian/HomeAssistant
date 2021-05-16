@@ -14,6 +14,12 @@ custom_fields:
               template: standard
               icon: 'mdi:wall-sconce-flat'
               type: 'custom:button-card'
+              styles:
+                card:
+                  - padding: 0.2em
+                  - border-radius: 0em 0em 0em 0em
+                  - '--mdc-ripple-color': blue
+                  - '--mdc-ripple-press-opacity': 0.5
             - entity: light.master_bedroom_ceiling_fan_light
               name: Ceiling
               template: standard
