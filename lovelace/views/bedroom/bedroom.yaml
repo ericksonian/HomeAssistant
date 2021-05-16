@@ -12,10 +12,10 @@ cards:
       - !include /config/lovelace/views/bedroom/cards/lights.yaml
       - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
   - !include /config/lovelace/views/bedroom/cards/leds.yaml
-  type: conditional
-  conditions:
-    - entity: input_boolean.master_ledstrip_power
-      state: 'on'
-  card:
-    - !include /config/lovelace/views/bedroom/cards/leds.yaml
+  - type: conditional
+    conditions:
+      - entity: input_boolean.master_ledstrip_power
+        state: 'on'
+    card:
+      - !include /config/lovelace/views/bedroom/cards/leds.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
