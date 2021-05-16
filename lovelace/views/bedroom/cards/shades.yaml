@@ -23,7 +23,7 @@ custom_fields:
               name: Opening
           styles:
             card:
-              - height: 55px
+              - height: 53px
           tap_action:
             action: call-service
             service: script.master_shades_open
@@ -48,7 +48,7 @@ custom_fields:
               name: Stop
           styles:
             card:
-              - height: 55px
+              - height: 54px
           tap_action:
             action: call-service
             service: script.master_shades_stop
@@ -70,7 +70,7 @@ custom_fields:
               name: Closing
           styles:
             card:
-              - height: 55px
+              - height: 53px
           tap_action:
             action: call-service
             service: script.master_shades_close
