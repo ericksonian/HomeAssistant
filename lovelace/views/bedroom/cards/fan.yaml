@@ -17,7 +17,7 @@ custom_fields:
               state:
                 - color: 'rgb(0,204,52)'
                   value: 'low'
-                  name: 'Off'
+                  name: 'Turn Off'
                   icon: 'mdi:power'
               tap_action:
                 action: call-service
@@ -32,7 +32,7 @@ custom_fields:
               state:
                 - color: 'rgb(255,255,1)'
                   value: 'medium'
-                  name: 'Off'
+                  name: 'Turn Off'
                   icon: 'mdi:power'
               tap_action:
                 action: call-service
@@ -49,7 +49,7 @@ custom_fields:
               state:
                 - color: 'rgb(255,142,2)'
                   value: 'medium_high'
-                  name: 'Off'
+                  name: 'Turn Off'
                   icon: 'mdi:power'
               tap_action:
                 action: call-service
@@ -64,7 +64,7 @@ custom_fields:
               state:
                 - color: 'rgb(255,28,1)'
                   value: 'high'
-                  name: 'Off'
+                  name: 'Turn Off'
                   icon: 'mdi:power'
               tap_action:
                 action: call-service
