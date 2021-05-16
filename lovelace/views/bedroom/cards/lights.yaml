@@ -28,7 +28,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
-              entity: input_boolean.master_ledstrip_power
+              entity: input_select.master_ledstrip_mode
               template: standard
               name: LED Strip
               icon: 'mdi:led-strip-variant'
