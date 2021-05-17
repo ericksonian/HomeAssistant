@@ -15,7 +15,7 @@ custom_fields:
             card:
               - height: 70px
           state:
-            - color: 'rgb(2,2,228))'
+            - color: 'rgb(2,2,228)'
               value: 'on'
         - entity: input_boolean.sprinkler_auto_water_2
           template: standard
@@ -26,7 +26,7 @@ custom_fields:
             card:
               - height: 70px
           state:
-            - color: 'rgb(2,2,228))'
+            - color: 'rgb(2,2,228)'
               value: 'on'
         - entity: switch.sprinklers
           name: Run Now
@@ -37,7 +37,7 @@ custom_fields:
             card:
               - height: 70px
           state:
-            - color: 'rgb(66,194,254))'
+            - color: 'rgb(66,194,254)'
               value: 'on'
           tap_action:
             action: call-service
