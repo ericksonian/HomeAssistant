@@ -7,9 +7,7 @@ cards:
     cards:
       - !include /config/lovelace/views/living_room/cards/fan.yaml
       - !include /config/lovelace/views/living_room/cards/light_scenes.yaml
-#  - !include /config/lovelace/views/living_room/cards/living_fan.yaml
-#  - !include /config/lovelace/views/living_room/cards/living_scenes.yaml
-  - !include /config/lovelace/views/living_room/cards/living_lights.yaml
+  - !include /config/lovelace/views/living_room/cards/lights.yaml
   - !include /config/lovelace/views/living_room/cards/audio_switching.yaml
   - !include /config/lovelace/views/living_room/cards/top_tv/top_tv.yaml
   - !include /config/lovelace/views/living_room/cards/bottom_tv/bottom_tv.yaml

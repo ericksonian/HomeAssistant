@@ -20,7 +20,7 @@ custom_fields:
             - entity: light.master_bedroom_ceiling_fan_light
               name: Ceiling
               template: standard
-              icon: 'mdi:ceiling-light'
+              icon: 'mdi:dome-light'
               type: 'custom:button-card'
               state:
                 - color: 'rgb(255,255,1)'
