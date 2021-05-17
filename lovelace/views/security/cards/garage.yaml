@@ -40,7 +40,7 @@ custom_fields:
                       color: red
                   styles:
                     card:
-                      - height: 24px
+                      - height: 30px
                 - type: horizontal-stack
                   cards:
                     - type: 'custom:button-card'
@@ -57,7 +57,7 @@ custom_fields:
                               - color: 'rgb(255,255,255)'
                       styles:
                         card:
-                          - height: 70px
+                          - height: 72px
                       tap_action:
                         action: call-service
                         service: cover.open_cover
@@ -71,14 +71,11 @@ custom_fields:
                       state:
                         - value: open
                           styles:
-                            card:
-                              - filter: brightness(100%)
                             icon:
                               - color: 'rgb(255,255,255)'
                       styles:
                         card:
-                          - filter: brightness(30%)
-                            height: 70px
+                          - height: 72px
                       tap_action:
                         action: call-service
                         service: cover.close_cover
