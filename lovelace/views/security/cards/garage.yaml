@@ -30,9 +30,9 @@ custom_fields:
                   show_name: false
                   show_state: true
                   state:
-                    - value: Closed
+                    - value: 'Closed'
                       color: 'rgb(0,255,0)'
-                    - value: Open
+                    - value: 'Open'
                       color: 'rgb(255,0,0)'
                   styles:
                     card:
