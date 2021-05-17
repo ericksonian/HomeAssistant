@@ -45,7 +45,6 @@ custom_fields:
                   cards:
                     - type: 'custom:button-card'
                       template: standard
-                      color: 'rgb(150,150,150)'
                       entity: cover.garage_door
                       icon: 'mdi:garage-open'
                       lock:
@@ -68,7 +67,6 @@ custom_fields:
                           entity_id: cover.garage_door
                     - type: 'custom:button-card'
                       template: standard
-                      color: 'rgb(150,150,150)'
                       entity: cover.garage_door
                       icon: 'mdi:garage'
                       name: Close
