@@ -1,6 +1,6 @@
 container:
   color_type: label-card
-  color: 'rgb(92,92,92)'
+  color: 'rgb(80,80,80)'
   styles:
     card:
       - padding: 0
