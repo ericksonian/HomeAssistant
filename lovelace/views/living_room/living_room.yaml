@@ -5,8 +5,8 @@ badges: []
 cards:
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/bedroom/cards/fan.yaml
-      - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
+      - !include /config/lovelace/views/living_room/cards/fan.yaml
+      - !include /config/lovelace/views/living_room/cards/light_scenes.yaml
 #  - !include /config/lovelace/views/living_room/cards/living_fan.yaml
 #  - !include /config/lovelace/views/living_room/cards/living_scenes.yaml
   - !include /config/lovelace/views/living_room/cards/living_lights.yaml
