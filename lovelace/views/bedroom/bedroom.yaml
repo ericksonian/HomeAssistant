@@ -17,7 +17,19 @@ cards:
         state: 'on'
     card:
       !include /config/lovelace/views/bedroom/cards/leds.yaml
-  - !include /config/lovelace/views/master/cards/nothing_playing.yaml
+  - type: conditional
+    conditions:
+      - entity: media_player.master
+        state: 'off'
+      - entity: media_player.bedroom_speaker
+        state: 'off'
+    - entity: media_player.bathroom_speaker
+        state: 'off'
+      - entity: media_player.bedroom_tv
+        state: 'off'
+    card:
+      !include /config/lovelace/views/bedroom/cards/nothing_playing.yaml
+
   - !include /config/lovelace/views/master/cards/bedroom_tv/bedroom_tv.yaml
   - !include /config/lovelace/views/master/cards/master_speaker_group.yaml
   - !include /config/lovelace/views/master/cards/bedroom_speaker.yaml
