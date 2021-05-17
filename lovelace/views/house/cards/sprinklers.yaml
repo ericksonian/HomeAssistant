@@ -1,0 +1,46 @@
+type: 'custom:button-card'
+template: container
+name: Plants
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: input_boolean.sprinkler_auto_water_1
+          template: standard
+          name: '5:00 am'
+          icon: 'mdi:clock-outline'
+          type: 'custom:button-card'
+          styles:
+            card:
+              - height: 70px
+          state:
+            - color: 'rgb(2,2,228))'
+              value: 'on'
+        - entity: input_boolean.sprinkler_auto_water_2
+          template: standard
+          name: '6:00 am'
+          icon: 'mdi:clock-time-six-outline'
+          type: 'custom:button-card'
+          styles:
+            card:
+              - height: 70px
+          state:
+            - color: 'rgb(2,2,228))'
+              value: 'on'
+        - entity: switch.sprinklers
+          name: Run Now
+          template: standard
+          icon: 'mdi:watering-can-outline'
+          type: 'custom:button-card'
+          styles:
+            card:
+              - height: 70px
+          state:
+            - color: 'rgb(66,194,254))'
+              value: 'on'
+          tap_action:
+            action: call-service
+            service: switch.toggle
+            service_data:
+              entity_id: switch.sprinklers
