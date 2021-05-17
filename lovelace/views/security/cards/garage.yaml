@@ -53,15 +53,11 @@ custom_fields:
                       state:
                         - value: closed
                           styles:
-                            card:
-                              - filter: brightness(100%)
                             icon:
                               - color: 'rgb(255,255,255)'
-
                       styles:
                         card:
-                          - filter: brightness(30%)
-                            height: 70px
+                          - height: 70px
                       tap_action:
                         action: call-service
                         service: cover.open_cover
