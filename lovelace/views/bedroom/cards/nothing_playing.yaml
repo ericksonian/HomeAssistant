@@ -17,6 +17,7 @@ cards:
     styles:
       card:
         - height: 70px
+        - width: 70px
     tap_action:
       action: call-service
       service: media_player.turn_on
