@@ -12,6 +12,9 @@ custom_fields:
           template: standard
           icon: 'mdi:globe-light'
           type: 'custom:button-card'
+          styles:
+            card:
+              - height: 70px
           state:
             - color: 'rgb(255,255,1)'
               value: 'on'
@@ -20,6 +23,9 @@ custom_fields:
           template: standard
           icon: 'mdi:dome-light'
           type: 'custom:button-card'
+          styles:
+            card:
+              - height: 70px
           state:
             - color: 'rgb(255,255,1)'
               value: 'on'
@@ -28,6 +34,9 @@ custom_fields:
           template: standard
           icon: 'mdi:floor-lamp'
           type: 'custom:button-card'
+          styles:
+            card:
+              - height: 70px
           state:
             - color: 'rgb(255,255,1)'
               value: 'on'
