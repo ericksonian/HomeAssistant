@@ -1,185 +1,137 @@
-type: vertical-stack
-cards:
-  - type: 'custom:button-card'
-    color: 'rgb(200,200,200)'
-    color_type: label-card
-    name: Front Door
-    style: |
-      ha-card {
-        border-radius: 15px;
-        font-variant: small-caps;
-      }
-    styles:
-      card:
-        - height: 24px
-  - type: horizontal-stack
-    cards:
-      - type: picture-entity
-        aspect_ratio: 60%
-        camera_view: auto
-        entity: camera.frontdoor
-        hold_action:
-          action: none
-        show_name: false
-        show_state: false
-        style: |
-          ha-card {
-            border-radius: 15px;
-          }
-      - type: vertical-stack
-        cards:
-          - type: 'custom:button-card'
-            entity: sensor.front_door_status
-            tap_action:
-              action: none
-            hold_action:
-              action: none
-            show_icon: false
-            show_name: false
-            show_state: true
-            state:
-              - value: Locked
-                styles:
-                  state:
-                    - color: green
-              - value: Closed, Unlocked
-                styles:
-                  state:
-                    - color: yellow
-              - value: Open
-                styles:
-                  state:
-                    - color: red
-              - value: Open, Locked
-                styles:
-                  state:
-                    - color: orange
-            style: |
-              ha-card {
-                font-variant: small-caps;
-              }
-            styles:
-              card:
-                - height: 24px
-          - type: horizontal-stack
-            cards:
-              - type: 'custom:button-card'
-                color: 'rgb(150,150,150)'
-                entity: lock.front_door
-                icon: 'mdi:lock-open-outline'
-                lock:
-                  enabled: true
-                name: Unlock
-                state:
-                  - color: 'rgb(255,255,255)'
-                    styles:
-                      card:
-                        - filter: brightness(100%)
-                    value: locked
-                style: |
-                  ha-card {
-                    font-variant: small-caps;
-                  }
-                styles:
-                  card:
-                    - filter: brightness(30%)
-                      height: 78px
-                tap_action:
-                  action: call-service
-                  service: lock.unlock
-                  service_data:
-                    entity_id: lock.front_door
-              - type: 'custom:button-card'
-                color: 'rgb(150,150,150)'
-                entity: lock.front_door
-                icon: 'mdi:lock-outline'
-                name: Lock
-                state:
-                  - color: 'rgb(255,255,255)'
-                    styles:
-                      card:
-                        - filter: brightness(100%)
-                    value: unlocked
-                style: |
-                  ha-card {
-                    font-variant: small-caps;
-                  }
-                styles:
-                  card:
-                    - filter: brightness(30%)
-                      height: 78px
-                tap_action:
-                  action: call-service
-                  service: lock.lock
-                  service_data:
-                    entity_id: lock.front_door
-  - type: horizontal-stack
-    cards:
-      - type: 'custom:button-card'
-        entity: switch.patio_string
-        hold_action:
-          action: more-info
-        icon: 'mdi:string-lights'
-        name: Patio
-        show_icon: true
-        show_name: true
-        state:
-          - color: 'rgb(188,160,40)'
-            value: 'on'
-        styles:
-          card:
-            - height: 60px
-              width: 90px
-        tap_action:
-          action: toggle
-      - type: 'custom:button-card'
-        entity: light.exterior_front_door
-        hold_action:
-          action: more-info
-        icon: 'mdi:white-balance-incandescent'
-        name: Front Door
-        show_icon: true
-        show_name: true
-        state:
-          - color: 'rgb(188,160,40)'
-            value: 'on'
-        styles:
-          card:
-            - height: 60px
-              width: 90px
-        tap_action:
-          action: toggle
-      - type: 'custom:slider-entity-row'
-        entity: light.exterior_front_door
-        full_row: true
-        hide_state: true
-  - type: conditional
-    conditions:
-      - entity: media_player.front_patio_speaker
-        state_not: 'off'
-      - entity: media_player.everywhere
-        state: 'off'
+type: 'custom:button-card'
+template: container
+name: Front Door
+custom_fields:
+  buttons:
     card:
-      type: 'custom:mini-media-player'
-      artwork: cover
-      entity: media_player.front_patio_speaker
-      icon: 'mdi:cast-audio'
-      hide:
-        power: true
-        controls: true
-        mute: true
-        volume: true
-  - type: conditional
-    conditions:
-      - entity: media_player.rock_speakers
-        state_not: 'off'
-    card:
-      type: 'custom:mini-media-player'
-      artwork: cover
-      entity: media_player.rock_speakers
-      icon: 'mdi:cast-audio'
-      hide:
-        power: true
-        controls: true
-        mute: true
-        volume: true
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: picture-entity
+              aspect_ratio: 60%
+              camera_view: auto
+              entity: camera.frontdoor
+              hold_action:
+                action: none
+              show_name: false
+              show_state: false
+              tap_action:
+                action: more-info
+            - type: vertical-stack
+              cards:
+                - type: 'custom:button-card'
+                  entity: sensor.front_door_status
+                  tap_action:
+                    action: none
+                  hold_action:
+                    action: none
+                  show_icon: false
+                  show_name: false
+                  show_state: true
+                  state:
+                    - value: Locked
+                      styles:
+                        state:
+                          - color: 'rgb(0,255,0)'
+                    - value: Closed, Unlocked
+                      styles:
+                        state:
+                          - color: 'rgb(255,255,0)'
+                    - value: Open
+                      styles:
+                        state:
+                          - color: 'rgb(255,0,0)'
+                    - value: Open, Locked
+                      styles:
+                        state:
+                          - color: orange
+                  styles:
+                    card:
+                      - height: 30px
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      template: standard
+                      entity: lock.front_door
+                      icon: 'mdi:lock-open-outline'
+                      lock:
+                        enabled: true
+                      name: Unlock
+                      state:
+                        - value: locked
+                          styles:
+                            icon:
+                              - color: 'rgb(255,255,255)'
+                              - opacity: 1
+                      styles:
+                        card:
+                          - height: 72px
+                          - width: 86px
+                      tap_action:
+                        action: call-service
+                        service: lock.unlock
+                        service_data:
+                          entity_id: lock.front_door
+                    - type: 'custom:button-card'
+                      template: standard
+                      entity: lock.front_door
+                      icon: 'mdi:lock-outline'
+                      name: Lock
+                      state:
+                        - value: unlocked
+                          styles:
+                            icon:
+                              - color: 'rgb(255,255,255)'
+                              - opacity: 1
+                      styles:
+                        card:
+                          - height: 72px
+                          - width: 86px
+                      tap_action:
+                        action: call-service
+                        service: lock.lock
+                        service_data:
+                          entity_id: lock.front_door
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: switch.patio_string
+              hold_action:
+                action: more-info
+              icon: 'mdi:string-lights'
+              name: Patio
+              show_icon: true
+              show_name: true
+              state:
+               - color: 'rgb(188,160,40)'
+                 value: 'on'
+              styles:
+                card:
+                  - height: 72px
+                  - width: 86px
+              tap_action:
+                action: toggle
+            - type: 'custom:button-card'
+              template: standard
+              entity: light.exterior_front_door
+              hold_action:
+                action: more-info
+              icon: 'mdi:white-balance-incandescent'
+              name: Front Door
+              show_icon: true
+              show_name: true
+              state:
+                - color: 'rgb(188,160,40)'
+                  value: 'on'
+              styles:
+                card:
+                 - height: 72px
+                 - width: 86px
+              tap_action:
+                action: toggle
+            - type: 'custom:slider-entity-row'
+              entity: light.exterior_front_door
+              full_row: true
+              hide_state: true
