@@ -1,0 +1,57 @@
+type: 'custom:button-card'
+template: container
+color: '#5C5C5C'
+name: Exterior Scenes
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              entity: input_select.kitchen_light_scene
+              template: standard
+              icon: 'mdi:stove'
+              name: Bright
+              state:
+                - color: 'rgb(255,255,1)'
+                  value: 'bright'
+              tap_action:
+                action: call-service
+                service: script.kitchen_light_scene_bright
+            - type: 'custom:button-card'
+              entity: input_select.kitchen_light_scene
+              template: standard
+              icon: 'mdi:lightbulb-multiple-outline'
+              name: Entertain
+              state:
+                - color: 'rgb(255,255,1)'
+                  value: 'entertain'
+              tap_action:
+                action: call-service
+                service: script.kitchen_light_scene_entertain
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              entity: input_select.kitchen_light_scene
+              template: standard
+              icon: 'mdi:coffee-maker'
+              name: Relax
+              state:
+                - color: 'rgb(255,255,1)'
+                  value: 'relax'
+              tap_action:
+                action: call-service
+                service: script.kitchen_light_scene_relax
+            - type: 'custom:button-card'
+              entity: group.lights_kitchen
+              template: standard
+              icon: 'mdi:lightbulb-group-off-outline'
+              name: All Off
+              state:
+                - color: 'rgb(2,2,228)'
+                  value: 'off'
+              tap_action:
+                action: call-service
+                service: script.kitchen_light_scene_off

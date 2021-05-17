@@ -8,8 +8,10 @@ cards:
     cards:
       - !include /config/lovelace/views/house/cards/lights_kitchen.yaml
       - !include /config/lovelace/views/house/cards/light_scenes_kitchen.yaml
-  - !include /config/lovelace/views/house/cards/lighting/exterior_scenes.yaml
-  - !include /config/lovelace/views/house/cards/lighting/exterior_lights.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/house/cards/lights_exterior.yaml
+      - !include /config/lovelace/views/house/cards/light_scenes_exterior.yaml
   - !include /config/lovelace/views/house/cards/speaker_groups/speaker_groups.yaml
 #  - !include /config/lovelace/views/house/cards/ambient_sounds/ambient_sounds.yaml
   - !include /config/lovelace/views/house/cards/sprinklers/sprinklers.yaml
