@@ -1,0 +1,99 @@
+
+###### INPUT SELECT ------------------------------------------
+input_select:
+
+  living_light_scene:
+    name: 'Living Light Scene'
+    options:
+      - bright
+      - entertain
+      - relax
+      - 'off'
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+- alias: Pico Keypad Living Button 1
+  trigger:
+  - entity_id: sensor.living_keypad
+    platform: state
+    to: "1"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_light_scene
+      option: bright
+- alias: Pico Keypad Living Button 2
+  trigger:
+  - entity_id: sensor.living_keypad
+    platform: state
+    to: "2"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_light_scene
+      option: entertain
+- alias: Pico Keypad Living Button 3
+  trigger:
+  - entity_id: sensor.living_keypad
+    platform: state
+    to: "4"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_light_scene
+      option: relax
+- alias: Pico Keypad Living Button 4
+  trigger:
+  - entity_id: sensor.living_keypad
+    platform: state
+    to: "8"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_light_scene
+      option: 'off'
+
+###### SCRIPT ------------------------------------------
+script:
+
+  living_light_scene_bright:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.living_bright
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_light_scene
+          option: bright
+  living_light_scene_entertain:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.living_entertain
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_light_scene
+          option: entertain
+  living_light_scene_relax:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.living_relax
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_light_scene
+          option: relax
+  living_light_scene_off:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.living_all_off
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_light_scene
+          option: 'off'

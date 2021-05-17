@@ -3,8 +3,12 @@ icon: 'mdi:television'
 panel: false
 badges: []
 cards:
-  - !include /config/lovelace/views/living_room/cards/living_fan.yaml
-  - !include /config/lovelace/views/living_room/cards/living_scenes.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/bedroom/cards/fan.yaml
+      - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
+#  - !include /config/lovelace/views/living_room/cards/living_fan.yaml
+#  - !include /config/lovelace/views/living_room/cards/living_scenes.yaml
   - !include /config/lovelace/views/living_room/cards/living_lights.yaml
   - !include /config/lovelace/views/living_room/cards/audio_switching.yaml
   - !include /config/lovelace/views/living_room/cards/top_tv/top_tv.yaml

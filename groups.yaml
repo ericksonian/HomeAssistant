@@ -16,6 +16,13 @@ lights_downstairs:
     - light.living_room_main
     - switch.plug_in_switch_switch
 
+lights_living:
+  name: Living Lights
+  entities:
+    - light.living_room_main
+    - light.living_room_stairs
+    - switch.plug_in_switch_switch
+
 lights_master:
   name: Master Lights
   entities:
