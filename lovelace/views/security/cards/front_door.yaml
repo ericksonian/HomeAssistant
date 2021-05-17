@@ -64,7 +64,7 @@ custom_fields:
                             icon:
                               - color: 'rgb(255,255,255)'
                               - opacity: 1
-                              - size: 60%
+                              - size: 30%
                       styles:
                         card:
                           - height: 72px
@@ -85,7 +85,7 @@ custom_fields:
                             icon:
                               - color: 'rgb(255,255,255)'
                               - opacity: 1
-                              - size: 60%
+                              - size: 30%
                       styles:
                         card:
                           - height: 72px
