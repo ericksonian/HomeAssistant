@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Light Scenes
+name: Garage
 custom_fields:
   buttons:
     card:
@@ -25,7 +25,6 @@ custom_fields:
             - type: vertical-stack
               cards:
                 - type: 'custom:button-card'
-                  color: 'rgb(0, 0, 0)'
                   entity: sensor.garage_door_contact
                   tap_action:
                     action: none
@@ -35,24 +34,17 @@ custom_fields:
                   show_name: false
                   show_state: true
                   state:
-                    - styles:
-                        state:
-                          - color: green
-                      value: Closed
-                    - styles:
-                        state:
-                          - color: red
-                      value: Open
-                  style: |
-                    ha-card {
-                      font-variant: small-caps;
-                    }
+                    - value: Closed
+                      color: green
+                    - value: Open
+                      color: red
                   styles:
                     card:
                       - height: 24px
                 - type: horizontal-stack
                   cards:
                     - type: 'custom:button-card'
+                      template: standard
                       color: 'rgb(150,150,150)'
                       entity: cover.garage_door
                       icon: 'mdi:garage-open'
@@ -65,21 +57,17 @@ custom_fields:
                             card:
                               - filter: brightness(100%)
                           value: closed
-                      style: |
-                        ha-card {
-                          border-radius: 15px;
-                          font-variant: small-caps;
-                        }
                       styles:
                         card:
                           - filter: brightness(30%)
-                            height: 78px
+                            height: 70px
                       tap_action:
                         action: call-service
                         service: cover.open_cover
                         service_data:
                           entity_id: cover.garage_door
                     - type: 'custom:button-card'
+                      template: standard
                       color: 'rgb(150,150,150)'
                       entity: cover.garage_door
                       icon: 'mdi:garage'
@@ -90,15 +78,10 @@ custom_fields:
                             card:
                               - filter: brightness(100%)
                           value: open
-                      style: |
-                        ha-card {
-                          border-radius: 15px;
-                          font-variant: small-caps;
-                        }
                       styles:
                         card:
                           - filter: brightness(30%)
-                            height: 78px
+                            height: 70px
                       tap_action:
                         action: call-service
                         service: cover.close_cover
@@ -107,6 +90,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
+              template: standard
               entity: switch.garage_ceiling
               hold_action:
                 action: more-info
@@ -117,17 +101,14 @@ custom_fields:
               state:
                - color: 'rgb(188,160,40)'
                  value: 'on'
-              style: |
-                ha-card {
-                  border-radius: 15px;
-                }
               styles:
                 card:
-                  - height: 60px
+                  - height: 70px
                     width: 90px
               tap_action:
                 action: toggle
             - type: 'custom:button-card'
+              template: standard
               entity: light.exterior_driveway
               hold_action:
                 action: more-info
@@ -138,13 +119,9 @@ custom_fields:
               state:
                 - color: 'rgb(188,160,40)'
                   value: 'on'
-              style: |
-                ha-card {
-                  border-radius: 15px;
-                }
               styles:
                 card:
-                 - height: 60px
+                 - height: 70px
                    width: 90px
               tap_action:
                 action: toggle
@@ -152,7 +129,3 @@ custom_fields:
               entity: light.exterior_driveway
               full_row: true
               hide_state: true
-              style: |
-                ha-card {
-                  border-radius: 15px;
-                }
