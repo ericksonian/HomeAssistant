@@ -4,41 +4,37 @@ name: Exterior Lights
 custom_fields:
   buttons:
     card:
-      type: vertical-stack
+      type: horizontal-stack
       cards:
-        - type: horizontal-stack
-          cards:
-            - entity: light.exterior_back_door
-              name: Back Door
-              template: standard
-              icon: 'mdi:white-balance-incandescent'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
-            - entity: light.exterior_front_door
-              name: Ceiling
-              template: standard
-              icon: 'mdi:white-balance-incandescent'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
-        - type: horizontal-stack
-          cards:
-            - entity: light.exterior_driveway
-              template: standard
-              name: Cabinets
-              icon: 'mdi:spotlight-beam'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
-            - entity: switch.patio_string
-              template: standard
-              name: Patio
-              icon: 'mdi:string-lights'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
+        - entity: light.exterior_back_door
+          name: Back Door
+          template: standard
+          icon: 'mdi:white-balance-incandescent'
+          type: 'custom:button-card'
+          state:
+            - color: 'rgb(255,255,1)'
+              value: 'on'
+        - entity: light.exterior_front_door
+          name: Front Door
+          template: standard
+          icon: 'mdi:white-balance-incandescent'
+          type: 'custom:button-card'
+          state:
+            - color: 'rgb(255,255,1)'
+              value: 'on'
+        - entity: light.exterior_driveway
+          template: standard
+          name: Driveway
+          icon: 'mdi:spotlight-beam'
+          type: 'custom:button-card'
+          state:
+            - color: 'rgb(255,255,1)'
+              value: 'on'
+        - entity: switch.patio_string
+          template: standard
+          name: Patio
+          icon: 'mdi:string-lights'
+          type: 'custom:button-card'
+          state:
+            - color: 'rgb(255,255,1)'
+              value: 'on'
