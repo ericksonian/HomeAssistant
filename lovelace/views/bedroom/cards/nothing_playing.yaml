@@ -14,6 +14,9 @@ cards:
     entity: media_player.bedroom_tv
     icon: 'mdi:power'
     show_name: false
+    styles:
+      card:
+        - height: 70px
     tap_action:
       action: call-service
       service: media_player.turn_on
