@@ -15,7 +15,7 @@ automation:
 
 - alias: Pico Keypad Living Button 1
   trigger:
-  - entity_id: sensor.living_keypad
+  - entity_id: sensor.living_room_keypad
     platform: state
     to: "1"
   condition: []
@@ -29,7 +29,7 @@ automation:
       entity_id: switch.plug_in_switch_switch
 - alias: Pico Keypad Living Button 2
   trigger:
-  - entity_id: sensor.living_keypad
+  - entity_id: sensor.living_room_keypad
     platform: state
     to: "2"
   condition: []
@@ -43,7 +43,7 @@ automation:
       entity_id: switch.plug_in_switch_switch
 - alias: Pico Keypad Living Button 3
   trigger:
-  - entity_id: sensor.living_keypad
+  - entity_id: sensor.living_room_keypad
     platform: state
     to: "4"
   condition: []
@@ -57,7 +57,7 @@ automation:
       entity_id: switch.plug_in_switch_switch
 - alias: Pico Keypad Living Button 4
   trigger:
-  - entity_id: sensor.living_keypad
+  - entity_id: sensor.living_room_keypad
     platform: state
     to: "8"
   condition: []
