@@ -54,7 +54,8 @@ custom_fields:
                               - opacity: 1
                       styles:
                         card:
-                          - height: 72px
+                          - height: 70px
+                          - width: 70px
                       tap_action:
                         action: call-service
                         service: cover.open_cover
@@ -73,7 +74,8 @@ custom_fields:
                               - opacity: 1
                       styles:
                         card:
-                          - height: 72px
+                          - height: 70px
+                          - width: 70px
                       tap_action:
                         action: call-service
                         service: cover.close_cover
@@ -96,7 +98,7 @@ custom_fields:
               styles:
                 card:
                   - height: 70px
-                    width: 90px
+                  - width: 70px
               tap_action:
                 action: toggle
             - type: 'custom:button-card'
@@ -114,7 +116,7 @@ custom_fields:
               styles:
                 card:
                  - height: 70px
-                   width: 90px
+                 - width: 70px
               tap_action:
                 action: toggle
             - type: 'custom:slider-entity-row'
