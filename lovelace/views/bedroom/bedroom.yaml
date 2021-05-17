@@ -23,7 +23,7 @@ cards:
         state: 'off'
       - entity: media_player.bedroom_speaker
         state: 'off'
-    - entity: media_player.bathroom_speaker
+      - entity: media_player.bathroom_speaker
         state: 'off'
       - entity: media_player.bedroom_tv
         state: 'off'
