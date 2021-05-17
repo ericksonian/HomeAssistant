@@ -11,7 +11,7 @@ custom_fields:
             - type: picture-entity
               aspect_ratio: 60%
               camera_view: auto
-              entity: camera.garage
+              entity: camera.frontdoor
               hold_action:
                 action: none
               show_name: false
@@ -21,7 +21,7 @@ custom_fields:
             - type: vertical-stack
               cards:
                 - type: 'custom:button-card'
-                  entity: sensor.garage_door_contact
+                  entity: sensor.front_door_status
                   tap_action:
                     action: none
                   hold_action:
@@ -30,14 +30,22 @@ custom_fields:
                   show_name: false
                   show_state: true
                   state:
-                    - value: Closed
+                    - value: Locked
                       styles:
                         state:
-                          - color: 'rgb(0,255,0)'
+                          - color: green
+                    - value: Closed, Unlocked
+                      styles:
+                        state:
+                          - color: yellow
                     - value: Open
                       styles:
                         state:
-                          - color: 'rgb(255,0,0)'
+                          - color: red
+                    - value: Open, Locked
+                      styles:
+                        state:
+                          - color: orange
                   styles:
                     card:
                       - height: 30px
@@ -45,13 +53,13 @@ custom_fields:
                   cards:
                     - type: 'custom:button-card'
                       template: standard
-                      entity: cover.garage_door
-                      icon: 'mdi:garage-open'
+                      entity: lock.front_door
+                      icon: 'mdi:lock-open-outline'
                       lock:
                         enabled: true
-                      name: Open
+                      name: Unlock
                       state:
-                        - value: closed
+                        - value: locked
                           styles:
                             icon:
                               - color: 'rgb(255,255,255)'
@@ -62,16 +70,16 @@ custom_fields:
                           - width: 86px
                       tap_action:
                         action: call-service
-                        service: cover.open_cover
+                        service: lock.unlock
                         service_data:
-                          entity_id: cover.garage_door
+                          entity_id: lock.front_door
                     - type: 'custom:button-card'
                       template: standard
-                      entity: cover.garage_door
-                      icon: 'mdi:garage'
-                      name: Close
+                      entity: lock.front_door
+                      icon: 'mdi:lock-outline'
+                      name: Lock
                       state:
-                        - value: open
+                        - value: unlocked
                           styles:
                             icon:
                               - color: 'rgb(255,255,255)'
@@ -82,18 +90,18 @@ custom_fields:
                           - width: 86px
                       tap_action:
                         action: call-service
-                        service: cover.close_cover
+                        service: lock.lock
                         service_data:
-                          entity_id: cover.garage_door
+                          entity_id: lock.front_door
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
               template: standard
-              entity: switch.garage_ceiling
+              entity: switch.patio_string
               hold_action:
                 action: more-info
-              icon: 'mdi:white-balance-incandescent'
-              name: Garage
+              icon: 'mdi:string-lights'
+              name: Patio
               show_icon: true
               show_name: true
               state:
@@ -107,11 +115,11 @@ custom_fields:
                 action: toggle
             - type: 'custom:button-card'
               template: standard
-              entity: light.exterior_driveway
+              entity: light.exterior_front_door
               hold_action:
                 action: more-info
-              icon: 'mdi:spotlight-beam'
-              name: Driveway
+              icon: 'mdi:white-balance-incandescent'
+              name: Front Door
               show_icon: true
               show_name: true
               state:
@@ -124,6 +132,6 @@ custom_fields:
               tap_action:
                 action: toggle
             - type: 'custom:slider-entity-row'
-              entity: light.exterior_driveway
+              entity: light.exterior_front_door
               full_row: true
               hide_state: true
