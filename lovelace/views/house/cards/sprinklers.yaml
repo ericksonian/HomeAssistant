@@ -8,8 +8,8 @@ custom_fields:
       cards:
         - entity: input_boolean.sprinkler_auto_water_1
           template: standard
-          name: '5:00 am'
-          icon: 'mdi:clock-outline'
+          name: '4:00 am'
+          icon: 'mdi:clock-time-four-outline'
           type: 'custom:button-card'
           styles:
             card:
@@ -21,8 +21,8 @@ custom_fields:
               value: 'on'
         - entity: input_boolean.sprinkler_auto_water_2
           template: standard
-          name: '6:00 am'
-          icon: 'mdi:clock-time-six-outline'
+          name: '5:00 am'
+          icon: 'mdi:clock-time-five-outline'
           type: 'custom:button-card'
           styles:
             card:

@@ -35,7 +35,7 @@ automation:
 - alias: Sprinklers Schedule 1
   trigger:
   - platform: time
-    at: "05:00:00"
+    at: "04:00:00"
   condition:
   - condition: state
     entity_id: input_boolean.sprinkler_auto_water_1
@@ -47,7 +47,7 @@ automation:
 - alias: Sprinklers Schedule 2
   trigger:
   - platform: time
-    at: "06:00:00"
+    at: "05:00:00"
   condition:
   - condition: state
     entity_id: input_boolean.sprinkler_auto_water_2
