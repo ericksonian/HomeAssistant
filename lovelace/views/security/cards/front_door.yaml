@@ -55,7 +55,6 @@ custom_fields:
                       template: standard
                       entity: lock.front_door
                       icon: 'mdi:lock-open-outline'
-                      size: 60%
                       lock:
                         enabled: true
                       name: Unlock
@@ -65,6 +64,7 @@ custom_fields:
                             icon:
                               - color: 'rgb(255,255,255)'
                               - opacity: 1
+                              - size: 60%
                       styles:
                         card:
                           - height: 72px
@@ -78,7 +78,6 @@ custom_fields:
                       template: standard
                       entity: lock.front_door
                       icon: 'mdi:lock-outline'
-                      size: 60%
                       name: Lock
                       state:
                         - value: unlocked
@@ -86,6 +85,7 @@ custom_fields:
                             icon:
                               - color: 'rgb(255,255,255)'
                               - opacity: 1
+                              - size: 60%
                       styles:
                         card:
                           - height: 72px
