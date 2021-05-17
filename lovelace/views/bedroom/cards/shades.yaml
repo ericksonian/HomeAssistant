@@ -1,6 +1,5 @@
 type: 'custom:button-card'
 template: container
-color: '#5C5C5C'
 name: Sun Shades
 custom_fields:
   buttons:

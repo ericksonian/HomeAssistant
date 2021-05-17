@@ -1,6 +1,5 @@
 type: 'custom:button-card'
 template: container
-color: '#5C5C5C'
 name: LED Strip
 custom_fields:
   buttons:

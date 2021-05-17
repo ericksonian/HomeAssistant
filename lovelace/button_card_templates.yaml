@@ -1,6 +1,6 @@
 container:
   color_type: label-card
-  color: dimgray
+  color: 'rgb(92,92,92)'
   styles:
     card:
       - padding: 0
