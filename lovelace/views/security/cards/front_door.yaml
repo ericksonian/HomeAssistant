@@ -55,6 +55,7 @@ custom_fields:
                       template: standard
                       entity: lock.front_door
                       icon: 'mdi:lock-open-outline'
+                      size: 60%
                       lock:
                         enabled: true
                       name: Unlock
@@ -77,6 +78,7 @@ custom_fields:
                       template: standard
                       entity: lock.front_door
                       icon: 'mdi:lock-outline'
+                      size: 60%
                       name: Lock
                       state:
                         - value: unlocked
