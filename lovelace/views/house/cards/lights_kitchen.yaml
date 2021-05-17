@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Lights
+name: Kitchen Lights
 custom_fields:
   buttons:
     card:
@@ -29,7 +29,7 @@ custom_fields:
             - entity: light.kitchen_cabinets
               template: standard
               name: Cabinets
-              icon: 'mdi:coffee-maker'
+              icon: 'mdi:led-strip-variant'
               type: 'custom:button-card'
               state:
                 - color: 'rgb(255,255,1)'
