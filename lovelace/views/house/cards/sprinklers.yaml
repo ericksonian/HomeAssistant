@@ -14,6 +14,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(2,2,228)'
+              - '--mdc-ripple-press-opacity': 0.5
           state:
             - color: 'rgb(2,2,228)'
               value: 'on'
@@ -25,6 +27,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(2,2,228)'
+              - '--mdc-ripple-press-opacity': 0.5
           state:
             - color: 'rgb(2,2,228)'
               value: 'on'
@@ -36,6 +40,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(66,194,254)'
+              - '--mdc-ripple-press-opacity': 0.5
           state:
             - color: 'rgb(66,194,254)'
               value: 'on'
