@@ -51,11 +51,13 @@ custom_fields:
                         enabled: true
                       name: Open
                       state:
-                        - color: 'rgb(255,255,255)'
+                        - value: closed
                           styles:
                             card:
                               - filter: brightness(100%)
-                          value: closed
+                            icon:
+                              - color: 'rgb(255,255,255)'
+
                       styles:
                         card:
                           - filter: brightness(30%)
@@ -71,11 +73,12 @@ custom_fields:
                       icon: 'mdi:garage'
                       name: Close
                       state:
-                        - color: 'rgb(255,255,255)'
+                        - value: open
                           styles:
                             card:
                               - filter: brightness(100%)
-                          value: open
+                            icon:
+                              - color: 'rgb(255,255,255)'
                       styles:
                         card:
                           - filter: brightness(30%)
