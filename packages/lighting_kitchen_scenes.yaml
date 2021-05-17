@@ -24,9 +24,6 @@ automation:
     data:
       entity_id: input_select.kitchen_light_scene
       option: bright
-  - service: switch.turn_on
-    data:
-      entity_id: switch.plug_in_switch_switch
 - alias: Pico Keypad Kitchen Button 2
   trigger:
   - entity_id: sensor.kitchen_keypad
@@ -38,9 +35,6 @@ automation:
     data:
       entity_id: input_select.kitchen_light_scene
       option: entertain
-  - service: switch.turn_off
-    data:
-      entity_id: switch.plug_in_switch_switch
 - alias: Pico Keypad Kitchen Button 3
   trigger:
   - entity_id: sensor.kitchen_keypad
@@ -52,9 +46,6 @@ automation:
     data:
       entity_id: input_select.kitchen_light_scene
       option: relax
-  - service: switch.turn_on
-    data:
-      entity_id: switch.plug_in_switch_switch
 - alias: Pico Keypad Kitchen Button 4
   trigger:
   - entity_id: sensor.kitchen_keypad
@@ -66,9 +57,6 @@ automation:
     data:
       entity_id: input_select.kitchen_light_scene
       option: 'off'
-  - service: switch.turn_off
-    data:
-      entity_id: switch.plug_in_switch_switch
 
 ###### SCRIPT ------------------------------------------
 script:
