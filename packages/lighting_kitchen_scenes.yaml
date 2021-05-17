@@ -1,0 +1,111 @@
+
+###### INPUT SELECT ------------------------------------------
+input_select:
+
+  kitchen_light_scene:
+    name: 'Kitchen Light Scene'
+    options:
+      - bright
+      - entertain
+      - relax
+      - 'off'
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+- alias: Pico Keypad Kitchen Button 1
+  trigger:
+  - entity_id: sensor.kitchen_keypad
+    platform: state
+    to: "1"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kitchen_light_scene
+      option: bright
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug_in_switch_switch
+- alias: Pico Keypad Kitchen Button 2
+  trigger:
+  - entity_id: sensor.kitchen_keypad
+    platform: state
+    to: "2"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kitchen_light_scene
+      option: entertain
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug_in_switch_switch
+- alias: Pico Keypad Kitchen Button 3
+  trigger:
+  - entity_id: sensor.kitchen_keypad
+    platform: state
+    to: "4"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kitchen_light_scene
+      option: relax
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug_in_switch_switch
+- alias: Pico Keypad Kitchen Button 4
+  trigger:
+  - entity_id: sensor.kitchen_keypad
+    platform: state
+    to: "8"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kitchen_light_scene
+      option: 'off'
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug_in_switch_switch
+
+###### SCRIPT ------------------------------------------
+script:
+
+  kitchen_light_scene_bright:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.kitchen_bright
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kitchen_light_scene
+          option: bright
+  kitchen_light_scene_entertain:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.kitchen_entertain
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kitchen_light_scene
+          option: entertain
+  kitchen_light_scene_relax:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.kitchen_relax
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kitchen_light_scene
+          option: relax
+  kitchen_light_scene_off:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.kitchen_all_off
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kitchen_light_scene
+          option: 'off'

@@ -1,23 +1,17 @@
 ### Lighting Scenes
 
-##  Dining
-- name: Kitchen Dining On
-  entities:
-    light.kitchen_dining_pendant:
-      state: on
-
 #   Kitchen Bright
 - name: Kitchen Bright
   entities:
     light.kitchen_ceiling:
       state: on
-      brightness: 255
     light.kitchen_sink:
       state: on
-      brightness: 255
     light.kitchen_cabinets:
       state: on
-      brightness: 255
+    light.kitchen_dining_pendant:
+      state: on
+      brightness: 242
 
 #   Kitchen Entertain
 - name: Kitchen Entertain
@@ -30,6 +24,9 @@
       brightness: 102
     light.kitchen_cabinets:
       state: off
+    light.kitchen_dining_pendant:
+      state: on
+      brightness: 186
 
 
 #   Kitchen Relax
@@ -42,6 +39,8 @@
     light.kitchen_cabinets:
       state: on
       brightness: 191
+    light.kitchen_dining_pendant:
+      state: off
 
 #   Kitchen All Off
 - name: Kitchen All Off

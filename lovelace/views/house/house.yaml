@@ -4,6 +4,7 @@ panel: false
 path: house
 badges: []
 cards:
+  - !include /config/lovelace/views/house/cards/lighting/light_scenes_kitchen.yaml
   - !include /config/lovelace/views/house/cards/lighting/lighting.yaml
   - !include /config/lovelace/views/house/cards/speaker_groups/speaker_groups.yaml
 #  - !include /config/lovelace/views/house/cards/ambient_sounds/ambient_sounds.yaml
