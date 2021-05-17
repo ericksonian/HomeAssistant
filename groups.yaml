@@ -4,7 +4,7 @@ lights_kitchen:
     - light.kitchen_ceiling
     - light.kitchen_dining_pendant
     - light.kitchen_sink
-    - switch.kitchen_cabinets
+    - light.kitchen_cabinets
 
 lights_downstairs:
   name: Downstairs Lights
@@ -12,8 +12,9 @@ lights_downstairs:
     - light.kitchen_ceiling
     - light.kitchen_dining_pendant
     - light.kitchen_sink
-    - switch.kitchen_cabinets
+    - light.kitchen_cabinets
     - light.living_room_main
+    - light.living_room_stairs
     - switch.plug_in_switch_switch
 
 lights_living:
