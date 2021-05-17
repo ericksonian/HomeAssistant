@@ -545,6 +545,27 @@
           }
         ]
       }
+      {
+        "ID" : 24,
+        "Area" : {
+          "Name" : "Living Room"
+        },
+        "Name" : "Keypad",
+        "Buttons" : [
+          {
+            "Number" : 8
+          },
+          {
+            "Number" : 9
+          },
+          {
+            "Number" : 10
+          },
+          {
+            "Number" : 11
+          }
+        ]
+      }
     ],
     "Zones" : [
       {
