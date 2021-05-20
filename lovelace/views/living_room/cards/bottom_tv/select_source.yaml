@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Main TV
+name: Secondary TV
 custom_fields:
   buttons:
     card:
