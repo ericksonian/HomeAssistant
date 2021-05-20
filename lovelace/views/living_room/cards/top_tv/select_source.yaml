@@ -51,6 +51,7 @@ custom_fields:
               entity_id: input_select.tv_living_top_source
               option: chromecast
         - type: 'custom:button-card'
+          template: standard
           entity: input_select.tv_living_top_source
           icon: 'mdi:video-input-hdmi'
           name: HDMI
@@ -72,6 +73,7 @@ custom_fields:
               entity_id: input_select.tv_living_top_source
               option: front
         - type: 'custom:button-card'
+          template: standard
           entity: input_select.tv_living_top_source
           icon: 'mdi:sony-playstation'
           name: PS4
@@ -93,6 +95,7 @@ custom_fields:
               entity_id: input_select.tv_living_top_source
               option: playstation
         - type: 'custom:button-card'
+          template: standard
           entity: input_select.tv_living_top_source
           icon: 'mdi:ubuntu'
           name: PC
