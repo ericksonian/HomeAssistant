@@ -28,36 +28,88 @@ custom_fields:
             service_data:
               entity_id: input_select.tv_living_top_source
               option: appletv
-        - entity: light.living_room_stairs
-          name: Stairs
+        - type: 'custom:button-card'
           template: standard
-          icon: 'mdi:globe-light'
-          type: 'custom:button-card'
+          entity: input_select.tv_living_top_source
+          icon: 'mdi:cast'
+          name: Cast
+          state:
+            - color: 'rgb(72,178,230)'
+              value: 'chromecast'
+            - color: 'rgb(50,50,50)'
+              value: 'loading'
           styles:
             card:
               - height: 70px
+          tap_action:
+            action: call-service
+            service: script.living_top_chromecast
+          hold_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.tv_living_top_source
+              option: chromecast
+        - type: 'custom:button-card'
+          entity: input_select.tv_living_top_source
+          icon: 'mdi:video-input-hdmi'
+          name: HDMI
           state:
-            - color: 'rgb(255,255,1)'
-              value: 'on'
-        - entity: light.living_room_main
-          name: Ceiling
-          template: standard
-          icon: 'mdi:dome-light'
-          type: 'custom:button-card'
+            - color: 'rgb(255,255,255)'
+              value: 'front'
+            - color: 'rgb(50,50,50)'
+              value: 'loading'
           styles:
             card:
               - height: 70px
+          tap_action:
+            action: call-service
+            service: script.living_top_front
+          hold_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.tv_living_top_source
+              option: front
+        - type: 'custom:button-card'
+          entity: input_select.tv_living_top_source
+          icon: 'mdi:sony-playstation'
+          name: PS4
           state:
-            - color: 'rgb(255,255,1)'
-              value: 'on'
-        - entity: switch.plug_in_switch_switch
-          name: Lamp
-          template: standard
-          icon: 'mdi:floor-lamp'
-          type: 'custom:button-card'
+            - color: 'rgb(0,128,255)'
+              value: 'playstation'
+            - color: 'rgb(50,50,50)'
+              value: 'loading'
           styles:
             card:
               - height: 70px
+          tap_action:
+            action: call-service
+            service: script.living_top_playstation
+          hold_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.tv_living_top_source
+              option: playstation
+        - type: 'custom:button-card'
+          entity: input_select.tv_living_top_source
+          icon: 'mdi:ubuntu'
+          name: PC
           state:
-            - color: 'rgb(255,255,1)'
-              value: 'on'
+            - color: 'rgb(221,72,20)'
+              value: 'ubuntu'
+            - color: 'rgb(50,50,50)'
+              value: 'loading'
+          styles:
+            card:
+              - height: 70px
+          tap_action:
+            action: call-service
+            service: script.living_top_ubuntu
+          hold_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.tv_living_top_source
+              option: ubuntu
