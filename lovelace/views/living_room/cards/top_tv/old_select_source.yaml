@@ -1,0 +1,127 @@
+type: horizontal-stack
+cards:
+  - type: 'custom:button-card'
+    entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:apple'
+    name: AppleTV
+    show_name: false
+    state:
+      - color: 'rgb(255,255,255)'
+        value: 'appletv'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_appletv
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: appletv
+  - type: 'custom:button-card'
+    entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:cast'
+    name: Cast
+    show_name: false
+    state:
+      - color: 'rgb(72,178,230)'
+        value: 'chromecast'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_chromecast
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: chromecast
+  - type: 'custom:button-card'
+    entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:video-input-hdmi'
+    name: HDMI
+    show_name: false
+    state:
+      - color: 'rgb(255,255,255)'
+        value: 'front'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_front
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: front
+  - type: 'custom:button-card'
+    entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:sony-playstation'
+    name: PS4
+    show_name: false
+    state:
+      - color: 'rgb(0,128,255)'
+        value: 'playstation'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_playstation
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: playstation
+  - type: 'custom:button-card'
+    entity: input_select.tv_living_top_source
+    color: 'rgb(97,100,107)'
+    icon: 'mdi:ubuntu'
+    name: PC
+    show_name: false
+    state:
+      - color: 'rgb(221,72,20)'
+        value: 'ubuntu'
+      - color: 'rgb(255,255,255)'
+        value: 'none'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 65px
+    tap_action:
+      action: call-service
+      service: script.living_top_ubuntu
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.tv_living_top_source
+        option: ubuntu
