@@ -8,20 +8,19 @@ card:
   type: horizontal-stack
   cards:
     - type: 'custom:button-card'
+      template: standard
       entity: script.living_tv_off
       icon: 'mdi:power'
       name: Top TV Off
       show_name: false
       styles:
-        card:
-          - height: 50px
-          - width: 100px
         icon:
           - color: 'rgb(255,0,0)'
       tap_action:
         action: call-service
         service: script.living_tv_off
     - type: 'custom:button-card'
+      template: standard
       entity: input_boolean.living_tv_mute
       icon: 'mdi:volume-mute'
       name: Mute
@@ -29,13 +28,11 @@ card:
       state:
         - color: 'rgb(255, 0, 0)'
           value: 'on'
-      styles:
-        card:
-          - height: 50px
       tap_action:
         action: call-service
         service: script.living_tv_mute_toggle
     - type: 'custom:button-card'
+      template: standard
       entity: input_boolean.living_tv_mute
       icon: 'mdi:volume-medium'
       name: '-'
@@ -43,13 +40,11 @@ card:
       state:
         - color: 'rgb(255,0,0)'
           value: 'on'
-      styles:
-        card:
-          - height: 50px
       tap_action:
         action: call-service
         service: script.living_tv_volume_down
     - type: 'custom:button-card'
+      template: standard
       entity: input_boolean.living_tv_mute
       icon: 'mdi:volume-high'
       name: +
@@ -57,9 +52,6 @@ card:
       state:
         - color: 'rgb(255, 0, 0)'
           value: 'on'
-      styles:
-        card:
-          - height: 50px
       tap_action:
         action: call-service
         service: script.living_tv_volume_up
