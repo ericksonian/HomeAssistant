@@ -20,7 +20,7 @@ xbox_up:
   sequence:
     - service: remote.send_command
       data:
-        entity_id: remote.playstation_4
+        entity_id: remote.xbox_remote
         command: "Up"
 xbox_down:
   sequence:

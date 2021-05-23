@@ -25,18 +25,18 @@ card:
       cards:
         - type: 'custom:button-card'
           template: standard
-          entity: script.xbox_x
-          icon: 'mdi:alpha-x-circle-outline'
+          entity: script.xbox_y
+          icon: 'mdi:alpha-y-circle-outline'
           show_name: false
           styles:
             card:
-              - '--mdc-ripple-color': 'rgb(64,204,208)'
+              - '--mdc-ripple-color': 'rgb(236,219,51)'
               - '--mdc-ripple-press-opacity': 0.5
             icon:
-              - color: 'rgb(64,204,208)'
+              - color: 'rgb(236,219,51)'
           tap_action:
             action: call-service
-            service: script.xbox_x
+            service: script.xbox_y
         - type: 'custom:button-card'
           template: standard
           entity: script.xbox_up
@@ -114,18 +114,18 @@ card:
       cards:
         - type: 'custom:button-card'
           template: standard
-          entity: script.xbox_y
-          icon: 'mdi:alpha-y-circle-outline'
+          entity: script.xbox_x
+          icon: 'mdi:alpha-x-circle-outline'
           show_name: false
           styles:
             card:
-              - '--mdc-ripple-color': 'rgb(236,219,51)'
+              - '--mdc-ripple-color': 'rgb(64,204,208)'
               - '--mdc-ripple-press-opacity': 0.5
             icon:
-              - color: 'rgb(236,219,51)'
+              - color: 'rgb(64,204,208)'
           tap_action:
             action: call-service
-            service: script.xbox_y
+            service: script.xbox_x
         - type: 'custom:button-card'
           template: standard
           entity: script.xbox_down
