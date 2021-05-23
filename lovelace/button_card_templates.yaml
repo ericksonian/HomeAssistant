@@ -1,11 +1,11 @@
 container:
   color_type: label-card
   color: 'rgb(80,80,80)'
-  style: |
-    ha-card {
-      border-radius: 15px;
-      font-variant: small-caps;
-    }
+#  style: |
+#    ha-card {
+#      border-radius: 15px;
+#      font-variant: small-caps;
+#    }
   styles:
     card:
       - padding: 0
