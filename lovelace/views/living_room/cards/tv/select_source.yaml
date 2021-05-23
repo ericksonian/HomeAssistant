@@ -4,149 +4,105 @@ name: TV
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: vertical-stack
       cards:
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.living_tv_source
-          icon: 'mdi:apple'
-          name: AppleTV
-          state:
-            - color: 'rgb(255,255,255)'
-              value: 'appletv'
-            - color: 'rgb(50,50,50)'
-              value: 'loading'
-          styles:
-            card:
-              - height: 70px
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-          tap_action:
-            action: call-service
-            service: script.living_tv_appletv
-          hold_action:
-            action: call-service
-            service: input_select.select_option
-            service_data:
-              entity_id: input_select.living_tv_source
-              option: appletv
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.living_tv_source
-          icon: 'mdi:cast'
-          name: Cast
-          state:
-            - color: 'rgb(255,255,255)'
-              value: 'chromecast'
-            - color: 'rgb(50,50,50)'
-              value: 'loading'
-          styles:
-            card:
-              - height: 70px
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-          tap_action:
-            action: call-service
-            service: script.living_tv_chromecast
-          hold_action:
-            action: call-service
-            service: input_select.select_option
-            service_data:
-              entity_id: input_select.living_tv_source
-              option: chromecast
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.living_tv_source
-          icon: 'mdi:video-input-hdmi'
-          name: HDMI
-          state:
-            - color: 'rgb(255,255,255)'
-              value: 'front'
-            - color: 'rgb(50,50,50)'
-              value: 'loading'
-          styles:
-            card:
-              - height: 70px
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-          tap_action:
-            action: call-service
-            service: script.living_tv_front
-          hold_action:
-            action: call-service
-            service: input_select.select_option
-            service_data:
-              entity_id: input_select.living_tv_source
-              option: front
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.living_tv_source
-          icon: 'mdi:microsoft-xbox-controller'
-          name: Xbox
-          state:
-            - color: 'rgb(255,255,255)'
-              value: 'xbox'
-            - color: 'rgb(50,50,50)'
-              value: 'loading'
-          styles:
-            card:
-              - height: 70px
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-          tap_action:
-            action: call-service
-            service: script.living_tv_game
-          hold_action:
-            action: call-service
-            service: input_select.select_option
-            service_data:
-              entity_id: input_select.living_tv_source
-              option: xbox
-#        - type: 'custom:button-card'
-#          template: standard
-#          entity: input_select.living_tv_source
-#          icon: 'mdi:sony-playstation'
-#          name: PS4
-#          state:
-#            - color: 'rgb(0,128,255)'
-#              value: 'playstation'
-#            - color: 'rgb(50,50,50)'
-#              value: 'loading'
-#          styles:
-#            card:
-#              - height: 70px
-#              - '--mdc-ripple-color': 'rgb(255,255,255)'
-#              - '--mdc-ripple-press-opacity': 0.5
-#          tap_action:
-#            action: call-service
-#            service: script.living_tv_playstation
-#          hold_action:
-#            action: call-service
-#            service: input_select.select_option
-#            service_data:
-#              entity_id: input_select.living_tv_source
-#              option: playstation
-#        - type: 'custom:button-card'
-#          template: standard
-#          entity: input_select.living_tv_source
-#          icon: 'mdi:ubuntu'
-#          name: PC
-#          state:
-#            - color: 'rgb(221,72,20)'
-#              value: 'ubuntu'
-#            - color: 'rgb(50,50,50)'
-#              value: 'loading'
-#          styles:
-#            card:
-#              - height: 70px
-#              - '--mdc-ripple-color': 'rgb(255,255,255)'
-#              - '--mdc-ripple-press-opacity': 0.5
-#          tap_action:
-#            action: call-service
-#            service: script.living_tv_ubuntu
-#          hold_action:
-#            action: call-service
-#            service: input_select.select_option
-#            service_data:
-#              entity_id: input_select.living_tv_source
-#              option: ubuntu
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.living_tv_source
+              icon: 'mdi:apple'
+              name: AppleTV
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'appletv'
+                - color: 'rgb(50,50,50)'
+                  value: 'loading'
+              styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+              tap_action:
+                action: call-service
+                service: script.living_tv_appletv
+              hold_action:
+                action: call-service
+                service: input_select.select_option
+                service_data:
+                  entity_id: input_select.living_tv_source
+                  option: appletv
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.living_tv_source
+              icon: 'mdi:cast'
+              name: Cast
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'chromecast'
+                - color: 'rgb(50,50,50)'
+                  value: 'loading'
+              styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+              tap_action:
+                action: call-service
+                service: script.living_tv_chromecast
+              hold_action:
+                action: call-service
+                service: input_select.select_option
+                service_data:
+                  entity_id: input_select.living_tv_source
+                  option: chromecast
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.living_tv_source
+              icon: 'mdi:video-input-hdmi'
+              name: HDMI
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'front'
+                - color: 'rgb(50,50,50)'
+                  value: 'loading'
+              styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+              tap_action:
+                action: call-service
+                service: script.living_tv_front
+              hold_action:
+                action: call-service
+                service: input_select.select_option
+                service_data:
+                  entity_id: input_select.living_tv_source
+                  option: front
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.living_tv_source
+              icon: 'mdi:microsoft-xbox-controller'
+              name: Xbox
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'xbox'
+                - color: 'rgb(50,50,50)'
+                  value: 'loading'
+              styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+              tap_action:
+                action: call-service
+                service: script.living_tv_game
+              hold_action:
+                action: call-service
+                service: input_select.select_option
+                service_data:
+                  entity_id: input_select.living_tv_source
+                  option: xbox
+        - !include /config/lovelace/views/living_room/cards/tv/please_wait.yaml
+        - !include /config/lovelace/views/living_room/cards/tv/volume.yaml
