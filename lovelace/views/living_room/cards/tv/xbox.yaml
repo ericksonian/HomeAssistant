@@ -6,8 +6,8 @@ card:
   type: vertical-stack
   cards:
     - type: 'custom:mini-media-player'
-      entity: media_player.playstation_4
-      icon: 'mdi:sony-playstation'
+      entity: media_player.XBOX
+      icon: 'mdi:microsoft-xbox'
       artwork: cover
       group: false
       hide:
@@ -24,20 +24,17 @@ card:
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
-          color: 'rgb(0, 0, 0)'
-          entity: sensor.ps4_source
-          hold_action:
-            action: none
-          show_icon: false
+          entity: script.xbox_x
+          icon: 'mdi:alpha-x-circle-outline'
           show_name: false
-          show_state: false
           styles:
-            - card:
-                - height: 48px
+            icon:
+              - color: 'rgb(255,255,255)'
           tap_action:
-            action: more-info
+            action: call-service
+            service: script.xbox_x
         - type: 'custom:button-card'
-          entity: script.ps4_up
+          entity: script.xbox_up
           icon: 'mdi:arrow-up'
           show_name: false
           styles:
@@ -45,10 +42,10 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.ps4_up
+            service: script.xbox_up
         - type: 'custom:button-card'
-          entity: media_player.playstation_4
-          icon: 'mdi:sony-playstation'
+          entity: script.xbox_home
+          icon: 'mdi:microsoft-xbox'
           show_name: false
           show_state: false
           styles:
@@ -56,11 +53,11 @@ card:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.ps4_ps
+            service: script.xbox_home
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
-          entity: script.ps4_left
+          entity: script.xbox_left
           icon: 'mdi:arrow-left'
           show_name: false
           styles:
@@ -68,19 +65,19 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.ps4_left
+            service: script.xbox_left
         - type: 'custom:button-card'
-          entity: script.ps4_enter
-          icon: 'mdi:select'
+          entity: script.xbox_a
+          icon: 'mdi:alpha-a-circle-outline'
           show_name: false
           styles:
             icon:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.ps4_enter
+            service: script.xbox_a
         - type: 'custom:button-card'
-          entity: script.ps4_right
+          entity: script.xbox_right
           icon: 'mdi:arrow-right'
           show_name: false
           styles:
@@ -88,21 +85,21 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.ps4_right
+            service: script.xbox_right
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
-          entity: script.ps4_back
-          icon: 'mdi:keyboard-return'
+          entity: script.xbox_y
+          icon: 'mdi:alpha-y-circle-outline'
           show_name: false
           styles:
             icon:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.ps4_back
+            service: script.xbox_y
         - type: 'custom:button-card'
-          entity: script.ps4_down
+          entity: script.xbox_down
           icon: 'mdi:arrow-down'
           show_name: false
           styles:
@@ -110,14 +107,14 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.ps4_down
+            service: script.xbox_down
         - type: 'custom:button-card'
-          entity: script.ps4_option
-          icon: 'mdi:menu'
+          entity: script.xbox_b
+          icon: 'mdi:alpha-b-circle-outline'
           show_name: false
           styles:
             icon:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.ps4_option
+            service: script.xbox_b

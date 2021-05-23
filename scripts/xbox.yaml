@@ -1,0 +1,56 @@
+# Xbox
+xbox_home:
+  sequence:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.XBOX
+        media_content_type: ""
+        media_content_id: "Home"
+xbox_up:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.playstation_4
+        command: up
+xbox_down:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: down
+xbox_left:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: left
+xbox_right:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: right
+xbox_a:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: a
+xbox_b:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: b
+xbox_x:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: x
+xbox_y:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.xbox_remote
+        command: y
