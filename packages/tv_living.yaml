@@ -3,7 +3,7 @@
 automation:
 
 # Chromecast
-- alias: Living Top Cast Started
+- alias: Living Cast Started
   trigger:
   - platform: state
     entity_id: media_player.living_room_tv
@@ -15,7 +15,7 @@ automation:
   action:
   - service: script.living_tv_chromecast
 
-- alias: Living Top Cast Ended
+- alias: Living Cast Ended
   trigger:
   - platform: state
     entity_id: media_player.living_room_tv
@@ -27,32 +27,6 @@ automation:
     state: "chromecast"
   action:
   - service: script.living_tv_off
-
-#- alias: Living Bottom Cast Started
-#  trigger:
-#  - platform: state
-#    entity_id: media_player.living_room_tv_2
-#    from: "off"
-#  condition:
-#  - condition: state
-#    entity_id: sensor.living_room_tv_2_cast_unavailable
-#    state: "false"
-#  action:
-#  - service: script.living_bottom_chromecast
-
-#- alias: Living Bottom Cast Ended
-#  trigger:
-#  - platform: state
-#    entity_id: media_player.living_room_tv_2
-#    to: "off"
-#    for: "00:30:00"
-#  condition:
-#  - condition: state
-#    entity_id: input_select.tv_living_bottom_source
-#    state: "chromecast"
-#  action:
-#  - service: script.living_bottom_off
-
 
 # AppleTV
 - alias: Living AirPlay Started
@@ -80,32 +54,6 @@ automation:
   action:
   - service: script.living_tv_off
 
-# PlayStation 4
-#- alias: Living PlayStation On
-#  trigger:
-#  - platform: state
-#    entity_id: media_player.playstation_4
-#    from: "standby"
-#  condition:
-#  - condition: state
-#    entity_id: sensor.ps4_unavailable
-#    state: "false"
-#  action:
-#  - service: script.living_tv_playstation
-
-#- alias: Living PlayStation Off
-#  trigger:
-#  - platform: state
-#    entity_id: media_player.playstation_4
-#    to: "standby"
-#  condition:
-#  - condition: state
-#    entity_id: input_select.living_tv_source
-#    state: "playstation"
-#  action:
-#  - service: script.living_tv_off
-
-
 ###### INPUT SELECT ------------------------------------------
 
 ### TV Tracking
@@ -118,49 +66,14 @@ input_select:
       - appletv
       - chromecast
       - front
-#      - playstation
-#      - ubuntu
       - xbox
-#  tv_living_bottom_source:
-#    name: 'TV Living Bottom Source'
-#    options:
-#      - none
-#      - loading
-#      - appletv
-#      - chromecast
-#      - front
-#      - playstation
-#      - ubuntu
-#      - receiver
 
 input_boolean:
   living_tv_mute:
     name: Living TV Mute
-#  living_bottom_mute:
-#    name: LR Bottom Mute
 
 ###### SCRIPTS ------------------------------------------
 script:
-
-### Living All Off Macro
-#  living_all_off:
-#    sequence:
-#      - service: script.turn_on
-#        data_template:
-#          entity_id: >
-#            {% if is_state("input_select.tv_living_bottom_source", "none") %}
-#              none
-#            {% else %}
-#              script.living_bottom_off
-#            {% endif %}
-#      - service: script.turn_on
-#        data_template:
-#          entity_id: >
-#            {% if is_state("input_select.living_tv_source", "none") %}
-#              none
-#            {% else %}
-#              script.living_tv_off
-#            {% endif %}
 
 ### Living TV Macros
   living_tv_off:
@@ -282,29 +195,6 @@ script:
         data:
           entity_id: input_select.living_tv_source
           option: xbox
-  living_tv_ubuntu:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.samsung_input_hdmi2
-      - delay:
-          milliseconds: 200
-      - service: script.sony_input_ubuntu
-      - delay:
-          milliseconds: 200
-      - service: script.samsung_power_on
-      - delay:
-          milliseconds: 500
-      - service: script.sony_input_ubuntu
-      - delay:
-          milliseconds: 500
-      - service: script.samsung_input_hdmi2
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: ubuntu
   living_tv_volume_up:
     sequence:
       - service: script.sony_volume_up
@@ -321,166 +211,11 @@ script:
         data:
           entity_id: input_boolean.living_tv_mute
 
-
-### Living Bottom TV Macros
-#  living_bottom_off:
-#    sequence:
-#      - service: script.vizio_power_off
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: none
-#      - service: script.tt_power_toggle
-#      - service: input_boolean.turn_off
-#        data:
-#          entity_id: input_boolean.living_bottom_mute
-#  living_bottom_chromecast:
-#    sequence:
-#      - service: script.turn_on
-#        data_template:
-#          entity_id: >
-#            {% if is_state("input_select.tv_living_bottom_source", "none") %}
-#              script.living_bottom_chromecast_from_off
-#            {% else %}
-#              script.living_bottom_chromecast_from_on
-#            {% endif %}
-#  living_bottom_receiver:
-#    sequence:
-#      - service: script.turn_on
-#        data_template:
-#          entity_id: >
-#            {% if is_state("input_select.tv_living_bottom_source", "none") %}
-#              script.living_bottom_receiver_from_off
-#            {% else %}
-#              script.living_bottom_receiver_from_on
-#            {% endif %}
-#  living_bottom_chromecast_from_off:
-#    sequence:
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: loading
-#      - service: script.vizio_power_on
-#      - delay:
-#          milliseconds: 200
-#      - service: script.tt_power_toggle
-#      - delay:
-#          seconds: 6
-#      - service: script.vizio_input_hdmi1
-#      - delay:
-#          seconds: 1
-#      - service: script.vizio_input_hdmi1
-#      - delay:
-#          seconds: 1
-#      - service: script.tt_input_optical
-#      - delay:
-#          milliseconds: 300
-#      - service: script.tt_volume_mute_toggle
-#      - delay:
-#          milliseconds: 300
-#      - service: script.vizio_input_hdmi1
-#      - service: input_boolean.turn_on
-#        data:
-#          entity_id: input_boolean.living_bottom_mute
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: chromecast
-#  living_bottom_chromecast_from_on:
-#    sequence:
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: loading
-#      - service: script.vizio_input_hdmi1
-#      - delay:
-#          milliseconds: 200
-#      - service: script.vizio_power_on
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: chromecast
-#  living_bottom_receiver_from_off:
-#    sequence:
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: loading
-#      - service: script.vizio_power_on
-#      - delay:
-#          milliseconds: 200
-#      - service: script.tt_power_toggle
-#      - delay:
-#          seconds: 6
-#      - service: script.vizio_input_hdmi2
-#      - delay:
-#          seconds: 1
-#      - service: script.vizio_input_hdmi2
-#      - delay:
-#          seconds: 1
-#      - service: script.tt_input_optical
-#      - delay:
-#          milliseconds: 300
-#      - service: script.tt_volume_mute_toggle
-#      - delay:
-#          milliseconds: 300
-#      - service: script.vizio_input_hdmi2
-#      - service: input_boolean.turn_on
-#        data:
-#          entity_id: input_boolean.living_bottom_mute
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: receiver
-#  living_bottom_receiver_from_on:
-#    sequence:
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: loading
-#      - service: script.vizio_input_hdmi2
-#      - delay:
-#          milliseconds: 200
-#      - service: script.vizio_power_on
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.tv_living_bottom_source
-#          option: receiver
-#  living_bottom_volume_up:
-#    sequence:
-#      - service: script.tt_volume_up
-#      - service: input_boolean.turn_off
-#        data:
-#          entity_id: input_boolean.living_bottom_mute
-#  living_bottom_volume_down:
-#    sequence:
-#      - service: script.tt_volume_down
-#      - service: input_boolean.turn_off
-#        data:
-#          entity_id: input_boolean.living_bottom_mute
-#  living_bottom_mute_toggle:
-#    sequence:
-#      - service: script.tt_volume_mute_toggle
-#      - service: input_boolean.toggle
-#        data:
-#          entity_id: input_boolean.living_bottom_mute
-
 ###### SENSOR TEMPLATES ------------------------------------------
 
 sensor:
   - platform: template
     sensors:
-#      ps4_source:
-#        friendly_name: PS4 Current Game
-#        value_template: "{{ state_attr('media_player.playstation_4', 'source') }}"
-#      ps4_unavailable:
-#        friendly_name: "PlayStation Unavailable"
-#        value_template: >-
-#          {% if is_state('media_player.playstation_4', 'unavailable') %}
-#            true
-#          {% else %}
-#            false
-#          {% endif %}
       living_room_tv_cast_unavailable:
         friendly_name: "Living Room TV Cast Unavailable"
         value_template: >-
@@ -489,11 +224,3 @@ sensor:
           {% else %}
             false
           {% endif %}
-#      living_room_tv_2_cast_unavailable:
-#        friendly_name: "Living Room Bottom TV Cast Unavailable"
-#        value_template: >-
-#          {% if is_state('media_player.living_room_tv_2', 'unavailable') %}
-#            true
-#          {% else %}
-#            false
-#          {% endif %}

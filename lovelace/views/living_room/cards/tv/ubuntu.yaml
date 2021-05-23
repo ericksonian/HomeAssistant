@@ -1,7 +1,0 @@
-type: conditional
-conditions:
-  - entity: input_select.living_tv_source
-    state: 'ubuntu'
-card:
-  type: 'custom:button-card'
-  name: Use Wireless Mouse and Keyboard

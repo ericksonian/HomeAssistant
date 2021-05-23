@@ -1,5 +1,5 @@
-title: Guest Room
-icon: 'mdi:bed-single'
+title: Office
+icon: 'mdi:bdesktop-mac-dashboard'
 badges: []
 cards:
   - !include /config/lovelace/views/guest_room/cards/nothing_playing.yaml
