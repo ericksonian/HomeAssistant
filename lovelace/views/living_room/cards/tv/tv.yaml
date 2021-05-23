@@ -15,5 +15,5 @@ cards:
   - !include /config/lovelace/views/living_room/cards/tv/chromecast.yaml
   - !include /config/lovelace/views/living_room/cards/tv/fronthdmi.yaml
 #  - !include /config/lovelace/views/living_room/cards/tv/playstation.yaml
-  - !include /config/lovelace/views/living_room/cards/tv/ubuntu.yaml
+#  - !include /config/lovelace/views/living_room/cards/tv/ubuntu.yaml
   - !include /config/lovelace/views/living_room/cards/tv/xbox.yaml
