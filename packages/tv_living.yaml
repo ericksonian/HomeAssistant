@@ -54,6 +54,31 @@ automation:
   action:
   - service: script.living_tv_off
 
+# Xbox
+- alias: Living Xbox On Auto
+  trigger:
+  - platform: state
+    entity_id: media_player.XBOX
+    to: "on"
+  condition:
+  - condition: state
+    entity_id: input_select.living_tv_source
+    state: "none"
+  action:
+  - service: script.living_tv_game
+
+- alias: Living Xbox Off Auto
+  trigger:
+  - platform: state
+    entity_id: media_player.XBOX
+    to: "off"
+  condition:
+  - condition: state
+    entity_id: input_select.living_tv_source
+    state: "xbox"
+  action:
+  - service: script.living_tv_off
+
 ###### INPUT SELECT ------------------------------------------
 
 ### TV Tracking
@@ -175,6 +200,7 @@ script:
         data:
           entity_id: input_select.living_tv_source
           option: loading
+      - service: script.xbox_on
       - service: script.samsung_input_hdmi2
       - delay:
           milliseconds: 200
@@ -185,9 +211,6 @@ script:
       - delay:
           milliseconds: 500
       - service: script.sony_input_game
-      - delay:
-          milliseconds: 300
-      - service: script.xbox_on
       - delay:
           milliseconds: 500
       - service: script.samsung_input_hdmi2
