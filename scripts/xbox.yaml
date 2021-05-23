@@ -1,4 +1,14 @@
 # Xbox
+xbox_on:
+  sequence:
+    - service: media_player.turn_on
+      data:
+        entity_id: media_player.XBOX
+xbox_off:
+  sequence:
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.XBOX
 xbox_home:
   sequence:
     - service: media_player.play_media
@@ -11,25 +21,25 @@ xbox_up:
     - service: remote.send_command
       data:
         entity_id: remote.playstation_4
-        command: Up
+        command: "Up"
 xbox_down:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: Down
+        command: "Down"
 xbox_left:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: Left
+        command: "Left"
 xbox_right:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: Right
+        command: "Right"
 xbox_a:
   sequence:
     - service: remote.send_command

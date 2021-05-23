@@ -175,8 +175,7 @@ script:
         entity_id: media_player.living_room_tv
       - service: media_player.turn_off
         entity_id: media_player.living_room_appletv
-#      - service: media_player.turn_off
-#        entity_id: media_player.playstation_4
+      - service: script.xbox_off
       - service: input_select.select_option
         data:
           entity_id: input_select.living_tv_source
@@ -275,8 +274,7 @@ script:
       - service: script.sony_input_game
       - delay:
           milliseconds: 300
-#      - service: media_player.turn_on
-#        entity_id: media_player.playstation_4
+      - service: script.xbox_on
       - delay:
           milliseconds: 500
       - service: script.samsung_input_hdmi2
