@@ -19,6 +19,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
             service: script.living_tv_appletv
@@ -41,6 +43,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
             service: script.living_tv_chromecast
@@ -63,6 +67,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
             service: script.living_tv_front
@@ -85,6 +91,8 @@ custom_fields:
           styles:
             card:
               - height: 70px
+              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
             service: script.living_tv_game
@@ -107,6 +115,8 @@ custom_fields:
 #          styles:
 #            card:
 #              - height: 70px
+#              - '--mdc-ripple-color': 'rgb(0,204,52)'
+#              - '--mdc-ripple-press-opacity': 0.5
 #          tap_action:
 #            action: call-service
 #            service: script.living_tv_playstation
@@ -129,6 +139,8 @@ custom_fields:
 #          styles:
 #            card:
 #              - height: 70px
+#              - '--mdc-ripple-color': 'rgb(0,204,52)'
+#              - '--mdc-ripple-press-opacity': 0.5
 #          tap_action:
 #            action: call-service
 #            service: script.living_tv_ubuntu
