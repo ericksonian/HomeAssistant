@@ -11,46 +11,46 @@ xbox_up:
     - service: remote.send_command
       data:
         entity_id: remote.playstation_4
-        command: up
+        command: Up
 xbox_down:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: down
+        command: Down
 xbox_left:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: left
+        command: Left
 xbox_right:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: right
+        command: Right
 xbox_a:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: a
+        command: "A"
 xbox_b:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: b
+        command: "B"
 xbox_x:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: x
+        command: "X"
 xbox_y:
   sequence:
     - service: remote.send_command
       data:
         entity_id: remote.xbox_remote
-        command: y
+        command: "Y"
