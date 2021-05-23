@@ -3,11 +3,11 @@ cards:
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
-    icon: 'mdi:apple'
-    name: AppleTV
+    icon: 'mdi:video-input-hdmi'
+    name: HDMI
     state:
       - color: 'rgb(255,255,255)'
-        value: 'appletv'
+        value: 'front'
       - color: 'rgb(50,50,50)'
         value: 'loading'
     styles:
@@ -17,13 +17,13 @@ cards:
         - '--mdc-ripple-press-opacity': 0.5
     tap_action:
       action: call-service
-      service: script.living_tv_appletv
+      service: script.living_tv_front
     hold_action:
       action: call-service
       service: input_select.select_option
       service_data:
         entity_id: input_select.living_tv_source
-        option: appletv
+        option: front
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
@@ -51,30 +51,6 @@ cards:
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
-    icon: 'mdi:video-input-hdmi'
-    name: HDMI
-    state:
-      - color: 'rgb(255,255,255)'
-        value: 'front'
-      - color: 'rgb(50,50,50)'
-        value: 'loading'
-    styles:
-      card:
-        - height: 70px
-        - '--mdc-ripple-color': 'rgb(255,255,255)'
-        - '--mdc-ripple-press-opacity': 0.5
-    tap_action:
-      action: call-service
-      service: script.living_tv_front
-    hold_action:
-      action: call-service
-      service: input_select.select_option
-      service_data:
-        entity_id: input_select.living_tv_source
-        option: front
-  - type: 'custom:button-card'
-    template: standard
-    entity: input_select.living_tv_source
     icon: 'mdi:microsoft-xbox-controller'
     name: Xbox
     state:
@@ -96,3 +72,27 @@ cards:
       service_data:
         entity_id: input_select.living_tv_source
         option: xbox
+  - type: 'custom:button-card'
+    template: standard
+    entity: input_select.living_tv_source
+    icon: 'mdi:apple'
+    name: AppleTV
+    state:
+      - color: 'rgb(255,255,255)'
+        value: 'appletv'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 70px
+        - '--mdc-ripple-color': 'rgb(255,255,255)'
+        - '--mdc-ripple-press-opacity': 0.5
+    tap_action:
+      action: call-service
+      service: script.living_tv_appletv
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.living_tv_source
+        option: appletv
