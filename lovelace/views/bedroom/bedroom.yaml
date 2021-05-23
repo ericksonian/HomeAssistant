@@ -30,8 +30,8 @@ cards:
     card:
       !include /config/lovelace/views/bedroom/cards/nothing_playing.yaml
 
-  - !include /config/lovelace/views/master/cards/bedroom_tv/bedroom_tv.yaml
-  - !include /config/lovelace/views/master/cards/master_speaker_group.yaml
-  - !include /config/lovelace/views/master/cards/bedroom_speaker.yaml
-  - !include /config/lovelace/views/master/cards/bathroom_speaker.yaml
+  - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv.yaml
+  - !include /config/lovelace/views/bedroom/cards/master_speaker_group.yaml
+  - !include /config/lovelace/views/bedroom/cards/bedroom_speaker.yaml
+  - !include /config/lovelace/views/bedroom/cards/bathroom_speaker.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
