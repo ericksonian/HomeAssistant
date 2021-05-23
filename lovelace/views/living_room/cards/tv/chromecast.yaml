@@ -1,6 +1,6 @@
 type: conditional
 conditions:
-  - entity: input_select.tv_living_top_source
+  - entity: input_select.living_tv_source
     state: 'chromecast'
 card:
   type: vertical-stack
@@ -40,4 +40,3 @@ card:
             service: media_player.media_play_pause
             service_data:
               entity_id: media_player.living_room_tv
-

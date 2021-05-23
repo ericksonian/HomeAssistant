@@ -1,7 +1,7 @@
 type: conditional
 conditions:
-  - entity: input_select.tv_living_top_source
-    state: 'playstation'
+  - entity: input_select.living_tv_source
+    state: 'xbox'
 card:
   type: vertical-stack
   cards:

@@ -110,8 +110,8 @@ automation:
 
 ### TV Tracking
 input_select:
-  tv_living_tv_source:
-    name: 'TV Living Top Source'
+  living_tv_source:
+    name: 'Living TV Source'
     options:
       - none
       - loading
@@ -135,7 +135,7 @@ input_select:
 
 input_boolean:
   living_tv_mute:
-    name: LR Top Mute
+    name: Living TV Mute
 #  living_bottom_mute:
 #    name: LR Bottom Mute
 

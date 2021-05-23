@@ -8,7 +8,7 @@ custom_fields:
       cards:
         - type: 'custom:button-card'
           template: standard
-          entity: input_select.tv_living_top_source
+          entity: input_select.living_tv_source
           icon: 'mdi:apple'
           name: AppleTV
           state:
@@ -21,16 +21,16 @@ custom_fields:
               - height: 70px
           tap_action:
             action: call-service
-            service: script.living_top_appletv
+            service: script.living_tv_appletv
           hold_action:
             action: call-service
             service: input_select.select_option
             service_data:
-              entity_id: input_select.tv_living_top_source
+              entity_id: input_select.living_tv_source
               option: appletv
         - type: 'custom:button-card'
           template: standard
-          entity: input_select.tv_living_top_source
+          entity: input_select.living_tv_source
           icon: 'mdi:cast'
           name: Cast
           state:
@@ -43,16 +43,16 @@ custom_fields:
               - height: 70px
           tap_action:
             action: call-service
-            service: script.living_top_chromecast
+            service: script.living_tv_chromecast
           hold_action:
             action: call-service
             service: input_select.select_option
             service_data:
-              entity_id: input_select.tv_living_top_source
+              entity_id: input_select.living_tv_source
               option: chromecast
         - type: 'custom:button-card'
           template: standard
-          entity: input_select.tv_living_top_source
+          entity: input_select.living_tv_source
           icon: 'mdi:video-input-hdmi'
           name: HDMI
           state:
@@ -65,16 +65,16 @@ custom_fields:
               - height: 70px
           tap_action:
             action: call-service
-            service: script.living_top_front
+            service: script.living_tv_front
           hold_action:
             action: call-service
             service: input_select.select_option
             service_data:
-              entity_id: input_select.tv_living_top_source
+              entity_id: input_select.living_tv_source
               option: front
         - type: 'custom:button-card'
           template: standard
-          entity: input_select.tv_living_top_source
+          entity: input_select.living_tv_source
           icon: 'mdi:microsoft-xbox'
           name: Xbox
           state:
@@ -87,16 +87,16 @@ custom_fields:
               - height: 70px
           tap_action:
             action: call-service
-            service: script.living_top_game
+            service: script.living_tv_game
           hold_action:
             action: call-service
             service: input_select.select_option
             service_data:
-              entity_id: input_select.tv_living_top_source
+              entity_id: input_select.living_tv_source
               option: xbox
 #        - type: 'custom:button-card'
 #          template: standard
-#          entity: input_select.tv_living_top_source
+#          entity: input_select.living_tv_source
 #          icon: 'mdi:sony-playstation'
 #          name: PS4
 #          state:
@@ -109,16 +109,16 @@ custom_fields:
 #              - height: 70px
 #          tap_action:
 #            action: call-service
-#            service: script.living_top_playstation
+#            service: script.living_tv_playstation
 #          hold_action:
 #            action: call-service
 #            service: input_select.select_option
 #            service_data:
-#              entity_id: input_select.tv_living_top_source
+#              entity_id: input_select.living_tv_source
 #              option: playstation
 #        - type: 'custom:button-card'
 #          template: standard
-#          entity: input_select.tv_living_top_source
+#          entity: input_select.living_tv_source
 #          icon: 'mdi:ubuntu'
 #          name: PC
 #          state:
@@ -131,10 +131,10 @@ custom_fields:
 #              - height: 70px
 #          tap_action:
 #            action: call-service
-#            service: script.living_top_ubuntu
+#            service: script.living_tv_ubuntu
 #          hold_action:
 #            action: call-service
 #            service: input_select.select_option
 #            service_data:
-#              entity_id: input_select.tv_living_top_source
+#              entity_id: input_select.living_tv_source
 #              option: ubuntu
