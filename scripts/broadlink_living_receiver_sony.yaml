@@ -60,7 +60,7 @@ sony_input_ubuntu:
             - b64:JgCqAE4TKBQnExQSFBITFBQSFBIVEhMTExQTEycTJxMVEicAAsZQEycTJRMTFBMUFRISFBMTExMVFBEUFBIpESkSExMnAALGUBEoFCcUExEVERYSExUTEhIUExQTExUTJRMqERIUJwACxlATJxIoFBMSFRMTExQRFhAWEBUUFBMTEiYTKBMVEigAAsRQEicTJxMVExQRExMUFRMTFBMUERMTFRIoEikTERQmAA0FAAAAAAAAAAAAAAAAAAA=
     - delay:
         milliseconds: 200
-sony_input_plystatn:
+sony_input_game:
   sequence:
     - service: remote.send_command
       data:

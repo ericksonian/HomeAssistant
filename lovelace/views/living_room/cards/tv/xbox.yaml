@@ -1,0 +1,123 @@
+type: conditional
+conditions:
+  - entity: input_select.tv_living_top_source
+    state: 'playstation'
+card:
+  type: vertical-stack
+  cards:
+    - type: 'custom:mini-media-player'
+      entity: media_player.playstation_4
+      icon: 'mdi:sony-playstation'
+      artwork: cover
+      group: false
+      hide:
+        controls: true
+        icon: true
+        name: true
+        power: true
+        source: true
+        volume: true
+      style: |
+        ha-card {
+          border-radius: 15px;
+        }
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color: 'rgb(0, 0, 0)'
+          entity: sensor.ps4_source
+          hold_action:
+            action: none
+          show_icon: false
+          show_name: false
+          show_state: false
+          styles:
+            - card:
+                - height: 48px
+          tap_action:
+            action: more-info
+        - type: 'custom:button-card'
+          entity: script.ps4_up
+          icon: 'mdi:arrow-up'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.ps4_up
+        - type: 'custom:button-card'
+          entity: media_player.playstation_4
+          icon: 'mdi:sony-playstation'
+          show_name: false
+          show_state: false
+          styles:
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.ps4_ps
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: script.ps4_left
+          icon: 'mdi:arrow-left'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.ps4_left
+        - type: 'custom:button-card'
+          entity: script.ps4_enter
+          icon: 'mdi:select'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.ps4_enter
+        - type: 'custom:button-card'
+          entity: script.ps4_right
+          icon: 'mdi:arrow-right'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.ps4_right
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          entity: script.ps4_back
+          icon: 'mdi:keyboard-return'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.ps4_back
+        - type: 'custom:button-card'
+          entity: script.ps4_down
+          icon: 'mdi:arrow-down'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(255,255,255)'
+          tap_action:
+            action: call-service
+            service: script.ps4_down
+        - type: 'custom:button-card'
+          entity: script.ps4_option
+          icon: 'mdi:menu'
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(155,155,155)'
+          tap_action:
+            action: call-service
+            service: script.ps4_option

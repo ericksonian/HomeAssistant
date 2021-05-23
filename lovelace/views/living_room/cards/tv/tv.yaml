@@ -1,0 +1,11 @@
+type: vertical-stack
+cards:
+  - !include /config/lovelace/views/living_room/cards/tv/select_source.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/please_wait.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/volume.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/appletv.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/chromecast.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/fronthdmi.yaml
+#  - !include /config/lovelace/views/living_room/cards/tv/playstation.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/ubuntu.yaml
+  - !include /config/lovelace/views/living_room/cards/tv/xbox.yaml
