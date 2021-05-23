@@ -19,7 +19,7 @@ custom_fields:
           styles:
             card:
               - height: 70px
-              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-color': 'rgb(255,255,255)'
               - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
@@ -43,7 +43,7 @@ custom_fields:
           styles:
             card:
               - height: 70px
-              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-color': 'rgb(255,255,255)'
               - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
@@ -67,7 +67,7 @@ custom_fields:
           styles:
             card:
               - height: 70px
-              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-color': 'rgb(255,255,255)'
               - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
@@ -91,7 +91,7 @@ custom_fields:
           styles:
             card:
               - height: 70px
-              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-color': 'rgb(255,255,255)'
               - '--mdc-ripple-press-opacity': 0.5
           tap_action:
             action: call-service
@@ -115,7 +115,7 @@ custom_fields:
 #          styles:
 #            card:
 #              - height: 70px
-#              - '--mdc-ripple-color': 'rgb(0,204,52)'
+#              - '--mdc-ripple-color': 'rgb(255,255,255)'
 #              - '--mdc-ripple-press-opacity': 0.5
 #          tap_action:
 #            action: call-service
@@ -139,7 +139,7 @@ custom_fields:
 #          styles:
 #            card:
 #              - height: 70px
-#              - '--mdc-ripple-color': 'rgb(0,204,52)'
+#              - '--mdc-ripple-color': 'rgb(255,255,255)'
 #              - '--mdc-ripple-press-opacity': 0.5
 #          tap_action:
 #            action: call-service
