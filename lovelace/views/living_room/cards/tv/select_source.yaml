@@ -81,7 +81,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standard
           entity: input_select.living_tv_source
-          icon: 'mdi:microsoft-xbox'
+          icon: 'mdi:microsoft-xbox-controller'
           name: Xbox
           state:
             - color: 'rgb(255,255,255)'
