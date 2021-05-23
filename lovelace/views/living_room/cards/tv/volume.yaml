@@ -16,6 +16,10 @@ card:
       styles:
         icon:
           - color: 'rgb(255,0,0)'
+        card:
+          - height: 60px
+          - '--mdc-ripple-color': 'rgb(255,0,0)'
+          - '--mdc-ripple-press-opacity': 0.5
       tap_action:
         action: call-service
         service: script.living_tv_off
@@ -25,6 +29,11 @@ card:
       icon: 'mdi:volume-mute'
       name: Mute
       show_name: false
+      styles:
+        card:
+          - height: 60px
+          - '--mdc-ripple-color': 'rgb(255,0,0)'
+          - '--mdc-ripple-press-opacity': 0.5
       state:
         - color: 'rgb(255, 0, 0)'
           value: 'on'
@@ -37,6 +46,11 @@ card:
       icon: 'mdi:volume-medium'
       name: '-'
       show_name: false
+      styles:
+        card:
+          - height: 60px
+          - '--mdc-ripple-color': 'rgb(255,0,0)'
+          - '--mdc-ripple-press-opacity': 0.5
       state:
         - color: 'rgb(255,0,0)'
           value: 'on'
@@ -47,8 +61,13 @@ card:
       template: standard
       entity: input_boolean.living_tv_mute
       icon: 'mdi:volume-high'
-      name: +
+      name: '+'
       show_name: false
+      styles:
+        card:
+          - height: 60px
+          - '--mdc-ripple-color': 'rgb(255,0,0)'
+          - '--mdc-ripple-press-opacity': 0.5
       state:
         - color: 'rgb(255, 0, 0)'
           value: 'on'
