@@ -4,10 +4,10 @@ cards:
     template: standard
     entity: input_select.living_tv_source
     icon: 'mdi:video-input-hdmi'
-    name: HDMI
+    name: Aux
     state:
       - color: 'rgb(255,255,255)'
-        value: 'front'
+        value: 'aux'
       - color: 'rgb(50,50,50)'
         value: 'loading'
     styles:
@@ -17,13 +17,13 @@ cards:
         - '--mdc-ripple-press-opacity': 0.5
     tap_action:
       action: call-service
-      service: script.living_tv_front
+      service: script.living_tv_aux
     hold_action:
       action: call-service
       service: input_select.select_option
       service_data:
         entity_id: input_select.living_tv_source
-        option: front
+        option: aux
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source

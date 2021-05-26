@@ -89,6 +89,7 @@ input_select:
       - none
       - loading
       - appletv
+      - aux
       - chromecast
       - front
       - xbox
@@ -148,6 +149,29 @@ script:
         data:
           entity_id: input_select.living_tv_source
           option: appletv
+  living_tv_aux:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_tv_source
+          option: loading
+      - service: script.samsung_input_hdmi2
+      - delay:
+          milliseconds: 200
+      - service: script.sony_input_ubuntu
+      - delay:
+          milliseconds: 200
+      - service: script.samsung_power_on
+      - delay:
+          milliseconds: 500
+      - service: script.sony_input_ubuntu
+      - delay:
+          milliseconds: 500
+      - service: script.samsung_input_hdmi2
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_tv_source
+          option: aux
   living_tv_chromecast:
     sequence:
       - service: input_select.select_option
