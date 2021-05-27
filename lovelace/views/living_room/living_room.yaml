@@ -9,4 +9,5 @@ cards:
       - !include /config/lovelace/views/living_room/cards/light_scenes.yaml
   - !include /config/lovelace/views/living_room/cards/lights.yaml
   - !include /config/lovelace/views/living_room/cards/tv/tv.yaml
+  - !include /config/lovelace/views/house/cards/powder_bath_speaker.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

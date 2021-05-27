@@ -14,5 +14,6 @@ cards:
   - !include /config/lovelace/views/house/cards/lights_exterior.yaml
   - !include /config/lovelace/views/house/cards/garage_speaker.yaml
   - !include /config/lovelace/views/house/cards/rock_speakers.yaml
+  - !include /config/lovelace/views/house/cards/front_patio_speaker.yaml
   - !include /config/lovelace/views/house/cards/sprinklers.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

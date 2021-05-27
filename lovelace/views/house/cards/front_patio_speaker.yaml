@@ -1,0 +1,9 @@
+type: conditional
+conditions:
+  - entity: media_player.front_patio_speaker
+    state_not: 'off'
+card:
+  artwork: cover
+  entity: media_player.front_patio_speaker
+  icon: 'mdi:cast'
+  type: 'custom:mini-media-player'
