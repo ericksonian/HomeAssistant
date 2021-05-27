@@ -1,42 +1,43 @@
-type: conditional
-conditions:
-  - entity: input_select.living_tv_source
-    state: 'chromecast'
-card:
-  type: vertical-stack
-  cards:
-    - type: 'custom:slider-entity-row'
-      entity: media_player.living_room_tv
-      full_row: true
-      hide_state: true
-    - type: horizontal-stack
+type: 'custom:button-card'
+template: intercontainer
+name: Xbox
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
       cards:
-        - type: 'custom:mini-media-player'
+        - type: 'custom:slider-entity-row'
           entity: media_player.living_room_tv
-          icon: 'mdi:cast'
-          artwork: cover
-          group: false
-          hide:
-            power: true
-            controls: true
-            source: true
-            volume: true
-            play_pause: true
-        - type: 'custom:button-card'
-          entity: media_player.living_room_tv
-          icon: 'mdi:play'
-          show_name: false
-          state:
-            - icon: 'mdi:pause'
-              value: 'playing'
-          styles:
-            card:
-              - height: 60px
-                width: 60px
-            icon:
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: media_player.media_play_pause
-            service_data:
-              entity_id: media_player.living_room_tv
+          full_row: true
+          hide_state: true
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:mini-media-player'
+              entity: media_player.living_room_tv
+              icon: 'mdi:cast'
+              artwork: cover
+              group: false
+              hide:
+                power: true
+                controls: true
+                source: true
+                volume: true
+                play_pause: true
+            - type: 'custom:button-card'
+              entity: media_player.living_room_tv
+              icon: 'mdi:play'
+              show_name: false
+              state:
+                - icon: 'mdi:pause'
+                  value: 'playing'
+              styles:
+                card:
+                  - height: 60px
+                    width: 60px
+                icon:
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: media_player.media_play_pause
+                service_data:
+                  entity_id: media_player.living_room_tv

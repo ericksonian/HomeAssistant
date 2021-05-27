@@ -1,7 +1,8 @@
-type: conditional
-conditions:
-  - entity: input_select.living_tv_source
-    state: 'front'
-card:
-  type: 'custom:button-card'
-  name: Plug Device into front HDMI on Sony Receiver
+type: 'custom:button-card'
+template: intercontainer
+name: Xbox
+custom_fields:
+  buttons:
+    card:
+      type: 'custom:button-card'
+      name: Plug Device into front HDMI on Sony Receiver

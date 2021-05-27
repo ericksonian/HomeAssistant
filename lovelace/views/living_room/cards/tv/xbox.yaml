@@ -1,156 +1,157 @@
-type: conditional
-conditions:
-  - entity: input_select.living_tv_source
-    state: 'xbox'
-card:
-  type: vertical-stack
-  cards:
-    - type: 'custom:mini-media-player'
-      entity: media_player.XBOX
-      icon: 'mdi:microsoft-xbox'
-      artwork: cover
-      group: false
-      hide:
-        controls: true
-        icon: true
-        name: true
-        power: true
-        source: true
-        volume: true
-      style: |
-        ha-card {
-          border-radius: 15px;
-        }
-    - type: horizontal-stack
+type: 'custom:button-card'
+template: intercontainer
+name: Xbox
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
       cards:
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_y
-          icon: 'mdi:alpha-y-circle-outline'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(236,219,51)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(236,219,51)'
-          tap_action:
-            action: call-service
-            service: script.xbox_y
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_up
-          icon: 'mdi:arrow-up'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: script.xbox_up
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_home
+        - type: 'custom:mini-media-player'
+          entity: media_player.XBOX
           icon: 'mdi:microsoft-xbox'
-          show_name: false
-          show_state: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(155,155,155)'
-          tap_action:
-            action: call-service
-            service: script.xbox_home
-    - type: horizontal-stack
-      cards:
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_left
-          icon: 'mdi:arrow-left'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: script.xbox_left
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_a
-          icon: 'mdi:alpha-a-circle-outline'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(60,219,78)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(60,219,78)'
-          tap_action:
-            action: call-service
-            service: script.xbox_a
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_right
-          icon: 'mdi:arrow-right'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: script.xbox_right
-    - type: horizontal-stack
-      cards:
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_x
-          icon: 'mdi:alpha-x-circle-outline'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(64,204,208)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(64,204,208)'
-          tap_action:
-            action: call-service
-            service: script.xbox_x
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_down
-          icon: 'mdi:arrow-down'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(255,255,255)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: script.xbox_down
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.xbox_b
-          icon: 'mdi:alpha-b-circle-outline'
-          show_name: false
-          styles:
-            card:
-              - '--mdc-ripple-color': 'rgb(208,66,66)'
-              - '--mdc-ripple-press-opacity': 0.5
-            icon:
-              - color: 'rgb(208,66,66)'
-          tap_action:
-            action: call-service
-            service: script.xbox_b
+          artwork: cover
+          group: false
+          hide:
+            controls: true
+            icon: true
+            name: true
+            power: true
+            source: true
+            volume: true
+          style: |
+            ha-card {
+              border-radius: 15px;
+            }
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_y
+              icon: 'mdi:alpha-y-circle-outline'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(236,219,51)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(236,219,51)'
+              tap_action:
+                action: call-service
+                service: script.xbox_y
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_up
+              icon: 'mdi:arrow-up'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.xbox_up
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_home
+              icon: 'mdi:microsoft-xbox'
+              show_name: false
+              show_state: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(155,155,155)'
+              tap_action:
+                action: call-service
+                service: script.xbox_home
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_left
+              icon: 'mdi:arrow-left'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.xbox_left
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_a
+              icon: 'mdi:alpha-a-circle-outline'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(60,219,78)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(60,219,78)'
+              tap_action:
+                action: call-service
+                service: script.xbox_a
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_right
+              icon: 'mdi:arrow-right'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.xbox_right
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_x
+              icon: 'mdi:alpha-x-circle-outline'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(64,204,208)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(64,204,208)'
+              tap_action:
+                action: call-service
+                service: script.xbox_x
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_down
+              icon: 'mdi:arrow-down'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.xbox_down
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.xbox_b
+              icon: 'mdi:alpha-b-circle-outline'
+              show_name: false
+              styles:
+                card:
+                  - '--mdc-ripple-color': 'rgb(208,66,66)'
+                  - '--mdc-ripple-press-opacity': 0.5
+                icon:
+                  - color: 'rgb(208,66,66)'
+              tap_action:
+                action: call-service
+                service: script.xbox_b
