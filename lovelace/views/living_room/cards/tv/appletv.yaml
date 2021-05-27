@@ -34,7 +34,12 @@ card:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.appletv_left
+          - service: remote.send_command
+            service_data:
+              entity_id: remote.lounge_appletv
+              data:
+                command:
+                  - left
         - type: 'custom:button-card'
           entity: script.appletv_up
           icon: 'mdi:arrow-up'
