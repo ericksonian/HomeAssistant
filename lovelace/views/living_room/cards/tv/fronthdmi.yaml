@@ -1,8 +1,2 @@
 type: 'custom:button-card'
-template: intercontainer
-name: Xbox
-custom_fields:
-  buttons:
-    card:
-      type: 'custom:button-card'
-      name: Plug Device into front HDMI on Sony Receiver
+name: Plug Device into front HDMI on Sony Receiver

@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: intercontainer
-name: Xbox
+name: Chromecast
 custom_fields:
   buttons:
     card:
