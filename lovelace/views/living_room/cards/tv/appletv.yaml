@@ -9,8 +9,8 @@ card:
       cards:
         - type: 'custom:button-card'
           template: standard
-          entity: script.appletv_left
-          icon: 'mdi:television-box'
+          entity: input_select.living_tv_source
+          icon: 'mdi:none'
           show_name: false
           size: 100%
           styles:
@@ -19,11 +19,7 @@ card:
             icon:
               - color: 'rgb(155,155,155)'
           tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.appletv_living_room
-              command: home
+            action: none
         - type: 'custom:button-card'
           template: standard
           entity: script.appletv_up
