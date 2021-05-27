@@ -1,5 +1,5 @@
 type: 'custom:button-card'
-template: container_2
+template: intercontainer
 name: Apple TV
 custom_fields:
   buttons:
@@ -17,8 +17,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(155,155,155)'
               tap_action:
                 action: none
             - type: 'custom:button-card'
@@ -29,8 +27,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(255,255,255)'
               tap_action:
                 action: call-service
                 service: remote.send_command
@@ -45,8 +41,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(155,155,155)'
               tap_action:
                 action: call-service
                 service: remote.send_command
@@ -63,8 +57,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(255,255,255)'
               tap_action:
                 action: call-service
                 service: remote.send_command
@@ -79,8 +71,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(155,155,155)'
               tap_action:
                 action: call-service
                 service: remote.send_command
@@ -95,8 +85,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(255,255,255)'
               tap_action:
                 action: call-service
                 service: remote.send_command
@@ -113,8 +101,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(155,155,155)'
               tap_action:
                 action: call-service
                 service: script.appletv_play_pause
@@ -126,8 +112,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(255,255,255)'
               tap_action:
                 action: call-service
                 service: remote.send_command
@@ -142,8 +126,6 @@ custom_fields:
               styles:
                 card:
                   - height: 65px
-                icon:
-                  - color: 'rgb(155,155,155)'
               tap_action:
                 action: call-service
                 service: remote.send_command
