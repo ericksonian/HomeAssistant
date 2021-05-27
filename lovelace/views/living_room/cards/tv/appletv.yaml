@@ -37,8 +37,7 @@ card:
             service: remote.send_command
             service_data:
               entity_id: remote.lounge_appletv
-              data:
-                command: left
+              command: left
         - type: 'custom:button-card'
           entity: script.appletv_up
           icon: 'mdi:arrow-up'
