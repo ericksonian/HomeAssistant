@@ -16,10 +16,7 @@
     event: sunset
   condition:
   - condition: state
-    entity_id: person.ian
-    state: 'not_home'
-  - condition: state
-    entity_id: person.sean
+    entity_id: group.all_persons
     state: 'not_home'
   action:
   - service: switch.turn_on
@@ -33,10 +30,7 @@
     offset: "+01:00:00"
   condition:
   - condition: state
-    entity_id: person.ian
-    state: 'not_home'
-  - condition: state
-    entity_id: person.sean
+    entity_id: group.all_persons
     state: 'not_home'
   action:
   - service: switch.turn_on
@@ -50,10 +44,7 @@
     offset: "+02:00:00"
   condition:
   - condition: state
-    entity_id: person.ian
-    state: 'not_home'
-  - condition: state
-    entity_id: person.sean
+    entity_id: group.all_persons
     state: 'not_home'
   action:
   - service: switch.turn_on
@@ -67,10 +58,7 @@
     offset: "+03:00:00"
   condition:
   - condition: state
-    entity_id: person.ian
-    state: 'not_home'
-  - condition: state
-    entity_id: person.sean
+    entity_id: group.all_persons
     state: 'not_home'
   action:
   - service: switch.turn_on
@@ -84,10 +72,7 @@
     offset: "+04:00:00"
   condition:
   - condition: state
-    entity_id: person.ian
-    state: 'not_home'
-  - condition: state
-    entity_id: person.sean
+    entity_id: group.all_persons
     state: 'not_home'
   action:
   - service: switch.turn_on
@@ -101,10 +86,7 @@
     offset: "+05:00:00"
   condition:
   - condition: state
-    entity_id: person.ian
-    state: 'not_home'
-  - condition: state
-    entity_id: person.sean
+    entity_id: group.all_persons
     state: 'not_home'
   action:
   - service: switch.turn_on

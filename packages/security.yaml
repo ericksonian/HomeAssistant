@@ -59,7 +59,7 @@ group:
   name: All Persons
   entities:
   - person.ian
-  - person.sean
+  - person.kalene
 
 ###### AUTOMATIONS --------------------------------------
 automation:
@@ -176,4 +176,3 @@ script:
               category: front_door_unlocked
             attachment:
               url: !secret snapshot_frontdoor
-
