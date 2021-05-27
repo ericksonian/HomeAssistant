@@ -24,6 +24,32 @@ container:
         - background-color: 'rgba(0,0,0,0.3)'
         - margin: 0
         - padding: 0.3em
+container_2:
+  color_type: label-card
+  color: 'rgb(30,30,30)'
+#  style: |
+#    ha-card {
+#      border-radius: 15px;
+#      font-variant: small-caps;
+#    }
+  styles:
+    card:
+      - padding: 0
+      - border-radius: 1em 1em 1em 1em
+    name:
+      - border-radius: 0.4em 0.4em 0 0
+      - padding: 0.1em
+      - width: 100%
+      - font-weight: bold
+    grid:
+      - grid-template-areas: '"i" "n" "buttons"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: 1fr min-content min-content
+    custom_fields:
+      buttons:
+        - background-color: 'rgba(0,0,0,0.3)'
+        - margin: 0
+        - padding: 0.3em
 standard:
   color_type: card
   color: 'rgb(0,0,0)'

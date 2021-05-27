@@ -1,5 +1,5 @@
 type: 'custom:button-card'
-template: container
+template: container_2
 name: Apple TV
 custom_fields:
   buttons:
