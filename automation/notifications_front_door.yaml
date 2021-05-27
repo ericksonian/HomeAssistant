@@ -24,15 +24,6 @@
           category: front_door_unlocked
         attachment:
           url: !secret snapshot_frontdoor
-  - service: !secret notify_sean
-    data:
-      title: Front Door Unlocked
-      message: Nobody has been home for 10 minutes
-      data:
-        push:
-          category: front_door_unlocked
-        attachment:
-          url: !secret snapshot_frontdoor
 
 # Nobody Home - Front Unlocked for 30 Minutes
 - alias: Front Door Unlocked Vacant 30
@@ -54,15 +45,6 @@
       entity_id: camera.frontdoor
       filename: '/config/www/front_door.jpg'
   - service: !secret notify_ian
-    data:
-      title: Front Door Automatically Locked at {{ now().strftime('%H:%M') }}
-      message: Nobody has been home for 30 minutes
-      data:
-        push:
-          category: front_door_unlocked
-        attachment:
-          url: !secret snapshot_frontdoor
-  - service: !secret notify_sean
     data:
       title: Front Door Automatically Locked at {{ now().strftime('%H:%M') }}
       message: Nobody has been home for 30 minutes

@@ -98,15 +98,6 @@
           category: garage_open
         attachment:
           url: !secret snapshot_garage_open
-  - service: !secret notify_sean
-    data:
-      title: Garage Door Open for 10 Minutes
-      message: Nobody is Home
-      data:
-        push:
-          category: garage_open
-        attachment:
-          url: !secret snapshot_garage_open
 
 # Nobody Home - Garage Open for 20 Minutes
 - alias: Garage Open Vacant 20
@@ -128,15 +119,6 @@
       entity_id: camera.garage
       filename: '/config/www/garage_open.jpg'
   - service: !secret notify_ian
-    data:
-      title: Garage Door Open for 20 Minutes
-      message: Nobody is Home
-      data:
-        push:
-          category: garage_open
-        attachment:
-          url: !secret snapshot_garage_open
-  - service: !secret notify_sean
     data:
       title: Garage Door Open for 20 Minutes
       message: Nobody is Home
@@ -173,14 +155,6 @@
       message: Door has been open for 30 minutes and nobody is home
       data:
         subtitle: Closing Now  at {{ now().strftime('%H:%M') }}
-        attachment:
-          url: !secret snapshot_garage_open
-  - service: !secret notify_sean
-    data:
-      title: Garage Door
-      message: Door has been open for 30 minutes and nobody is home
-      data:
-        subtitle: Closing Now at {{ now().strftime('%H:%M') }}
         attachment:
           url: !secret snapshot_garage_open
 
@@ -270,19 +244,9 @@
           category: garage_open
         attachment:
           url: !secret snapshot_garage_open
-  - service: !secret notify_sean
-    data:
-      title: Garage Door
-      message: Ian is Home
-      data:
-        subtitle: Open for 30 Minutes
-        push:
-          category: garage_open
-        attachment:
-          url: !secret snapshot_garage_open
 
-# Sean Home - Garage Open for 10 Minutes
-- alias: Garage Open Sean 10
+# Kalene Home - Garage Open for 10 Minutes
+- alias: Garage Open kalene 10
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
@@ -293,14 +257,14 @@
     entity_id: input_boolean.notify_garage
     state: 'on'
   - condition: state
-    entity_id: person.sean
+    entity_id: person.kalene
     state: 'home'
   action:
   - service: camera.snapshot
     data:
       entity_id: camera.garage
       filename: '/config/www/garage_open.jpg'
-  - service: !secret notify_sean
+  - service: !secret notify_kalene
     data:
       title: Garage Door
       message: Open for 10 Minutes
@@ -310,7 +274,7 @@
         attachment:
           url: !secret snapshot_garage_open
 
-# Sean Home - Garage Open for 20 Minutes
+# Kalene Home - Garage Open for 20 Minutes
 - alias: Garage Open Sean 20
   trigger:
   - entity_id: sensor.garage_door_contact
@@ -322,14 +286,14 @@
     entity_id: input_boolean.notify_garage
     state: 'on'
   - condition: state
-    entity_id: person.sean
+    entity_id: person.kalene
     state: 'home'
   action:
   - service: camera.snapshot
     data:
       entity_id: camera.garage
       filename: '/config/www/garage_open.jpg'
-  - service: !secret notify_sean
+  - service: !secret notify_kalene
     data:
       title: Garage Door
       message: Open for 20 Minutes
@@ -339,8 +303,8 @@
         attachment:
           url: !secret snapshot_garage_open
 
-# Sean Home - Garage Open for 30 Minutes
-- alias: Garage Open Sean 30
+# Kalene Home - Garage Open for 30 Minutes
+- alias: Garage Open Kalene 30
   trigger:
   - entity_id: sensor.garage_door_contact
     platform: state
@@ -351,14 +315,14 @@
     entity_id: input_boolean.notify_garage
     state: 'on'
   - condition: state
-    entity_id: person.sean
+    entity_id: person.kalene
     state: 'home'
   action:
   - service: camera.snapshot
     data:
       entity_id: camera.garage
       filename: '/config/www/garage_open.jpg'
-  - service: !secret notify_sean
+  - service: !secret notify_kalene
     data:
       title: Garage Door
       message: Open for 30 Minutes
@@ -370,9 +334,9 @@
   - service: !secret notify_ian
     data:
       title: Garage Door
-      message: Sean is Home
+      message: Open for 30 Minutes
       data:
-        subtitle: Open for 30 Minutes
+        subtitle: Kalene is Home
         push:
           category: garage_open
         attachment:
