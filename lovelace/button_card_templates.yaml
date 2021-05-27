@@ -26,7 +26,7 @@ container:
         - padding: 0.3em
 intercontainer:
   color_type: label-card
-  color: 'rgb(40,40,40)'
+  color: 'rgb(45,45,45)'
 #  style: |
 #    ha-card {
 #      border-radius: 15px;
