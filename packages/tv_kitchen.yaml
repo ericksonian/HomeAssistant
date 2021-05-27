@@ -4,27 +4,27 @@
 
 # Chromecast
 
-#- alias: Living Bottom Cast Started
+#- alias: Kitchen Cast Started
 #  trigger:
 #  - platform: state
-#    entity_id: media_player.living_room_tv_2
+#    entity_id: media_player.kitchen_tv
 #    from: "off"
 #  condition:
 #  - condition: state
-#    entity_id: sensor.living_room_tv_2_cast_unavailable
+#    entity_id: sensor.kitchen_tv_cast_unavailable
 #    state: "false"
 #  action:
 #  - service: script.living_bottom_chromecast
 
-#- alias: Living Bottom Cast Ended
+#- alias: Kitchen Cast Ended
 #  trigger:
 #  - platform: state
-#    entity_id: media_player.living_room_tv_2
+#    entity_id: media_player.kitchen_tv
 #    to: "off"
 #    for: "00:30:00"
 #  condition:
 #  - condition: state
-#    entity_id: input_select.tv_living_bottom_source
+#    entity_id: input_select.tv_kitchen_source
 #    state: "chromecast"
 #  action:
 #  - service: script.living_bottom_off
@@ -34,8 +34,8 @@
 
 ### TV Tracking
 #input_select:
-#  tv_living_bottom_source:
-#    name: 'TV Living Bottom Source'
+#  tv_kitchen_source:
+#    name: 'TV Kitchen Source'
 #    options:
 #      - none
 #      - loading
@@ -53,13 +53,13 @@
 ###### SCRIPTS ------------------------------------------
 #script:
 
-### Living Bottom TV Macros
+### Kitchen TV Macros
 #  living_bottom_off:
 #    sequence:
 #      - service: script.vizio_power_off
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: none
 #      - service: script.tt_power_toggle
 #      - service: input_boolean.turn_off
@@ -70,7 +70,7 @@
 #      - service: script.turn_on
 #        data_template:
 #          entity_id: >
-#            {% if is_state("input_select.tv_living_bottom_source", "none") %}
+#            {% if is_state("input_select.tv_kitchen_source", "none") %}
 #              script.living_bottom_chromecast_from_off
 #            {% else %}
 #              script.living_bottom_chromecast_from_on
@@ -80,7 +80,7 @@
 #      - service: script.turn_on
 #        data_template:
 #          entity_id: >
-#            {% if is_state("input_select.tv_living_bottom_source", "none") %}
+#            {% if is_state("input_select.tv_kitchen_source", "none") %}
 #              script.living_bottom_receiver_from_off
 #            {% else %}
 #              script.living_bottom_receiver_from_on
@@ -89,7 +89,7 @@
 #    sequence:
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: loading
 #      - service: script.vizio_power_on
 #      - delay:
@@ -115,13 +115,13 @@
 #          entity_id: input_boolean.living_bottom_mute
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: chromecast
 #  living_bottom_chromecast_from_on:
 #    sequence:
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: loading
 #      - service: script.vizio_input_hdmi1
 #      - delay:
@@ -129,13 +129,13 @@
 #      - service: script.vizio_power_on
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: chromecast
 #  living_bottom_receiver_from_off:
 #    sequence:
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: loading
 #      - service: script.vizio_power_on
 #      - delay:
@@ -161,13 +161,13 @@
 #          entity_id: input_boolean.living_bottom_mute
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: receiver
 #  living_bottom_receiver_from_on:
 #    sequence:
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: loading
 #      - service: script.vizio_input_hdmi2
 #      - delay:
@@ -175,7 +175,7 @@
 #      - service: script.vizio_power_on
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.tv_living_bottom_source
+#          entity_id: input_select.tv_kitchen_source
 #          option: receiver
 #  living_bottom_volume_up:
 #    sequence:
@@ -201,10 +201,10 @@
 #sensor:
 #  - platform: template
 #    sensors:
-#      living_room_tv_2_cast_unavailable:
-#        friendly_name: "Living Room Bottom TV Cast Unavailable"
+#      kitchen_tv_cast_unavailable:
+#        friendly_name: "Kitchen TV Cast Unavailable"
 #        value_template: >-
-#          {% if is_state('media_player.living_room_tv_2', 'unavailable') %}
+#          {% if is_state('media_player.kitchen_tv', 'unavailable') %}
 #            true
 #          {% else %}
 #            false

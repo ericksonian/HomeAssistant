@@ -1,0 +1,9 @@
+type: conditional
+conditions:
+  - entity: media_player.rock_speakers
+    state_not: 'off'
+card:
+  artwork: cover
+  entity: media_player.rock_speakers
+  icon: 'mdi:cast'
+  type: 'custom:mini-media-player'

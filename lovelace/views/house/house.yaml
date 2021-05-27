@@ -8,7 +8,11 @@ cards:
     cards:
       - !include /config/lovelace/views/house/cards/lights_kitchen.yaml
       - !include /config/lovelace/views/house/cards/light_scenes_kitchen.yaml
-  - !include /config/lovelace/views/house/cards/lights_exterior.yaml
   - !include /config/lovelace/views/house/cards/speaker_groups/speaker_groups.yaml
+  - !include /config/lovelace/views/house/cards/kitchen_tv.yaml
+  - !include /config/lovelace/views/house/cards/kitchen_speaker.yaml
+  - !include /config/lovelace/views/house/cards/lights_exterior.yaml
+  - !include /config/lovelace/views/house/cards/garage_speaker.yaml
+  - !include /config/lovelace/views/house/cards/rock_speakers.yaml
   - !include /config/lovelace/views/house/cards/sprinklers.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
