@@ -36,7 +36,7 @@ card:
             action: call-service
             service: remote.send_command
             service_data:
-              entity_id: remote.lounge_appletv
+              entity_id: remote.appletv_living_room
               command: left
         - type: 'custom:button-card'
           entity: script.appletv_up
