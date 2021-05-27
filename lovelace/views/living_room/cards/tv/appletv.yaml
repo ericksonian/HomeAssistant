@@ -23,8 +23,9 @@ card:
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_left
-          icon: 'mdi:rewind'
+          icon: 'mdi:television-box'
           show_name: false
           size: 100%
           styles:
@@ -37,8 +38,9 @@ card:
             service: remote.send_command
             service_data:
               entity_id: remote.appletv_living_room
-              command: left
+              command: home
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_up
           icon: 'mdi:arrow-up'
           show_name: false
@@ -49,10 +51,14 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.appletv_up
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: up
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_right
-          icon: 'mdi:fast-forward'
+          icon: 'mdi:television-guide'
           show_name: false
           styles:
             card:
@@ -61,10 +67,14 @@ card:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.appletv_right
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: top_menu
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_left
           icon: 'mdi:arrow-left'
           show_name: false
@@ -75,8 +85,12 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.appletv_left
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: left
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_select
           icon: 'mdi:select'
           show_name: false
@@ -87,8 +101,12 @@ card:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.appletv_select
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: select
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_right
           icon: 'mdi:arrow-right'
           show_name: false
@@ -99,10 +117,14 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.appletv_right
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: right
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_play_pause
           icon: 'mdi:play-pause'
           show_name: false
@@ -115,6 +137,7 @@ card:
             action: call-service
             service: script.appletv_play_pause
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_down
           icon: 'mdi:arrow-down'
           show_name: false
@@ -125,10 +148,14 @@ card:
               - color: 'rgb(255,255,255)'
           tap_action:
             action: call-service
-            service: script.appletv_down
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: down
         - type: 'custom:button-card'
+          template: standard
           entity: script.appletv_menu
-          icon: 'mdi:menu'
+          icon: 'mdi:arrow-left-top'
           show_name: false
           styles:
             card:
@@ -137,4 +164,7 @@ card:
               - color: 'rgb(155,155,155)'
           tap_action:
             action: call-service
-            service: script.appletv_menu
+            service: remote.send_command
+            service_data:
+              entity_id: remote.appletv_living_room
+              command: menu
