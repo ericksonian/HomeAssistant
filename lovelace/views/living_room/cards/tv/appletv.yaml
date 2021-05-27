@@ -5,21 +5,6 @@ conditions:
 card:
   type: vertical-stack
   cards:
-    - type: 'custom:mini-media-player'
-      artwork: cover
-      entity: media_player.living_room_appletv
-      group: false
-      hide:
-        power: true
-        controls: true
-        source: true
-        volume: true
-        play_pause: true
-      icon: 'mdi:apple'
-      style: |
-        ha-card {
-          border-radius: 15px;
-        }
     - type: horizontal-stack
       cards:
         - type: 'custom:button-card'
@@ -155,7 +140,7 @@ card:
         - type: 'custom:button-card'
           template: standard
           entity: script.appletv_menu
-          icon: 'mdi:arrow-left-top'
+          icon: 'mdi:undo'
           show_name: false
           styles:
             card:
