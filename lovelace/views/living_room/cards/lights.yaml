@@ -17,6 +17,18 @@ custom_fields:
           state:
             - color: 'rgb(255,255,1)'
               value: 'on'
+          tap_action:
+            action: call-service
+            service: browser_mod.popup
+            data:
+              title: Popup example
+              card:
+                type: entities
+                entities:
+                  - light.living_room_stairs
+                  - light.living_room_main
+              deviceID:
+                - this
         - entity: light.living_room_main
           name: Ceiling
           template: standard
