@@ -48,7 +48,7 @@ popup_cards:
     card:
       type: custom:light-popup-card
       entity: light.living_room_stairs
-      icon: mdi:led-strip
+      icon: mdi:globe-light
       actionsInARow: 2
       brightnessWidth: 150px
       brightnessHeight: 400px
