@@ -44,6 +44,10 @@ lovelace:
       type: module
     - url: /local/custom-card/slider-entity-row.js
       type: module
+    - url: /local/light-popup-card.js
+      type: module
+    - url: /browser_mod.js
+      type: module
 browser_mod:
   devices:
     0bbbce34_b9969be5:
