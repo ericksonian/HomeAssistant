@@ -20,6 +20,14 @@ custom_fields:
           tap_action:
             action: call-service
             service: browser_mod.popup
+            data:
+              title: Popup example
+              card:
+                type: custom:light-popup-card
+                entity: light.living_room_stairs
+#              deviceID:
+#                - this
+            service: browser_mod.popup
             service_data:
               title: ‘ ‘
               card:
