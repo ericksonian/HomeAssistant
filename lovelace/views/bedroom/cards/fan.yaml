@@ -22,6 +22,7 @@ custom_fields:
                   value: 'low'
                   name: 'Turn Off'
                   icon: 'mdi:power'
+                  spin: true
               tap_action:
                 action: call-service
                 service: script.fan_toggle_master_low
