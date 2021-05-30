@@ -55,13 +55,13 @@ popup_cards:
       switchWidth: 150px
       switchHeight: 400px
       actions:
-        - action:call-service
+        - action: call-service
           service: scene.turn_on
           service_data:
             entity_id: scene.ontspannen
           color: "#FDCA64"
           name: Scene 1
-        - action:call-service
+        - action: call-service
           service: scene.turn_on
           service_data:
             entity_id: scene.helder
