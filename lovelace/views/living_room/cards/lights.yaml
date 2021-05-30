@@ -20,16 +20,17 @@ custom_fields:
           tap_action:
             action: call-service
             service: browser_mod.popup
-            data:
-              title: Popup example
-              card:
-                type: entities
-                entities:
-                  - light.living_room_stairs
-                  - light.living_room_main
-              deviceID:
-                - this
-                - dashboard
+            service_data:
+              data:
+                title: Popup example
+                card:
+                  type: entities
+                  entities:
+                    - light.living_room_stairs
+                    - light.living_room_main
+                deviceID:
+                  - this
+                  - dashboard
         - entity: light.living_room_main
           name: Ceiling
           template: standard
