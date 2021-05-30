@@ -48,10 +48,11 @@ lovelace:
 #      type: module
 #    - url: /browser_mod.js
 #      type: module
-browser_mod:
-  devices:
-    0bbbce34_b9969be5:
-      name: Ians Macbook Air
+#browser_mod:
+#  devices:
+#    0bbbce34_b9969be5:
+#      name: Ians Macbook Air
+
 # Wyze Sense
 binary_sensor:
   - platform: wyzesense
