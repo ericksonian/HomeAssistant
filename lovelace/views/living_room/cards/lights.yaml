@@ -24,17 +24,7 @@ custom_fields:
               title: Popup example
               card:
                 type: custom:light-popup-card
-                entity: light.beganegrond
-                settings:
-                  openButton: Instellingen
-                  closeButton: Sluiten
-                settingsCard:
-                  type: entities
-                  cardOptions:
-                    entities:
-                      - light.living_room_stairs
-                  cardStyle: |
-                    background-color:#FFF;
+                entity: light_stairs
             service: browser_mod.popup
             service_data:
               title: ‘ ‘
