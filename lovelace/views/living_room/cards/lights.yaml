@@ -25,12 +25,6 @@ custom_fields:
               card:
                 type: custom:light-popup-card
                 entity: light_stairs
-            service: browser_mod.popup
-            service_data:
-              title: ‘ ‘
-              card:
-                type: custom:light-popup-card
-                entity: light.living_room_stairs
         - entity: light.living_room_main
           name: Ceiling
           template: standard
