@@ -28,9 +28,9 @@ custom_fields:
                   entities:
                     - light.living_room_stairs
                     - light.living_room_main
-                deviceID:
-                  - this
-                  - dashboard
+#                deviceID:
+#                  - this
+#                  - dashboard
         - entity: light.living_room_main
           name: Ceiling
           template: standard
