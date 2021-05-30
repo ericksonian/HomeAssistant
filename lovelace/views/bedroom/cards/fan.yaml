@@ -21,7 +21,7 @@ custom_fields:
                 - color: 'rgb(0,204,52)'
                   value: 'low'
                   name: 'Turn Off'
-                  icon: 'mdi:power'
+                  icon: 'mdi:fan'
                   spin: true
               tap_action:
                 action: call-service
@@ -41,7 +41,8 @@ custom_fields:
                 - color: 'rgb(255,255,1)'
                   value: 'medium'
                   name: 'Turn Off'
-                  icon: 'mdi:power'
+                  icon: 'mdi:fan'
+                  spin: true
               tap_action:
                 action: call-service
                 service: script.fan_toggle_master_medium
@@ -62,7 +63,8 @@ custom_fields:
                 - color: 'rgb(255,142,2)'
                   value: 'medium_high'
                   name: 'Turn Off'
-                  icon: 'mdi:power'
+                  icon: 'mdi:fan'
+                  spin: true
               tap_action:
                 action: call-service
                 service: script.fan_toggle_master_medium_high
@@ -81,7 +83,8 @@ custom_fields:
                 - color: 'rgb(255,28,1)'
                   value: 'high'
                   name: 'Turn Off'
-                  icon: 'mdi:power'
+                  icon: 'mdi:fan'
+                  spin: true
               tap_action:
                 action: call-service
                 service: script.fan_toggle_master_high
