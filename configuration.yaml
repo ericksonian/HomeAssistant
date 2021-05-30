@@ -45,7 +45,9 @@ lovelace:
     - url: /local/custom-card/slider-entity-row.js
       type: module
 browser_mod:
-
+  devices:
+    0bbbce34_b9969be5:
+      name: Ians Macbook Air
 # Wyze Sense
 binary_sensor:
   - platform: wyzesense
