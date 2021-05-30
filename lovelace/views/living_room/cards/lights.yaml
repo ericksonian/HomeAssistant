@@ -29,6 +29,7 @@ custom_fields:
                   - light.living_room_main
               deviceID:
                 - this
+                - dashboard
         - entity: light.living_room_main
           name: Ceiling
           template: standard
