@@ -10,4 +10,9 @@ cards:
   - !include /config/lovelace/views/living_room/cards/lights.yaml
   - !include /config/lovelace/views/living_room/cards/tv/tv.yaml
   - !include /config/lovelace/views/living_room/cards/powder_bath_speaker.yaml
+  - entity: light.living_room_stairs
+    name: Stairs
+    template: standard
+    icon: 'mdi:globe-light'
+    type: 'custom:light-popup-card'
   - !include /config/lovelace/cards_shared/footer.yaml

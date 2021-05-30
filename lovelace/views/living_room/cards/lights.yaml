@@ -10,17 +10,6 @@ custom_fields:
           name: Stairs
           template: standard
           icon: 'mdi:globe-light'
-          type: 'custom:light-popup-card'
-          styles:
-            card:
-              - height: 70px
-          state:
-            - color: 'rgb(255,255,1)'
-              value: 'on'
-        - entity: light.living_room_stairs
-          name: Stairs
-          template: standard
-          icon: 'mdi:globe-light'
           type: 'custom:button-card'
           styles:
             card:
