@@ -17,9 +17,14 @@ custom_fields:
           state:
             - color: 'rgb(255,255,1)'
               value: 'on'
-#          tap_action:
-#            action: navigate
-#            navigation_path: /lovelace/light_stairs
+          tap_action:
+            action: call-service
+            service: browser_mod.popup
+            service_data:
+              title: ‘ ‘
+              card:
+                type: custom:light-popup-card
+                entity: light.living_room_stairs
         - entity: light.living_room_main
           name: Ceiling
           template: standard
