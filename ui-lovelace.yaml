@@ -8,10 +8,6 @@ resources:
     type: module
   - url: /local/custom-card/slider-entity-row.js
     type: module
-#  - url: /local/custom-card/light-popup-card.js
-#    type: module
-#  - url: /browser_mod.js
-#    type: module
 button_card_templates:
   !include /config/lovelace/button_card_templates.yaml
 views:
