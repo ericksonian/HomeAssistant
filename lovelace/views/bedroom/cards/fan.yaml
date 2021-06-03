@@ -54,7 +54,7 @@ custom_fields:
               template: standard
               entity: sensor.master_bedroom_fan_speed
               icon: 'mdi:speedometer-medium'
-              name: Med Hi
+              name: 'Med-High'
               styles:
                 card:
                   - '--mdc-ripple-color': 'rgb(255,142,2)'
