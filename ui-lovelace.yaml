@@ -1,15 +1,15 @@
 title: Utopia
-resources:
-  - url: /local/custom-card/button-card.js
-    type: module
-  - url: /local/custom-card/card-mod.js
-    type: module
-  - url: /local/custom-card/mini-graph-card-bundle.js?v=0.9.4
-    type: module
-  - url: /local/custom-card/mini-media-player-bundle.js?v=1.9.1
-    type: module
-  - url: /local/custom-card/slider-entity-row.js
-    type: module
+#resources:
+#  - url: /local/custom-card/button-card.js
+#    type: module
+#  - url: /local/custom-card/card-mod.js
+#    type: module
+#  - url: /local/custom-card/mini-graph-card-bundle.js?v=0.9.4
+#    type: module
+#  - url: /local/custom-card/mini-media-player-bundle.js?v=1.9.1
+#    type: module
+#  - url: /local/custom-card/slider-entity-row.js
+#    type: module
 button_card_templates:
   !include /config/lovelace/button_card_templates.yaml
 views:
