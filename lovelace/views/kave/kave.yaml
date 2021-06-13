@@ -1,0 +1,6 @@
+title: Office
+icon: 'mdi:desktop-mac-dashboard'
+badges: []
+cards:
+  - !include /config/lovelace/views/kave/cards/fan.yaml
+  - !include /config/lovelace/cards_shared/footer.yaml
