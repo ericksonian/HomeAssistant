@@ -11,7 +11,7 @@ card:
   cards:
     - type: 'custom:button-card'
       color_type: label-card
-      name: Nothing Playing in Theater
+      name: Nothing Playing
       color: 'rgb(50, 50, 50)'
       styles:
         card:

@@ -1,6 +1,7 @@
 title: Office
-icon: 'mdi:desktop-mac-dashboard'
+icon: 'mdi:motorbike-electric'
 badges: []
 cards:
+  - !include /config/lovelace/views/kave/cards/title_card.yaml
   - !include /config/lovelace/views/kave/cards/fan.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
