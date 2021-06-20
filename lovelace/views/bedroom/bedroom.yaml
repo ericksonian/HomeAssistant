@@ -3,6 +3,7 @@ icon: 'mdi:bed-king'
 panel: false
 badges: []
 cards:
+- !include /config/lovelace/views/bedroom/cards/title_card.yaml
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/bedroom/cards/shades.yaml
@@ -29,7 +30,6 @@ cards:
         state: 'off'
     card:
       !include /config/lovelace/views/bedroom/cards/nothing_playing.yaml
-
   - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv.yaml
   - !include /config/lovelace/views/bedroom/cards/master_speaker_group.yaml
   - !include /config/lovelace/views/bedroom/cards/bedroom_speaker.yaml

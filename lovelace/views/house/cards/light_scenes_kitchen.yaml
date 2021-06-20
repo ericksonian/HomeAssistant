@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Kitchen Scenes
+name: Scenes
 custom_fields:
   buttons:
     card:

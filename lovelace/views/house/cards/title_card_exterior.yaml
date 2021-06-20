@@ -1,0 +1,11 @@
+type: 'custom:button-card'
+color_type: label-card
+name: Exterior
+color: 'rgb(30,30,30)'
+styles:
+  card:
+    - height: 40px
+style: |
+  ha-card {
+    border-radius: 10px;
+  }

@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Exterior Lights
+name: Lights
 custom_fields:
   buttons:
     card:
