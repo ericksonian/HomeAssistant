@@ -3,7 +3,7 @@ icon: 'mdi:television'
 panel: false
 badges: []
 cards:
-- !include /config/lovelace/views/living_room/cards/title_card.yaml
+  - !include /config/lovelace/views/living_room/cards/title_card.yaml
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/living_room/cards/fan.yaml
