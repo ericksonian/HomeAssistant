@@ -9,9 +9,6 @@
       state: on
     light.kitchen_cabinets:
       state: on
-    light.kitchen_dining_pendant:
-      state: on
-      brightness: 242
 
 #   Kitchen Entertain
 - name: Kitchen Entertain
@@ -24,9 +21,6 @@
       brightness: 102
     light.kitchen_cabinets:
       state: off
-    light.kitchen_dining_pendant:
-      state: on
-      brightness: 186
 
 
 #   Kitchen Relax
@@ -39,8 +33,6 @@
     light.kitchen_cabinets:
       state: on
       brightness: 191
-    light.kitchen_dining_pendant:
-      state: off
 
 #   Kitchen All Off
 - name: Kitchen All Off
@@ -50,6 +42,4 @@
     light.kitchen_sink:
       state: off
     light.kitchen_cabinets:
-      state: off
-    light.kitchen_dining_pendant:
       state: off
