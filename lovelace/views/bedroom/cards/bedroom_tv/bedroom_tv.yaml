@@ -16,6 +16,5 @@ custom_fields:
     card:
       type: vertical-stack
       cards:
-        - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_power.yaml
         - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_remote.yaml
         - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_sleep.yaml
