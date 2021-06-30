@@ -16,9 +16,7 @@ cards:
               size: 100%
               styles:
                 card:
-                  - height: 65px
-                icon:
-                  - color: 'rgb(28,28,28)'
+                  - height: 70px
               tap_action:
                 action: call-service
                 service: script.master_soundbar_woofer_up
@@ -30,9 +28,7 @@ cards:
               size: 100%
               styles:
                 card:
-                  - height: 65px
-                icon:
-                  - color: 'rgb(28,28,28)'
+                  - height: 70px
               tap_action:
                 action: call-service
                 service: script.master_soundbar_woofer_down
@@ -46,9 +42,7 @@ cards:
         size: 100%
         styles:
           card:
-            - height: 65px
-          icon:
-            - color: 'rgb(28,28,28)'
+            - height: 70px
         tap_action:
           action: call-service
           service: script.master_tv_picture
@@ -60,9 +54,7 @@ cards:
         size: 100%
         styles:
           card:
-            - height: 65px
-          icon:
-            - color: 'rgb(28,28,28)'
+            - height: 70px
         tap_action:
           action: call-service
           service: script.master_soundbar_volume_mute
@@ -74,9 +66,7 @@ cards:
         size: 100%
         styles:
           card:
-            - height: 65px
-          icon:
-            - color: 'rgb(28,28,28)'
+            - height: 70px
         tap_action:
           action: call-service
           service: input_boolean.toggle
@@ -89,7 +79,7 @@ cards:
             value: 'active'
   - type: 'custom:button-card'
     template: intercontainer
-    name: Woofer
+    name: Volume
     custom_fields:
       buttons:
         card:
@@ -103,9 +93,7 @@ cards:
               size: 100%
               styles:
                 card:
-                  - height: 65px
-                icon:
-                  - color: 'rgb(28,28,28)'
+                  - height: 70px
               tap_action:
                 action: call-service
                 service: script.master_soundbar_volume_up_3
@@ -117,9 +105,7 @@ cards:
               size: 100%
               styles:
                 card:
-                  - height: 65px
-                icon:
-                  - color: 'rgb(28,28,28)'
+                  - height: 70px
               tap_action:
                 action: call-service
                 service: script.master_soundbar_volume_down_3

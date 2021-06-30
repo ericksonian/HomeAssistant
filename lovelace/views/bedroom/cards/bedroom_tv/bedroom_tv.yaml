@@ -9,7 +9,7 @@
 #      !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_remote.yaml
 
 type: 'custom:button-card'
-template: intercontainer
+template: container
 name: Bedroom TV
 custom_fields:
   buttons:

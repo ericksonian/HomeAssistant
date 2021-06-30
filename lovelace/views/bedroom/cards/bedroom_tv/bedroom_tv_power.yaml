@@ -1,11 +1,10 @@
 type: 'custom:button-card'
-entity: media_player.bedroom_tv
+entity: script.master_tv_power
 icon: 'mdi:power'
 show_name: false
 styles:
   card:
-    - height: 60px
-      width: 60px
+    - height: 75px
   icon:
     - color: 'rgb(255,0,0)'
 tap_action:
