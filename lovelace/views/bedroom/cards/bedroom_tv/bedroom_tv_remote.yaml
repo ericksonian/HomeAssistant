@@ -34,18 +34,18 @@ cards:
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_woofer_down
-    - type: 'custom:button-card'
-      template: standard
-      entity: script.master_tv_picture
-      icon: 'mdi:television'
-      show_name: false
-      size: 100%
-      styles:
-        card:
-          - height: 70px
-      tap_action:
-        action: call-service
-        service: script.master_tv_picture
+      - type: 'custom:button-card'
+        template: standard
+        entity: script.master_tv_picture
+        icon: 'mdi:television'
+        show_name: false
+        size: 100%
+        styles:
+          card:
+            - height: 70px
+        tap_action:
+          action: call-service
+          service: script.master_tv_picture
   - type: vertical-stack
     cards:
       - type: 'custom:button-card'
