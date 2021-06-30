@@ -55,7 +55,7 @@ cards:
         show_name: false
         styles:
           card:
-            - height: 95px
+            - height: 100px
           icon:
             - color: 'rgb(255,0,0)'
         tap_action:
@@ -71,7 +71,7 @@ cards:
         size: 100%
         styles:
           card:
-            - height: 95px
+            - height: 80px
         tap_action:
           action: call-service
           service: input_boolean.toggle
@@ -100,7 +100,7 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 62px
+                      - height: 60px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_volume_up_3
@@ -112,7 +112,7 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 62px
+                      - height: 60px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_volume_down_3
@@ -124,7 +124,7 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 62px
+                      - height: 60px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_volume_mute
