@@ -18,7 +18,7 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 70px
+                      - height: 60px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_woofer_up
@@ -30,7 +30,7 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 70px
+                      - height: 60px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_woofer_down
@@ -42,7 +42,7 @@ cards:
         size: 100%
         styles:
           card:
-            - height: 70px
+            - height: 60px
         tap_action:
           action: call-service
           service: script.master_tv_picture
@@ -55,7 +55,7 @@ cards:
         show_name: false
         styles:
           card:
-            - height: 75px
+            - height: 95px
           icon:
             - color: 'rgb(255,0,0)'
         tap_action:
@@ -71,7 +71,7 @@ cards:
         size: 100%
         styles:
           card:
-            - height: 75px
+            - height: 95px
         tap_action:
           action: call-service
           service: input_boolean.toggle
@@ -100,7 +100,7 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 70px
+                      - height: 62px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_volume_up_3
@@ -112,19 +112,19 @@ cards:
                   size: 100%
                   styles:
                     card:
-                      - height: 70px
+                      - height: 62px
                   tap_action:
                     action: call-service
                     service: script.master_soundbar_volume_down_3
-      - type: 'custom:button-card'
-        template: standard
-        entity: script.master_soundbar_volume_mute
-        icon: 'mdi:volume-mute'
-        show_name: false
-        size: 100%
-        styles:
-          card:
-            - height: 70px
-        tap_action:
-          action: call-service
-          service: script.master_soundbar_volume_mute
+                - type: 'custom:button-card'
+                  template: standard
+                  entity: script.master_soundbar_volume_mute
+                  icon: 'mdi:volume-mute'
+                  show_name: false
+                  size: 100%
+                  styles:
+                    card:
+                      - height: 62px
+                  tap_action:
+                    action: call-service
+                    service: script.master_soundbar_volume_mute
