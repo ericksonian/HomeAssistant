@@ -1,45 +1,82 @@
 type: horizontal-stack
 cards:
+  - type: 'custom:button-card'
+    template: intercontainer
+    name: Woofer
+    custom_fields:
+      buttons:
+        card:
+          type: vertical-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.master_soundbar_woofer_up
+              icon: 'mdi:arrow-up'
+              show_name: false
+              size: 100%
+              styles:
+                card:
+                  - height: 65px
+                icon:
+                  - color: 'rgb(28,28,28)'
+              tap_action:
+                action: call-service
+                service: script.master_soundbar_woofer_up
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.master_soundbar_woofer_down
+              icon: 'mdi:arrow-down'
+              show_name: false
+              size: 100%
+              styles:
+                card:
+                  - height: 65px
+                icon:
+                  - color: 'rgb(28,28,28)'
+              tap_action:
+                action: call-service
+                service: script.master_soundbar_woofer_down
   - type: vertical-stack
     cards:
       - type: 'custom:button-card'
-        color: 'rgb(20,20,20)'
-        color_type: label-card
-        name: Woofer
-      - type: entity-button
-        entity: script.master_soundbar_woofer_up
-        icon: 'mdi:arrow-up'
-        show_name: false
-        tap_action:
-          action: call-service
-          service: script.master_soundbar_woofer_up
-      - type: entity-button
-        entity: script.master_soundbar_woofer_down
-        icon: 'mdi:arrow-down'
-        show_name: false
-        tap_action:
-          action: call-service
-          service: script.master_soundbar_woofer_down
-  - type: vertical-stack
-    cards:
-      - type: entity-button
+        template: standard
         entity: script.master_tv_picture
         icon: 'mdi:television'
         show_name: false
+        size: 100%
+        styles:
+          card:
+            - height: 65px
+          icon:
+            - color: 'rgb(28,28,28)'
         tap_action:
           action: call-service
           service: script.master_tv_picture
-      - type: entity-button
+      - type: 'custom:button-card'
+        template: standard
         entity: script.master_soundbar_volume_mute
         icon: 'mdi:volume-mute'
         show_name: false
+        size: 100%
+        styles:
+          card:
+            - height: 65px
+          icon:
+            - color: 'rgb(28,28,28)'
         tap_action:
           action: call-service
           service: script.master_soundbar_volume_mute
       - type: 'custom:button-card'
+        template: standard
         entity: timer.master_tv_sleep
         icon: 'mdi:sleep'
         show_name: false
+        size: 100%
+        styles:
+          card:
+            - height: 65px
+          icon:
+            - color: 'rgb(28,28,28)'
         tap_action:
           action: call-service
           service: input_boolean.toggle
@@ -50,23 +87,39 @@ cards:
         state:
           - color: 'rgb(72,178,230)'
             value: 'active'
-  - type: vertical-stack
-    cards:
-      - type: 'custom:button-card'
-        color: 'rgb(20,20,20)'
-        color_type: label-card
-        name: Volume
-      - type: entity-button
-        entity: script.master_soundbar_volume_up_3
-        icon: 'mdi:volume-plus'
-        show_name: false
-        tap_action:
-          action: call-service
-          service: script.master_soundbar_volume_up_3
-      - type: entity-button
-        entity: script.master_soundbar_volume_down_3
-        icon: 'mdi:volume-minus'
-        show_name: false
-        tap_action:
-          action: call-service
-          service: script.master_soundbar_volume_down_3
+  - type: 'custom:button-card'
+    template: intercontainer
+    name: Woofer
+    custom_fields:
+      buttons:
+        card:
+          type: vertical-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.master_soundbar_volume_up_3
+              icon: 'mdi:volume-plus'
+              show_name: false
+              size: 100%
+              styles:
+                card:
+                  - height: 65px
+                icon:
+                  - color: 'rgb(28,28,28)'
+              tap_action:
+                action: call-service
+                service: script.master_soundbar_volume_up_3
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.master_soundbar_volume_down_3
+              icon: 'mdi:volume-minus'
+              show_name: false
+              size: 100%
+              styles:
+                card:
+                  - height: 65px
+                icon:
+                  - color: 'rgb(28,28,28)'
+              tap_action:
+                action: call-service
+                service: script.master_soundbar_volume_down_3

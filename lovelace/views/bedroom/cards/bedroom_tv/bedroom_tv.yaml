@@ -1,7 +1,6 @@
-type: vertical-stack
-cards:
+#type: vertical-stack
+#cards:
 #  - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_media_player.yaml
-  - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_power.yaml
 #  - type: conditional
 #    conditions:
 #      - entity: media_player.bedroom_tv
@@ -9,5 +8,14 @@ cards:
 #    card:
 #      !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_remote.yaml
 
-  - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_remote.yaml
-  - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_sleep.yaml
+type: 'custom:button-card'
+template: intercontainer
+name: Bedroom TV
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_power.yaml
+        - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_remote.yaml
+        - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv_sleep.yaml
