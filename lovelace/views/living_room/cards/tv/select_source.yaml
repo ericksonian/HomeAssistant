@@ -4,10 +4,10 @@ cards:
     template: standard
     entity: input_select.living_tv_source
     icon: 'mdi:video-input-hdmi'
-    name: Aux
+    name: Front
     state:
       - color: 'rgb(255,255,255)'
-        value: 'aux'
+        value: 'front'
       - color: 'rgb(50,50,50)'
         value: 'loading'
     styles:
@@ -17,13 +17,13 @@ cards:
         - '--mdc-ripple-press-opacity': 0.5
     tap_action:
       action: call-service
-      service: script.living_tv_aux
+      service: script.living_tv_front
     hold_action:
       action: call-service
       service: input_select.select_option
       service_data:
         entity_id: input_select.living_tv_source
-        option: aux
+        option: front
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
@@ -72,6 +72,30 @@ cards:
       service_data:
         entity_id: input_select.living_tv_source
         option: xbox
+  - type: 'custom:button-card'
+    template: standard
+    entity: input_select.living_tv_source
+    icon: 'mdi:nintendo-switch'
+    name: Switch
+    state:
+      - color: 'rgb(255,255,255)'
+        value: 'switch'
+      - color: 'rgb(50,50,50)'
+        value: 'loading'
+    styles:
+      card:
+        - height: 70px
+        - '--mdc-ripple-color': 'rgb(255,255,255)'
+        - '--mdc-ripple-press-opacity': 0.5
+    tap_action:
+      action: call-service
+      service: script.living_tv_switch
+    hold_action:
+      action: call-service
+      service: input_select.select_option
+      service_data:
+        entity_id: input_select.living_tv_source
+        option: switch
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source

@@ -32,6 +32,12 @@ cards:
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
+                  state: 'switch'
+              card:
+                !include /config/lovelace/views/living_room/cards/tv/nintendo.yaml
+            - type: conditional
+              conditions:
+                - entity: input_select.living_tv_source
                   state: 'xbox'
               card:
                 !include /config/lovelace/views/living_room/cards/tv/xbox.yaml
