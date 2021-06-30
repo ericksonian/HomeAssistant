@@ -25,6 +25,7 @@ cards:
       service_data:
         entity_id: input_select.living_tv_source
         option: front
+
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
@@ -49,6 +50,7 @@ cards:
       service_data:
         entity_id: input_select.living_tv_source
         option: chromecast
+
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
@@ -74,6 +76,7 @@ cards:
       service_data:
         entity_id: input_select.living_tv_source
         option: xbox
+
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
@@ -98,6 +101,7 @@ cards:
       service_data:
         entity_id: input_select.living_tv_source
         option: switch
+
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source

@@ -17,24 +17,28 @@ cards:
                   state: 'appletv'
               card:
                 !include /config/lovelace/views/living_room/cards/tv/appletv.yaml
+
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'chromecast'
               card:
                 !include /config/lovelace/views/living_room/cards/tv/chromecast.yaml
+
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'front'
               card:
                 !include /config/lovelace/views/living_room/cards/tv/fronthdmi.yaml
+
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'switch'
               card:
                 !include /config/lovelace/views/living_room/cards/tv/nintendo.yaml
+
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source

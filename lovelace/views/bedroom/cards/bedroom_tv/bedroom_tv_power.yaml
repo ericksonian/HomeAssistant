@@ -1,0 +1,24 @@
+type: vertical-stack
+cards:
+  - type: 'custom:button-card'
+    color: 'rgb(200,200,200)'
+    color_type: label-card
+    name: Bedroom TV
+    styles:
+      card:
+        - height: 24px
+  - type: 'custom:button-card'
+    entity: media_player.bedroom_tv
+    icon: 'mdi:power'
+    show_name: false
+    styles:
+      card:
+        - height: 60px
+          width: 60px
+      icon:
+        - color: 'rgb(255,0,0)'
+    tap_action:
+      action: call-service
+      service: script.turn_on
+      service_data:
+        entity_id: script.master_tv_power
