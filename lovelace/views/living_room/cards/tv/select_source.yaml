@@ -3,7 +3,8 @@ cards:
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
-    icon: 'mdi:video-input-hdmi'
+    icon: 'mdi:audio-video'
+#    icon: 'mdi:video-input-hdmi'
     name: Front
     state:
       - color: 'rgb(255,255,255)'
@@ -51,7 +52,8 @@ cards:
   - type: 'custom:button-card'
     template: standard
     entity: input_select.living_tv_source
-    icon: 'mdi:microsoft-xbox-controller'
+    icon: 'mdi:microsoft-xbox'
+#    icon: 'mdi:microsoft-xbox-controller'
     name: Xbox
     state:
       - color: 'rgb(255,255,255)'
