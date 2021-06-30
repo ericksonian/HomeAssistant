@@ -1,4 +1,5 @@
 type: 'custom:button-card'
+template: standard
 entity: script.master_tv_power
 icon: 'mdi:power'
 show_name: false
