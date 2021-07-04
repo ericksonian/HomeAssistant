@@ -24,18 +24,20 @@ custom_fields:
 #                  entity: sensor.garage_door_contact
                   entity: cover.garage_door
                   tap_action:
-                    action: none
+                    action: more-info
                   hold_action:
                     action: none
                   show_icon: false
                   show_name: false
                   show_state: true
                   state:
-                    - value: Closed
+#                    - value: Closed
+                    - value: closed
                       styles:
                         state:
                           - color: 'rgb(0,255,0)'
-                    - value: Open
+#                    - value: Open
+                    - value: open
                       styles:
                         state:
                           - color: 'rgb(255,0,0)'
