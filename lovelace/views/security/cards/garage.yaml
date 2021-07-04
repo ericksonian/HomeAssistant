@@ -21,7 +21,8 @@ custom_fields:
             - type: vertical-stack
               cards:
                 - type: 'custom:button-card'
-                  entity: sensor.garage_door_contact
+#                  entity: sensor.garage_door_contact
+                  entity: cover.garage_door
                   tap_action:
                     action: none
                   hold_action:

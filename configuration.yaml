@@ -13,9 +13,9 @@ homeassistant:
   packages: !include_dir_named packages
   auth_providers:
     - type: homeassistant
-    - type: trusted_networks
-      trusted_networks:
-        - 192.168.3.0/24
+#    - type: trusted_networks
+#      trusted_networks:
+#        - 192.168.3.0/24
 default_config:
 cloud:
 mobile_app:

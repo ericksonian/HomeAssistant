@@ -24,6 +24,10 @@ sensor:
             Open
           {% elif is_state('binary_sensor.wyzesense_frontdoor', 'on') and is_state('lock.front_door', 'locked') %}
             Open, Locked
+          {% elif is_state('binary_sensor.wyzesense_frontdoor', 'unavailable') and is_state('lock.front_door', 'unlocked') %}
+            Unknown, Unlocked
+          {% elif is_state('binary_sensor.wyzesense_frontdoor', 'unavailable') and is_state('lock.front_door', 'locked') %}
+            Unknown, Locked
           {% else %}
             Unknown
           {% endif %}

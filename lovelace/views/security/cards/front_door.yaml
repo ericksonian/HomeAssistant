@@ -46,6 +46,14 @@ custom_fields:
                       styles:
                         state:
                           - color: orange
+                    - value: Unknown, Locked
+                      styles:
+                        state:
+                          - color: orange
+                    - value: Unknown, Unlocked
+                      styles:
+                        state:
+                          - color: orange
                   styles:
                     card:
                       - height: 30px
