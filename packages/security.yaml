@@ -79,6 +79,10 @@ automation:
   - service: cover.close_cover
     data:
       entity_id: cover.garage_door
+  - service: light.turn_off
+    data:
+      entity_id: group.lights_all
+
 
 ### Front Door
 # Midnight
