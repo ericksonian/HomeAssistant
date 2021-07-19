@@ -12,8 +12,16 @@ custom_fields:
               template: standard
               entity: input_boolean.master_ledstrip_motion
               name: Motion
-              icon: 'mdi:led-strip-variant'
+              icon: 'mdi:motion-sensor'
               show_name: true
+              state:
+                - color: 'rgb(255,255,1)'
+                  value: 'on'
+              styles:
+                card:
+                  - height: 70px
+                name:
+                  - font-size: 0.75em
               tap_action:
                 action: call-service
                 service: input_boolean.toggle
@@ -32,6 +40,9 @@ custom_fields:
                     icon:
                       - color: 'rgb(0,0,0)'
               styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(255,0,0)'
                 icon:
                   - opacity: 1
                   - color: 'rgb(255,0,0)'
@@ -56,6 +67,9 @@ custom_fields:
                     icon:
                       - color: 'rgb(0,0,0)'
               styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(0,255,0)'
                 icon:
                   - opacity: 1
                   - color: 'rgb(0,255,0)'
@@ -80,6 +94,9 @@ custom_fields:
                     icon:
                       - color: 'rgb(0,0,0)'
               styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(0,0,255)'
                 icon:
                   - opacity: 1
                   - color: 'rgb(0,0,255)'
@@ -104,6 +121,9 @@ custom_fields:
                     icon:
                       - color: 'rgb(0,0,0)'
               styles:
+                card:
+                  - height: 70px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
                 icon:
                   - opacity: 1
                   - color: 'rgb(255,255,255)'
@@ -117,7 +137,7 @@ custom_fields:
                   entity_id: input_boolean.master_ledstrip_more
         - type: conditional
           conditions:
-            - entity: input_boolean.master_ledstrip_motion
+            - entity: input_boolean.master_ledstrip_more
               state: 'on'
           card:
             !include /config/lovelace/views/bedroom/cards/leds_more.yaml
