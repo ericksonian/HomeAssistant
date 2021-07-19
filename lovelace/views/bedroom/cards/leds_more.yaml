@@ -3,147 +3,34 @@ cards:
   - type: horizontal-stack
     cards:
       - type: 'custom:button-card'
-        entity: input_select.master_ledstrip_mode
-        icon: 'mdi:alpha-r-circle-outline'
-        name: Red
-        show_icon: true
-        show_name: false
-        state:
-          - value: 'red'
-            icon: 'mdi:alpha-r-circle'
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(255,0,0)'
-            - width: 50%
-        tap_action:
-          action: call-service
-          service: script.master_ledstrip_red
-      - type: 'custom:button-card'
-        entity: input_select.master_ledstrip_mode
-        icon: 'mdi:alpha-g-circle-outline'
-        name: Green
-        show_icon: true
-        show_name: false
-        state:
-          - value: 'green'
-            icon: 'mdi:alpha-g-circle'
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(0,255,0)'
-            - width: 50%
-        tap_action:
-          action: call-service
-          service: script.master_ledstrip_green
-      - type: 'custom:button-card'
-        entity: input_select.master_ledstrip_mode
-        icon: 'mdi:alpha-b-circle-outline'
-        name: Blue
-        show_icon: true
-        show_name: false
-        state:
-          - value: 'blue'
-            icon: 'mdi:alpha-b-circle'
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(0,0,255)'
-            - width: 50%
-        tap_action:
-          action: call-service
-          service: script.master_ledstrip_blue
-      - type: 'custom:button-card'
-        entity: input_select.master_ledstrip_mode
-        icon: 'mdi:alpha-w-circle-outline'
-        name: White
-        show_icon: true
-        show_name: false
-        state:
-          - value: 'white'
-            icon: 'mdi:alpha-w-circle'
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(255,255,255)'
-            - width: 50%
-        tap_action:
-          action: call-service
-          service: script.master_ledstrip_white
-      - type: 'custom:button-card'
-        entity: input_select.master_ledstrip_mode
-        name: LEDs
-        icon: 'mdi:led-strip-variant'
+        template: standard
+        entity: input_boolean.master_ledstrip_more
+        name: Close
         show_name: true
-        state:
-          - value: 'red'
-            color: 'rgb(255,0,0)'
-          - value: 'green'
-            color: 'rgb(0,255,0)'
-          - value: 'blue'
-            color: 'rgb(0,0,255)'
-          - value: 'white'
-            color: 'rgb(255,255,255)'
-          - value: 'red1'
-            color: 'rgb(189,77,76)'
-          - value: 'green1'
-            color: 'rgb(84,146,86)'
-          - value: 'blue1'
-            color: 'rgb(66,83,143)'
-          - value: 'white1'
-            color: 'rgb(212,130,131)'
-          - value: 'red2'
-            color: 'rgb(212,148,26)'
-          - value: 'green2'
-            color: 'rgb(90,150,160)'
-          - value: 'blue2'
-            color: 'rgb(83,70,102)'
-          - value: 'white2'
-            color: 'rgb(214,143,127)'
-          - value: 'red3'
-            color: 'rgb(237,212,94)'
-          - value: 'green3'
-            color: 'rgb(30,86,124)'
-          - value: 'blue3'
-            color: 'rgb(116,72,188)'
-          - value: 'white3'
-            color: 'rgb(141,179,192)'
-          - value: 'red4'
-            color: 'rgb(243,211,42)'
-          - value: 'green4'
-            color: 'rgb(29,88,144)'
-          - value: 'blue4'
-            color: 'rgb(129,66,76)'
-          - value: 'white4'
-            color: 'rgb(140,188,195)'
+        icon: 'mdi:close-box'
+        styles:
+          card:
+            - height: 68px
         tap_action:
           action: call-service
-          service: script.master_ledstrip_power_off
-        styles:
-          card:
-            - height: 60px
-              width: 90px
-### Colors
-  - type: horizontal-stack
-    cards:
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.master_ledstrip_more
       - type: 'custom:button-card'
+        template: standard
         entity: input_select.master_ledstrip_mode
-        show_name: false
         icon: 'mdi:checkbox-blank-circle-outline'
-        color_type: icon
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(189,77,76)'
-            - width: 50%
+        show_name: false
         state:
           - value: 'red1'
             icon: 'mdi:checkbox-blank-circle'
+        styles:
+          card:
+            - height: 68px
+            - '--mdc-ripple-color': 'rgb(189,77,76)'
+          icon:
+            - color: 'rgb(189,77,76)'
+            - width: 50%
         tap_action:
           action: call-service
           service: script.master_ledstrip_red_1
@@ -198,25 +85,7 @@ cards:
         tap_action:
           action: call-service
           service: script.master_ledstrip_white_1
-      - type: 'custom:button-card'
-        entity: input_boolean.master_ledstrip_more
-        name: Close
-        show_name: true
-        icon: 'mdi:close-box'
-        color_type: icon
-        styles:
-          card:
-            - height: 60px
-              width: 90px
-          icon:
-            - color: 'rgb(150,150,150)'
-          name:
-            - color: 'rgb(175,175,175)'
-        tap_action:
-          action: call-service
-          service: input_boolean.turn_off
-          service_data:
-            entity_id: input_boolean.master_ledstrip_more
+
   - type: horizontal-stack
     cards:
       - type: 'custom:button-card'
