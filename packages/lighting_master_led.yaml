@@ -11,10 +11,13 @@ sensor:
 input_boolean:
   master_ledstrip_power:
     name: Master LED Strip Power
-    initial: off
+#    initial: off
   master_ledstrip_more:
     name: Master LED Strip More
-    initial: off
+#    initial: off
+  master_ledstrip_motion:
+    name: Master LED Strip Motion
+#    initial: on
 
 ###### INPUT SELECT ------------------------------------------
 input_select:
@@ -56,9 +59,14 @@ automation:
     entity_id: binary_sensor.wyzesense_motion_masterbed
     to: "on"
   condition:
-  - condition: state
-    entity_id: group.lights_master
-    state: "off"
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.master_ledstrip_motion
+          state: "off"
+        - condition: state
+          entity_id: group.lights_master
+          state: "off"
   action:
   - service: script.master_ledstrip_power_on
   - delay:

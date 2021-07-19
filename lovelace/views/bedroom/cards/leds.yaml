@@ -4,81 +4,120 @@ name: LED Strip
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: vertical-stack
       cards:
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.master_ledstrip_mode
-          icon: 'mdi:alpha-r-circle'
-          name: Red
-          show_name: false
-          state:
-            - value: 'red'
-              color: 'rgb(255,0,0)'
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_boolean.master_ledstrip_motion
+              name: Motion
+              icon: 'mdi:led-strip-variant'
+              show_name: true
+              tap_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.master_ledstrip_motion
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.master_ledstrip_mode
+              icon: 'mdi:alpha-r-circle'
+              name: Red
+              show_name: false
+              state:
+                - value: 'red'
+                  color: 'rgb(255,0,0)'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
               styles:
                 icon:
-                  - color: 'rgb(0,0,0)'
-          styles:
-            icon:
-              - opacity: 1
-              - color: 'rgb(255,0,0)'
-          tap_action:
-            action: call-service
-            service: script.master_ledstrip_red
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.master_ledstrip_mode
-          icon: 'mdi:alpha-g-circle'
-          name: Green
-          show_name: false
-          state:
-            - value: 'green'
-              color: 'rgb(0,255,0)'
+                  - opacity: 1
+                  - color: 'rgb(255,0,0)'
+              tap_action:
+                action: call-service
+                service: script.master_ledstrip_red
+              hold_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.master_ledstrip_more
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.master_ledstrip_mode
+              icon: 'mdi:alpha-g-circle'
+              name: Green
+              show_name: false
+              state:
+                - value: 'green'
+                  color: 'rgb(0,255,0)'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
               styles:
                 icon:
-                  - color: 'rgb(0,0,0)'
-          styles:
-            icon:
-              - opacity: 1
-              - color: 'rgb(0,255,0)'
-          tap_action:
-            action: call-service
-            service: script.master_ledstrip_green
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.master_ledstrip_mode
-          icon: 'mdi:alpha-b-circle'
-          name: Blue
-          show_name: false
-          state:
-            - value: 'blue'
-              color: 'rgb(0,0,255)'
+                  - opacity: 1
+                  - color: 'rgb(0,255,0)'
+              tap_action:
+                action: call-service
+                service: script.master_ledstrip_green
+              hold_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.master_ledstrip_more
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.master_ledstrip_mode
+              icon: 'mdi:alpha-b-circle'
+              name: Blue
+              show_name: false
+              state:
+                - value: 'blue'
+                  color: 'rgb(0,0,255)'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
               styles:
                 icon:
-                  - color: 'rgb(0,0,0)'
-          styles:
-            icon:
-              - opacity: 1
-              - color: 'rgb(0,0,255)'
-          tap_action:
-            action: call-service
-            service: script.master_ledstrip_blue
-        - type: 'custom:button-card'
-          template: standard
-          entity: input_select.master_ledstrip_mode
-          icon: 'mdi:alpha-w-circle'
-          name: White
-          show_name: false
-          state:
-            - value: 'white'
-              color: 'rgb(255,255,255)'
+                  - opacity: 1
+                  - color: 'rgb(0,0,255)'
+              tap_action:
+                action: call-service
+                service: script.master_ledstrip_blue
+              hold_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.master_ledstrip_more
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.master_ledstrip_mode
+              icon: 'mdi:alpha-w-circle'
+              name: White
+              show_name: false
+              state:
+                - value: 'white'
+                  color: 'rgb(255,255,255)'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
               styles:
                 icon:
-                  - color: 'rgb(0,0,0)'
-          styles:
-            icon:
-              - opacity: 1
-              - color: 'rgb(255,255,255)'
-          tap_action:
-            action: call-service
-            service: script.master_ledstrip_white
+                  - opacity: 1
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.master_ledstrip_white
+              hold_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.master_ledstrip_more
+        - type: conditional
+          conditions:
+            - entity: input_boolean.master_ledstrip_motion
+              state: 'on'
+          card:
+            !include /config/lovelace/views/bedroom/cards/leds_more.yaml

@@ -26,83 +26,85 @@ custom_fields:
                   value: 'on'
         - type: horizontal-stack
           cards:
-            - type: conditional
-              conditions:
-                - entity: input_boolean.master_ledstrip_power
-                  state: 'off'
-              card:
-                type: 'custom:button-card'
-                entity: input_boolean.master_ledstrip_power
-                template: standard
-                name: LED Strip
-                icon: 'mdi:led-strip-variant'
-                tap_action:
-                  action: call-service
-                  service: script.master_ledstrip_power_on
-                hold_action:
-                  action: call-service
-                  service: input_boolean.toggle
-                  service_data:
-                    entity_id: input_boolean.master_ledstrip_power
-            - type: conditional
-              conditions:
-                - entity: input_boolean.master_ledstrip_power
-                  state: 'on'
-              card:
-                type: 'custom:button-card'
-                entity: input_select.master_ledstrip_mode
-                template: standard
-                name: LED Strip
-                icon: 'mdi:led-strip-variant'
-                state:
-                  - value: 'red'
-                    color: 'rgb(255,0,0)'
-                  - value: 'green'
-                    color: 'rgb(0,255,0)'
-                  - value: 'blue'
-                    color: 'rgb(0,0,255)'
-                  - value: 'white'
-                    color: 'rgb(255,255,255)'
-                  - value: 'red1'
-                    color: 'rgb(189,77,76)'
-                  - value: 'green1'
-                    color: 'rgb(84,146,86)'
-                  - value: 'blue1'
-                    color: 'rgb(66,83,143)'
-                  - value: 'white1'
-                    color: 'rgb(212,130,131)'
-                  - value: 'red2'
-                    color: 'rgb(212,148,26)'
-                  - value: 'green2'
-                    color: 'rgb(90,150,160)'
-                  - value: 'blue2'
-                    color: 'rgb(83,70,102)'
-                  - value: 'white2'
-                    color: 'rgb(214,143,127)'
-                  - value: 'red3'
-                    color: 'rgb(237,212,94)'
-                  - value: 'green3'
-                    color: 'rgb(30,86,124)'
-                  - value: 'blue3'
-                    color: 'rgb(116,72,188)'
-                  - value: 'white3'
-                    color: 'rgb(141,179,192)'
-                  - value: 'red4'
-                    color: 'rgb(243,211,42)'
-                  - value: 'green4'
-                    color: 'rgb(29,88,144)'
-                  - value: 'blue4'
-                    color: 'rgb(129,66,76)'
-                  - value: 'white4'
-                    color: 'rgb(140,188,195)'
-                tap_action:
-                  action: call-service
-                  service: script.master_ledstrip_power_off
-                hold_action:
-                  action: call-service
-                  service: input_boolean.toggle
-                  service_data:
-                    entity_id: input_boolean.master_ledstrip_power
+            - type: vertical-stack
+              cards:
+                - type: conditional
+                  conditions:
+                    - entity: input_boolean.master_ledstrip_power
+                      state: 'off'
+                  card:
+                    type: 'custom:button-card'
+                    entity: input_boolean.master_ledstrip_power
+                    template: standard
+                    name: LED Strip
+                    icon: 'mdi:led-strip-variant'
+                    tap_action:
+                      action: call-service
+                      service: script.master_ledstrip_power_on
+                    hold_action:
+                      action: call-service
+                      service: input_boolean.toggle
+                      service_data:
+                        entity_id: input_boolean.master_ledstrip_power
+                - type: conditional
+                  conditions:
+                    - entity: input_boolean.master_ledstrip_power
+                      state: 'on'
+                  card:
+                    type: 'custom:button-card'
+                    entity: input_select.master_ledstrip_mode
+                    template: standard
+                    name: LED Strip
+                    icon: 'mdi:led-strip-variant'
+                    state:
+                      - value: 'red'
+                        color: 'rgb(255,0,0)'
+                      - value: 'green'
+                        color: 'rgb(0,255,0)'
+                      - value: 'blue'
+                        color: 'rgb(0,0,255)'
+                      - value: 'white'
+                        color: 'rgb(255,255,255)'
+                      - value: 'red1'
+                        color: 'rgb(189,77,76)'
+                      - value: 'green1'
+                        color: 'rgb(84,146,86)'
+                      - value: 'blue1'
+                        color: 'rgb(66,83,143)'
+                      - value: 'white1'
+                        color: 'rgb(212,130,131)'
+                      - value: 'red2'
+                        color: 'rgb(212,148,26)'
+                      - value: 'green2'
+                        color: 'rgb(90,150,160)'
+                      - value: 'blue2'
+                        color: 'rgb(83,70,102)'
+                      - value: 'white2'
+                        color: 'rgb(214,143,127)'
+                      - value: 'red3'
+                        color: 'rgb(237,212,94)'
+                      - value: 'green3'
+                        color: 'rgb(30,86,124)'
+                      - value: 'blue3'
+                        color: 'rgb(116,72,188)'
+                      - value: 'white3'
+                        color: 'rgb(141,179,192)'
+                      - value: 'red4'
+                        color: 'rgb(243,211,42)'
+                      - value: 'green4'
+                        color: 'rgb(29,88,144)'
+                      - value: 'blue4'
+                        color: 'rgb(129,66,76)'
+                      - value: 'white4'
+                        color: 'rgb(140,188,195)'
+                    tap_action:
+                      action: call-service
+                      service: script.master_ledstrip_power_off
+                    hold_action:
+                      action: call-service
+                      service: input_boolean.toggle
+                      service_data:
+                        entity_id: input_boolean.master_ledstrip_power
             - entity: group.lights_master_bedside
               template: standard
               name: Bedside
