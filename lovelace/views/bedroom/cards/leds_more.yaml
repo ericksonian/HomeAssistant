@@ -11,11 +11,14 @@ cards:
         styles:
           card:
             - height: 68px
+          icon:
+            - width: 60%
         tap_action:
           action: call-service
           service: input_boolean.turn_off
           service_data:
             entity_id: input_boolean.master_ledstrip_more
+
       - type: 'custom:button-card'
         template: standard
         entity: input_select.master_ledstrip_mode
@@ -29,62 +32,68 @@ cards:
             - height: 68px
             - '--mdc-ripple-color': 'rgb(189,77,76)'
           icon:
+            - opacity: 1
             - color: 'rgb(189,77,76)'
-            - width: 50%
         tap_action:
           action: call-service
           service: script.master_ledstrip_red_1
+
       - type: 'custom:button-card'
+        template: standard
         entity: input_select.master_ledstrip_mode
-        show_name: false
         icon: 'mdi:checkbox-blank-circle-outline'
-        color_type: icon
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(84,146,86)'
-            - width: 50%
+        show_name: false
         state:
           - value: 'green1'
             icon: 'mdi:checkbox-blank-circle'
+        styles:
+          card:
+            - height: 68px
+            - '--mdc-ripple-color': 'rgb(84,146,86)'
+          icon:
+            - opacity: 1
+            - color: 'rgb(84,146,86)'
         tap_action:
           action: call-service
           service: script.master_ledstrip_green_1
+
       - type: 'custom:button-card'
+        template: standard
         entity: input_select.master_ledstrip_mode
-        show_name: false
         icon: 'mdi:checkbox-blank-circle-outline'
-        color_type: icon
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(66,83,143)'
-            - width: 50%
+        show_name: false
         state:
           - value: 'blue1'
             icon: 'mdi:checkbox-blank-circle'
+        styles:
+          card:
+            - height: 68px
+            - '--mdc-ripple-color': 'rgb(66,83,143)'
+          icon:
+            - opacity: 1
+            - color: 'rgb(66,83,143)'
         tap_action:
           action: call-service
           service: script.master_ledstrip_blue_1
+
       - type: 'custom:button-card'
+        template: standard
         entity: input_select.master_ledstrip_mode
-        show_name: false
         icon: 'mdi:checkbox-blank-circle-outline'
-        color_type: icon
-        styles:
-          card:
-            - height: 60px
-          icon:
-            - color: 'rgb(212,130,131)'
-            - width: 50%
+        show_name: false
         state:
           - value: 'white1'
             icon: 'mdi:checkbox-blank-circle'
+        styles:
+          card:
+            - height: 68px
+            - '--mdc-ripple-color': 'rgb(212,130,131)'
+          icon:
+            - opacity: 1
+            - color: 'rgb(212,130,131)'
         tap_action:
           action: call-service
-          service: script.master_ledstrip_white_1
+          service: script.master_ledstrip_blue_1
 
   - type: horizontal-stack
     cards:
