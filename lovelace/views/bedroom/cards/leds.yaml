@@ -128,7 +128,7 @@ custom_fields:
               card:
                 type: 'custom:button-card'
                 template: standard
-                entity: input_boolean.master_ledstrip_motion
+                entity: binary_sensor.wyzesense_motion_masterbed
                 name: Motion
                 icon: 'mdi:motion-sensor-off'
                 show_name: true
@@ -138,6 +138,11 @@ custom_fields:
                     - '--mdc-ripple-color': 'rgb(255,255,255)'
                   icon:
                     - width: 70%
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - animation: blink 2s ease infinite
                 tap_action:
                   action: call-service
                   service: input_boolean.turn_on
