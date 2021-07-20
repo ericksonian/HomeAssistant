@@ -296,7 +296,7 @@ cards:
           card:
             - height: 68px
           icon:
-            - width: 50%
+            - width: 60%
         tap_action:
           action: call-service
           service: script.master_ledstrip_quick
@@ -390,7 +390,7 @@ cards:
           card:
             - height: 68px
           icon:
-            - width: 50%
+            - width: 60%
         tap_action:
           action: call-service
           service: script.master_ledstrip_slow
@@ -407,10 +407,11 @@ cards:
         styles:
           card:
             - height: 68px
-            - '--mdc-ripple-color': 'rgb(243,211,42)'
+            - '--mdc-ripple-color': 'rgb(255,255,255)'
           icon:
-            - opacity: 1
-            - color: 'rgb(243,211,42)'
+            - opacity: 0.8
+            - color: 'rgb(255,255,255)'
+            - width: 75%
         tap_action:
           action: call-service
           service: script.master_ledstrip_jump_3
@@ -429,8 +430,9 @@ cards:
             - height: 68px
             - '--mdc-ripple-color': 'rgb(255,255,255)'
           icon:
-            - opacity: 1
+            - opacity: 0.8
             - color: 'rgb(255,255,255)'
+            - width: 75%
         tap_action:
           action: call-service
           service: script.master_ledstrip_jump_7
@@ -447,10 +449,11 @@ cards:
         styles:
           card:
             - height: 68px
-            - '--mdc-ripple-color': 'rgb(243,211,42)'
+            - '--mdc-ripple-color': 'rgb(255,255,255)'
           icon:
-            - opacity: 1
-            - color: 'rgb(243,211,42)'
+            - opacity: 0.8
+            - color: 'rgb(255,255,255)'
+            - width: 75%
         tap_action:
           action: call-service
           service: script.master_ledstrip_fade_3
@@ -469,8 +472,9 @@ cards:
             - height: 68px
             - '--mdc-ripple-color': 'rgb(255,255,255)'
           icon:
-            - opacity: 1
+            - opacity: 0.8
             - color: 'rgb(255,255,255)'
+            - width: 75%
         tap_action:
           action: call-service
           service: script.master_ledstrip_fade_7
