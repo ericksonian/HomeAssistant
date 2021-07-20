@@ -63,7 +63,7 @@ automation:
       conditions:
         - condition: state
           entity_id: input_boolean.master_ledstrip_motion
-          state: "off"
+          state: "on"
         - condition: state
           entity_id: group.lights_master
           state: "off"
@@ -71,14 +71,15 @@ automation:
   - service: script.master_ledstrip_power_on
   - delay:
       milliseconds: 200
-  - service: script.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state("sun.sun", "above_horizon") %}
-          script.master_ledstrip_white
-        {% else %}
-          script.master_ledstrip_red
-        {% endif %}
+  - service: script.master_ledstrip_red
+#  - service: script.turn_on
+#    data_template:
+#      entity_id: >
+#        {% if is_state("sun.sun", "above_horizon") %}
+#          script.master_ledstrip_white
+#        {% else %}
+#          script.master_ledstrip_red
+#        {% endif %}
 
 - alias: Master Motion LED Off
   trigger:

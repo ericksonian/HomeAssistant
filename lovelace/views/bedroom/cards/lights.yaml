@@ -97,6 +97,22 @@ custom_fields:
                         color: 'rgb(129,66,76)'
                       - value: 'white4'
                         color: 'rgb(140,188,195)'
+                      - value: 'jump3'
+                        color: 'rgb(255,255,255)'
+                        spin: true
+                      - value: 'jump7'
+                        color: 'rgb(255,255,255)'
+                        spin: true
+                      - value: 'fade3'
+                        color: 'rgb(255,255,255)'
+                        styles:
+                          card:
+                            - animation: blink 1s ease infinite
+                      - value: 'fade7'
+                        color: 'rgb(255,255,255)'
+                        styles:
+                          card:
+                            - animation: blink 1s ease infinite
                     tap_action:
                       action: call-service
                       service: script.master_ledstrip_power_off
