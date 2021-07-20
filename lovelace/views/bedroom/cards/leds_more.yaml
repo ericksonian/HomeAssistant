@@ -2,22 +2,6 @@ type: vertical-stack
 cards:
   - type: horizontal-stack
     cards:
-      - type: 'custom:button-card'
-        template: standard
-        entity: input_boolean.master_ledstrip_more
-        name: Close
-        show_name: true
-        icon: 'mdi:close-box'
-        styles:
-          card:
-            - height: 68px
-          icon:
-            - width: 60%
-        tap_action:
-          action: call-service
-          service: input_boolean.turn_off
-          service_data:
-            entity_id: input_boolean.master_ledstrip_more
 
       - type: 'custom:button-card'
         template: standard
@@ -95,23 +79,26 @@ cards:
           action: call-service
           service: script.master_ledstrip_white_1
 
-
-  - type: horizontal-stack
-    cards:
       - type: 'custom:button-card'
         template: standard
-        entity: script.master_ledstrip_dim_up
-        name: Bright
+        entity: input_boolean.master_ledstrip_more
+        name: Close
         show_name: true
-        icon: 'mdi:weather-sunset-up'
+        icon: 'mdi:close-box'
         styles:
           card:
             - height: 68px
           icon:
-            - width: 75%
+            - width: 60%
         tap_action:
           action: call-service
-          service: script.master_ledstrip_dim_up
+          service: input_boolean.turn_off
+          service_data:
+            entity_id: input_boolean.master_ledstrip_more
+
+
+  - type: horizontal-stack
+    cards:
 
       - type: 'custom:button-card'
         template: standard
@@ -189,15 +176,12 @@ cards:
           action: call-service
           service: script.master_ledstrip_white_2
 
-
-  - type: horizontal-stack
-    cards:
       - type: 'custom:button-card'
         template: standard
-        entity: script.master_ledstrip_dim_down
-        name: Dim
+        entity: script.master_ledstrip_dim_up
+        name: Bright
         show_name: true
-        icon: 'mdi:weather-sunset-down'
+        icon: 'mdi:weather-sunset-up'
         styles:
           card:
             - height: 68px
@@ -205,7 +189,11 @@ cards:
             - width: 75%
         tap_action:
           action: call-service
-          service: script.master_ledstrip_dim_down
+          service: script.master_ledstrip_dim_up
+
+
+  - type: horizontal-stack
+    cards:
 
       - type: 'custom:button-card'
         template: standard
@@ -283,23 +271,24 @@ cards:
           action: call-service
           service: script.master_ledstrip_white_3
 
-
-  - type: horizontal-stack
-    cards:
       - type: 'custom:button-card'
         template: standard
-        entity: script.master_ledstrip_quick
-        name: Quick
+        entity: script.master_ledstrip_dim_down
+        name: Dim
         show_name: true
-        icon: 'mdi:arrow-up-drop-circle-outline'
+        icon: 'mdi:weather-sunset-down'
         styles:
           card:
             - height: 68px
           icon:
-            - width: 60%
+            - width: 75%
         tap_action:
           action: call-service
-          service: script.master_ledstrip_quick
+          service: script.master_ledstrip_dim_down
+
+
+  - type: horizontal-stack
+    cards:
 
       - type: 'custom:button-card'
         template: standard
@@ -377,15 +366,12 @@ cards:
           action: call-service
           service: script.master_ledstrip_white_4
 
-
-  - type: horizontal-stack
-    cards:
       - type: 'custom:button-card'
         template: standard
-        entity: script.master_ledstrip_slow
-        name: Slow
+        entity: script.master_ledstrip_quick
+        name: Quick
         show_name: true
-        icon: 'mdi:arrow-down-drop-circle-outline'
+        icon: 'mdi:arrow-up-drop-circle-outline'
         styles:
           card:
             - height: 68px
@@ -393,7 +379,11 @@ cards:
             - width: 60%
         tap_action:
           action: call-service
-          service: script.master_ledstrip_slow
+          service: script.master_ledstrip_quick
+
+
+  - type: horizontal-stack
+    cards:
 
       - type: 'custom:button-card'
         template: standard
@@ -478,3 +468,18 @@ cards:
         tap_action:
           action: call-service
           service: script.master_ledstrip_fade_7
+
+      - type: 'custom:button-card'
+        template: standard
+        entity: script.master_ledstrip_slow
+        name: Slow
+        show_name: true
+        icon: 'mdi:arrow-down-drop-circle-outline'
+        styles:
+          card:
+            - height: 68px
+          icon:
+            - width: 60%
+        tap_action:
+          action: call-service
+          service: script.master_ledstrip_slow

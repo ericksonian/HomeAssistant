@@ -8,26 +8,7 @@ custom_fields:
       cards:
         - type: horizontal-stack
           cards:
-            - type: 'custom:button-card'
-              template: standard
-              entity: input_boolean.master_ledstrip_motion
-              name: Motion
-              icon: 'mdi:motion-sensor-off'
-              show_name: true
-              state:
-                - value: 'on'
-#                  color: 'rgb(255,255,1)'
-                  icon: 'mdi:motion-sensor'
-              styles:
-                card:
-                  - height: 68px
-                icon:
-                  - width: 75%
-              tap_action:
-                action: call-service
-                service: input_boolean.toggle
-                service_data:
-                  entity_id: input_boolean.master_ledstrip_motion
+
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_ledstrip_mode
@@ -55,6 +36,7 @@ custom_fields:
                 service: input_boolean.toggle
                 service_data:
                   entity_id: input_boolean.master_ledstrip_more
+
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_ledstrip_mode
@@ -82,6 +64,7 @@ custom_fields:
                 service: input_boolean.toggle
                 service_data:
                   entity_id: input_boolean.master_ledstrip_more
+
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_ledstrip_mode
@@ -109,6 +92,7 @@ custom_fields:
                 service: input_boolean.toggle
                 service_data:
                   entity_id: input_boolean.master_ledstrip_more
+
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_ledstrip_mode
@@ -136,6 +120,57 @@ custom_fields:
                 service: input_boolean.toggle
                 service_data:
                   entity_id: input_boolean.master_ledstrip_more
+
+            - type: conditional
+              conditions:
+                - entity: input_boolean.master_ledstrip_motion
+                  state: 'off'
+              card:
+                type: 'custom:button-card'
+                template: standard
+                entity: input_boolean.master_ledstrip_motion
+                name: Motion
+                icon: 'mdi:motion-sensor-off'
+                show_name: true
+                styles:
+                  card:
+                    - height: 68px
+                    - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  icon:
+                    - width: 70%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.turn_on
+                  service_data:
+                    entity_id: input_boolean.master_ledstrip_motion
+            - type: conditional
+              conditions:
+                - entity: input_boolean.master_ledstrip_motion
+                  state: 'on'
+              card:
+                type: 'custom:button-card'
+                template: standard
+                entity: binary_sensor.wyzesense_motion_masterbed
+                name: Motion
+                icon: 'mdi:motion-sensor'
+                show_name: true
+                styles:
+                  card:
+                    - height: 68px
+                    - '--mdc-ripple-color': 'rgb(255,255,255)'
+                  icon:
+                    - width: 70%
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - animation: blink 2s ease infinite
+                tap_action:
+                  action: call-service
+                  service: input_boolean.turn_off
+                  service_data:
+                    entity_id: input_boolean.master_ledstrip_motion
+
         - type: conditional
           conditions:
             - entity: input_boolean.master_ledstrip_more
