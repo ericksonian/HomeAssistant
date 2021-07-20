@@ -21,8 +21,6 @@ custom_fields:
               styles:
                 card:
                   - height: 68px
-                name:
-                  - font-size: 0.75em
               tap_action:
                 action: call-service
                 service: input_boolean.toggle
