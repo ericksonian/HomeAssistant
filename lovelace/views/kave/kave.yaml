@@ -3,5 +3,9 @@ icon: 'mdi:motorbike-electric'
 badges: []
 cards:
   - !include /config/lovelace/views/kave/cards/title_card.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/kave/cards/shades_screen.yaml
+      - !include /config/lovelace/views/kave/cards/shades_blackout.yaml
   - !include /config/lovelace/views/kave/cards/fan.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

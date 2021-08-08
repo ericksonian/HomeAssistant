@@ -1,0 +1,126 @@
+
+cover:
+  - platform: template
+    covers:
+      shades_master:
+        device_class: shade
+        friendly_name: "Kave Screen"
+        value_template: "{{ states('input_select.kave_shade_screen') }}"
+        open_cover:
+          service: script.kave_shade_screen_open
+        close_cover:
+          service: script.kave_shade_screen_close
+        stop_cover:
+          service: script.kave_shade_screen_stop
+
+###### SENSOR TEMPLATES ------------------------------------------
+#sensor:
+
+###### INPUT BOOLEANS ------------------------------------------
+#input_boolean:
+
+###### INPUT SELECT ------------------------------------------
+input_select:
+  kave_shade_screen:
+    name: 'Kave Screen'
+    options:
+      - open
+      - opening
+      - favorite
+      - closing
+      - closed
+
+
+###### AUTOMATIONS --------------------------------------
+automation:
+- alias: Kave Screen Open
+  trigger:
+  - platform: state
+    entity_id: input_select.kave_shade_screen
+    to: "opening"
+    for: "00:00:11"
+  condition:
+  - condition: template
+    value_template: "{{ trigger.from_state.state != 'closed' }}"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kave_shade_screen
+      option: open
+- alias: Kave Screen Closed
+  trigger:
+  - platform: state
+    entity_id: input_select.kave_shade_screen
+    to: "closing"
+    for: "00:00:11"
+  condition:
+  - condition: template
+    value_template: "{{ trigger.from_state.state != 'open' }}"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kave_shade_screen
+      option: closed
+- alias: Kave Screen Open Full Motion
+  trigger:
+  - platform: state
+    entity_id: input_select.kave_shade_screen
+    to: "opening"
+    for: "00:00:19"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kave_shade_screen
+      option: open
+- alias: Kave Screen Closed Full Motion
+  trigger:
+  - platform: state
+    entity_id: input_select.kave_shade_screen
+    to: "closing"
+    for: "00:00:19"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.kave_shade_screen
+      option: closed
+
+###### SCRIPTS ------------------------------------------
+script:
+  kave_shade_screen_open:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_somfy_open
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_somfy_open
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kave_shade_screen
+          option: opening
+  kave_shade_screen_stop:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_somfy_stop
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_somfy_stop
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kave_shade_screen
+          option: favorite
+  kave_shade_screen_close:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_somfy_close
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_somfy_close
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.kave_shade_screen
+          option: closing

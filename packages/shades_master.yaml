@@ -26,9 +26,7 @@ input_select:
     options:
       - open
       - opening
-#      - moving
       - favorite
-#      - middle
       - closing
       - closed
 
