@@ -3,7 +3,11 @@ icon: 'mdi:theater'
 badges: []
 cards:
   - !include /config/lovelace/views/theater/cards/title_card.yaml
-  - !include /config/lovelace/views/theater/cards/fan.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/theater/cards/screen.yaml
+      - !include /config/lovelace/views/theater/cards/fan.yaml
+#  - !include /config/lovelace/views/theater/cards/fan.yaml
   - !include /config/lovelace/views/theater/cards/nothing_playing.yaml
   - !include /config/lovelace/views/theater/cards/projector_on.yaml
   - !include /config/lovelace/views/theater/cards/theater_speaker.yaml
