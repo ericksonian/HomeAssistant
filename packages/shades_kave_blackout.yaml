@@ -92,10 +92,10 @@ script:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_somfy_open
+          entity_id: switch.relay_kave_blackout_open
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_somfy_open
+          entity_id: switch.relay_kave_blackout_open
       - service: input_select.select_option
         data:
           entity_id: input_select.kave_shade_blackout
@@ -104,10 +104,10 @@ script:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_somfy_stop
+          entity_id: switch.relay_kave_blackout_stop
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_somfy_stop
+          entity_id: switch.relay_kave_blackout_stop
       - service: input_select.select_option
         data:
           entity_id: input_select.kave_shade_blackout
@@ -116,10 +116,10 @@ script:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_somfy_close
+          entity_id: switch.relay_kave_blackout_close
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_somfy_close
+          entity_id: switch.relay_kave_blackout_close
       - service: input_select.select_option
         data:
           entity_id: input_select.kave_shade_blackout
