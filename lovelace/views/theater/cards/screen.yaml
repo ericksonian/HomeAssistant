@@ -22,7 +22,7 @@ custom_fields:
               name: Raising
           styles:
             card:
-              - height: 76px
+              - height: 82px
               - '--mdc-ripple-color': 'rgb(255,255,1)'
             name:
               - font-size: 0.75em
@@ -48,7 +48,7 @@ custom_fields:
               name: Lowering
           styles:
             card:
-              - height: 76px
+              - height: 82px
               - '--mdc-ripple-color': 'rgb(2,2,228)'
             name:
               - font-size: 0.75em
