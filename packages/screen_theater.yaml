@@ -2,7 +2,7 @@
 cover:
   - platform: template
     covers:
-      shades_master:
+      screen_theater:
         device_class: shade
         friendly_name: "Theater Screen"
         value_template: "{{ states('input_select.theater_screen') }}"

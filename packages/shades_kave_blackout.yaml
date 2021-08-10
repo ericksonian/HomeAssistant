@@ -2,7 +2,7 @@
 cover:
   - platform: template
     covers:
-      shades_master:
+      shade_kave_blackout:
         device_class: shade
         friendly_name: "Kave Blackout"
         value_template: "{{ states('input_select.kave_shade_blackout') }}"
