@@ -8,7 +8,7 @@
   action:
   - service: frontend.set_theme
     data:
-      name: amoled_blue
+      name: amoled_black
   - service: !secret notify_ian
     data:
       message: Home Assistant Started
