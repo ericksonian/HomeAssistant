@@ -9,7 +9,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: wide
           entity: input_select.theater_screen
-          icon: 'mdi:window-shutter-open'
+          icon: 'mdi:projector-screen'
           name: Up
           show_icon: true
           show_name: true
@@ -35,7 +35,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: wide
           entity: input_select.theater_screen
-          icon: 'mdi:window-shutter'
+          icon: 'mdi:projector-screen-outline'
           name: Down
           show_icon: true
           show_name: true

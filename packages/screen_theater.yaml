@@ -1,15 +1,15 @@
 
-cover:
-  - platform: template
-    covers:
-      screen_theater:
-        device_class: shade
-        friendly_name: "Theater Screen"
-        value_template: "{{ states('input_select.theater_screen') }}"
-        open_cover:
-          service: script.theater_screen_up
-        close_cover:
-          service: script.theater_screen_down
+#cover:
+#  - platform: template
+#    covers:
+#      screen_theater:
+#        device_class: shade
+#        friendly_name: "Theater Screen"
+#        value_template: "{{ states('input_select.theater_screen') }}"
+#        open_cover:
+#          service: script.theater_screen_up
+#        close_cover:
+#          service: script.theater_screen_down
 #        stop_cover:
 #          service: script.theater_screen_stop
 
