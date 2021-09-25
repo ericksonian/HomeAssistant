@@ -10,7 +10,7 @@ cards:
         show_state: false
         aspect_ratio: 1x1
         state_filter:
-          "home": grayscale(100%)
+          away: grayscale(100%)
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.kalene
@@ -19,7 +19,7 @@ cards:
         show_state: false
         aspect_ratio: 1x1
         state_filter:
-          "home": grayscale(100%)
+          away: grayscale(100%)
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.ian
@@ -28,7 +28,7 @@ cards:
         show_state: false
         aspect_ratio: 1x1
         state_filter:
-          "home": grayscale(100%)
+          away: grayscale(100%)
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
 
   - type: glance
