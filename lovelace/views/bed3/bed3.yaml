@@ -1,5 +1,5 @@
 title: Office
-icon: 'mdi:motorbike-electric'
+icon: 'mdi:bed-queen'
 badges: []
 cards:
   - !include /config/lovelace/views/bed3/cards/title_card.yaml
