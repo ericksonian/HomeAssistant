@@ -1,7 +1,9 @@
 type: horizontal-stack
 cards:
+  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
   - type: vertical-stack
     cards:
+
       - type: picture-entity
         entity: person.nathan
         image: /local/nathan_memoji.jpeg
@@ -14,6 +16,7 @@ cards:
         show_state: true
         entities:
           - entity: person.nathan
+#  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
 #  - type: vertical-stack
 #    cards:
 #      - type: picture-entity
@@ -28,6 +31,7 @@ cards:
 #        show_state: true
 #        entities:
 #          - entity: person.kalene
+  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
   - type: vertical-stack
     cards:
       - type: picture-entity
@@ -43,3 +47,4 @@ cards:
         show_state: true
         entities:
           - entity: person.ian
+  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
