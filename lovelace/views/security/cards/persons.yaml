@@ -24,35 +24,7 @@ cards:
         show_state: false
         aspect_ratio: 1x1
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
-  - type: horizontal-stack
-    cards:
-      - type: glance
-        show_name: false
-        show_icon: false
-        show_state: true
-        styles:
-          card:
-            - height: 24px
-        entities:
-          - entity: person.nathan
-      - type: glance
-        show_name: false
-        show_icon: false
-        show_state: true
-        styles:
-          card:
-            - height: 24px
-        entities:
-          - entity: person.kalene
-      - type: glance
-        show_name: false
-        show_icon: false
-        show_state: true
-        styles:
-          card:
-            - height: 24px
-        entities:
-          - entity: person.ian
+
   - type: glance
     show_name: false
     show_icon: false
