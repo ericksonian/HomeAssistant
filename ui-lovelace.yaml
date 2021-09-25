@@ -6,6 +6,6 @@ views:
   - !include /config/lovelace/views/house/house.yaml
   - !include /config/lovelace/views/living_room/living_room.yaml
   - !include /config/lovelace/views/bedroom/bedroom.yaml
-  - !include /config/lovelace/views/kave/kave.yaml
+  - !include /config/lovelace/views/bed3/bed3.yaml
   - !include /config/lovelace/views/theater/theater.yaml
   - !include /config/lovelace/views/rack/rack.yaml

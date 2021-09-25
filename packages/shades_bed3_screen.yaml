@@ -2,16 +2,16 @@
 cover:
   - platform: template
     covers:
-      shade_kave_blackout:
+      shade_bed3_screen:
         device_class: shade
-        friendly_name: "Kave Blackout"
-        value_template: "{{ states('input_select.kave_shade_blackout') }}"
+        friendly_name: "Bed3 Screen"
+        value_template: "{{ states('input_select.bed3_shade_screen') }}"
         open_cover:
-          service: script.kave_shade_blackout_open
+          service: script.bed3_shade_screen_open
         close_cover:
-          service: script.kave_shade_blackout_close
+          service: script.bed3_shade_screen_close
         stop_cover:
-          service: script.kave_shade_blackout_stop
+          service: script.bed3_shade_screen_stop
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -21,8 +21,8 @@ cover:
 
 ###### INPUT SELECT ------------------------------------------
 input_select:
-  kave_shade_blackout:
-    name: 'Kave Blackout'
+  bed3_shade_screen:
+    name: 'Bed3 Screen'
     options:
       - open
       - opening
@@ -33,10 +33,10 @@ input_select:
 
 ###### AUTOMATIONS --------------------------------------
 automation:
-- alias: Kave Blackout Open
+- alias: Bed3 Screen Open
   trigger:
   - platform: state
-    entity_id: input_select.kave_shade_blackout
+    entity_id: input_select.bed3_shade_screen
     to: "opening"
     for: "00:00:11"
   condition:
@@ -45,12 +45,12 @@ automation:
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.kave_shade_blackout
+      entity_id: input_select.bed3_shade_screen
       option: open
-- alias: Kave Blackout Closed
+- alias: Bed3 Screen Closed
   trigger:
   - platform: state
-    entity_id: input_select.kave_shade_blackout
+    entity_id: input_select.bed3_shade_screen
     to: "closing"
     for: "00:00:11"
   condition:
@@ -59,68 +59,68 @@ automation:
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.kave_shade_blackout
+      entity_id: input_select.bed3_shade_screen
       option: closed
-- alias: Kave Blackout Open Full Motion
+- alias: Bed3 Screen Open Full Motion
   trigger:
   - platform: state
-    entity_id: input_select.kave_shade_blackout
+    entity_id: input_select.bed3_shade_screen
     to: "opening"
     for: "00:00:19"
   condition: []
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.kave_shade_blackout
+      entity_id: input_select.bed3_shade_screen
       option: open
-- alias: Kave Blackout Closed Full Motion
+- alias: Bed3 Screen Closed Full Motion
   trigger:
   - platform: state
-    entity_id: input_select.kave_shade_blackout
+    entity_id: input_select.bed3_shade_screen
     to: "closing"
     for: "00:00:19"
   condition: []
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.kave_shade_blackout
+      entity_id: input_select.bed3_shade_screen
       option: closed
 
 ###### SCRIPTS ------------------------------------------
 script:
-  kave_shade_blackout_open:
+  bed3_shade_screen_open:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_kave_blackout_open
+          entity_id: switch.relay_bed3_screen_open
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_kave_blackout_open
+          entity_id: switch.relay_bed3_screen_open
       - service: input_select.select_option
         data:
-          entity_id: input_select.kave_shade_blackout
+          entity_id: input_select.bed3_shade_screen
           option: opening
-  kave_shade_blackout_stop:
+  bed3_shade_screen_stop:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_kave_blackout_stop
+          entity_id: switch.relay_bed3_screen_stop
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_kave_blackout_stop
+          entity_id: switch.relay_bed3_screen_stop
       - service: input_select.select_option
         data:
-          entity_id: input_select.kave_shade_blackout
+          entity_id: input_select.bed3_shade_screen
           option: favorite
-  kave_shade_blackout_close:
+  bed3_shade_screen_close:
     sequence:
       - service: switch.turn_on
         data:
-          entity_id: switch.relay_kave_blackout_close
+          entity_id: switch.relay_bed3_screen_close
       - service: switch.turn_off
         data:
-          entity_id: switch.relay_kave_blackout_close
+          entity_id: switch.relay_bed3_screen_close
       - service: input_select.select_option
         data:
-          entity_id: input_select.kave_shade_blackout
+          entity_id: input_select.bed3_shade_screen
           option: closing
