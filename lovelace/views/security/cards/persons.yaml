@@ -1,14 +1,31 @@
-type: horizontal-stack
+type: vertical-stack
 cards:
-  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
-  - type: vertical-stack
+  - type: horizontal-stack
     cards:
+      - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.nathan
         image: /local/nathan_memoji.png
         show_name: false
         show_state: false
         aspect_ratio: 1x1
+      - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
+      - type: picture-entity
+        entity: person.kalene
+        image: /local/kalene_memoji.png
+        show_name: false
+        show_state: false
+        aspect_ratio: 1x1
+      - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
+      - type: picture-entity
+        entity: person.ian
+        image: /local/ian_memoji.png
+        show_name: false
+        show_state: false
+        aspect_ratio: 1x1
+      - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
+  - type: horizontal-stack
+    cards:
       - type: glance
         show_name: false
         show_icon: false
@@ -18,15 +35,6 @@ cards:
             - height: 24px
         entities:
           - entity: person.nathan
-  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
-  - type: vertical-stack
-    cards:
-      - type: picture-entity
-        entity: person.kalene
-        image: /local/kalene_memoji.png
-        show_name: false
-        show_state: false
-        aspect_ratio: 1x1
       - type: glance
         show_name: false
         show_icon: false
@@ -36,16 +44,6 @@ cards:
             - height: 24px
         entities:
           - entity: person.kalene
-  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
-  - type: vertical-stack
-    cards:
-      - type: picture-entity
-        entity: person.ian
-#        image: /local/ian.jpg
-        image: /local/ian_memoji.png
-        show_name: false
-        show_state: false
-        aspect_ratio: 1x1
       - type: glance
         show_name: false
         show_icon: false
@@ -55,4 +53,3 @@ cards:
             - height: 24px
         entities:
           - entity: person.ian
-  - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
