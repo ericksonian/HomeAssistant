@@ -5,7 +5,7 @@ cards:
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.nathan
-        image: /local/nathan_memoji.png
+#        image: /local/nathan_memoji.png
         show_name: false
         show_state: false
         aspect_ratio: 1x1
@@ -14,7 +14,7 @@ cards:
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.kalene
-        image: /local/kalene_memoji.png
+#        image: /local/kalene_memoji.png
         show_name: false
         show_state: false
         aspect_ratio: 1x1
@@ -23,7 +23,7 @@ cards:
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.ian
-        image: /local/ian_memoji.png
+#        image: /local/ian_memoji.png
         show_name: false
         show_state: false
         aspect_ratio: 1x1
