@@ -7,7 +7,7 @@ cards:
         image: /local/nathan_memoji.jpeg
         show_name: false
         show_state: false
-        aspect_ratio: 2.0
+        aspect_ratio: 2x1
       - type: glance
         show_name: false
         show_icon: false
@@ -21,7 +21,7 @@ cards:
 #        image: /local/kalene_memoji.jpeg
 #        show_name: false
 #        show_state: false
-#        aspect_ratio: 2.0
+#        aspect_ratio: 2x1
 #      - type: glance
 #        show_name: false
 #        show_icon: false
@@ -36,7 +36,7 @@ cards:
         image: /local/ian_memoji.jpeg
         show_name: false
         show_state: false
-        aspect_ratio: 2.0
+        aspect_ratio: 2x1
       - type: glance
         show_name: false
         show_icon: false
