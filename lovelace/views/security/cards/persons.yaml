@@ -3,7 +3,6 @@ cards:
   - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
   - type: vertical-stack
     cards:
-
       - type: picture-entity
         entity: person.nathan
         image: /local/nathan_memoji.png
