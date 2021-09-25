@@ -7,27 +7,27 @@ cards:
         image: /local/nathan_memoji.jpeg
         show_name: false
         show_state: false
-        aspect_ratio: 3:2
+        aspect_ratio: 2.0
       - type: glance
         show_name: false
         show_icon: false
         show_state: true
         entities:
           - entity: person.nathan
-  - type: vertical-stack
-    cards:
-      - type: picture-entity
-        entity: person.kalene
-        image: /local/kalene_memoji.jpeg
-        show_name: false
-        show_state: false
-        aspect_ratio: 3:2
-      - type: glance
-        show_name: false
-        show_icon: false
-        show_state: true
-        entities:
-          - entity: person.kalene
+#  - type: vertical-stack
+#    cards:
+#      - type: picture-entity
+#        entity: person.kalene
+#        image: /local/kalene_memoji.jpeg
+#        show_name: false
+#        show_state: false
+#        aspect_ratio: 2.0
+#      - type: glance
+#        show_name: false
+#        show_icon: false
+#        show_state: true
+#        entities:
+#          - entity: person.kalene
   - type: vertical-stack
     cards:
       - type: picture-entity
@@ -36,7 +36,7 @@ cards:
         image: /local/ian_memoji.jpeg
         show_name: false
         show_state: false
-        aspect_ratio: 3:2
+        aspect_ratio: 2.0
       - type: glance
         show_name: false
         show_icon: false
