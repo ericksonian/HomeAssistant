@@ -1,0 +1,84 @@
+### Lighting Scenes
+
+##  Bed3
+
+#   Bed3 Bright
+- name: Bed3 Bright
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 255
+      kelvin: 4850
+    light.lifx2:
+      state: on
+      brightness: 255
+      kelvin: 4850
+    light.lifx3:
+      state: on
+      brightness: 255
+      kelvin: 4850
+    light.lifx4:
+      state: on
+      brightness: 255
+      kelvin: 4850
+    light.lifxmini1:
+      state: on
+      brightness: 255
+      kelvin: 4850
+
+#   Bed3 Entertain
+- name: Bed3 Entertain
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      kelvin: 2700
+    light.lifx2:
+      state: on
+      brightness: 155
+      kelvin: 2700
+    light.lifx3:
+      state: on
+      brightness: 155
+      kelvin: 2700
+    light.lifx4:
+      state: on
+      brightness: 155
+      kelvin: 2700
+    light.lifxmini1:
+      state: off
+
+#   Bed3 Relax
+- name: Bed3 Relax
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [255,0,50]
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [200,0,100]
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [125,0,150]
+    light.lifx4:
+      state: off
+    light.lifxmini1:
+      state: on
+      brightness: 40
+
+#   Bed3 All Off
+- name: Bed3 All Off
+  entities:
+    light.lifx1:
+      state: off
+    light.lifx2:
+      state: off
+    light.lifx3:
+      state: off
+    light.lifx4:
+      state: off
+    light.lifxmini1:
+      state: off

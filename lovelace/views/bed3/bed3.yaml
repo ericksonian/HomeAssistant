@@ -7,5 +7,9 @@ cards:
     cards:
       - !include /config/lovelace/views/bed3/cards/shades_screen.yaml
       - !include /config/lovelace/views/bed3/cards/shades_blackout.yaml
-  - !include /config/lovelace/views/bed3/cards/fan.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/bed3/cards/fan.yaml
+      - !include /config/lovelace/views/bed3/cards/light_scenes.yaml
+  - !include /config/lovelace/views/bed3/cards/fan2.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

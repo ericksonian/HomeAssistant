@@ -1,0 +1,75 @@
+
+fan_bed3_off:
+  sequence:
+  - service: fan.turn_off
+    target:
+      entity_id: fan.bed3_bedroom_ceiling_fan
+fan_bed3_low:
+  sequence:
+  - service: fan.set_speed
+    target:
+      entity_id: fan.bed3_bedroom_ceiling_fan
+    data:
+      speed: low
+fan_bed3_medium:
+  sequence:
+  - service: fan.set_speed
+    target:
+      entity_id: fan.bed3_bedroom_ceiling_fan
+    data:
+      speed: medium
+fan_bed3_medium_high:
+  sequence:
+  - service: fan.set_speed
+    target:
+      entity_id: fan.bed3_bedroom_ceiling_fan
+    data:
+      speed: medium_high
+fan_bed3_high:
+  sequence:
+  - service: fan.set_speed
+    target:
+      entity_id: fan.bed3_bedroom_ceiling_fan
+    data:
+      speed: high
+
+fan_toggle_bed3_low:
+  sequence:
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("sensor.bed3_bedroom_fan_speed", "low") %}
+          script.fan_bed3_off
+        {% else %}
+          script.fan_bed3_low
+        {% endif %}
+fan_toggle_bed3_medium:
+  sequence:
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("sensor.bed3_bedroom_fan_speed", "medium") %}
+          script.fan_bed3_off
+        {% else %}
+          script.fan_bed3_medium
+        {% endif %}
+fan_toggle_bed3_medium_high:
+  sequence:
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("sensor.bed3_bedroom_fan_speed", "medium_high") %}
+          script.fan_bed3_off
+        {% else %}
+          script.fan_bed3_medium_high
+        {% endif %}
+fan_toggle_bed3_high:
+  sequence:
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("sensor.bed3_bedroom_fan_speed", "high") %}
+          script.fan_bed3_off
+        {% else %}
+          script.fan_bed3_high
+        {% endif %}
