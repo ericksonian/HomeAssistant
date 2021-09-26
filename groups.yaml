@@ -31,6 +31,15 @@ lights_downstairs:
     - light.living_room_stairs
     - switch.plug_in_switch_switch
 
+lights_bed3:
+  name: Bed3 Lights
+  entities:
+    - light.lifx1
+    - light.lifx2
+    - light.lifx3
+    - light.lifx4
+    - light.lifxmini1
+    
 lights_living:
   name: Living Lights
   entities:
