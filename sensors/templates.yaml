@@ -3,7 +3,11 @@
 
 - platform: template
   sensors:
-    
+
+    bed3_fan_speed:
+      friendly_name: Bed3 Fan Speed
+      value_template: "{{ state_attr('fan.bed3_ceiling_fan', 'speed') }}"
+
     living_fan_speed:
       friendly_name: Living Room Fan Speed
       value_template: "{{ state_attr('fan.living_room_ceiling_fan', 'speed') }}"
@@ -40,10 +44,9 @@
 #      value_template: "{{ state_attr('switch.vesync_blue', 'voltage') }} V"
 
 #    vesync_white_current:
-#      friendly_name: VeSync White Current 
+#      friendly_name: VeSync White Current
 #      value_template: "{{ state_attr('switch.vesync_white', 'current_power_w') / state_attr('switch.vesync_white', 'voltage') }} A"
 
 #    vesync_blue_current:
 #      friendly_name: VeSync Blue Current
 #      value_template: "{{ state_attr('switch.vesync_blue', 'current_power_w') / state_attr('switch.vesync_blue', 'voltage') }} A"
-

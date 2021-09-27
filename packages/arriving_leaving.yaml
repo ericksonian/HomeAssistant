@@ -51,6 +51,12 @@ automation:
     to: not_home
 #    for: "00:05:00"
   action:
+  - service: light.turn_off
+    data:
+      entity_id: group.lights_bed3
+  - service: script.turn_on
+  data:
+    entity_id: script.fan_bed3_low
   - service: script.turn_on
     data:
       entity_id: script.bed3_shade_blackout_close
