@@ -684,7 +684,7 @@
         "ID" : 25,
         "Name" : "Ceiling Fan",
         "Area" : {
-          "Name" : "Bed 3"
+          "Name" : "Bed3"
         }
       }
     ]
