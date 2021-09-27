@@ -15,7 +15,7 @@ automation:
 
 - alias: Pico Keypad Bed3 Button 1
   trigger:
-  - entity_id: sensor.bed3_bedroom_keypad
+  - entity_id: sensor.bed3_keypad
     platform: state
     to: "1"
   condition: []
@@ -26,7 +26,7 @@ automation:
       option: bright
 - alias: Pico Keypad Bed3 Button 2
   trigger:
-  - entity_id: sensor.bed3_bedroom_keypad
+  - entity_id: sensor.bed3_keypad
     platform: state
     to: "2"
   condition: []
@@ -37,7 +37,7 @@ automation:
       option: entertain
 - alias: Pico Keypad Bed3 Button 3
   trigger:
-  - entity_id: sensor.bed3_bedroom_keypad
+  - entity_id: sensor.bed3_keypad
     platform: state
     to: "4"
   condition: []
@@ -48,7 +48,7 @@ automation:
       option: relax
 - alias: Pico Keypad Bed3 Button 4
   trigger:
-  - entity_id: sensor.bed3_bedroom_keypad
+  - entity_id: sensor.bed3_keypad
     platform: state
     to: "8"
   condition: []

@@ -3,33 +3,33 @@ fan_bed3_off:
   sequence:
   - service: fan.turn_off
     target:
-      entity_id: fan.bed3_bedroom_ceiling_fan
+      entity_id: fan.bed3_ceiling_fan
 fan_bed3_low:
   sequence:
   - service: fan.set_speed
     target:
-      entity_id: fan.bed3_bedroom_ceiling_fan
+      entity_id: fan.bed3_ceiling_fan
     data:
       speed: low
 fan_bed3_medium:
   sequence:
   - service: fan.set_speed
     target:
-      entity_id: fan.bed3_bedroom_ceiling_fan
+      entity_id: fan.bed3_ceiling_fan
     data:
       speed: medium
 fan_bed3_medium_high:
   sequence:
   - service: fan.set_speed
     target:
-      entity_id: fan.bed3_bedroom_ceiling_fan
+      entity_id: fan.bed3_ceiling_fan
     data:
       speed: medium_high
 fan_bed3_high:
   sequence:
   - service: fan.set_speed
     target:
-      entity_id: fan.bed3_bedroom_ceiling_fan
+      entity_id: fan.bed3_ceiling_fan
     data:
       speed: high
 
@@ -38,7 +38,7 @@ fan_toggle_bed3_low:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("sensor.bed3_bedroom_fan_speed", "low") %}
+        {% if is_state("sensor.bed3_fan_speed", "low") %}
           script.fan_bed3_off
         {% else %}
           script.fan_bed3_low
@@ -48,7 +48,7 @@ fan_toggle_bed3_medium:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("sensor.bed3_bedroom_fan_speed", "medium") %}
+        {% if is_state("sensor.bed3_fan_speed", "medium") %}
           script.fan_bed3_off
         {% else %}
           script.fan_bed3_medium
@@ -58,7 +58,7 @@ fan_toggle_bed3_medium_high:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("sensor.bed3_bedroom_fan_speed", "medium_high") %}
+        {% if is_state("sensor.bed3_fan_speed", "medium_high") %}
           script.fan_bed3_off
         {% else %}
           script.fan_bed3_medium_high
@@ -68,7 +68,7 @@ fan_toggle_bed3_high:
   - service: script.turn_on
     data_template:
       entity_id: >
-        {% if is_state("sensor.bed3_bedroom_fan_speed", "high") %}
+        {% if is_state("sensor.bed3_fan_speed", "high") %}
           script.fan_bed3_off
         {% else %}
           script.fan_bed3_high
