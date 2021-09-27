@@ -674,10 +674,17 @@
         }
       },
       {
-        "ID" : 22,
-        "Name" : "Her Side",
+        "ID" : 21,
+        "Name" : "His Side",
         "Area" : {
           "Name" : "Master Bedroom"
+        }
+      },
+      {
+        "ID" : 25,
+        "Name" : "Ceiling Fan",
+        "Area" : {
+          "Name" : "Bed 3"
         }
       }
     ]
