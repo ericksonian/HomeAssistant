@@ -10,6 +10,7 @@ custom_fields:
           template: standardnostate
           entity: light.lifxmini1
           icon: 'mdi:ceiling-fan-light'
+          size: 70%
           name: Fan
           show_name: true
           state:
@@ -70,6 +71,7 @@ custom_fields:
           template: standardnostate
           entity: light.lifx4
           icon: 'mdi:lamp-outline'
+          size: 70%
           name: Floor
           show_name: true
           state:
