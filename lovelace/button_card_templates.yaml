@@ -24,6 +24,7 @@ container:
         - background-color: 'rgba(0,0,0,0.3)'
         - margin: 0
         - padding: 0.3em
+
 intercontainer:
   color_type: label-card
   color: 'rgb(45,45,45)'
@@ -50,6 +51,8 @@ intercontainer:
         - background-color: 'rgba(0,0,0,0.3)'
         - margin: 0
         - padding: 0.3em
+
+
 standard:
   color_type: card
   color: 'rgb(0,0,0)'
@@ -76,6 +79,31 @@ standard:
     label:
       - font-size: 0.4em
       - white-space: normal
+
+standard_nostate:
+  color_type: card
+  color: 'rgb(0,0,0)'
+  size: 80%
+  hold_action:
+    action: none
+  styles:
+    card:
+      - padding: 0.2em
+      - border-radius: 1em 1em 1em 1em
+      - '--mdc-ripple-color': 'rgb(255,255,255)'
+      - '--mdc-ripple-press-opacity': 0.5
+    icon:
+      - opacity: 0.5
+    name:
+      - font-size: 0.65em
+      - white-space: normal
+    state:
+      - font-size: 0.65em
+      - white-space: normal
+    label:
+      - font-size: 0.4em
+      - white-space: normal
+
 wide:
   template: standard
   styles:

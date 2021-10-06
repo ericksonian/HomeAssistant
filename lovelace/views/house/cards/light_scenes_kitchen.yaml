@@ -45,14 +45,12 @@ custom_fields:
                 service: script.kitchen_light_scene_relax
             - type: 'custom:button-card'
               entity: group.lights_kitchen
-              template: standard
+              template: standard_nostate
               icon: 'mdi:lightbulb-group-off-outline'
               name: All Off
               state:
                 - color: 'rgb(2,2,228)'
                   value: 'off'
-                - color: 'rgb(0,0,0)'
-                  value: 'on'
               tap_action:
                 action: call-service
                 service: script.kitchen_light_scene_off
