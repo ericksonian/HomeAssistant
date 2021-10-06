@@ -1,5 +1,60 @@
 ##  Exterior Scenes
 
+#   Exterior Bright
+- name: Exterior Bright
+  entities:
+    light.exterior_driveway:
+      state: on
+    light.exterior_front_door:
+      state: on
+    light.exterior_back_door:
+      state: on
+    switch.patio_string:
+      state: off
+
+#   Exterior Entertain
+- name: Exterior Entertain
+  entities:
+    light.exterior_driveway:
+      state: on
+      brightness: 80
+    light.exterior_front_door:
+      state: on
+      brightness: 200
+    light.exterior_back_door:
+      state: on
+      brightness: 150
+    switch.patio_string:
+      state: on
+
+
+#   Exterior Relax
+- name: Exterior Relax
+  entities:
+    light.exterior_driveway:
+      state: on
+      brightness: 80
+    light.exterior_front_door:
+      state: on
+      brightness: 200
+    light.exterior_back_door:
+      state: on
+      brightness: 150
+    switch.patio_string:
+      state: off
+
+#   Exterior All Off
+- name: Exterior All Off
+  entities:
+    light.exterior_driveway:
+      state: off
+    light.exterior_front_door:
+      state: off
+    light.exterior_back_door:
+      state: off
+    switch.patio_string:
+      state: off
+
 #   Exterior Driveway On
 - name: Exterior Driveway On Night
   entities:
@@ -11,49 +66,3 @@
     light.exterior_driveway:
       state: on
       brightness: 255
-
-#   Exterior Garage Driveway Off
-- name: Exterior Driveway Off
-  entities:
-    light.exterior_driveway:
-      state: off
-
-#   Exterior Front On
-- name: Exterior Front On
-  entities:
-    light.exterior_front_door:
-      state: on
-      brightness: 200
-    light.exterior_driveway:
-      state: on
-      brightness: 155
-
-#   Exterior Yard On
-- name: Exterior Yard On
-  entities:
-    light.exterior_front_door:
-      state: on
-      brightness: 200
-    light.exterior_back_door:
-      state: on
-      brightness: 150
-
-#   Exterior Yard Off
-- name: Exterior Yard Off
-  entities:
-    light.exterior_front_door:
-      state: off
-    light.exterior_back_door:
-      state: off
-
-#   Exterior All Off
-- name: Exterior All Off
-  entities:
-    light.exterior_front_door:
-      state: off
-    light.exterior_back_door:
-      state: off
-    light.exterior_driveway:
-      state: off
-    switch.patio_string:
-      state: off

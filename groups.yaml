@@ -4,7 +4,7 @@ lights_all:
     - group.lights_upstairs
     - group.lights_downstairs
 
-lights_all_exterior:
+lights_exterior:
   name: All lights
   entities:
     - light.exterior_back_door

@@ -1,0 +1,103 @@
+
+###### INPUT SELECT ------------------------------------------
+input_select:
+
+  exterior_light_scene:
+    name: 'Exterior Light Scene'
+    options:
+      - bright
+      - entertain
+      - relax
+      - 'off'
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+#  Scene Tracking
+- alias: Exterior Lights Off
+  trigger:
+  - entity_id: group.lights_exterior
+    platform: state
+    to: "off"
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.exterior_light_scene
+      option: 'off'
+
+#   Patio Off when Front Door Locks
+- alias: Patio Lights Auto Off
+  trigger:
+  - platform: state
+    entity_id: lock.front_door
+    to: locked
+    for: "00:05:00"
+  condition: []
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.patio_string
+
+#   Exterior Lighting
+- alias: Exterior Lights Off Sunrise
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition: []
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.exterior_all_off
+
+# Sunrise/Sunset
+- alias: Exterior Lights On Sunset
+  trigger:
+  - platform: sun
+    event: sunset
+  condition: []
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.exterior_relax
+      transition: 2
+
+###### SCRIPT ------------------------------------------
+script:
+
+  exterior_light_scene_bright:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.exterior_bright
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.exterior_light_scene
+          option: bright
+  exterior_light_scene_entertain:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.exterior_entertain
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.exterior_light_scene
+          option: entertain
+  exterior_light_scene_relax:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.exterior_relax
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.exterior_light_scene
+          option: relax
+  exterior_light_scene_off:
+    sequence:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.exterior_all_off
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.exterior_light_scene
+          option: 'off'
