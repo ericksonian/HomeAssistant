@@ -11,7 +11,7 @@ custom_fields:
             - type: 'custom:button-card'
               entity: input_select.exterior_light_scene
               template: standard
-              icon: 'mdi:stove'
+              icon: 'mdi:lightbulb-group-outline'
               name: Bright
               state:
                 - color: 'rgb(255,255,1)'
@@ -22,7 +22,7 @@ custom_fields:
             - type: 'custom:button-card'
               entity: input_select.exterior_light_scene
               template: standard
-              icon: 'mdi:lightbulb-multiple-outline'
+              icon: 'mdi:string-lights'
               name: Entertain
               state:
                 - color: 'rgb(255,255,1)'
@@ -35,7 +35,7 @@ custom_fields:
             - type: 'custom:button-card'
               entity: input_select.exterior_light_scene
               template: standard
-              icon: 'mdi:coffee-maker'
+              icon: 'mdi:weather-sunset'
               name: Relax
               state:
                 - color: 'rgb(255,255,1)'
@@ -46,7 +46,7 @@ custom_fields:
             - type: 'custom:button-card'
               entity: group.lights_exterior
               template: standard
-              icon: 'mdi:lightbulb-group-off-outline'
+              icon: 'mdi:weather-sunny'
               name: All Off
               state:
                 - color: 'rgb(2,2,228)'
