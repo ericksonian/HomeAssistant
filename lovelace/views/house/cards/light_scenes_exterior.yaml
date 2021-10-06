@@ -51,6 +51,8 @@ custom_fields:
               state:
                 - color: 'rgb(2,2,228)'
                   value: 'off'
+                - color: 'rgb(0,0,0)'
+                  value: 'on'
               tap_action:
                 action: call-service
                 service: script.exterior_light_scene_off
