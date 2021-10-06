@@ -9,7 +9,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifxmini1
-          icon: 'mdi:ceiling-fan-light'
+          icon: 'mdi:white-balance-incandescent'
           name: Fan
           show_name: true
           state:
@@ -24,7 +24,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx1
-          icon: 'mdi:floor-lamp-dual-outline'
+          icon: 'mdi:palette'
           name: Top
           show_name: true
           state:
@@ -39,7 +39,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx2
-          icon: 'mdi:floor-lamp-dual-outline'
+          icon: 'mdi:palette'
           name: Mid
           show_name: true
           state:
@@ -54,7 +54,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx3
-          icon: 'mdi:floor-lamp-dual-outline'
+          icon: 'mdi:palette'
           name: Low
           show_name: true
           state:
@@ -69,7 +69,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx4
-          icon: 'mdi:lamp-outline'
+          icon: 'mdi:palette'
           name: Floor
           show_name: true
           state:
