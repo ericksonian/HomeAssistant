@@ -1,16 +1,11 @@
 lights_all:
   name: All lights
   entities:
-    - light.kitchen_ceiling
+    - group.lights_kitchen
     - light.kitchen_dining_pendant
-    - light.kitchen_sink
-    - light.kitchen_cabinets
-    - light.living_room_main
-    - light.living_room_stairs
-    - light.master_bedroom_entry
-    - light.master_bedroom_ceiling_fan_light
-    - light.master_bedroom_her_side
-    - light.master_bedroom_his_side
+    - group.lights_living
+    - group.lights_master
+    - group.lights_bed3
 
 lights_all_exterior:
   name: All lights
