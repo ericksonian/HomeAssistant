@@ -17,7 +17,7 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 90px
+              - height: 80px
               - '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
@@ -32,7 +32,7 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 90px
+              - height: 80px
               - '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
@@ -47,7 +47,7 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 90px
+              - height: 80px
               - '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
@@ -62,7 +62,7 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 90px
+              - height: 80px
               - '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
@@ -77,7 +77,7 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 90px
+              - height: 80px
               - '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
