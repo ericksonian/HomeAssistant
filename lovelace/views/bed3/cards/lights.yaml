@@ -17,9 +17,7 @@ custom_fields:
               - color: var(--button-card-light-color)
             card:
               - height: 82px
-              - '--mdc-ripple-color': var(--button-card-light-color)
-            icon:
-              - opacity: 1
+              - '--mdc-ripple-color': var(--button-card-light-color)\
               - color: var(--button-card-light-color)
           tap_action:
             action: toggle
