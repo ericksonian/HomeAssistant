@@ -60,7 +60,7 @@ standard:
   hold_action:
     action: none
   state:
-    - color: 'rgb(225,225,225)'
+    - color: 'rgb(255,255,255)'
       value: 'on'
   styles:
     card:

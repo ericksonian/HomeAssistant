@@ -14,7 +14,7 @@ custom_fields:
               icon: 'mdi:stove'
               name: Bright
               state:
-                - color: 'rgb(255,255,1)'
+                - color: 'rgb(255,255,255)'
                   value: 'bright'
               tap_action:
                 action: call-service
@@ -25,7 +25,7 @@ custom_fields:
               icon: 'mdi:lightbulb-multiple-outline'
               name: Entertain
               state:
-                - color: 'rgb(255,255,1)'
+                - color: 'rgb(225,225,225)'
                   value: 'entertain'
               tap_action:
                 action: call-service
@@ -38,7 +38,7 @@ custom_fields:
               icon: 'mdi:coffee-maker'
               name: Relax
               state:
-                - color: 'rgb(255,255,1)'
+                - color: 'rgb(200,200,200)'
                   value: 'relax'
               tap_action:
                 action: call-service
