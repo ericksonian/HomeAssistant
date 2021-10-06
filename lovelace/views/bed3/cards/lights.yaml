@@ -12,12 +12,14 @@ custom_fields:
           icon: 'mdi:lightbulb-outline'
           name: Top
           show_name: true
+          state:
+            - color: var(--button-card-light-color)
+              value: 'on'
           styles:
             name:
               - color: var(--button-card-light-color)
             card:
               - height: 82px
-              - '--mdc-ripple-color': var(--button-card-light-color)\
-              - color: var(--button-card-light-color)
+              - '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
