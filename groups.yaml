@@ -25,13 +25,9 @@ lights_kitchen:
 lights_downstairs:
   name: Downstairs Lights
   entities:
-    - light.kitchen_ceiling
+    - group.lights_kitchen
     - light.kitchen_dining_pendant
-    - light.kitchen_sink
-    - light.kitchen_cabinets
-    - light.living_room_main
-    - light.living_room_stairs
-    - switch.plug_in_switch_switch
+    - group.lights_living
 
 lights_bed3:
   name: Bed3 Lights
