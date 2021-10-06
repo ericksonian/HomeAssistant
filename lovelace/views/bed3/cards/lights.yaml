@@ -7,16 +7,16 @@ custom_fields:
       type: horizontal-stack
       cards:
         - type: 'custom:button-card'
-          template: standard
+          template: standardnostate
           entity: light.lifx1
-          icon: 'mdi:alpha-r-circle'
+          icon: 'mdi:lightbulb-outline'
           name: Top
-          show_name: false
+          show_name: true
           styles:
             name:
               - color: var(--button-card-light-color)
             card:
-              - height: 68px
+              - height: 82px
               - '--mdc-ripple-color': var(--button-card-light-color)
             icon:
               - opacity: 1
