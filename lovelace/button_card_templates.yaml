@@ -56,11 +56,14 @@ standard:
   size: 80%
   hold_action:
     action: none
+  state:
+    - color: 'rgb(200,200,200)'
+      value: 'on'
   styles:
     card:
       - padding: 0.2em
       - border-radius: 1em 1em 1em 1em
-      - '--mdc-ripple-color': yellow
+      - '--mdc-ripple-color': 'rgb(200,200,200)'
       - '--mdc-ripple-press-opacity': 0.5
     icon:
       - opacity: 0.5
