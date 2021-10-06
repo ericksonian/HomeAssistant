@@ -51,6 +51,9 @@ automation:
   - entity_id: sensor.kitchen_keypad
     platform: state
     to: "8"
+  - entity_id: group.lights_kitchen
+    platform: state
+    to: "off"
   condition: []
   action:
   - service: input_select.select_option

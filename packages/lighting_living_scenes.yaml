@@ -60,6 +60,9 @@ automation:
   - entity_id: sensor.living_room_keypad
     platform: state
     to: "8"
+  - entity_id: group.lights_living
+    platform: state
+    to: "off"
   condition: []
   action:
   - service: input_select.select_option

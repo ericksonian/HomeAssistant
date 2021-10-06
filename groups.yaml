@@ -23,9 +23,9 @@ lights_kitchen:
   name: Kitchen Lights
   entities:
     - light.kitchen_ceiling
-    - light.kitchen_dining_pendant
     - light.kitchen_sink
     - light.kitchen_cabinets
+#    - light.kitchen_dining_pendant
 
 lights_downstairs:
   name: Downstairs Lights
