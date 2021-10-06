@@ -45,7 +45,7 @@ custom_fields:
                 service: script.exterior_light_scene_relax
             - type: 'custom:button-card'
               entity: group.lights_exterior
-              template: standard_nostate
+              template: standardnostate
               icon: 'mdi:weather-sunny'
               name: All Off
               state:

@@ -80,7 +80,7 @@ standard:
       - font-size: 0.4em
       - white-space: normal
 
-standard_nostate:
+standardnostate:
   color_type: card
   color: 'rgb(0,0,0)'
   size: 80%
