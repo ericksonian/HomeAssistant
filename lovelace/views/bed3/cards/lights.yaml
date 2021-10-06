@@ -9,8 +9,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifxmini1
-          icon: 'mdi:ceiling-fan-light'
-          size: 70%
+          icon: 'mdi:lightbulb-outline'
           name: Fan
           show_name: true
           state:
@@ -70,8 +69,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx4
-          icon: 'mdi:lamp-outline'
-          size: 70%
+          icon: 'mdi:lightbulb-outline'
           name: Floor
           show_name: true
           state:
