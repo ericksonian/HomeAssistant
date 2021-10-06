@@ -35,7 +35,7 @@ custom_fields:
             - type: 'custom:button-card'
               entity: input_select.exterior_light_scene
               template: standard
-              icon: 'mdi:weather-sunset'
+              icon: 'mdi:weather-night'
               name: Relax
               state:
                 - color: 'rgb(255,255,1)'
