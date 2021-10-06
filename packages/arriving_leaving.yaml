@@ -21,11 +21,12 @@ automation:
   - platform: state
     entity_id: group.all_persons
     to: not_home
-    for: "00:05:00"
+    for: "00:10:00"
   action:
   - service: light.turn_off
     data:
       entity_id: group.lights_all
+      transition: 2
   - service: script.turn_on
     data:
       entity_id: script.fan_living_low
@@ -35,7 +36,7 @@ automation:
   - platform: state
     entity_id: group.persons_we
     to: not_home
-#    for: "00:05:00"
+    for: "00:05:00"
   action:
   - service: light.turn_off
     data:
@@ -43,13 +44,16 @@ automation:
   - service: script.turn_on
     data:
       entity_id: script.fan_master_low
+  - service: script.turn_on
+    data:
+      entity_id: script.master_shades_close
 
 - alias: Not Home - Nathan
   trigger:
   - platform: state
     entity_id: person.nathan
     to: not_home
-#    for: "00:05:00"
+    for: "00:05:00"
   action:
   - service: light.turn_off
     data:
@@ -57,11 +61,11 @@ automation:
   - service: script.turn_on
     data:
       entity_id: script.fan_bed3_low
-  - service: script.turn_on
-    data:
-      entity_id: script.bed3_shade_blackout_close
-  - service: script.turn_on
-    data:
-      entity_id: script.bed3_shade_screen_close
+#  - service: script.turn_on
+#    data:
+#      entity_id: script.bed3_shade_blackout_close
+#  - service: script.turn_on
+#    data:
+#      entity_id: script.bed3_shade_screen_close
 
 ###### SCRIPTS ------------------------------------------

@@ -12,6 +12,13 @@ lights_all:
     - light.master_bedroom_her_side
     - light.master_bedroom_his_side
 
+lights_all_exterior:
+  name: All lights
+  entities:
+    - light.exterior_back_door
+    - light.exterior_driveway
+    - light.exterior_front_door
+
 lights_kitchen:
   name: Kitchen Lights
   entities:
@@ -39,7 +46,7 @@ lights_bed3:
     - light.lifx3
     - light.lifx4
     - light.lifxmini1
-    
+
 lights_living:
   name: Living Lights
   entities:

@@ -674,8 +674,8 @@
         }
       },
       {
-        "ID" : 21,
-        "Name" : "His Side",
+        "ID" : 22,
+        "Name" : "Her Side",
         "Area" : {
           "Name" : "Master Bedroom"
         }
