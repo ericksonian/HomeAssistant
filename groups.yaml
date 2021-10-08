@@ -18,6 +18,7 @@ lights_downstairs:
     - group.lights_kitchen
     - light.kitchen_dining_pendant
     - group.lights_living
+    - switch.garage_ceiling
 
 lights_upstairs:
   name: Downstairs Lights
