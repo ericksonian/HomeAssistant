@@ -34,7 +34,10 @@
   action:
   - service: scene.turn_on
     data:
-      entity_id: scene.downstairs_all_off
+      entity_id: scene.kitchen_all_off
+  - service: scene.turn_on
+    data:
+      entity_id: scene.living_all_off
 
 - alias: Pico Garage Button 3 Hold
   trigger:
