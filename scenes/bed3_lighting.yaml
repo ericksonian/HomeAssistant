@@ -166,7 +166,7 @@
     light.lifx3:
       state: on
       brightness: 85
-      rgb_color: [715,225,0]
+      rgb_color: [215,225,0]
       transition: 3
     light.lifx4:
       state: on
