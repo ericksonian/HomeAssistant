@@ -201,23 +201,23 @@
   entities:
     light.lifx1:
       state: on
-      brightness: 155
-      rgb_color: [255,169,0]
+      brightness: 85
+      rgb_color: [79,154,218]
       transition: 1.5
     light.lifx2:
       state: on
-      brightness: 120
-      rgb_color: [255,42,0]
+      brightness: 100
+      rgb_color: [252,213,150]
       transition: 2
     light.lifx3:
       state: on
-      brightness: 85
-      rgb_color: [255,140,0]
+      brightness: 125
+      rgb_color: [253,212,0]
       transition: 2.5
     light.lifx4:
       state: on
       brightness: 85
-      rgb_color: [255,208,114]
+      rgb_color: [255,56,1]
       transition: 3
     light.lifxmini1:
       state: off
@@ -225,23 +225,23 @@
   entities:
     light.lifx1:
       state: on
-      brightness: 155
-      rgb_color: [255,39,35]
+      brightness: 70
+      rgb_color: [35,21,89]
       transition: 1.5
     light.lifx2:
       state: on
-      brightness: 120
-      rgb_color: [255,134,48]
+      brightness: 95
+      rgb_color: [242,34,37]
       transition: 2
     light.lifx3:
       state: on
-      brightness: 85
-      rgb_color: [255,208,82]
+      brightness: 125
+      rgb_color: [252,94,1]
       transition: 2.5
     light.lifx4:
       state: on
-      brightness: 85
-      rgb_color: [255,87,0]
+      brightness: 100
+      rgb_color: [207,182,97]
       transition: 3
     light.lifxmini1:
       state: off
