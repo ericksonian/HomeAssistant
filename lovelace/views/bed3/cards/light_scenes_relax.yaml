@@ -30,6 +30,27 @@ custom_fields:
         - type: 'custom:button-card'
           template: standard
           entity: input_select.bed3_light_scene_relax
+          icon: 'mdi:alpha-g-circle'
+          show_name: false
+          state:
+            - color: 'rgb(0,255,0)'
+              value: 'greens'
+              styles:
+                icon:
+                  - color: 'rgb(0,0,0)'
+          styles:
+            card:
+              - height: 72px
+              - '--mdc-ripple-color': 'rgb(0,255,0)'
+            icon:
+              - opacity: 1
+              - color: 'rgb(0,255,0)'
+          tap_action:
+            action: call-service
+            service: script.bed3_light_scene_relax_greens
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_select.bed3_light_scene_relax
           icon: 'mdi:alpha-b-circle'
           show_name: false
           state:
@@ -48,3 +69,24 @@ custom_fields:
           tap_action:
             action: call-service
             service: script.bed3_light_scene_relax_blues
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_select.bed3_light_scene_relax
+          icon: 'mdi:alpha-y-circle'
+          show_name: false
+          state:
+            - color: 'rgb(255,255,0)'
+              value: 'yellows'
+              styles:
+                icon:
+                  - color: 'rgb(255,255,0)'
+          styles:
+            card:
+              - height: 72px
+              - '--mdc-ripple-color': 'rgb(255,255,0)'
+            icon:
+              - opacity: 1
+              - color: 'rgb(255,255,0)'
+          tap_action:
+            action: call-service
+            service: script.bed3_light_scene_relax_yellows

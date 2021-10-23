@@ -127,3 +127,51 @@
       transition: 3
     light.lifxmini1:
       state: off
+- name: Bed3 Relax Greens
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [0,255,50]
+      transition: 4
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [10,200,80]
+      transition: 5
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [75,225,50]
+      transition: 3
+    light.lifx4:
+      state: on
+      brightness: 85
+      rgb_color: [25,235,100]
+      transition: 3
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Yellows
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [50,255,0]
+      transition: 4
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [100,200,0]
+      transition: 5
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [75,225,0]
+      transition: 3
+    light.lifx4:
+      state: on
+      brightness: 85
+      rgb_color: [25,235,0]
+      transition: 3
+    light.lifxmini1:
+      state: off
