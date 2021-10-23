@@ -14,11 +14,14 @@ custom_fields:
           show_name: true
           state:
             - color: 'rgb(255,0,0)'
-              value: 'red'
+              value: 'reds'
           styles:
             card:
               - height: 72px
               - '--mdc-ripple-color': 'rgb(255,0,0)'
+            icon:
+              - opacity: 1
+              - color: 'rgb(255,0,0)'
           tap_action:
             action: call-service
             service: script.bed3_light_scene_relax_reds
