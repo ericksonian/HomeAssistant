@@ -124,9 +124,6 @@ custom_fields:
               state:
                 - color: 'rgb(255,255,255)'
                   value: 'custom1'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
               styles:
                 card:
                   - height: 72px
@@ -145,9 +142,6 @@ custom_fields:
               state:
                 - color: 'rgb(255,255,255)'
                   value: 'custom2'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
               styles:
                 card:
                   - height: 72px
@@ -166,9 +160,6 @@ custom_fields:
               state:
                 - color: 'rgb(255,255,255)'
                   value: 'custom3'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
               styles:
                 card:
                   - height: 72px
@@ -187,9 +178,6 @@ custom_fields:
               state:
                 - color: 'rgb(255,255,255)'
                   value: 'custom4'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
               styles:
                 card:
                   - height: 72px
@@ -208,9 +196,6 @@ custom_fields:
               state:
                 - color: 'rgb(255,255,255)'
                   value: 'custom5'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
               styles:
                 card:
                   - height: 72px
