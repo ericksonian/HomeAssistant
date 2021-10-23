@@ -58,8 +58,28 @@
       state: off
       transition: 5
 
-#   Bed3 Relax
-- name: Bed3 Relax
+#   Bed3 All Off
+- name: Bed3 All Off
+  entities:
+    light.lifx1:
+      state: off
+      transition: 2
+    light.lifx2:
+      state: off
+      transition: 2
+    light.lifx3:
+      state: off
+      transition: 2
+    light.lifx4:
+      state: off
+      transition: 2
+    light.lifxmini1:
+      state: off
+      transition: 2
+
+####   Bed3 Relax Colors
+
+- name: Bed3 Relax Reds
   entities:
     light.lifx1:
       state: on
@@ -82,23 +102,4 @@
     light.lifxmini1:
       state: on
       brightness: 40
-      transition: 2
-
-#   Bed3 All Off
-- name: Bed3 All Off
-  entities:
-    light.lifx1:
-      state: off
-      transition: 2
-    light.lifx2:
-      state: off
-      transition: 2
-    light.lifx3:
-      state: off
-      transition: 2
-    light.lifx4:
-      state: off
-      transition: 2
-    light.lifxmini1:
-      state: off
       transition: 2

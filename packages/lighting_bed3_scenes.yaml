@@ -10,6 +10,20 @@ input_select:
       - relax
       - 'off'
 
+  bed3_light_scene_relax:
+    name: 'Bed3 Light Scene Relax'
+    options:
+      - reds
+      - greens
+      - blues
+      - yellows
+      - whites
+      - custom1
+      - custom2
+      - custom3
+      - custom4
+      - custom5
+
 ###### AUTOMATIONS --------------------------------------
 automation:
 
@@ -21,10 +35,6 @@ automation:
   condition: []
   action:
   - service: script.bed3_light_scene_bright
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.bed3_light_scene
-      option: bright
 
 - alias: Pico Keypad Bed3 Button 2
   trigger:
@@ -34,10 +44,6 @@ automation:
   condition: []
   action:
   - service: script.bed3_light_scene_entertain
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.bed3_light_scene
-      option: entertain
 
 - alias: Pico Keypad Bed3 Button 3
   trigger:
@@ -47,10 +53,6 @@ automation:
   condition: []
   action:
   - service: script.bed3_light_scene_relax
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.bed3_light_scene
-      option: relax
 
 - alias: Pico Keypad Bed3 Button 4
   trigger:
@@ -60,10 +62,6 @@ automation:
   condition: []
   action:
   - service: script.bed3_light_scene_off
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.bed3_light_scene
-      option: 'off'
 
 - alias: Bed3 Lights Off
   trigger:
@@ -98,15 +96,6 @@ script:
         data:
           entity_id: input_select.bed3_light_scene
           option: entertain
-  bed3_light_scene_relax:
-    sequence:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.bed3_relax
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.bed3_light_scene
-          option: relax
   bed3_light_scene_off:
     sequence:
       - service: scene.turn_on
@@ -116,3 +105,24 @@ script:
         data:
           entity_id: input_select.bed3_light_scene
           option: 'off'
+
+# COLORS
+  bed3_light_scene_relax:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene
+          option: relax
+      - service: script.turn_on
+        target:
+          entity_id: script.bed3_light_scene_relax_reds
+
+  bed3_light_scene_relax_reds:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: reds
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_relax_reds
