@@ -156,22 +156,47 @@
     light.lifx1:
       state: on
       brightness: 155
-      rgb_color: [50,255,0]
+      rgb_color: [250,255,0]
       transition: 4
     light.lifx2:
       state: on
       brightness: 120
-      rgb_color: [100,200,0]
+      rgb_color: [250,200,0]
       transition: 5
     light.lifx3:
       state: on
       brightness: 85
-      rgb_color: [75,225,0]
+      rgb_color: [715,225,0]
       transition: 3
     light.lifx4:
       state: on
       brightness: 85
-      rgb_color: [25,235,0]
+      rgb_color: [225,200,0]
       transition: 3
     light.lifxmini1:
       state: off
+- name: Bed3 Relax Whites
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      kelvin: 3000
+      transition: 4
+    light.lifx2:
+      state: on
+      brightness: 120
+      kelvin: 2700
+      transition: 3
+    light.lifx3:
+      state: on
+      brightness: 85
+      kelvin: 2400
+      transition: 2
+    light.lifx4:
+      state: on
+      brightness: 85
+      kelvin: 2100
+      transition: 1
+    light.lifxmini1:
+      state: off
+      transition: 5
