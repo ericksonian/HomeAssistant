@@ -200,3 +200,53 @@
     light.lifxmini1:
       state: off
       transition: 5
+- name: Bed3 Relax Sunrise
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      kelvin: 2000
+      transition: 1.5
+    light.lifx2:
+      state: on
+      brightness: 120
+      kelvin: 1700
+      transition: 2
+    light.lifx3:
+      state: on
+      brightness: 85
+      kelvin: 1400
+      transition: 2.5
+    light.lifx4:
+      state: on
+      brightness: 85
+      kelvin: 1100
+      transition: 3
+    light.lifxmini1:
+      state: off
+      transition: 5
+- name: Bed3 Relax Sunset
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      kelvin: 4000
+      transition: 1.5
+    light.lifx2:
+      state: on
+      brightness: 120
+      kelvin: 4700
+      transition: 2
+    light.lifx3:
+      state: on
+      brightness: 85
+      kelvin: 4400
+      transition: 2.5
+    light.lifx4:
+      state: on
+      brightness: 85
+      kelvin: 4100
+      transition: 3
+    light.lifxmini1:
+      state: off
+      transition: 5

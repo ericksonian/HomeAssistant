@@ -11,6 +11,27 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
+              icon: 'mdi:alpha-w-circle'
+              show_name: false
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'whites'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                icon:
+                  - opacity: 1
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_whites
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax
               icon: 'mdi:alpha-r-circle'
               show_name: false
               state:
@@ -74,6 +95,24 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
+              icon: 'mdi:weather-sunset-up'
+              show_name: false
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'sunrise'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_sunrise
+
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax
               icon: 'mdi:alpha-y-circle'
               show_name: false
               state:
@@ -92,30 +131,6 @@ custom_fields:
               tap_action:
                 action: call-service
                 service: script.bed3_light_scene_relax_yellows
-            - type: 'custom:button-card'
-              template: standard
-              entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:alpha-w-circle'
-              show_name: false
-              state:
-                - color: 'rgb(255,255,255)'
-                  value: 'whites'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
-              styles:
-                card:
-                  - height: 72px
-                  - '--mdc-ripple-color': 'rgb(255,255,255)'
-                icon:
-                  - opacity: 1
-                  - color: 'rgb(255,255,255)'
-              tap_action:
-                action: call-service
-                service: script.bed3_light_scene_relax_whites
-
-        - type: horizontal-stack
-          cards:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
@@ -173,36 +188,15 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:numeric-4-circle'
+              icon: 'mdi:weather-sunset-down'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
-                  value: 'custom4'
+                  value: 'sunset'
               styles:
                 card:
                   - height: 72px
                   - '--mdc-ripple-color': 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.bed3_light_scene_relax_custom4
-              hold_action:
-                action: call-service
-                service: script.bed3_light_scene_relax_custom4_create
-            - type: 'custom:button-card'
-              template: standard
-              entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:numeric-5-circle'
-              show_name: false
-              state:
-                - color: 'rgb(255,255,255)'
-                  value: 'custom5'
-              styles:
-                card:
-                  - height: 72px
-                  - '--mdc-ripple-color': 'rgb(255,255,255)'
-              tap_action:
-                action: call-service
-                service: script.bed3_light_scene_relax_custom5
-              hold_action:
-                action: call-service
-                service: script.bed3_light_scene_relax_custom5_create
+                service: script.bed3_light_scene_relax_sunset
