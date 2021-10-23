@@ -121,17 +121,17 @@ script:
           entity_id: >
             {% if is_state("input_select.bed3_light_scene_relax", "reds") %}
               script.bed3_light_scene_relax_reds
-            {% elseif is_state("input_select.bed3_light_scene_relax", "greens") %}
+            {% elif is_state("input_select.bed3_light_scene_relax", "greens") %}
               script.bed3_light_scene_relax_greens
-            {% elseif is_state("input_select.bed3_light_scene_relax", "blues") %}
+            {% elif is_state("input_select.bed3_light_scene_relax", "blues") %}
               script.bed3_light_scene_relax_blues
-            {% elseif is_state("input_select.bed3_light_scene_relax", "yellows") %}
+            {% elif is_state("input_select.bed3_light_scene_relax", "yellows") %}
               script.bed3_light_scene_relax_yellows
-            {% elseif is_state("input_select.bed3_light_scene_relax", "custom1") %}
+            {% elif is_state("input_select.bed3_light_scene_relax", "custom1") %}
               script.bed3_light_scene_relax_custom1
-            {% elseif is_state("input_select.bed3_light_scene_relax", "custom2") %}
+            {% elif is_state("input_select.bed3_light_scene_relax", "custom2") %}
               script.bed3_light_scene_relax_custom2
-            {% elseif is_state("input_select.bed3_light_scene_relax", "custom3") %}
+            {% elif is_state("input_select.bed3_light_scene_relax", "custom3") %}
               script.bed3_light_scene_relax_custom3
             {% else %}
               script.bed3_light_scene_relax_whites
