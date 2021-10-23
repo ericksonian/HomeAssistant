@@ -114,9 +114,6 @@ script:
           entity_id: input_select.bed3_light_scene
           option: relax
       - service: script.turn_on
-        target:
-          entity_id: script.bed3_light_scene_relax_reds
-      - service: script.turn_on
         data_template:
           entity_id: >
             {% if is_state("input_select.bed3_light_scene_relax", "reds") %}
