@@ -166,3 +166,13 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_whites
+
+  bed3_light_scene_relax_custom1:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom1
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_relax_custom1
