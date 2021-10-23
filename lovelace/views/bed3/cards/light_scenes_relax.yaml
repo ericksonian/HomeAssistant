@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Lights
+name: Relax
 custom_fields:
   buttons:
     card:
