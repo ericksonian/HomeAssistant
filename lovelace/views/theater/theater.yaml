@@ -7,7 +7,7 @@ cards:
     cards:
       - !include /config/lovelace/views/theater/cards/screen.yaml
       - !include /config/lovelace/views/theater/cards/fan.yaml
-#  - !include /config/lovelace/views/theater/cards/fan.yaml
+  - !include /config/lovelace/views/theater/cards/fan2.yaml
   - !include /config/lovelace/views/theater/cards/nothing_playing.yaml
   - !include /config/lovelace/views/theater/cards/projector_on.yaml
   - !include /config/lovelace/views/theater/cards/theater_speaker.yaml

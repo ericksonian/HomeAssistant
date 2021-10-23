@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Fan
+name: Fan Door
 custom_fields:
   buttons:
     card:

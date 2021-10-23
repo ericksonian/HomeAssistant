@@ -11,6 +11,5 @@ cards:
     cards:
       - !include /config/lovelace/views/bed3/cards/fan.yaml
       - !include /config/lovelace/views/bed3/cards/light_scenes.yaml
-  - !include /config/lovelace/views/bed3/cards/lights.yaml
-  - !include /config/lovelace/views/bed3/cards/fan2.yaml
+  - !include /config/lovelace/views/bed3/cards/light_bulbs.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
