@@ -18,11 +18,11 @@ input_select:
       - blues
       - yellows
       - whites
+      - sunrise
+      - sunset
       - custom1
       - custom2
       - custom3
-      - sunrise
-      - sunset
 
 ###### AUTOMATIONS --------------------------------------
 automation:
@@ -116,6 +116,26 @@ script:
       - service: script.turn_on
         target:
           entity_id: script.bed3_light_scene_relax_reds
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.bed3_light_scene_relax", "reds") %}
+              script.bed3_light_scene_relax_reds
+            {% elseif is_state("input_select.bed3_light_scene_relax", "greens") %}
+              script.bed3_light_scene_relax_greens
+            {% elseif is_state("input_select.bed3_light_scene_relax", "blues") %}
+              script.bed3_light_scene_relax_blues
+            {% elseif is_state("input_select.bed3_light_scene_relax", "yellows") %}
+              script.bed3_light_scene_relax_yellows
+            {% elseif is_state("input_select.bed3_light_scene_relax", "custom1") %}
+              script.bed3_light_scene_relax_custom1
+            {% elseif is_state("input_select.bed3_light_scene_relax", "custom2") %}
+              script.bed3_light_scene_relax_custom2
+            {% elseif is_state("input_select.bed3_light_scene_relax", "custom3") %}
+              script.bed3_light_scene_relax_custom3
+            {% else %}
+              script.bed3_light_scene_relax_whites
+            {% endif %}
 
   bed3_light_scene_relax_reds:
     sequence:
