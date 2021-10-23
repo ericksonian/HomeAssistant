@@ -13,12 +13,12 @@ custom_fields:
           name: Fan
           show_name: true
           state:
-            - color: var(--button-card-light-color)
+            - color: 'rgb(204,133,69)'
               value: 'on'
           styles:
             card:
               - height: 72px
-              - '--mdc-ripple-color': var(--button-card-light-color)
+              - '--mdc-ripple-color': 'rgb(204,133,69)'
           tap_action:
             action: toggle
         - type: 'custom:button-card'

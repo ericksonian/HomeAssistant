@@ -28,7 +28,6 @@
     light.lifxmini1:
       state: on
       brightness: 255
-      kelvin: 4850
       transition: 1
 
 #   Bed3 Entertain
@@ -50,12 +49,10 @@
       kelvin: 2700
       transition: 2.5
     light.lifx4:
-      state: on
-      brightness: 155
-      kelvin: 2700
-      transition: 3
-    light.lifxmini1:
       state: off
+    light.lifxmini1:
+      state: on
+      brightness: 255
       transition: 1
 
 #   Bed3 All Off

@@ -124,6 +124,10 @@ script:
               script.bed3_light_scene_relax_blues
             {% elif is_state("input_select.bed3_light_scene_relax", "yellows") %}
               script.bed3_light_scene_relax_yellows
+            {% elif is_state("input_select.bed3_light_scene_relax", "sunrise") %}
+              script.bed3_light_scene_relax_sunrise
+            {% elif is_state("input_select.bed3_light_scene_relax", "sunset") %}
+              script.bed3_light_scene_relax_sunset
             {% elif is_state("input_select.bed3_light_scene_relax", "custom1") %}
               script.bed3_light_scene_relax_custom1
             {% elif is_state("input_select.bed3_light_scene_relax", "custom2") %}
