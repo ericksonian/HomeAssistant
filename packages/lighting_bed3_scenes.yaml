@@ -210,6 +210,7 @@ script:
           entity_id: scene.bed3_relax_sunset
 
 # Customs
+
   bed3_light_scene_relax_custom1:
     sequence:
       - service: input_select.select_option
@@ -293,3 +294,73 @@ script:
         data:
           entity_id: input_select.bed3_light_scene_relax
           option: custom3
+
+# Set Customs on Startup
+  bed3_light_scene_relax_custom_set:
+    sequence:
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom1
+          entities:
+            light.lifx1:
+              state: "on"
+              brightness: 155
+              rgb_color: [127,255,127]
+            light.lifx2:
+              state: "on"
+              brightness: 115
+              rgb_color: [131,0,255]
+            light.lifx3:
+              state: "on"
+              brightness: 75
+              rgb_color: [38,128,255]
+            light.lifx4:
+              state: "on"
+              brightness: 125
+              rgb_color: [255,254,0]
+            light.lifxmini1:
+              state: "off"
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom2
+          entities:
+            light.lifx1:
+              state: "on"
+              brightness: 155
+              rgb_color: [6,2,255]
+            light.lifx2:
+              state: "on"
+              brightness: 115
+              rgb_color: [214,225,255]
+            light.lifx3:
+              state: "on"
+              brightness: 75
+              rgb_color: [255,195,43]
+            light.lifx4:
+              state: "on"
+              brightness: 125
+              rgb_color: [255,181,63]
+            light.lifxmini1:
+              state: "off"
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom3
+          entities:
+            light.lifx1:
+              state: "on"
+              brightness: 155
+              rgb_color: [250,255,242]
+            light.lifx2:
+              state: "on"
+              brightness: 115
+              rgb_color: [255,193,239]
+            light.lifx3:
+              state: "on"
+              brightness: 75
+              rgb_color: [255,175,177]
+            light.lifx4:
+              state: "on"
+              brightness: 125
+              rgb_color: [187,163,255]
+            light.lifxmini1:
+              state: "off"

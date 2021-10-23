@@ -9,6 +9,7 @@
   - service: frontend.set_theme
     data:
       name: amoled_black
+  - service: script.bed3_light_scene_relax_custom_set
   - service: !secret notify_ian
     data:
       message: Home Assistant Started
