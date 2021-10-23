@@ -192,3 +192,107 @@ script:
         data:
           entity_id: input_select.bed3_light_scene_relax
           option: custom1
+
+  bed3_light_scene_relax_custom2:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom2
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_relax_custom2
+
+  bed3_light_scene_relax_custom2_create:
+    sequence:
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom2
+          snapshot_entities:
+          - light.lifx1
+          - light.lifx2
+          - light.lifx3
+          - light.lifx4
+          - light.lifxmini1
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom2
+
+  bed3_light_scene_relax_custom3:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom3
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_relax_custom3
+
+  bed3_light_scene_relax_custom3_create:
+    sequence:
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom3
+          snapshot_entities:
+          - light.lifx1
+          - light.lifx2
+          - light.lifx3
+          - light.lifx4
+          - light.lifxmini1
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom3
+
+  bed3_light_scene_relax_custom4:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom4
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_relax_custom4
+
+  bed3_light_scene_relax_custom4_create:
+    sequence:
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom4
+          snapshot_entities:
+          - light.lifx1
+          - light.lifx2
+          - light.lifx3
+          - light.lifx4
+          - light.lifxmini1
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom4
+
+  bed3_light_scene_relax_custom5:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom5
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_relax_custom5
+
+  bed3_light_scene_relax_custom5_create:
+    sequence:
+      - service: scene.create
+        data:
+          scene_id: bed3_relax_custom5
+          snapshot_entities:
+          - light.lifx1
+          - light.lifx2
+          - light.lifx3
+          - light.lifx4
+          - light.lifxmini1
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bed3_light_scene_relax
+          option: custom5
