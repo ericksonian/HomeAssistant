@@ -176,6 +176,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_custom1
+        data:
+          transition: 3
 
   bed3_light_scene_relax_custom1_create:
     sequence:
@@ -202,6 +204,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_custom2
+        data:
+          transition: 3
 
   bed3_light_scene_relax_custom2_create:
     sequence:
@@ -228,6 +232,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_custom3
+        data:
+          transition: 3
 
   bed3_light_scene_relax_custom3_create:
     sequence:
@@ -254,6 +260,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_custom4
+        data:
+          transition: 3
 
   bed3_light_scene_relax_custom4_create:
     sequence:
@@ -280,6 +288,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_custom5
+        data:
+          transition: 3
 
   bed3_light_scene_relax_custom5_create:
     sequence:
