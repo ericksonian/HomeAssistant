@@ -138,15 +138,7 @@ custom_fields:
                 service: script.bed3_light_scene_relax_custom1
               hold_action:
                 action: call-service
-                service: scene.create
-                service_data:
-                  scene_id: bed3_relax_custom1
-                  entities:
-                    - light.lifx1
-                    - light.lifx2
-                    - light.lifx3
-                    - light.lifx4
-                    - light.lifxmini1
+                service: script.bed3_light_scene_relax_custom1_create
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
