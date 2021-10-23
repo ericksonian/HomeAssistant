@@ -119,7 +119,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:alpha-1-circle'
+              icon: 'mdi:numeric-1-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
@@ -137,7 +137,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:alpha-2-circle'
+              icon: 'mdi:numeric-2-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
@@ -155,7 +155,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:alpha-3-circle'
+              icon: 'mdi:numeric-3-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
@@ -173,7 +173,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:alpha-4-circle'
+              icon: 'mdi:numeric-4-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
@@ -191,7 +191,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.bed3_light_scene_relax
-              icon: 'mdi:alpha-5-circle'
+              icon: 'mdi:numeric-5-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
