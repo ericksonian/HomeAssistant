@@ -9,10 +9,11 @@
       state: on
     light.master_bedroom_ceiling_fan_light:
       state: on
-    light.master_bedroom_her_side:
+    light.lifx5:
       state: on
-    light.master_bedroom_his_side:
-      state: on
+      brightness: 150
+#    light.lifx6:
+#      state: on
 
 #   Master Entertain
 - name: Master Entertain
@@ -23,10 +24,10 @@
     light.master_bedroom_ceiling_fan_light:
       state: on
       brightness: 76
-    light.master_bedroom_her_side:
+    light.lifx5:
       state: off
-    light.master_bedroom_his_side:
-      state: off
+#    light.lifx6:
+#      state: off
 
 #   Master Relax
 - name: Master Relax
@@ -35,12 +36,12 @@
       state: off
     light.master_bedroom_ceiling_fan_light:
       state: off
-    light.master_bedroom_her_side:
+    light.lifx5:
       state: on
-      brightness: 51
-    light.master_bedroom_his_side:
-      state: on
-      brightness: 51
+      brightness: 50
+#    light.lifx6:
+#      state: on
+#      brightness: 51
 
 #   Master All Off
 - name: Master All Off
@@ -49,7 +50,7 @@
       state: off
     light.master_bedroom_ceiling_fan_light:
       state: off
-    light.master_bedroom_her_side:
+    light.lifx5:
       state: off
-    light.master_bedroom_his_side:
-      state: off
+#    light.lifx6:
+#      state: off
