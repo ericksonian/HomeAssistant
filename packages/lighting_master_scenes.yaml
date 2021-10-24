@@ -20,10 +20,7 @@ automation:
     to: "1"
   condition: []
   action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.master_light_scene
-      option: bright
+  - service: script.master_light_scene_bright
 - alias: Pico Keypad Master Button 2
   trigger:
   - entity_id: sensor.master_bedroom_keypad
@@ -31,10 +28,7 @@ automation:
     to: "2"
   condition: []
   action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.master_light_scene
-      option: entertain
+  - service: script.master_light_scene_entertain
 - alias: Pico Keypad Master Button 3
   trigger:
   - entity_id: sensor.master_bedroom_keypad
@@ -42,15 +36,18 @@ automation:
     to: "4"
   condition: []
   action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.master_light_scene
-      option: relax
+  - service: script.master_light_scene_relax
 - alias: Pico Keypad Master Button 4
   trigger:
   - entity_id: sensor.master_bedroom_keypad
     platform: state
     to: "8"
+  condition: []
+  action:
+  - service: script.master_light_scene_off
+
+- alias: Master Lights Off
+  trigger:
   - entity_id: group.lights_master
     platform: state
     to: "off"
