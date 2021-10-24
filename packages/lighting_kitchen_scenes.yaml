@@ -7,7 +7,7 @@ input_select:
     options:
       - bright
       - entertain
-      - relax
+      - 'relax'
       - 'off'
 
 ###### AUTOMATIONS --------------------------------------
@@ -87,7 +87,7 @@ script:
       - service: input_select.select_option
         data:
           entity_id: input_select.kitchen_light_scene
-          option: relax
+          option: 'relax'
   kitchen_light_scene_off:
     sequence:
       - service: scene.turn_on
