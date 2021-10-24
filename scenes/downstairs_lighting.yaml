@@ -31,5 +31,7 @@
       state: off
     light.living_room_main:
       state: off
+    light.living_room_stairs:
+      state: off
     switch.plug_in_switch_switch:
       state: off

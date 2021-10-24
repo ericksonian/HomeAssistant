@@ -23,10 +23,12 @@ automation:
     to: not_home
     for: "00:10:00"
   action:
-  - service: homeassistant.turn_off
+  - service: scene.turn_on
     data:
-      entity_id: group.lights_all
-      transition: 2
+      entity_id: scene.downstairs_all_off
+  - service: switch.turn_off
+    data:
+      entity_id: switch.garage_ceiling
   - service: script.turn_on
     data:
       entity_id: script.fan_living_low
@@ -38,9 +40,9 @@ automation:
     to: not_home
     for: "00:05:00"
   action:
-  - service: homeassistant.turn_off
+  - service: scene.turn_on
     data:
-      entity_id: group.lights_master
+      entity_id: scene.master_all_off
   - service: script.turn_on
     data:
       entity_id: script.fan_master_low
@@ -55,9 +57,9 @@ automation:
     to: not_home
     for: "00:05:00"
   action:
-  - service: homeassistant.turn_off
+  - service: scene.turn_on
     data:
-      entity_id: group.lights_bed3
+      entity_id: scene.bed3_all_off
   - service: script.turn_on
     data:
       entity_id: script.fan_bed3_low

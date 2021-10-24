@@ -12,6 +12,8 @@
     light.lifx5:
       state: on
       brightness: 150
+      kelvin: 4850
+#      transition: 2
 #    light.lifx6:
 #      state: on
 
@@ -26,6 +28,7 @@
       brightness: 76
     light.lifx5:
       state: off
+#      transition: 2
 #    light.lifx6:
 #      state: off
 
@@ -39,6 +42,8 @@
     light.lifx5:
       state: on
       brightness: 50
+      kelvin: 2500
+#      transition: 2
 #    light.lifx6:
 #      state: on
 #      brightness: 51
@@ -52,5 +57,6 @@
       state: off
     light.lifx5:
       state: off
+#      transition: 2
 #    light.lifx6:
 #      state: off

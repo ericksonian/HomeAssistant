@@ -63,41 +63,49 @@ script:
 
   master_light_scene_bright:
     sequence:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_bright
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
           option: bright
-  master_light_scene_entertain:
-    sequence:
       - service: scene.turn_on
         target:
-          entity_id: scene.master_entertain
+          entity_id: scene.master_bright
+        data:
+          transition: 2
+  master_light_scene_entertain:
+    sequence:
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
           option: entertain
-  master_light_scene_relax:
-    sequence:
       - service: scene.turn_on
         target:
-          entity_id: scene.master_relax
+          entity_id: scene.master_entertain
+        data:
+          transition: 2
+  master_light_scene_relax:
+    sequence:
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
           option: relax
+      - service: scene.turn_on
+        target:
+          entity_id: scene.master_relax
+        data:
+          transition: 2
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
           option: relax
   master_light_scene_off:
     sequence:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_all_off
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
           option: 'off'
+      - service: scene.turn_on
+        target:
+          entity_id: scene.master_all_off
+        data:
+          transition: 2
