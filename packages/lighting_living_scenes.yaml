@@ -20,13 +20,7 @@ automation:
     to: "1"
   condition: []
   action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.living_light_scene
-      option: bright
-  - service: switch.turn_on
-    data:
-      entity_id: switch.plug_in_switch_switch
+  - service: script.living_light_scene_bright
 - alias: Pico Keypad Living Button 2
   trigger:
   - entity_id: sensor.living_room_keypad
@@ -34,13 +28,7 @@ automation:
     to: "2"
   condition: []
   action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.living_light_scene
-      option: entertain
-  - service: switch.turn_off
-    data:
-      entity_id: switch.plug_in_switch_switch
+  - service: script.living_light_scene_entertain
 - alias: Pico Keypad Living Button 3
   trigger:
   - entity_id: sensor.living_room_keypad
@@ -48,13 +36,7 @@ automation:
     to: "4"
   condition: []
   action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.living_light_scene
-      option: relax
-  - service: switch.turn_on
-    data:
-      entity_id: switch.plug_in_switch_switch
+  - service: script.living_light_scene_relax
 - alias: Pico Keypad Living Button 4
   trigger:
   - entity_id: sensor.living_room_keypad
@@ -65,13 +47,19 @@ automation:
     to: "off"
   condition: []
   action:
+  - service: script.living_light_scene_off
+
+- alias: Living Lights Off
+  trigger:
+  - entity_id: group.lights_living
+    platform: state
+    to: "off"
+  condition: []
+  action:
   - service: input_select.select_option
     data:
       entity_id: input_select.living_light_scene
       option: 'off'
-  - service: switch.turn_off
-    data:
-      entity_id: switch.plug_in_switch_switch
 
 ###### SCRIPT ------------------------------------------
 script:
