@@ -23,7 +23,7 @@ automation:
     to: not_home
     for: "00:10:00"
   action:
-  - service: light.turn_off
+  - service: homeassistant.turn_off
     data:
       entity_id: group.lights_all
       transition: 2
@@ -38,7 +38,7 @@ automation:
     to: not_home
     for: "00:05:00"
   action:
-  - service: light.turn_off
+  - service: homeassistant.turn_off
     data:
       entity_id: group.lights_master
   - service: script.turn_on
@@ -55,7 +55,7 @@ automation:
     to: not_home
     for: "00:05:00"
   action:
-  - service: light.turn_off
+  - service: homeassistant.turn_off
     data:
       entity_id: group.lights_bed3
   - service: script.turn_on

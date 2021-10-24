@@ -42,15 +42,3 @@
 #    light.lifx6:
 #      state: on
 #      brightness: 51
-
-#   Master All Off
-- name: Master All Off
-  entities:
-    light.master_bedroom_entry:
-      state: off
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.lifx5:
-      state: off
-#    light.lifx6:
-#      state: off

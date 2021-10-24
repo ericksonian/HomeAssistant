@@ -94,9 +94,10 @@ script:
           option: relax
   master_light_scene_off:
     sequence:
-      - service: scene.turn_on
+      - service: light.turn_off
         target:
-          entity_id: scene.master_all_off
+          entity_id: group.lights_master
+          transistion: 2
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
