@@ -11,11 +11,12 @@
       state: on
     light.lifx5:
       state: on
-      brightness: 150
-      kelvin: 4850
-#      transition: 2
+      brightness: 125
+      kelvin: 6000
 #    light.lifx6:
 #      state: on
+#      brightness: 125
+#      kelvin: 6000
 
 #   Master Entertain
 - name: Master Entertain
@@ -28,7 +29,6 @@
       brightness: 76
     light.lifx5:
       state: off
-#      transition: 2
 #    light.lifx6:
 #      state: off
 
@@ -41,12 +41,12 @@
       state: off
     light.lifx5:
       state: on
-      brightness: 50
+      brightness: 40
       kelvin: 2500
-#      transition: 2
 #    light.lifx6:
 #      state: on
-#      brightness: 51
+#      brightness: 40
+#      kelvin: 2500
 
 #   Master All Off
 - name: Master All Off
@@ -57,6 +57,5 @@
       state: off
     light.lifx5:
       state: off
-#      transition: 2
 #    light.lifx6:
 #      state: off
