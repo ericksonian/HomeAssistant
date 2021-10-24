@@ -88,6 +88,10 @@ script:
         data:
           entity_id: input_select.master_light_scene
           option: relax
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene
+          option: relax
   master_light_scene_off:
     sequence:
       - service: scene.turn_on

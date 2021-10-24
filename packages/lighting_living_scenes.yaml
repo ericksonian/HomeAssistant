@@ -91,6 +91,10 @@ script:
         data:
           entity_id: input_select.living_light_scene
           option: relax
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.living_light_scene
+          option: relax
   living_light_scene_off:
     sequence:
       - service: scene.turn_on
