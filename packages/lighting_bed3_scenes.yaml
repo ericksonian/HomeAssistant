@@ -80,31 +80,40 @@ script:
 
   bed3_light_scene_bright:
     sequence:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.bed3_bright
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_light_scene
           option: bright
-  bed3_light_scene_entertain:
-    sequence:
       - service: scene.turn_on
         target:
-          entity_id: scene.bed3_entertain
+          entity_id: scene.bed3_bright
+        data:
+          transition: 3
+
+  bed3_light_scene_entertain:
+    sequence:
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_light_scene
           option: entertain
-  bed3_light_scene_off:
-    sequence:
       - service: scene.turn_on
         target:
-          entity_id: scene.bed3_all_off
+          entity_id: scene.bed3_entertain
+        data:
+          transition: 3
+
+  bed3_light_scene_off:
+    sequence:
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_light_scene
           option: 'off'
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bed3_all_off
+        data:
+          transition: 3
+
 
 ### Relax Scene Options
   bed3_light_scene_relax:
@@ -147,6 +156,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_reds
+        data:
+          transition: 3
 
   bed3_light_scene_relax_blues:
     sequence:
@@ -157,6 +168,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_blues
+        data:
+          transition: 3
 
   bed3_light_scene_relax_greens:
     sequence:
@@ -167,6 +180,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_greens
+        data:
+          transition: 3
 
   bed3_light_scene_relax_yellows:
     sequence:
@@ -177,6 +192,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_yellows
+        data:
+          transition: 3
 
   bed3_light_scene_relax_whites:
     sequence:
@@ -187,6 +204,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_whites
+        data:
+          transition: 3
 
 # Suns
   bed3_light_scene_relax_sunrise:
@@ -198,6 +217,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_sunrise
+        data:
+          transition: 3
 
   bed3_light_scene_relax_sunset:
     sequence:
@@ -208,6 +229,8 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.bed3_relax_sunset
+        data:
+          transition: 3
 
 # Customs
 

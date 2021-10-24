@@ -71,7 +71,7 @@ script:
         target:
           entity_id: scene.master_bright
         data:
-          transition: 2
+          transition: 3
   master_light_scene_entertain:
     sequence:
       - service: input_select.select_option
@@ -82,7 +82,7 @@ script:
         target:
           entity_id: scene.master_entertain
         data:
-          transition: 2
+          transition: 3
   master_light_scene_relax:
     sequence:
       - service: input_select.select_option
@@ -93,7 +93,7 @@ script:
         target:
           entity_id: scene.master_relax
         data:
-          transition: 2
+          transition: 3
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
@@ -108,4 +108,4 @@ script:
         target:
           entity_id: scene.master_all_off
         data:
-          transition: 2
+          transition: 3
