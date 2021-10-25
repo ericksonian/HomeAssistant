@@ -12,7 +12,7 @@
     light.lifx5:
       state: on
       brightness: 125
-      kelvin: 6000
+      color_temp: 166
 #    light.lifx6:
 #      state: on
 #      brightness: 125
@@ -42,8 +42,7 @@
     light.lifx5:
       state: on
       brightness: 40
-      rgb_color: [255,159,70]
-      kelvin: 2500
+      color_temp: 400
 #    light.lifx6:
 #      state: on
 #      brightness: 40
