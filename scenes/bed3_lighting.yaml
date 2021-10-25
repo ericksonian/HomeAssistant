@@ -8,19 +8,19 @@
     light.lifx1:
       state: on
       brightness: 255
-      kelvin: 4850
+      color_temp: 206
     light.lifx2:
       state: on
       brightness: 255
-      kelvin: 4850
+      color_temp: 206
     light.lifx3:
       state: on
       brightness: 255
-      kelvin: 4850
+      color_temp: 206
     light.lifx4:
       state: on
       brightness: 255
-      kelvin: 4850
+      color_temp: 206
     light.lifxmini1:
       state: on
       brightness: 255
@@ -31,15 +31,15 @@
     light.lifx1:
       state: on
       brightness: 155
-      kelvin: 2700
+      color_temp: 370
     light.lifx2:
       state: on
       brightness: 155
-      kelvin: 2700
+      color_temp: 370
     light.lifx3:
       state: on
       brightness: 155
-      kelvin: 2700
+      color_temp: 370
     light.lifx4:
       state: off
     light.lifxmini1:
@@ -147,19 +147,19 @@
     light.lifx1:
       state: on
       brightness: 155
-      kelvin: 1500
+      color_temp: 666
     light.lifx2:
       state: on
       brightness: 120
-      kelvin: 2500
+      color_temp: 400
     light.lifx3:
       state: on
       brightness: 85
-      kelvin: 5000
+      color_temp: 200
     light.lifx4:
       state: on
       brightness: 85
-      kelvin: 9000
+      color_temp: 111
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Sunrise
