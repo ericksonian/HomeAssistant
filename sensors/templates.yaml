@@ -15,38 +15,3 @@
     master_bedroom_fan_speed:
       friendly_name: Master Bedroom Fan Speed
       value_template: "{{ state_attr('fan.master_bedroom_ceiling_fan', 'speed') }}"
-
-    theater_projector_on:
-      friendly_name: Theater Projector On
-      value_template: "{{ states.sensor.vesync_projector_watts.state | float > 50.0 }}"
-
-    vesync_rack_watts:
-      friendly_name: VeSync Rack Watts
-      value_template: "{{ (state_attr('switch.rack_power', 'current_power_w')) | round(2) }}"
-      unit_of_measurement: 'W'
-
-    vesync_projector_watts:
-      friendly_name: VeSync Projector Watts
-      value_template: "{{ (state_attr('switch.projector_power', 'current_power_w')) | round(2) }}"
-      unit_of_measurement: 'W'
-
-    vesync_theater_watts:
-      friendly_name: VeSync Theater Watts
-      value_template: "{{ (state_attr('switch.rack_power', 'current_power_w')+state_attr('switch.projector_power', 'current_power_w')) | round(2) }}"
-      unit_of_measurement: 'W'
-
-#    vesync_white_voltage:
-#      friendly_name: VeSync White Voltage
-#      value_template: "{{ state_attr('switch.vesync_white', 'voltage') }} V"
-
-#    vesync_blue_voltage:
-#      friendly_name: VeSync Blue Voltage
-#      value_template: "{{ state_attr('switch.vesync_blue', 'voltage') }} V"
-
-#    vesync_white_current:
-#      friendly_name: VeSync White Current
-#      value_template: "{{ state_attr('switch.vesync_white', 'current_power_w') / state_attr('switch.vesync_white', 'voltage') }} A"
-
-#    vesync_blue_current:
-#      friendly_name: VeSync Blue Current
-#      value_template: "{{ state_attr('switch.vesync_blue', 'current_power_w') / state_attr('switch.vesync_blue', 'voltage') }} A"
