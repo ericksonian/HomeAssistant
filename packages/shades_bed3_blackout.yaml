@@ -1,17 +1,17 @@
 
-cover:
-  - platform: template
-    covers:
-      shade_bed3_blackout:
-        device_class: shade
-        friendly_name: "Bed3 Blackout"
-        value_template: "{{ states('input_select.bed3_shade_blackout') }}"
-        open_cover:
-          service: script.bed3_shade_blackout_open
-        close_cover:
-          service: script.bed3_shade_blackout_close
-        stop_cover:
-          service: script.bed3_shade_blackout_stop
+#cover:
+#  - platform: template
+#    covers:
+#      shade_bed3_blackout:
+#        device_class: shade
+#        friendly_name: "Bed3 Blackout"
+#        value_template: "{{ states('input_select.bed3_shade_blackout') }}"
+#        open_cover:
+#          service: script.bed3_shade_blackout_open
+#        close_cover:
+#          service: script.bed3_shade_blackout_close
+#        stop_cover:
+#          service: script.bed3_shade_blackout_stop
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
