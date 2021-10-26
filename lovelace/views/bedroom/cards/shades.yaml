@@ -7,7 +7,7 @@
       type: horizontal-stack
       cards:
         - type: 'custom:button-card'
-          template: intercontainer
+          template: container
           name: Screen
           custom_fields:
             buttons:
@@ -93,7 +93,7 @@
                     hold_action:
                       action: none
         - type: 'custom:button-card'
-          template: intercontainer
+          template: container
           name: Blackout
           custom_fields:
             buttons:
