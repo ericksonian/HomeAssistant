@@ -4,14 +4,14 @@
 #    covers:
 #      shades_master:
 #        device_class: shade
-#        friendly_name: "Master Shades"
-#        value_template: "{{ states('input_select.master_shades') }}"
+#        friendly_name: "Master Screen"
+#        value_template: "{{ states('input_select.master_shade_screen') }}"
 #        open_cover:
-#          service: script.master_shades_open
+#          service: script.master_shade_screen_open
 #        close_cover:
-#          service: script.master_shades_close
+#          service: script.master_shade_screen_close
 #        stop_cover:
-#          service: script.master_shades_stop
+#          service: script.master_shade_screen_stop
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -21,8 +21,8 @@
 
 ###### INPUT SELECT ------------------------------------------
 input_select:
-  master_shades:
-    name: 'Master Shades'
+  master_shade_screen:
+    name: 'Master Screen'
     options:
       - open
       - opening
@@ -33,62 +33,62 @@ input_select:
 
 ###### AUTOMATIONS --------------------------------------
 automation:
-- alias: Master Shades Open
+- alias: Master Screen Open
   trigger:
   - platform: state
-    entity_id: input_select.master_shades
+    entity_id: input_select.master_shade_screen
     to: "opening"
-    for: "00:00:11"
+    for: "00:00:10"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'closed' }}"
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shades
+      entity_id: input_select.master_shade_screen
       option: open
-- alias: Master Shades Closed
+- alias: Master Screen Closed
   trigger:
   - platform: state
-    entity_id: input_select.master_shades
+    entity_id: input_select.master_shade_screen
     to: "closing"
-    for: "00:00:11"
+    for: "00:00:10"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'open' }}"
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shades
+      entity_id: input_select.master_shade_screen
       option: closed
-- alias: Master Shades Open Full Motion
+- alias: Master Screen Open Full Motion
   trigger:
   - platform: state
-    entity_id: input_select.master_shades
+    entity_id: input_select.master_shade_screen
     to: "opening"
     for: "00:00:19"
   condition: []
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shades
+      entity_id: input_select.master_shade_screen
       option: open
-- alias: Master Shades Closed Full Motion
+- alias: Master Screen Closed Full Motion
   trigger:
   - platform: state
-    entity_id: input_select.master_shades
+    entity_id: input_select.master_shade_screen
     to: "closing"
     for: "00:00:19"
   condition: []
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shades
+      entity_id: input_select.master_shade_screen
       option: closed
 
 ###### SCRIPTS ------------------------------------------
 script:
-  master_shades_open:
+  master_shade_screen_open:
     sequence:
       - service: switch.turn_on
         data:
@@ -98,9 +98,9 @@ script:
           entity_id: switch.relay_master_screen_open
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_shades
+          entity_id: input_select.master_shade_screen
           option: opening
-  master_shades_stop:
+  master_shade_screen_stop:
     sequence:
       - service: switch.turn_on
         data:
@@ -110,9 +110,9 @@ script:
           entity_id: switch.relay_master_screen_stop
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_shades
+          entity_id: input_select.master_shade_screen
           option: favorite
-  master_shades_close:
+  master_shade_screen_close:
     sequence:
       - service: switch.turn_on
         data:
@@ -122,5 +122,5 @@ script:
           entity_id: switch.relay_master_screen_close
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_shades
+          entity_id: input_select.master_shade_screen
           option: closing

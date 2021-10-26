@@ -66,7 +66,7 @@ automation:
   - platform: state
     entity_id: input_select.bed3_shade_screen
     to: "opening"
-    for: "00:00:19"
+    for: "00:00:22"
   condition: []
   action:
   - service: input_select.select_option
@@ -78,7 +78,7 @@ automation:
   - platform: state
     entity_id: input_select.bed3_shade_screen
     to: "closing"
-    for: "00:00:19"
+    for: "00:00:22"
   condition: []
   action:
   - service: input_select.select_option
@@ -90,36 +90,27 @@ automation:
 script:
   bed3_shade_screen_open:
     sequence:
-      - service: switch.turn_on
+      - service: cover.open_cover
         data:
-          entity_id: switch.relay_bed3_screen_open
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_bed3_screen_open
+          entity_id: cover.bed3_screen
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_shade_screen
           option: opening
   bed3_shade_screen_stop:
     sequence:
-      - service: switch.turn_on
+      - service: cover.stop_cover
         data:
-          entity_id: switch.relay_bed3_screen_stop
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_bed3_screen_stop
+          entity_id: cover.bed3_screen
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_shade_screen
           option: favorite
   bed3_shade_screen_close:
     sequence:
-      - service: switch.turn_on
+      - service: cover.close_cover
         data:
-          entity_id: switch.relay_bed3_screen_close
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_bed3_screen_close
+          entity_id: cover.bed3_screen
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_shade_screen

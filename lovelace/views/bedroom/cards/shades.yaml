@@ -8,7 +8,7 @@ custom_fields:
       cards:
         - type: 'custom:button-card'
           template: wide
-          entity: input_select.master_shades
+          entity: input_select.master_shade_screen
           icon: 'mdi:window-shutter-open'
           name: Open
           show_icon: true
@@ -28,12 +28,12 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.master_shades_open
+            service: script.master_shade_screen_open
           hold_action:
             action: none
         - type: 'custom:button-card'
           template: wide
-          entity: input_select.master_shades
+          entity: input_select.master_shade_screen
           icon: 'mdi:window-shutter-alert'
           name: Favorite
           show_icon: true
@@ -56,12 +56,12 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.master_shades_stop
+            service: script.master_shade_screen_stop
           hold_action:
             action: none
         - type: 'custom:button-card'
           template: wide
-          entity: input_select.master_shades
+          entity: input_select.master_shade_screen
           icon: 'mdi:window-shutter'
           name: Close
           show_icon: true
@@ -81,6 +81,6 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.master_shades_close
+            service: script.master_shade_screen_close
           hold_action:
             action: none

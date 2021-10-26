@@ -38,7 +38,7 @@ automation:
   - platform: state
     entity_id: input_select.bed3_shade_blackout
     to: "opening"
-    for: "00:00:11"
+    for: "00:00:07"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'closed' }}"
@@ -52,7 +52,7 @@ automation:
   - platform: state
     entity_id: input_select.bed3_shade_blackout
     to: "closing"
-    for: "00:00:11"
+    for: "00:00:07"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'open' }}"
@@ -66,7 +66,7 @@ automation:
   - platform: state
     entity_id: input_select.bed3_shade_blackout
     to: "opening"
-    for: "00:00:19"
+    for: "00:00:15"
   condition: []
   action:
   - service: input_select.select_option
@@ -78,7 +78,7 @@ automation:
   - platform: state
     entity_id: input_select.bed3_shade_blackout
     to: "closing"
-    for: "00:00:19"
+    for: "00:00:15"
   condition: []
   action:
   - service: input_select.select_option
@@ -90,36 +90,27 @@ automation:
 script:
   bed3_shade_blackout_open:
     sequence:
-      - service: switch.turn_on
+      - service: cover.open_cover
         data:
-          entity_id: switch.relay_bed3_blackout_open
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_bed3_blackout_open
+          entity_id: cover.bed3_blackout
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_shade_blackout
           option: opening
   bed3_shade_blackout_stop:
     sequence:
-      - service: switch.turn_on
+      - service: cover.stop_cover
         data:
-          entity_id: switch.relay_bed3_blackout_stop
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_bed3_blackout_stop
+          entity_id: cover.bed3_blackout
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_shade_blackout
           option: favorite
   bed3_shade_blackout_close:
     sequence:
-      - service: switch.turn_on
+      - service: cover.close_cover
         data:
-          entity_id: switch.relay_bed3_blackout_close
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_bed3_blackout_close
+          entity_id: cover.bed3_blackout
       - service: input_select.select_option
         data:
           entity_id: input_select.bed3_shade_blackout
