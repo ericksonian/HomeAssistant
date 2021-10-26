@@ -13,10 +13,10 @@
       state: on
       brightness: 125
       color_temp: 166
-#    light.lifx6:
-#      state: on
-#      brightness: 125
-#      kelvin: 6000
+    light.lifx6:
+      state: on
+      brightness: 125
+      color_temp: 166
 
 #   Master Entertain
 - name: Master Entertain
@@ -29,8 +29,8 @@
       brightness: 76
     light.lifx5:
       state: off
-#    light.lifx6:
-#      state: off
+    light.lifx6:
+      state: off
 
 #   Master Relax
 - name: Master Relax
@@ -43,10 +43,10 @@
       state: on
       brightness: 40
       color_temp: 400
-#    light.lifx6:
-#      state: on
-#      brightness: 40
-#      kelvin: 2500
+    light.lifx6:
+      state: on
+      brightness: 40
+      color_temp: 400
 
 #   Master All Off
 - name: Master All Off
@@ -57,5 +57,5 @@
       state: off
     light.lifx5:
       state: off
-#    light.lifx6:
-#      state: off
+    light.lifx6:
+      state: off

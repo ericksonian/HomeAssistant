@@ -47,13 +47,13 @@ lights_master:
     - light.master_bedroom_entry
     - light.master_bedroom_ceiling_fan_light
     - light.lifx5
-#    - light.lifx6
+    - light.lifx6
 
 lights_master_bedside:
   name: Master Bedside Lights
   entities:
     - light.lifx5
-#    - light.lifx6
+    - light.lifx6
 
 lights_bed3:
   name: Bed3 Lights
