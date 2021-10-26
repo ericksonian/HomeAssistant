@@ -1,9 +1,9 @@
-type: 'custom:button-card'
-template: container
-name: Window Shades
-custom_fields:
-  buttons:
-    card:
+#type: 'custom:button-card'
+#template: container
+#name: Window Shades
+#custom_fields:
+#  buttons:
+#    card:
       type: horizontal-stack
       cards:
         - type: 'custom:button-card'
