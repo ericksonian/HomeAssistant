@@ -36,6 +36,11 @@ custom_fields:
                 template: standard
                 name: LED Strip
                 icon: 'mdi:led-strip-variant'
+                styles:
+                  card:
+                    - height: 80px
+#                      width: 76px
+                      width: 52px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_on
@@ -124,31 +129,35 @@ custom_fields:
                   service: input_boolean.toggle
                   service_data:
                     entity_id: input_boolean.master_ledstrip_power
-            - entity: light.lifx6
-              template: standard
+            - type: 'custom:button-card'
+              template: standardnostate
+              entity: light.lifx6
+              icon: 'mdi:wall-sconce'
               name: Hers
-              icon: 'mdi:wall-sconce'
-              type: 'custom:button-card'
+              show_name: true
               state:
                 - color: var(--button-card-light-color)
                   value: 'on'
               styles:
                 card:
                   - height: 80px
-#                    width: 38px
                     width: 52px
-                    '--mdc-ripple-color': var(--button-card-light-color)
-            - entity: light.lifx5
-              template: standard
+                  - '--mdc-ripple-color': var(--button-card-light-color)
+              tap_action:
+                action: toggle
+            - type: 'custom:button-card'
+              template: standardnostate
+              entity: light.lifx5
+              icon: 'mdi:wall-sconce'
               name: His
-              icon: 'mdi:wall-sconce'
-              type: 'custom:button-card'
+              show_name: true
               state:
                 - color: var(--button-card-light-color)
                   value: 'on'
               styles:
                 card:
                   - height: 80px
-#                    width: 38px
                     width: 52px
-                    '--mdc-ripple-color': var(--button-card-light-color)
+                  - '--mdc-ripple-color': var(--button-card-light-color)
+              tap_action:
+                action: toggle
