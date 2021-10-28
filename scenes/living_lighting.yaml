@@ -18,9 +18,9 @@
   entities:
     light.living_room_main:
       state: on
-      brightness: 1
+      brightness: 100
     light.living_room_stairs:
-      state: off
+      state: 150
     switch.plug_in_switch_switch:
       state: off
 
