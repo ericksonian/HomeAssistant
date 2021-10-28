@@ -50,11 +50,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 155
+      brightness: 85
       rgb_color: [255,0,50]
     light.lifx6:
       state: on
-      brightness: 120
+      brightness: 85
       rgb_color: [255,30,71]
     light.master_bedroom_ceiling_fan_light:
       state: off
@@ -64,11 +64,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 155
+      brightness: 85
       rgb_color: [28,213,255]
     light.lifx6:
       state: on
-      brightness: 120
+      brightness: 85
       rgb_color: [8,0,255]
     light.master_bedroom_ceiling_fan_light:
       state: off
@@ -78,11 +78,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 155
+      brightness: 85
       rgb_color: [32,255,21]
     light.lifx6:
       state: on
-      brightness: 120
+      brightness: 85
       rgb_color: [188,255,124]
     light.master_bedroom_ceiling_fan_light:
       state: off
@@ -92,11 +92,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 155
+      brightness: 85
       rgb_color: [255,188,63]
     light.lifx6:
       state: on
-      brightness: 120
+      brightness: 85
       rgb_color: [255,188,63]
     light.master_bedroom_ceiling_fan_light:
       state: off
@@ -106,11 +106,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 155
+      brightness: 85
       color_temp: 666
     light.lifx6:
       state: on
-      brightness: 120
+      brightness: 85
       color_temp: 400
     light.master_bedroom_ceiling_fan_light:
       state: off
@@ -120,11 +120,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 85
+      brightness: 70
       rgb_color: [79,154,218]
     light.lifx6:
       state: on
-      brightness: 100
+      brightness: 70
       rgb_color: [252,213,150]
     light.master_bedroom_ceiling_fan_light:
       state: off
@@ -134,11 +134,11 @@
   entities:
     light.lifx5:
       state: on
-      brightness: 70
+      brightness: 60
       rgb_color: [35,21,89]
     light.lifx6:
       state: on
-      brightness: 95
+      brightness: 60
       rgb_color: [242,34,37]
     light.master_bedroom_ceiling_fan_light:
       state: off
