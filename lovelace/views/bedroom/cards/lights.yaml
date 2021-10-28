@@ -38,9 +38,9 @@ custom_fields:
                 icon: 'mdi:led-strip-variant'
                 styles:
                   card:
-                    - height: 80px
-#                      width: 76px
-                      width: 52px
+                    - height: 76px
+                      width: 76px
+#                      width: 52px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_on
@@ -118,9 +118,9 @@ custom_fields:
                         - animation: blink 2s ease infinite
                 styles:
                   card:
-                    - height: 80px
-#                      width: 76px
-                      width: 52px
+                    - height: 76px
+                      width: 76px
+#                      width: 52px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_off
@@ -140,8 +140,8 @@ custom_fields:
                   value: 'on'
               styles:
                 card:
-                  - height: 80px
-                    width: 52px
+                  - height: 84px
+                    width: 38px
                   - '--mdc-ripple-color': var(--button-card-light-color)
               tap_action:
                 action: toggle
@@ -156,8 +156,8 @@ custom_fields:
                   value: 'on'
               styles:
                 card:
-                  - height: 80px
-                    width: 52px
+                  - height: 84px
+                    width: 38px
                   - '--mdc-ripple-color': var(--button-card-light-color)
               tap_action:
                 action: toggle
