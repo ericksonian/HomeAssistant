@@ -3,41 +3,43 @@ icon: 'mdi:bed-king'
 panel: false
 badges: []
 cards:
-  - !include /config/lovelace/views/bedroom/cards/title_card.yaml
-  - type: horizontal-stack
+  - type: vertical-stack
     cards:
-      - !include /config/lovelace/views/bedroom/cards/shades.yaml
-      - !include /config/lovelace/views/bedroom/cards/fan.yaml
-  - type: horizontal-stack
-    cards:
-      - !include /config/lovelace/views/bedroom/cards/lights.yaml
-      - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
-  - type: conditional
-    conditions:
-      - entity: input_select.master_light_scene
-        state: 'relax'
-    card:
-      !include /config/lovelace/views/bedroom/cards/light_scenes_relax.yaml
-  - type: conditional
-    conditions:
-      - entity: input_boolean.master_ledstrip_power
-        state: 'on'
-    card:
-      !include /config/lovelace/views/bedroom/cards/leds.yaml
-  - type: conditional
-    conditions:
-      - entity: media_player.master
-        state: 'off'
-      - entity: media_player.bedroom_speaker
-        state: 'off'
-      - entity: media_player.bathroom_speaker
-        state: 'off'
-      - entity: media_player.bedroom_tv
-        state: 'off'
-    card:
-      !include /config/lovelace/views/bedroom/cards/nothing_playing.yaml
-  - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv.yaml
-  - !include /config/lovelace/views/bedroom/cards/master_speaker_group.yaml
-  - !include /config/lovelace/views/bedroom/cards/bedroom_speaker.yaml
-  - !include /config/lovelace/views/bedroom/cards/bathroom_speaker.yaml
-  - !include /config/lovelace/cards_shared/footer.yaml
+      - !include /config/lovelace/views/bedroom/cards/title_card.yaml
+      - type: horizontal-stack
+        cards:
+          - !include /config/lovelace/views/bedroom/cards/shades.yaml
+          - !include /config/lovelace/views/bedroom/cards/fan.yaml
+      - type: horizontal-stack
+        cards:
+          - !include /config/lovelace/views/bedroom/cards/lights.yaml
+          - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
+      - type: conditional
+        conditions:
+          - entity: input_select.master_light_scene
+            state: 'relax'
+        card:
+          !include /config/lovelace/views/bedroom/cards/light_scenes_relax.yaml
+      - type: conditional
+        conditions:
+          - entity: input_boolean.master_ledstrip_power
+            state: 'on'
+        card:
+          !include /config/lovelace/views/bedroom/cards/leds.yaml
+      - type: conditional
+        conditions:
+          - entity: media_player.master
+            state: 'off'
+          - entity: media_player.bedroom_speaker
+            state: 'off'
+          - entity: media_player.bathroom_speaker
+            state: 'off'
+          - entity: media_player.bedroom_tv
+            state: 'off'
+        card:
+          !include /config/lovelace/views/bedroom/cards/nothing_playing.yaml
+      - !include /config/lovelace/views/bedroom/cards/bedroom_tv/bedroom_tv.yaml
+      - !include /config/lovelace/views/bedroom/cards/master_speaker_group.yaml
+      - !include /config/lovelace/views/bedroom/cards/bedroom_speaker.yaml
+      - !include /config/lovelace/views/bedroom/cards/bathroom_speaker.yaml
+      - !include /config/lovelace/cards_shared/footer.yaml
