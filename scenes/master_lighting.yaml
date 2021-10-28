@@ -32,22 +32,6 @@
     light.lifx6:
       state: off
 
-#   Master Relax
-- name: Master Relax
-  entities:
-    light.master_bedroom_entry:
-      state: off
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.lifx5:
-      state: on
-      brightness: 40
-      color_temp: 400
-    light.lifx6:
-      state: on
-      brightness: 40
-      color_temp: 400
-
 #   Master All Off
 - name: Master All Off
   entities:
@@ -58,4 +42,105 @@
     light.lifx5:
       state: off
     light.lifx6:
+      state: off
+
+####   Master Relax Colors
+
+- name: Master Relax Reds
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 155
+      rgb_color: [255,0,50]
+    light.lifx6:
+      state: on
+      brightness: 120
+      rgb_color: [255,30,71]
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
+      state: off
+- name: Master Relax Blues
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 155
+      rgb_color: [28,213,255]
+    light.lifx6:
+      state: on
+      brightness: 120
+      rgb_color: [8,0,255]
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
+      state: off
+- name: Master Relax Greens
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 155
+      rgb_color: [32,255,21]
+    light.lifx6:
+      state: on
+      brightness: 120
+      rgb_color: [188,255,124]
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
+      state: off
+- name: Master Relax Yellows
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 155
+      rgb_color: [255,188,63]
+    light.lifx6:
+      state: on
+      brightness: 120
+      rgb_color: [255,188,63]
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
+      state: off
+- name: Master Relax Whites
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 155
+      color_temp: 666
+    light.lifx6:
+      state: on
+      brightness: 120
+      color_temp: 400
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
+      state: off
+- name: Master Relax Sunrise
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 85
+      rgb_color: [79,154,218]
+    light.lifx6:
+      state: on
+      brightness: 100
+      rgb_color: [252,213,150]
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
+      state: off
+- name: Master Relax Sunset
+  entities:
+    light.lifx5:
+      state: on
+      brightness: 70
+      rgb_color: [35,21,89]
+    light.lifx6:
+      state: on
+      brightness: 95
+      rgb_color: [242,34,37]
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_entry:
       state: off
