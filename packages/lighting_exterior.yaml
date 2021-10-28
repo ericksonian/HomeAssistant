@@ -57,6 +57,10 @@ automation:
     event: sunset
   condition: []
   action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.exterior_light_scene
+      option: relax
   - service: scene.turn_on
     data:
       entity_id: scene.exterior_relax
