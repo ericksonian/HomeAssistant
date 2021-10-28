@@ -36,11 +36,6 @@ custom_fields:
                 template: standard
                 name: LED Strip
                 icon: 'mdi:led-strip-variant'
-#                styles:
-#                  card:
-#                    - height: 76px
-#                      width: 76px
-#                      width: 52px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_on
@@ -116,11 +111,6 @@ custom_fields:
                     styles:
                       icon:
                         - animation: blink 2s ease infinite
-#                styles:
-#                  card:
-#                    - height: 76px
-#                      width: 76px
-#                      width: 52px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_off
