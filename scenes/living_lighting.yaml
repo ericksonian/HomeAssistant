@@ -20,7 +20,8 @@
       state: on
       brightness: 100
     light.living_room_stairs:
-      state: 150
+      state: on
+      brightness: 150
     switch.plug_in_switch_switch:
       state: off
 
