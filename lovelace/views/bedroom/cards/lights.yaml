@@ -140,7 +140,7 @@ custom_fields:
                   value: 'on'
               styles:
                 card:
-                  - height: 80px
+                  - height: 84px
                     width: 38px
                     border-radius: 0.7em 0.7em 0.7em 0.7em
                     '--mdc-ripple-color': var(--button-card-light-color)
@@ -157,7 +157,7 @@ custom_fields:
                   value: 'on'
               styles:
                 card:
-                  - height: 80px
+                  - height: 84px
                     width: 38px
                     border-radius: 0.7em 0.7em 0.7em 0.7em
                     '--mdc-ripple-color': var(--button-card-light-color)
