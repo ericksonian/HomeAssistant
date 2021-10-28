@@ -113,8 +113,9 @@ custom_fields:
                         - animation: blink 2s ease infinite
                 styles:
                   card:
-                    - width: 76px
-                      height: 76px
+                    - height: 80px
+#                      width: 76px
+                      width: 52px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_off
@@ -133,8 +134,9 @@ custom_fields:
                   value: 'on'
               styles:
                 card:
-                  - width: 38px
-                    height: 80px
+                  - height: 80px
+#                    width: 38px
+                    width: 52px
                     '--mdc-ripple-color': var(--button-card-light-color)
             - entity: light.lifx5
               template: standard
@@ -146,6 +148,7 @@ custom_fields:
                   value: 'on'
               styles:
                 card:
-                  - width: 38px
-                    height: 80px
+                  - height: 80px
+#                    width: 38px
+                    width: 52px
                     '--mdc-ripple-color': var(--button-card-light-color)
