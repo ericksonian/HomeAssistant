@@ -111,6 +111,9 @@ custom_fields:
                     styles:
                       icon:
                         - animation: blink 2s ease infinite
+                styles:
+                  card:
+                    - width: 80px
                 tap_action:
                   action: call-service
                   service: script.master_ledstrip_power_off
@@ -119,11 +122,25 @@ custom_fields:
                   service: input_boolean.toggle
                   service_data:
                     entity_id: input_boolean.master_ledstrip_power
-            - entity: group.lights_master_bedside
+            - entity: light.master_bedroom_her_side
               template: standard
-              name: Bedside
+              name: Hers
               icon: 'mdi:wall-sconce'
               type: 'custom:button-card'
               state:
                 - color: 'rgb(255,255,1)'
                   value: 'on'
+              styles:
+                card:
+                  - width: 36px
+            - entity: light.master_bedroom_his_side
+              template: standard
+              name: His
+              icon: 'mdi:wall-sconce'
+              type: 'custom:button-card'
+              state:
+                - color: 'rgb(255,255,1)'
+                  value: 'on'
+              styles:
+                card:
+                  - width: 36px
