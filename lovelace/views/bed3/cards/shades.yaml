@@ -9,7 +9,7 @@ cards:
           type: vertical-stack
           cards:
             - type: 'custom:button-card'
-              template: wide
+              template: standard
               entity: input_select.bed3_shade_screen
               icon: 'mdi:window-shutter-open'
               name: Open
@@ -34,7 +34,7 @@ cards:
               hold_action:
                 action: none
             - type: 'custom:button-card'
-              template: wide
+              template: standard
               entity: input_select.bed3_shade_screen
               icon: 'mdi:window-shutter-alert'
               name: Favorite
@@ -62,7 +62,7 @@ cards:
               hold_action:
                 action: none
             - type: 'custom:button-card'
-              template: wide
+              template: standard
               entity: input_select.bed3_shade_screen
               icon: 'mdi:window-shutter'
               name: Close
@@ -95,7 +95,7 @@ cards:
           type: vertical-stack
           cards:
             - type: 'custom:button-card'
-              template: wide
+              template: standard
               entity: input_select.bed3_shade_blackout
               icon: 'mdi:window-shutter-open'
               name: Open
@@ -120,7 +120,7 @@ cards:
               hold_action:
                 action: none
             - type: 'custom:button-card'
-              template: wide
+              template: standard
               entity: input_select.bed3_shade_blackout
               icon: 'mdi:window-shutter-alert'
               name: Favorite
@@ -148,7 +148,7 @@ cards:
               hold_action:
                 action: none
             - type: 'custom:button-card'
-              template: wide
+              template: standard
               entity: input_select.bed3_shade_blackout
               icon: 'mdi:window-shutter'
               name: Close
