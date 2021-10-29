@@ -23,7 +23,7 @@ custom_fields:
           styles:
             card:
               - height: 82px
-                width: 76px
+                width: 82px
                 '--mdc-ripple-color': 'rgb(255,255,1)'
             name:
               - font-size: 0.75em
@@ -50,7 +50,7 @@ custom_fields:
           styles:
             card:
               - height: 82px
-                width: 76px
+                width: 82px
                 '--mdc-ripple-color': 'rgb(2,2,228)'
             name:
               - font-size: 0.75em

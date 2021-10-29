@@ -14,13 +14,9 @@ custom_fields:
           styles:
             card:
               - height: 82px
-              - '--mdc-ripple-color': 'rgb(0,204,52)'
-              - '--mdc-ripple-press-opacity': 0.5
+                width: 82px
           state:
-            - color: 'rgb(0,204,52)'
-              value: 'on'
-              name: 'Turn Off'
-              icon: 'mdi:fan'
+            - value: 'on'
               spin: true
         - type: 'custom:button-card'
           template: standard
@@ -30,11 +26,7 @@ custom_fields:
           styles:
             card:
               - height: 82px
-              - '--mdc-ripple-color': 'rgb(0,204,52)'
-              - '--mdc-ripple-press-opacity': 0.5
+                width: 82px
           state:
-            - color: 'rgb(0,204,52)'
-              value: 'on'
-              name: 'Turn Off'
-              icon: 'mdi:fan'
+            - value: 'on'
               spin: true

@@ -9,7 +9,7 @@ custom_fields:
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx4
-          icon: 'mdi:palette'
+          icon: 'mdi:lamp-outline'
           name: Lamp
           show_name: true
           state:
@@ -18,7 +18,6 @@ custom_fields:
           styles:
             card:
               - height: 171px
-                width: 76px
                 '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
