@@ -7,7 +7,7 @@ custom_fields:
       type: vertical-stack
       cards:
         - type: 'custom:button-card'
-          template: wide
+          template: standard
           entity: input_select.theater_screen
           icon: 'mdi:projector-screen'
           name: Up
@@ -23,7 +23,8 @@ custom_fields:
           styles:
             card:
               - height: 82px
-              - '--mdc-ripple-color': 'rgb(255,255,1)'
+                width: 76px
+                '--mdc-ripple-color': 'rgb(255,255,1)'
             name:
               - font-size: 0.75em
           tap_action:
@@ -33,7 +34,7 @@ custom_fields:
             action: none
 
         - type: 'custom:button-card'
-          template: wide
+          template: standard
           entity: input_select.theater_screen
           icon: 'mdi:projector-screen-outline'
           name: Down
@@ -49,7 +50,8 @@ custom_fields:
           styles:
             card:
               - height: 82px
-              - '--mdc-ripple-color': 'rgb(2,2,228)'
+                width: 76px
+                '--mdc-ripple-color': 'rgb(2,2,228)'
             name:
               - font-size: 0.75em
           tap_action:
