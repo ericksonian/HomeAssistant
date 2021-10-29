@@ -18,6 +18,7 @@ custom_fields:
           styles:
             card:
               - height: 171px
+#                width: 171px
                 '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
             action: toggle
