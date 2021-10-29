@@ -22,6 +22,8 @@ custom_fields:
                   - '--mdc-ripple-color': 'rgb(204,133,69)'
               tap_action:
                 action: toggle
+              hold_action:
+                action: more-info
             - type: 'custom:button-card'
               template: standardnostate
               entity: light.lifx1
@@ -36,6 +38,8 @@ custom_fields:
                   - '--mdc-ripple-color': var(--button-card-light-color)
               tap_action:
                 action: toggle
+              hold_action:
+                action: more-info
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
@@ -52,6 +56,8 @@ custom_fields:
                   - '--mdc-ripple-color': var(--button-card-light-color)
               tap_action:
                 action: toggle
+              hold_action:
+                action: more-info
             - type: 'custom:button-card'
               template: standardnostate
               entity: light.lifx3
@@ -66,3 +72,5 @@ custom_fields:
                   - '--mdc-ripple-color': var(--button-card-light-color)
               tap_action:
                 action: toggle
+              hold_action:
+                action: more-info
