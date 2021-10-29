@@ -1,15 +1,15 @@
-title: Office
+title: Bed3
 icon: 'mdi:bed-queen'
 badges: []
 cards:
   - !include /config/lovelace/views/bed3/cards/title_card.yaml
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/bed3/cards/shades_screen.yaml
-      - !include /config/lovelace/views/bed3/cards/shades_blackout.yaml
+      - !include /config/lovelace/views/bed3/cards/shades.yaml
+      - !include /config/lovelace/views/bed3/cards/fan.yaml
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/bed3/cards/fan.yaml
+      - !include /config/lovelace/views/bed3/cards/lights.yaml
       - !include /config/lovelace/views/bed3/cards/light_scenes.yaml
   - type: conditional
     conditions:
@@ -17,5 +17,4 @@ cards:
         state: 'relax'
     card:
       !include /config/lovelace/views/bed3/cards/light_scenes_relax.yaml
-  - !include /config/lovelace/views/bed3/cards/light_bulbs.yaml
   - !include /config/lovelace/cards_shared/footer.yaml
