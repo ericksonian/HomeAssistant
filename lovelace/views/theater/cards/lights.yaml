@@ -17,7 +17,7 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 72px
+              - height: 171px
                 width: 76px
                 '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:
