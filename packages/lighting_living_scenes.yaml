@@ -21,6 +21,17 @@ automation:
   condition: []
   action:
   - service: script.living_light_scene_bright
+
+- alias: Pico Keypad Kitchen Button 1 Hold
+  trigger:
+  - entity_id: sensor.living_room_keypad
+    platform: state
+    to: "1"
+    for: "00:00:02"
+  condition: []
+  action:
+  - service: script.mode_hunt_start
+
 - alias: Pico Keypad Living Button 2
   trigger:
   - entity_id: sensor.living_room_keypad
@@ -29,6 +40,7 @@ automation:
   condition: []
   action:
   - service: script.living_light_scene_entertain
+
 - alias: Pico Keypad Living Button 3
   trigger:
   - entity_id: sensor.living_room_keypad
@@ -37,6 +49,7 @@ automation:
   condition: []
   action:
   - service: script.living_light_scene_relax
+
 - alias: Pico Keypad Living Button 4
   trigger:
   - entity_id: sensor.living_room_keypad
@@ -48,6 +61,16 @@ automation:
   condition: []
   action:
   - service: script.living_light_scene_off
+
+- alias: Pico Keypad Kitchen Button 4 Hold
+  trigger:
+  - entity_id: sensor.living_room_keypad
+    platform: state
+    to: "8"
+    for: "00:00:02"
+  condition: []
+  action:
+  - service: script.mode_hunt_end
 
 - alias: Living Lights Off
   trigger:
