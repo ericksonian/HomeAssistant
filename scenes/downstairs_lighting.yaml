@@ -1,5 +1,29 @@
 ### Lighting Scenes
 
+# Hunt Mode
+- name: Hunt During
+  entities:
+    light.kitchen_ceiling:
+      state: on
+      brightness: 249
+    light.kitchen_sink:
+      state: on
+      brightness: 249
+    light.kitchen_cabinets:
+      state: on
+      brightness: 249
+    light.kitchen_dining_pendant:
+      state: on
+      brightness: 249
+    light.living_room_main:
+      state: on
+      brightness: 249
+    light.living_room_stairs:
+      state: on
+      brightness: 249
+    switch.plug_in_switch_switch:
+      state: on
+
 #   Downstairs All On
 - name: Downstairs All On
   entities:
@@ -9,10 +33,16 @@
     light.kitchen_sink:
       state: on
       brightness: 64
+    light.kitchen_cabinets:
+      state: on
+      brightness: 125
     light.kitchen_dining_pendant:
       state: on
       brightness: 127
     light.living_room_main:
+      state: on
+      brightness: 127
+    light.living_room_stairs:
       state: on
       brightness: 127
     switch.plug_in_switch_switch:

@@ -34,22 +34,19 @@
   action:
   - service: scene.turn_on
     data:
-      entity_id: scene.kitchen_all_off
-  - service: scene.turn_on
-    data:
-      entity_id: scene.living_all_off
+      entity_id: scene.downstairs_all_off
 
-- alias: Pico Garage Button 3 Hold
-  trigger:
-  - entity_id: sensor.garage_pico
-    platform: state
-    to: "2"
-    for: "00:00:02"
-  condition: []
-  action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id: group.lights_downstairs
+#- alias: Pico Garage Button 3 Hold
+#  trigger:
+#  - entity_id: sensor.garage_pico
+#    platform: state
+#    to: "2"
+#    for: "00:00:02"
+#  condition: []
+#  action:
+#  - service: homeassistant.turn_off
+#    data:
+#      entity_id: group.lights_downstairs
 
 - alias: Pico Garage Button 4
   trigger:
