@@ -4,89 +4,85 @@ name: Ceiling Fan
 custom_fields:
   buttons:
     card:
-      type: vertical-stack
+      type: horizontal-stack
       cards:
-        - type: horizontal-stack
-          cards:
-            - type: 'custom:button-card'
-              template: standard
-              entity: sensor.living_fan_speed
-              icon: 'mdi:speedometer-slow'
-              name: Low
-              styles:
-                card:
-                  - '--mdc-ripple-color': 'rgb(0,204,52)'
-                  - '--mdc-ripple-press-opacity': 0.5
-              state:
-                - color: 'rgb(0,204,52)'
-                  value: 'low'
-                  name: 'Turn Off'
-                  icon: 'mdi:fan'
-                  spin: true
-              tap_action:
-                action: call-service
-                service: script.fan_toggle_living_low
-              hold_action:
-                action: none
-            - type: 'custom:button-card'
-              template: standard
-              entity: sensor.living_fan_speed
-              icon: 'mdi:speedometer-medium'
-              name: Medium
-              styles:
-                card:
-                  - '--mdc-ripple-color': 'rgb(255,255,1)'
-                  - '--mdc-ripple-press-opacity': 0.5
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'medium'
-                  name: 'Turn Off'
-                  icon: 'mdi:fan'
-                  spin: true
-              tap_action:
-                action: call-service
-                service: script.fan_toggle_living_medium
-              hold_action:
-                action: none
-        - type: horizontal-stack
-          cards:
-            - type: 'custom:button-card'
-              template: standard
-              entity: sensor.living_fan_speed
-              icon: 'mdi:speedometer-medium'
-              name: 'Med-High'
-              styles:
-                card:
-                  - '--mdc-ripple-color': 'rgb(255,142,2)'
-                  - '--mdc-ripple-press-opacity': 0.5
-              state:
-                - color: 'rgb(255,142,2)'
-                  value: 'medium_high'
-                  name: 'Turn Off'
-                  icon: 'mdi:fan'
-                  spin: true
-              tap_action:
-                action: call-service
-                service: script.fan_toggle_living_medium_high
-              hold_action:
-                action: none
-            - type: 'custom:button-card'
-              template: standard
-              entity: sensor.living_fan_speed
-              icon: 'mdi:speedometer'
-              name: High
-              styles:
-                card:
-                  - '--mdc-ripple-color': 'rgb(255,28,1)'
-                  - '--mdc-ripple-press-opacity': 0.5
-              state:
-                - color: 'rgb(255,28,1)'
-                  value: 'high'
-                  name: 'Turn Off'
-                  icon: 'mdi:fan'
-                  spin: true
-              tap_action:
-                action: call-service
-                service: script.fan_toggle_living_high
-              hold_action:
-                action: none
+        - type: 'custom:button-card'
+          template: standard
+          entity: sensor.living_fan_speed
+          icon: 'mdi:speedometer-slow'
+          name: Low
+          styles:
+            card:
+              - '--mdc-ripple-color': 'rgb(0,204,52)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(0,204,52)'
+              value: 'low'
+              name: 'Turn Off'
+              icon: 'mdi:fan'
+              spin: true
+          tap_action:
+            action: call-service
+            service: script.fan_toggle_living_low
+          hold_action:
+            action: none
+        - type: 'custom:button-card'
+          template: standard
+          entity: sensor.living_fan_speed
+          icon: 'mdi:speedometer-medium'
+          name: Medium
+          styles:
+            card:
+              - '--mdc-ripple-color': 'rgb(255,255,1)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(255,255,1)'
+              value: 'medium'
+              name: 'Turn Off'
+              icon: 'mdi:fan'
+              spin: true
+          tap_action:
+            action: call-service
+            service: script.fan_toggle_living_medium
+          hold_action:
+            action: none
+        - type: 'custom:button-card'
+          template: standard
+          entity: sensor.living_fan_speed
+          icon: 'mdi:speedometer-medium'
+          name: 'Med-High'
+          styles:
+            card:
+              - '--mdc-ripple-color': 'rgb(255,142,2)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(255,142,2)'
+              value: 'medium_high'
+              name: 'Turn Off'
+              icon: 'mdi:fan'
+              spin: true
+          tap_action:
+            action: call-service
+            service: script.fan_toggle_living_medium_high
+          hold_action:
+            action: none
+        - type: 'custom:button-card'
+          template: standard
+          entity: sensor.living_fan_speed
+          icon: 'mdi:speedometer'
+          name: High
+          styles:
+            card:
+              - '--mdc-ripple-color': 'rgb(255,28,1)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(255,28,1)'
+              value: 'high'
+              name: 'Turn Off'
+              icon: 'mdi:fan'
+              spin: true
+          tap_action:
+            action: call-service
+            service: script.fan_toggle_living_high
+          hold_action:
+            action: none
