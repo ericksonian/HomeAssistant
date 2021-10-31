@@ -16,7 +16,8 @@ custom_fields:
               - height: 82px
 #                width: 82px
           state:
-            - value: on
+            - value: 'on'
+              icon: 'mdi:fan'
               spin: true
         - type: 'custom:button-card'
           template: standard
@@ -28,5 +29,6 @@ custom_fields:
               - height: 82px
 #                width: 82px
           state:
-            - value: on
+            - value: 'on'
+              icon: 'mdi:fan'
               spin: true
