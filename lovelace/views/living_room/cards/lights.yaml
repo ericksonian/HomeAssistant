@@ -13,17 +13,11 @@ custom_fields:
               template: standard
               icon: 'mdi:globe-light'
               type: 'custom:button-card'
-              styles:
-                card:
-                  - height: 70px
             - entity: light.living_room_main
               name: Ceiling
               template: standard
               icon: 'mdi:ceiling-fan-light'
               type: 'custom:button-card'
-              styles:
-                card:
-                  - height: 70px
         - type: horizontal-stack
           cards:
             - entity: switch.plug_in_switch_switch
@@ -31,14 +25,8 @@ custom_fields:
               template: standard
               icon: 'mdi:floor-lamp'
               type: 'custom:button-card'
-              styles:
-                card:
-                  - height: 70px
             - entity: light.living_room_foyer
               name: Foyer
               template: standard
               icon: 'mdi:dome-light'
               type: 'custom:button-card'
-              styles:
-                card:
-                  - height: 70px

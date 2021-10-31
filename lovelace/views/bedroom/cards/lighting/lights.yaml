@@ -13,17 +13,11 @@ custom_fields:
               template: standard
               icon: 'mdi:wall-sconce-flat'
               type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
             - entity: light.master_bedroom_ceiling_fan_light
               name: Ceiling
               template: standard
               icon: 'mdi:dome-light'
               type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
         - type: horizontal-stack
           cards:
             - type: conditional
