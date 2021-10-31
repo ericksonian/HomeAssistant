@@ -11,7 +11,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standardnostate
               entity: light.lifxmini1
-              icon: 'mdi:white-balance-incandescent'
+              icon: 'mdi:ceiling-fan-light'
               name: Ceiling
               show_name: true
               state:

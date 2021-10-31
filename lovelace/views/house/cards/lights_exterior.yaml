@@ -19,7 +19,7 @@ custom_fields:
             - entity: light.exterior_back_door
               name: Back Door
               template: standard
-              icon: 'mdi:white-balance-incandescent'
+              icon: 'mdi:dome-light'
               type: 'custom:button-card'
               state:
                 - color: 'rgb(255,255,1)'
@@ -29,7 +29,7 @@ custom_fields:
             - entity: light.exterior_front_door
               name: Front Door
               template: standard
-              icon: 'mdi:white-balance-incandescent'
+              icon: 'mdi:dome-light'
               type: 'custom:button-card'
               state:
                 - color: 'rgb(255,255,1)'
