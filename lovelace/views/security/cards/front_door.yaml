@@ -109,6 +109,21 @@ custom_fields:
           cards:
             - type: 'custom:button-card'
               template: standard
+              entity: light.living_room_foyer
+              hold_action:
+                action: more-info
+              icon: 'mdi:dome-light'
+              name: Foyer
+              show_icon: true
+              show_name: true
+              styles:
+                card:
+                 - height: 72px
+                 - width: 86px
+              tap_action:
+                action: toggle
+            - type: 'custom:button-card'
+              template: standard
               entity: switch.patio_string
               hold_action:
                 action: more-info
@@ -130,13 +145,10 @@ custom_fields:
               entity: light.exterior_front_door
               hold_action:
                 action: more-info
-              icon: 'mdi:white-balance-incandescent'
+              icon: 'mdi:dome-light'
               name: Front Door
               show_icon: true
               show_name: true
-              state:
-                - color: 'rgb(188,160,40)'
-                  value: 'on'
               styles:
                 card:
                  - height: 72px
