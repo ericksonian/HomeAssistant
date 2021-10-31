@@ -1,5 +1,0 @@
-type: vertical-stack
-cards:
-  - !include /config/lovelace/views/master/cards/led_strip/led_strip_off.yaml
-  - !include /config/lovelace/views/master/cards/led_strip/led_strip_on.yaml
-  - !include /config/lovelace/views/master/cards/led_strip/led_strip_on_more.yaml

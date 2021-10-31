@@ -181,4 +181,4 @@ custom_fields:
             - entity: input_boolean.master_ledstrip_more
               state: 'on'
           card:
-            !include /config/lovelace/views/bedroom/cards/leds_more.yaml
+            !include /config/lovelace/views/bedroom/cards/lighting/leds_more.yaml

@@ -10,20 +10,20 @@ cards:
       - !include /config/lovelace/views/bedroom/cards/fan.yaml
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/bedroom/cards/lights.yaml
-      - !include /config/lovelace/views/bedroom/cards/light_scenes.yaml
+      - !include /config/lovelace/views/bedroom/cards/lighting/lights.yaml
+      - !include /config/lovelace/views/bedroom/cards/lighting/scenes.yaml
   - type: conditional
     conditions:
       - entity: input_select.master_light_scene
         state: 'relax'
     card:
-      !include /config/lovelace/views/bedroom/cards/light_scenes_relax.yaml
+      !include /config/lovelace/views/bedroom/cards/lighting/scenes_relax.yaml
   - type: conditional
     conditions:
       - entity: input_boolean.master_ledstrip_power
         state: 'on'
     card:
-      !include /config/lovelace/views/bedroom/cards/leds.yaml
+      !include /config/lovelace/views/bedroom/cards/lighting/leds.yaml
   - type: conditional
     conditions:
       - entity: media_player.master
