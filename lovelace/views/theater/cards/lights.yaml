@@ -4,8 +4,19 @@ name: Lights
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: vertical-stack
       cards:
+        - entity: light.theater_ceiling
+          name: Ceiling
+          template: standard
+          icon: 'mdi:dome-light'
+          type: 'custom:button-card'
+          styles:
+            card:
+              - height: 82px
+          state:
+            - color: 'rgb(255,255,1)'
+              value: 'on'
         - type: 'custom:button-card'
           template: standardnostate
           entity: light.lifx4
@@ -17,7 +28,8 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 171px
+              - height: 82px
+#              - height: 171px
 #                width: 171px
                 '--mdc-ripple-color': var(--button-card-light-color)
           tap_action:

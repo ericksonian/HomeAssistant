@@ -731,16 +731,16 @@
 },
 {
 "ID" : 21,
-"Name" : "His Side",
+"Name" : "Foyer",
 "Area" : {
-"Name" : "Master Bedroom"
+"Name" : "Living Room"
 }
 },
 {
 "ID" : 22,
-"Name" : "Her Side",
+"Name" : "Ceiling",
 "Area" : {
-"Name" : "Master Bedroom"
+"Name" : "Theater"
 }
 },
 {
