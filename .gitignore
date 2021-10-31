@@ -12,10 +12,16 @@
 !automation
 !input_booleans
 !ios
-!packages
 !scenes
 !scripts
 !sensors
+
+
+### Packages
+
+!packages
+!shades
+
 
 ### Themes
 
@@ -25,12 +31,14 @@
 !amoled_black
 !amoled_blue
 
+
 ### Lovelace
 
 !lovelace
 !cards_shared
 !views
 !cards
+
 
 ## Views
 
