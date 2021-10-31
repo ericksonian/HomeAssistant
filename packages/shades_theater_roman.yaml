@@ -86,6 +86,27 @@ automation:
       entity_id: input_select.theater_shade_roman
       option: closed
 
+- alias: Theater Roman Open Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.theater_roman
+    to: "open"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.theater_shade_roman
+      option: open
+- alias: Theater Roman Closed Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.theater_roman
+    to: "closed"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.theater_shade_roman
+      option: closed
+
 ###### SCRIPTS ------------------------------------------
 script:
   theater_shade_roman_open:

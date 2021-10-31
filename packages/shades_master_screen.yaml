@@ -86,6 +86,27 @@ automation:
       entity_id: input_select.master_shade_screen
       option: closed
 
+- alias: Master Screen Open Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.master_screen
+    to: "open"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_shade_screen
+      option: open
+- alias: Master Screen Closed Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.master_screen
+    to: "closed"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.master_shade_screen
+      option: closed
+
 ###### SCRIPTS ------------------------------------------
 script:
   master_shade_screen_open:

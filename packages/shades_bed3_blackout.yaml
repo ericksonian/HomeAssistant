@@ -86,6 +86,27 @@ automation:
       entity_id: input_select.bed3_shade_blackout
       option: closed
 
+- alias: Bed3 Blackout Open Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.bed3_blackout
+    to: "open"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.bed3_shade_blackout
+      option: open
+- alias: Bed3 Blackout Closed Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.bed3_blackout
+    to: "closed"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.bed3_shade_blackout
+      option: closed
+
 ###### SCRIPTS ------------------------------------------
 script:
   bed3_shade_blackout_open:
