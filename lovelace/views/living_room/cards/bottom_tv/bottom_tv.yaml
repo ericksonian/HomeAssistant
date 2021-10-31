@@ -1,6 +1,0 @@
-type: vertical-stack
-cards:
-  - !include /config/lovelace/views/living_room/cards/bottom_tv/select_source.yaml
-  - !include /config/lovelace/views/living_room/cards/bottom_tv/please_wait.yaml
-  - !include /config/lovelace/views/living_room/cards/bottom_tv/bottom_tv_volume.yaml
-  - !include /config/lovelace/views/living_room/cards/bottom_tv/bottom_tv_chromecast.yaml
