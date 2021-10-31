@@ -6,7 +6,7 @@ cards:
   - !include /config/lovelace/views/bedroom/cards/title_card.yaml
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/bedroom/cards/shades.yaml
+      - !include /config/lovelace/views/bedroom/cards/shade_screen.yaml
       - !include /config/lovelace/views/bedroom/cards/fan.yaml
   - type: horizontal-stack
     cards:

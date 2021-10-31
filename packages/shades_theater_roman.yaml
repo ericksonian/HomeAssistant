@@ -2,16 +2,16 @@
 #cover:
 #  - platform: template
 #    covers:
-#      shades_master:
+#      shade_theater_roman:
 #        device_class: shade
-#        friendly_name: "Master Screen"
-#        value_template: "{{ states('input_select.master_shade_screen') }}"
+#        friendly_name: "Theater Roman"
+#        value_template: "{{ states('input_select.theater_shade_roman') }}"
 #        open_cover:
-#          service: script.master_shade_screen_open
+#          service: script.theater_shade_roman_open
 #        close_cover:
-#          service: script.master_shade_screen_close
+#          service: script.theater_shade_roman_close
 #        stop_cover:
-#          service: script.master_shade_screen_stop
+#          service: script.theater_shade_roman_stop
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -21,8 +21,8 @@
 
 ###### INPUT SELECT ------------------------------------------
 input_select:
-  master_shade_screen:
-    name: 'Master Screen'
+  theater_shade_roman:
+    name: 'Theater Roman'
     options:
       - open
       - opening
@@ -33,85 +33,85 @@ input_select:
 
 ###### AUTOMATIONS --------------------------------------
 automation:
-- alias: Master Screen Open
+- alias: Theater Roman Open
   trigger:
   - platform: state
-    entity_id: input_select.master_shade_screen
+    entity_id: input_select.theater_shade_roman
     to: "opening"
-    for: "00:00:10"
+    for: "00:00:07"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'closed' }}"
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shade_screen
+      entity_id: input_select.theater_shade_roman
       option: open
-- alias: Master Screen Closed
+- alias: Theater Roman Closed
   trigger:
   - platform: state
-    entity_id: input_select.master_shade_screen
+    entity_id: input_select.theater_shade_roman
     to: "closing"
-    for: "00:00:10"
+    for: "00:00:07"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'open' }}"
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shade_screen
+      entity_id: input_select.theater_shade_roman
       option: closed
-- alias: Master Screen Open Full Motion
+- alias: Theater Roman Open Full Motion
   trigger:
   - platform: state
-    entity_id: input_select.master_shade_screen
+    entity_id: input_select.theater_shade_roman
     to: "opening"
-    for: "00:00:19"
+    for: "00:00:15"
   condition: []
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shade_screen
+      entity_id: input_select.theater_shade_roman
       option: open
-- alias: Master Screen Closed Full Motion
+- alias: Theater Roman Closed Full Motion
   trigger:
   - platform: state
-    entity_id: input_select.master_shade_screen
+    entity_id: input_select.theater_shade_roman
     to: "closing"
-    for: "00:00:19"
+    for: "00:00:15"
   condition: []
   action:
   - service: input_select.select_option
     data:
-      entity_id: input_select.master_shade_screen
+      entity_id: input_select.theater_shade_roman
       option: closed
 
 ###### SCRIPTS ------------------------------------------
 script:
-  master_shade_screen_open:
+  theater_shade_roman_open:
     sequence:
       - service: cover.open_cover
         data:
-          entity_id: cover.master_screen
+          entity_id: cover.theater_roman
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_shade_screen
+          entity_id: input_select.theater_shade_roman
           option: opening
-  master_shade_screen_stop:
+  theater_shade_roman_stop:
     sequence:
       - service: cover.stop_cover
         data:
-          entity_id: cover.master_screen
+          entity_id: cover.theater_roman
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_shade_screen
+          entity_id: input_select.theater_shade_roman
           option: favorite
-  master_shade_screen_close:
+  theater_shade_roman_close:
     sequence:
       - service: cover.close_cover
         data:
-          entity_id: cover.master_screen
+          entity_id: cover.theater_roman
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_shade_screen
+          entity_id: input_select.theater_shade_roman
           option: closing
