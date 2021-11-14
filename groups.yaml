@@ -39,6 +39,7 @@ lights_living:
   entities:
     - light.living_room_main
     - light.living_room_stairs
+    - light.living_room_foyer
     - switch.plug_in_switch_switch
 
 lights_master:
