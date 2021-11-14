@@ -10,6 +10,8 @@
       brightness: 242
     light.living_room_stairs:
       state: on
+    light.living_room_foyer:
+      state: on
     switch.plug_in_switch_switch:
       state: on
 
@@ -22,6 +24,9 @@
     light.living_room_stairs:
       state: on
       brightness: 150
+    light.living_room_foyer:
+      state: on
+      brightness: 80
     switch.plug_in_switch_switch:
       state: off
 
@@ -34,6 +39,8 @@
     light.living_room_stairs:
       state: on
       brightness: 153
+    light.living_room_foyer:
+      state: off
     switch.plug_in_switch_switch:
       state: on
 
@@ -43,6 +50,8 @@
     light.living_room_main:
       state: off
     light.living_room_stairs:
+      state: off
+    light.living_room_foyer:
       state: off
     switch.plug_in_switch_switch:
       state: off
