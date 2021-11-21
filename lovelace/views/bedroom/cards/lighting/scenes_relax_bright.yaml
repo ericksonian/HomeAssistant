@@ -134,7 +134,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_light_scene_relax_brightness
-              icon: 'mdi:numeric-1-circle'
+              icon: 'mdi:numeric-1-circle-outline'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
@@ -149,7 +149,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_light_scene_relax_brightness
-              icon: 'mdi:numeric-2-circle'
+              icon: 'mdi:numeric-2-circle-outline'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
@@ -164,7 +164,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: input_select.master_light_scene_relax_brightness
-              icon: 'mdi:numeric-3-circle'
+              icon: 'mdi:numeric-3-circle-outline'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
