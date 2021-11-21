@@ -133,12 +133,12 @@ custom_fields:
                 service: script.master_light_scene_relax_yellows
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
+              entity: input_select.master_light_scene_relax_brightness
               icon: 'mdi:numeric-1-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
-                  value: 'custom1'
+                  value: 'level1'
               styles:
                 card:
                   - height: 72px
@@ -148,12 +148,12 @@ custom_fields:
                 service: script.master_light_scene_relax_brightness1
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
+              entity: input_select.master_light_scene_relax_brightness
               icon: 'mdi:numeric-2-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
-                  value: 'custom2'
+                  value: 'level2'
               styles:
                 card:
                   - height: 72px
@@ -163,12 +163,12 @@ custom_fields:
                 service: script.master_light_scene_relax_brightness2
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
+              entity: input_select.master_light_scene_relax_brightness
               icon: 'mdi:numeric-3-circle'
               show_name: false
               state:
                 - color: 'rgb(255,255,255)'
-                  value: 'custom3'
+                  value: 'level3'
               styles:
                 card:
                   - height: 72px

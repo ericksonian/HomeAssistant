@@ -24,6 +24,13 @@ input_select:
       - custom2
       - custom3
 
+  master_light_scene_relax_brightness:
+    name: 'Master Light Scene Relax Brightness'
+    options:
+      - level1
+      - level2
+      - level3
+
 ###### AUTOMATIONS --------------------------------------
 automation:
 
@@ -159,6 +166,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: reds
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_reds
@@ -171,6 +182,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: blues
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_blues
@@ -183,6 +198,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: greens
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_greens
@@ -195,6 +214,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: yellows
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_yellows
@@ -207,6 +230,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: whites
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_whites
@@ -220,6 +247,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: sunrise
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_sunrise
@@ -232,6 +263,10 @@ script:
         data:
           entity_id: input_select.master_light_scene_relax
           option: sunset
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_sunset
@@ -244,8 +279,8 @@ script:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom1
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level1
       - service: light.turn_on
         target:
           entity_id:
@@ -259,8 +294,8 @@ script:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom2
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level2
       - service: light.turn_on
         target:
           entity_id:
@@ -274,8 +309,8 @@ script:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom3
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level3
       - service: light.turn_on
         target:
           entity_id:
