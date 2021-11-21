@@ -11,12 +11,12 @@
       state: on
     light.lifx5:
       state: on
-      brightness: 110
-      color_temp: 475
+      brightness: 101
+      color_temp: 370
     light.lifx6:
       state: on
-      brightness: 110
-      color_temp: 475
+      brightness: 101
+      color_temp: 370
 
 #   Master Entertain
 - name: Master Entertain
