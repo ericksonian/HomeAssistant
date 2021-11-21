@@ -30,6 +30,7 @@ input_select:
       - level1
       - level2
       - level3
+      - level4
 
 ###### AUTOMATIONS --------------------------------------
 automation:
@@ -318,6 +319,21 @@ script:
             - light.lifx6
         data:
           brightness: 60
+          transition: 1
+
+  master_light_scene_relax_brightness4:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level4
+      - service: light.turn_on
+        target:
+          entity_id:
+            - light.lifx5
+            - light.lifx6
+        data:
+          brightness: 80
           transition: 1
 
 # Customs
