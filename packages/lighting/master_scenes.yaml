@@ -238,6 +238,53 @@ script:
         data:
           transition: 3
 
+# Brightness
+
+  master_light_scene_relax_brightness1:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax
+          option: custom1
+      - service: light.turn_on
+        target:
+          entity_id:
+            - light.lifx5
+            - light.lifx6
+        data:
+          brightness: 1
+          transition: 1
+
+  master_light_scene_relax_brightness2:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax
+          option: custom2
+      - service: light.turn_on
+        target:
+          entity_id:
+            - light.lifx5
+            - light.lifx6
+        data:
+          brightness: 20
+          transition: 1
+
+  master_light_scene_relax_brightness3:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax
+          option: custom3
+      - service: light.turn_on
+        target:
+          entity_id:
+            - light.lifx5
+            - light.lifx6
+        data:
+          brightness: 60
+          transition: 1
+
 # Customs
 
   master_light_scene_relax_custom1:
