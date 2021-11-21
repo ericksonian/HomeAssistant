@@ -17,10 +17,6 @@
       state: on
       brightness: 255
       color_temp: 206
-    light.lifx4:
-      state: on
-      brightness: 255
-      color_temp: 206
     light.lifxmini1:
       state: on
       brightness: 255
@@ -40,8 +36,6 @@
       state: on
       brightness: 155
       color_temp: 370
-    light.lifx4:
-      state: off
     light.lifxmini1:
       state: on
       brightness: 255
@@ -54,8 +48,6 @@
     light.lifx2:
       state: off
     light.lifx3:
-      state: off
-    light.lifx4:
       state: off
     light.lifxmini1:
       state: off
@@ -76,10 +68,6 @@
       state: on
       brightness: 85
       rgb_color: [125,0,150]
-    light.lifx4:
-      state: on
-      brightness: 85
-      rgb_color: [255,61,109]
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Blues
@@ -96,10 +84,6 @@
       state: on
       brightness: 85
       rgb_color: [200,186,255]
-    light.lifx4:
-      state: on
-      brightness: 85
-      rgb_color: [70,63,255]
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Greens
@@ -116,10 +100,6 @@
       state: on
       brightness: 85
       rgb_color: [0,255,51]
-    light.lifx4:
-      state: on
-      brightness: 85
-      rgb_color: [66,255,66]
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Yellows
@@ -136,10 +116,6 @@
       state: on
       brightness: 85
       rgb_color: [255,166,50]
-    light.lifx4:
-      state: on
-      brightness: 85
-      rgb_color: [255,172,63]
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Whites
@@ -156,10 +132,6 @@
       state: on
       brightness: 85
       color_temp: 200
-    light.lifx4:
-      state: on
-      brightness: 85
-      color_temp: 111
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Sunrise
@@ -176,10 +148,6 @@
       state: on
       brightness: 125
       rgb_color: [253,212,0]
-    light.lifx4:
-      state: on
-      brightness: 85
-      rgb_color: [255,56,1]
     light.lifxmini1:
       state: off
 - name: Bed3 Relax Sunset
@@ -196,9 +164,5 @@
       state: on
       brightness: 125
       rgb_color: [252,94,1]
-    light.lifx4:
-      state: on
-      brightness: 100
-      rgb_color: [207,182,97]
     light.lifxmini1:
       state: off

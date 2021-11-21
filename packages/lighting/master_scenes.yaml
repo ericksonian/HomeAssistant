@@ -121,19 +121,7 @@ script:
         data:
           transition: 3
 
-  master_light_scene_relax:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene
-          option: 'relax'
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax
-        data:
-          transition: 3
-
-### Relax Scene Options
+### Relax Scene
   master_light_scene_relax:
     sequence:
       - service: input_select.select_option
@@ -342,11 +330,11 @@ script:
           entities:
             light.lifx5:
               state: "on"
-              brightness: 50
+              brightness: 1
               rgb_color: [127,255,127]
             light.lifx6:
               state: "on"
-              brightness: 50
+              brightness: 1
               rgb_color: [131,0,255]
             light.master_bedroom_ceiling_fan_light:
               state: "off"
@@ -358,11 +346,11 @@ script:
           entities:
             light.lifx5:
               state: "on"
-              brightness: 50
+              brightness: 1
               rgb_color: [27,155,227]
             light.lifx6:
               state: "on"
-              brightness: 50
+              brightness: 1
               rgb_color: [231,210,55]
             light.master_bedroom_ceiling_fan_light:
               state: "off"
@@ -374,11 +362,11 @@ script:
           entities:
             light.lifx5:
               state: "on"
-              brightness: 50
+              brightness: 1
               rgb_color: [227,55,27]
             light.lifx6:
               state: "on"
-              brightness: 50
+              brightness: 1
               rgb_color: [31,130,125]
             light.master_bedroom_ceiling_fan_light:
               state: "off"
