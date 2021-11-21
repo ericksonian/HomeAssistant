@@ -101,7 +101,7 @@ custom_fields:
               icon: 'mdi:numeric-1-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
+                - color: 'rgb(50,50,50)'
                   value: 'level1'
               styles:
                 card:
@@ -116,7 +116,7 @@ custom_fields:
               icon: 'mdi:numeric-2-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
+                - color: 'rgb(60,60,60)'
                   value: 'level2'
               styles:
                 card:
@@ -131,7 +131,7 @@ custom_fields:
               icon: 'mdi:numeric-3-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
+                - color: 'rgb(70,70,70)'
                   value: 'level3'
               styles:
                 card:
@@ -146,7 +146,7 @@ custom_fields:
               icon: 'mdi:numeric-4-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
+                - color: 'rgb(80,80,80)'
                   value: 'level4'
               styles:
                 card:
