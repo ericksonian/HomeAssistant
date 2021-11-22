@@ -155,7 +155,3 @@ custom_fields:
               tap_action:
                 action: call-service
                 service: script.master_light_scene_relax_brightness4
-        - type: 'custom:slider-entity-row'
-          entity: group.lights_master_bedside
-          full_row: true
-          hide_state: true
