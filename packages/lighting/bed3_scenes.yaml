@@ -255,7 +255,6 @@ script:
           - light.lifx1
           - light.lifx2
           - light.lifx3
-          - light.lifx4
           - light.lifxmini1
       - service: input_select.select_option
         data:
@@ -283,7 +282,6 @@ script:
           - light.lifx1
           - light.lifx2
           - light.lifx3
-          - light.lifx4
           - light.lifxmini1
       - service: input_select.select_option
         data:
@@ -311,7 +309,6 @@ script:
           - light.lifx1
           - light.lifx2
           - light.lifx3
-          - light.lifx4
           - light.lifxmini1
       - service: input_select.select_option
         data:
@@ -337,10 +334,6 @@ script:
               state: "on"
               brightness: 75
               rgb_color: [38,128,255]
-            light.lifx4:
-              state: "on"
-              brightness: 125
-              rgb_color: [255,254,0]
             light.lifxmini1:
               state: "off"
       - service: scene.create
@@ -359,10 +352,6 @@ script:
               state: "on"
               brightness: 75
               rgb_color: [255,195,43]
-            light.lifx4:
-              state: "on"
-              brightness: 125
-              rgb_color: [255,181,63]
             light.lifxmini1:
               state: "off"
       - service: scene.create
@@ -381,9 +370,5 @@ script:
               state: "on"
               brightness: 75
               rgb_color: [255,175,177]
-            light.lifx4:
-              state: "on"
-              brightness: 125
-              rgb_color: [187,163,255]
             light.lifxmini1:
               state: "off"
