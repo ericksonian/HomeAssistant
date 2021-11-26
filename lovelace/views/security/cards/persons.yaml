@@ -3,6 +3,7 @@ cards:
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
+      - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - type: picture-entity
         entity: person.nathan
         image: /local/nathan_memoji.png
@@ -29,6 +30,7 @@ cards:
         aspect_ratio: 1x1
         state_filter:
           "away": grayscale(100%)
+      - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
       - !include /config/lovelace/cards_shared/spacer_horizontal.yaml
 
   - type: glance
