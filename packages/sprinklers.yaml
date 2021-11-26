@@ -9,10 +9,10 @@ input_boolean:
     initial: off
   sprinkler_auto_water_1:
     name: Sprinkler Auto Water 1
-    initial: on
+#    initial: on
   sprinkler_auto_water_2:
     name: Sprinkler Auto Water 2
-    initial: on
+#    initial: on
 
 ###### INPUT SELECT ------------------------------------------
 #input_select:
