@@ -38,6 +38,8 @@ custom_fields:
           entity: input_select.theater_screen
           icon: 'mdi:projector-screen-outline'
           name: Down
+          lock:
+            enabled: true
           show_icon: true
           show_name: true
           state:
