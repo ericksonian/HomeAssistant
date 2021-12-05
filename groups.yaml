@@ -1,11 +1,11 @@
 lights_all:
-  name: All lights
+  name: Lights All
   entities:
     - group.lights_upstairs
     - group.lights_downstairs
 
 lights_exterior:
-  name: All lights
+  name: Lights Exterior
   entities:
     - light.exterior_back_door
     - light.exterior_driveway
@@ -13,7 +13,7 @@ lights_exterior:
     - switch.patio_string
 
 lights_downstairs:
-  name: Downstairs Lights
+  name: Lights Downstairs
   entities:
     - group.lights_kitchen
     - light.kitchen_dining_pendant
@@ -21,13 +21,13 @@ lights_downstairs:
     - switch.garage_ceiling
 
 lights_upstairs:
-  name: Downstairs Lights
+  name: Lights Upstairs
   entities:
     - group.lights_master
     - group.lights_bed3
 
 lights_kitchen:
-  name: Kitchen Lights
+  name: Lights Kitchen
   entities:
     - light.kitchen_ceiling
     - light.kitchen_sink
@@ -35,7 +35,7 @@ lights_kitchen:
 #    - light.kitchen_dining_pendant
 
 lights_living:
-  name: Living Lights
+  name: Lights Living
   entities:
     - light.living_room_main
     - light.living_room_stairs
@@ -43,7 +43,7 @@ lights_living:
     - switch.plug_in_switch_switch
 
 lights_master:
-  name: Master Lights
+  name: Lights Master
   entities:
     - light.master_bedroom_entry
     - light.master_bedroom_ceiling_fan_light
@@ -51,16 +51,15 @@ lights_master:
     - light.lifx6
 
 lights_master_bedside:
-  name: Master Bedside Lights
+  name: Lights Master Bedside
   entities:
     - light.lifx5
     - light.lifx6
 
 lights_bed3:
-  name: Bed3 Lights
+  name: Lights Bed3
   entities:
     - light.lifx1
     - light.lifx2
     - light.lifx3
-    - light.lifx4
     - light.lifxmini1
