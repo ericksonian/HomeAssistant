@@ -41,48 +41,46 @@ custom_fields:
                 - type: horizontal-stack
                   cards:
                     - type: 'custom:button-card'
-                      entity: input_select.exterior_light_scene
+                      entity: media_player.sonos_play5_1
                       template: standard
-                      icon: 'mdi:lightbulb-group-outline'
-                      name: Bright
-                      state:
-                        - color: 'rgb(255,255,255)'
-                          value: 'bright'
+                      icon: 'mdi:skip-previous'
                       tap_action:
                         action: call-service
-                        service: script.exterior_light_scene_bright
+                        service: media_player.media_previous_track
+                        target:
+                          entity_id: media_player.sonos_play5_1
                     - type: 'custom:button-card'
-                      entity: input_select.exterior_light_scene
+                      entity: media_player.sonos_play5_1
                       template: standard
-                      icon: 'mdi:string-lights'
-                      name: Entertain
-                      state:
-                        - color: 'rgb(225,225,225)'
-                          value: 'entertain'
+                      icon: 'mdi:skip-next'
                       tap_action:
                         action: call-service
-                        service: script.exterior_light_scene_entertain
+                        service: media_player.media_next_track
+                        target:
+                          entity_id: media_player.sonos_play5_1
                 - type: horizontal-stack
                   cards:
                     - type: 'custom:button-card'
-                      entity: input_select.exterior_light_scene
+                      entity: media_player.sonos_play5_1
                       template: standard
-                      icon: 'mdi:weather-night'
-                      name: Relax
+                      icon: 'mdi:pause'
                       state:
-                        - color: 'rgb(200,200,200)'
-                          value: 'relax'
+                        - color: 'rgb(255,255,255)'
+                          value: 'paused'
                       tap_action:
                         action: call-service
-                        service: script.exterior_light_scene_relax
+                        service: media_player.media_pause
+                        target:
+                          entity_id: media_player.sonos_play5_1
                     - type: 'custom:button-card'
-                      entity: group.lights_exterior
-                      template: standardnostate
-                      icon: 'mdi:weather-sunny'
-                      name: All Off
+                      entity: media_player.sonos_play5_1
+                      template: standard
+                      icon: 'mdi:play'
                       state:
-                        - color: 'rgb(2,2,228)'
-                          value: 'off'
+                        - color: 'rgb(255,255,255)'
+                          value: 'playing'
                       tap_action:
                         action: call-service
-                        service: script.exterior_light_scene_off
+                        service: media_player.media_play
+                        target:
+                          entity_id: media_player.sonos_play5_1
