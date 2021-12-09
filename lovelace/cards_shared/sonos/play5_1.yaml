@@ -1,0 +1,4 @@
+artwork: cover
+entity: media_player.sonos_play5_1
+icon: 'mdi:music'
+type: 'custom:mini-media-player'
