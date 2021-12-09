@@ -29,7 +29,7 @@ custom_fields:
             - type: vertical-stack
               cards:
                 - type: 'custom:button-card'
-                  template: wide
+                  template: standard
                   entity: sensor.now_playing_title_sonos_play5_1
                   show_name: true
                   name: Song
@@ -42,12 +42,13 @@ custom_fields:
                     name:
                       - font-size: 7px
                         color: 'rgb(155,155,155)'
+                        align-self: start
                     state:
                       - font-size: 13px
                   tap_action: none
                   hold_action: none
                 - type: 'custom:button-card'
-                  template: wide
+                  template: standard
                   entity: sensor.now_playing_artist_sonos_play5_1
                   show_name: true
                   name: Artist
@@ -60,12 +61,13 @@ custom_fields:
                     name:
                       - font-size: 7px
                         color: 'rgb(155,155,155)'
+                        align-self: start
                     state:
                       - font-size: 13px
                   tap_action: none
                   hold_action: none
                 - type: 'custom:button-card'
-                  template: wide
+                  template: standard
                   entity: sensor.now_playing_album_sonos_play5_1
                   show_name: true
                   name: Album
@@ -78,6 +80,7 @@ custom_fields:
                     name:
                       - font-size: 7px
                         color: 'rgb(155,155,155)'
+                        align-self: start
                     state:
                       - font-size: 13px
                   tap_action: none
