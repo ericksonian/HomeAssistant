@@ -7,4 +7,10 @@ custom_fields:
       type: 'custom:mini-media-player'
       entity: media_player.sonos_play5_1
       name: Living Room
-      icon: 'mdi:music'
+      artwork: material
+      hide:
+        name: true
+        volume: false
+        source: true
+        power: false
+        controls: false
