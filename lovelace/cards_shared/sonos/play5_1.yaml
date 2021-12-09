@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: "Play:5 1"
+name: "Sonos Play:5 1"
 custom_fields:
   buttons:
     card:
@@ -14,8 +14,7 @@ custom_fields:
               name: Living Room
               icon: 'mdi:music'
               artwork: full-cover
-              tap_action:
-                action: more-info
+              tap_action: more-info
               hide:
                 name: true
                 icon: true
@@ -134,3 +133,12 @@ custom_fields:
                 service: media_player.media_play_pause
                 service_data:
                   entity_id: media_player.sonos_play5_1
+        - type: conditional
+          conditions:
+            - entity: input_boolean.sonos_volumes_play5_1
+              state: 'on'
+          card:
+            type: 'custom:slider-entity-row'
+            entity: media_player.sonos_play5_1
+            full_row: true
+            hide_state: true
