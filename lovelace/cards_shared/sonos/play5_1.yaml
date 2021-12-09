@@ -1,5 +1,5 @@
 type: 'custom:button-card'
-template: container
+template: intercontainer
 name: "Sonos Play:5 1"
 custom_fields:
   buttons:
