@@ -4,84 +4,85 @@ name: "Play:5 1"
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: vertical-stack
       cards:
         - type: custom:mini-media-player
           entity: media_player.sonos_play5_1
-          name: Living Room
-          icon: 'mdi:music'
-          artwork: full-cover
-          scale: 2
+          artwork: none
           hide:
             name: true
             icon: true
-            info: true
+            info: false
             power: true
             source: true
             controls: true
             volume: true
             mute: true
             progress: true
-        - type: vertical-stack
+        - type: horizontal-stack
           cards:
             - type: custom:mini-media-player
               entity: media_player.sonos_play5_1
               name: Living Room
               icon: 'mdi:music'
-              artwork: none
+              artwork: full-cover
               hide:
                 name: true
                 icon: true
-                info: false
+                info: true
                 power: true
                 source: true
                 controls: true
                 volume: true
                 mute: true
                 progress: true
-            - type: horizontal-stack
+            - type: vertical-stack
               cards:
-                - type: 'custom:button-card'
-                  entity: input_select.exterior_light_scene
-                  template: standard
-                  icon: 'mdi:lightbulb-group-outline'
-                  name: Bright
-                  state:
-                    - color: 'rgb(255,255,255)'
-                      value: 'bright'
-                  tap_action:
-                    action: call-service
-                    service: script.exterior_light_scene_bright
-                - type: 'custom:button-card'
-                  entity: input_select.exterior_light_scene
-                  template: standard
-                  icon: 'mdi:string-lights'
-                  name: Entertain
-                  state:
-                    - color: 'rgb(225,225,225)'
-                      value: 'entertain'
-                  tap_action:
-                    action: call-service
-                    service: script.exterior_light_scene_entertain
-                - type: 'custom:button-card'
-                  entity: input_select.exterior_light_scene
-                  template: standard
-                  icon: 'mdi:lightbulb-group-outline'
-                  name: Bright
-                  state:
-                    - color: 'rgb(255,255,255)'
-                      value: 'bright'
-                  tap_action:
-                    action: call-service
-                    service: script.exterior_light_scene_bright
-                - type: 'custom:button-card'
-                  entity: input_select.exterior_light_scene
-                  template: standard
-                  icon: 'mdi:string-lights'
-                  name: Entertain
-                  state:
-                    - color: 'rgb(225,225,225)'
-                      value: 'entertain'
-                  tap_action:
-                    action: call-service
-                    service: script.exterior_light_scene_entertain
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      entity: input_select.exterior_light_scene
+                      template: standard
+                      icon: 'mdi:lightbulb-group-outline'
+                      name: Bright
+                      state:
+                        - color: 'rgb(255,255,255)'
+                          value: 'bright'
+                      tap_action:
+                        action: call-service
+                        service: script.exterior_light_scene_bright
+                    - type: 'custom:button-card'
+                      entity: input_select.exterior_light_scene
+                      template: standard
+                      icon: 'mdi:string-lights'
+                      name: Entertain
+                      state:
+                        - color: 'rgb(225,225,225)'
+                          value: 'entertain'
+                      tap_action:
+                        action: call-service
+                        service: script.exterior_light_scene_entertain
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      entity: input_select.exterior_light_scene
+                      template: standard
+                      icon: 'mdi:weather-night'
+                      name: Relax
+                      state:
+                        - color: 'rgb(200,200,200)'
+                          value: 'relax'
+                      tap_action:
+                        action: call-service
+                        service: script.exterior_light_scene_relax
+                    - type: 'custom:button-card'
+                      entity: group.lights_exterior
+                      template: standardnostate
+                      icon: 'mdi:weather-sunny'
+                      name: All Off
+                      state:
+                        - color: 'rgb(2,2,228)'
+                          value: 'off'
+                      tap_action:
+                        action: call-service
+                        service: script.exterior_light_scene_off
