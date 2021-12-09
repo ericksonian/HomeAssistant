@@ -32,6 +32,7 @@ custom_fields:
                   template: standard
                   entity: sensor.now_playing_title_sonos_play5_1
                   show_name: true
+                  name: Song
                   show_state: true
                   show_icon: false
                   styles:
@@ -49,6 +50,7 @@ custom_fields:
                   template: standard
                   entity: sensor.now_playing_artist_sonos_play5_1
                   show_name: true
+                  name: Artist
                   show_state: true
                   show_icon: false
                   styles:
@@ -66,6 +68,7 @@ custom_fields:
                   template: standard
                   entity: sensor.now_playing_album_sonos_play5_1
                   show_name: true
+                  name: Album
                   show_state: true
                   show_icon: false
                   styles:
@@ -87,7 +90,7 @@ custom_fields:
 
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
-              template: standard
+              template: wide
               icon: 'mdi:skip-previous'
               show_name: false
               aspect_ratio: 1/1
@@ -98,7 +101,7 @@ custom_fields:
                   entity_id: media_player.sonos_play5_1
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
-              template: standard
+              template: wide
               icon: 'mdi:skip-next'
               show_name: false
               aspect_ratio: 1/1
@@ -109,7 +112,7 @@ custom_fields:
                   entity_id: media_player.sonos_play5_1
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
-              template: standard
+              template: wide
               icon: 'mdi:play'
               show_name: false
               aspect_ratio: 1/1
