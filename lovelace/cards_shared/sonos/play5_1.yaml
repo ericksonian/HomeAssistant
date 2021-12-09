@@ -1,4 +1,10 @@
-artwork: cover
-entity: media_player.sonos_play5_1
-icon: 'mdi:music'
-type: 'custom:mini-media-player'
+type: 'custom:button-card'
+template: container
+name: "Play:5 1"
+custom_fields:
+  buttons:
+    card:
+      type: 'custom:mini-media-player'
+      entity: media_player.sonos_play5_1
+      name: Living Room
+      icon: 'mdi:music'
