@@ -15,3 +15,12 @@
     master_bedroom_fan_speed:
       friendly_name: Master Bedroom Fan Speed
       value_template: "{{ state_attr('fan.master_bedroom_ceiling_fan', 'speed') }}"
+
+
+    now_playing_title_sonos_play5_1:
+      friendly_name: Now Playing Sonos Play5 1
+      value_template: "{{ state_attr('media_player.sonos_play5_1', 'media_title') }}"
+
+    now_playing_artist_sonos_play5_1:
+      friendly_name: Now Playing Sonos Play5 1
+      value_template: "{{ state_attr('media_player.sonos_play5_1', 'media_artist') }}"

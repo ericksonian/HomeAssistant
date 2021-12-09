@@ -18,7 +18,7 @@ custom_fields:
             controls: true
             volume: true
             mute: true
-            progress: true
+            progress: false
         - type: horizontal-stack
           cards:
             - type: custom:mini-media-player
