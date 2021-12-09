@@ -4,13 +4,38 @@ name: "Play:5 1"
 custom_fields:
   buttons:
     card:
-      type: custom:mini-media-player
-      entity: media_player.sonos_play5_1
-      name: Living Room
-      artwork: artwork
-      hide:
-        name: true
-        source: true
-        power: false
-        controls: false
-        volume: false
+      type: hosrizontal-stack
+      cards:
+        - type: custom:mini-media-player
+          entity: media_player.sonos_play5_1
+          name: Living Room
+          icon: 'mdi:music'
+          artwork: full-cover
+          hide:
+            name: true
+            source: true
+            power: true
+            controls: true
+            volume: true
+        - type: 'custom:button-card'
+          entity: input_select.exterior_light_scene
+          template: standard
+          icon: 'mdi:lightbulb-group-outline'
+          name: Bright
+          state:
+            - color: 'rgb(255,255,255)'
+              value: 'bright'
+          tap_action:
+            action: call-service
+            service: script.exterior_light_scene_bright
+        - type: 'custom:button-card'
+          entity: input_select.exterior_light_scene
+          template: standard
+          icon: 'mdi:string-lights'
+          name: Entertain
+          state:
+            - color: 'rgb(225,225,225)'
+              value: 'entertain'
+          tap_action:
+            action: call-service
+            service: script.exterior_light_scene_entertain
