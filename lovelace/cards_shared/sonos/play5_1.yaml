@@ -10,7 +10,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
-              template: standard
+              template: wide
               entity: sensor.now_playing_title_sonos_play5_1
               show_name: false
               show_state: true
@@ -18,9 +18,11 @@ custom_fields:
               styles:
                 card:
                   - height: 52px
-                    color: 'rgb(80,80,80)'
+                    background-color: 'rgb(80,80,80)'
+                name:
+                  - font-size: 1em
             - type: 'custom:button-card'
-              template: standard
+              template: wide
               entity: sensor.now_playing_artist_sonos_play5_1
               show_name: false
               show_state: true
@@ -28,7 +30,9 @@ custom_fields:
               styles:
                 card:
                   - height: 52px
-                    color: 'rgb(80,80,80)'
+                    background-color: 'rgb(80,80,80)'
+                name:
+                  - font-size: 1em
 
         - type: horizontal-stack
           cards:
