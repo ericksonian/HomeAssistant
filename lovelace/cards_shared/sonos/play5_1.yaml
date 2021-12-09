@@ -4,7 +4,7 @@ name: "Play:5 1"
 custom_fields:
   buttons:
     card:
-      type: hosrizontal-stack
+      type: horizontal-stack
       cards:
         - type: custom:mini-media-player
           entity: media_player.sonos_play5_1
