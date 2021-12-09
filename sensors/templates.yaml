@@ -24,3 +24,7 @@
     now_playing_artist_sonos_play5_1:
       friendly_name: Now Playing Sonos Play5 1
       value_template: "{{ state_attr('media_player.sonos_play5_1', 'media_artist') }}"
+
+    now_playing_album_sonos_play5_1:
+      friendly_name: Now Playing Sonos Play5 1
+      value_template: "{{ state_attr('media_player.sonos_play5_1', 'media_album_name') }}"
