@@ -47,7 +47,7 @@ custom_fields:
                       tap_action:
                         action: call-service
                         service: media_player.media_previous_track
-                        target:
+                        service_data:
                           entity_id: media_player.sonos_play5_1
                     - type: 'custom:button-card'
                       entity: media_player.sonos_play5_1
@@ -56,7 +56,7 @@ custom_fields:
                       tap_action:
                         action: call-service
                         service: media_player.media_next_track
-                        target:
+                        service_data:
                           entity_id: media_player.sonos_play5_1
                 - type: horizontal-stack
                   cards:
@@ -70,7 +70,7 @@ custom_fields:
                       tap_action:
                         action: call-service
                         service: media_player.media_pause
-                        target:
+                        service_data:
                           entity_id: media_player.sonos_play5_1
                     - type: 'custom:button-card'
                       entity: media_player.sonos_play5_1
@@ -82,5 +82,5 @@ custom_fields:
                       tap_action:
                         action: call-service
                         service: media_player.media_play
-                        target:
+                        service_data:
                           entity_id: media_player.sonos_play5_1
