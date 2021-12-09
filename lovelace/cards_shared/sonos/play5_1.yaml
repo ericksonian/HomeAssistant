@@ -21,6 +21,7 @@ custom_fields:
                     background-color: 'rgb(50,50,50)'
                 state:
                   - font-size: 13px
+              tap_action: none
             - type: 'custom:button-card'
               template: standard
               entity: sensor.now_playing_artist_sonos_play5_1
@@ -33,6 +34,7 @@ custom_fields:
                     background-color: 'rgb(50,50,50)'
                 state:
                   - font-size: 13px
+              tap_action: none
 
         - type: horizontal-stack
           cards:
@@ -41,6 +43,7 @@ custom_fields:
               name: Living Room
               icon: 'mdi:music'
               artwork: full-cover
+              tap_action: more-info
               hide:
                 name: true
                 icon: true
