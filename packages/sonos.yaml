@@ -15,10 +15,53 @@ sensor:
         friendly_name: Now Playing Sonos Play5 1
         value_template: "{{ state_attr('media_player.sonos_play5_1', 'media_album_name') }}"
 
+
+      now_playing_title_sonos_play5_2:
+        friendly_name: Now Playing Sonos Play5 2
+        value_template: "{{ state_attr('media_player.sonos_play5_2', 'media_title') }}"
+
+      now_playing_artist_sonos_play5_2:
+        friendly_name: Now Playing Sonos Play5 2
+        value_template: "{{ state_attr('media_player.sonos_play5_2', 'media_artist') }}"
+
+      now_playing_album_sonos_play5_2:
+        friendly_name: Now Playing Sonos Play5 2
+        value_template: "{{ state_attr('media_player.sonos_play5_2', 'media_album_name') }}"
+
+
+      now_playing_title_sonos_play5_3:
+        friendly_name: Now Playing Sonos Play5 3
+        value_template: "{{ state_attr('media_player.sonos_play5_3', 'media_title') }}"
+
+      now_playing_artist_sonos_play5_3:
+        friendly_name: Now Playing Sonos Play5 3
+        value_template: "{{ state_attr('media_player.sonos_play5_3', 'media_artist') }}"
+
+      now_playing_album_sonos_play5_3:
+        friendly_name: Now Playing Sonos Play5 3
+        value_template: "{{ state_attr('media_player.sonos_play5_3', 'media_album_name') }}"
+
+
+      now_playing_title_sonos_connect:
+        friendly_name: Now Playing Sonos Play5 1
+        value_template: "{{ state_attr('media_player.sonos_connect', 'media_title') }}"
+
+      now_playing_artist_sonos_connect:
+        friendly_name: Now Playing Sonos Play5 1
+        value_template: "{{ state_attr('media_player.sonos_connect', 'media_artist') }}"
+
+      now_playing_album_sonos_connect:
+        friendly_name: Now Playing Sonos Play5 1
+        value_template: "{{ state_attr('media_player.sonos_connect', 'media_album_name') }}"
 ###### INPUT BOOLEANS ------------------------------------------
 input_boolean:
   sonos_volumes_play5_1:
-    name: Sonos 1 Volume
+    initial: off
+  sonos_volumes_play5_2:
+    initial: off
+  sonos_volumes_play5_3:
+    initial: off
+  sonos_volumes_connect:
     initial: off
 
 ###### GROUPS ----------------------------------------

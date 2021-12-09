@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: "Sonos Play:5 1"
+name: "Sonos Play:5 2"
 custom_fields:
   buttons:
     card:
@@ -9,7 +9,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: custom:mini-media-player
-              entity: media_player.sonos_play5_1
+              entity: media_player.sonos_play5_2
               artwork: full-cover
               tap_action: more-info
               hide:
@@ -26,7 +26,7 @@ custom_fields:
               cards:
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.now_playing_title_sonos_play5_1
+                  entity: sensor.now_playing_title_sonos_play5_2
                   show_name: true
                   name: Song
                   show_state: true
@@ -46,7 +46,7 @@ custom_fields:
                   hold_action: none
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.now_playing_artist_sonos_play5_1
+                  entity: sensor.now_playing_artist_sonos_play5_2
                   show_name: true
                   name: Artist
                   show_state: true
@@ -66,7 +66,7 @@ custom_fields:
                   hold_action: none
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.now_playing_album_sonos_play5_1
+                  entity: sensor.now_playing_album_sonos_play5_2
                   show_name: true
                   name: Album
                   show_state: true
@@ -87,7 +87,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
-              entity: media_player.sonos_play5_1
+              entity: media_player.sonos_play5_2
               template: standard
               icon: 'mdi:skip-previous'
               show_name: false
@@ -95,9 +95,9 @@ custom_fields:
                 action: call-service
                 service: media_player.media_previous_track
                 service_data:
-                  entity_id: media_player.sonos_play5_1
+                  entity_id: media_player.sonos_play5_2
             - type: 'custom:button-card'
-              entity: media_player.sonos_play5_1
+              entity: media_player.sonos_play5_2
               template: standard
               icon: 'mdi:skip-next'
               show_name: false
@@ -105,16 +105,16 @@ custom_fields:
                 action: call-service
                 service: media_player.media_next_track
                 service_data:
-                  entity_id: media_player.sonos_play5_1
+                  entity_id: media_player.sonos_play5_2
             - type: 'custom:button-card'
-              entity: input_boolean.sonos_volumes_play5_1
+              entity: input_boolean.sonos_volumes_play5_2
               template: standard
               icon: 'mdi:volume-high'
               show_name: false
               tap_action:
                 action: toggle
             - type: 'custom:button-card'
-              entity: media_player.sonos_play5_1
+              entity: media_player.sonos_play5_2
               template: standard
               icon: 'mdi:play'
               show_name: false
@@ -125,13 +125,13 @@ custom_fields:
                 action: call-service
                 service: media_player.media_play_pause
                 service_data:
-                  entity_id: media_player.sonos_play5_1
+                  entity_id: media_player.sonos_play5_2
         - type: conditional
           conditions:
-            - entity: input_boolean.sonos_volumes_play5_1
+            - entity: input_boolean.sonos_volumes_play5_2
               state: 'on'
           card:
             type: 'custom:slider-entity-row'
-            entity: media_player.sonos_play5_1
+            entity: media_player.sonos_play5_2
             full_row: true
             hide_state: true
