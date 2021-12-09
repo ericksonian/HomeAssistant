@@ -13,10 +13,14 @@ custom_fields:
           artwork: full-cover
           hide:
             name: true
-            source: true
+            icon: true
+            info: true
             power: true
+            source: true
             controls: true
             volume: true
+            mute: true
+            progress: true
         - type: 'custom:button-card'
           entity: input_select.exterior_light_scene
           template: standard
