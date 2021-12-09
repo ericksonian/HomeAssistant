@@ -11,7 +11,7 @@ custom_fields:
           name: Living Room
           icon: 'mdi:music'
           artwork: full-cover
-          scale: 0.5
+          scale: 2
           hide:
             name: true
             icon: true
