@@ -18,7 +18,7 @@ custom_fields:
               styles:
                 card:
                   - height: 52px
-                    background-color: 'rgb(50,50,50)'
+                    '--mdc-ripple-color': 'rgb(255,255,255)'
                 state:
                   - font-size: 13px
               tap_action: none
@@ -32,7 +32,7 @@ custom_fields:
               styles:
                 card:
                   - height: 52px
-                    background-color: 'rgb(50,50,50)'
+                    '--mdc-ripple-color': 'rgb(255,255,255)'
                 state:
                   - font-size: 13px
               tap_action: none
