@@ -29,7 +29,7 @@ custom_fields:
             - type: vertical-stack
               cards:
                 - type: 'custom:button-card'
-                  template: standard
+                  template: wide
                   entity: sensor.now_playing_title_sonos_play5_1
                   show_name: true
                   name: Song
@@ -47,7 +47,7 @@ custom_fields:
                   tap_action: none
                   hold_action: none
                 - type: 'custom:button-card'
-                  template: standard
+                  template: wide
                   entity: sensor.now_playing_artist_sonos_play5_1
                   show_name: true
                   name: Artist
@@ -65,7 +65,7 @@ custom_fields:
                   tap_action: none
                   hold_action: none
                 - type: 'custom:button-card'
-                  template: standard
+                  template: wide
                   entity: sensor.now_playing_album_sonos_play5_1
                   show_name: true
                   name: Album
@@ -90,7 +90,7 @@ custom_fields:
 
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
-              template: wide
+              template: standard
               icon: 'mdi:skip-previous'
               show_name: false
               aspect_ratio: 1/1
@@ -101,7 +101,7 @@ custom_fields:
                   entity_id: media_player.sonos_play5_1
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
-              template: wide
+              template: standard
               icon: 'mdi:skip-next'
               show_name: false
               aspect_ratio: 1/1
@@ -112,7 +112,7 @@ custom_fields:
                   entity_id: media_player.sonos_play5_1
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
-              template: wide
+              template: standard
               icon: 'mdi:play'
               show_name: false
               aspect_ratio: 1/1
