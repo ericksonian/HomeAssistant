@@ -19,6 +19,24 @@ custom_fields:
             volume: true
             mute: true
             progress: false
+
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              entity: sensor.now_playing_title_sonos_play5_1
+              show_name: false
+              show_state: true
+              styles:
+                card:
+                  - height: 52px
+            - type: 'custom:button-card'
+              entity: sensor.now_playing_artist_sonos_play5_1
+              show_name: false
+              show_state: true
+              styles:
+                card:
+                  - height: 52px
+
         - type: horizontal-stack
           cards:
             - type: custom:mini-media-player
@@ -36,14 +54,15 @@ custom_fields:
                 volume: true
                 mute: true
                 progress: true
-            - type: vertical-stack
-              cards:
-                - type: horizontal-stack
-                  cards:
+#            - type: vertical-stack
+#              cards:
+#                - type: horizontal-stack
+#                  cards:
                     - type: 'custom:button-card'
                       entity: media_player.sonos_play5_1
                       template: standard
                       icon: 'mdi:skip-previous'
+                      show_name: false
                       tap_action:
                         action: call-service
                         service: media_player.media_previous_track
@@ -53,34 +72,25 @@ custom_fields:
                       entity: media_player.sonos_play5_1
                       template: standard
                       icon: 'mdi:skip-next'
+                      show_name: false
                       tap_action:
                         action: call-service
                         service: media_player.media_next_track
                         service_data:
                           entity_id: media_player.sonos_play5_1
-                - type: horizontal-stack
-                  cards:
-                    - type: 'custom:button-card'
-                      entity: media_player.sonos_play5_1
-                      template: standard
-                      icon: 'mdi:pause'
-                      state:
-                        - color: 'rgb(255,255,255)'
-                          value: 'paused'
-                      tap_action:
-                        action: call-service
-                        service: media_player.media_pause
-                        service_data:
-                          entity_id: media_player.sonos_play5_1
+#                - type: horizontal-stack
+#                  cards:
                     - type: 'custom:button-card'
                       entity: media_player.sonos_play5_1
                       template: standard
                       icon: 'mdi:play'
+                      show_name: false
                       state:
                         - color: 'rgb(255,255,255)'
                           value: 'playing'
+                          icon: 'mdi:pause'
                       tap_action:
                         action: call-service
-                        service: media_player.media_play
+                        service: media_player.media_play_pause
                         service_data:
                           entity_id: media_player.sonos_play5_1
