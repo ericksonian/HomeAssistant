@@ -19,7 +19,7 @@ custom_fields:
                 card:
                   - height: 52px
                     background-color: 'rgb(50,50,50)'
-                name:
+                state:
                   - font-size: 13px
             - type: 'custom:button-card'
               template: standard
@@ -31,7 +31,7 @@ custom_fields:
                 card:
                   - height: 52px
                     background-color: 'rgb(50,50,50)'
-                name:
+                state:
                   - font-size: 13px
 
         - type: horizontal-stack
