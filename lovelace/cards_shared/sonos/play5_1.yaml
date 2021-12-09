@@ -45,6 +45,7 @@ custom_fields:
                         align-self: start
                     state:
                       - font-size: 13px
+                        align-self: middle
                   tap_action: none
                   hold_action: none
                 - type: 'custom:button-card'
@@ -64,6 +65,7 @@ custom_fields:
                         align-self: start
                     state:
                       - font-size: 13px
+                        align-self: middle
                   tap_action: none
                   hold_action: none
                 - type: 'custom:button-card'
@@ -83,6 +85,7 @@ custom_fields:
                         align-self: start
                     state:
                       - font-size: 13px
+                        align-self: middle
                   tap_action: none
                   hold_action: none
 
