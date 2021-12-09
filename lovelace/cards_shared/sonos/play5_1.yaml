@@ -6,19 +6,6 @@ custom_fields:
     card:
       type: vertical-stack
       cards:
-        - type: custom:mini-media-player
-          entity: media_player.sonos_play5_1
-          artwork: none
-          hide:
-            name: true
-            icon: true
-            info: true
-            power: true
-            source: true
-            controls: true
-            volume: true
-            mute: true
-            progress: false
 
         - type: horizontal-stack
           cards:
@@ -30,6 +17,7 @@ custom_fields:
               styles:
                 card:
                   - height: 52px
+                    color: 'rgb(80,80,80)'
             - type: 'custom:button-card'
               entity: sensor.now_playing_artist_sonos_play5_1
               show_name: false
@@ -38,6 +26,7 @@ custom_fields:
               styles:
                 card:
                   - height: 52px
+                    color: 'rgb(80,80,80)'
 
         - type: horizontal-stack
           cards:
@@ -61,6 +50,7 @@ custom_fields:
               template: standard
               icon: 'mdi:skip-previous'
               show_name: false
+              aspect_ratio: 1/1
               tap_action:
                 action: call-service
                 service: media_player.media_previous_track
@@ -71,6 +61,7 @@ custom_fields:
               template: standard
               icon: 'mdi:skip-next'
               show_name: false
+              aspect_ratio: 1/1
               tap_action:
                 action: call-service
                 service: media_player.media_next_track
@@ -81,9 +72,9 @@ custom_fields:
               template: standard
               icon: 'mdi:play'
               show_name: false
+              aspect_ratio: 1/1
               state:
-                - color: 'rgb(255,255,255)'
-                  value: 'playing'
+                - value: 'playing'
                   icon: 'mdi:pause'
               tap_action:
                 action: call-service
