@@ -37,7 +37,7 @@ custom_fields:
                   show_icon: false
                   styles:
                     card:
-                      - height: 54px
+                      - height: 55px
                         '--mdc-ripple-color': 'rgb(255,255,255)'
                     name:
                       - font-size: 7px
@@ -57,7 +57,7 @@ custom_fields:
                   show_icon: false
                   styles:
                     card:
-                      - height: 54px
+                      - height: 55px
                         '--mdc-ripple-color': 'rgb(255,255,255)'
                     name:
                       - font-size: 7px
@@ -77,7 +77,7 @@ custom_fields:
                   show_icon: false
                   styles:
                     card:
-                      - height: 54px
+                      - height: 55px
                         '--mdc-ripple-color': 'rgb(255,255,255)'
                     name:
                       - font-size: 7px
@@ -114,6 +114,20 @@ custom_fields:
               tap_action:
                 action: call-service
                 service: media_player.media_next_track
+                service_data:
+                  entity_id: media_player.sonos_play5_1
+            - type: 'custom:button-card'
+              entity: media_player.sonos_play5_1
+              template: standard
+              icon: 'mdi:play'
+              show_name: false
+              aspect_ratio: 1/1
+              state:
+                - value: 'playing'
+                  icon: 'mdi:pause'
+              tap_action:
+                action: call-service
+                service: media_player.media_play_pause
                 service_data:
                   entity_id: media_player.sonos_play5_1
             - type: 'custom:button-card'
