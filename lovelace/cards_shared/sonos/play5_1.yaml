@@ -4,13 +4,13 @@ name: "Play:5 1"
 custom_fields:
   buttons:
     card:
-      type: 'custom:mini-media-player'
+      type: custom:mini-media-player
       entity: media_player.sonos_play5_1
       name: Living Room
-      artwork: material
+      artwork: artwork
       hide:
         name: true
-        volume: false
         source: true
         power: false
         controls: false
+        volume: false
