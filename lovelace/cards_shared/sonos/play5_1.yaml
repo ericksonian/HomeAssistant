@@ -6,7 +6,6 @@ custom_fields:
     card:
       type: vertical-stack
       cards:
-
         - type: horizontal-stack
           cards:
             - type: custom:mini-media-player
@@ -87,12 +86,8 @@ custom_fields:
                         align-self: start
                   tap_action: none
                   hold_action: none
-
-
-
         - type: horizontal-stack
           cards:
-
             - type: 'custom:button-card'
               entity: media_player.sonos_play5_1
               template: standard
