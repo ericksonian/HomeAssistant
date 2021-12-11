@@ -65,6 +65,9 @@ camera:
   - platform: ffmpeg
     name: Garage
     input: !secret camera_RTSP_Garage
+  - platform: ffmpeg
+    name: FrontGate
+    input: !secret camera_RTSP_FrontGate
 #  - platform: ffmpeg
 #    name: Pancake
 #    input: !secret camera_RTSP_Pancake
