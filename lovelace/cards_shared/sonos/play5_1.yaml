@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: intercontainer
-name: "Sonos Play:5 1"
+name: "Sonos Play:5 - Garage"
 custom_fields:
   buttons:
     card:

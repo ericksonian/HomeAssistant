@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: intercontainer
-name: "Sonos Connect"
+name: "Sonos Connect - Garage"
 custom_fields:
   buttons:
     card:
