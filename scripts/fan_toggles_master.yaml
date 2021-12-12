@@ -6,32 +6,32 @@ fan_master_off:
       entity_id: fan.master_bedroom_ceiling_fan
 fan_master_low:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.master_bedroom_ceiling_fan
     data:
-      speed: low
+      percentage: 25
 fan_master_medium:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.master_bedroom_ceiling_fan
     data:
-      speed: medium
+      percentage: 50
 fan_master_medium_high:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.master_bedroom_ceiling_fan
     data:
-      speed: medium_high
+      percentage: 75
 fan_master_high:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.master_bedroom_ceiling_fan
     data:
-      speed: high
+      percentage: 100
 
 fan_toggle_master_low:
   sequence:

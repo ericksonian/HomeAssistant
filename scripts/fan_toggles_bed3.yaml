@@ -6,32 +6,32 @@ fan_bed3_off:
       entity_id: fan.bed3_ceiling_fan
 fan_bed3_low:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.bed3_ceiling_fan
     data:
-      speed: low
+      percentage: 25
 fan_bed3_medium:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.bed3_ceiling_fan
     data:
-      speed: medium
+      percentage: 50
 fan_bed3_medium_high:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.bed3_ceiling_fan
     data:
-      speed: medium_high
+      percentage: 75
 fan_bed3_high:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.bed3_ceiling_fan
     data:
-      speed: high
+      percentage: 100
 
 fan_toggle_bed3_low:
   sequence:

@@ -6,32 +6,32 @@ fan_living_off:
       entity_id: fan.living_room_ceiling_fan
 fan_living_low:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.living_room_ceiling_fan
     data:
-      speed: low
+      percentage: 25
 fan_living_medium:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.living_room_ceiling_fan
     data:
-      speed: medium
+      percentage: 50
 fan_living_medium_high:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.living_room_ceiling_fan
     data:
-      speed: medium_high
+      percentage: 75
 fan_living_high:
   sequence:
-  - service: fan.set_speed
+  - service: fan.set_percentage
     target:
       entity_id: fan.living_room_ceiling_fan
     data:
-      speed: high
+      percentage: 100
 
 fan_toggle_living_low:
   sequence:
