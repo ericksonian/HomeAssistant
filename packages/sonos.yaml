@@ -85,11 +85,11 @@ automation:
 - alias: Rocks Amp Off
   trigger:
   - platform: state
-    entity_id: media_player.rock_speakers
+    entity_id: media_player.sonos_connect
     to: "idle"
     for: "00:01:00"
   - platform: state
-    entity_id: media_player.rock_speakers
+    entity_id: media_player.sonos_connect
     to: "paused"
     for: "00:15:00"
   condition: []
