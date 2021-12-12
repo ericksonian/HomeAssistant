@@ -135,3 +135,21 @@ custom_fields:
             entity: media_player.sonos_connect
             full_row: true
             hide_state: true
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: switch.rock_speakers
+              icon: 'mdi:speaker-multiple'
+              name: Rocks
+              styles:
+                card:
+                  - height: 82px
+            - type: 'custom:button-card'
+              template: standard
+              entity: switch.vesync_a
+              icon: 'mdi:garage-variant'
+              name: Garage
+              styles:
+                card:
+                  - height: 82px
