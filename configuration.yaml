@@ -80,10 +80,10 @@ ios:
     categories: !include_dir_merge_list ios/
 
 #Switches
-#lutron_caseta_pro:
-#    bridges:
-#      - host: !secret caseta_bridge_ip
-#        mac: !secret caseta_bridge_mac
+lutron_caseta_pro:
+    bridges:
+      - host: !secret caseta_bridge_ip
+        mac: !secret caseta_bridge_mac
 #        switch: [ 9 ]
 #        fan: [ 11, 16, 25 ]
 switch:

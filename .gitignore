@@ -4,6 +4,7 @@
 
 !.gitignore
 !lutron_integration_report.txt
+!lutron_integration_report_picos.txt
 !.old
 
 
