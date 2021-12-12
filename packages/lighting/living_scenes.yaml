@@ -13,6 +13,19 @@ input_select:
 ###### AUTOMATIONS --------------------------------------
 automation:
 
+- alias: Pico Keypad Living Button 1 New
+  description: 'Living First Button Pressed'
+  mode: single
+  trigger:
+    - platform: device
+      device_id: e66b2a3e377181b497340dc9826cc5fa
+      domain: lutron_caseta
+      type: press
+      subtype: button_1
+  condition: []
+  action:
+    - service: script.living_light_scene_bright
+
 - alias: Pico Keypad Living Button 1
   trigger:
   - entity_id: sensor.living_room_keypad
