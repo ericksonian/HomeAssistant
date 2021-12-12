@@ -78,6 +78,9 @@ automation:
   - service: switch.turn_on
     data:
       entity_id: switch.rock_speakers
+  - service: switch.turn_on
+    data:
+      entity_id: switch.vesync_a
 
 - alias: Rocks Amp Off
   trigger:
@@ -94,5 +97,9 @@ automation:
   - service: switch.turn_off
     data:
       entity_id: switch.rock_speakers
+  - service: switch.turn_off
+    data:
+      entity_id: switch.vesync_a
+
 ###### SCRIPTS ------------------------------------------
 #script:

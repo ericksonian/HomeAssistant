@@ -22,7 +22,7 @@ cards:
 ## Music
   - type: 'custom:button-card'
     template: container
-    name: Sonos
+    name: Music
     custom_fields:
       buttons:
         card:
