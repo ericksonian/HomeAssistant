@@ -9,7 +9,7 @@
   action:
   - service: script.volume_set_medium
 
-- alias: Rocks Amp On
+- alias: Rocks Amp On CCAudio
   trigger:
   - entity_id: media_player.rock_speakers
     platform: state
@@ -22,7 +22,7 @@
     data:
       entity_id: switch.rock_speakers
 
-- alias: Rocks Amp Off
+- alias: Rocks Amp Off CCAudio
   trigger:
   - platform: state
     entity_id: media_player.rock_speakers

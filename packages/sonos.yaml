@@ -68,7 +68,34 @@ input_boolean:
 #group:
 
 ###### AUTOMATIONS --------------------------------------
-#automation:
+automation:
+- alias: Rocks Amp On
+  trigger:
+  - entity_id: media_player.sonos_connect
+    platform: state
+    to: "playing"
+#  condition:
+#    condition: template
+#    value_template: "{{ not is_state('media_player.rock_speakers', 'unavailable') }}"
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.rock_speakers
 
+- alias: Rocks Amp Off
+  trigger:
+  - platform: state
+    entity_id: media_player.rock_speakers
+    to: "idle"
+    for: "00:01:00"
+  - platform: state
+    entity_id: media_player.rock_speakers
+    to: "paused"
+    for: "00:15:00"
+  condition: []
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.rock_speakers
 ###### SCRIPTS ------------------------------------------
 #script:
