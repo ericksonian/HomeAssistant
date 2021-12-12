@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 color_type: label-card
-name: Kitchen
+name: House
 color: 'rgb(30,30,30)'
 styles:
   card:

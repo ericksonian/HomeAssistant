@@ -1,5 +1,5 @@
 type: 'custom:button-card'
-template: container
+template: intercontainer
 name: Plants
 custom_fields:
   buttons:

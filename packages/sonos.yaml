@@ -74,9 +74,6 @@ automation:
   - entity_id: media_player.sonos_connect
     platform: state
     to: "playing"
-#  condition:
-#    condition: template
-#    value_template: "{{ not is_state('media_player.rock_speakers', 'unavailable') }}"
   action:
   - service: switch.turn_on
     data:
