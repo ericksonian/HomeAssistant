@@ -47,7 +47,7 @@ custom_fields:
                 enabled: true
               name: Unlock
               state:
-                - value: off
+                - value: 'on'
                   icon: 'mdi:lock-outline'
                   name: Lock
 #                  styles:
