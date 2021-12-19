@@ -48,10 +48,12 @@ custom_fields:
               name: Unlock
               state:
                 - value: off
-                  styles:
-                    icon:
-                      - color: 'rgb(255,255,255)'
-                      - opacity: 1
+                  icon: 'mdi:lock-outline'
+                  name: Lock
+#                  styles:
+#                    icon:
+#                      - color: 'rgb(255,255,255)'
+#                      - opacity: 1
               styles:
                 card:
                   - height: 72px
