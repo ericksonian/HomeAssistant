@@ -22,7 +22,7 @@ automation:
   action:
   - service: script.living_light_scene_bright
 
-- alias: Pico Keypad Kitchen Button 1 Hold
+- alias: Pico Keypad Living Button 1 Hold
   trigger:
   - entity_id: sensor.living_room_keypad
     platform: state
@@ -62,7 +62,7 @@ automation:
   action:
   - service: script.living_light_scene_off
 
-- alias: Pico Keypad Kitchen Button 4 Hold
+- alias: Pico Keypad Living Button 4 Hold
   trigger:
   - entity_id: sensor.living_room_keypad
     platform: state

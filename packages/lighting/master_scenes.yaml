@@ -46,6 +46,7 @@ automation:
   condition: []
   action:
   - service: script.master_light_scene_bright
+
 - alias: Pico Keypad Master Button 2
   trigger:
   - entity_id:
@@ -57,6 +58,7 @@ automation:
   condition: []
   action:
   - service: script.master_light_scene_entertain
+
 - alias: Pico Keypad Master Button 3
   trigger:
   - entity_id:
@@ -68,6 +70,7 @@ automation:
   condition: []
   action:
   - service: script.master_light_scene_relax
+  
 - alias: Pico Keypad Master Button 4
   trigger:
   - entity_id:
