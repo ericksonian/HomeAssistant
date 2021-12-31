@@ -47,7 +47,7 @@
     master_bedroom_fan_percentage:
       friendly_name: Master Bedroom Fan Percentage
       value_template: "{{ state_attr('fan.master_bedroom_ceiling_fan', 'percentage') }}"
-    bed3_fan_speed:
+    master_bedroom_fan_speed:
       friendly_name: Master Bedroom Fan Speed
       value_template: >-
         {% if is_state('sensor.master_bedroom_fan_percentage', '0') %}
