@@ -20,7 +20,7 @@ custom_fields:
               template: standard
               entity: script.vizio_volume_up
               icon: 'mdi:volume-high'
-              name: 'Up'
+              name: 'Volume Up'
               tap_action:
                 action: call-service
                 service: script.vizio_volume_up
@@ -36,7 +36,7 @@ custom_fields:
               template: standard
               entity: script.vizio_power_on
               icon: 'mdi:power'
-              name: 'On'
+              name: 'Power On'
               tap_action:
                 action: call-service
                 service: script.vizio_power_on
@@ -54,7 +54,7 @@ custom_fields:
               template: standard
               entity: script.vizio_volume_down
               icon: 'mdi:volume-medium'
-              name: 'Down'
+              name: 'Volume Down'
               tap_action:
                 action: call-service
                 service: script.vizio_volume_down
@@ -69,8 +69,8 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: script.vizio_power_off
-              icon: 'mdi:power'
-              name: 'Off'
+              icon: 'mdi:power-off'
+              name: 'Power Off'
               tap_action:
                 action: call-service
                 service: script.vizio_power_off
