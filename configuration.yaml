@@ -28,6 +28,7 @@ script: !include_dir_merge_named scripts/
 scene: !include_dir_merge_list scenes/
 input_boolean: !include_dir_merge_named input_booleans/
 homekit: !include homekit.yaml
+cover: !include cover.yaml
 
 # UI
 frontend:
@@ -50,13 +51,6 @@ lovelace:
 binary_sensor:
   - platform: wyzesense
     device: auto
-
-# Garage Door
-#cover:
-#  - platform: myq
-#    username: !secret myq_username
-#    password: !secret myq_password
-#    type: !secret myq_type
 
 # Cameras
 camera:
