@@ -27,7 +27,7 @@ automation: !include_dir_merge_list automation/
 script: !include_dir_merge_named scripts/
 scene: !include_dir_merge_list scenes/
 input_boolean: !include_dir_merge_named input_booleans/
-#homekit: !include homekit.yaml
+homekit: !include homekit.yaml
 
 # UI
 frontend:
