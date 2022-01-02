@@ -19,7 +19,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: script.vizio_volume_up
-              icon: 'mdi:volume-high'
+              icon: 'mdi:volume-medium'
               name: 'Volume Up'
               tap_action:
                 action: call-service
@@ -45,7 +45,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: script.vizio_volume_mute_off
-              icon: 'mdi:volume-low'
+              icon: 'mdi:volume-high'
               name: 'Unmute'
               tap_action:
                 action: call-service
@@ -53,7 +53,7 @@ custom_fields:
             - type: 'custom:button-card'
               template: standard
               entity: script.vizio_volume_down
-              icon: 'mdi:volume-medium'
+              icon: 'mdi:volume-low'
               name: 'Volume Down'
               tap_action:
                 action: call-service
