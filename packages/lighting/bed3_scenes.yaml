@@ -75,7 +75,7 @@ automation:
       entity_id: input_select.bed3_light_scene
       option: 'off'
 
-###### AUTOMATIONS --------------------------------------
+###### SCENES --------------------------------------
 scene:
 #   Bed3 Bright
 - name: Bed3 Bright
