@@ -7,8 +7,9 @@
 - platform: template
   covers:
     projector_screen:
-#      device_class: 
+#      device_class:
       friendly_name: "Projector Screen"
+      optimistic: true
       open_cover:
         service: script.theater_screen_down
       close_cover:

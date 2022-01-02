@@ -10,7 +10,7 @@
       - switch
       - lock
       - cover
-    exclude_domains:
+    exclude_entities:
       - switch.projector_power
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
