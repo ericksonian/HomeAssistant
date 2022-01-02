@@ -18,23 +18,12 @@
       - switch.vesync_a
       - switch.vesync_b
 
-#  entity_config:
-#    alarm_control_panel.home:
-#      code: 1234
-#    binary_sensor.living_room_motion:
-#      linked_battery_sensor: sensor.living_room_motion_battery
-#      low_battery_threshold: 31
-#    light.kitchen_table:
-#      name: Kitchen Table Light
-#    lock.front_door:
-#      code: 1234
-#    media_player.living_room:
-#      feature_list:
-#        - feature: on_off
-#        - feature: play_pause
-#        - feature: play_stop
-#        - feature: toggle_mute
-#    switch.bedroom_outlet:
-#      type: outlet
-#    camera.back_porch:
-#      support_audio: True
+  entity_config:
+
+    camera.frontgate_doorbell:
+      support_audio: True
+      linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
+      linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
+
+    switch.sprinklers:
+      type: sprinkler
