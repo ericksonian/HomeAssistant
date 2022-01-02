@@ -11,7 +11,8 @@
       - lock
       - cover
     exclude_entities:
-      - camera.frontgate
+#      - camera.frontgate
+      - camera.frontgate_doorbell
       - switch.projector_power
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
@@ -21,7 +22,7 @@
 
   entity_config:
 
-    camera.frontgate_doorbell:
+    camera.frontgate:
       name: Doorbell
       support_audio: True
       linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
