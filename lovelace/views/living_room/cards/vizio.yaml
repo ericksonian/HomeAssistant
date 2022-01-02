@@ -4,37 +4,73 @@ name: Vizio
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: vertical-stack
       cards:
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.vizio_power_off
-          icon: 'mdi:power'
-          name: 'Off'
-          tap_action:
-            action: call-service
-            service: script.vizio_power_off
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.vizio_power_on
-          icon: 'mdi:power'
-          name: 'On'
-          tap_action:
-            action: call-service
-            service: script.vizio_power_on
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.vizio_input_hdmi1
-          icon: 'mdi:desktop-mac'
-          name: Mac Pro
-          tap_action:
-            action: call-service
-            service: script.vizio_input_hdmi1
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.vizio_input_hdmi2
-          icon: 'mdi:laptop'
-          name: HDMI
-          tap_action:
-            action: call-service
-            service: script.vizio_input_hdmi2
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_volume_mute_on
+              icon: 'mdi:volume-off'
+              name: 'Mute'
+              tap_action:
+                action: call-service
+                service: script.vizio_volume_mute_on
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_volume_up
+              icon: 'mdi:volume-high'
+              name: 'Up'
+              tap_action:
+                action: call-service
+                service: script.vizio_volume_up
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_input_hdmi1
+              icon: 'mdi:desktop-mac'
+              name: 'Mac Pro'
+              tap_action:
+                action: call-service
+                service: script.vizio_input_hdmi1
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_power_on
+              icon: 'mdi:power'
+              name: 'On'
+              tap_action:
+                action: call-service
+                service: script.vizio_power_on
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_volume_mute_off
+              icon: 'mdi:volume-low'
+              name: 'Unmute'
+              tap_action:
+                action: call-service
+                service: script.vizio_volume_mute_off
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_volume_down
+              icon: 'mdi:volume-medium'
+              name: 'Down'
+              tap_action:
+                action: call-service
+                service: script.vizio_volume_down
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_input_hdmi2
+              icon: 'mdi:laptop'
+              name: 'HDMI'
+              tap_action:
+                action: call-service
+                service: script.vizio_input_hdmi2
+            - type: 'custom:button-card'
+              template: standard
+              entity: script.vizio_power_off
+              icon: 'mdi:power'
+              name: 'Off'
+              tap_action:
+                action: call-service
+                service: script.vizio_power_off
