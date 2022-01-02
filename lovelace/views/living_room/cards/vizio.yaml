@@ -10,7 +10,7 @@ custom_fields:
           template: standard
           entity: script.vizio_power_off
           icon: 'mdi:power'
-          name: Off
+          name: 'Off'
           tap_action:
             action: call-service
             service: script.vizio_power_off
@@ -18,7 +18,7 @@ custom_fields:
           template: standard
           entity: script.vizio_power_on
           icon: 'mdi:power'
-          name: On
+          name: 'On'
           tap_action:
             action: call-service
             service: script.vizio_power_on
