@@ -75,6 +75,171 @@ automation:
       entity_id: input_select.bed3_light_scene
       option: 'off'
 
+###### AUTOMATIONS --------------------------------------
+scene:
+#   Bed3 Bright
+- name: Bed3 Bright
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 255
+      color_temp: 206
+    light.lifx2:
+      state: on
+      brightness: 255
+      color_temp: 206
+    light.lifx3:
+      state: on
+      brightness: 255
+      color_temp: 206
+    light.lifxmini1:
+      state: on
+      brightness: 255
+#   Bed3 Entertain
+- name: Bed3 Entertain
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      color_temp: 370
+    light.lifx2:
+      state: on
+      brightness: 155
+      color_temp: 370
+    light.lifx3:
+      state: on
+      brightness: 155
+      color_temp: 370
+    light.lifxmini1:
+      state: on
+      brightness: 255
+#   Bed3 All Off
+- name: Bed3 All Off
+  entities:
+    light.lifx1:
+      state: off
+    light.lifx2:
+      state: off
+    light.lifx3:
+      state: off
+    light.lifxmini1:
+      state: off
+
+####   Bed3 Relax Colors
+- name: Bed3 Relax Reds
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [255,0,50]
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [255,30,71]
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [125,0,150]
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Blues
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [28,213,255]
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [8,0,255]
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [200,186,255]
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Greens
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [32,255,21]
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [188,255,124]
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [0,255,51]
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Yellows
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      rgb_color: [255,188,63]
+    light.lifx2:
+      state: on
+      brightness: 120
+      rgb_color: [255,188,63]
+    light.lifx3:
+      state: on
+      brightness: 85
+      rgb_color: [255,166,50]
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Whites
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 155
+      color_temp: 666
+    light.lifx2:
+      state: on
+      brightness: 120
+      color_temp: 400
+    light.lifx3:
+      state: on
+      brightness: 85
+      color_temp: 200
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Sunrise
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 85
+      rgb_color: [79,154,218]
+    light.lifx2:
+      state: on
+      brightness: 100
+      rgb_color: [252,213,150]
+    light.lifx3:
+      state: on
+      brightness: 125
+      rgb_color: [253,212,0]
+    light.lifxmini1:
+      state: off
+- name: Bed3 Relax Sunset
+  entities:
+    light.lifx1:
+      state: on
+      brightness: 70
+      rgb_color: [35,21,89]
+    light.lifx2:
+      state: on
+      brightness: 95
+      rgb_color: [242,34,37]
+    light.lifx3:
+      state: on
+      brightness: 125
+      rgb_color: [252,94,1]
+    light.lifxmini1:
+      state: off
+
+
 ###### SCRIPT ------------------------------------------
 script:
 
