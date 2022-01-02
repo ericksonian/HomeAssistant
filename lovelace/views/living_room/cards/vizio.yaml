@@ -8,25 +8,33 @@ custom_fields:
       cards:
         - type: 'custom:button-card'
           template: standard
+          entity: script.vizio_power_off
+          icon: 'mdi:power'
+          name: Off
+          tap_action:
+            action: call-service
+            service: script.vizio_power_off
+        - type: 'custom:button-card'
+          template: standard
           entity: script.vizio_power_on
           icon: 'mdi:power'
           name: On
-          tap_action: toggle
-        - type: 'custom:button-card'
-          template: standard
-          entity: script.vizio_power_off
-          icon: 'mdi:power'
-          name: On
-          tap_action: toggle
+          tap_action:
+            action: call-service
+            service: script.vizio_power_on
         - type: 'custom:button-card'
           template: standard
           entity: script.vizio_input_hdmi1
           icon: 'mdi:desktop-mac'
-          name: On
-          tap_action: toggle
+          name: Mac Pro
+          tap_action:
+            action: call-service
+            service: script.vizio_input_hdmi1
         - type: 'custom:button-card'
           template: standard
           entity: script.vizio_input_hdmi2
           icon: 'mdi:laptop'
-          name: On
-          tap_action: toggle
+          name: HDMI
+          tap_action:
+            action: call-service
+            service: script.vizio_input_hdmi2
