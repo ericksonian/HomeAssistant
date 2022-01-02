@@ -1,0 +1,32 @@
+type: 'custom:button-card'
+template: container
+name: Vizio
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          template: standard
+          entity: script.vizio_power_on
+          icon: 'mdi:power'
+          name: On
+          tap_action: toggle
+        - type: 'custom:button-card'
+          template: standard
+          entity: script.vizio_power_off
+          icon: 'mdi:power'
+          name: On
+          tap_action: toggle
+        - type: 'custom:button-card'
+          template: standard
+          entity: script.vizio_input_hdmi1
+          icon: 'mdi:desktop-mac'
+          name: On
+          tap_action: toggle
+        - type: 'custom:button-card'
+          template: standard
+          entity: script.vizio_input_hdmi2
+          icon: 'mdi:laptop'
+          name: On
+          tap_action: toggle
