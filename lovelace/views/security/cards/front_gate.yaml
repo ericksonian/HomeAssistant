@@ -9,7 +9,7 @@ custom_fields:
         - type: picture-entity
           aspect_ratio: 60%
           camera_view: auto
-          entity: camera.frontgate_doorbell
+          entity: camera.frontgate
           hold_action:
             action: none
           show_name: false
