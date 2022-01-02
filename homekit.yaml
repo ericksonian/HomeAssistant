@@ -21,6 +21,7 @@
   entity_config:
 
     camera.frontgate_doorbell:
+      name: Doorbell
       support_audio: True
       linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
       linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
