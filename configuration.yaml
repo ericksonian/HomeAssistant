@@ -84,8 +84,8 @@ lutron_caseta_pro:
     bridges:
       - host: !secret caseta_bridge_ip
         mac: !secret caseta_bridge_mac
-#        switch: [ 9 ]
-#        fan: [ 11, 16, 25 ]
+        switch: [ 9 ]
+        fan: [ 11, 16, 25 ]
 switch:
   - platform: broadlink
 #    host: !secret broadlink_living_ip
