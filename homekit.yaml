@@ -11,8 +11,6 @@
       - lock
       - cover
     exclude_entities:
-#      - camera.frontgate
-      - camera.frontgate_doorbell
       - switch.projector_power
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
