@@ -11,17 +11,28 @@
       - lock
       - cover
     exclude_entities:
+      - camera.frontgate
       - switch.projector_power
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
 
   entity_config:
+    switch.sprinklers:
+      type: sprinkler
 
+
+
+- name: Utopia Bridge 2
+  port: 21064
+  mode: accessory
+
+  filter:
+    include_entities:
+      - camera.frontgate
+
+  entity_config:
     camera.frontgate:
       name: Doorbell
       support_audio: True
       linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
       linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
-
-    switch.sprinklers:
-      type: sprinkler
