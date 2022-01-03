@@ -16,13 +16,15 @@ input_select:
       - reds
       - greens
       - blues
-      - yellows
       - whites
-      - sunrise
-      - sunset
-      - custom1
-      - custom2
-      - custom3
+
+  bed3_light_scene_relax_brightness:
+    name: 'Master Light Scene Relax Brightness'
+    options:
+      - level1
+      - level2
+      - level3
+      - level4
 
 ###### AUTOMATIONS --------------------------------------
 automation:
@@ -174,22 +176,6 @@ scene:
       rgb_color: [0,255,51]
     light.lifxmini1:
       state: off
-- name: Bed3 Relax Yellows
-  entities:
-    light.lifx1:
-      state: on
-      brightness: 155
-      rgb_color: [255,188,63]
-    light.lifx2:
-      state: on
-      brightness: 120
-      rgb_color: [255,188,63]
-    light.lifx3:
-      state: on
-      brightness: 85
-      rgb_color: [255,166,50]
-    light.lifxmini1:
-      state: off
 - name: Bed3 Relax Whites
   entities:
     light.lifx1:
@@ -206,39 +192,6 @@ scene:
       color_temp: 200
     light.lifxmini1:
       state: off
-- name: Bed3 Relax Sunrise
-  entities:
-    light.lifx1:
-      state: on
-      brightness: 85
-      rgb_color: [79,154,218]
-    light.lifx2:
-      state: on
-      brightness: 100
-      rgb_color: [252,213,150]
-    light.lifx3:
-      state: on
-      brightness: 125
-      rgb_color: [253,212,0]
-    light.lifxmini1:
-      state: off
-- name: Bed3 Relax Sunset
-  entities:
-    light.lifx1:
-      state: on
-      brightness: 70
-      rgb_color: [35,21,89]
-    light.lifx2:
-      state: on
-      brightness: 95
-      rgb_color: [242,34,37]
-    light.lifx3:
-      state: on
-      brightness: 125
-      rgb_color: [252,94,1]
-    light.lifxmini1:
-      state: off
-
 
 ###### SCRIPT ------------------------------------------
 script:
@@ -296,18 +249,6 @@ script:
               script.bed3_light_scene_relax_greens
             {% elif is_state("input_select.bed3_light_scene_relax", "blues") %}
               script.bed3_light_scene_relax_blues
-            {% elif is_state("input_select.bed3_light_scene_relax", "yellows") %}
-              script.bed3_light_scene_relax_yellows
-            {% elif is_state("input_select.bed3_light_scene_relax", "sunrise") %}
-              script.bed3_light_scene_relax_sunrise
-            {% elif is_state("input_select.bed3_light_scene_relax", "sunset") %}
-              script.bed3_light_scene_relax_sunset
-            {% elif is_state("input_select.bed3_light_scene_relax", "custom1") %}
-              script.bed3_light_scene_relax_custom1
-            {% elif is_state("input_select.bed3_light_scene_relax", "custom2") %}
-              script.bed3_light_scene_relax_custom2
-            {% elif is_state("input_select.bed3_light_scene_relax", "custom3") %}
-              script.bed3_light_scene_relax_custom3
             {% else %}
               script.bed3_light_scene_relax_whites
             {% endif %}
@@ -348,18 +289,6 @@ script:
         data:
           transition: 3
 
-  bed3_light_scene_relax_yellows:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: yellows
-      - service: scene.turn_on
-        target:
-          entity_id: scene.bed3_relax_yellows
-        data:
-          transition: 3
-
   bed3_light_scene_relax_whites:
     sequence:
       - service: input_select.select_option
@@ -372,168 +301,68 @@ script:
         data:
           transition: 3
 
-# Suns
-  bed3_light_scene_relax_sunrise:
+# Brightness
+
+  bed3_light_scene_relax_brightness1:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: sunrise
-      - service: scene.turn_on
+          entity_id: input_select.bed3_light_scene_relax_brightness
+          option: level1
+      - service: light.turn_on
         target:
-          entity_id: scene.bed3_relax_sunrise
+          entity_id:
+            - light.lifx1
+            - light.lifx2
+            - light.lifx3
         data:
-          transition: 3
+          brightness: 1
+          transition: 1
 
-  bed3_light_scene_relax_sunset:
+  bed3_light_scene_relax_brightness2:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: sunset
-      - service: scene.turn_on
+          entity_id: input_select.bed3_light_scene_relax_brightness
+          option: level2
+      - service: light.turn_on
         target:
-          entity_id: scene.bed3_relax_sunset
+          entity_id:
+            - light.lifx1
+            - light.lifx2
+            - light.lifx3
         data:
-          transition: 3
+          brightness: 20
+          transition: 1
 
-# Customs
-
-  bed3_light_scene_relax_custom1:
+  bed3_light_scene_relax_brightness3:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: custom1
-      - service: scene.turn_on
+          entity_id: input_select.bed3_light_scene_relax_brightness
+          option: level3
+      - service: light.turn_on
         target:
-          entity_id: scene.bed3_relax_custom1
+          entity_id:
+            - light.lifx1
+            - light.lifx2
+            - light.lifx3
         data:
-          transition: 3
+          brightness: 60
+          transition: 1
 
-  bed3_light_scene_relax_custom1_create:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: bed3_relax_custom1
-          snapshot_entities:
-          - light.lifx1
-          - light.lifx2
-          - light.lifx3
-          - light.lifxmini1
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: custom1
-
-  bed3_light_scene_relax_custom2:
+  bed3_light_scene_relax_brightness4:
     sequence:
       - service: input_select.select_option
         data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: custom2
-      - service: scene.turn_on
+          entity_id: input_select.bed3_light_scene_relax_brightness
+          option: level4
+      - service: light.turn_on
         target:
-          entity_id: scene.bed3_relax_custom2
+          entity_id:
+            - light.lifx1
+            - light.lifx2
+            - light.lifx3
         data:
-          transition: 3
-
-  bed3_light_scene_relax_custom2_create:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: bed3_relax_custom2
-          snapshot_entities:
-          - light.lifx1
-          - light.lifx2
-          - light.lifx3
-          - light.lifxmini1
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: custom2
-
-  bed3_light_scene_relax_custom3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: custom3
-      - service: scene.turn_on
-        target:
-          entity_id: scene.bed3_relax_custom3
-        data:
-          transition: 3
-
-  bed3_light_scene_relax_custom3_create:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: bed3_relax_custom3
-          snapshot_entities:
-          - light.lifx1
-          - light.lifx2
-          - light.lifx3
-          - light.lifxmini1
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.bed3_light_scene_relax
-          option: custom3
-
-# Set Customs on Startup
-  bed3_light_scene_relax_custom_set:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: bed3_relax_custom1
-          entities:
-            light.lifx1:
-              state: "on"
-              brightness: 155
-              rgb_color: [127,255,127]
-            light.lifx2:
-              state: "on"
-              brightness: 115
-              rgb_color: [131,0,255]
-            light.lifx3:
-              state: "on"
-              brightness: 75
-              rgb_color: [38,128,255]
-            light.lifxmini1:
-              state: "off"
-      - service: scene.create
-        data:
-          scene_id: bed3_relax_custom2
-          entities:
-            light.lifx1:
-              state: "on"
-              brightness: 155
-              rgb_color: [6,2,255]
-            light.lifx2:
-              state: "on"
-              brightness: 115
-              rgb_color: [214,225,255]
-            light.lifx3:
-              state: "on"
-              brightness: 75
-              rgb_color: [255,195,43]
-            light.lifxmini1:
-              state: "off"
-      - service: scene.create
-        data:
-          scene_id: bed3_relax_custom3
-          entities:
-            light.lifx1:
-              state: "on"
-              brightness: 155
-              rgb_color: [250,255,242]
-            light.lifx2:
-              state: "on"
-              brightness: 115
-              rgb_color: [255,193,239]
-            light.lifx3:
-              state: "on"
-              brightness: 75
-              rgb_color: [255,175,177]
-            light.lifxmini1:
-              state: "off"
+          brightness: 80
+          transition: 1

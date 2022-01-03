@@ -17,8 +17,7 @@ cards:
       - entity: input_select.master_light_scene
         state: 'relax'
     card:
-#      !include /config/lovelace/views/bedroom/cards/lighting/scenes_relax.yaml
-      !include /config/lovelace/views/bedroom/cards/lighting/scenes_relax_bright.yaml
+      !include /config/lovelace/views/bedroom/cards/lighting/scenes_relax.yaml
   - type: conditional
     conditions:
       - entity: input_boolean.master_ledstrip_power

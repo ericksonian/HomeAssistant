@@ -92,111 +92,66 @@ custom_fields:
               tap_action:
                 action: call-service
                 service: script.master_light_scene_relax_blues
-            - type: 'custom:button-card'
-              template: standard
-              entity: input_select.master_light_scene_relax
-              icon: 'mdi:weather-sunset-up'
-              show_name: false
-              state:
-                - color: 'rgb(255,255,255)'
-                  value: 'sunrise'
-              styles:
-                card:
-                  - height: 72px
-                  - '--mdc-ripple-color': 'rgb(255,255,255)'
-              tap_action:
-                action: call-service
-                service: script.master_light_scene_relax_sunrise
 
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
-              icon: 'mdi:alpha-y-circle'
+              entity: input_select.master_light_scene_relax_brightness
+              icon: 'mdi:numeric-1-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,0)'
-                  value: 'yellows'
-                  styles:
-                    icon:
-                      - color: 'rgb(0,0,0)'
-              styles:
-                card:
-                  - height: 72px
-                  - '--mdc-ripple-color': 'rgb(255,255,0)'
-                icon:
-                  - opacity: 1
-                  - color: 'rgb(255,255,0)'
-              tap_action:
-                action: call-service
-                service: script.master_light_scene_relax_yellows
-            - type: 'custom:button-card'
-              template: standard
-              entity: input_select.master_light_scene_relax
-              icon: 'mdi:numeric-1-circle'
-              show_name: false
-              state:
-                - color: 'rgb(255,255,255)'
-                  value: 'custom1'
+                - color: 'rgb(50,50,50)'
+                  value: 'level1'
               styles:
                 card:
                   - height: 72px
                   - '--mdc-ripple-color': 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.master_light_scene_relax_custom1
-              hold_action:
-                action: call-service
-                service: script.master_light_scene_relax_custom1_create
+                service: script.master_light_scene_relax_brightness1
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
-              icon: 'mdi:numeric-2-circle'
+              entity: input_select.master_light_scene_relax_brightness
+              icon: 'mdi:numeric-2-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
-                  value: 'custom2'
+                - color: 'rgb(60,60,60)'
+                  value: 'level2'
               styles:
                 card:
                   - height: 72px
                   - '--mdc-ripple-color': 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.master_light_scene_relax_custom2
-              hold_action:
-                action: call-service
-                service: script.master_light_scene_relax_custom2_create
+                service: script.master_light_scene_relax_brightness2
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
-              icon: 'mdi:numeric-3-circle'
+              entity: input_select.master_light_scene_relax_brightness
+              icon: 'mdi:numeric-3-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
-                  value: 'custom3'
+                - color: 'rgb(70,70,70)'
+                  value: 'level3'
               styles:
                 card:
                   - height: 72px
                   - '--mdc-ripple-color': 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.master_light_scene_relax_custom3
-              hold_action:
-                action: call-service
-                service: script.master_light_scene_relax_custom3_create
+                service: script.master_light_scene_relax_brightness3
             - type: 'custom:button-card'
               template: standard
-              entity: input_select.master_light_scene_relax
-              icon: 'mdi:weather-sunset-down'
+              entity: input_select.master_light_scene_relax_brightness
+              icon: 'mdi:numeric-4-circle-outline'
               show_name: false
               state:
-                - color: 'rgb(255,255,255)'
-                  value: 'sunset'
+                - color: 'rgb(80,80,80)'
+                  value: 'level4'
               styles:
                 card:
                   - height: 72px
                   - '--mdc-ripple-color': 'rgb(255,255,255)'
               tap_action:
                 action: call-service
-                service: script.master_light_scene_relax_sunset
+                service: script.master_light_scene_relax_brightness4

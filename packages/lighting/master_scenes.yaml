@@ -16,13 +16,7 @@ input_select:
       - reds
       - greens
       - blues
-      - yellows
       - whites
-      - sunrise
-      - sunset
-      - custom1
-      - custom2
-      - custom3
 
   master_light_scene_relax_brightness:
     name: 'Master Light Scene Relax Brightness'
@@ -179,20 +173,6 @@ scene:
       state: off
     light.master_bedroom_entry:
       state: off
-- name: Master Relax Yellows
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      rgb_color: [255,188,63]
-    light.lifx6:
-      state: on
-      brightness: 1
-      rgb_color: [255,188,63]
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
-      state: off
 - name: Master Relax Whites
   entities:
     light.lifx5:
@@ -203,34 +183,6 @@ scene:
       state: on
       brightness: 1
       color_temp: 666
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
-      state: off
-- name: Master Relax Sunrise
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      rgb_color: [79,154,218]
-    light.lifx6:
-      state: on
-      brightness: 1
-      rgb_color: [252,213,150]
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
-      state: off
-- name: Master Relax Sunset
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      rgb_color: [35,21,89]
-    light.lifx6:
-      state: on
-      brightness: 1
-      rgb_color: [242,34,37]
     light.master_bedroom_ceiling_fan_light:
       state: off
     light.master_bedroom_entry:
@@ -289,18 +241,6 @@ script:
               script.master_light_scene_relax_greens
             {% elif is_state("input_select.master_light_scene_relax", "blues") %}
               script.master_light_scene_relax_blues
-            {% elif is_state("input_select.master_light_scene_relax", "yellows") %}
-              script.master_light_scene_relax_yellows
-            {% elif is_state("input_select.master_light_scene_relax", "sunrise") %}
-              script.master_light_scene_relax_sunrise
-            {% elif is_state("input_select.master_light_scene_relax", "sunset") %}
-              script.master_light_scene_relax_sunset
-            {% elif is_state("input_select.master_light_scene_relax", "custom1") %}
-              script.master_light_scene_relax_custom1
-            {% elif is_state("input_select.master_light_scene_relax", "custom2") %}
-              script.master_light_scene_relax_custom2
-            {% elif is_state("input_select.master_light_scene_relax", "custom3") %}
-              script.master_light_scene_relax_custom3
             {% else %}
               script.master_light_scene_relax_whites
             {% endif %}
@@ -353,22 +293,6 @@ script:
         data:
           transition: 3
 
-  master_light_scene_relax_yellows:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: yellows
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_yellows
-        data:
-          transition: 3
-
   master_light_scene_relax_whites:
     sequence:
       - service: input_select.select_option
@@ -382,39 +306,6 @@ script:
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax_whites
-        data:
-          transition: 3
-
-# Suns
-  master_light_scene_relax_sunrise:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: sunrise
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_sunrise
-        data:
-          transition: 3
-
-  master_light_scene_relax_sunset:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: sunset
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_sunset
         data:
           transition: 3
 
@@ -479,138 +370,3 @@ script:
         data:
           brightness: 80
           transition: 1
-
-# Customs
-
-  master_light_scene_relax_custom1:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_custom1
-        data:
-          transition: 3
-
-  master_light_scene_relax_custom1_create:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: master_relax_custom1
-          snapshot_entities:
-          - light.lifx5
-          - light.lifx6
-          - light.master_bedroom_ceiling_fan_light
-          - light.master_bedroom_entry
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom1
-
-  master_light_scene_relax_custom2:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom2
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_custom2
-        data:
-          transition: 3
-
-  master_light_scene_relax_custom2_create:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: master_relax_custom2
-          snapshot_entities:
-          - light.lifx5
-          - light.lifx6
-          - light.master_bedroom_ceiling_fan_light
-          - light.master_bedroom_entry
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom2
-
-  master_light_scene_relax_custom3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom3
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_custom3
-        data:
-          transition: 3
-
-  master_light_scene_relax_custom3_create:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: master_relax_custom3
-          snapshot_entities:
-          - light.lifx5
-          - light.lifx6
-          - light.master_bedroom_ceiling_fan_light
-          - light.master_bedroom_entry
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: custom3
-
-# Set Customs on Startup
-  master_light_scene_relax_custom_set:
-    sequence:
-      - service: scene.create
-        data:
-          scene_id: master_relax_custom1
-          entities:
-            light.lifx5:
-              state: "on"
-              brightness: 1
-              rgb_color: [127,255,127]
-            light.lifx6:
-              state: "on"
-              brightness: 1
-              rgb_color: [131,0,255]
-            light.master_bedroom_ceiling_fan_light:
-              state: "off"
-            light.master_bedroom_entry:
-              state: "off"
-      - service: scene.create
-        data:
-          scene_id: master_relax_custom2
-          entities:
-            light.lifx5:
-              state: "on"
-              brightness: 1
-              rgb_color: [27,155,227]
-            light.lifx6:
-              state: "on"
-              brightness: 1
-              rgb_color: [231,210,55]
-            light.master_bedroom_ceiling_fan_light:
-              state: "off"
-            light.master_bedroom_entry:
-              state: "off"
-      - service: scene.create
-        data:
-          scene_id: master_relax_custom3
-          entities:
-            light.lifx5:
-              state: "on"
-              brightness: 1
-              rgb_color: [227,55,27]
-            light.lifx6:
-              state: "on"
-              brightness: 1
-              rgb_color: [31,130,125]
-            light.master_bedroom_ceiling_fan_light:
-              state: "off"
-            light.master_bedroom_entry:
-              state: "off"
