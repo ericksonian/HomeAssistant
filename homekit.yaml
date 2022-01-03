@@ -14,9 +14,6 @@
       - switch.projector_power
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
-      - switch.rock_speakers
-      - switch.vesync_a
-      - switch.vesync_b
 
   entity_config:
 
