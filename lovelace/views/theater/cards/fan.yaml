@@ -8,7 +8,7 @@ custom_fields:
       cards:
         - type: 'custom:button-card'
           template: standard
-          entity: switch.theater Fan
+          entity: switch.theater_fan
           icon: 'mdi:fan'
           name: Fan
           styles:
