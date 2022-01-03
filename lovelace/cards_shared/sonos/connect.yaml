@@ -147,7 +147,7 @@ custom_fields:
                   - height: 82px
             - type: 'custom:button-card'
               template: standard
-              entity: switch.vesync_a
+              entity: switch.garage_speakers
               icon: 'mdi:garage-variant'
               name: Garage
               styles:
