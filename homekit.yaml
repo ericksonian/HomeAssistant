@@ -4,14 +4,11 @@
 
   filter:
     include_domains:
-      - camera
       - fan
       - light
       - switch
-      - lock
       - cover
     exclude_entities:
-      - camera.frontgate
       - switch.projector_power
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
@@ -25,14 +22,30 @@
 - name: Utopia Bridge 2
   port: 21064
   mode: accessory
-
   filter:
     include_entities:
       - camera.frontgate
-
   entity_config:
     camera.frontgate:
       name: Doorbell
       support_audio: True
       linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
       linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
+- name: Utopia Bridge 3
+  port: 21065
+  mode: accessory
+  filter:
+    include_entities:
+      - camera.frontdoor
+- name: Utopia Bridge 4
+  port: 21066
+  mode: accessory
+  filter:
+    include_entities:
+      - camera.garage
+- name: Utopia Bridge 5
+  port: 21067
+  mode: accessory
+  filter:
+    include_entities:
+      - lock.lock.front_door
