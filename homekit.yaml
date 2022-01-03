@@ -28,21 +28,31 @@
   entity_config:
     camera.frontgate:
       name: Doorbell
+      stream_source: camera_RTSP_FrontGate
       support_audio: True
       linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
       linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
+
 - name: Utopia Bridge 3
   port: 21065
   mode: accessory
   filter:
     include_entities:
       - camera.frontdoor
+  entity_config:
+    camera.frontdoor:
+      stream_source: camera_RTSP_FrontDoor
+
 - name: Utopia Bridge 4
   port: 21066
   mode: accessory
   filter:
     include_entities:
       - camera.garage
+  entity_config:
+    camera.frontdoor:
+      stream_source: camera_RTSP_Garage
+
 - name: Utopia Bridge 5
   port: 21067
   mode: accessory
