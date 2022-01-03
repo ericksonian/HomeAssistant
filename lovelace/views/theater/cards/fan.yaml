@@ -13,7 +13,7 @@ custom_fields:
           name: Fan
           styles:
             card:
-              - height: 166px
+              - height: 172px
 #                width: 82px
           state:
             - value: 'on'
