@@ -111,6 +111,9 @@ automation:
 script:
   theater_shade_roman_open:
     sequence:
+      - service: cover.close_cover
+        data:
+          entity_id: cover.theater_screen
       - service: cover.open_cover
         data:
           entity_id: cover.theater_roman

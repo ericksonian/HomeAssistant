@@ -29,7 +29,9 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.theater_screen_up
+            service: cover.close_cover
+            service_data:
+              entity_id: cover.theater_screen
           hold_action:
             action: none
 
@@ -58,6 +60,8 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.theater_screen_down
+            service: cover.open_cover
+            service_data:
+              entity_id: cover.theater_screen
           hold_action:
             action: none

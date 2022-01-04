@@ -3,14 +3,3 @@
 #  username: !secret myq_username
 #  password: !secret myq_password
 #  type: !secret myq_type
-
-- platform: template
-  covers:
-    projector_screen:
-#      device_class:
-      friendly_name: "Projector Screen"
-      optimistic: true
-      open_cover:
-        service: script.theater_screen_down
-      close_cover:
-        service: script.theater_screen_up

@@ -1,17 +1,15 @@
 
-#cover:
-#  - platform: template
-#    covers:
-#      screen_theater:
-#        device_class: shade
-#        friendly_name: "Theater Screen"
-#        value_template: "{{ states('input_select.theater_screen') }}"
-#        open_cover:
-#          service: script.theater_screen_up
-#        close_cover:
-#          service: script.theater_screen_down
-#        stop_cover:
-#          service: script.theater_screen_stop
+cover:
+  - platform: template
+    covers:
+      projector_screen:
+#        device_class:
+        friendly_name: "Projector Screen"
+        optimistic: true
+        open_cover:
+          service: script.theater_screen_down
+        close_cover:
+          service: script.theater_screen_up
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -37,7 +35,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_screen
     to: "raising"
-    for: "00:00:11"
+    for: "00:00:07"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'down' }}"
@@ -51,7 +49,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_screen
     to: "lowering"
-    for: "00:00:11"
+    for: "00:00:07"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'up' }}"
@@ -65,7 +63,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_screen
     to: "raising"
-    for: "00:00:19"
+    for: "00:00:14"
   condition: []
   action:
   - service: input_select.select_option
@@ -77,7 +75,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_screen
     to: "lowering"
-    for: "00:00:19"
+    for: "00:00:14"
   condition: []
   action:
   - service: input_select.select_option
@@ -92,22 +90,25 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.relay_theater_screen_up
-      - service: switch.turn_off
-        data:
-          entity_id: switch.relay_theater_screen_up
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_screen
           option: raising
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_theater_screen_up
   theater_screen_down:
     sequence:
-      - service: switch.turn_on
+      - service: cover.close_cover
         data:
-          entity_id: switch.relay_theater_screen_down
-      - service: switch.turn_off
+          entity_id: cover.theater_roman
+      - service: switch.turn_on
         data:
           entity_id: switch.relay_theater_screen_down
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_screen
           option: lowering
+      - service: switch.turn_off
+        data:
+          entity_id: switch.relay_theater_screen_down
