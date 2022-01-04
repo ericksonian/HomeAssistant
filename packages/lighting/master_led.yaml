@@ -14,11 +14,6 @@ light:
         friendly_name: "Master Bed LEDs"
         unique_id: light_master_bedroom_ledstrip
         value_template: "{{states('input_boolean.master_ledstrip_power') }}"
-        effect_template: "{{states('light.lifx2') }}"
-        effect_list_template: "{{ state_attr('light.lifx2', 'effect_list') }}"
-#        effect_list_template: "{{ state_attr('input_select.master_ledstrip_mode', 'options') }}"
-#        level_template: "{{states('input_boolean.master_ledstrip_power') | int}}"
-#        temperature_template: "{{states('input_number.temperature_input') | int}}"
 #        color_template: "{{states('input_select.master_ledstrip_mode') }}"
         turn_on:
           service: script.master_ledstrip_power_on
