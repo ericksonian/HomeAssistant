@@ -29,40 +29,12 @@ input_select:
 
 ###### AUTOMATIONS --------------------------------------
 automation:
-- alias: Theater Screen Open
-  trigger:
-  - platform: state
-    entity_id: input_select.theater_screen
-    to: "opening"
-    for: "00:00:07"
-  condition:
-  - condition: template
-    value_template: "{{ trigger.from_state.state != 'closed' }}"
-  action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.theater_screen
-      option: open
-- alias: Theater Screen Closed
-  trigger:
-  - platform: state
-    entity_id: input_select.theater_screen
-    to: "closing"
-    for: "00:00:07"
-  condition:
-  - condition: template
-    value_template: "{{ trigger.from_state.state != 'open' }}"
-  action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.theater_screen
-      option: closed
 - alias: Theater Screen Open Full Motion
   trigger:
   - platform: state
     entity_id: input_select.theater_screen
     to: "opening"
-    for: "00:00:14"
+    for: "00:00:09"
   condition: []
   action:
   - service: input_select.select_option
@@ -74,7 +46,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_screen
     to: "closing"
-    for: "00:00:14"
+    for: "00:00:09"
   condition: []
   action:
   - service: input_select.select_option
@@ -119,9 +91,22 @@ script:
           entity_id: switch.relay_theater_screen_up
   theater_screen_open:
     sequence:
-      - service: cover.close_cover
-        data:
-          entity_id: cover.theater_shade_roman
+
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("cover.theater_shade_roman", "open") %}
+              script.theater_screen_open_roman_delay_9
+            {% elif is_state("cover.theater_shade_roman", "opening") %}
+              script.theater_screen_open_roman_delay_9
+            {% elif is_state("cover.theater_shade_roman", "favorite") %}
+              script.theater_screen_open_roman_delay_2
+            {% elif is_state("cover.theater_shade_roman", "closing) %}
+              script.theater_screen_open_roman_delay_2
+            {% else %}
+              script.theater_screen_open_roman_delay_0
+            {% endif %}
+
       - service: switch.turn_on
         data:
           entity_id: switch.relay_theater_screen_down
@@ -132,3 +117,23 @@ script:
       - service: switch.turn_off
         data:
           entity_id: switch.relay_theater_screen_down
+
+  theater_screen_open_roman_delay_9:
+    sequence:
+      - service: cover.close_cover
+        data:
+          entity_id: cover.theater_shade_roman
+      - delay:
+          seconds: 9
+  theater_screen_open_roman_delay_2:
+    sequence:
+      - service: cover.close_cover
+        data:
+          entity_id: cover.theater_shade_roman
+      - delay:
+          seconds: 2
+  theater_screen_open_roman_delay_0:
+    sequence:
+      - service: cover.close_cover
+        data:
+          entity_id: cover.theater_shade_roman

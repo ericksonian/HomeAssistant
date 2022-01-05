@@ -52,7 +52,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_shade_roman
     to: "closing"
-    for: "00:00:07"
+    for: "00:00:11"
   condition:
   - condition: template
     value_template: "{{ trigger.from_state.state != 'open' }}"
@@ -66,7 +66,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_shade_roman
     to: "opening"
-    for: "00:00:15"
+    for: "00:00:19"
   condition: []
   action:
   - service: input_select.select_option
@@ -78,7 +78,7 @@ automation:
   - platform: state
     entity_id: input_select.theater_shade_roman
     to: "closing"
-    for: "00:00:15"
+    for: "00:00:18"
   condition: []
   action:
   - service: input_select.select_option
