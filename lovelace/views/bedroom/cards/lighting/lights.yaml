@@ -122,7 +122,7 @@ custom_fields:
                   service_data:
                     entity_id: input_boolean.master_ledstrip_power
             - type: 'custom:button-card'
-              template: standardnostate
+              template: standard
               entity: light.master_bedroom_his_side
               icon: 'mdi:wall-sconce'
               name: His
@@ -136,7 +136,7 @@ custom_fields:
               hold_action:
                 action: more-info
             - type: 'custom:button-card'
-              template: standardnostate
+              template: standard
               entity: light.master_bedroom_her_side
               icon: 'mdi:wall-sconce'
               name: Hers
