@@ -10,14 +10,6 @@ input_select:
       - 'relax'
       - 'off'
 
-  master_light_scene_relax:
-    name: 'Master Light Scene Relax'
-    options:
-      - reds
-      - greens
-      - blues
-      - whites
-
   master_light_scene_relax_brightness:
     name: 'Master Light Scene Relax Brightness'
     options:
@@ -98,14 +90,10 @@ scene:
       state: on
     light.master_bedroom_ceiling_fan_light:
       state: on
-    light.lifx5:
+    light.master_bedroom_her_side:
       state: on
-      brightness: 101
-      color_temp: 370
-    light.lifx6:
+    light.master_bedroom_his_side:
       state: on
-      brightness: 101
-      color_temp: 370
 #   Master Entertain
 - name: Master Entertain
   entities:
@@ -115,10 +103,23 @@ scene:
     light.master_bedroom_ceiling_fan_light:
       state: on
       brightness: 76
-    light.lifx5:
+    light.master_bedroom_her_side:
       state: off
-    light.lifx6:
+    light.master_bedroom_his_side:
       state: off
+#   Master Relax
+- name: Master Relax
+  entities:
+    light.master_bedroom_entry:
+      state: off
+    light.master_bedroom_ceiling_fan_light:
+      state: off
+    light.master_bedroom_her_side:
+      state: on
+      brightness: 38
+    light.master_bedroom_his_side:
+      state: on
+      brightness: 38
 #   Master All Off
 - name: Master All Off
   entities:
@@ -126,66 +127,9 @@ scene:
       state: off
     light.master_bedroom_ceiling_fan_light:
       state: off
-    light.lifx5:
+    light.master_bedroom_her_side:
       state: off
-    light.lifx6:
-      state: off
-####   Master Relax Colors
-- name: Master Relax Reds
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      rgb_color: [255,30,71]
-    light.lifx6:
-      state: on
-      brightness: 1
-      rgb_color: [255,30,71]
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
-      state: off
-- name: Master Relax Blues
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      rgb_color: [8,0,255]
-    light.lifx6:
-      state: on
-      brightness: 1
-      rgb_color: [8,0,255]
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
-      state: off
-- name: Master Relax Greens
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      rgb_color: [32,255,21]
-    light.lifx6:
-      state: on
-      brightness: 1
-      rgb_color: [32,255,21]
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
-      state: off
-- name: Master Relax Whites
-  entities:
-    light.lifx5:
-      state: on
-      brightness: 1
-      color_temp: 666
-    light.lifx6:
-      state: on
-      brightness: 1
-      color_temp: 666
-    light.master_bedroom_ceiling_fan_light:
-      state: off
-    light.master_bedroom_entry:
+    light.master_bedroom_his_side:
       state: off
 
 ###### SCRIPT ------------------------------------------
@@ -213,6 +157,17 @@ script:
           entity_id: scene.master_entertain
         data:
           transition: 3
+  master_light_scene_relax:
+    sequence:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene
+          option: 'off'
+      - service: scene.turn_on
+        target:
+          entity_id: scene.master_relax
+        data:
+          transition: 3
   master_light_scene_off:
     sequence:
       - service: input_select.select_option
@@ -225,89 +180,6 @@ script:
         data:
           transition: 3
 
-### Relax Scene
-  master_light_scene_relax:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene
-          option: relax
-      - service: script.turn_on
-        data_template:
-          entity_id: >
-            {% if is_state("input_select.master_light_scene_relax", "reds") %}
-              script.master_light_scene_relax_reds
-            {% elif is_state("input_select.master_light_scene_relax", "greens") %}
-              script.master_light_scene_relax_greens
-            {% elif is_state("input_select.master_light_scene_relax", "blues") %}
-              script.master_light_scene_relax_blues
-            {% else %}
-              script.master_light_scene_relax_whites
-            {% endif %}
-
-  master_light_scene_relax_reds:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: reds
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_reds
-        data:
-          transition: 3
-
-  master_light_scene_relax_blues:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: blues
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_blues
-        data:
-          transition: 3
-
-  master_light_scene_relax_greens:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: greens
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_greens
-        data:
-          transition: 3
-
-  master_light_scene_relax_whites:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax
-          option: whites
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_light_scene_relax_brightness
-          option: level1
-      - service: scene.turn_on
-        target:
-          entity_id: scene.master_relax_whites
-        data:
-          transition: 3
 
 # Brightness
 
@@ -320,10 +192,10 @@ script:
       - service: light.turn_on
         target:
           entity_id:
-            - light.lifx5
-            - light.lifx6
+            - light.master_bedroom_her_side
+            - light.master_bedroom_his_side
         data:
-          brightness: 1
+          brightness: 20
           transition: 1
 
   master_light_scene_relax_brightness2:
@@ -335,10 +207,10 @@ script:
       - service: light.turn_on
         target:
           entity_id:
-            - light.lifx5
-            - light.lifx6
+            - light.master_bedroom_her_side
+            - light.master_bedroom_his_side
         data:
-          brightness: 20
+          brightness: 40
           transition: 1
 
   master_light_scene_relax_brightness3:
@@ -350,8 +222,8 @@ script:
       - service: light.turn_on
         target:
           entity_id:
-            - light.lifx5
-            - light.lifx6
+            - light.master_bedroom_her_side
+            - light.master_bedroom_his_side
         data:
           brightness: 60
           transition: 1
@@ -365,8 +237,8 @@ script:
       - service: light.turn_on
         target:
           entity_id:
-            - light.lifx5
-            - light.lifx6
+            - light.master_bedroom_her_side
+            - light.master_bedroom_his_side
         data:
           brightness: 80
           transition: 1

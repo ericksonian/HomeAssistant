@@ -115,7 +115,7 @@ custom_fields:
                     entity_id: input_boolean.master_ledstrip_power
             - type: 'custom:button-card'
               template: standardnostate
-              entity: light.lifx5
+              entity: light.master_bedroom_his_side
               icon: 'mdi:wall-sconce'
               name: His
               show_name: true
@@ -134,7 +134,7 @@ custom_fields:
                 action: more-info
             - type: 'custom:button-card'
               template: standardnostate
-              entity: light.lifx6
+              entity: light.master_bedroom_her_side
               icon: 'mdi:wall-sconce'
               name: Hers
               show_name: true
