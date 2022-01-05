@@ -10,16 +10,16 @@ custom_fields:
           template: standard
           entity: input_select.theater_screen
           icon: 'mdi:projector-screen'
-          name: Up
+          name: Close
           show_icon: true
           show_name: true
           state:
             - color: 'rgb(2,2,228)'
-              value: 'up'
-              name: Up
+              value: 'closed'
+              name: Closed
             - color: 'rgb(247,117,1)'
-              value: 'raising'
-              name: Raising
+              value: 'closing'
+              name: Closing
           styles:
             card:
               - height: 82px
@@ -39,18 +39,18 @@ custom_fields:
           template: standard
           entity: input_select.theater_screen
           icon: 'mdi:projector-screen-outline'
-          name: Down
+          name: Open
           lock:
             enabled: true
           show_icon: true
           show_name: true
           state:
             - color: 'rgb(255,255,1)'
-              value: 'down'
-              name: Down
+              value: 'open'
+              name: Open
             - color: 'rgb(247,117,1)'
-              value: 'lowering'
-              name: Lowering
+              value: 'opening'
+              name: Opening
           styles:
             card:
               - height: 82px

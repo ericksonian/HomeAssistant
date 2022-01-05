@@ -28,7 +28,9 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.theater_shade_roman_open
+            service: cover.open_cover
+            service_data:
+              entity_id: cover.theater_shade_roman
           hold_action:
             action: none
         - type: 'custom:button-card'
@@ -56,7 +58,9 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.theater_shade_roman_stop
+            service: cover.stop_cover
+            service_data:
+              entity_id: cover.theater_shade_roman
           hold_action:
             action: none
         - type: 'custom:button-card'
@@ -81,6 +85,8 @@ custom_fields:
               - font-size: 0.75em
           tap_action:
             action: call-service
-            service: script.theater_shade_roman_close
+            service: cover.close_cover
+            service_data:
+              entity_id: cover.theater_shade_roman
           hold_action:
             action: none
