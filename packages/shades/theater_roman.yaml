@@ -1,17 +1,17 @@
 
-#cover:
-#  - platform: template
-#    covers:
-#      shade_theater_roman:
-#        device_class: shade
-#        friendly_name: "Theater Roman"
-#        value_template: "{{ states('input_select.theater_shade_roman') }}"
-#        open_cover:
-#          service: script.theater_shade_roman_open
-#        close_cover:
-#          service: script.theater_shade_roman_close
-#        stop_cover:
-#          service: script.theater_shade_roman_stop
+cover:
+  - platform: template
+    covers:
+      theater_shade_roman:
+        device_class: shade
+        friendly_name: "Theater Roman"
+        value_template: "{{ states('input_select.theater_shade_roman') }}"
+        open_cover:
+          service: script.theater_shade_roman_open
+        stop_cover:
+          service: script.theater_shade_roman_stop
+        close_cover:
+          service: script.theater_shade_roman_close
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -89,7 +89,7 @@ automation:
 - alias: Theater Roman Open Tracking
   trigger:
   - platform: state
-    entity_id: cover.theater_roman
+    entity_id: cover.mylink_theater_roman
     to: "open"
   action:
   - service: input_select.select_option
@@ -99,7 +99,7 @@ automation:
 - alias: Theater Roman Closed Tracking
   trigger:
   - platform: state
-    entity_id: cover.theater_roman
+    entity_id: cover.mylink_theater_roman
     to: "closed"
   action:
   - service: input_select.select_option
@@ -116,7 +116,7 @@ script:
           entity_id: cover.theater_screen
       - service: cover.open_cover
         data:
-          entity_id: cover.theater_roman
+          entity_id: cover.mylink_theater_roman
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_shade_roman
@@ -125,7 +125,7 @@ script:
     sequence:
       - service: cover.stop_cover
         data:
-          entity_id: cover.theater_roman
+          entity_id: cover.mylink_theater_roman
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_shade_roman
@@ -134,7 +134,7 @@ script:
     sequence:
       - service: cover.close_cover
         data:
-          entity_id: cover.theater_roman
+          entity_id: cover.mylink_theater_roman
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_shade_roman

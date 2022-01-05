@@ -2,14 +2,14 @@
 cover:
   - platform: template
     covers:
-      projector_screen:
+      theater_screen:
 #        device_class:
         friendly_name: "Projector Screen"
-        optimistic: true
+        value_template: "{{ states('input_select.theater_screen') }}"
         open_cover:
-          service: script.theater_screen_down
+          service: script.theater_screen_open
         close_cover:
-          service: script.theater_screen_up
+          service: script.theater_screen_close
 
 ###### SENSOR TEMPLATES ------------------------------------------
 #sensor:
@@ -22,11 +22,10 @@ input_select:
   theater_screen:
     name: 'Theater Screen'
     options:
-      - up
-      - raising
-      - lowering
-      - down
-
+      - open
+      - opening
+      - closing
+      - closed
 
 ###### AUTOMATIONS --------------------------------------
 automation:
@@ -34,58 +33,79 @@ automation:
   trigger:
   - platform: state
     entity_id: input_select.theater_screen
-    to: "raising"
+    to: "opening"
     for: "00:00:07"
   condition:
   - condition: template
-    value_template: "{{ trigger.from_state.state != 'down' }}"
+    value_template: "{{ trigger.from_state.state != 'closed' }}"
   action:
   - service: input_select.select_option
     data:
       entity_id: input_select.theater_screen
-      option: up
+      option: open
 - alias: Theater Screen Closed
   trigger:
   - platform: state
     entity_id: input_select.theater_screen
-    to: "lowering"
+    to: "closing"
     for: "00:00:07"
   condition:
   - condition: template
-    value_template: "{{ trigger.from_state.state != 'up' }}"
+    value_template: "{{ trigger.from_state.state != 'open' }}"
   action:
   - service: input_select.select_option
     data:
       entity_id: input_select.theater_screen
-      option: down
+      option: closed
 - alias: Theater Screen Open Full Motion
   trigger:
   - platform: state
     entity_id: input_select.theater_screen
-    to: "raising"
+    to: "opening"
     for: "00:00:14"
   condition: []
   action:
   - service: input_select.select_option
     data:
       entity_id: input_select.theater_screen
-      option: up
+      option: open
 - alias: Theater Screen Closed Full Motion
   trigger:
   - platform: state
     entity_id: input_select.theater_screen
-    to: "lowering"
+    to: "closing"
     for: "00:00:14"
   condition: []
   action:
   - service: input_select.select_option
     data:
       entity_id: input_select.theater_screen
-      option: down
+      option: closed
+
+- alias: Theater Screen Open Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.theater_screen
+    to: "open"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.theater_screen
+      option: open
+- alias: Theater Screen Closed Tracking
+  trigger:
+  - platform: state
+    entity_id: cover.theater_screen
+    to: "closed"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.theater_screen
+      option: closed
 
 ###### SCRIPTS ------------------------------------------
 script:
-  theater_screen_up:
+  theater_screen_close:
     sequence:
       - service: switch.turn_on
         data:
@@ -93,11 +113,11 @@ script:
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_screen
-          option: raising
+          option: closing
       - service: switch.turn_off
         data:
           entity_id: switch.relay_theater_screen_up
-  theater_screen_down:
+  theater_screen_open:
     sequence:
       - service: cover.close_cover
         data:
@@ -108,7 +128,7 @@ script:
       - service: input_select.select_option
         data:
           entity_id: input_select.theater_screen
-          option: lowering
+          option: opening
       - service: switch.turn_off
         data:
           entity_id: switch.relay_theater_screen_down
