@@ -121,7 +121,7 @@ script:
     sequence:
       - service: cover.close_cover
         data:
-          entity_id: cover.theater_roman
+          entity_id: cover.theater_shade_roman
       - service: switch.turn_on
         data:
           entity_id: switch.relay_theater_screen_down
