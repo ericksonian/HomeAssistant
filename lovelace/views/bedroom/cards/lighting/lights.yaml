@@ -131,6 +131,7 @@ custom_fields:
                 card:
                   - height: 84px
                     width: 38px
+                    border-radius: 0.7em 0.7em 0.7em 0.7em
               tap_action:
                 action: toggle
               hold_action:
