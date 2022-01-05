@@ -112,6 +112,16 @@ script:
   theater_shade_roman_open:
     sequence:
       - service: cover.close_cover
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.theater_screen", "open") %}
+              cover.theater_screen
+            {% elif is_state("input_select.theater_screen", "opening") %}
+              cover.theater_screen
+            {% else %}
+              none
+            {% endif %}
+      - service: cover.close_cover
         data:
           entity_id: cover.theater_screen
       - service: cover.open_cover

@@ -94,13 +94,13 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("cover.theater_shade_roman", "open") %}
+            {% if is_state("input_select.theater_shade_roman", "open") %}
               script.theater_screen_open_roman_delay_9
-            {% elif is_state("cover.theater_shade_roman", "opening") %}
+            {% elif is_state("input_select.theater_shade_roman", "opening") %}
               script.theater_screen_open_roman_delay_9
-            {% elif is_state("cover.theater_shade_roman", "favorite") %}
+            {% elif is_state("input_select.theater_shade_roman", "favorite") %}
               script.theater_screen_open_roman_delay_2
-            {% elif is_state("cover.theater_shade_roman", "closing") %}
+            {% elif is_state("input_select.theater_shade_roman", "closing") %}
               script.theater_screen_open_roman_delay_2
             {% else %}
               script.theater_screen_open_roman_delay_0
