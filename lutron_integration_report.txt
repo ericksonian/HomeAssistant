@@ -749,6 +749,20 @@
 "Area" : {
 "Name" : "Bed3"
 }
+},
+{
+"ID" : 29,
+"Name" : "His Side",
+"Area" : {
+"Name" : "Master Bedroom"
+}
+},
+{
+"ID" : 30,
+"Name" : "Her Side",
+"Area" : {
+"Name" : "Master Bedroom"
+}
 }
 ]
 }
