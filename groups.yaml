@@ -47,8 +47,8 @@ lights_master:
   entities:
     - light.master_bedroom_entry
     - light.master_bedroom_ceiling_fan_light
-    - light.lifx5
-    - light.lifx6
+    - light.master_bedroom_her_side
+    - light.master_bedroom_his_side
 
 lights_master_bedside:
   name: Lights Master Bedside
