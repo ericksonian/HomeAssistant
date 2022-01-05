@@ -91,7 +91,6 @@ script:
           entity_id: switch.relay_theater_screen_up
   theater_screen_open:
     sequence:
-
       - service: script.turn_on
         data_template:
           entity_id: >
@@ -106,7 +105,6 @@ script:
             {% else %}
               script.theater_screen_open_roman_delay_0
             {% endif %}
-
       - service: switch.turn_on
         data:
           entity_id: switch.relay_theater_screen_down
