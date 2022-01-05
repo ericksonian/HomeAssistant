@@ -98,8 +98,8 @@ script:
               script.theater_screen_open_roman_delay_9
 #            {% elif is_state("cover.theater_shade_roman", "opening") %}
 #              script.theater_screen_open_roman_delay_9
-#            {% elif is_state("cover.theater_shade_roman", "favorite") %}
-#              script.theater_screen_open_roman_delay_2
+            {% elif is_state("cover.theater_shade_roman", "favorite") %}
+              script.theater_screen_open_roman_delay_2
 #            {% elif is_state("cover.theater_shade_roman", "closing) %}
 #              script.theater_screen_open_roman_delay_2
             {% else %}
