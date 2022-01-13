@@ -1,0 +1,157 @@
+type: 'custom:button-card'
+template: container
+name: Relax
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax
+              icon: 'mdi:alpha-w-circle'
+              show_name: false
+              state:
+                - color: 'rgb(255,255,255)'
+                  value: 'whites'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+                icon:
+                  - opacity: 1
+                  - color: 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_whites
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax
+              icon: 'mdi:alpha-r-circle'
+              show_name: false
+              state:
+                - color: 'rgb(255,0,0)'
+                  value: 'reds'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,0,0)'
+                icon:
+                  - opacity: 1
+                  - color: 'rgb(255,0,0)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_reds
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax
+              icon: 'mdi:alpha-g-circle'
+              show_name: false
+              state:
+                - color: 'rgb(0,255,0)'
+                  value: 'greens'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(0,255,0)'
+                icon:
+                  - opacity: 1
+                  - color: 'rgb(0,255,0)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_greens
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax
+              icon: 'mdi:alpha-b-circle'
+              show_name: false
+              state:
+                - color: 'rgb(0,0,255)'
+                  value: 'blues'
+                  styles:
+                    icon:
+                      - color: 'rgb(0,0,0)'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(0,0,255)'
+                icon:
+                  - opacity: 1
+                  - color: 'rgb(0,0,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_blues
+
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax_brightness
+              icon: 'mdi:numeric-1-circle-outline'
+              show_name: false
+              state:
+                - color: 'rgb(50,50,50)'
+                  value: 'level1'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_brightness1
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax_brightness
+              icon: 'mdi:numeric-2-circle-outline'
+              show_name: false
+              state:
+                - color: 'rgb(60,60,60)'
+                  value: 'level2'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_brightness2
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax_brightness
+              icon: 'mdi:numeric-3-circle-outline'
+              show_name: false
+              state:
+                - color: 'rgb(70,70,70)'
+                  value: 'level3'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_brightness3
+            - type: 'custom:button-card'
+              template: standard
+              entity: input_select.bed3_light_scene_relax_brightness
+              icon: 'mdi:numeric-4-circle-outline'
+              show_name: false
+              state:
+                - color: 'rgb(80,80,80)'
+                  value: 'level4'
+              styles:
+                card:
+                  - height: 72px
+                  - '--mdc-ripple-color': 'rgb(255,255,255)'
+              tap_action:
+                action: call-service
+                service: script.bed3_light_scene_relax_brightness4

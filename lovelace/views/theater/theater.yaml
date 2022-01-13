@@ -10,8 +10,15 @@ cards:
         cards:
           - !include /config/lovelace/views/theater/cards/screen.yaml
           - !include /config/lovelace/views/theater/cards/shade_roman.yaml
-          - !include /config/lovelace/views/theater/cards/lights.yaml
-          - !include /config/lovelace/views/theater/cards/fan.yaml
+      - !include /config/lovelace/views/theater/cards/fan.yaml
+  - type: horizontal-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - !include /config/lovelace/views/theater/cards/fan_window.yaml
+          - !include /config/lovelace/views/theater/cards//lighting/lights.yaml
+      - !include /config/lovelace/views/theater/cards/lighting/scenes.yaml
+
 #  - !include /config/lovelace/views/theater/cards/nothing_playing.yaml
 #  - !include /config/lovelace/views/theater/cards/projector_on.yaml
   - !include /config/lovelace/views/theater/cards/theater_speaker.yaml

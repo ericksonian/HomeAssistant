@@ -19,7 +19,7 @@ input_select:
       - whites
 
   bed3_light_scene_relax_brightness:
-    name: 'Master Light Scene Relax Brightness'
+    name: 'Bed3 Light Scene Relax Brightness'
     options:
       - level1
       - level2

@@ -63,3 +63,10 @@ lights_bed3:
     - light.lifx2
     - light.lifx3
     - light.lifxmini1
+
+lights_theater:
+  name: Lights Theater
+  entities:
+    - light.theater_ceiling
+    - light.lifx4
+    
