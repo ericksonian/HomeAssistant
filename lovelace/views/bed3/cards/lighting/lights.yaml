@@ -20,7 +20,8 @@ custom_fields:
               template: light_colors
               entity: light.lifx2
               icon: 'mdi:palette'
-              show_name: false
+              name: Lamp
+              show_name: true
               styles:
                 card:
                   - height: 52px
