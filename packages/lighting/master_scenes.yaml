@@ -67,7 +67,16 @@ automation:
     to: "8"
   condition: []
   action:
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state("group.lights_master", "off") %}
+          script.master_ledstrip_power_off
+        {% else %}
+          none
+        {% endif %}
   - service: script.master_light_scene_off
+
 
 - alias: Master Lights Off
   trigger:
