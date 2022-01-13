@@ -9,7 +9,7 @@ custom_fields:
         - entity: light.theater_ceiling
           name: Ceiling
           template: standard
-          icon: 'mdi:dome-light'
+          icon: 'mdi:ceiling-fan-light'
           type: 'custom:button-card'
           styles:
             card:

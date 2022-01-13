@@ -11,9 +11,9 @@ custom_fields:
             - type: 'custom:button-card'
               template: standardnostate
               entity: light.lifx1
-              icon: 'mdi:palette'
+              icon: 'mdi:wall-sconce-round-variant'
               name: Top
-              show_name: true
+              show_name: false
               state:
                 - color: var(--button-card-light-color)
                   value: 'on'
@@ -30,7 +30,7 @@ custom_fields:
               entity: light.lifx2
               icon: 'mdi:palette'
               name: Mid
-              show_name: true
+              show_name: false
               state:
                 - color: var(--button-card-light-color)
                   value: 'on'
@@ -45,9 +45,9 @@ custom_fields:
             - type: 'custom:button-card'
               template: standardnostate
               entity: light.lifx3
-              icon: 'mdi:palette'
+              icon: 'mdi:wall-sconce-round'
               name: Low
-              show_name: true
+              show_name: false
               state:
                 - color: var(--button-card-light-color)
                   value: 'on'
