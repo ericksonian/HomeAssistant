@@ -121,24 +121,32 @@ scene:
 ####   Theater Relax Colors
 - name: Theater Relax Reds
   entities:
+    light.theater_ceiling:
+      state: off
     light.lifx4:
       state: on
       brightness: 1
       rgb_color: [255,0,50]
 - name: Theater Relax Blues
   entities:
+    light.theater_ceiling:
+      state: off
     light.lifx4:
       state: on
       brightness: 1
       rgb_color: [28,213,255]
 - name: Theater Relax Greens
   entities:
+    light.theater_ceiling:
+      state: off
     light.lifx4:
       state: on
       brightness: 1
       rgb_color: [32,255,21]
 - name: Theater Relax Whites
   entities:
+    light.theater_ceiling:
+      state: off
     light.lifx4:
       state: on
       brightness: 1
