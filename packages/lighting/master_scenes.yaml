@@ -7,7 +7,7 @@ input_select:
     options:
       - bright
       - entertain
-      - relax
+      - 'relax'
       - 'off'
 
   master_light_scene_relax_brightness:
@@ -67,14 +67,6 @@ automation:
     to: "8"
   condition: []
   action:
-  - service: script.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state("group.lights_master", "off") %}
-          script.master_ledstrip_power_off
-        {% else %}
-          none
-        {% endif %}
   - service: script.master_light_scene_off
 
 
@@ -171,7 +163,7 @@ script:
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
-          option: relax
+          option: 'relax'
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene_relax_brightness
@@ -183,6 +175,14 @@ script:
           transition: 3
   master_light_scene_off:
     sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("group.lights_master", "off") %}
+              script.master_ledstrip_power_off
+            {% else %}
+              none
+            {% endif %}
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
