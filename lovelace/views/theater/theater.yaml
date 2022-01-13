@@ -18,6 +18,12 @@ cards:
           - !include /config/lovelace/views/theater/cards/fan_window.yaml
           - !include /config/lovelace/views/theater/cards//lighting/lights.yaml
       - !include /config/lovelace/views/theater/cards/lighting/scenes.yaml
+  - type: conditional
+    conditions:
+      - entity: input_select.theater_light_scene
+        state: 'relax'
+    card:
+      !include /config/lovelace/views/theater/cards/lighting/scenes_relax.yaml
 
 #  - !include /config/lovelace/views/theater/cards/nothing_playing.yaml
 #  - !include /config/lovelace/views/theater/cards/projector_on.yaml
