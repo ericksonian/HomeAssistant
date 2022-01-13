@@ -44,13 +44,8 @@ custom_fields:
                 action: call-service
                 service: script.bed3_light_scene_relax
             - type: 'custom:button-card'
+              template: light_group_off
               entity: group.lights_bed3
-              template: standardnostate
-              icon: 'mdi:lightbulb-group-off-outline'
-              name: All Off
-              state:
-                - color: 'rgb(2,2,228)'
-                  value: 'off'
               tap_action:
                 action: call-service
                 service: script.bed3_light_scene_off

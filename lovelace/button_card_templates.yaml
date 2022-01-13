@@ -131,3 +131,32 @@ light_colors:
   styles:
     card:
       - '--mdc-ripple-color': var(--button-card-light-color)
+
+light_group_off:
+  color_type: card
+  color: 'rgb(0,0,0)'
+  size: 80%
+  name: All Off
+  icon: 'mdi:lightbulb-group-off-outline'
+  hold_action:
+    action: none
+  state:
+    - color: 'rgb(2,2,228)'
+      value: 'off'
+  styles:
+    card:
+      - padding: 0.2em
+      - border-radius: 1em 1em 1em 1em
+      - '--mdc-ripple-color': 'rgb(2,2,228)'
+      - '--mdc-ripple-press-opacity': 0.5
+    icon:
+      - opacity: 0.5
+    name:
+      - font-size: 0.65em
+      - white-space: normal
+    state:
+      - font-size: 0.65em
+      - white-space: normal
+    label:
+      - font-size: 0.4em
+      - white-space: normal

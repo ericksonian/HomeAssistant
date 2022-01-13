@@ -42,5 +42,5 @@ custom_fields:
               value: 'on'
           styles:
             card:
-              - height: 52px
+              - height: 172px
               - '--mdc-ripple-color': 'rgb(204,133,69)'
