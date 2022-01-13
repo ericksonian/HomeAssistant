@@ -8,37 +8,25 @@ custom_fields:
       cards:
         - type: horizontal-stack
           cards:
-            - entity: light.exterior_driveway
-              template: standard
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.exterior_driveway
               name: Driveway
               icon: 'mdi:spotlight-beam'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
-            - entity: light.exterior_back_door
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.exterior_back_door
               name: Back Door
-              template: standard
               icon: 'mdi:dome-light'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
         - type: horizontal-stack
           cards:
-            - entity: light.exterior_front_door
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.exterior_front_door
               name: Front Door
-              template: standard
               icon: 'mdi:dome-light'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'
-            - entity: switch.patio_string
-              template: standard
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: switch.patio_string
               name: Patio
               icon: 'mdi:string-lights'
-              type: 'custom:button-card'
-              state:
-                - color: 'rgb(255,255,1)'
-                  value: 'on'

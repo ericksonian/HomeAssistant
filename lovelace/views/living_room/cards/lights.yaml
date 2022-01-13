@@ -8,25 +8,25 @@ custom_fields:
       cards:
         - type: horizontal-stack
           cards:
-            - entity: light.living_room_stairs
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.living_room_stairs
               name: Stairs
-              template: standard
               icon: 'mdi:globe-light'
-              type: 'custom:button-card'
-            - entity: light.living_room_main
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.living_room_main
               name: Ceiling
-              template: standard
               icon: 'mdi:ceiling-fan-light'
-              type: 'custom:button-card'
         - type: horizontal-stack
           cards:
-            - entity: switch.plug_in_switch_switch
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: switch.plug_in_switch_switch
               name: Lamp
-              template: standard
               icon: 'mdi:floor-lamp'
-              type: 'custom:button-card'
-            - entity: light.living_room_foyer
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.living_room_foyer
               name: Foyer
-              template: standard
               icon: 'mdi:dome-light'
-              type: 'custom:button-card'

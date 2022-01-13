@@ -9,23 +9,15 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
+              template: light_dimmer
               entity: light.master_bedroom_entry
               name: Entry
-              template: standard
               icon: 'mdi:light-recessed'
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
             - type: 'custom:button-card'
+              template: light_dimmer
               entity: light.master_bedroom_ceiling_fan_light
               name: Ceiling
-              template: standard
               icon: 'mdi:ceiling-fan-light'
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
         - type: horizontal-stack
           cards:
             - type: conditional
@@ -122,32 +114,22 @@ custom_fields:
                   service_data:
                     entity_id: input_boolean.master_ledstrip_power
             - type: 'custom:button-card'
-              template: standard
+              template: light_dimmer
               entity: light.master_bedroom_his_side
-              icon: 'mdi:wall-sconce'
               name: His
-              show_name: true
-              styles:
-                card:
-                  - height: 84px
-                    width: 38px
-                    border-radius: 0.7em 0.7em 0.7em 0.7em
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: 'custom:button-card'
-              template: standard
-              entity: light.master_bedroom_her_side
               icon: 'mdi:wall-sconce'
-              name: Hers
-              show_name: true
               styles:
                 card:
                   - height: 84px
                     width: 38px
                     border-radius: 0.7em 0.7em 0.7em 0.7em
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
+            - type: 'custom:button-card'
+              template: light_dimmer
+              entity: light.master_bedroom_her_side
+              name: Her
+              icon: 'mdi:wall-sconce'
+              styles:
+                card:
+                  - height: 84px
+                    width: 38px
+                    border-radius: 0.7em 0.7em 0.7em 0.7em
