@@ -7,7 +7,7 @@ input_select:
     options:
       - bright
       - entertain
-      - 'relax'
+      - relax
       - 'off'
 
   master_light_scene_relax_brightness:
@@ -125,10 +125,10 @@ scene:
       state: off
     light.master_bedroom_her_side:
       state: on
-      brightness: 38
+      brightness: 40
     light.master_bedroom_his_side:
       state: on
-      brightness: 38
+      brightness: 40
 #   Master All Off
 - name: Master All Off
   entities:
@@ -171,7 +171,11 @@ script:
       - service: input_select.select_option
         data:
           entity_id: input_select.master_light_scene
-          option: 'off'
+          option: relax
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_light_scene_relax_brightness
+          option: level2
       - service: scene.turn_on
         target:
           entity_id: scene.master_relax
