@@ -132,15 +132,15 @@ scene:
   entities:
     light.lifx1:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [255,0,50]
     light.lifx2:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [255,30,71]
     light.lifx3:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [125,0,150]
     light.lifxmini1:
       state: off
@@ -148,15 +148,15 @@ scene:
   entities:
     light.lifx1:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [28,213,255]
     light.lifx2:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [8,0,255]
     light.lifx3:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [200,186,255]
     light.lifxmini1:
       state: off
@@ -164,15 +164,15 @@ scene:
   entities:
     light.lifx1:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [32,255,21]
     light.lifx2:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [188,255,124]
     light.lifx3:
       state: on
-      brightness: 1
+      brightness: 3
       rgb_color: [0,255,51]
     light.lifxmini1:
       state: off
@@ -180,15 +180,15 @@ scene:
   entities:
     light.lifx1:
       state: on
-      brightness: 1
+      brightness: 3
       color_temp: 666
     light.lifx2:
       state: on
-      brightness: 1
+      brightness: 3
       color_temp: 400
     light.lifx3:
       state: on
-      brightness: 1
+      brightness: 3
       color_temp: 200
     light.lifxmini1:
       state: off
@@ -332,7 +332,7 @@ script:
             - light.lifx2
             - light.lifx3
         data:
-          brightness: 1
+          brightness: 3
           transition: 1
 
   bed3_light_scene_relax_brightness2:
