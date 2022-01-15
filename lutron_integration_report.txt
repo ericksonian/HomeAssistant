@@ -763,6 +763,13 @@
 "Area" : {
 "Name" : "Master Bedroom"
 }
+},
+{
+"ID" : 31,
+"Name" : "Ceiling Fan",
+"Area" : {
+"Name" : "Theater"
+}
 }
 ]
 }
