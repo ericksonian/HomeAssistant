@@ -4,26 +4,6 @@
 - platform: template
   sensors:
 
-    bed3_fan_percentage:
-      friendly_name: Bed3 Fan Percentage
-      value_template: "{{ state_attr('fan.bed3_ceiling_fan', 'percentage') }}"
-    bed3_fan_speed:
-      friendly_name: Bed3 Fan Speed
-      value_template: >-
-        {% if is_state('sensor.bed3_fan_percentage', '0') %}
-          off
-        {% elif is_state('sensor.bed3_fan_percentage', '25') %}
-          low
-        {% elif is_state('sensor.bed3_fan_percentage', '50') %}
-          medium
-        {% elif is_state('sensor.bed3_fan_percentage', '75') %}
-          medium_high
-        {% elif is_state('sensor.bed3_fan_percentage', '100') %}
-          high
-        {% else %}
-          unknown
-        {% endif %}
-
     living_fan_percentage:
       friendly_name: Living Room Fan Percentage
       value_template: "{{ state_attr('fan.living_room_ceiling_fan', 'percentage') }}"
