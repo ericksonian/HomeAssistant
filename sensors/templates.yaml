@@ -1,5 +1,5 @@
 
 ### Templates
 
-#- platform: template
-#  sensors:
+- platform: template
+  sensors:
