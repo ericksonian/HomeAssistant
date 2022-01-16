@@ -69,7 +69,7 @@ cards:
         - '--mdc-ripple-press-opacity': 0.5
     tap_action:
       action: call-service
-      service: script.living_tv_game
+      service: script.living_tv_xbox
     hold_action:
       action: call-service
       service: input_select.select_option
