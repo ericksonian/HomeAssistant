@@ -21,7 +21,7 @@ cloud:
 mobile_app:
 discovery:
 http:
-sensor: !include_dir_merge_list sensors/
+#sensor: !include_dir_merge_list sensors/
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/
 script: !include_dir_merge_named scripts/
