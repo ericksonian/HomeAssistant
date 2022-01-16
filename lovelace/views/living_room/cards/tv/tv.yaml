@@ -8,40 +8,40 @@ cards:
         card:
           type: vertical-stack
           cards:
-            - !include /config/lovelace/views/living_room/cards/tv/select_source.yaml
-            - !include /config/lovelace/views/living_room/cards/tv/please_wait.yaml
-            - !include /config/lovelace/views/living_room/cards/tv/volume.yaml
+            - !include /config/lovelace/views/living/cards/tv/select_source.yaml
+            - !include /config/lovelace/views/living/cards/tv/please_wait.yaml
+            - !include /config/lovelace/views/living/cards/tv/volume.yaml
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'appletv'
               card:
-                !include /config/lovelace/views/living_room/cards/tv/appletv.yaml
+                !include /config/lovelace/views/living/cards/tv/appletv.yaml
 
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'chromecast'
               card:
-                !include /config/lovelace/views/living_room/cards/tv/chromecast.yaml
+                !include /config/lovelace/views/living/cards/tv/chromecast.yaml
 
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'front'
               card:
-                !include /config/lovelace/views/living_room/cards/tv/fronthdmi.yaml
+                !include /config/lovelace/views/living/cards/tv/fronthdmi.yaml
 
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'switch'
               card:
-                !include /config/lovelace/views/living_room/cards/tv/nintendo.yaml
+                !include /config/lovelace/views/living/cards/tv/nintendo.yaml
 
             - type: conditional
               conditions:
                 - entity: input_select.living_tv_source
                   state: 'xbox'
               card:
-                !include /config/lovelace/views/living_room/cards/tv/xbox.yaml
+                !include /config/lovelace/views/living/cards/tv/xbox.yaml
