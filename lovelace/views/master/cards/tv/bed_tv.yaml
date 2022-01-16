@@ -1,0 +1,20 @@
+#type: vertical-stack
+#cards:
+#  - !include /config/lovelace/views/master/cards/tv/bed_tv_media_player.yaml
+#  - type: conditional
+#    conditions:
+#      - entity: media_player.tv
+#        state_not: 'off'
+#    card:
+#      !include /config/lovelace/views/master/cards/tv/bed_tv_remote.yaml
+
+type: 'custom:button-card'
+template: container
+name: Bedroom TV
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - !include /config/lovelace/views/master/cards/tv/bed_tv_remote.yaml
+        - !include /config/lovelace/views/master/cards/tv/bed_tv_sleep.yaml

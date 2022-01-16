@@ -49,21 +49,25 @@
 
 !house
 !ambient_sounds
-!lighting
+
 !speaker_groups
 !sprinklers
 
 !living
-!tv
 
-!bedroom
-!bedroom_tv
+!master
 
 !bed3
 
 !theater
 
 !rack
+
+## Card Folders
+
+!tv
+!lighting
+
 
 
 
