@@ -66,7 +66,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.living_fan_speed", "low") %}
+            {% if is_state("sensor.living_fan_percentage", "25") %}
               script.fan_living_off
             {% else %}
               script.fan_living_low
@@ -76,7 +76,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.living_fan_speed", "medium") %}
+            {% if is_state("sensor.living_fan_percentage", "50") %}
               script.fan_living_off
             {% else %}
               script.fan_living_medium
@@ -86,7 +86,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.living_fan_speed", "medium_high") %}
+            {% if is_state("sensor.living_fan_percentage", "75") %}
               script.fan_living_off
             {% else %}
               script.fan_living_medium_high
@@ -96,7 +96,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.living_fan_speed", "high") %}
+            {% if is_state("sensor.living_fan_percentage", "100") %}
               script.fan_living_off
             {% else %}
               script.fan_living_high
