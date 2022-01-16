@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 color_type: label-card
-name: Bedroom
+name: Master
 color: 'rgb(30,30,30)'
 styles:
   card:
