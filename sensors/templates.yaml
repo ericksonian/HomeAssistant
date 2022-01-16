@@ -1,29 +1,5 @@
 
 ### Templates
 
-- platform: template
-  sensors:
-
-
-
-    
-
-    theater_fan_percentage:
-      friendly_name: Theater Fan Percentage
-      value_template: "{{ state_attr('fan.theater_ceiling_fan', 'percentage') }}"
-    theater_fan_speed:
-      friendly_name: Theater Fan Speed
-      value_template: >-
-        {% if is_state('sensor.theater_fan_percentage', '0') %}
-          off
-        {% elif is_state('sensor.theater_fan_percentage', '25') %}
-          low
-        {% elif is_state('sensor.theater_fan_percentage', '50') %}
-          medium
-        {% elif is_state('sensor.theater_fan_percentage', '75') %}
-          medium_high
-        {% elif is_state('sensor.theater_fan_percentage', '100') %}
-          high
-        {% else %}
-          unknown
-        {% endif %}
+#- platform: template
+#  sensors:
