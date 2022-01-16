@@ -1,0 +1,103 @@
+
+###### TEMPLATES ------------------------------------------
+
+sensor:
+  - platform: template
+    sensors:
+      living_fan_percentage:
+        friendly_name: Living Room Fan Percentage
+        value_template: "{{ state_attr('fan.living_room_ceiling_fan', 'percentage') }}"
+      living_fan_speed:
+        friendly_name: Living Fan Speed
+        value_template: >-
+          {% if is_state('sensor.living_fan_percentage', '0') %}
+            off
+          {% elif is_state('sensor.living_fan_percentage', '25') %}
+            low
+          {% elif is_state('sensor.living_fan_percentage', '50') %}
+            medium
+          {% elif is_state('sensor.living_fan_percentage', '75') %}
+            medium_high
+          {% elif is_state('sensor.living_fan_percentage', '100') %}
+            high
+          {% else %}
+            unknown
+          {% endif %}
+
+###### SCRIPTS ------------------------------------------
+script:
+
+  fan_living_off:
+    sequence:
+    - service: fan.turn_off
+      target:
+        entity_id: fan.living_room_ceiling_fan
+  fan_living_low:
+    sequence:
+    - service: fan.set_percentage
+      target:
+        entity_id: fan.living_room_ceiling_fan
+      data:
+        percentage: 25
+  fan_living_medium:
+    sequence:
+    - service: fan.set_percentage
+      target:
+        entity_id: fan.living_room_ceiling_fan
+      data:
+        percentage: 50
+  fan_living_medium_high:
+    sequence:
+    - service: fan.set_percentage
+      target:
+        entity_id: fan.living_room_ceiling_fan
+      data:
+        percentage: 75
+  fan_living_high:
+    sequence:
+    - service: fan.set_percentage
+      target:
+        entity_id: fan.living_room_ceiling_fan
+      data:
+        percentage: 100
+
+  fan_toggle_living_low:
+    sequence:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("sensor.living_fan_speed", "low") %}
+            script.fan_living_off
+          {% else %}
+            script.fan_living_low
+          {% endif %}
+  fan_toggle_living_medium:
+    sequence:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("sensor.living_fan_speed", "medium") %}
+            script.fan_living_off
+          {% else %}
+            script.fan_living_medium
+          {% endif %}
+  fan_toggle_living_medium_high:
+    sequence:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("sensor.living_fan_speed", "medium_high") %}
+            script.fan_living_off
+          {% else %}
+            script.fan_living_medium_high
+          {% endif %}
+  fan_toggle_living_high:
+    sequence:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("sensor.living_fan_speed", "high") %}
+            script.fan_living_off
+          {% else %}
+            script.fan_living_high
+          {% endif %}
