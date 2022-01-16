@@ -4,21 +4,21 @@
 sensor:
   - platform: template
     sensors:
-      master_fan_percentage:
-        friendly_name: Master Fan Percentage
-        value_template: "{{ state_attr('fan.master_ceiling_fan', 'percentage') }}"
-      master_fan_speed:
-        friendly_name: Master Fan Speed
+      master_bedroom_fan_percentage:
+        friendly_name: Master Bedroom Fan Percentage
+        value_template: "{{ state_attr('fan.master_bedroom_ceiling_fan', 'percentage') }}"
+      master_bedroom_fan_speed:
+        friendly_name: Master Bedroom Fan Speed
         value_template: >-
-          {% if is_state('sensor.master_fan_percentage', '0') %}
+          {% if is_state('sensor.master_bedroom_fan_percentage', '0') %}
             off
-          {% elif is_state('sensor.master_fan_percentage', '25') %}
+          {% elif is_state('sensor.master_bedroom_fan_percentage', '25') %}
             low
-          {% elif is_state('sensor.master_fan_percentage', '50') %}
+          {% elif is_state('sensor.master_bedroom_fan_percentage', '50') %}
             medium
-          {% elif is_state('sensor.master_fan_percentage', '75') %}
+          {% elif is_state('sensor.master_bedroom_fan_percentage', '75') %}
             medium_high
-          {% elif is_state('sensor.master_fan_percentage', '100') %}
+          {% elif is_state('sensor.master_bedroom_fan_percentage', '100') %}
             high
           {% else %}
             unknown
@@ -31,33 +31,33 @@ script:
     sequence:
       - service: fan.turn_off
         target:
-          entity_id: fan.master_ceiling_fan
+          entity_id: fan.master_bedroom_ceiling_fan
   fan_master_low:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.master_ceiling_fan
+          entity_id: fan.master_bedroom_ceiling_fan
         data:
           percentage: 25
   fan_master_medium:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.master_ceiling_fan
+          entity_id: fan.master_bedroom_ceiling_fan
         data:
           percentage: 50
   fan_master_medium_high:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.master_ceiling_fan
+          entity_id: fan.master_bedroom_ceiling_fan
         data:
           percentage: 75
   fan_master_high:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.master_ceiling_fan
+          entity_id: fan.master_bedroom_ceiling_fan
         data:
           percentage: 100
 
@@ -66,7 +66,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.master_fan_speed", "low") %}
+            {% if is_state("sensor.master_bedroom_fan_speed", "low") %}
               script.fan_master_off
             {% else %}
               script.fan_master_low
@@ -76,7 +76,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.master_fan_speed", "medium") %}
+            {% if is_state("sensor.master_bedroom_fan_speed", "medium") %}
               script.fan_master_off
             {% else %}
               script.fan_master_medium
@@ -86,7 +86,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.master_fan_speed", "medium_high") %}
+            {% if is_state("sensor.master_bedroom_fan_speed", "medium_high") %}
               script.fan_master_off
             {% else %}
               script.fan_master_medium_high
@@ -96,7 +96,7 @@ script:
       - service: script.turn_on
         data_template:
           entity_id: >
-            {% if is_state("sensor.master_fan_speed", "high") %}
+            {% if is_state("sensor.master_bedroom_fan_speed", "high") %}
               script.fan_master_off
             {% else %}
               script.fan_master_high

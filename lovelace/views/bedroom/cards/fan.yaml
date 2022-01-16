@@ -10,7 +10,7 @@ custom_fields:
           cards:
             - type: 'custom:button-card'
               template: standard
-              entity: sensor.master_bedroom_fan_speed
+              entity: sensor.master_fan_speed
               icon: 'mdi:speedometer-slow'
               name: Low
               styles:
@@ -30,7 +30,7 @@ custom_fields:
                 action: none
             - type: 'custom:button-card'
               template: standard
-              entity: sensor.master_bedroom_fan_speed
+              entity: sensor.master_fan_speed
               icon: 'mdi:speedometer-medium'
               name: Medium
               styles:
@@ -52,7 +52,7 @@ custom_fields:
           cards:
             - type: 'custom:button-card'
               template: standard
-              entity: sensor.master_bedroom_fan_speed
+              entity: sensor.master_fan_speed
               icon: 'mdi:speedometer-medium'
               name: 'Med-High'
               styles:
@@ -72,7 +72,7 @@ custom_fields:
                 action: none
             - type: 'custom:button-card'
               template: standard
-              entity: sensor.master_bedroom_fan_speed
+              entity: sensor.master_fan_speed
               icon: 'mdi:speedometer'
               name: High
               styles:

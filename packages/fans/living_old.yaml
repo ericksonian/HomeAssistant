@@ -5,8 +5,8 @@ sensor:
   - platform: template
     sensors:
       living_fan_percentage:
-        friendly_name: Living Fan Percentage
-        value_template: "{{ state_attr('fan.living_ceiling_fan', 'percentage') }}"
+        friendly_name: Living Room Fan Percentage
+        value_template: "{{ state_attr('fan.living_room_ceiling_fan', 'percentage') }}"
       living_fan_speed:
         friendly_name: Living Fan Speed
         value_template: >-
@@ -31,33 +31,33 @@ script:
     sequence:
       - service: fan.turn_off
         target:
-          entity_id: fan.living_ceiling_fan
+          entity_id: fan.living_room_ceiling_fan
   fan_living_low:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.living_ceiling_fan
+          entity_id: fan.living_room_ceiling_fan
         data:
           percentage: 25
   fan_living_medium:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.living_ceiling_fan
+          entity_id: fan.living_room_ceiling_fan
         data:
           percentage: 50
   fan_living_medium_high:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.living_ceiling_fan
+          entity_id: fan.living_room_ceiling_fan
         data:
           percentage: 75
   fan_living_high:
     sequence:
       - service: fan.set_percentage
         target:
-          entity_id: fan.living_ceiling_fan
+          entity_id: fan.living_room_ceiling_fan
         data:
           percentage: 100
 
