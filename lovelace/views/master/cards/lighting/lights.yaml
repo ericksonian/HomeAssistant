@@ -53,6 +53,7 @@ custom_fields:
                     entity: input_boolean.master_ledstrip_power
                     template: standard
                     name: LED Strip
+                    show_name: false
                     icon: 'mdi:led-strip-variant'
                     styles:
                       card:
@@ -76,6 +77,7 @@ custom_fields:
                     entity: input_select.master_ledstrip_mode
                     template: standard
                     name: LED Strip
+                    show_name: false
                     icon: 'mdi:led-strip-variant'
                     styles:
                       card:
