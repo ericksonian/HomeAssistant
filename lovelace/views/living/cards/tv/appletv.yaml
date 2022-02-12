@@ -33,7 +33,7 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
+                  entity_id: remote.appletv_living
                   command: up
             - type: 'custom:button-card'
               template: standard
@@ -47,8 +47,8 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
-                  command: top_menu
+                  entity_id: remote.appletv_living
+                  command: home
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
@@ -63,7 +63,7 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
+                  entity_id: remote.appletv_living
                   command: left
             - type: 'custom:button-card'
               template: standard
@@ -77,7 +77,7 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
+                  entity_id: remote.appletv_living
                   command: select
             - type: 'custom:button-card'
               template: standard
@@ -91,7 +91,7 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
+                  entity_id: remote.appletv_living
                   command: right
         - type: horizontal-stack
           cards:
@@ -118,7 +118,7 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
+                  entity_id: remote.appletv_living
                   command: down
             - type: 'custom:button-card'
               template: standard
@@ -132,5 +132,5 @@ custom_fields:
                 action: call-service
                 service: remote.send_command
                 service_data:
-                  entity_id: remote.appletv_living_room
+                  entity_id: remote.appletv_living
                   command: menu
