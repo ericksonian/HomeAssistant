@@ -1,0 +1,86 @@
+type: 'custom:button-card'
+template: intercontainer
+name: "Living Apple TV"
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:mini-media-player
+              entity: media_player.appletv_living
+              artwork: full-cover
+              tap_action: more-info
+              hide:
+                name: true
+                icon: true
+                info: true
+                power: true
+                source: true
+                controls: true
+                volume: true
+                mute: true
+                progress: true
+            - type: vertical-stack
+              cards:
+                - type: 'custom:button-card'
+                  template: standard
+                  entity: sensor.now_playing_title_sonos_play5_1
+                  show_name: true
+                  name: Song
+                  show_state: true
+                  show_icon: false
+                  styles:
+                    card:
+                      - height: 55px
+                        '--mdc-ripple-color': 'rgb(255,255,255)'
+                    name:
+                      - font-size: 7px
+                        color: 'rgb(155,155,155)'
+                        align-self: start
+                    state:
+                      - font-size: 13px
+                        align-self: start
+                  tap_action: none
+                  hold_action: none
+                - type: 'custom:button-card'
+                  template: standard
+                  entity: sensor.now_playing_artist_sonos_play5_1
+                  show_name: true
+                  name: Artist
+                  show_state: true
+                  show_icon: false
+                  styles:
+                    card:
+                      - height: 55px
+                        '--mdc-ripple-color': 'rgb(255,255,255)'
+                    name:
+                      - font-size: 7px
+                        color: 'rgb(155,155,155)'
+                        align-self: start
+                    state:
+                      - font-size: 13px
+                        align-self: start
+                  tap_action: none
+                  hold_action: none
+                - type: 'custom:button-card'
+                  template: standard
+                  entity: sensor.now_playing_album_sonos_play5_1
+                  show_name: true
+                  name: Album
+                  show_state: true
+                  show_icon: false
+                  styles:
+                    card:
+                      - height: 55px
+                        '--mdc-ripple-color': 'rgb(255,255,255)'
+                    name:
+                      - font-size: 7px
+                        color: 'rgb(155,155,155)'
+                        align-self: start
+                    state:
+                      - font-size: 13px
+                        align-self: start
+                  tap_action: none
+                  hold_action: none
