@@ -1,10 +1,8 @@
 
-- alias: Tag Test 1 is scanned
-  description: ''
-  mode: single
+- alias: Tag A Scanned
   trigger:
     - platform: tag
       tag_id: 9920df3d-8228-492d-bb61-5255f4e02858
   condition: []
   action:
-    - scene: scene.master_all_off
+    - scene: scene.theater_all_off
