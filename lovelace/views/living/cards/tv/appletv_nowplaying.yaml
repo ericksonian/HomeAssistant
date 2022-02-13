@@ -9,7 +9,7 @@ custom_fields:
         - type: horizontal-stack
           cards:
             - type: custom:mini-media-player
-              entity: media_player.appletv_livingroom
+              entity: media_player.appletv_living
               artwork: full-cover
               tap_action: more-info
               hide:
