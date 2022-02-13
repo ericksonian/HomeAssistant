@@ -28,9 +28,9 @@ cards:
         card:
           type: vertical-stack
           cards:
-            - !include /config/lovelace/cards_shared/sonos/play5_1.yaml
-            - !include /config/lovelace/cards_shared/sonos/play5_2.yaml
-            - !include /config/lovelace/cards_shared/sonos/play5_3.yaml
+#            - !include /config/lovelace/cards_shared/sonos/play5_1.yaml
+#            - !include /config/lovelace/cards_shared/sonos/play5_2.yaml
+#            - !include /config/lovelace/cards_shared/sonos/play5_3.yaml
             - !include /config/lovelace/cards_shared/sonos/connect.yaml
 
 ## Exterior

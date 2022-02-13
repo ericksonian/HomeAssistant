@@ -75,7 +75,7 @@ automation:
   - platform: state
     entity_id: media_player.appletv_living
     to: "standby"
-    for: "00:05:00"
+    for: "00:00:10"
   condition:
   - condition: state
     entity_id: input_select.living_tv_source
