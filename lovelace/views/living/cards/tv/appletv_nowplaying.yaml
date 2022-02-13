@@ -21,12 +21,12 @@ custom_fields:
                 controls: true
                 volume: true
                 mute: true
-                progress: true
+                progress: false
             - type: vertical-stack
               cards:
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.now_playing_title_sonos_play5_1
+                  entity: sensor.appletv_living_current_title
                   show_name: true
                   name: Song
                   show_state: true
@@ -46,7 +46,7 @@ custom_fields:
                   hold_action: none
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.now_playing_artist_sonos_play5_1
+                  entity: sensor.appletv_living_current_artist
                   show_name: true
                   name: Artist
                   show_state: true
@@ -66,7 +66,7 @@ custom_fields:
                   hold_action: none
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.now_playing_album_sonos_play5_1
+                  entity: sensor.appletv_living_current_album
                   show_name: true
                   name: Album
                   show_state: true

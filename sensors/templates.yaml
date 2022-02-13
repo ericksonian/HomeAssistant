@@ -3,3 +3,23 @@
 
 - platform: template
   sensors:
+
+    appletv_living_current_media:
+      friendly_name: AppleTV Living Current Media
+      value_template: "{{ state_attr('media_player.appletv_living', 'media_content_type') }}"
+
+    appletv_living_current_app:
+      friendly_name: AppleTV Living Current App
+      value_template: "{{ state_attr('media_player.appletv_living', 'app_name') }}"
+
+    appletv_living_current_title:
+      friendly_name: AppleTV Living Current Title
+      value_template: "{{ state_attr('media_player.appletv_living', 'media_title') }}"
+
+    appletv_living_current_artist:
+      friendly_name: AppleTV Living Current Artist
+      value_template: "{{ state_attr('media_player.appletv_living', 'media_artist') }}"
+
+    appletv_living_current_album:
+      friendly_name: AppleTV Living Current Album
+      value_template: "{{ state_attr('media_player.appletv_living', 'media_album_name') }}"
