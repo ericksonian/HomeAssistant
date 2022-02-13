@@ -3,25 +3,25 @@
 sensor:
   - platform: template
     sensors:
-      appletv_living_current_media:
+      appletv_livingroom_current_media:
         friendly_name: AppleTV Living Current Media
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_content_type') }}"
+        value_template: "{{ state_attr('media_player.appletv_livingroom', 'media_content_type') }}"
 
-      appletv_living_current_app:
+      appletv_livingroom_current_app:
         friendly_name: AppleTV Living Current App
-        value_template: "{{ state_attr('media_player.appletv_living', 'app_name') }}"
+        value_template: "{{ state_attr('media_player.appletv_livingroom', 'app_name') }}"
 
-      appletv_living_current_title:
+      appletv_livingroom_current_title:
         friendly_name: AppleTV Living Current Title
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_title') }}"
+        value_template: "{{ state_attr('media_player.appletv_livingroom', 'media_title') }}"
 
-      appletv_living_current_artist:
+      appletv_livingroom_current_artist:
         friendly_name: AppleTV Living Current Artist
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_artist') }}"
+        value_template: "{{ state_attr('media_player.appletv_livingroom', 'media_artist') }}"
 
-      appletv_living_current_album:
+      appletv_livingroom_current_album:
         friendly_name: AppleTV Living Current Album
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_album_name') }}"
+        value_template: "{{ state_attr('media_player.appletv_livingroom', 'media_album_name') }}"
 
 
 ###### AUTOMATIONS --------------------------------------
@@ -161,7 +161,7 @@ script:
           milliseconds: 200
       - service: remote.send_command
         data:
-          entity_id: media_player.appletv_living_room
+          entity_id: media_player.appletv_livingroom_room
           command: wakeup
       - delay:
           milliseconds: 500
