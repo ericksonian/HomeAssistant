@@ -1,6 +1,6 @@
 type: 'custom:button-card'
-template: intercontainer
-name: "Living Apple TV"
+template: container
+name: "Now Playing"
 custom_fields:
   buttons:
     card:
