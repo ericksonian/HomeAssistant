@@ -5,4 +5,12 @@
       tag_id: 9920df3d-8228-492d-bb61-5255f4e02858
   condition: []
   action:
-    - scene: scene.theater_all_off
+    - scene: scene.master_all_off
+
+- alias: Tag B Scanned
+  trigger:
+    - platform: tag
+      tag_id: 7944fd4e-3803-4202-b299-85c651892dc4
+  condition: []
+  action:
+    - scene: scene.master_relax
