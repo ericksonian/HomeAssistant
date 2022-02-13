@@ -6,6 +6,21 @@ custom_fields:
     card:
       type: vertical-stack
       cards:
+
+        - type: conditional
+          conditions:
+            - entity: sensor.appletv_living_current_media
+              state: 'music'
+          card:
+            !include /config/lovelace/views/living/cards/tv/appletv_current_music.yaml
+
+        - type: conditional
+          conditions:
+            - entity: sensor.appletv_living_current_media
+              state: 'video'
+          card:
+            !include /config/lovelace/views/living/cards/tv/appletv_current_video.yaml
+
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
