@@ -1,56 +1,48 @@
-type: 'custom:button-card'
-template: container
-name: "Now Playing"
-custom_fields:
-  buttons:
-    card:
-      type: vertical-stack
-      cards:
-        - type: horizontal-stack
-          cards:
-            - type: custom:mini-media-player
-              entity: media_player.appletv_living
-              artwork: full-cover
-              tap_action: more-info
-              hide:
-                name: true
-                icon: true
-                info: true
-                power: true
-                source: true
-                controls: true
-                volume: true
-                mute: true
-                progress: false
-            - type: vertical-stack
-              cards:
-                - type: 'custom:button-card'
-                  template: standard
-                  entity: sensor.appletv_living_current_title
-                  show_name: false
-                  show_state: true
-                  show_icon: false
-                  styles:
-                    card:
-                      - height: 45px
-                        '--mdc-ripple-color': 'rgb(255,255,255)'
-                    state:
-                      - font-size: 14px
-                        align-self: start
-                  tap_action: none
-                  hold_action: none
-                - type: 'custom:button-card'
-                  template: standard
-                  entity: sensor.appletv_living_current_artist
-                  show_name: false
-                  show_state: true
-                  show_icon: false
-                  styles:
-                    card:
-                      - height: 45px
-                        '--mdc-ripple-color': 'rgb(255,255,255)'
-                    state:
-                      - font-size: 14px
-                        align-self: start
-                  tap_action: none
-                  hold_action: none
+type: horizontal-stack
+cards:
+  - type: custom:mini-media-player
+    entity: media_player.appletv_living
+    artwork: full-cover
+    tap_action: more-info
+    hide:
+      name: true
+      icon: true
+      info: true
+      power: true
+      source: true
+      controls: true
+      volume: true
+      mute: true
+      progress: false
+  - type: vertical-stack
+    cards:
+      - type: 'custom:button-card'
+        template: standard
+        entity: sensor.appletv_living_current_title
+        show_name: false
+        show_state: true
+        show_icon: false
+        styles:
+          card:
+            - height: 45px
+              '--mdc-ripple-color': 'rgb(255,255,255)'
+          state:
+            - font-size: 14px
+              align-self: start
+        tap_action: none
+        hold_action: none
+      - type: 'custom:button-card'
+        template: standard
+        entity: sensor.appletv_living_current_artist
+        show_name: false
+        show_state: true
+        show_icon: false
+        styles:
+          card:
+            - height: 45px
+              '--mdc-ripple-color': 'rgb(255,255,255)'
+          state:
+            - font-size: 14px
+              align-self: start
+        tap_action: none
+        hold_action: none
