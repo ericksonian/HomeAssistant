@@ -17,3 +17,19 @@ sensor:
 
       appletv_kitchen_current_album:
         value_template: "{{ state_attr('media_player.appletv_kitchen', 'media_album_name') }}"
+
+
+      appletv_living_current_media:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_content_type') }}"
+
+      appletv_living_current_app:
+        value_template: "{{ state_attr('media_player.appletv_living', 'app_name') }}"
+
+      appletv_living_current_title:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_title') }}"
+
+      appletv_living_current_artist:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_artist') }}"
+
+      appletv_living_current_album:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_album_name') }}"

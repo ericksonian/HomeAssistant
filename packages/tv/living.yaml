@@ -1,23 +1,9 @@
 
-
 ###### SENSOR TEMPLATES ------------------------------------------
-sensor:
-  - platform: template
-    sensors:
-      appletv_living_current_media:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_content_type') }}"
+#sensor:
+#  - platform: template
+#    sensors:
 
-      appletv_living_current_app:
-        value_template: "{{ state_attr('media_player.appletv_living', 'app_name') }}"
-
-      appletv_living_current_title:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_title') }}"
-
-      appletv_living_current_artist:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_artist') }}"
-
-      appletv_living_current_album:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_album_name') }}"
 
 
 ###### AUTOMATIONS --------------------------------------
