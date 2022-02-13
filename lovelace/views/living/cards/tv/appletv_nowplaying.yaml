@@ -26,7 +26,7 @@ custom_fields:
               cards:
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.appletv_livingroom_current_title
+                  entity: sensor.appletv_living_current_title
                   show_name: true
                   name: Song
                   show_state: true
@@ -46,7 +46,7 @@ custom_fields:
                   hold_action: none
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.appletv_livingroom_current_artist
+                  entity: sensor.appletv_living_current_artist
                   show_name: true
                   name: Artist
                   show_state: true
@@ -66,7 +66,7 @@ custom_fields:
                   hold_action: none
                 - type: 'custom:button-card'
                   template: standard
-                  entity: sensor.appletv_livingroom_current_album
+                  entity: sensor.appletv_living_current_album
                   show_name: true
                   name: Album
                   show_state: true

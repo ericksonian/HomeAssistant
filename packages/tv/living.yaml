@@ -1,10 +1,32 @@
 
 ###### SENSOR TEMPLATES ------------------------------------------
-#sensor:
-#  - platform: template
-#    sensors:
 
+sensor:
+  - platform: template
+    sensors:
+      living_room_tv_cast_unavailable:
+        friendly_name: "Living Room TV Cast Unavailable"
+        value_template: >-
+          {% if is_state('media_player.living_room_tv', 'unavailable') %}
+            true
+          {% else %}
+            false
+          {% endif %}
 
+      appletv_living_current_media:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_content_type') }}"
+
+      appletv_living_current_app:
+        value_template: "{{ state_attr('media_player.appletv_living', 'app_name') }}"
+
+      appletv_living_current_title:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_title') }}"
+
+      appletv_living_current_artist:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_artist') }}"
+
+      appletv_living_current_album:
+        value_template: "{{ state_attr('media_player.appletv_living', 'media_album_name') }}"
 
 ###### AUTOMATIONS --------------------------------------
 automation:
@@ -263,17 +285,3 @@ script:
       - service: input_boolean.toggle
         data:
           entity_id: input_boolean.living_tv_mute
-
-###### SENSOR TEMPLATES ------------------------------------------
-
-sensor:
-  - platform: template
-    sensors:
-      living_room_tv_cast_unavailable:
-        friendly_name: "Living Room TV Cast Unavailable"
-        value_template: >-
-          {% if is_state('media_player.living_room_tv', 'unavailable') %}
-            true
-          {% else %}
-            false
-          {% endif %}
