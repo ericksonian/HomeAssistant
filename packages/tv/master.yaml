@@ -58,6 +58,22 @@ automation:
     data:
       entity_id: input_boolean.master_tv_sleep_show
 
+# AppleTV
+- alias: Master AirPlay Started
+  trigger:
+  - platform: state
+    entity_id: media_player.appletv_masterbed
+    from: "standby"
+  action:
+  - service: script.master_tv_power
+
+- alias: Master AirPlay Ended
+  trigger:
+  - platform: state
+    entity_id: media_player.appletv_masterbed
+    to: "standby"
+  action:
+  - service: script.master_tv_power
 
 ###### SCRIPTS ------------------------------------------
 script:

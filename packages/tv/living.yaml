@@ -61,8 +61,8 @@ automation:
 - alias: Living AirPlay Started
   trigger:
   - platform: state
-    entity_id: media_player.living_room_appletv
-    from: "idle"
+    entity_id: media_player.appletv_living
+    from: "standby"
   condition:
   - condition: state
     entity_id: input_select.living_tv_source
@@ -73,9 +73,9 @@ automation:
 - alias: Living AirPlay Ended
   trigger:
   - platform: state
-    entity_id: media_player.living_room_appletv
-    to: "idle"
-    for: "00:60:00"
+    entity_id: media_player.appletv_living
+    to: "standby"
+    for: "00:05:00"
   condition:
   - condition: state
     entity_id: input_select.living_tv_source
