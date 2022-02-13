@@ -32,14 +32,10 @@ custom_fields:
                   show_icon: false
                   styles:
                     card:
-                      - height: 55px
+                      - height: 45px
                         '--mdc-ripple-color': 'rgb(255,255,255)'
-                    name:
-                      - font-size: 7px
-                        color: 'rgb(155,155,155)'
-                        align-self: start
                     state:
-                      - font-size: 13px
+                      - font-size: 14px
                         align-self: start
                   tap_action: none
                   hold_action: none
@@ -51,14 +47,10 @@ custom_fields:
                   show_icon: false
                   styles:
                     card:
-                      - height: 55px
+                      - height: 45px
                         '--mdc-ripple-color': 'rgb(255,255,255)'
-                    name:
-                      - font-size: 7px
-                        color: 'rgb(155,155,155)'
-                        align-self: start
                     state:
-                      - font-size: 13px
+                      - font-size: 14px
                         align-self: start
                   tap_action: none
                   hold_action: none

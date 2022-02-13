@@ -64,6 +64,7 @@ custom_fields:
                 service_data:
                   entity_id: remote.appletv_living
                   command: home
+
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
@@ -108,6 +109,7 @@ custom_fields:
                 service_data:
                   entity_id: remote.appletv_living
                   command: right
+
         - type: horizontal-stack
           cards:
             - type: 'custom:button-card'
@@ -120,7 +122,9 @@ custom_fields:
                   - height: 65px
               tap_action:
                 action: call-service
-                service: script.appletv_play_pause
+                service: media_player.media_play_pause
+                service_data:
+                  target: media_player.appletv_living
             - type: 'custom:button-card'
               template: standard
               entity: script.appletv_down
