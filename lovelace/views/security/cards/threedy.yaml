@@ -18,3 +18,126 @@ camera_entity: camera.front_door
 light_entity:
   - light.lifx5
   - light.lifx6
+
+type: 'custom:button-card'
+template: container
+name: Threedy Boi
+custom_fields:
+  buttons:
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: picture-entity
+              aspect_ratio: 60%
+              camera_view: auto
+              entity: camera.frontdoor
+              hold_action:
+                action: none
+              show_name: false
+              show_state: false
+              tap_action:
+                action: more-info
+
+            - type: vertical-stack
+              cards:
+                - type: 'custom:button-card'
+                  entity: sensor.octoprint_current_state
+                  tap_action:
+                    action: none
+                  hold_action:
+                    action: none
+                  show_icon: false
+                  show_name: false
+                  show_state: true
+                  state:
+                    - value: Operational
+                      styles:
+                        state:
+                          - color: 'rgb(225,255,0)'
+                    - value: Printing
+                      styles:
+                        state:
+                          - color: 'rgb(0,255,0)'
+                    - value: Unknown
+                      styles:
+                        state:
+                          - color: 'rgb(255,0,0)'
+                  styles:
+                    card:
+                      - height: 30px
+
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      entity: sensor.octoprint_actual_bed_temp
+                      name: Bed
+                      show_icon: false
+                      styles:
+                        card:
+                          - height: 72px
+                          - width: 86px
+                      tap_action:
+                        action: none
+                      hold_action:
+                        action: none
+                    - type: 'custom:button-card'
+                      entity: sensor.octoprint_actual_tool0_temp
+                      name: Nozzle
+                      show_icon: false
+                      styles:
+                        card:
+                          - height: 72px
+                          - width: 86px
+                      tap_action:
+                        action: none
+                      hold_action:
+                        action: none
+
+        - type: horizontal-stack
+          cards:
+            - type: 'custom:button-card'
+              template: light_colors
+              entity: light.lifx5
+              icon: 'mdi:palette'
+              show_name: false
+              styles:
+                card:
+                  - height: 72px
+                    width: 86px
+                    border-radius: 0.7em 0.7em 0.7em 0.7em
+            - type: 'custom:button-card'
+              template: light_colors
+              entity: light.lifx6
+              icon: 'mdi:palette'
+              show_name: false
+              styles:
+                card:
+                  - height: 72px
+                    width: 86px
+                    border-radius: 0.7em 0.7em 0.7em 0.7em
+            - type: 'custom:button-card'
+              entity: sensor.octoprint_target_bed_temp
+              name: Target
+              show_icon: false
+              styles:
+                card:
+                  - height: 72px
+                  - width: 86px
+              tap_action:
+                action: none
+              hold_action:
+                action: none
+            - type: 'custom:button-card'
+              entity: sensor.octoprint_target_tool0_temp
+              name: Target
+              show_icon: false
+              styles:
+                card:
+                  - height: 72px
+                  - width: 86px
+              tap_action:
+                action: none
+              hold_action:
+                action: none
