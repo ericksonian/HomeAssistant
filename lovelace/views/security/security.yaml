@@ -8,5 +8,6 @@ cards:
   - !include /config/lovelace/views/security/cards/persons.yaml
   - !include /config/lovelace/views/security/cards/garage.yaml
   - !include /config/lovelace/views/security/cards/front_door.yaml
-  - !include /config/lovelace/views/security/cards/front_gate.yaml
+#  - !include /config/lovelace/views/security/cards/front_gate.yaml
+  - !include /config/lovelace/views/security/cards/threedy.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

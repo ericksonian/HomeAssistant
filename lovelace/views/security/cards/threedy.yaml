@@ -1,0 +1,20 @@
+type: 'custom:threedy-card'
+base_entity: 'sensor.octoprint'
+name: 'Maker Select'
+printer_type: I3
+monitored:
+  - Status
+  - ETA
+  - Elapsed
+  - Remaining
+  - Hotend
+  - Bed
+# optionals
+theme: 'Default'
+font: 'Roboto'
+scale: 1.0
+temperature_unit: 'C'
+camera_entity: camera.front_door
+light_entity:
+  - light.lifx5
+  - light.lifx6
