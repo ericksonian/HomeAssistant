@@ -47,7 +47,7 @@ lovelace:
     - url: /local/custom-card/slider-entity-row.js
       type: module
     - url: /local/custom-card/threedy-card.js
-      type: JavaScript Module
+      type: module
 
 # Wyze Sense
 binary_sensor:
