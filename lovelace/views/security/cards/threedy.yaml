@@ -74,6 +74,7 @@ custom_fields:
                       entity: sensor.octoprint_actual_bed_temp
                       name: Bed
                       show_icon: false
+                      show_state: true
                       styles:
                         card:
                           - height: 72px
@@ -86,6 +87,7 @@ custom_fields:
                       entity: sensor.octoprint_actual_tool0_temp
                       name: Nozzle
                       show_icon: false
+                      show_state: true
                       styles:
                         card:
                           - height: 72px
@@ -121,6 +123,7 @@ custom_fields:
               entity: sensor.octoprint_target_bed_temp
               name: Target
               show_icon: false
+              show_state: true
               styles:
                 card:
                   - height: 72px
@@ -133,6 +136,7 @@ custom_fields:
               entity: sensor.octoprint_target_tool0_temp
               name: Target
               show_icon: false
+              show_state: true
               styles:
                 card:
                   - height: 72px
