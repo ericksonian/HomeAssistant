@@ -35,7 +35,7 @@ custom_fields:
                       styles:
                         card:
                           - height: 40px
-                            width: 84px
+                            width: 86px
                       state:
                         - value: Disconnected
                           styles:
@@ -70,7 +70,7 @@ custom_fields:
                         styles:
                           card:
                             - height: 40px
-                              width: 84px
+                              width: 86px
 
                 - type: horizontal-stack
                   cards:
@@ -83,7 +83,7 @@ custom_fields:
                       styles:
                         card:
                           - height: 62px
-                            width: 84px
+                            width: 86px
                       tap_action:
                         action: none
                       hold_action:
@@ -97,7 +97,7 @@ custom_fields:
                       styles:
                         card:
                           - height: 62px
-                            width: 84px
+                            width: 86px
                       tap_action:
                         action: none
                       hold_action:
