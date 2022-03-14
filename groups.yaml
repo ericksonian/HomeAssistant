@@ -42,6 +42,12 @@ lights_living:
     - light.living_room_foyer
     - switch.plug_in_switch_switch
 
+lights_living_closet:
+  name: Lights Living Closet
+  entities:
+    - light.lifx5
+    - light.lifx6
+
 lights_master:
   name: Lights Master
   entities:
@@ -49,12 +55,6 @@ lights_master:
     - light.master_bedroom_ceiling_fan_light
     - light.master_bedroom_her_side
     - light.master_bedroom_his_side
-
-lights_master_bedside:
-  name: Lights Master Bedside
-  entities:
-    - light.lifx5
-    - light.lifx6
 
 lights_bed3:
   name: Lights Bed3
@@ -69,4 +69,3 @@ lights_theater:
   entities:
     - light.theater_ceiling
     - light.lifx4
-    

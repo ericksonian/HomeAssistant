@@ -1,0 +1,17 @@
+
+###### SENSOR TEMPLATES ------------------------------------------
+
+sensor:
+  - platform: template
+    sensors:
+      octoprint_current_state_rename:
+        value_template: >-
+          {% if is_state('sensor.octoprint_current_state', 'Unavailable') %}
+            Disconnected
+          {% elif is_state('sensor.octoprint_current_state', 'Printing') %}
+            Printing
+          {% elif is_state('sensor.octoprint_current_state', 'Operational') %}
+            Idle
+          {% else %}
+            Unknown
+          {% endif %}
