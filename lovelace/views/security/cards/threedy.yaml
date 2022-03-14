@@ -34,8 +34,8 @@ custom_fields:
                       show_state: true
                       styles:
                         card:
-                          - height: 30px
-                            width: 106px
+                          - height: 40px
+                            width: 100px
                       state:
                         - value: Disconnected
                           styles:
@@ -64,19 +64,20 @@ custom_fields:
                       show_state: true
                       styles:
                         card:
-                          - height: 30px
-                            width: 66px
+                          - height: 40px
+                            width: 76px
 
                 - type: horizontal-stack
                   cards:
                     - type: 'custom:button-card'
                       entity: sensor.octoprint_actual_bed_temp
-                      name: Bed
-                      show_icon: false
+                      icon: 'mdi:printer-3d'
+                      show_icon: true
+                      show_name: false
                       show_state: true
                       styles:
                         card:
-                          - height: 60px
+                          - height: 62px
                           - width: 86px
                       tap_action:
                         action: none
@@ -84,12 +85,13 @@ custom_fields:
                         action: none
                     - type: 'custom:button-card'
                       entity: sensor.octoprint_actual_tool0_temp
-                      name: Nozzle
-                      show_icon: false
+                      icon: 'mdi:printer-3d-nozzle-heat'
+                      show_icon: true
+                      show_name: false
                       show_state: true
                       styles:
                         card:
-                          - height: 60px
+                          - height: 62px
                           - width: 86px
                       tap_action:
                         action: none
