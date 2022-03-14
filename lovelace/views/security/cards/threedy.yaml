@@ -69,7 +69,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 40px
-                              width: 76px
 
                 - type: horizontal-stack
                   cards:
