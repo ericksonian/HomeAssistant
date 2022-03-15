@@ -46,7 +46,7 @@ custom_fields:
                 - type: conditional
                   conditions:
                     - entity: sensor.octoprint_current_state
-                      state: 'Printing'
+                      state_not: 'unavailable'
                   card:
                     type: horizontal-stack
                     cards:
@@ -63,10 +63,6 @@ custom_fields:
                           card:
                             - height: 40px
                         state:
-                          - value: Disconnected
-                            styles:
-                              state:
-                                - color: 'rgb(255,255,255)'
                           - value: Printing
                             styles:
                               state:
