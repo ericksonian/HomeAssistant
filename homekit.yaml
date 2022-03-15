@@ -10,6 +10,7 @@
       - cover
     exclude_entities:
       - switch.projector_power
+      - switch.theater_fan
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
       - cover.mylink_theater_roman
