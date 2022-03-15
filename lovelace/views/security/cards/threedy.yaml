@@ -21,44 +21,65 @@ custom_fields:
 
             - type: vertical-stack
               cards:
-                - type: horizontal-stack
-                  cards:
-                    - type: 'custom:button-card'
-                      entity: sensor.octoprint_current_state_rename
-                      tap_action:
-                        action: none
-                      hold_action:
-                        action: none
-                      show_icon: false
-                      show_name: false
-                      show_state: true
-                      styles:
-                        card:
-                          - height: 40px
-                            width: 86px
-                      state:
-                        - value: Disconnected
-                          styles:
-                            state:
-                              - color: 'rgb(255,255,255)'
-                        - value: Printing
-                          styles:
-                            state:
-                              - color: 'rgb(0,255,0)'
-                        - value: Idle
-                          styles:
-                            state:
-                              - color: 'rgb(225,255,0)'
-                        - value: Unknown
-                          styles:
-                            state:
-                              - color: 'rgb(255,0,0)'
-                    - type: conditional
-                      conditions:
-                        - entity: sensor.octoprint_current_state
-                          state: 'Printing'
+                - type: conditional
+                  conditions:
+                    - entity: sensor.octoprint_current_state
+                      state: 'unavailable'
+                  card:
+                    type: 'custom:button-card'
+                    entity: sensor.octoprint_current_state_rename
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    show_icon: false
+                    show_name: false
+                    show_state: true
+                    styles:
                       card:
-                        type: 'custom:button-card'
+                        - height: 40px
+                    state:
+                      - value: Disconnected
+                        styles:
+                          state:
+                            - color: 'rgb(255,255,255)'
+                - type: conditional
+                  conditions:
+                    - entity: sensor.octoprint_current_state
+                      state: 'Printing'
+                  card:
+                    type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        entity: sensor.octoprint_current_state_rename
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+                        show_icon: false
+                        show_name: false
+                        show_state: true
+                        styles:
+                          card:
+                            - height: 40px
+                        state:
+                          - value: Disconnected
+                            styles:
+                              state:
+                                - color: 'rgb(255,255,255)'
+                          - value: Printing
+                            styles:
+                              state:
+                                - color: 'rgb(0,255,0)'
+                          - value: Idle
+                            styles:
+                              state:
+                                - color: 'rgb(225,255,0)'
+                          - value: Unknown
+                            styles:
+                              state:
+                                - color: 'rgb(255,0,0)'
+                      - type: 'custom:button-card'
                         entity: sensor.octoprint_job_percentage
                         tap_action:
                           action: none
@@ -70,7 +91,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 40px
-                              width: 86px
 
                 - type: horizontal-stack
                   cards:
