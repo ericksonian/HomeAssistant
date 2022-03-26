@@ -151,6 +151,8 @@ custom_fields:
                 card:
                   - height: 72px
                   - width: 86px
+              tap_action:
+                action: press_button
               hold_action:
                 action: none
             - type: 'custom:button-card'

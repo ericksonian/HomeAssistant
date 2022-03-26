@@ -9,9 +9,33 @@ sensor:
           {% if is_state('sensor.octoprint_current_state', 'unavailable') %}
             Disconnected
           {% elif is_state('sensor.octoprint_current_state', 'Printing') %}
-            Printing
+            Creating
           {% elif is_state('sensor.octoprint_current_state', 'Operational') %}
             Idle
+          {% elif is_state('sensor.octoprint_current_state', 'Starting') %}
+            Reboot
           {% else %}
             Unknown
           {% endif %}
+      octoprint_printer_power_draw:
+        value_template: "{{ state_attr('switch.printer_power', 'current_power_w') }}"
+      octoprint_printer_cooled:
+        value_template: "{{ state_attr('sensor.octoprint_actual_tool0_temp', float < 50 }}"
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+- alias: Octoprint Printer Cooled
+  trigger:
+  - platform: state
+    entity_id: sensor.octoprint_printer_cooled
+    to: "on"
+    for: "00:15:00"
+  condition:
+  - condition: state
+    entity_id: sensor.octoprint_current_state
+    state_not: "Printing"
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.printer_power
