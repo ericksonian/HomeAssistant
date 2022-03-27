@@ -124,7 +124,7 @@ custom_fields:
                   - type: vertical-stack
                     cards:
                       - type: 'custom:button-card'
-                        template: wide
+                        template: standard
                         entity: sensor.octoprint_actual_tool0_temp
                         icon: 'mdi:printer-3d-nozzle-heat'
                         name: Extruder
@@ -132,13 +132,13 @@ custom_fields:
                         styles:
                           card:
                             - height: 40px
-#                              width: 100px
+                              width: 86px
                         tap_action:
                           action: none
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        template: wide
+                        template: standard
                         entity: sensor.octoprint_actual_bed_temp
                         icon: 'mdi:printer-3d'
                         name: Print Bed
@@ -146,7 +146,7 @@ custom_fields:
                         styles:
                           card:
                             - height: 40px
-#                              width: 100px
+                              width: 86px
                         tap_action:
                           action: none
                         hold_action:
