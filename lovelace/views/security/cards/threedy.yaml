@@ -166,7 +166,7 @@ custom_fields:
                         tap_action:
                           action: call-service
                           service: button.press
-                          target:
+                          service_data:
                             entity_id: button.octoprint_stop_job
                         hold_action:
                           action: none
