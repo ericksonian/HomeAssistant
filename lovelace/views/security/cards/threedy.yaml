@@ -8,16 +8,41 @@ custom_fields:
       cards:
         - type: horizontal-stack
           cards:
-            - type: picture-entity
-              aspect_ratio: 60%
-              camera_view: auto
-              entity: camera.frontdoor
-              hold_action:
-                action: none
-              show_name: false
-              show_state: false
-              tap_action:
-                action: more-info
+            - type: vertical-stack
+              cards:
+                - type: picture-entity
+                  aspect_ratio: 60%
+                  camera_view: auto
+                  entity: camera.frontdoor
+                  hold_action:
+                    action: none
+                  show_name: false
+                  show_state: false
+                  tap_action:
+                    action: more-info
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      template: light_colors
+                      entity: light.lifx5
+                      icon: 'mdi:palette'
+                      show_name: false
+                      styles:
+                        card:
+                          - height: 72px
+                            width: 86px
+                            border-radius: 0.7em 0.7em 0.7em 0.7em
+                    - type: 'custom:button-card'
+                      template: light_colors
+                      entity: light.lifx6
+                      icon: 'mdi:palette'
+                      show_name: false
+                      styles:
+                        card:
+                          - height: 72px
+                            width: 86px
+                            border-radius: 0.7em 0.7em 0.7em 0.7em
+
 
             - type: vertical-stack
               cards:
@@ -119,49 +144,29 @@ custom_fields:
                       hold_action:
                         action: none
 
-        - type: horizontal-stack
-          cards:
-            - type: 'custom:button-card'
-              template: light_colors
-              entity: light.lifx5
-              icon: 'mdi:palette'
-              show_name: false
-              styles:
-                card:
-                  - height: 72px
-                    width: 86px
-                    border-radius: 0.7em 0.7em 0.7em 0.7em
-            - type: 'custom:button-card'
-              template: light_colors
-              entity: light.lifx6
-              icon: 'mdi:palette'
-              show_name: false
-              styles:
-                card:
-                  - height: 72px
-                    width: 86px
-                    border-radius: 0.7em 0.7em 0.7em 0.7em
-            - type: 'custom:button-card'
-              entity: button.octoprint_stop_job
-              name: Stop Print
-              icon: 'mdi:printer-3d-nozzle-alert-outline'
-              lock:
-                enabled: true
-              styles:
-                card:
-                  - height: 72px
-                  - width: 86px
-              tap_action:
-                action: press_button
-              hold_action:
-                action: none
-            - type: 'custom:button-card'
-              entity: switch.printer_power
-              name: Power
-              icon: 'mdi:power'
-              lock:
-                enabled: true
-              styles:
-                card:
-                  - height: 72px
-                  - width: 86px
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      entity: button.octoprint_stop_job
+                      name: Stop Print
+                      icon: 'mdi:printer-3d-nozzle-alert-outline'
+                      lock:
+                        enabled: true
+                      styles:
+                        card:
+                          - height: 72px
+                          - width: 86px
+                      tap_action:
+                        action: press_button
+                      hold_action:
+                        action: none
+                    - type: 'custom:button-card'
+                      entity: switch.printer_power
+                      name: Power
+                      icon: 'mdi:power'
+                      lock:
+                        enabled: true
+                      styles:
+                        card:
+                          - height: 72px
+                          - width: 86px

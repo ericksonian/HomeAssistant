@@ -29,7 +29,7 @@ automation:
   trigger:
   - platform: state
     entity_id: sensor.octoprint_printer_cooled
-    to: "on"
+    to: "True"
     for: "00:15:00"
   condition:
   - condition: state
