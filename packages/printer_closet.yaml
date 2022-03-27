@@ -20,7 +20,7 @@ sensor:
       octoprint_printer_power_draw:
         value_template: "{{ state_attr('switch.printer_power', 'current_power_w') }}"
       octoprint_printer_cooled:
-        value_template: "{{ state_attr('sensor.octoprint_actual_tool0_temp') | float < 50.0 }}"
+        value_template: "{{ states('sensor.octoprint_actual_tool0_temp') | float < 50.0 }}"
 
 ###### AUTOMATIONS --------------------------------------
 automation:
