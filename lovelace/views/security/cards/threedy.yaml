@@ -123,20 +123,25 @@ custom_fields:
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_temp_tool0_difference
-                        icon: 'mdi:printer-3d-nozzle-heat'
+                        entity: sensor.octoprint_temp_tool0_target_reached
+                        name: Print Bed
+                        icon: 'mdi:printer-3d-nozzle'
                         show_icon: true
-                        show_name: false
-                        show_state: true
+                        show_name: true
+                        show_state: false
                         styles:
                           card:
                             - height: 30px
+                        state:
+                          - value: 'False'
+                            name: Heating
+                            color: 'rgb(255,0,0)'
                         tap_action:
                           action: none
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_temp_tool0_target_reached
+                        entity: sensor.octoprint_temp_tool0_acual
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -152,20 +157,24 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         entity: sensor.octoprint_temp_bed_target_reached
-                        icon: 'mdi:printer-3d-nozzle-heat'
+                        name: Print Bed
+                        icon: 'mdi:printer-3d'
                         show_icon: true
-                        show_name: false
-                        show_state: true
+                        show_name: true
+                        show_state: false
                         styles:
                           card:
                             - height: 30px
+                        state:
+                          - value: 'False'
+                            name: Heating
+                            color: 'rgb(255,0,0)'
                         tap_action:
                           action: none
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_actual_bed_temp
-                        icon: 'mdi:printer-3d'
+                        entity: sensor.octoprint_temp_bed_acual
                         show_name: false
                         show_icon: false
                         show_state: true
