@@ -27,7 +27,7 @@ sensor:
             Unknown
           {% endif %}
       octoprint_printer_cooled:
-        value_template: "{{ states('sensor.octoprint_actual_tool0_temp') | float < 50.0 }}"
+        value_template: "{{ states('sensor.octoprint_temperature_difference') | float < 10.0 }}"
 
 ###### AUTOMATIONS --------------------------------------
 automation:
