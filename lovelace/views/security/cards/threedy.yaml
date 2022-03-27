@@ -125,6 +125,21 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
+                        entity: sensor.octoprint_actual_tool0_temp
+                        icon: 'mdi:printer-3d-nozzle-heat'
+#                        show_icon: true
+#                        show_name: false
+#                        show_state: true
+#                        styles:
+#                          card:
+#                            - height: 40px
+#                              width: 100px
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+                      - type: 'custom:button-card'
+                        template: wide
                         entity: sensor.octoprint_actual_bed_temp
                         icon: 'mdi:printer-3d'
                         show_icon: true
@@ -138,21 +153,7 @@ custom_fields:
                           action: none
                         hold_action:
                           action: none
-                      - type: 'custom:button-card'
-                        template: wide
-                        entity: sensor.octoprint_actual_tool0_temp
-                        icon: 'mdi:printer-3d-nozzle-heat'
-                        show_icon: true
-                        show_name: false
-                        show_state: true
-                        styles:
-                          card:
-                            - height: 40px
-                              width: 100px
-                        tap_action:
-                          action: none
-                        hold_action:
-                          action: none
+
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
