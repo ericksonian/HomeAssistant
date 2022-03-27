@@ -99,7 +99,7 @@ custom_fields:
                   state: 'unavailable'
               card:
                 type: 'custom:button-card'
-                entity: switch.printer_power
+                entity: switch.octoprint_printer_power
                 name: Power
                 icon: 'mdi:power'
                 lock:
@@ -164,11 +164,14 @@ custom_fields:
                             - height: 72px
                             - width: 86px
                         tap_action:
-                          action: press_button
+                          action: call-service
+                          service: button.press
+                          target:
+                            entity_id: button.octoprint_stop_job
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: switch.printer_power
+                        entity: switch.octoprint_printer_power
                         name: Power
                         icon: 'mdi:power'
                         lock:

@@ -17,8 +17,6 @@ sensor:
           {% else %}
             Unknown
           {% endif %}
-      octoprint_printer_power_draw:
-        value_template: "{{ state_attr('switch.printer_power', 'current_power_w') }}"
       octoprint_printer_cooled:
         value_template: "{{ states('sensor.octoprint_actual_tool0_temp') | float < 50.0 }}"
 
@@ -35,4 +33,4 @@ automation:
   action:
   - service: switch.turn_off
     data:
-      entity_id: switch.printer_power
+      entity_id: switch.octoprint_printer_power
