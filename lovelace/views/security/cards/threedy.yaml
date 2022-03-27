@@ -107,7 +107,7 @@ custom_fields:
                   card:
                     - border-radius: 1.0em 1.0em 1.0em 1.0em
                       width: 180px
-#                      height: 150px
+                      height: 150px
                 state:
                   - value: on
                     styles:
