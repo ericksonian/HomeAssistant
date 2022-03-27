@@ -41,7 +41,6 @@ custom_fields:
                         width: 86px
                         border-radius: 0.7em 0.7em 0.7em 0.7em
 
-
         - type: vertical-stack
           cards:
             - type: horizontal-stack
@@ -57,7 +56,7 @@ custom_fields:
                   show_state: true
                   styles:
                     card:
-                      - height: 32px
+                      - height: 30px
                   state:
                     - value: Disconnected
                       styles:
@@ -91,7 +90,7 @@ custom_fields:
                     show_state: true
                     styles:
                       card:
-                        - height: 32px
+                        - height: 30px
 
             - type: conditional
               conditions:
@@ -121,33 +120,45 @@ custom_fields:
               card:
                 type: vertical-stack
                 cards:
-                  - type: vertical-stack
+                  - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_actual_tool0_temp
+                        entity: sensor.octoprint_tool0_temp_difference
                         icon: 'mdi:printer-3d-nozzle-heat'
-                        name: Extruder
+                        show_icon: true
                         show_name: false
-                        show_icon: false
                         show_state: true
                         styles:
                           card:
-                            - height: 32px
-                              width: 86px
+                            - height: 30px
                         tap_action:
                           action: none
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_actual_bed_temp
-                        icon: 'mdi:printer-3d'
-                        name: Print Bed
+                        entity: sensor.octoprint_actual_tool0_temp
                         show_name: false
                         show_icon: false
                         show_state: true
                         styles:
                           card:
-                            - height: 32px
+                            - height: 30px
+                              width: 86px
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        entity: sensor.octoprint_actual_bed_temp
+                        icon: 'mdi:printer-3d'
+                        show_name: false
+                        show_icon: false
+                        show_state: true
+                        styles:
+                          card:
+                            - height: 30px
                               width: 86px
                         tap_action:
                           action: none
