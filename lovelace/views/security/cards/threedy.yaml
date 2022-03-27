@@ -105,9 +105,9 @@ custom_fields:
                   enabled: true
                 styles:
                   card:
-                    - height: 144px
-                      width: 180px
-                      border-radius: 1.0em 1.0em 1.0em 1.0em
+                    - border-radius: 1.0em 1.0em 1.0em 1.0em
+#                      height: 150px
+#                      width: 180px                      
                 state:
                   - value: on
                     styles:
@@ -123,7 +123,7 @@ custom_fields:
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_tool0_temp_difference
+                        entity: sensor.octoprint_temp_tool0_difference
                         icon: 'mdi:printer-3d-nozzle-heat'
                         show_icon: true
                         show_name: false
@@ -136,7 +136,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_actual_tool0_temp
+                        entity: sensor.octoprint_temp_tool0_target_reached
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -150,6 +150,19 @@ custom_fields:
                           action: none
                   - type: horizontal-stack
                     cards:
+                      - type: 'custom:button-card'
+                        entity: sensor.octoprint_temp_bed_target_reached
+                        icon: 'mdi:printer-3d-nozzle-heat'
+                        show_icon: true
+                        show_name: false
+                        show_state: true
+                        styles:
+                          card:
+                            - height: 30px
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
                       - type: 'custom:button-card'
                         entity: sensor.octoprint_actual_bed_temp
                         icon: 'mdi:printer-3d'
