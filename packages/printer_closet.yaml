@@ -4,8 +4,8 @@ template:
   - sensor:
       - name: "octoprint temp all difference"
         state: >
-          {% set tool0 = states('sensor.octoprint_actual_tool0_temp') | float %}
-          {% set bed = states('sensor.octoprint_actual_bed_temp') | float %}
+          {% set tool0 = states('sensor.octoprint_temp_tool0_actual') | float %}
+          {% set bed = states('sensor.octoprint_temp_bed_actual') | float %}
 
           {{ (tool0 - bed) | round(1, default=0) }}
       - name: "octoprint temp bed difference"
@@ -39,10 +39,10 @@ sensor:
           {% endif %}
       octoprint_temp_printer_cooled:
         value_template: "{{ states('sensor.octoprint_temp_all_difference') | float < 20.0 }}"
-      octoprint_temp_bed_target_reached:
-        value_template: "{{ states('sensor.octoprint_temp_bed_difference') | float < 3.0 }}"
-      octoprint_temp_tool0_target_reached:
-        value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | float < 3.0 }}"
+      octoprint_temp_bed_heated:
+        value_template: "{{ states('sensor.octoprint_temp_bed_difference') | -3.0 < float < 3.0 }}"
+      octoprint_temp_tool0_heated:
+        value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | -3.0 < float < 3.0 }}"
 
 ###### AUTOMATIONS --------------------------------------
 automation:

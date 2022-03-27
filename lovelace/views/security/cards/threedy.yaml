@@ -124,7 +124,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_temp_tool0_target_reached
+                        entity: sensor.octoprint_temp_tool0_heated
                         name: Extruder
                         icon: 'mdi:printer-3d-nozzle'
                         show_icon: true
@@ -159,7 +159,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_temp_bed_target_reached
+                        entity: sensor.octoprint_temp_bed_heated
                         name: Print Bed
                         icon: 'mdi:printer-3d'
                         show_icon: true
