@@ -123,8 +123,9 @@ custom_fields:
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
+                        template: wide
                         entity: sensor.octoprint_temp_tool0_target_reached
-                        name: Print Bed
+                        name: Extruder
                         icon: 'mdi:printer-3d-nozzle'
                         show_icon: true
                         show_name: true
@@ -156,6 +157,7 @@ custom_fields:
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
+                        template: wide
                         entity: sensor.octoprint_temp_bed_target_reached
                         name: Print Bed
                         icon: 'mdi:printer-3d'
