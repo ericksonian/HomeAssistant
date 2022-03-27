@@ -29,12 +29,9 @@ automation:
   trigger:
   - platform: state
     entity_id: sensor.octoprint_printer_cooled
-    to: "True"
+    to: True
     for: "00:15:00"
-  condition:
-  - condition: state
-    entity_id: sensor.octoprint_current_state
-    state: "Idle"
+  condition: []
   action:
   - service: switch.turn_off
     data:

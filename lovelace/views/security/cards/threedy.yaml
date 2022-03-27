@@ -109,6 +109,11 @@ custom_fields:
                     - height: 140px
                       width: 180px
                       border-radius: 1.0em 1.0em 1.0em 1.0em
+                state:
+                  - value: on
+                    styles:
+                      icon:
+                        - color: 'rgb(255,0,0)'
             - type: conditional
               conditions:
                 - entity: sensor.octoprint_current_state
