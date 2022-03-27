@@ -39,10 +39,10 @@ sensor:
           {% endif %}
       octoprint_temp_printer_cooled:
         value_template: "{{ states('sensor.octoprint_temp_all_difference') | float < 20.0 }}"
-      octoprint_temp_bed_heated:
-        value_template: "{{ states('sensor.octoprint_temp_bed_difference') | -3.0 < float < 3.0 }}"
-      octoprint_temp_tool0_heated:
-        value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | -3.0 < float < 3.0 }}"
+      octoprint_temp_bed_heating:
+        value_template: "{{ states('sensor.octoprint_temp_bed_difference') | float > 3.0 }}"
+      octoprint_temp_tool0_heating:
+        value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | float > 3.0 }}"
 
 ###### AUTOMATIONS --------------------------------------
 automation:

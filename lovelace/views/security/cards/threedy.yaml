@@ -124,7 +124,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_temp_tool0_heated
+                        entity: sensor.octoprint_temp_tool0_heating
                         name: Extruder
                         icon: 'mdi:printer-3d-nozzle'
                         show_icon: true
@@ -135,7 +135,7 @@ custom_fields:
                             - height: 30px
                               border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
-                          - value: 'False'
+                          - value: 'True'
                             name: Heating
                             color: 'rgb(255,0,0)'
                         tap_action:
@@ -159,7 +159,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_temp_bed_heated
+                        entity: sensor.octoprint_temp_bed_heating
                         name: Print Bed
                         icon: 'mdi:printer-3d'
                         show_icon: true
@@ -170,7 +170,7 @@ custom_fields:
                             - height: 30px
                               border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
-                          - value: 'False'
+                          - value: 'True'
                             name: Heating
                             color: 'rgb(255,0,0)'
                         tap_action:
