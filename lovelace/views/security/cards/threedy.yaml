@@ -142,7 +142,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_temp_tool0_acual
+                        entity: sensor.octoprint_temp_tool0_actual
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -176,7 +176,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_temp_bed_acual
+                        entity: sensor.octoprint_temp_bed_actual
                         show_name: false
                         show_icon: false
                         show_state: true
