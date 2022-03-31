@@ -51,7 +51,7 @@ automation:
   trigger:
   - platform: state
     entity_id: sensor.octoprint_temp_printer_cooled
-    to: "True"
+    to: "true"
     for: "00:15:00"
   action:
   - service: switch.turn_off
