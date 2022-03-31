@@ -50,7 +50,7 @@ automation:
 - alias: Octoprint Printer Cooled
   trigger:
   - platform: state
-    entity_id: sensor.octoprint_printer_cooled
+    entity_id: sensor.octoprint_temp_printer_cooled
     to: "True"
     for: "00:15:00"
   action:
