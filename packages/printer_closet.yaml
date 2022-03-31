@@ -29,11 +29,11 @@ sensor:
           {% if is_state('sensor.octoprint_current_state', 'unavailable') %}
             Disconnected
           {% elif is_state('sensor.octoprint_current_state', 'Printing') %}
-            Creating
+            Printing
           {% elif is_state('sensor.octoprint_current_state', 'Operational') %}
             Idle
           {% elif is_state('sensor.octoprint_current_state', 'Starting') %}
-            Reboot
+            Starting
           {% else %}
             Unknown
           {% endif %}
