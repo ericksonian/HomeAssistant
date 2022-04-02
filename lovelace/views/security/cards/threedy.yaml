@@ -140,7 +140,7 @@ custom_fields:
                       - type: 'custom:button-card'
                         template: wide
                         entity: sensor.octoprint_start_time
-                        name: Remaining Time
+                        name: Time Left
                         icon: 'mdi:timer'
                         show_icon: true
                         show_name: true
