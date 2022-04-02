@@ -158,7 +158,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_elapsed_time
+                        entity: sensor.octoprint_time_remaining
                         show_name: false
                         show_icon: false
                         show_state: true
