@@ -1,6 +1,6 @@
 type: 'custom:button-card'
 template: container
-name: Printer
+name: 3D Printer
 custom_fields:
   buttons:
     card:
@@ -69,7 +69,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 72px
-#                              border-radius: 0.7em 0.7em 0.7em 0.7em
                       - type: 'custom:button-card'
                         template: light_colors
                         entity: light.lifx6
@@ -138,7 +137,7 @@ custom_fields:
                 type: horizontal-stack
                 cards:
                   - type: 'custom:button-card'
-                    template: light_colors
+                    template: standard
                     entity: group.lights_living_closet
                     icon: 'mdi:palette'
                     show_name: false
@@ -147,6 +146,7 @@ custom_fields:
                         - height: 72px
                           border-radius: 0.7em 0.7em 0.7em 0.7em
                   - type: 'custom:button-card'
+                    template: standard
                     entity: switch.octoprint_printer_power
                     name: Power
                     icon: 'mdi:power'
