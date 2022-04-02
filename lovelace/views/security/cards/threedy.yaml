@@ -66,7 +66,7 @@ custom_fields:
                         template: wide
                         entity: sensor.octoprint_printer_power_energy_use_today
                         name: Used Today
-                        icon: 'mdi:meter-electric'
+                        icon: 'mdi:lightning-bolt'
                         show_icon: true
                         show_name: true
                         show_state: false
