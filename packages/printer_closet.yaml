@@ -43,6 +43,29 @@ sensor:
         value_template: "{{ states('sensor.octoprint_temp_bed_difference') | float > 3.0 }}"
       octoprint_temp_tool0_heating:
         value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | float > 3.0 }}"
+      octoprint_time_printing:
+        value_template: >
+          {% set time = ((states('sensor.octoprint_time_start')|as_datetime|as_local - now()).seconds) |int %}
+          {% set minutes = ((-time % 3600) / 60) | int %}
+          {% set hours = ((-time % 86400) / 3600) | int %}
+          {% set days = (-time / 86400) | int %}
+
+          {%- if time < 60 -%}
+            Less than a minute
+            {%- else -%}
+            {%- if hours > 0 -%}
+              {%- if days > 0 -%}
+                {{ ' ' }}
+              {%- endif -%}
+              {{ hours }}h
+            {%- endif -%}
+            {%- if minutes > 0 -%}
+              {%- if hours > 0 -%}
+                {{ ' ' }}
+              {%- endif -%}
+              {{ minutes }}m
+            {%- endif -%}
+          {%- endif -%}
       octoprint_time_remaining_estimated:
         value_template: >
           {% set time = ((states('sensor.octoprint_time_finish_estimated')|as_datetime|as_local - now()).seconds) |int %}
