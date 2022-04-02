@@ -83,3 +83,23 @@ automation:
   - service: light.turn_off
     data:
       entity_id: group.lights_living_closet
+
+- alias: Octoprint Printer Power On
+  trigger:
+  - platform: state
+    entity_id: switch.octoprint_printer_power
+    to: "on"
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: group.lights_living_closet
+
+- alias: Octoprint Printer Power Off
+  trigger:
+  - platform: state
+    entity_id: switch.octoprint_printer_power
+    to: "off"
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: group.lights_living_closet
