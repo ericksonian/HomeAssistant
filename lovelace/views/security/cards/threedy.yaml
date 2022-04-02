@@ -18,28 +18,33 @@ custom_fields:
               show_state: false
               tap_action:
                 action: more-info
-            - type: horizontal-stack
-              cards:
-                - type: 'custom:button-card'
-                  template: light_colors
-                  entity: light.lifx5
-                  icon: 'mdi:palette'
-                  show_name: false
-                  styles:
-                    card:
-                      - height: 72px
-                        width: 86px
-                        border-radius: 0.7em 0.7em 0.7em 0.7em
-                - type: 'custom:button-card'
-                  template: light_colors
-                  entity: light.lifx6
-                  icon: 'mdi:palette'
-                  show_name: false
-                  styles:
-                    card:
-                      - height: 72px
-                        width: 86px
-                        border-radius: 0.7em 0.7em 0.7em 0.7em
+            - type: conditional
+              conditions:
+                - entity: sensor.octoprint_current_state
+                  state_not: 'unavailable'
+              card:
+                type: horizontal-stack
+                cards:
+                  - type: 'custom:button-card'
+                    template: light_colors
+                    entity: light.lifx5
+                    icon: 'mdi:palette'
+                    show_name: false
+                    styles:
+                      card:
+                        - height: 72px
+                          width: 86px
+                          border-radius: 0.7em 0.7em 0.7em 0.7em
+                  - type: 'custom:button-card'
+                    template: light_colors
+                    entity: light.lifx6
+                    icon: 'mdi:palette'
+                    show_name: false
+                    styles:
+                      card:
+                        - height: 72px
+                          width: 86px
+                          border-radius: 0.7em 0.7em 0.7em 0.7em
 
         - type: vertical-stack
           cards:
@@ -56,7 +61,7 @@ custom_fields:
                   show_state: true
                   styles:
                     card:
-                      - height: 32px
+                      - height: 31px
                   state:
                     - value: Disconnected
                       styles:
@@ -90,29 +95,42 @@ custom_fields:
                     show_state: true
                     styles:
                       card:
-                        - height: 32px
+                        - height: 31px
 
             - type: conditional
               conditions:
                 - entity: sensor.octoprint_current_state
                   state: 'unavailable'
               card:
-                type: 'custom:button-card'
-                entity: switch.octoprint_printer_power
-                name: Power
-                icon: 'mdi:power'
-                lock:
-                  enabled: true
-                styles:
-                  card:
-                    - border-radius: 1.0em 1.0em 1.0em 1.0em
-                      width: 180px
-                      height: 150px
-                state:
-                  - value: on
+                type: horizontal-stack
+                cards:
+                  - type: 'custom:button-card'
+                    template: light_colors
+                    entity: group.lights_living_closet
+                    icon: 'mdi:palette'
+                    show_name: false
                     styles:
-                      icon:
-                        - color: 'rgb(255,0,0)'
+                      card:
+                        - height: 72px
+                          width: 86px
+                          border-radius: 0.7em 0.7em 0.7em 0.7em
+                  - type: 'custom:button-card'
+                    entity: switch.octoprint_printer_power
+                    name: Power
+                    icon: 'mdi:power'
+                    lock:
+                      enabled: true
+                    styles:
+                      card:
+                        - height: 72px
+                          width: 86px
+                          border-radius: 0.7em 0.7em 0.7em 0.7em
+                    state:
+                      - value: on
+                        styles:
+                          icon:
+                            - color: 'rgb(255,0,0)'
+
             - type: conditional
               conditions:
                 - entity: sensor.octoprint_current_state
@@ -132,7 +150,7 @@ custom_fields:
                         show_state: false
                         styles:
                           card:
-                            - height: 32px
+                            - height: 31px
                               border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
@@ -149,7 +167,7 @@ custom_fields:
                         show_state: true
                         styles:
                           card:
-                            - height: 32px
+                            - height: 31px
                               width: 86px
                         tap_action:
                           action: none
@@ -167,7 +185,7 @@ custom_fields:
                         show_state: false
                         styles:
                           card:
-                            - height: 32px
+                            - height: 31px
                               border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
@@ -184,7 +202,7 @@ custom_fields:
                         show_state: true
                         styles:
                           card:
-                            - height: 32px
+                            - height: 31px
                               width: 86px
                         tap_action:
                           action: none
