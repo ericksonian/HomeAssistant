@@ -28,26 +28,6 @@ custom_fields:
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
-                        template: light_colors
-                        entity: light.lifx5
-                        icon: 'mdi:palette'
-                        show_name: false
-                        styles:
-                          card:
-                            - height: 72px
-                              border-radius: 0.7em 0.7em 0.7em 0.7em
-                      - type: 'custom:button-card'
-                        template: light_colors
-                        entity: light.lifx6
-                        icon: 'mdi:palette'
-                        show_name: false
-                        styles:
-                          card:
-                            - height: 72px
-                              border-radius: 0.7em 0.7em 0.7em 0.7em
-                  - type: horizontal-stack
-                    cards:
-                      - type: 'custom:button-card'
                         template: wide
                         entity: sensor.octoprint_printer_power_current_power
                         name: Power Draw
@@ -58,7 +38,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 31px
-                              border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
                             name: Heating
@@ -79,6 +58,26 @@ custom_fields:
                           action: none
                         hold_action:
                           action: none
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        template: light_colors
+                        entity: light.lifx5
+                        icon: 'mdi:palette'
+                        show_name: false
+                        styles:
+                          card:
+                            - height: 72px
+                              border-radius: 0.7em 0.7em 0.7em 0.7em
+                      - type: 'custom:button-card'
+                        template: light_colors
+                        entity: light.lifx6
+                        icon: 'mdi:palette'
+                        show_name: false
+                        styles:
+                          card:
+                            - height: 72px
+                              border-radius: 0.7em 0.7em 0.7em 0.7em
 
         - type: vertical-stack
           cards:
