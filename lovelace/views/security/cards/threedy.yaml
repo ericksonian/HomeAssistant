@@ -44,7 +44,7 @@ custom_fields:
                             name: Heating
                             color: 'rgb(255,0,0)'
                         tap_action:
-                          action: none
+                          action: more-info
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
@@ -56,7 +56,7 @@ custom_fields:
                           card:
                             - height: 31px
                         tap_action:
-                          action: none
+                          action: more-info
                         hold_action:
                           action: none
 
@@ -79,7 +79,7 @@ custom_fields:
                             name: Heating
                             color: 'rgb(255,0,0)'
                         tap_action:
-                          action: none
+                          action: more-info
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
@@ -91,7 +91,7 @@ custom_fields:
                           card:
                             - height: 31px
                         tap_action:
-                          action: none
+                          action: more-info
                         hold_action:
                           action: none
 
@@ -307,7 +307,7 @@ custom_fields:
                           card:
                             - height: 31px
                         tap_action:
-                          action: none
+                          action: more-info
                         hold_action:
                           action: none
 
@@ -342,7 +342,7 @@ custom_fields:
                           card:
                             - height: 31px
                         tap_action:
-                          action: none
+                          action: more-info
                         hold_action:
                           action: none
 
