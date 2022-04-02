@@ -23,26 +23,62 @@ custom_fields:
                 - entity: sensor.octoprint_current_state
                   state_not: 'unavailable'
               card:
-                type: horizontal-stack
+                type: vertical-stack
                 cards:
-                  - type: 'custom:button-card'
-                    template: light_colors
-                    entity: light.lifx5
-                    icon: 'mdi:palette'
-                    show_name: false
-                    styles:
-                      card:
-                        - height: 72px
-                          border-radius: 0.7em 0.7em 0.7em 0.7em
-                  - type: 'custom:button-card'
-                    template: light_colors
-                    entity: light.lifx6
-                    icon: 'mdi:palette'
-                    show_name: false
-                    styles:
-                      card:
-                        - height: 72px
-                          border-radius: 0.7em 0.7em 0.7em 0.7em
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        template: light_colors
+                        entity: light.lifx5
+                        icon: 'mdi:palette'
+                        show_name: false
+                        styles:
+                          card:
+                            - height: 72px
+                              border-radius: 0.7em 0.7em 0.7em 0.7em
+                      - type: 'custom:button-card'
+                        template: light_colors
+                        entity: light.lifx6
+                        icon: 'mdi:palette'
+                        show_name: false
+                        styles:
+                          card:
+                            - height: 72px
+                              border-radius: 0.7em 0.7em 0.7em 0.7em
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        template: wide
+                        entity: sensor.octoprint_printer_power_current_power
+                        name: Power Draw
+                        icon: 'mdi:power-plug'
+                        show_icon: true
+                        show_name: true
+                        show_state: false
+                        styles:
+                          card:
+                            - height: 31px
+                              border-radius: 0.1em 0.1em 0.1em 0.1em
+                        state:
+                          - value: 'True'
+                            name: Heating
+                            color: 'rgb(255,0,0)'
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+                      - type: 'custom:button-card'
+                        entity: sensor.octoprint_printer_power_current_power
+                        show_name: false
+                        show_icon: false
+                        show_state: true
+                        styles:
+                          card:
+                            - height: 31px
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
 
         - type: vertical-stack
           cards:
@@ -229,41 +265,6 @@ custom_fields:
                           action: none
                       - type: 'custom:button-card'
                         entity: sensor.octoprint_temp_bed_actual
-                        show_name: false
-                        show_icon: false
-                        show_state: true
-                        styles:
-                          card:
-                            - height: 31px
-                        tap_action:
-                          action: none
-                        hold_action:
-                          action: none
-
-                  - type: horizontal-stack
-                    cards:
-                      - type: 'custom:button-card'
-                        template: wide
-                        entity: sensor.octoprint_printer_power_current_power
-                        name: Power Draw
-                        icon: 'mdi:power-plug'
-                        show_icon: true
-                        show_name: true
-                        show_state: false
-                        styles:
-                          card:
-                            - height: 31px
-                              border-radius: 0.1em 0.1em 0.1em 0.1em
-                        state:
-                          - value: 'True'
-                            name: Heating
-                            color: 'rgb(255,0,0)'
-                        tap_action:
-                          action: none
-                        hold_action:
-                          action: none
-                      - type: 'custom:button-card'
-                        entity: sensor.octoprint_printer_power_current_power
                         show_name: false
                         show_icon: false
                         show_state: true
