@@ -83,7 +83,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_printer_power_energy_use_today
+                        entity: sensor.octoprint_printer_power_energy_use_today_convert
                         show_name: false
                         show_icon: false
                         show_state: true

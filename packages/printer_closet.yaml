@@ -43,6 +43,9 @@ sensor:
         value_template: "{{ states('sensor.octoprint_temp_bed_difference') | float > 3.0 }}"
       octoprint_temp_tool0_heating:
         value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | float > 3.0 }}"
+      octoprint_printer_power_energy_use_today_convert:
+        unit_of_measurement: 'Wh'
+        value_template: "{{ states('sensor.octoprint_printer_power_energy_use_today') | float * 1000 }}"
       octoprint_time_printing:
         value_template: >
           {% set time = ((states('sensor.octoprint_time_start')|as_datetime|as_local - now()).seconds) |int %}
