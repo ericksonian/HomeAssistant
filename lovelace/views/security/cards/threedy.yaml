@@ -184,7 +184,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 31px
-                              border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
                             name: Heating
@@ -219,7 +218,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 31px
-                              border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
                             name: Heating
@@ -254,7 +252,6 @@ custom_fields:
                         styles:
                           card:
                             - height: 31px
-                              border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
                             name: Heating
@@ -287,6 +284,7 @@ custom_fields:
                         styles:
                           card:
                             - height: 72px
+                              border-radius: 0.7em 0.7em 0.7em 0.7em
                         tap_action:
                           action: call-service
                           service: button.press
@@ -303,3 +301,4 @@ custom_fields:
                         styles:
                           card:
                             - height: 72px
+                              border-radius: 0.7em 0.7em 0.7em 0.7em
