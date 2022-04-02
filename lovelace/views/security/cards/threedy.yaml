@@ -56,7 +56,7 @@ custom_fields:
                   show_state: true
                   styles:
                     card:
-                      - height: 30px
+                      - height: 32px
                   state:
                     - value: Disconnected
                       styles:
@@ -90,7 +90,7 @@ custom_fields:
                     show_state: true
                     styles:
                       card:
-                        - height: 30px
+                        - height: 32px
 
             - type: conditional
               conditions:
@@ -132,7 +132,7 @@ custom_fields:
                         show_state: false
                         styles:
                           card:
-                            - height: 30px
+                            - height: 32px
                               border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
@@ -149,7 +149,7 @@ custom_fields:
                         show_state: true
                         styles:
                           card:
-                            - height: 30px
+                            - height: 32px
                               width: 86px
                         tap_action:
                           action: none
@@ -167,7 +167,7 @@ custom_fields:
                         show_state: false
                         styles:
                           card:
-                            - height: 30px
+                            - height: 32px
                               border-radius: 0.1em 0.1em 0.1em 0.1em
                         state:
                           - value: 'True'
@@ -184,7 +184,7 @@ custom_fields:
                         show_state: true
                         styles:
                           card:
-                            - height: 30px
+                            - height: 32px
                               width: 86px
                         tap_action:
                           action: none
