@@ -59,6 +59,42 @@ custom_fields:
                           action: none
                         hold_action:
                           action: none
+
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        template: wide
+                        entity: sensor.octoprint_printer_power_energy_use_today
+                        name: Used Today
+                        icon: 'mdi:meter-electric'
+                        show_icon: true
+                        show_name: true
+                        show_state: false
+                        styles:
+                          card:
+                            - height: 31px
+                              border-radius: 0.1em 0.1em 0.1em 0.1em
+                        state:
+                          - value: 'True'
+                            name: Heating
+                            color: 'rgb(255,0,0)'
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+                      - type: 'custom:button-card'
+                        entity: sensor.octoprint_printer_power_energy_use_today
+                        show_name: false
+                        show_icon: false
+                        show_state: true
+                        styles:
+                          card:
+                            - height: 31px
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+
                   - type: horizontal-stack
                     cards:
                       - type: 'custom:button-card'
@@ -169,6 +205,41 @@ custom_fields:
               card:
                 type: vertical-stack
                 cards:
+
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:button-card'
+                        template: wide
+                        entity: sensor.octoprint_time_printing
+                        name: Time Elapsed
+                        icon: 'mdi:timer-outline'
+                        show_icon: true
+                        show_name: true
+                        show_state: false
+                        styles:
+                          card:
+                            - height: 31px
+                              border-radius: 0.1em 0.1em 0.1em 0.1em
+                        state:
+                          - value: 'True'
+                            name: Heating
+                            color: 'rgb(255,0,0)'
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
+                      - type: 'custom:button-card'
+                        entity: sensor.octoprint_time_printing
+                        show_name: false
+                        show_icon: false
+                        show_state: true
+                        styles:
+                          card:
+                            - height: 31px
+                        tap_action:
+                          action: none
+                        hold_action:
+                          action: none
 
                   - type: horizontal-stack
                     cards:
