@@ -54,7 +54,7 @@ sensor:
           {% set days = (-time / 86400) | int %}
 
           {%- if time < 60 -%}
-            Less than a minute
+            < 1 min
             {%- else -%}
             {%- if hours > 0 -%}
               {%- if days > 0 -%}
@@ -77,7 +77,7 @@ sensor:
           {% set days = (time / 86400) | int %}
 
           {%- if time < 60 -%}
-            Less than a minute
+            < 1 min
             {%- else -%}
             {%- if hours > 0 -%}
               {%- if days > 0 -%}
