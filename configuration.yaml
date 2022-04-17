@@ -97,6 +97,6 @@ tts:
 #  username: !secret vesync_username
 #  password: !secret vesync_password
 
-zwave:
-  usb_path: /dev/ttyACM0
-  network_key: !secret zwave_network_key
+#zwave:
+#  usb_path: /dev/ttyACM0
+#  network_key: !secret zwave_network_key
