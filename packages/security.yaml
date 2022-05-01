@@ -63,23 +63,23 @@ group:
   name: All Persons
   entities:
   - person.ian
-  - person.kalene
+#  - person.kalene
   - person.nathan
 
 ###### AUTOMATIONS --------------------------------------
 automation:
 ## Lock Up
 # Nobody Home
-- alias: Nobody Home - Lock Up
-  trigger:
-  - platform: state
-    entity_id: group.all_persons
-    to: not_home
-    for: "00:30:00"
-  action:
-  - service: cover.close_cover
-    data:
-      entity_id: cover.garage_door
+#- alias: Nobody Home - Lock Up
+#  trigger:
+#  - platform: state
+#    entity_id: group.all_persons
+#    to: not_home
+#    for: "00:30:00"
+#  action:
+#  - service: cover.close_cover
+#    data:
+#      entity_id: cover.garage_door
 
 
 ### Front Door
@@ -167,18 +167,18 @@ script:
           entity_id: lock.front_door
 
 # Front Door Open During Lock Command
-  front_door_cannot_lock:
-    sequence:
-      - service: camera.snapshot
-        data:
-          entity_id: camera.frontdoor
-          filename: '/config/www/front_door.jpg'
-      - service: !secret notify_ian
-        data:
-          title: Front Door Open
-          message: Door Cannot Lock
-          data:
-            push:
-              category: front_door_unlocked
-            attachment:
-              url: !secret snapshot_frontdoor
+#  front_door_cannot_lock:
+#    sequence:
+#      - service: camera.snapshot
+#        data:
+#          entity_id: camera.frontdoor
+#          filename: '/config/www/front_door.jpg'
+#      - service: !secret notify_ian
+#        data:
+#          title: Front Door Open
+#          message: Door Cannot Lock
+#          data:
+#            push:
+#              category: front_door_unlocked
+#            attachment:
+#              url: !secret snapshot_frontdoor
