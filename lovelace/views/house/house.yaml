@@ -20,18 +20,18 @@ cards:
             - !include /config/lovelace/views/house/cards/light_scenes_kitchen.yaml
 
 ## Music
-  - type: 'custom:button-card'
-    template: container
-    name: Music
-    custom_fields:
-      buttons:
-        card:
-          type: vertical-stack
-          cards:
+#  - type: 'custom:button-card'
+#    template: container
+#    name: Music
+#    custom_fields:
+#      buttons:
+#        card:
+#          type: vertical-stack
+#          cards:
 #            - !include /config/lovelace/cards_shared/sonos/play5_1.yaml
 #            - !include /config/lovelace/cards_shared/sonos/play5_2.yaml
 #            - !include /config/lovelace/cards_shared/sonos/play5_3.yaml
-            - !include /config/lovelace/cards_shared/sonos/connect.yaml
+#            - !include /config/lovelace/cards_shared/sonos/connect.yaml
 
 ## Exterior
   - type: 'custom:button-card'

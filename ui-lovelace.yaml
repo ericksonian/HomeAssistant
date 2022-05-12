@@ -8,4 +8,4 @@ views:
   - !include /config/lovelace/views/master/master.yaml
   - !include /config/lovelace/views/bed3/bed3.yaml
   - !include /config/lovelace/views/theater/theater.yaml
-  - !include /config/lovelace/views/rack/rack.yaml
+#  - !include /config/lovelace/views/rack/rack.yaml

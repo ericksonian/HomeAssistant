@@ -15,7 +15,7 @@ cards:
     cards:
       - type: horizontal-stack
         cards:
-          - !include /config/lovelace/views/theater/cards/fan_window.yaml
+          - !include /config/lovelace/views/theater/cards/fan_outlet.yaml
           - !include /config/lovelace/views/theater/cards//lighting/lights.yaml
       - !include /config/lovelace/views/theater/cards/lighting/scenes.yaml
   - type: conditional

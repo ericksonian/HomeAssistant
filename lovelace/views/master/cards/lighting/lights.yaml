@@ -22,28 +22,6 @@ custom_fields:
           cards:
             - type: vertical-stack
               cards:
-                - type: horizontal-stack
-                  cards:
-                    - type: 'custom:button-card'
-                      template: light_colors
-                      entity: light.lifx5
-                      icon: 'mdi:palette'
-                      show_name: false
-                      styles:
-                        card:
-                          - height: 38px
-                            width: 38px
-                            border-radius: 0.7em 0.7em 0.7em 0.7em
-                    - type: 'custom:button-card'
-                      template: light_colors
-                      entity: light.lifx6
-                      icon: 'mdi:palette'
-                      show_name: false
-                      styles:
-                        card:
-                          - height: 38px
-                            width: 38px
-                            border-radius: 0.7em 0.7em 0.7em 0.7em
                 - type: conditional
                   conditions:
                     - entity: input_boolean.master_ledstrip_power

@@ -4,6 +4,6 @@ badges: []
 visible:
   - user: !secret user_ian
 cards:
-  - !include /config/lovelace/views/rack/cards/battery_graphs.yaml
+#  - !include /config/lovelace/views/rack/cards/battery_graphs.yaml
 #  - !include /config/lovelace/views/rack/cards/pihole.yaml
   - !include /config/lovelace/cards_shared/footer.yaml

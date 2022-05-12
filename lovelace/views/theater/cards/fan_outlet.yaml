@@ -10,7 +10,7 @@ custom_fields:
           template: standard
           entity: switch.theater_fan
           icon: 'mdi:fan'
-          name: Window
+          name: Box Fan
           styles:
             card:
               - height: 172px

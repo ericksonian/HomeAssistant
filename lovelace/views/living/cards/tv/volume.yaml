@@ -5,72 +5,78 @@ conditions:
   - entity: input_select.living_tv_source
     state_not: 'loading'
 card:
-  type: horizontal-stack
+  type: vertical-stack
   cards:
-    - type: 'custom:button-card'
-      template: standard
-      entity: script.living_tv_off
-      icon: 'mdi:power'
-      name: Top TV Off
-      show_name: false
-      styles:
-        icon:
-          - color: 'rgb(255,0,0)'
-        card:
-          - height: 60px
-          - '--mdc-ripple-color': 'rgb(255,0,0)'
-          - '--mdc-ripple-press-opacity': 0.5
-      tap_action:
-        action: call-service
-        service: script.living_tv_off
-    - type: 'custom:button-card'
-      template: standard
-      entity: input_boolean.living_tv_mute
-      icon: 'mdi:volume-mute'
-      name: Mute
-      show_name: false
-      styles:
-        card:
-          - height: 60px
-          - '--mdc-ripple-color': 'rgb(255,0,0)'
-          - '--mdc-ripple-press-opacity': 0.5
-      state:
-        - color: 'rgb(255, 0, 0)'
-          value: 'on'
-      tap_action:
-        action: call-service
-        service: script.living_tv_mute_toggle
-    - type: 'custom:button-card'
-      template: standard
-      entity: input_boolean.living_tv_mute
-      icon: 'mdi:volume-medium'
-      name: '-'
-      show_name: false
-      styles:
-        card:
-          - height: 60px
-          - '--mdc-ripple-color': 'rgb(255,255,255)'
-          - '--mdc-ripple-press-opacity': 0.5
-      state:
-        - color: 'rgb(255,0,0)'
-          value: 'on'
-      tap_action:
-        action: call-service
-        service: script.living_tv_volume_down
-    - type: 'custom:button-card'
-      template: standard
-      entity: input_boolean.living_tv_mute
-      icon: 'mdi:volume-high'
-      name: '+'
-      show_name: false
-      styles:
-        card:
-          - height: 60px
-          - '--mdc-ripple-color': 'rgb(255,255,255)'
-          - '--mdc-ripple-press-opacity': 0.5
-      state:
-        - color: 'rgb(255, 0, 0)'
-          value: 'on'
-      tap_action:
-        action: call-service
-        service: script.living_tv_volume_up
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          template: standard
+          entity: script.living_tv_off
+          icon: 'mdi:power'
+          name: Top TV Off
+          show_name: false
+          styles:
+            icon:
+              - color: 'rgb(255,0,0)'
+            card:
+              - height: 60px
+              - '--mdc-ripple-color': 'rgb(255,0,0)'
+              - '--mdc-ripple-press-opacity': 0.5
+          tap_action:
+            action: call-service
+            service: script.living_tv_off
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_boolean.living_tv_mute
+          icon: 'mdi:volume-mute'
+          name: Mute
+          show_name: false
+          styles:
+            card:
+              - height: 60px
+              - '--mdc-ripple-color': 'rgb(255,0,0)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(255, 0, 0)'
+              value: 'on'
+          tap_action:
+            action: call-service
+            service: script.living_tv_mute_toggle
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_boolean.living_tv_mute
+          icon: 'mdi:volume-medium'
+          name: '-'
+          show_name: false
+          styles:
+            card:
+              - height: 60px
+              - '--mdc-ripple-color': 'rgb(255,255,255)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(255,0,0)'
+              value: 'on'
+          tap_action:
+            action: call-service
+            service: script.living_tv_volume_down
+        - type: 'custom:button-card'
+          template: standard
+          entity: input_boolean.living_tv_mute
+          icon: 'mdi:volume-high'
+          name: '+'
+          show_name: false
+          styles:
+            card:
+              - height: 60px
+              - '--mdc-ripple-color': 'rgb(255,255,255)'
+              - '--mdc-ripple-press-opacity': 0.5
+          state:
+            - color: 'rgb(255, 0, 0)'
+              value: 'on'
+          tap_action:
+            action: call-service
+            service: script.living_tv_volume_up
+    - type: 'custom:slider-entity-row'
+      entity: media_player.living_room_sony_avr
+      full_row: true
+      hide_state: true
