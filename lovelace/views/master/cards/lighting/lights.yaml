@@ -35,7 +35,8 @@ custom_fields:
                     icon: 'mdi:led-strip-variant'
                     styles:
                       card:
-                        - height: 38px
+#                        - height: 38px
+                        - height: 84px
                           width: 84px
                           border-radius: 0.7em 0.7em 0.7em 0.7em
                     tap_action:
@@ -59,7 +60,8 @@ custom_fields:
                     icon: 'mdi:led-strip-variant'
                     styles:
                       card:
-                        - height: 38px
+#                        - height: 38px
+                        - height: 84px
                           width: 84px
                           border-radius: 0.7em 0.7em 0.7em 0.7em
                     state:
