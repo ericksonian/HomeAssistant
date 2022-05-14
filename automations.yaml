@@ -1,0 +1,90 @@
+- id: '1639319713487'
+  alias: UI Living Bright
+  description: ''
+  trigger:
+  - platform: device
+    device_id: e66b2a3e377181b497340dc9826cc5fa
+    domain: lutron_caseta
+    type: press
+    subtype: button_1
+  condition: []
+  action:
+  - scene: scene.living_bright
+  mode: single
+- id: '1639319776930'
+  alias: UI LIving Bright
+  description: ''
+  trigger:
+  - platform: device
+    device_id: e66b2a3e377181b497340dc9826cc5fa
+    domain: lutron_caseta
+    type: press
+    subtype: button_1
+  condition: []
+  action:
+  - scene: scene.living_bright
+  mode: single
+- id: '1639320374847'
+  alias: UI Living Button 1
+  description: first button pressed
+  trigger:
+  - platform: device
+    device_id: e66b2a3e377181b497340dc9826cc5fa
+    domain: lutron_caseta
+    type: press
+    subtype: button_1
+  condition: []
+  action:
+  - type: toggle
+    device_id: 34b71c7c5a8227fcce8f20e290951e5c
+    entity_id: light.living_room_main
+    domain: light
+  mode: single
+- id: '1644730056504'
+  alias: AA Test 1
+  description: Master TV on with Apple TV
+  trigger:
+  - platform: state
+    entity_id: media_player.appletv_masterbed
+    from: standby
+  condition: []
+  action:
+  - service: script.master_tv_power
+    data: {}
+  mode: single
+- id: '1644730281685'
+  alias: AA TV On
+  description: Master TV On
+  trigger:
+  - platform: state
+    entity_id: media_player.appletv_masterbed
+    from: standby
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  condition: []
+  action:
+  - service: script.master_tv_power
+    data: {}
+  mode: single
+- id: '1644730530777'
+  alias: Tag Test 1 is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 9920df3d-8228-492d-bb61-5255f4e02858
+  condition: []
+  action:
+  - scene: scene.theater_all_off
+  mode: single
+- id: '1644730694481'
+  alias: Tag Test 1 is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 9920df3d-8228-492d-bb61-5255f4e02858
+  condition: []
+  action:
+  - scene: scene.master_relax
+  mode: single
