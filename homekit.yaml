@@ -1,31 +1,21 @@
 - name: Utopia Bridge 1
   port: 21063
   mode: bridge
-
   filter:
     include_domains:
       - fan
       - light
       - switch
       - cover
-    include_entities:
-      - media_player.living_room_sony_avr
     exclude_entities:
       - switch.projector_power
       - switch.theater_fan
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
       - cover.mylink_theater_roman
-
   entity_config:
     switch.sprinklers:
       type: sprinkler
-    media_player.living_room_sony_avr:
-      feature_list:
-        - feature: on_off
-        - feature: play_pause
-        - feature: play_stop
-        - feature: toggle_mute
 
 
 - name: Utopia Bridge 2
@@ -68,3 +58,17 @@
   filter:
     include_entities:
       - lock.front_door
+
+- name: Utopia Bridge 6
+  port: 21068
+  mode: accessory
+  filter:
+    include_entities:
+      - media_player.living_room_sony_avr
+  entity_config:
+    media_player.living_room_sony_avr:
+      feature_list:
+        - feature: on_off
+#        - feature: play_pause
+#        - feature: play_stop
+        - feature: toggle_mute
