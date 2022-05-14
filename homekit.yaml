@@ -8,6 +8,8 @@
       - light
       - switch
       - cover
+    include_entities:
+      - media_player.living_room_sony_avr
     exclude_entities:
       - switch.projector_power
       - switch.theater_fan
