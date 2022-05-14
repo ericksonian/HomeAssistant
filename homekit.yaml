@@ -59,16 +59,16 @@
     include_entities:
       - lock.front_door
 
-- name: Utopia Bridge 6
-  port: 21068
-  mode: accessory
-  filter:
-    include_entities:
-      - media_player.living_room_sony_avr
-  entity_config:
-    media_player.living_room_sony_avr:
-      feature_list:
-        - feature: on_off
-#        - feature: play_pause
-#        - feature: play_stop
-        - feature: toggle_mute
+#- name: Utopia Bridge 6
+#  port: 21068
+#  mode: accessory
+#  filter:
+#    include_entities:
+#      - media_player.living_room_sony_avr
+#  entity_config:
+#    media_player.living_room_sony_avr:
+#      feature_list:
+#        - feature: on_off
+##        - feature: play_pause
+##        - feature: play_stop
+#        - feature: toggle_mute
