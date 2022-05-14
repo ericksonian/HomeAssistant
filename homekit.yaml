@@ -20,7 +20,12 @@
   entity_config:
     switch.sprinklers:
       type: sprinkler
-
+    media_player.living_room_sony_avr:
+      feature_list:
+        - feature: on_off
+        - feature: play_pause
+        - feature: play_stop
+        - feature: toggle_mute
 
 
 - name: Utopia Bridge 2
