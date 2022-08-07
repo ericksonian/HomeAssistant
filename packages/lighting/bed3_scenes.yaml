@@ -27,7 +27,7 @@ input_select:
       - level4
 
 ###### AUTOMATIONS --------------------------------------
-automation:
+#automation:
 
 #- alias: Pico Keypad Bed3 Button 1
 #  trigger:
@@ -38,44 +38,44 @@ automation:
 #  action:
 #  - service: script.bed3_light_scene_bright
 
-- alias: Pico Keypad Bed3 Button 2
-  trigger:
-  - entity_id: sensor.bed3_keypad
-    platform: state
-    to: "2"
-  condition: []
-  action:
-  - service: script.bed3_light_scene_entertain
+#- alias: Pico Keypad Bed3 Button 2
+#  trigger:
+#  - entity_id: sensor.bed3_keypad
+#    platform: state
+#    to: "2"
+#  condition: []
+#  action:
+#  - service: script.bed3_light_scene_entertain
 
-- alias: Pico Keypad Bed3 Button 3
-  trigger:
-  - entity_id: sensor.bed3_keypad
-    platform: state
-    to: "4"
-  condition: []
-  action:
-  - service: script.bed3_light_scene_relax
+#- alias: Pico Keypad Bed3 Button 3
+#  trigger:
+#  - entity_id: sensor.bed3_keypad
+#    platform: state
+#    to: "4"
+#  condition: []
+#  action:
+#  - service: script.bed3_light_scene_relax
 
-- alias: Pico Keypad Bed3 Button 4
-  trigger:
-  - entity_id: sensor.bed3_keypad
-    platform: state
-    to: "8"
-  condition: []
-  action:
-  - service: script.bed3_light_scene_off
+#- alias: Pico Keypad Bed3 Button 4
+#  trigger:
+#  - entity_id: sensor.bed3_keypad
+#    platform: state
+#    to: "8"
+#  condition: []
+#  action:
+#  - service: script.bed3_light_scene_off
 
-- alias: Bed3 Lights Off
-  trigger:
-  - entity_id: group.lights_bed3
-    platform: state
-    to: "off"
-  condition: []
-  action:
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.bed3_light_scene
-      option: 'off'
+#- alias: Bed3 Lights Off
+#  trigger:
+#  - entity_id: group.lights_bed3
+#    platform: state
+#    to: "off"
+#  condition: []
+#  action:
+#  - service: input_select.select_option
+#    data:
+#      entity_id: input_select.bed3_light_scene
+#      option: 'off'
 
 ###### SCENES --------------------------------------
 scene:
