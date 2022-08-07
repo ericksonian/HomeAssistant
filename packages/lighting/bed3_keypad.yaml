@@ -11,7 +11,7 @@ switch:
             target:
               entity_id: switch.pico_bed3_keypad_button1
         turn_off:
-          - service: script.pico_bed3_keypad_button1_off
+          - delay: '00:00:02'
 
       pico_bed3_keypad_button2:
         value_template: "{{ is_state('sensor.bed3_keypad', '2') }}"
@@ -48,8 +48,11 @@ switch:
 
 
 ###### SCRIPTS ------------------------------------------
-script:
+#script:
 
-  pico_bed3_keypad_button1_off:
-    sequence:
-      - delay: '00:00:02'
+#  pico_bed3_keypad_button1_off:
+#    sequence:
+#      - delay: '00:00:02'
+#      - service: switch.turn_off
+#        target:
+#          entity_id: switch.pico_bed3_keypad_button1
