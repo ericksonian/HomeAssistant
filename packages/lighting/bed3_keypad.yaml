@@ -53,6 +53,3 @@ script:
   pico_bed3_keypad_button1_off:
     sequence:
       - delay: '00:00:02'
-      - service: switch.turn_off
-        target:
-          entity_id: switch.pico_bed3_keypad_button1
