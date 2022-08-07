@@ -1,0 +1,9 @@
+
+
+###### Switch Templates --------------------------------------
+
+switch:
+  - platform: template
+    switches:
+      pico_bed3_keypad_button1:
+        value_template: "{{ is_state('sensor.bed3_keypad', '1') }}"
