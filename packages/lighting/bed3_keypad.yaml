@@ -1,5 +1,4 @@
 
-
 ###### Switch Templates --------------------------------------
 
 switch:
@@ -8,13 +7,14 @@ switch:
       pico_bed3_keypad_button1:
         value_template: "{{ is_state('sensor.bed3_keypad', '1') }}"
         turn_on:
-          service: switch.turn_on
-          target:
-            entity_id: switch.pico_bed3_keypad_button1
+          - service: switch.turn_on
+            target:
+              entity_id: switch.pico_bed3_keypad_button1
         turn_off:
-          service: switch.turn_off
-          target:
-            entity_id: switch.pico_bed3_keypad_button1
+          - delay: '00:00:01'
+          - service: switch.turn_off
+            target:
+              entity_id: switch.pico_bed3_keypad_button1
 
       pico_bed3_keypad_button2:
         value_template: "{{ is_state('sensor.bed3_keypad', '2') }}"
