@@ -17,7 +17,6 @@ switch:
               entity_id: switch.pico_bed3_keypad_button1_phantom
 
       pico_bed3_keypad_button1_phantom:
-        value_template: "{{ is_state('switch.pico_bed3_keypad_button1', 'on') }}"
         turn_on:
           - service: switch.turn_on
             target:
