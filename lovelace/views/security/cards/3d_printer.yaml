@@ -21,7 +21,7 @@ custom_fields:
             - type: conditional
               conditions:
                 - entity: sensor.3d_printer_state
-                  state_not: 'unavailable'
+                  state_not: 'error'
               card:
                 type: vertical-stack
                 cards:
@@ -131,19 +131,19 @@ custom_fields:
                     card:
                       - height: 31px
                   state:
-                    - value: Disconnected
+                    - value: complete
                       styles:
                         state:
                           - color: 'rgb(255,255,255)'
-                    - value: Printing
+                    - value: printing
                       styles:
                         state:
                           - color: 'rgb(0,255,0)'
-                    - value: Idle
+                    - value: standby
                       styles:
                         state:
                           - color: 'rgb(225,255,0)'
-                    - value: Unknown
+                    - value: error
                       styles:
                         state:
                           - color: 'rgb(255,0,0)'
@@ -168,7 +168,7 @@ custom_fields:
             - type: conditional
               conditions:
                 - entity: sensor.3d_printer_state
-                  state: 'unavailable'
+                  state: 'error'
               card:
                 type: horizontal-stack
                 cards:
@@ -201,7 +201,7 @@ custom_fields:
             - type: conditional
               conditions:
                 - entity: sensor.3d_printer_state
-                  state_not: 'unavailable'
+                  state_not: 'error'
               card:
                 type: vertical-stack
                 cards:
