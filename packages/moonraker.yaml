@@ -184,6 +184,51 @@ sensor:
 #      3d_printer_heaters_power:
 #        friendly_name: "Bed and Nozzle Power"
 #        value_template: '{{ states("sensor.3d_printer_bed_power") }}% / {{ states("sensor.3d_printer_hotend_power") }}%'
+      3d_printer_temp_printer_cooled:
+        value_template: "{{ states('sensor.3d_printer_temp_all_difference') | float < 20.0 }}"
+      3d_printer_temp_bed_heating:
+        value_template: "{{ states('sensor.3d_printer_temp_bed_difference') | float > 3.0 }}"
+      3d_printer_temp_tool0_heating:
+        value_template: "{{ states('sensor.3d_printer_temp_tool0_difference') | float > 3.0 }}"
+      3d_printer_power_energy_use_today_convert:
+        unit_of_measurement: 'Wh'
+        value_template: "{{ states('sensor.3d_printer_power_energy_use_today') | float * 1000 }}"
+
+###### SENSOR TEMPLATES ------------------------------------------
+template:
+  - sensor:
+      - name: "3d printer temp all difference"
+        state: >
+          {% set tool0 = states('sensor.3d_printer_hotend_actual') | float %}
+          {% set bed = states('sensor.3d_printer_bed_actual') | float %}
+
+          {{ (tool0 - bed) | round(1, default=0) }}
+      - name: "3d printer temp bed difference"
+        state: >
+          {% set bed_actual = states('sensor.3d_printer_bed_actual') | float %}
+          {% set bed_target = states('sensor.3d_printer_bed_target') | float %}
+
+          {{ (bed_target - bed_actual) | round(1, default=0) }}
+      - name: "3d printer temp tool0 difference"
+        state: >
+          {% set tool0_actual = states('sensor.3d_printer_hotend_actual') | float %}
+          {% set tool0_target = states('sensor.3d_printer_hotend_target') | float %}
+
+          {{ (tool0_target - tool0_actual) | round(1, default=0) }}
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+- alias: 3D Printer Cooled
+  trigger:
+  - platform: state
+    entity_id: sensor.3d_printer_temp_printer_cooled
+    to: "True"
+    for: "00:15:00"
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.octoprint_printer_power
 
 #binary_sensor:
 #  - platform: template

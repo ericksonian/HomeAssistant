@@ -20,7 +20,7 @@ custom_fields:
                 action: more-info
             - type: conditional
               conditions:
-                - entity: sensor.octoprint_current_state
+                - entity: sensor.3d_printer_state
                   state_not: 'unavailable'
               card:
                 type: vertical-stack
@@ -29,7 +29,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_printer_power_current_power
+                        entity: sensor.3d_printer_power_current_power
                         name: Power Draw
                         icon: 'mdi:power-plug'
                         show_icon: true
@@ -48,7 +48,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_printer_power_current_power
+                        entity: sensor.3d_printer_power_current_power
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -64,7 +64,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_printer_power_energy_use_today
+                        entity: sensor.3d_printer_power_energy_use_today
                         name: Used Today
                         icon: 'mdi:lightning-bolt'
                         show_icon: true
@@ -83,7 +83,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_printer_power_energy_use_today_convert
+                        entity: sensor.3d_printer_power_energy_use_today_convert
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -119,7 +119,7 @@ custom_fields:
             - type: horizontal-stack
               cards:
                 - type: 'custom:button-card'
-                  entity: sensor.octoprint_current_state_rename
+                  entity: sensor.3d_printer_state
                   tap_action:
                     action: more-info
                   hold_action:
@@ -149,11 +149,11 @@ custom_fields:
                           - color: 'rgb(255,0,0)'
                 - type: conditional
                   conditions:
-                    - entity: sensor.octoprint_current_state
+                    - entity: sensor.3d_printer_state
                       state_not: 'unavailable'
                   card:
                     type: 'custom:button-card'
-                    entity: sensor.octoprint_job_percentage
+                    entity: sensor.3d_printer_current_progress
                     tap_action:
                       action: none
                     hold_action:
@@ -167,7 +167,7 @@ custom_fields:
 
             - type: conditional
               conditions:
-                - entity: sensor.octoprint_current_state
+                - entity: sensor.3d_printer_state
                   state: 'unavailable'
               card:
                 type: horizontal-stack
@@ -200,7 +200,7 @@ custom_fields:
 
             - type: conditional
               conditions:
-                - entity: sensor.octoprint_current_state
+                - entity: sensor.3d_printer_state
                   state_not: 'unavailable'
               card:
                 type: vertical-stack
@@ -280,7 +280,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_temp_tool0_heating
+                        entity: sensor.3d_printer_temp_tool0_heating
                         name: Nozzle
                         icon: 'mdi:printer-3d-nozzle'
                         show_icon: true
@@ -315,7 +315,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_temp_bed_heating
+                        entity: sensor.3d_printer_temp_bed_heating
                         name: Print Bed
                         icon: 'mdi:printer-3d'
                         show_icon: true
