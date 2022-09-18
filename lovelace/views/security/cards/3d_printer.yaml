@@ -210,7 +210,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_time_printing
+                        entity: sensor.3d_printer_print_time
                         name: Time Elapsed
                         icon: 'mdi:timer-outline'
                         show_icon: true
@@ -229,7 +229,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_time_printing
+                        entity: sensor.3d_printer_print_time
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -245,7 +245,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.octoprint_start_time
+                        entity: sensor.3d_printer_time_remaining
                         name: Time Left
                         icon: 'mdi:timer'
                         show_icon: true
@@ -264,7 +264,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_time_remaining_estimated
+                        entity: sensor.3d_printer_time_remaining
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -299,7 +299,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_temp_tool0_actual
+                        entity: sensor.3d_printer_hotend_actual
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -334,7 +334,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.octoprint_temp_bed_actual
+                        entity: sensor.3d_printer_bed_actual
                         show_name: false
                         show_icon: false
                         show_state: true
