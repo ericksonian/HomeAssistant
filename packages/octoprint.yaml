@@ -1,0 +1,96 @@
+
+###### SENSOR TEMPLATES ------------------------------------------
+#template:
+#  - sensor:
+#      - name: "octoprint temp all difference"
+#        state: >
+#          {% set tool0 = states('sensor.octoprint_temp_tool0_actual') | float %}
+#          {% set bed = states('sensor.octoprint_temp_bed_actual') | float %}
+
+#          {{ (tool0 - bed) | round(1, default=0) }}
+
+#      - name: "octoprint temp bed difference"
+#        state: >
+#          {% set bed_actual = states('sensor.octoprint_temp_bed_actual') | float %}
+#          {% set bed_target = states('sensor.octoprint_temp_bed_target') | float %}
+
+#          {{ (bed_target - bed_actual) | round(1, default=0) }}
+
+#      - name: "octoprint temp tool0 difference"
+#        state: >
+#          {% set tool0_actual = states('sensor.octoprint_temp_tool0_actual') | float %}
+#          {% set tool0_target = states('sensor.octoprint_temp_tool0_target') | float %}
+
+#          {{ (tool0_target - tool0_actual) | round(1, default=0) }}
+
+sensor:
+  - platform: template
+    sensors:
+      octoprint_current_state_rename:
+        value_template: >-
+          {% if is_state('sensor.octoprint_current_state', 'unavailable') %}
+            Disconnected
+          {% elif is_state('sensor.octoprint_current_state', 'Printing') %}
+            Printing
+          {% elif is_state('sensor.octoprint_current_state', 'Operational') %}
+            Idle
+          {% elif is_state('sensor.octoprint_current_state', 'Starting') %}
+            Starting
+          {% else %}
+            Unknown
+          {% endif %}
+#      octoprint_temp_printer_cooled:
+#        value_template: "{{ states('sensor.octoprint_temp_all_difference') | float < 20.0 }}"
+#      octoprint_temp_bed_heating:
+#        value_template: "{{ states('sensor.octoprint_temp_bed_difference') | float > 3.0 }}"
+#      octoprint_temp_tool0_heating:
+#        value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | float > 3.0 }}"
+      octoprint_printer_power_energy_use_today_convert:
+        unit_of_measurement: 'Wh'
+        value_template: "{{ states('sensor.octoprint_printer_power_energy_use_today') | float * 1000 }}"
+      octoprint_time_printing:
+        value_template: >
+          {% set time = ((states('sensor.octoprint_time_start')|as_datetime|as_local - now()).seconds) |int %}
+          {% set minutes = ((-time % 3600) / 60) | int %}
+          {% set hours = ((-time % 86400) / 3600) | int %}
+          {% set days = (-time / 86400) | int %}
+
+          {%- if time < 60 -%}
+            < 1 min
+            {%- else -%}
+            {%- if hours > 0 -%}
+              {%- if days > 0 -%}
+                {{ ' ' }}
+              {%- endif -%}
+              {{ hours }}h
+            {%- endif -%}
+            {%- if minutes > 0 -%}
+              {%- if hours > 0 -%}
+                {{ ' ' }}
+              {%- endif -%}
+              {{ minutes }}m
+            {%- endif -%}
+          {%- endif -%}
+      octoprint_time_remaining_estimated:
+        value_template: >
+          {% set time = ((states('sensor.octoprint_time_finish_estimated')|as_datetime|as_local - now()).seconds) |int %}
+          {% set minutes = ((time % 3600) / 60) | int %}
+          {% set hours = ((time % 86400) / 3600) | int %}
+          {% set days = (time / 86400) | int %}
+
+          {%- if time < 60 -%}
+            < 1 min
+            {%- else -%}
+            {%- if hours > 0 -%}
+              {%- if days > 0 -%}
+                {{ ' ' }}
+              {%- endif -%}
+              {{ hours }}h
+            {%- endif -%}
+            {%- if minutes > 0 -%}
+              {%- if hours > 0 -%}
+                {{ ' ' }}
+              {%- endif -%}
+              {{ minutes }}m
+            {%- endif -%}
+          {%- endif -%}

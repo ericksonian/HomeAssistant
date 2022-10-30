@@ -20,7 +20,7 @@ custom_fields:
                 action: more-info
             - type: conditional
               conditions:
-                - entity: sensor.octoprint_current_state
+                - entity: sensor.octoprint_current_state_rename
                   state_not: 'error'
               card:
                 type: vertical-stack
@@ -119,7 +119,7 @@ custom_fields:
             - type: horizontal-stack
               cards:
                 - type: 'custom:button-card'
-                  entity: sensor.octoprint_current_state
+                  entity: sensor.octoprint_current_state_rename
                   tap_action:
                     action: more-info
                   hold_action:
@@ -149,7 +149,7 @@ custom_fields:
                           - color: 'rgb(255,0,0)'
                 - type: conditional
                   conditions:
-                    - entity: sensor.octoprint_current_state
+                    - entity: sensor.octoprint_current_state_rename
                       state_not: 'unavailable'
                   card:
                     type: 'custom:button-card'
@@ -167,7 +167,7 @@ custom_fields:
 
             - type: conditional
               conditions:
-                - entity: sensor.octoprint_current_state
+                - entity: sensor.octoprint_current_state_rename
                   state: 'error'
               card:
                 type: horizontal-stack
@@ -200,7 +200,7 @@ custom_fields:
 
             - type: conditional
               conditions:
-                - entity: sensor.octoprint_current_state
+                - entity: sensor.octoprint_current_state_rename
                   state_not: 'error'
               card:
                 type: vertical-stack
@@ -210,7 +210,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.3d_printer_print_time
+                        entity: sensor.octoprint_time_printing
                         name: Time Elapsed
                         icon: 'mdi:timer-outline'
                         show_icon: true
@@ -229,7 +229,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.3d_printer_print_time
+                        entity: sensor.octoprint_time_printing
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -245,7 +245,7 @@ custom_fields:
                     cards:
                       - type: 'custom:button-card'
                         template: wide
-                        entity: sensor.3d_printer_time_remaining
+                        entity: sensor.octoprint_time_remaining_estimated
                         name: Time Left
                         icon: 'mdi:timer'
                         show_icon: true
@@ -264,7 +264,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.3d_printer_time_remaining
+                        entity: sensor.octoprint_time_remaining_estimated
                         show_name: false
                         show_icon: false
                         show_state: true
