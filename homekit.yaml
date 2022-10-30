@@ -4,9 +4,18 @@
   filter:
     include_domains:
       - fan
-      - light
       - switch
       - cover
+    include_entities:
+      - light.lifx1
+      - light.lifx2
+      - light.lifx3
+      - light.lifx4
+      - light.lifx5
+      - light.lifx6
+      - light.lifxmini1
+      - light.living_avr_volume
+      - light.master_bedroom_ledstrip
     exclude_entities:
       - switch.theater_fan
       - switch.relay_theater_screen_down
@@ -51,12 +60,12 @@
     camera.frontdoor:
       stream_source: !secret camera_RTSP_Garage
 
-- name: Utopia Bridge 5
-  port: 21067
-  mode: accessory
-  filter:
-    include_entities:
-      - lock.front_door
+#- name: Utopia Bridge 5
+#  port: 21067
+#  mode: accessory
+#  filter:
+#    include_entities:
+#      - lock.front_door
 
 #- name: Utopia Bridge 6
 #  port: 21068
@@ -68,6 +77,6 @@
 #    media_player.living_room_sony_avr:
 #      feature_list:
 #        - feature: on_off
-##        - feature: play_pause
-##        - feature: play_stop
+#        - feature: play_pause
+#        - feature: play_stop
 #        - feature: toggle_mute
