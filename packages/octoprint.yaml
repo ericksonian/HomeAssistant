@@ -1,27 +1,36 @@
 
-###### SENSOR TEMPLATES ------------------------------------------
-#template:
-#  - sensor:
-#      - name: "octoprint temp all difference"
-#        state: >
-#          {% set tool0 = states('sensor.octoprint_temp_tool0_actual') | float %}
-#          {% set bed = states('sensor.octoprint_temp_bed_actual') | float %}
 
-#          {{ (tool0 - bed) | round(1, default=0) }}
 
-#      - name: "octoprint temp bed difference"
-#        state: >
-#          {% set bed_actual = states('sensor.octoprint_temp_bed_actual') | float %}
-#          {% set bed_target = states('sensor.octoprint_temp_bed_target') | float %}
+climate:
+  - platform: generic_thermostat
+    name: Printer Hot End
+    heater: switch.hot_end_cooled
+    target_sensor: sensor.octoprint_actual_tool0_temp
+    min_temp: 26
+    max_temp: 250
+    ac_mode: false
+    target_temp: 30
+    cold_tolerance: 0
+    hot_tolerance: 0
+    keep_alive:
+      minutes: 1
+    initial_hvac_mode: "heat"
+    precision: 0.1
 
-#          {{ (bed_target - bed_actual) | round(1, default=0) }}
+switch:
+  - platform: template
+    switches:
+      hot_end_cooled:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.hot_end_cooled
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.hot_end_cooled
 
-#      - name: "octoprint temp tool0 difference"
-#        state: >
-#          {% set tool0_actual = states('sensor.octoprint_temp_tool0_actual') | float %}
-#          {% set tool0_target = states('sensor.octoprint_temp_tool0_target') | float %}
 
-#          {{ (tool0_target - tool0_actual) | round(1, default=0) }}
 
 sensor:
   - platform: template
