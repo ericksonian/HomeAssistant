@@ -19,14 +19,10 @@
   entity_config:
     switch.sprinklers:
       type: sprinkler
-    sensor.octoprint_actual_tool0_temp:
-      name: Printer Tool Temperature
-      device_class: temperature
-      unit_of_measurement: "°C"
-    sensor.octoprint_actual_bed_temp:
-      name: Printer Bed Temperature
-      device_class: temperature
-      unit_of_measurement: "°C"
+#    sensor.octoprint_actual_tool0_temp:
+#      name: Printer Tool Temperature
+#    sensor.octoprint_actual_bed_temp:
+#      name: Printer Bed Temperature
 
 
 - name: Utopia Bridge 2
