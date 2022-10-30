@@ -1,11 +1,24 @@
 
-
-
 climate:
   - platform: generic_thermostat
-    name: Printer Hot End
-    heater: switch.hot_end_cooled
+    name: Octoprint Tool Thermostat
+    heater: switch.octoprint_tool_cooled
     target_sensor: sensor.octoprint_actual_tool0_temp
+    min_temp: 26
+    max_temp: 250
+    ac_mode: false
+    target_temp: 30
+    cold_tolerance: 0
+    hot_tolerance: 0
+    keep_alive:
+      minutes: 1
+    initial_hvac_mode: "heat"
+    precision: 0.1
+
+  - platform: generic_thermostat
+    name: Octoprint Bed Thermostat
+    heater: switch.octoprint_bed_cooled
+    target_sensor: sensor.octoprint_actual_bed_temp
     min_temp: 26
     max_temp: 250
     ac_mode: false
@@ -20,16 +33,24 @@ climate:
 switch:
   - platform: template
     switches:
-      hot_end_cooled:
+      octoprint_tool_cooled:
         turn_on:
           service: switch.turn_on
           target:
-            entity_id: switch.hot_end_cooled
+            entity_id: switch.octoprint_tool_cooled
         turn_off:
           service: switch.turn_off
           target:
-            entity_id: switch.hot_end_cooled
-
+            entity_id: switch.octoprint_tool_cooled
+      octoprint_bed_cooled:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.octoprint_bed_cooled
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.octoprint_bed_cooled
 
 
 sensor:
