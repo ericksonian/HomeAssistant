@@ -3,7 +3,8 @@
   mode: bridge
   filter:
     include_domains:
-      - fan
+#      - fan
+#      - light
       - switch
       - cover
     include_entities:
