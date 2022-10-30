@@ -6,7 +6,7 @@ homeassistant:
   # In Meters
   elevation: !secret elevation
   # metric, imperial
-  unit_system: imperial
+  unit_system: metric
   # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret time_zone
   customize: !include customize.yaml
