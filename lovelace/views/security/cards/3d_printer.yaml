@@ -20,7 +20,7 @@ custom_fields:
                 action: more-info
             - type: conditional
               conditions:
-                - entity: sensor.3d_printer_state
+                - entity: sensor.octoprint_current_state
                   state_not: 'error'
               card:
                 type: vertical-stack
@@ -119,7 +119,7 @@ custom_fields:
             - type: horizontal-stack
               cards:
                 - type: 'custom:button-card'
-                  entity: sensor.3d_printer_state
+                  entity: sensor.octoprint_current_state
                   tap_action:
                     action: more-info
                   hold_action:
@@ -149,11 +149,11 @@ custom_fields:
                           - color: 'rgb(255,0,0)'
                 - type: conditional
                   conditions:
-                    - entity: sensor.3d_printer_state
+                    - entity: sensor.octoprint_current_state
                       state_not: 'unavailable'
                   card:
                     type: 'custom:button-card'
-                    entity: sensor.3d_printer_current_progress
+                    entity: sensor.sensor.octoprint_job_percentage
                     tap_action:
                       action: none
                     hold_action:
@@ -167,7 +167,7 @@ custom_fields:
 
             - type: conditional
               conditions:
-                - entity: sensor.3d_printer_state
+                - entity: sensor.octoprint_current_state
                   state: 'error'
               card:
                 type: horizontal-stack
@@ -200,7 +200,7 @@ custom_fields:
 
             - type: conditional
               conditions:
-                - entity: sensor.3d_printer_state
+                - entity: sensor.octoprint_current_state
                   state_not: 'error'
               card:
                 type: vertical-stack
@@ -299,7 +299,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.3d_printer_hotend_actual
+                        entity: sensor.octoprint_actual_tool0_temp
                         show_name: false
                         show_icon: false
                         show_state: true
@@ -334,7 +334,7 @@ custom_fields:
                         hold_action:
                           action: none
                       - type: 'custom:button-card'
-                        entity: sensor.3d_printer_bed_actual
+                        entity: sensor.octoprint_actual_bed_temp
                         show_name: false
                         show_icon: false
                         show_state: true
