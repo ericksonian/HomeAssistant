@@ -3,20 +3,10 @@
   mode: bridge
   filter:
     include_domains:
-#      - fan
-#      - light
+      - fan
+      - light
       - switch
       - cover
-    include_entities:
-      - light.lifx1
-      - light.lifx2
-      - light.lifx3
-      - light.lifx4
-      - light.lifx5
-      - light.lifx6
-      - light.lifxmini1
-      - light.living_avr_volume
-      - light.master_bedroom_ledstrip
     exclude_entities:
       - switch.theater_fan
       - switch.relay_theater_screen_down
