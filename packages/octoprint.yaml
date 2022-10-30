@@ -4,7 +4,7 @@ climate:
     name: Octoprint Tool Thermostat
     heater: switch.octoprint_tool_cooled
     target_sensor: sensor.octoprint_actual_tool0_temp
-    min_temp: 26
+    min_temp: 25
     max_temp: 250
     ac_mode: false
     target_temp: 30
@@ -19,8 +19,8 @@ climate:
     name: Octoprint Bed Thermostat
     heater: switch.octoprint_bed_cooled
     target_sensor: sensor.octoprint_actual_bed_temp
-    min_temp: 26
-    max_temp: 250
+    min_temp: 25
+    max_temp: 70
     ac_mode: false
     target_temp: 30
     cold_tolerance: 0
