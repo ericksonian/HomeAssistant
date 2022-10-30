@@ -8,6 +8,9 @@
       - switch
       - cover
       - climate
+    include_entities:
+      - sensor.octoprint_actual_tool0_temp
+      - sensor.octoprint_actual_bed_temp
     exclude_entities:
       - switch.theater_fan
       - switch.relay_theater_screen_down
@@ -16,6 +19,10 @@
   entity_config:
     switch.sprinklers:
       type: sprinkler
+    sensor.octoprint_actual_tool0_temp:
+      name: Printer Tool Temperature
+    sensor.octoprint_actual_bed_temp:
+      name: Printer Bed Temperature
 
 
 - name: Utopia Bridge 2
