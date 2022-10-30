@@ -7,6 +7,7 @@
       - light
       - switch
       - cover
+      - climate
     exclude_entities:
       - switch.theater_fan
       - switch.relay_theater_screen_down
