@@ -9,7 +9,7 @@ climate:
     ac_mode: false
 #    target_temp: 30
     cold_tolerance: 5
-    hot_tolerance: 5
+    hot_tolerance: 0
     min_cycle_duration:
       minutes: 1
     precision: 0.1
@@ -22,8 +22,8 @@ climate:
     max_temp: 70
     ac_mode: false
 #    target_temp: 30
-    cold_tolerance: 5
-    hot_tolerance: 5
+    cold_tolerance: 2
+    hot_tolerance: 0
     min_cycle_duration:
       minutes: 1
     precision: 0.1
