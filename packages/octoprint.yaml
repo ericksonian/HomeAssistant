@@ -75,24 +75,22 @@ automation:
 - alias: Octoprint Follow Temp Tool
   trigger:
   - platform: state
-  entity_id: sensor.octoprint_target_tool0_temp
+    entity_id: sensor.octoprint_target_tool0_temp
   action:
   - service: climate.set_temperature
-    entity_id:
-    - climate.octoprint_tool_thermostat
-  data_template:
-    temperature: "{{ states('sensor.octoprint_target_tool0_temp') | float }}"
+    entity_id: climate.octoprint_tool_thermostat
+    data_template:
+      temperature: "{{ states('sensor.octoprint_target_tool0_temp') | float }}"
 
 - alias: Octoprint Follow Temp Bed
   trigger:
   - platform: state
-  entity_id: sensor.octoprint_target_bed_temp
+    entity_id: sensor.octoprint_target_bed_temp
   action:
   - service: climate.set_temperature
-    entity_id:
-    - climate.octoprint_bed_thermostat
-  data_template:
-    temperature: "{{ states('sensor.octoprint_target_bed_temp') | float }}"
+    entity_id: climate.octoprint_bed_thermostat
+    data_template:
+      temperature: "{{ states('sensor.octoprint_target_bed_temp') | float }}"
 
 
 
