@@ -4,30 +4,28 @@ climate:
     name: Octoprint Tool Thermostat
     heater: switch.octoprint_fakeheater_tool
     target_sensor: sensor.octoprint_actual_tool0_temp
-    min_temp: 25
+    min_temp: 20
     max_temp: 250
     ac_mode: false
-    target_temp: 30
-    cold_tolerance: 0
-    hot_tolerance: 0
-    keep_alive:
+#    target_temp: 30
+    cold_tolerance: 5
+    hot_tolerance: 5
+    min_cycle_duration:
       minutes: 1
-    initial_hvac_mode: "off"
     precision: 0.1
 
   - platform: generic_thermostat
     name: Octoprint Bed Thermostat
     heater: switch.octoprint_fakeheater_bed
     target_sensor: sensor.octoprint_actual_bed_temp
-    min_temp: 25
+    min_temp: 20
     max_temp: 70
     ac_mode: false
-    target_temp: 30
-    cold_tolerance: 0
-    hot_tolerance: 0
-    keep_alive:
+#    target_temp: 30
+    cold_tolerance: 5
+    hot_tolerance: 5
+    min_cycle_duration:
       minutes: 1
-    initial_hvac_mode: "off"
     precision: 0.1
 
 switch:
@@ -91,8 +89,6 @@ automation:
     entity_id: climate.octoprint_bed_thermostat
     data_template:
       temperature: "{{ states('sensor.octoprint_target_bed_temp') | float }}"
-
-
 
 sensor:
   - platform: template
