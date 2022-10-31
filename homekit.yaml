@@ -16,6 +16,8 @@
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
       - cover.mylink_theater_roman
+      - switch.octoprint_fakeheater_tool
+      - switch.octoprint_fakeheater_bed
   entity_config:
     switch.sprinklers:
       type: sprinkler

@@ -2,7 +2,7 @@
 climate:
   - platform: generic_thermostat
     name: Octoprint Tool Thermostat
-    heater: switch.octoprint_tool_cooled
+    heater: switch.octoprint_fakeheater_tool
     target_sensor: sensor.octoprint_actual_tool0_temp
     min_temp: 25
     max_temp: 250
@@ -12,12 +12,12 @@ climate:
     hot_tolerance: 0
     keep_alive:
       minutes: 1
-    initial_hvac_mode: "heat"
+    initial_hvac_mode: "off"
     precision: 0.1
 
   - platform: generic_thermostat
     name: Octoprint Bed Thermostat
-    heater: switch.octoprint_bed_cooled
+    heater: switch.octoprint_fakeheater_bed
     target_sensor: sensor.octoprint_actual_bed_temp
     min_temp: 25
     max_temp: 70
@@ -27,12 +27,30 @@ climate:
     hot_tolerance: 0
     keep_alive:
       minutes: 1
-    initial_hvac_mode: "heat"
+    initial_hvac_mode: "off"
     precision: 0.1
 
 switch:
   - platform: template
     switches:
+      octoprint_fakeheater_tool:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.octoprint_fakeheater_tool
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.octoprint_fakeheater_tool
+      octoprint_fakeheater_bed:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.octoprint_fakeheater_bed
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.octoprint_fakeheater_bed
       octoprint_tool_cooled:
         turn_on:
           service: switch.turn_on
@@ -52,6 +70,31 @@ switch:
           target:
             entity_id: switch.octoprint_bed_cooled
 
+###### AUTOMATIONS --------------------------------------
+automation:
+- alias: Octoprint Follow Temp Tool
+  trigger:
+  - platform: state
+  entity_id: sensor.octoprint_target_tool0_temp
+  action:
+  - service: climate.set_temperature
+    entity_id:
+    - climate.octoprint_tool_thermostat
+  data_template:
+    temperature: "{{ states('sensor.octoprint_target_tool0_temp') | float }}"
+
+- alias: Octoprint Follow Temp Bed
+  trigger:
+  - platform: state
+  entity_id: sensor.octoprint_target_bed_temp
+  action:
+  - service: climate.set_temperature
+    entity_id:
+    - climate.octoprint_bed_thermostat
+  data_template:
+    temperature: "{{ states('sensor.octoprint_target_bed_temp') | float }}"
+
+
 
 sensor:
   - platform: template
@@ -69,12 +112,6 @@ sensor:
           {% else %}
             Unknown
           {% endif %}
-#      octoprint_temp_printer_cooled:
-#        value_template: "{{ states('sensor.octoprint_temp_all_difference') | float < 20.0 }}"
-#      octoprint_temp_bed_heating:
-#        value_template: "{{ states('sensor.octoprint_temp_bed_difference') | float > 3.0 }}"
-#      octoprint_temp_tool0_heating:
-#        value_template: "{{ states('sensor.octoprint_temp_tool0_difference') | float > 3.0 }}"
       octoprint_printer_power_energy_use_today_convert:
         unit_of_measurement: 'Wh'
         value_template: "{{ states('sensor.octoprint_printer_power_energy_use_today') | float * 1000 }}"
