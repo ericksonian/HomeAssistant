@@ -90,6 +90,20 @@ automation:
     data_template:
       temperature: "{{ states('sensor.octoprint_target_bed_temp') | float }}"
 
+- alias: Octoprint Follow Temp Heaters
+  trigger:
+  - platform: state
+    entity_id: sensor.octoprint_current_state
+    to: Printing
+  action:
+    - service: climate.set_temperature
+      target:
+        entity_id:
+        - climate.octoprint_tool_thermostat
+        - climate.octoprint_bed_thermostat
+      data:
+        hvac_mode: heat
+
 sensor:
   - platform: template
     sensors:
