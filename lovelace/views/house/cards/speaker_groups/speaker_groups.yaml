@@ -1,4 +1,0 @@
-type: vertical-stack
-cards:
-  - !include /config/lovelace/views/house/cards/speaker_groups/everywhere.yaml
-  - !include /config/lovelace/views/house/cards/speaker_groups/woofers.yaml

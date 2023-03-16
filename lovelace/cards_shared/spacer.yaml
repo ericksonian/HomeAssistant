@@ -1,7 +1,0 @@
-type: 'custom:button-card'
-color_type: label-card
-color: 'rgb(0,0,0)'
-name: null
-styles:
-  card:
-    - height: 12px

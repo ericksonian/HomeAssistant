@@ -1,11 +1,5 @@
 title: Utopia
 button_card_templates:
-  !include /config/lovelace/button_card_templates.yaml
+#  !include /config/lovelace/button_card_templates.yaml
 views:
-  - !include /config/lovelace/views/security/security.yaml
-  - !include /config/lovelace/views/house/house.yaml
-  - !include /config/lovelace/views/living/living.yaml
-  - !include /config/lovelace/views/master/master.yaml
-  - !include /config/lovelace/views/bed3/bed3.yaml
-  - !include /config/lovelace/views/theater/theater.yaml
-#  - !include /config/lovelace/views/rack/rack.yaml
+#  - !include /config/lovelace/views/security/security.yaml
