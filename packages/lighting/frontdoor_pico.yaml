@@ -1,0 +1,133 @@
+
+###### AUTOMATIONS --------------------------------------
+automation:
+
+- alias: pico_frontdoor_button1
+  trigger:
+  - entity_id: sensor.front_door_pico
+    platform: state
+    to: "1"
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.pico_frontdoor_button1
+  - delay: '00:00:01'
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pico_frontdoor_button1
+
+- alias: pico_frontdoor_button2
+  trigger:
+  - entity_id: sensor.front_door_pico
+    platform: state
+    to: "8"
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.pico_frontdoor_button2
+  - delay: '00:00:01'
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pico_frontdoor_button2
+
+- alias: pico_frontdoor_button3
+  trigger:
+  - entity_id: sensor.front_door_pico
+    platform: state
+    to: "2"
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.pico_frontdoor_button3
+  - delay: '00:00:01'
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pico_frontdoor_button3
+
+- alias: pico_frontdoor_button4
+  trigger:
+  - entity_id: sensor.front_door_pico
+    platform: state
+    to: "16"
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.pico_frontdoor_button4
+  - delay: '00:00:01'
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pico_frontdoor_button4
+
+- alias: pico_frontdoor_button5
+  trigger:
+  - entity_id: sensor.front_door_pico
+    platform: state
+    to: "4"
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.pico_frontdoor_button5
+  - delay: '00:00:01'
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pico_frontdoor_button5
+
+###### Switch Templates --------------------------------------
+
+switch:
+  - platform: template
+    switches:
+      pico_frontdoor_button1:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.pico_frontdoor_button1
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.pico_frontdoor_button1
+
+      pico_frontdoor_button2:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.pico_frontdoor_button2
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.pico_frontdoor_button2
+
+      pico_frontdoor_button3:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.pico_frontdoor_button3
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.pico_frontdoor_button3
+
+      pico_frontdoor_button4:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.pico_frontdoor_button4
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.pico_frontdoor_button4
+
+      pico_frontdoor_button5:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.pico_frontdoor_button5
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.pico_frontdoor_button5
