@@ -770,6 +770,13 @@
 "Area" : {
 "Name" : "Theater"
 }
+},
+{
+"ID" : 32,
+"Name" : "Upper",
+"Area" : {
+"Name" : "Living Room"
+}
 }
 ]
 }
