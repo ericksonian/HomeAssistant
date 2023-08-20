@@ -628,6 +628,27 @@
 "Number" : 11
 }
 ]
+},
+{
+"ID" : 36,
+"Name" : "Kick Lights Remote 1",
+"Buttons" : [
+{
+"Number" : 2
+},
+{
+"Number" : 3
+},
+{
+"Number" : 4
+},
+{
+"Number" : 5
+},
+{
+"Number" : 6
+}
+]
 }
 ],
 "Zones" : [
@@ -648,13 +669,6 @@
 {
 "ID" : 4,
 "Name" : "Sink",
-"Area" : {
-"Name" : "Kitchen"
-}
-},
-{
-"ID" : 5,
-"Name" : "Dining Pendant",
 "Area" : {
 "Name" : "Kitchen"
 }
@@ -772,10 +786,38 @@
 }
 },
 {
+"ID" : 5,
+"Name" : "Dining Pendant",
+"Area" : {
+"Name" : "Kitchen"
+}
+},
+{
 "ID" : 32,
 "Name" : "Upper",
 "Area" : {
 "Name" : "Living Room"
+}
+},
+{
+"ID" : 33,
+"Name" : "Main",
+"Area" : {
+"Name" : "Master Bathroom"
+}
+},
+{
+"ID" : 34,
+"Name" : "Shower",
+"Area" : {
+"Name" : "Master Bathroom"
+}
+},
+{
+"ID" : 35,
+"Name" : "Kick",
+"Area" : {
+"Name" : "Master Bathroom"
 }
 }
 ]
