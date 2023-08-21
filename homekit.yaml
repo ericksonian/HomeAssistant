@@ -8,6 +8,7 @@
       - switch
       - cover
       - climate
+      - lock
 #    include_entities:
     exclude_entities:
       - light.extender
@@ -60,12 +61,12 @@
     camera.frontdoor:
       stream_source: !secret camera_RTSP_Garage
 
-- name: Utopia Bridge 5
-  port: 21067
-  mode: accessory
-  filter:
-    include_entities:
-      - lock.front_door
+#- name: Utopia Bridge 5
+#  port: 21067
+#  mode: accessory
+#  filter:
+#    include_entities:
+#      - lock.front_door
 
 #- name: Utopia Bridge 6
 #  port: 21068
