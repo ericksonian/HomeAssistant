@@ -10,6 +10,7 @@
       - climate
 #    include_entities:
     exclude_entities:
+      - light.extender
       - switch.theater_fan
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
