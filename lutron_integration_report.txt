@@ -569,7 +569,7 @@
 {
 "ID" : 26,
 "Area" : {
-"Name" : "Bed3"
+"Name" : "Master Bathroom"
 },
 "Name" : "Keypad",
 "Buttons" : [
@@ -631,7 +631,34 @@
 },
 {
 "ID" : 36,
-"Name" : "Kick Lights Remote 1",
+"Area" : {
+"Name" : "Master Bathroom"
+},
+"Name" : "Sink Right Pico",
+"Buttons" : [
+{
+"Number" : 2
+},
+{
+"Number" : 3
+},
+{
+"Number" : 4
+},
+{
+"Number" : 5
+},
+{
+"Number" : 6
+}
+]
+},
+{
+"ID" : 38,
+"Area" : {
+"Name" : "Bed3"
+},
+"Name" : "Pico",
 "Buttons" : [
 {
 "Number" : 2
@@ -818,6 +845,13 @@
 "Name" : "Kick",
 "Area" : {
 "Name" : "Master Bathroom"
+}
+},
+{
+"ID" : 37,
+"Name" : "Main Lights",
+"Area" : {
+"Name" : "Bed3"
 }
 }
 ]
