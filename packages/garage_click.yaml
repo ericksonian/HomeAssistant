@@ -1,0 +1,33 @@
+
+cover:
+  - platform: template
+    covers:
+      garage_door_click:
+        device_class: garage
+        friendly_name: "Garage Door"
+#        value_template: "{{ states('input_select.theater_shade_roman') }}"
+        open_cover:
+          service: script.garage_door_click
+        stop_cover:
+          service: script.garage_door_click
+        close_cover:
+          service: script.garage_door_click
+
+###### INPUT SELECT ------------------------------------------
+#input_select:
+#  theater_shade_roman:
+#    name: 'Theater Roman'
+#    options:
+#      - open
+#      - opening
+#      - favorite
+#      - closing
+#      - closed
+
+###### SCRIPTS ------------------------------------------
+script:
+  garage_door_click:
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.relay_garage_click

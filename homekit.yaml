@@ -15,6 +15,7 @@
       - switch.theater_fan
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
+      - switch.relay_garage_door
       - cover.mylink_theater_roman
       - switch.octoprint_fakeheater_tool
       - switch.octoprint_fakeheater_bed

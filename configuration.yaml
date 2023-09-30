@@ -48,9 +48,9 @@ lovelace:
       type: module
 
 # Wyze Sense
-binary_sensor:
-  - platform: wyzesense
-    device: auto
+#binary_sensor:
+#  - platform: wyzesense
+#    device: auto
 
 # Cameras
 camera:
@@ -70,9 +70,9 @@ ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
 
 # iOS
-ios:
-  push:
-    categories: !include_dir_merge_list ios/
+#ios:
+#  push:
+#    categories: !include_dir_merge_list ios/
 
 #Switches
 lutron_caseta_pro:
