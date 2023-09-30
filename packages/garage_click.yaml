@@ -15,12 +15,11 @@ cover:
 
 ###### INPUT SELECT ------------------------------------------
 #input_select:
-#  theater_shade_roman:
-#    name: 'Theater Roman'
+#  garage_door_click:
+#    name: 'Garage Door'
 #    options:
 #      - open
 #      - opening
-#      - favorite
 #      - closing
 #      - closed
 
