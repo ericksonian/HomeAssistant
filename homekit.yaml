@@ -13,12 +13,23 @@
     exclude_entities:
       - light.extender
       - switch.theater_fan
-      - switch.relay_theater_screen_down
-      - switch.relay_theater_screen_up
-      - switch.relay_garage_door
       - cover.mylink_theater_roman
       - switch.octoprint_fakeheater_tool
       - switch.octoprint_fakeheater_bed
+
+      - switch.4ch_1_front_gate_switch_1
+      - switch.4ch_1_front_gate_switch_2
+      - switch.4ch_1_front_gate_switch_3
+      - switch.4ch_1_front_gate_switch_4
+      - switch.4ch_2_switch_1
+      - switch.4ch_2_switch_2
+      - switch.4ch_2_switch_3
+      - switch.4ch_2_switch_4
+      - switch.relay_theater_screen_down
+      - switch.relay_theater_screen_up
+      - switch.4ch_3_switch_3
+      - switch.relay_garage_click
+
   entity_config:
     switch.sprinklers:
       type: sprinkler
