@@ -5,23 +5,13 @@ cover:
       garage_door_click:
         device_class: garage
         friendly_name: "Garage Door"
-#        value_template: "{{ states('input_select.theater_shade_roman') }}"
+        value_template: "{{ states('input_select.garage_door_click') }}"
         open_cover:
           service: script.garage_door_click
-        stop_cover:
-          service: script.garage_door_click
+#        stop_cover:
+#          service: script.garage_door_click
         close_cover:
           service: script.garage_door_click
-
-###### INPUT SELECT ------------------------------------------
-#input_select:
-#  garage_door_click:
-#    name: 'Garage Door'
-#    options:
-#      - open
-#      - opening
-#      - closing
-#      - closed
 
 ###### SCRIPTS ------------------------------------------
 script:
@@ -30,3 +20,55 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.relay_garage_click
+
+###### INPUT SELECT ------------------------------------------
+input_select:
+  garage_door_click:
+#    name: 'Garage Door'
+    options:
+      - open
+      - closed
+
+###### AUTOMATIONS --------------------------------------
+automation:
+- alias: Garage Door Contact Open
+  trigger:
+  - platform: state
+    entity_id: switch.garage_door_contact
+    to: on
+#  condition:
+#  - condition: template
+#    value_template: "{{ trigger.from_state.state != 'closed' }}"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.garage_door_click
+      option: open
+
+- alias: Garage Door Contact Open
+  trigger:
+  - platform: state
+    entity_id: switch.garage_door_contact
+    to: off
+#  condition:
+#  - condition: template
+#    value_template: "{{ trigger.from_state.state != 'closed' }}"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.garage_door_click
+      option: closed
+
+###### Switch Templates --------------------------------------
+switch:
+  - platform: template
+    switches:
+      garage_door_contact:
+        turn_on:
+          service: switch.turn_on
+          target:
+            entity_id: switch.garage_door_contact
+        turn_off:
+          service: switch.turn_off
+          target:
+            entity_id: switch.garage_door_contact
