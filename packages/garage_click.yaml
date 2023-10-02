@@ -45,7 +45,7 @@ automation:
       entity_id: input_select.garage_door_click
       option: open
 
-- alias: Garage Door Contact Open
+- alias: Garage Door Contact Closed
   trigger:
   - platform: state
     entity_id: switch.garage_door_contact
