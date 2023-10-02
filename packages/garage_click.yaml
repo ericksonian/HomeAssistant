@@ -35,10 +35,7 @@ automation:
   trigger:
   - platform: state
     entity_id: switch.garage_door_contact
-    to: on
-#  condition:
-#  - condition: template
-#    value_template: "{{ trigger.from_state.state != 'closed' }}"
+    to: "on"
   action:
   - service: input_select.select_option
     data:
@@ -49,10 +46,7 @@ automation:
   trigger:
   - platform: state
     entity_id: switch.garage_door_contact
-    to: off
-#  condition:
-#  - condition: template
-#    value_template: "{{ trigger.from_state.state != 'closed' }}"
+    to: "off"
   action:
   - service: input_select.select_option
     data:
