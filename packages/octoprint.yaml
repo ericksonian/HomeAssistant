@@ -3,7 +3,7 @@ climate:
   - platform: generic_thermostat
     name: Octoprint Tool Thermostat
     heater: switch.octoprint_fakeheater_tool
-    target_sensor: sensor.octoprint_actual_tool0_temp
+    target_sensor: sensor.octoprint_actual_tool0_temp_2
     min_temp: 20
     max_temp: 250
     ac_mode: false
@@ -17,7 +17,7 @@ climate:
   - platform: generic_thermostat
     name: Octoprint Bed Thermostat
     heater: switch.octoprint_fakeheater_bed
-    target_sensor: sensor.octoprint_actual_bed_temp
+    target_sensor: sensor.octoprint_actual_bed_temp_2
     min_temp: 20
     max_temp: 70
     ac_mode: false
