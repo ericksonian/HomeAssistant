@@ -33,9 +33,9 @@
   entity_config:
     switch.sprinklers:
       type: sprinkler
-    sensor.octoprint_actual_tool0_temp:
+    sensor.octoprint_actual_tool0_temp_2:
       name: Printer Tool Temp
-    sensor.octoprint_actual_bed_temp:
+    sensor.octoprint_actual_bed_temp_2:
       name: Printer Bed Temp
 
 
