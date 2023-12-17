@@ -764,13 +764,6 @@
 }
 },
 {
-"ID" : 19,
-"Name" : "Cabinets",
-"Area" : {
-"Name" : "Kitchen"
-}
-},
-{
 "ID" : 21,
 "Name" : "Foyer",
 "Area" : {
@@ -779,9 +772,9 @@
 },
 {
 "ID" : 22,
-"Name" : "Ceiling",
+"Name" : "Laundry",
 "Area" : {
-"Name" : "Theater"
+"Name" : "Kitchen"
 }
 },
 {
@@ -842,9 +835,9 @@
 },
 {
 "ID" : 35,
-"Name" : "Kick",
+"Name" : "Cabinets",
 "Area" : {
-"Name" : "Master Bathroom"
+"Name" : "Kitchen"
 }
 },
 {
@@ -852,6 +845,13 @@
 "Name" : "Main Lights",
 "Area" : {
 "Name" : "Bed3"
+}
+},
+{
+"ID" : 19,
+"Name" : "Main Lights",
+"Area" : {
+"Name" : "Theater"
 }
 }
 ]
