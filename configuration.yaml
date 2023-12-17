@@ -28,29 +28,24 @@ script: !include_dir_merge_named scripts/
 scene: !include_dir_merge_list scenes/
 input_boolean: !include_dir_merge_named input_booleans/
 homekit: !include homekit.yaml
-cover: !include cover.yaml
+#cover: !include cover.yaml
 
 # UI
 frontend:
   themes: !include_dir_merge_named themes/
 lovelace:
   mode: yaml
-  resources:
-    - url: /local/custom-card/button-card.js
-      type: module
-    - url: /local/custom-card/card-mod.js
-      type: module
-    - url: /local/custom-card/mini-graph-card-bundle.js?v=0.10.0
-      type: module
-    - url: /local/custom-card/mini-media-player-bundle.js?v=1.15.0
-      type: module
-    - url: /local/custom-card/slider-entity-row.js
-      type: module
-
-# Wyze Sense
-#binary_sensor:
-#  - platform: wyzesense
-#    device: auto
+#  resources:
+#    - url: /local/custom-card/button-card.js
+#      type: module
+#    - url: /local/custom-card/card-mod.js
+#      type: module
+#    - url: /local/custom-card/mini-graph-card-bundle.js?v=0.10.0
+#      type: module
+#    - url: /local/custom-card/mini-media-player-bundle.js?v=1.15.0
+#      type: module
+#    - url: /local/custom-card/slider-entity-row.js
+#      type: module
 
 # Cameras
 camera:
@@ -68,11 +63,6 @@ camera:
 #    input: !secret camera_RTSP_Pancake
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
-
-# iOS
-#ios:
-#  push:
-#    categories: !include_dir_merge_list ios/
 
 #Switches
 lutron_caseta_pro:
@@ -93,11 +83,3 @@ switch:
 # Text to speech
 tts:
   - platform: google_translate
-
-#vesync:
-#  username: !secret vesync_username
-#  password: !secret vesync_password
-
-#zwave:
-#  usb_path: /dev/ttyACM0
-#  network_key: !secret zwave_network_key
