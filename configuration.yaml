@@ -26,13 +26,13 @@ group: !include groups.yaml
 automation: !include_dir_merge_list automation/
 script: !include_dir_merge_named scripts/
 scene: !include_dir_merge_list scenes/
-input_boolean: !include_dir_merge_named input_booleans/
+#input_boolean: !include_dir_merge_named input_booleans/
 homekit: !include homekit.yaml
 #cover: !include cover.yaml
 
 # UI
 frontend:
-  themes: !include_dir_merge_named themes/
+#  themes: !include_dir_merge_named themes/
 lovelace:
   mode: yaml
 #  resources:
