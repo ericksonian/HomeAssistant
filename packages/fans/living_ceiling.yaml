@@ -8,7 +8,7 @@
 #        value_template: "{{ state_attr('fan.living_ceiling_fan', 'percentage') }}"
 
 template:
-  sensors:
+  sensor:
     living_fan_percentage:
       friendly_name: Living Fan Percentage
       value_template: "{{ state_attr('fan.living_ceiling_fan', 'percentage') }}"
