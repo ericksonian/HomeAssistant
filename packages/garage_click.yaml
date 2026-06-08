@@ -14,7 +14,7 @@
 #          service: script.garage_door_click
 template:
   - cover:
-      - name: Garage Door
+      - name: New Garage Door
 #        state: "{{ states('input_select.garage_door_click') | float > 0 }}"
         device_class: garage
         open_cover:
