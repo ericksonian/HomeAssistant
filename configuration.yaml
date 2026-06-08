@@ -87,8 +87,8 @@ tts:
 
 template:
   - cover:
-      - name: Overhead Door
-        state: "{{ states('input_select.garage_door_click') | float > 0 }}"
+      - name: Garage Door
+        state: "{{ states('input_select.garage_door_click') }}"
         device_class: garage
         open_cover:
           action: script.garage_door_click
