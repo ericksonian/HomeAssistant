@@ -1,3 +1,4 @@
+# Zed Test
 ### Configuration
 homeassistant:
   name: !secret location
@@ -66,18 +67,18 @@ ffmpeg:
 
 #Switches
 lutron_caseta_pro:
-    bridges:
-      - host: !secret caseta_bridge_ip
-        mac: !secret caseta_bridge_mac
-        switch: [ 9 ]
-        fan: [ 11, 16, 25, 31 ]
-        cover: [ 32 ]
+  bridges:
+    - host: !secret caseta_bridge_ip
+      mac: !secret caseta_bridge_mac
+      switch: [9]
+      fan: [11, 16, 25, 31]
+      cover: [32]
 switch:
   - platform: broadlink
-#    host: !secret broadlink_living_ip
+    #    host: !secret broadlink_living_ip
     mac: !secret broadlink_living_mac
   - platform: broadlink
-#    host: !secret broadlink_master_ip
+    #    host: !secret broadlink_master_ip
     mac: !secret broadlink_master_mac
 
 # Text to speech
