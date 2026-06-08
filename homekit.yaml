@@ -8,22 +8,21 @@
       - switch
       - cover
       - climate
-      - lock
-#    include_entities:
-#      - sensor.octoprint1_actual_bed_temp
-#      - sensor.octoprint1_actual_tool0_temp
-#      - sensor.octoprint1_job_percentage
-#      - binary_sensor.octoprint1_printing
-#      - binary_sensor.octoprint1_printing_error
-#      - sensor.octoprint1_start_time
-#      - sensor.octoprint1_current_file
-#      - sensor.octoprint2_actual_bed_temp
-#      - sensor.octoprint2_actual_tool0_temp
-#      - sensor.octoprint2_job_percentage 
-#      - binary_sensor.octoprint2_printing
-#      - binary_sensor.octoprint2_printing_error
-#      - sensor.octoprint2_start_time
-#      - sensor.octoprint2_current_file
+    #    include_entities:
+    #      - sensor.octoprint1_actual_bed_temp
+    #      - sensor.octoprint1_actual_tool0_temp
+    #      - sensor.octoprint1_job_percentage
+    #      - binary_sensor.octoprint1_printing
+    #      - binary_sensor.octoprint1_printing_error
+    #      - sensor.octoprint1_start_time
+    #      - sensor.octoprint1_current_file
+    #      - sensor.octoprint2_actual_bed_temp
+    #      - sensor.octoprint2_actual_tool0_temp
+    #      - sensor.octoprint2_job_percentage
+    #      - binary_sensor.octoprint2_printing
+    #      - binary_sensor.octoprint2_printing_error
+    #      - sensor.octoprint2_start_time
+    #      - sensor.octoprint2_current_file
     exclude_entities:
       - light.extender
       - switch.theater_fan
@@ -47,11 +46,10 @@
   entity_config:
     switch.sprinklers:
       type: sprinkler
-    sensor.octoprint_actual_tool0_temp_2:
-      name: Printer Tool Temp
-    sensor.octoprint_actual_bed_temp_2:
-      name: Printer Bed Temp
-
+#    sensor.octoprint_actual_tool0_temp_2:
+#      name: Printer Tool Temp
+#    sensor.octoprint_actual_bed_temp_2:
+#      name: Printer Bed Temp
 
 - name: Utopia Bridge 2
   port: 21064
@@ -67,33 +65,32 @@
       linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
       linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
 
-- name: Utopia Bridge 3
-  port: 21065
-  mode: accessory
-  filter:
-    include_entities:
-      - camera.frontdoor
-  entity_config:
-    camera.frontdoor:
-      stream_source: !secret camera_RTSP_FrontDoor
-
-- name: Utopia Bridge 4
-  port: 21066
-  mode: accessory
-  filter:
-    include_entities:
-      - camera.garage
-  entity_config:
-    camera.frontdoor:
-      stream_source: !secret camera_RTSP_Garage
-
-#- name: Utopia Bridge 5
-#  port: 21067
+#- name: Utopia Bridge 3
+#  port: 21065
 #  mode: accessory
 #  filter:
 #    include_entities:
-#      - lock.front_door
+#      - camera.frontdoor
+#  entity_config:
+#    camera.frontdoor:
+#      stream_source: !secret camera_RTSP_FrontDoor
 
+#- name: Utopia Bridge 4
+#  port: 21066
+#  mode: accessory
+#  filter:
+#    include_entities:
+#      - camera.garage
+#  entity_config:
+#    camera.frontdoor:
+#      stream_source: !secret camera_RTSP_Garage
+
+- name: Utopia Bridge 5
+  port: 21067
+  mode: accessory
+  filter:
+    include_entities:
+      - lock.front_door
 #- name: Utopia Bridge 6
 #  port: 21068
 #  mode: accessory
