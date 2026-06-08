@@ -1,17 +1,20 @@
-
 ###### TEMPLATES ------------------------------------------
 
-sensor:
-  - platform: template
-    sensors:
-      living_fan_percentage:
-        friendly_name: Living Fan Percentage
-        value_template: "{{ state_attr('fan.living_ceiling_fan', 'percentage') }}"
+#sensor:
+#  - platform: template
+#    sensors:
+#      living_fan_percentage:
+#        friendly_name: Living Fan Percentage
+#        value_template: "{{ state_attr('fan.living_ceiling_fan', 'percentage') }}"
 
+template:
+  sensors:
+    living_fan_percentage:
+      friendly_name: Living Fan Percentage
+      value_template: "{{ state_attr('fan.living_ceiling_fan', 'percentage') }}"
 
 ###### SCRIPTS ------------------------------------------
 script:
-
   fan_living_off:
     sequence:
       - service: fan.turn_off
