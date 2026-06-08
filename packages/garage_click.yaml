@@ -15,14 +15,14 @@
 template:
   - cover:
       - name: Garage Door
-        state: "{{ states('input_select.garage_door_click') | float > 0 }}"
+#        state: "{{ states('input_select.garage_door_click') | float > 0 }}"
         device_class: garage
         open_cover:
           action: script.garage_door_click
         close_cover:
           action: script.garage_door_click
-        stop_cover:
-          action: script.garage_door_click
+#        stop_cover:
+#          action: script.garage_door_click
 
 ###### SCRIPTS ------------------------------------------
 script:
