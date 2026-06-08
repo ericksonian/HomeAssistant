@@ -83,7 +83,7 @@ automation:
 template:
   - switch:
     - name: Garage Door Contact
-      entity_id: switch.garage_door_contact
+#      entity_id: switch.garage_door_contact
       turn_on:
         service: switch.turn_on
         target:
