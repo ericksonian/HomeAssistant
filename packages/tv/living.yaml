@@ -3,17 +3,17 @@
 template:
   - light:
       - name: living_avr_volume
-        friendly_name: "Living AVR Volume"
-        value_template: >-
-          {% if is_state('media_player.living_room_sony_avr', 'on') %}
-            {% if state_attr('media_player.living_room_sony_avr', 'is_volume_muted') %}
-              off
-            {% else %}
-              on
-            {% endif %}
-          {% else %}
-            off
-          {% endif %}
+        #        friendly_name: "Living AVR Volume"
+        #        value_template: >-
+        #          {% if is_state('media_player.living_room_sony_avr', 'on') %}
+        #            {% if state_attr('media_player.living_room_sony_avr', 'is_volume_muted') %}
+        #              off
+        #            {% else %}
+        #              on
+        #            {% endif %}
+        #          {% else %}
+        #            off
+        #          {% endif %}
         turn_on:
           service: media_player.volume_mute
           target:
@@ -32,135 +32,20 @@ template:
             entity_id: media_player.living_room_sony_avr
           data:
             volume_level: "{{ (brightness / 255 * 100)|int / 100 }}"
-        level_template: >-
-          {% if is_state('media_player.living_room_sony_avr', 'on') %}
-            {{ (state_attr('media_player.living_room_sony_avr', 'volume_level')|float * 255)|int }}
-          {% else %}
-            0
-          {% endif %}
+#        level_template: >-
+#          {% if is_state('media_player.living_room_sony_avr', 'on') %}
+#            {{ (state_attr('media_player.living_room_sony_avr', 'volume_level')|float * 255)|int }}
+#          {% else %}
+#            0
+#          {% endif %}
 
 ###### SENSOR TEMPLATES ------------------------------------------
-
-sensor:
-  - platform: template
-    sensors:
-      living_room_tv_cast_unavailable:
-        friendly_name: "Living Room TV Cast Unavailable"
-        value_template: >-
-          {% if is_state('media_player.living_room_tv', 'unavailable') %}
-            true
-          {% else %}
-            false
-          {% endif %}
-
-      appletv_living_current_media:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_content_type') }}"
-
-      appletv_living_current_app:
-        value_template: "{{ state_attr('media_player.appletv_living', 'app_name') }}"
-
-      appletv_living_current_title:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_title') }}"
-
-      appletv_living_current_artist:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_artist') }}"
-
-      appletv_living_current_album:
-        value_template: "{{ state_attr('media_player.appletv_living', 'media_album_name') }}"
+#sensor:
 
 ###### AUTOMATIONS --------------------------------------
-automation:
-  # Chromecast
-  - alias: Living Cast Started
-    trigger:
-      - platform: state
-        entity_id: media_player.living_room_tv
-        from: "off"
-    condition:
-      - condition: state
-        entity_id: sensor.living_room_tv_cast_unavailable
-        state: "false"
-    action:
-      - service: script.living_tv_chromecast
-
-  - alias: Living Cast Ended
-    trigger:
-      - platform: state
-        entity_id: media_player.living_room_tv
-        to: "off"
-        for: "00:30:00"
-    condition:
-      - condition: state
-        entity_id: input_select.living_tv_source
-        state: "chromecast"
-    action:
-      - service: script.living_tv_off
-
-  # AppleTV
-  - alias: Living AirPlay Started
-    trigger:
-      - platform: state
-        entity_id: media_player.appletv_living
-        from: "standby"
-    condition:
-      - condition: state
-        entity_id: input_select.living_tv_source
-        state: "none"
-    action:
-      - service: script.living_tv_appletv
-
-  - alias: Living AirPlay Ended
-    trigger:
-      - platform: state
-        entity_id: media_player.appletv_living
-        to: "standby"
-        for: "00:00:10"
-    condition:
-      - condition: state
-        entity_id: input_select.living_tv_source
-        state: "appletv"
-    action:
-      - service: script.living_tv_off
-
-  # Xbox
-  - alias: Living Xbox On Auto
-    trigger:
-      - platform: state
-        entity_id: media_player.XBOX
-        to: "on"
-    condition:
-      - condition: state
-        entity_id: input_select.living_tv_source
-        state: "none"
-    action:
-      - service: script.living_tv_game
-
-  - alias: Living Xbox Off Auto
-    trigger:
-      - platform: state
-        entity_id: media_player.XBOX
-        to: "off"
-    condition:
-      - condition: state
-        entity_id: input_select.living_tv_source
-        state: "xbox"
-    action:
-      - service: script.living_tv_off
+#automation:
 
 ###### INPUT SELECT ------------------------------------------
-
-### TV Tracking
-input_select:
-  living_tv_source:
-    name: "Living TV Source"
-    options:
-      - none
-      - loading
-      - appletv
-      - chromecast
-      - front
-      - switch
-      - xbox
 
 input_boolean:
   living_tv_mute:
@@ -168,146 +53,6 @@ input_boolean:
 
 ###### SCRIPTS ------------------------------------------
 script:
-  ### Living TV Macros
-  living_tv_off:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.samsung_power_off
-      - service: script.sony_power_toggle
-      - service: media_player.turn_off
-        entity_id: media_player.living_room_tv
-      - service: media_player.turn_off
-        entity_id: media_player.living_room_appletv
-      - service: script.xbox_off
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: none
-  living_tv_appletv:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.samsung_input_hdmi2
-      - delay:
-          milliseconds: 200
-      - service: script.sony_input_appletv
-      - delay:
-          milliseconds: 200
-      - service: script.samsung_power_on
-      - delay:
-          milliseconds: 200
-      - service: remote.send_command
-        data:
-          entity_id: remote.appletv_living
-          command: wakeup
-      - delay:
-          milliseconds: 500
-      - service: script.sony_input_appletv
-      - delay:
-          milliseconds: 500
-      - service: script.samsung_input_hdmi2
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: appletv
-  living_tv_chromecast:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.samsung_input_hdmi1
-      - delay:
-          milliseconds: 200
-      - service: script.sony_input_chrmcast
-      - delay:
-          milliseconds: 200
-      - service: script.samsung_power_on
-      - delay:
-          milliseconds: 500
-      - service: script.sony_input_chrmcast
-      - delay:
-          milliseconds: 500
-      - service: script.samsung_input_hdmi1
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: chromecast
-  living_tv_front:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.samsung_input_hdmi2
-      - delay:
-          milliseconds: 200
-      - service: script.sony_input_front
-      - delay:
-          milliseconds: 200
-      - service: script.samsung_power_on
-      - delay:
-          milliseconds: 500
-      - service: script.sony_input_front
-      - delay:
-          milliseconds: 500
-      - service: script.samsung_input_hdmi2
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: front
-  living_tv_switch:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.samsung_input_hdmi2
-      - delay:
-          milliseconds: 200
-      - service: script.sony_input_ubuntu
-      - delay:
-          milliseconds: 200
-      - service: script.samsung_power_on
-      - delay:
-          milliseconds: 500
-      - service: script.sony_input_ubuntu
-      - delay:
-          milliseconds: 500
-      - service: script.samsung_input_hdmi2
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: switch
-  living_tv_xbox:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: loading
-      - service: script.xbox_on
-      - service: script.samsung_input_hdmi2
-      - delay:
-          milliseconds: 200
-      - service: script.sony_input_game
-      - delay:
-          milliseconds: 200
-      - service: script.samsung_power_on
-      - delay:
-          milliseconds: 500
-      - service: script.sony_input_game
-      - delay:
-          milliseconds: 500
-      - service: script.samsung_input_hdmi2
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.living_tv_source
-          option: xbox
   living_tv_volume_up:
     sequence:
       - service: script.sony_volume_up
