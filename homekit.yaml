@@ -10,6 +10,20 @@
       - climate
       - lock
 #    include_entities:
+#      - sensor.octoprint1_actual_bed_temp
+#      - sensor.octoprint1_actual_tool0_temp
+#      - sensor.octoprint1_job_percentage
+#      - binary_sensor.octoprint1_printing
+#      - binary_sensor.octoprint1_printing_error
+#      - sensor.octoprint1_start_time
+#      - sensor.octoprint1_current_file
+#      - sensor.octoprint2_actual_bed_temp
+#      - sensor.octoprint2_actual_tool0_temp
+#      - sensor.octoprint2_job_percentage 
+#      - binary_sensor.octoprint2_printing
+#      - binary_sensor.octoprint2_printing_error
+#      - sensor.octoprint2_start_time
+#      - sensor.octoprint2_current_file
     exclude_entities:
       - light.extender
       - switch.theater_fan
@@ -44,9 +58,9 @@
   mode: accessory
   filter:
     include_entities:
-      - camera.frontgate
+      - camera.front_gate_live_view
   entity_config:
-    camera.frontgate:
+    camera.front_gate_live_view:
       name: Doorbell
       stream_source: !secret camera_RTSP_FrontGate
       support_audio: True
