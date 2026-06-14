@@ -1,0 +1,32 @@
+###### AUTOMATIONS --------------------------------------
+automation:
+  - alias: pico_frontdoor_button3
+    trigger:
+      - entity_id: sensor.front_door_pico
+        platform: state
+        to: "2"
+    condition: []
+    action:
+      - service: switch.toggle
+        target:
+          entity_id: switch.patio_string
+  - alias: pico_garage_button2
+    trigger:
+      - entity_id: sensor.garage_pico
+        platform: state
+        to: "8"
+    condition: []
+    action:
+      - service: cover.open_cover
+        target:
+          entity_id: cover.garage_door
+  - alias: pico_garage_button4
+    trigger:
+      - entity_id: sensor.garage_pico
+        platform: state
+        to: "16"
+    condition: []
+    action:
+      - service: cover.close_cover
+        target:
+          entity_id: cover.garage_door
