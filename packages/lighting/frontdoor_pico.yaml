@@ -1,17 +1,30 @@
 ###### Switch Templates --------------------------------------
 
-template:
-  - triggers:
-      - trigger: state
-        entity_id: sensor.front_door_pico
-    switch:
-      - name: Pico Frontdoor Button 3
-        state: "{{ is_state('sensor.front_door_pico', '2') }}"
-        turn_on:
-          action: switch.turn_on
-          target:
-            entity_id: switch.pico_frontdoor_button3
-        turn_off:
-          action: switch.turn_off
-          target:
-            entity_id: switch.pico_frontdoor_button3
+#template:
+#  - triggers:
+#      - trigger: state
+#        entity_id: sensor.front_door_pico
+#    switch:
+#      - name: Pico Frontdoor Button 3
+#        state: "{{ is_state('sensor.front_door_pico', '2') }}"
+#        turn_on:
+#          action: switch.turn_on
+#          target:
+#            entity_id: switch.pico_frontdoor_button3
+#        turn_off:
+#          action: switch.turn_off
+#          target:
+#            entity_id: switch.pico_frontdoor_button3
+
+###### AUTOMATIONS --------------------------------------
+automation:
+  - alias: pico_frontdoor_button3
+    trigger:
+      - entity_id: sensor.front_door_pico
+        platform: state
+        to: "2"
+    condition: []
+    action:
+      - service: switch.toggle
+        target:
+          entity_id: switch.patio_string

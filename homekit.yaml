@@ -29,11 +29,11 @@
       - cover.mylink_theater_roman
       - switch.octoprint_fakeheater_tool
       - switch.octoprint_fakeheater_bed
-
+      - switch.pico_frontdoor_button3
       - switch.4ch_1_front_gate_switch_1
       - switch.4ch_1_front_gate_switch_2
       - switch.4ch_1_front_gate_switch_3
-      - switch.4ch_1_front_gate_switch_4
+      - switch.4ch_1_front_gate_latch
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
       - switch.4ch_3_switch_3
