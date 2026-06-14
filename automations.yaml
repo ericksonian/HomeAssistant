@@ -88,3 +88,37 @@
   action:
   - scene: scene.master_relax
   mode: single
+- id: '1781471714081'
+  alias: 'Frontdoor Pico Button3 Patio String '
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.front_door_pico
+    to:
+    - '2'
+  conditions: []
+  actions:
+  - action: switch.toggle
+    metadata: {}
+    target:
+      entity_id: switch.patio_string
+    data: {}
+  mode: single
+- id: '1781471849595'
+  alias: Front Door Pico Button 3
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - switch.pico_frontdoor_button_3
+    to:
+    - 'on'
+  conditions: []
+  actions:
+  - action: switch.toggle
+    metadata: {}
+    target:
+      entity_id: switch.patio_string
+    data: {}
+  mode: single
