@@ -34,10 +34,6 @@
       - switch.4ch_1_front_gate_switch_2
       - switch.4ch_1_front_gate_switch_3
       - switch.4ch_1_front_gate_switch_4
-      - switch.4ch_2_switch_1
-      - switch.4ch_2_switch_2
-      - switch.4ch_2_switch_3
-      - switch.4ch_2_switch_4
       - switch.relay_theater_screen_down
       - switch.relay_theater_screen_up
       - switch.4ch_3_switch_3
@@ -51,19 +47,19 @@
 #    sensor.octoprint_actual_bed_temp_2:
 #      name: Printer Bed Temp
 
-- name: Utopia Bridge 2
-  port: 21064
-  mode: accessory
-  filter:
-    include_entities:
-      - camera.front_gate_live_view
-  entity_config:
-    camera.front_gate_live_view:
-      name: Doorbell
-      stream_source: !secret camera_RTSP_FrontGate
-      support_audio: True
-      linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
-      linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
+#- name: Utopia Bridge 2
+#  port: 21064
+#  mode: accessory
+#  filter:
+#    include_entities:
+#      - camera.front_gate_live_view
+#  entity_config:
+#    camera.front_gate_live_view:
+#      name: Doorbell
+#      stream_source: !secret camera_RTSP_FrontGate
+#      support_audio: True
+#      linked_doorbell_sensor: binary_sensor.frontgate_doorbell_ding
+#      linked_motion_sensor: binary_sensor.frontgate_doorbell_motion
 
 #- name: Utopia Bridge 3
 #  port: 21065

@@ -5,20 +5,13 @@ template:
       - trigger: state
         entity_id: sensor.front_door_pico
     switch:
-      - name: Pico Frontdoor
-        state: "{{ is_state('sensor.front_door_pico', '1') }}"
+      - name: Pico Frontdoor Button 3
+        state: "{{ is_state('sensor.front_door_pico', '2') }}"
         turn_on:
           action: switch.turn_on
           target:
-            entity_id: switch.patio_string
-
-  - triggers:
-      - trigger: state
-        entity_id: sensor.front_door_pico
-    switch:
-      - name: Pico Frontdoor
-        state: "{{ is_state('sensor.front_door_pico', '4') }}"
+            entity_id: switch.pico_frontdoor_button3
         turn_off:
           action: switch.turn_off
           target:
-            entity_id: switch.patio_string
+            entity_id: switch.pico_frontdoor_button3
