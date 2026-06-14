@@ -63,5 +63,5 @@
       state: off
     light.living_room_stairs:
       state: off
-    switch.plug_in_switch_switch:
+    light.living_room_foyer:
       state: off

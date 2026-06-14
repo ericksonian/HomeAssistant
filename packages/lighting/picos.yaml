@@ -10,6 +10,16 @@ automation:
       - service: switch.toggle
         target:
           entity_id: switch.patio_string
+  - alias: pico_garage_button1
+    trigger:
+      - entity_id: sensor.garage_pico
+        platform: state
+        to: "1"
+    condition: []
+    action:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.garage_ceiling
   - alias: pico_garage_button2
     trigger:
       - entity_id: sensor.garage_pico
@@ -20,6 +30,16 @@ automation:
       - service: cover.open_cover
         target:
           entity_id: cover.garage_door
+  - alias: pico_garage_button3
+    trigger:
+      - entity_id: sensor.garage_pico
+        platform: state
+        to: "2"
+    condition: []
+    action:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.downstairs_all_off
   - alias: pico_garage_button4
     trigger:
       - entity_id: sensor.garage_pico
@@ -30,3 +50,13 @@ automation:
       - service: cover.close_cover
         target:
           entity_id: cover.garage_door
+  - alias: pico_garage_button5
+    trigger:
+      - entity_id: sensor.garage_pico
+        platform: state
+        to: "4"
+    condition: []
+    action:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.garage_ceiling
