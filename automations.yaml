@@ -12,7 +12,7 @@
     - scene: scene.living_bright
   mode: single
 - id: "1639319776930"
-  alias: UI LIving Bright
+  alias: UI Living Bright
   description: ""
   trigger:
     - platform: device

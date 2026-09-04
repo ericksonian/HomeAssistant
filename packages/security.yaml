@@ -32,42 +32,43 @@ sensor:
             Unknown
           {% endif %}
 
-      garage_door_contact:
-        friendly_name: "Garage Door Contact"
-        value_template: >-
-          {% if is_state('binary_sensor.wyzesense_garagedoor', 'off') %}
-            Open
-          {% else %}
-            Closed
-          {% endif %}
+#      garage_door_contact:
+#        friendly_name: "Garage Door Contact"
+#        value_template: >-
+#          {% if is_state('binary_sensor.wyzesense_garagedoor', 'off') %}
+#            Open
+#          {% else %}
+#            Closed
+#          {% endif %}
 
       battery_frontdoor_lock:
         value_template: "{{ state_attr('zwave.schlage_allegion_be469_touchscreen_deadbolt', 'battery_level') }}"
       battery_frontdoor_contact:
         value_template: "{{ state_attr('binary_sensor.wyzesense_frontdoor', 'battery_level') }}"
-      battery_garagedoor_contact:
-        value_template: "{{ state_attr('binary_sensor.wyzesense_garagedoor', 'battery_level') }}"
+#      battery_garagedoor_contact:
+#        value_template: "{{ state_attr('binary_sensor.wyzesense_garagedoor', 'battery_level') }}"
 
 
 ###### INPUT BOOLEANS ------------------------------------------
 
-input_boolean:
-  notify_garage:
-    name: Garage Notifications
-    initial: on
+#input_boolean:
+#  notify_garage:
+#    name: Garage Notifications
+#    initial: on
 
 ###### GROUPS ----------------------------------------
 
-group:
- all_persons:
-  name: All Persons
-  entities:
-  - person.ian
+#group:
+# all_persons:
+#  name: All Persons
+#  entities:
+#  - person.ian
 #  - person.kalene
-  - person.nathan
+#  - person.nathan
 
 ###### AUTOMATIONS --------------------------------------
-automation:
+
+#automation:
 ## Lock Up
 # Nobody Home
 #- alias: Nobody Home - Lock Up
@@ -84,76 +85,76 @@ automation:
 
 ### Front Door
 # Midnight
-- alias: Lock Up 12am
-  trigger:
-  - platform: time
-    at: "23:59:55"
-  action:
-  - service: cover.close_cover
-    data:
-      entity_id: cover.garage_door
-  - service: script.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
-          script.front_door_lock
-        {% else %}
-          script.front_door_cannot_lock
-        {% endif %}
+#- alias: Lock Up 12am
+#  trigger:
+#  - platform: time
+#    at: "23:59:55"
+#  action:
+#  - service: cover.close_cover
+#    data:
+#      entity_id: cover.garage_door
+#  - service: script.turn_on
+#    data_template:
+#      entity_id: >
+#        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
+#          script.front_door_lock
+#        {% else %}
+#          script.front_door_cannot_lock
+#        {% endif %}
 
 # 1am
-- alias: Lock Up 1am
-  trigger:
-  - platform: time
-    at: "00:59:55"
-  action:
-  - service: cover.close_cover
-    data:
-      entity_id: cover.garage_door
-  - service: script.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
-          script.front_door_lock
-        {% else %}
-          script.front_door_cannot_lock
-        {% endif %}
+#- alias: Lock Up 1am
+#  trigger:
+#  - platform: time
+#    at: "00:59:55"
+#  action:
+#  - service: cover.close_cover
+#    data:
+#      entity_id: cover.garage_door
+#  - service: script.turn_on
+#    data_template:
+#      entity_id: >
+#        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
+#          script.front_door_lock
+#        {% else %}
+#          script.front_door_cannot_lock
+#        {% endif %}
 
 # 2am
-- alias: Lock Up 2am
-  trigger:
-  - platform: time
-    at: "01:59:55"
-  action:
-  - service: cover.close_cover
-    data:
-      entity_id: cover.garage_door
-  - service: script.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
-          script.front_door_lock
-        {% else %}
-          script.front_door_cannot_lock
-        {% endif %}
+#- alias: Lock Up 2am
+#  trigger:
+#  - platform: time
+#    at: "01:59:55"
+#  action:
+#  - service: cover.close_cover
+#    data:
+#      entity_id: cover.garage_door
+#  - service: script.turn_on
+#    data_template:
+#      entity_id: >
+#        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
+#          script.front_door_lock
+#        {% else %}
+#          script.front_door_cannot_lock
+#        {% endif %}
 
 # 3am
-- alias: Lock Up 3am
-  trigger:
-  - platform: time
-    at: "02:59:55"
-  action:
-  - service: cover.close_cover
-    data:
-      entity_id: cover.garage_door
-  - service: script.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
-          script.front_door_lock
-        {% else %}
-          script.front_door_cannot_lock
-        {% endif %}
+#- alias: Lock Up 3am
+#  trigger:
+#  - platform: time
+#    at: "02:59:55"
+#  action:
+#  - service: cover.close_cover
+#    data:
+#      entity_id: cover.garage_door
+#  - service: script.turn_on
+#    data_template:
+#      entity_id: >
+#        {% if is_state('binary_sensor.wyzesense_frontdoor', 'off') %}
+#          script.front_door_lock
+#        {% else %}
+#          script.front_door_cannot_lock
+#        {% endif %}
 
 
 ###### SCRIPTS ------------------------------------------

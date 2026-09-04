@@ -8,7 +8,8 @@
       - switch
       - cover
       - climate
-    #    include_entities:
+#        include_entities:
+#          - valve.wireless_water_timer_valve_1
     #      - sensor.octoprint1_actual_bed_temp
     #      - sensor.octoprint1_actual_tool0_temp
     #      - sensor.octoprint1_job_percentage
@@ -42,6 +43,8 @@
   entity_config:
     switch.sprinklers:
       type: sprinkler
+#    valve.wireless_water_timer_valve_1:
+#      type: valve
 #    sensor.octoprint_actual_tool0_temp_2:
 #      name: Printer Tool Temp
 #    sensor.octoprint_actual_bed_temp_2:
