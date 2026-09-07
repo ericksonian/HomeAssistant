@@ -3,74 +3,72 @@
 #sensor:
 
 ###### INPUT BOOLEANS ------------------------------------------
-input_boolean:
-  sprinkler_scheduler:
-    name: Sprinkler Scheduling UI
-    initial: off
-  sprinkler_auto_water_1:
-    name: Sprinkler Auto Water 1
-#    initial: on
-  sprinkler_auto_water_2:
-    name: Sprinkler Auto Water 2
-#    initial: on
+#input_boolean:
+#  sprinkler_scheduler:
+#    name: Sprinkler Scheduling UI
+#    initial: off
+#  sprinkler_auto_water_1:
+#    name: Sprinkler Auto Water 1
+##    initial: on
+#  sprinkler_auto_water_2:
+#    name: Sprinkler Auto Water 2
+##    initial: on
 
 ###### INPUT SELECT ------------------------------------------
 #input_select:
 
 
 ###### AUTOMATIONS --------------------------------------
-automation:
-- alias: Sprinklers Auto Off
-  trigger:
-  - platform: state
-    entity_id: switch.sprinklers
-    to: "on"
-    for: "00:00:30"
-  condition: []
-  action:
-  - service: switch.turn_off
-    data:
-      entity_id: switch.sprinklers
+#automation:
+#- alias: Sprinklers Auto Off
+#  trigger:
+#  - platform: state
+#    entity_id: switch.sprinklers
+#    to: "on"
+#    for: "00:00:30"
+#  condition: []
+#  action:
+#  - service: switch.turn_off
+#    data:
+#      entity_id: switch.sprinklers
 
-- alias: Sprinklers Schedule 1
-  trigger:
-  - platform: time
-    at: "04:00:00"
-  condition:
-  - condition: state
-    entity_id: input_boolean.sprinkler_auto_water_1
-    state: "on"
-  action:
-  - service: switch.turn_on
-    data:
-      entity_id: switch.sprinklers
-- alias: Sprinklers Schedule 2
-  trigger:
-  - platform: time
-    at: "05:00:00"
-  condition:
-  - condition: state
-    entity_id: input_boolean.sprinkler_auto_water_2
-    state: "on"
-  action:
-  - service: switch.turn_on
-    data:
-      entity_id: switch.sprinklers
+#- alias: Sprinklers Schedule 1
+#  trigger:
+#  - platform: time
+#    at: "04:00:00"
+#  condition:
+#  - condition: state
+#    entity_id: input_boolean.sprinkler_auto_water_1
+#    state: "on"
+#  action:
+#  - service: switch.turn_on
+#    data:
+#      entity_id: switch.sprinklers
+#- alias: Sprinklers Schedule 2
+#  trigger:
+#  - platform: time
+#    at: "05:00:00"
+#  condition:
+#  - condition: state
+#    entity_id: input_boolean.sprinkler_auto_water_2
+#    state: "on"
+#  action:
+#  - service: switch.turn_on
+#    data:
+#      entity_id: switch.sprinklers
 
 ###### SCRIPTS ------------------------------------------
 #script:
 
-switch:
-  - platform: template
-    switches:
-      backyard_sprinkler:
-        friendly_name: "Backyard Sprinkler"
-        value_template: "{{ is_state('valve.wireless_water_timer_valve_1', 'open') }}"
+template:
+  - switch:
+      - name: Backyard Sprinkler
+        state: "{{ is_state('valve.wireless_water_timer_valve_1', 'open') }}"
         turn_on:
-          service: valve.open_valve
+          action: valve.open_valve
           target:
             entity_id: valve.wireless_water_timer_valve_1
         turn_off:
-          service: valve.close_valve
+          action: valve.close_valve
           target:
             entity_id: valve.wireless_water_timer_valve_1

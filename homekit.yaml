@@ -39,6 +39,7 @@
       - switch.relay_theater_screen_up
       - switch.4ch_3_switch_3
       - switch.relay_garage_click
+      - switch.gateway_socket_1
 
   entity_config:
     switch.sprinklers:
