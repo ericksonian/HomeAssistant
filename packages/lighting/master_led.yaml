@@ -1,24 +1,24 @@
 
 ###### TEMPLATES ------------------------------------------
 
-sensor:
-  - platform: template
-    sensors:
-      battery_masterbed_motion:
-        value_template: "{{ state_attr('binary_sensor.wyzesense_motion_masterbed', 'battery_level') }}"
+#sensor:
+#  - platform: template
+#    sensors:
+#      battery_masterbed_motion:
+#        value_template: "{{ state_attr('binary_sensor.wyzesense_motion_masterbed', 'battery_level') }}"
 
-light:
-  - platform: template
-    lights:
-      master_bedroom_ledstrip:
-        friendly_name: "Master Bed LEDs"
-        unique_id: light_master_bedroom_ledstrip
-        value_template: "{{states('input_boolean.master_ledstrip_power') }}"
-#        color_template: "{{states('input_select.master_ledstrip_mode') }}"
-        turn_on:
-          service: script.master_ledstrip_power_on
-        turn_off:
-          service: script.master_ledstrip_power_off
+#light:
+#  - platform: template
+#    lights:
+#      master_bedroom_ledstrip:
+#        friendly_name: "Master Bed LEDs"
+#        unique_id: light_master_bedroom_ledstrip
+#        value_template: "{{states('input_boolean.master_ledstrip_power') }}"
+##        color_template: "{{states('input_select.master_ledstrip_mode') }}"
+#        turn_on:
+#          service: script.master_ledstrip_power_on
+#        turn_off:
+#          service: script.master_ledstrip_power_off
 #        set_color:
 #          - service: input_number.set_value
 #            data:
@@ -39,70 +39,70 @@ light:
 
 
 ###### INPUT BOOLEANS ------------------------------------------
-input_boolean:
-  master_ledstrip_power:
-    name: Master LED Strip Power
-#    initial: off
-  master_ledstrip_more:
-    name: Master LED Strip More
-#    initial: off
-  master_ledstrip_motion:
-    name: Master LED Strip Motion
-#    initial: on
+#input_boolean:
+#  master_ledstrip_power:
+#    name: Master LED Strip Power
+##    initial: off
+#  master_ledstrip_more:
+#    name: Master LED Strip More
+##    initial: off
+#  master_ledstrip_motion:
+#    name: Master LED Strip Motion
+##    initial: on
 
 ###### INPUT SELECT ------------------------------------------
-input_select:
-  master_ledstrip_mode:
-    name: 'Master LED Strip Mode'
-    options:
-      - red
-      - green
-      - blue
-      - white
-      - red1
-      - green1
-      - blue1
-      - white1
-      - red2
-      - green2
-      - blue2
-      - white2
-      - red3
-      - green3
-      - blue3
-      - white3
-      - red4
-      - green4
-      - blue4
-      - white4
-      - jump3
-      - jump7
-      - fade3
-      - fade7
+#input_select:
+ # master_ledstrip_mode:
+ #   name: 'Master LED Strip Mode'
+ #   options:
+ #     - red
+ #     - green
+ #     - blue
+ #     - white
+ #     - red1
+ #     - green1
+ #     - blue1
+ #     - white1
+ #     - red2
+ #     - green2
+ #     - blue2
+ #     - white2
+ #     - red3
+ #     - green3
+ #     - blue3
+ #     - white3
+ #     - red4
+ #     - green4
+ #     - blue4
+ #     - white4
+ #     - jump3
+ #     - jump7
+ #     - fade3
+ #     - fade7
 
 ###### AUTOMATIONS --------------------------------------
-automation:
+#automation:
 
 # LED Control
-- alias: Master Motion LED On
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.wyzesense_motion_masterbed
-    to: "on"
-  condition:
-    - condition: and
-      conditions:
-        - condition: state
-          entity_id: input_boolean.master_ledstrip_motion
-          state: "on"
-        - condition: state
-          entity_id: group.lights_master
-          state: "off"
-  action:
-  - service: script.master_ledstrip_power_on
-  - delay:
-      milliseconds: 200
-  - service: script.master_ledstrip_red
+#- alias: Master Motion LED On
+#  trigger:
+#  - platform: state
+#    entity_id: binary_sensor.wyzesense_motion_masterbed
+#    to: "on"
+#  condition:
+#    - condition: and
+#      conditions:
+#        - condition: state
+#          entity_id: input_boolean.master_ledstrip_motion
+#          state: "on"
+#        - condition: state
+#          entity_id: group.lights_master
+#          state: "off"
+#  action:
+#  - service: script.master_ledstrip_power_on
+#  - delay:
+#      milliseconds: 200
+#  - service: script.master_ledstrip_red
 #  - service: script.turn_on
 #    data_template:
 #      entity_id: >
@@ -112,452 +112,452 @@ automation:
 #          script.master_ledstrip_red
 #        {% endif %}
 
-- alias: Master Motion LED Off
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.wyzesense_motion_masterbed
-    to: "off"
-  condition: []
-  action:
-  - service: script.master_ledstrip_power_off
+#- alias: Master Motion LED Off
+#  trigger:
+#  - platform: state
+#    entity_id: binary_sensor.wyzesense_motion_masterbed
+#    to: "off"
+#  condition: []
+#  action:
+#  - service: script.master_ledstrip_power_off
 
-- alias: Master Lights LED Off
-  trigger:
-  - platform: state
-    entity_id: group.lights_master
-    to: "on"
-  condition: []
-  action:
-  - service: script.master_ledstrip_power_off
+#- alias: Master Lights LED Off
+#  trigger:
+#  - platform: state
+#    entity_id: group.lights_master
+#    to: "on"
+#  condition: []
+#  action:
+#  - service: script.master_ledstrip_power_off
 
 ###### SCRIPTS ------------------------------------------
-script:
+#script:
 #### Under Bed LED Strip
 ### Control
 
 #  Power Macros
-  master_ledstrip_power_on:
-    sequence:
-      - service: script.turn_on
-        data_template:
-          entity_id: >
-            {% if is_state("input_boolean.master_ledstrip_power", "off") %}
-              script.master_ledstrip_power_toggle
-            {% else %}
-              none
-            {% endif %}
-      - service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.master_ledstrip_power
-  master_ledstrip_power_off:
-    sequence:
-      - service: script.turn_on
-        data_template:
-          entity_id: >
-            {% if is_state("input_boolean.master_ledstrip_power", "on") %}
-              script.master_ledstrip_power_toggle
-            {% else %}
-              none
-            {% endif %}
-      - service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.master_ledstrip_power
+#  master_ledstrip_power_on:
+#    sequence:
+#      - service: script.turn_on
+#        data_template:
+#          entity_id: >
+#            {% if is_state("input_boolean.master_ledstrip_power", "off") %}
+#              script.master_ledstrip_power_toggle
+#            {% else %}
+#              none
+#            {% endif %}
+#      - service: input_boolean.turn_on
+#        data:
+#          entity_id: input_boolean.master_ledstrip_power
+#  master_ledstrip_power_off:
+#    sequence:
+#      - service: script.turn_on
+#        data_template:
+#          entity_id: >
+#            {% if is_state("input_boolean.master_ledstrip_power", "on") %}
+#              script.master_ledstrip_power_toggle
+#            {% else %}
+#              none
+#            {% endif %}
+#      - service: input_boolean.turn_off
+#        data:
+#          entity_id: input_boolean.master_ledstrip_power
 
 ### IR Packets
 
 #  Power Toggle
-  master_ledstrip_power_toggle:
-    sequence:
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMSExISERQRFBETERMSExISETgSOBE3EzYSOBE4EjYTNxITERMRFBEUERISExI3EhMROBI3EjcSNxI3EjcSExE4EQAFNgABJEkTAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_power_toggle:
+#    sequence:
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMSExISERQRFBETERMSExISETgSOBE3EzYSOBE4EjYTNxITERMRFBEUERISExI3EhMROBI3EjcSNxI3EjcSExE4EQAFNgABJEkTAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Dim Up
-  master_ledstrip_dim_up:
-    sequence:
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMTEhITERMSExEUERMRExITEjcROBI3EjcSNxE4EjcSNxITERQRNxI3EjgRExE5EBMTNhM3ERQRExEUETcSExI3EQAFNwABIksSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_dim_up:
+#    sequence:
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMTEhITERMSExEUERMRExITEjcROBI3EjcSNxE4EjcSNxITERQRNxI3EjgRExE5EBMTNhM3ERQRExEUETcSExI3EQAFNwABIksSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Dim Down
-  master_ledstrip_dim_down:
-    sequence:
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MRExETEhITEhEUERMSExEUETcTNhM3ETgRNxM3ETgROBI3EhISOBE4EjcTERI3EhMSExE3EhMSExISEjcSExE3EwAFNgABJEkRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_dim_down:
+#    sequence:
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MRExETEhITEhEUERMSExEUETcTNhM3ETgRNxM3ETgROBI3EhISOBE4EjcTERI3EhMSExE3EhMSExISEjcSExE3EwAFNgABJEkRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 
 ### Effects
 
 #  Jump 3
-  master_ledstrip_jump_3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: jump3
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMSEhEUERQRExITERMSEhITEjcRORE4ETcROBI4ETcSNxMSEhMROBISEhMSEhMSEhMROBE3ExIROBI3EjcSNxI3EgAFNgABJEkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_jump_3:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: jump3
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMSEhEUERQRExITERMSEhITEjcRORE4ETcROBI4ETcSNxMSEhMROBISEhMSEhMSEhMROBE3ExIROBI3EjcSNxI3EgAFNgABJEkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Jump 7
-  master_ledstrip_jump_7:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: jump7
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMSExISERQRExITERMSExISEjcSOBE3EzYSOBE4EjYTNxE4EhMRNxITEhISExITERMSExI2ExIROBI3EjcSNxI4EQAFNgABJEkTAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_jump_7:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: jump7
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMSExISERQRExITERMSExISEjcSOBE3EzYSOBE4EjYTNxE4EhMRNxITEhISExITERMSExI2ExIROBI3EjcSNxI4EQAFNgABJEkTAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Fade 3
-  master_ledstrip_fade_3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: fade3
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MSEhITEhIRFBISEhMRFBETEjcSNxI4ETcSNxE4EjgRNxMSEjcSNxITEhISExISERQROBEUERMSNxI3ETgSNxI3EQAFOAABI0kSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_fade_3:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: fade3
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MSEhITEhIRFBISEhMRFBETEjcSNxI4ETcSNxE4EjgRNxMSEjcSNxITEhISExISERQROBEUERMSNxI3ETgSNxI3EQAFOAABI0kSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Fade 7
-  master_ledstrip_fade_7:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: fade7
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJETEhITERMSExEUERQRExETEjcSNxI3EjcSNxI4ETcTNhM3ETgROBISEhMSExETERQRFBETEhISNxI3EjcSNxI3EgAFNgABJEoRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_fade_7:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: fade7
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJETEhITERMSExEUERQRExETEjcSNxI3EjcSNxI4ETcTNhM3ETgROBISEhMSExETERQRFBETEhISNxI3EjcSNxI3EgAFNgABJEoRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Quick
-  master_ledstrip_quick:
-    sequence:
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpISExITERQRExETEhMSEhEUETgROBI3EjcSNxI3EjcROBI4ETcTNhITEjcSExISEhMSEhITEhMROBETEjcSNxI3EgAFNQABJUkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_quick:
+#    sequence:
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpISExITERQRExETEhMSEhEUETgROBI3EjcSNxI3EjcROBI4ETcTNhITEjcSExISEhMSEhITEhMROBETEjcSNxI3EgAFNQABJUkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Slow
-  master_ledstrip_slow:
-    sequence:
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMRFBETERQQFRAUERQQFBISEjgQORA4EjgROBA5ETgROBE4ETgSExETEDkRFBAVERMRFBAUETgROBEUEDgSOBI3EQAFNwABI0oRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_slow:
+#    sequence:
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMRFBETERQQFRAUERQQFBISEjgQORA4EjgROBA5ETgROBE4ETgSExETEDkRFBAVERMRFBAUETgROBEUEDgSOBI3EQAFNwABI0oRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 
 ### Colors
 
 #  Red
-  master_ledstrip_red:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: red
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJISExETEhISExITEhISExAVEDgSNxI4ETgRNxM2EzcROBISERQSEhE5ETgRFBE3EhMSNxE4EjcSEhMSEjcSExE4EgAFNQABJEoSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_red:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: red
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJISExETEhISExITEhISExAVEDgSNxI4ETgRNxM2EzcROBISERQSEhE5ETgRFBE3EhMSNxE4EjcSEhMSEjcSExE4EgAFNQABJEoSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Green
-  master_ledstrip_green:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: green
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJISExETEhITEhITERMSExEUETcSNxI3EjgROBI2EzcSNxE4EhISExI3ETgSExI2ExIRFBE4EjcSEhITEjcRFBE4EgAFNQABI0oSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
-#  Blue
-  master_ledstrip_blue:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: blue
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MSEhITEhISExEUERMSEhITEjcROBI3EzYROBM3ETcSNxQ2ERQRNxISExIRFBE4ERQRExM2EhMSNxE4ETgSEhI3EgAFNgABJUgSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
-#  White
-  master_ledstrip_white:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: white
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MRFBETEhISExISERQSExAUEjcSNxI3ETgSNxI3EjcSOBETEhISNxMSERQRFBE3EhMROBE4ERQRNxM3EjcRFBE3EgAFNQABJUkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_green:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: green
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJISExETEhITEhITERMSExEUETcSNxI3EjgROBI2EzcSNxE4EhISExI3ETgSExI2ExIRFBE4EjcSEhITEjcRFBE4EgAFNQABI0oSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
+##  Blue
+#  master_ledstrip_blue:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: blue
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MSEhITEhISExEUERMSEhITEjcROBI3EzYROBM3ETcSNxQ2ERQRNxISExIRFBE4ERQRExM2EhMSNxE4ETgSEhI3EgAFNgABJUgSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
+##  White
+#  master_ledstrip_white:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: white
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MRFBETEhISExISERQSExAUEjcSNxI3ETgSNxI3EjcSOBETEhISNxMSERQRFBE3EhMROBE4ERQRNxM3EjcRFBE3EgAFNQABJUkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 
 #  Red 1
-  master_ledstrip_red_1:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: red1
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJESExITERQSEhETEhMSEhEUETgROBI3EjcSNxM2EjcSNxITERQRNxITEjcSExE4EhITNhI3EhMROBISEjcTEhE4EgAFOAABI0gSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
-#  Green 1
-  master_ledstrip_green_1:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: green1
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMSExETEhMRFBETEhISExISEjcSOBE3EzcROBE4EjcSNxI3ERQRNxITEjcSExE4EhISExI3EhMROBETEjcSEhI4EQAFOgABIEkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
-#  Blue 1
-  master_ledstrip_blue_1:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: blue1
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5ITEhITERMRFBEUERMSEhISEzcROBI3EjcSNxI4ETcROBI4ERMSExA4ExISExA5ERQRExI3EjcSExE4ETcTEhI3EQAFNwABI0oSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_red_1:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: red1
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJESExITERQSEhETEhMSEhEUETgROBI3EjcSNxM2EjcSNxITERQRNxITEjcSExE4EhITNhI3EhMROBISEjcTEhE4EgAFOAABI0gSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
+##  Green 1
+#  master_ledstrip_green_1:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: green1
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMSExETEhMRFBETEhISExISEjcSOBE3EzcROBE4EjcSNxI3ERQRNxITEjcSExE4EhISExI3EhMROBETEjcSEhI4EQAFOgABIEkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
+##  Blue 1
+#  master_ledstrip_blue_1:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: blue1
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5ITEhITERMRFBEUERMSEhISEzcROBI3EjcSNxI4ETcROBI4ERMSExA4ExISExA5ERQRExI3EjcSExE4ETcTEhI3EQAFNwABI0oSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  White 1
-  master_ledstrip_white_1:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: white1
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJISEhITEhITEhITERQRExETEjcROBI4ETcTNhM3ETgSNhMSERQRExI3EhMSEhI4ERMROBI3EjcSExI3EjcSEhI3EgAFNgABI0sRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_white_1:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: white1
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJISEhITEhITEhITERQRExETEjcROBI4ETcTNhM3ETgSNhMSERQRExI3EhMSEhI4ERMROBI3EjcSExI3EjcSEhI3EgAFNgABI0sRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 
 #  Red 2
-  master_ledstrip_red_2:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: red2
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJESExISERQRFBETEhISExISEjcSOBE4EjYTNxE4EjcSNxITERMSExEUETcSExI3ERQRNxI3EjcSOBETEjcSExI3EQAFNgABJEoRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_red_2:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: red2
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJESExISERQRFBETEhISExISEjcSOBE4EjYTNxE4EjcSNxITERMSExEUETcSExI3ERQRNxI3EjcSOBETEjcSExI3EQAFNgABJEoRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Green 2
-  master_ledstrip_green_2:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: green2
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5ISExITERMSEhITEhMSEhITETgSNhM3ETgSNxI3EjcROBI3EhMSEhEUETgSExE3ExISExE4ETgSNxISEjcSExI3EgAFNQABJUkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_green_2:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: green2
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5ISExITERMSEhITEhMSEhITETgSNhM3ETgSNxI3EjcROBI3EhMSEhEUETgSExE3ExISExE4ETgSNxISEjcSExI3EgAFNQABJUkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Blue 2
-  master_ledstrip_blue_2:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: blue2
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MRFBETEhMRExISEhMSExETEjcSNxI3ETgSNxI3EjcSOBE3ExISNxI4ERMSExE3EhMSExI3ERQRExI3EjcRFBE3EgAFNwABI0kSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_blue_2:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: blue2
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MRFBETEhMRExISEhMSExETEjcSNxI3ETgSNxI3EjcSOBE3ExISNxI4ERMSExE3EhMSExI3ERQRExI3EjcRFBE3EgAFNwABI0kSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  White 2
-  master_ledstrip_white_2:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: white2
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MRExITEhISExEUERMSExETEjcSNxI3EjcSNxI3EjgRNxMSEhMSNxE4EhISExI3EhMROBE3ExISExI4ETcSExE3EwAFNwABIkkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_white_2:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: white2
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MRExITEhISExEUERMSExETEjcSNxI3EjcSNxI3EjgRNxMSEhMSNxE4EhISExI3EhMROBE3ExISExI4ETcSExE3EwAFNwABIkkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 
 #  Red 3
-  master_ledstrip_red_3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: red3
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5ISExITERMSExISEhMSEhITETgSNxI3EjcSOBE3EjcSNxITEhMRNxM2EzcRFBETERMSNxI3EhMSExETEjcSNxI3EgAFNgABJEkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_red_3:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: red3
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5ISExITERMSExISEhMSEhITETgSNxI3EjcSOBE3EjcSNxITEhMRNxM2EzcRFBETERMSNxI3EhMSExETEjcSNxI3EgAFNgABJEkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Green 3
-  master_ledstrip_green_3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: green3
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMSEhQREhMRFBETERQRExMRETgSOBE3EjcTNxE4ETgSNxI3EhMRNxM2EzcRFBETEhMRExI3EhISExITETgSNhM3EQAFNgABJEoSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_green_3:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: green3
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMSEhQREhMRFBETERQRExMRETgSOBE3EjcTNxE4ETgSNxI3EhMRNxM2EzcRFBETEhMRExI3EhISExITETgSNhM3EQAFNgABJEoSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Blue 3
-  master_ledstrip_blue_3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: blue3
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMSExITEhISExEUEBQRExITEjcROBE5ETcSNxI4ETcSNxEUETgSNxI3EjcSExAVEBQROBISEhMRFBETETgSNxI3EgAFNgABI0sRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_blue_3:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: blue3
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMSExITEhISExEUEBQRExITEjcROBE5ETcSNxI4ETcSNxEUETgSNxI3EjcSExAVEBQROBISEhMRFBETETgSNxI3EgAFNgABI0sRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  White 3
-  master_ledstrip_white_3:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: white3
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5ISExISEhMSEhEUERQRExEUETcTNxE4ETgSNxI3EjcSNxI3EjcSOBE3EjcSExITERMSExETEhITEhITETgROBI3EgAFNQABJUkRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_white_3:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: white3
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5ISExISEhMSEhEUERQRExEUETcTNxE4ETgSNxI3EjcSNxI3EjcSOBE3EjcSExITERMSExETEhITEhITETgROBI3EgAFNQABJUkRAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 
 #  Red 4
-  master_ledstrip_red_4:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: red4
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpQRFBETEBQSExISEhMRFBETETgSNxI3ETkRNxI3ETkROBEUERMRExE4ETkRExETEhMSNxE4EjgRExETETgRORE3EgAFNgABJEkRAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+ # master_ledstrip_red_4:
+ #   sequence:
+ #     - service: input_select.select_option
+ #       data:
+ #         entity_id: input_select.master_ledstrip_mode
+ #         option: red4
+ #     - service: remote.send_command
+ #       data:
+ #         entity_id: remote.master_bed
+ #         command:
+ #             - b64:JgBQAAABHpQRFBETEBQSExISEhMRFBETETgSNxI3ETkRNxI3ETkROBEUERMRExE4ETkRExETEhMSNxE4EjgRExETETgRORE3EgAFNgABJEkRAA0FAAAAAAAA
+ #     - delay:
+ #         milliseconds: 200
 #  Green 4
-  master_ledstrip_green_4:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: green4
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABIJIRExITEhISExEUERMRFBEUETcSNxE5ETcSNxI4ETgROBE4EhISExE4EjcSEhMSEhMRExE5ETcSExISEjgQORE3EwAFNQABJEkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_green_4:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: green4
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABIJIRExITEhISExEUERMRFBEUETcSNxE5ETcSNxI4ETgROBE4EhISExE4EjcSEhMSEhMRExE5ETcSExISEjgQORE3EwAFNQABJEkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  Blue 4
-  master_ledstrip_blue_4:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: blue4
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABHpMRExEUERQREhMSERQRExITETgSNxI3EjcROBI3EjcRORETETgSEhI4ETgRFBESExISNxITEjcRExITETgSNxI4EQAFNgABJEkSAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_blue_4:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: blue4
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABHpMRExEUERQREhMSERQRExITETgSNxI3EjcROBI3EjcRORETETgSEhI4ETgRFBESExISNxITEjcRExITETgSNxI4EQAFNgABJEkSAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200
 #  White 4
-  master_ledstrip_white_4:
-    sequence:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.master_ledstrip_mode
-          option: white4
-      - service: remote.send_command
-        data:
-          entity_id: remote.master_bed
-          command:
-              - b64:JgBQAAABH5MRExITERQRExISExISEhITEjcSNxI3EjcSOBE3EzYTNxE4ETcTEhE4EjgRExISExISExETETgSExETEjcSNxI4EQAFOAABIkkTAA0FAAAAAAAA
-      - delay:
-          milliseconds: 200
+#  master_ledstrip_white_4:
+#    sequence:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_ledstrip_mode
+#          option: white4
+#      - service: remote.send_command
+#        data:
+#          entity_id: remote.master_bed
+#          command:
+#              - b64:JgBQAAABH5MRExITERQRExISExISEhITEjcSNxI3EjcSOBE3EzYTNxE4ETcTEhE4EjgRExISExISExETETgSExETEjcSNxI4EQAFOAABIkkTAA0FAAAAAAAA
+#      - delay:
+#          milliseconds: 200

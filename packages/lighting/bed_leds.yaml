@@ -1,0 +1,58 @@
+###### Bed LEDs Lighting Template Aug 2026
+
+template:
+  - light:
+      - name: Bed LEDs
+        state:  "{{states('input_boolean.bed_led_power') }}"
+        turn_on:
+          action: script.bed_led_power_on
+        turn_off:
+          action: script.bed_led_power_off
+
+###### INPUT BOOLEANS ------------------------------------------
+input_boolean:
+  bed_led_power:
+    name: Bed LED Power
+#    initial: off
+
+###### SCRIPTS ------------------------------------------
+script:
+#  Power Macros
+  bed_led_power_on:
+    sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_boolean.bed_led_power", "off") %}
+              script.bed_led_power_toggle
+            {% else %}
+              none
+            {% endif %}
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.bed_led_power
+  bed_led_power_off:
+    sequence:
+      - service: script.turn_on
+        data_template:
+          entity_id: >
+            {% if is_state("input_boolean.bed_led_power", "on") %}
+              script.bed_led_power_toggle
+            {% else %}
+              none
+            {% endif %}
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.bed_led_power
+### IR Packets
+
+#  Power Toggle
+  bed_led_power_toggle:
+    sequence:
+      - service: remote.send_command
+        data:
+          entity_id: remote.master_bed
+          command:
+              - b64:JgBQAAABHpMSExISERQRFBETERMSExISETgSOBE3EzYSOBE4EjYTNxITERMRFBEUERISExI3EhMROBI3EjcSNxI3EjcSExE4EQAFNgABJEkTAA0FAAAAAAAA
+      - delay:
+          milliseconds: 200
