@@ -49,21 +49,21 @@ lovelace:
 #      type: module
 
 # Cameras
-camera:
-  - platform: ffmpeg
-    name: FrontDoor
-    input: !secret camera_RTSP_FrontDoor
-  - platform: ffmpeg
-    name: Garage
-    input: !secret camera_RTSP_Garage
-  - platform: ffmpeg
-    name: FrontGate
-    input: !secret camera_RTSP_FrontGate
+#camera:
+#  - platform: ffmpeg
+#    name: FrontDoor
+#    input: !secret camera_RTSP_FrontDoor
+#  - platform: ffmpeg
+#    name: Garage
+#    input: !secret camera_RTSP_Garage
+#  - platform: ffmpeg
+#    name: FrontGate
+#    input: !secret camera_RTSP_FrontGate
 #  - platform: ffmpeg
 #    name: Pancake
 #    input: !secret camera_RTSP_Pancake
-ffmpeg:
-  ffmpeg_bin: /usr/bin/ffmpeg
+#ffmpeg:
+#  ffmpeg_bin: /usr/bin/ffmpeg
 
 #Switches
 lutron_caseta_pro:
