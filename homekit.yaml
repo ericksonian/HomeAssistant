@@ -27,6 +27,7 @@
     exclude_entities:
       - light.extender
       - switch.theater_fan
+      - switch.theater_stick
 #      - cover.mylink_theater_roman
       - switch.octoprint_fakeheater_tool
       - switch.octoprint_fakeheater_bed
