@@ -21,7 +21,7 @@ default_config:
 cloud:
 mobile_app:
 #discovery:
-http:
+#http:
 #sensor: !include_dir_merge_list sensors/
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/
